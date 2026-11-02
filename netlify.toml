@@ -1,6 +1,6 @@
 [build]
   base = "landing-page"
-  command = "node build.mjs"
+  command = "npm test && node build.mjs"
   publish = "dist"
 
 [build.environment]
@@ -23,3 +23,15 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/:page/index.html"
+  to = "/:page/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ne/:page/index.html"
+  to = "/ne/:page/"
+  status = 301
+  force = true

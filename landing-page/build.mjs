@@ -3,13 +3,15 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import process from 'node:process';
 import {build as bundle} from 'esbuild';
-import {homeDescription, labels, nepaliCopy, pages, repository} from './page-content.mjs';
+import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
+import {siteConfig} from './site-config.mjs';
+import {homeHelp, typingGuide} from './typing-guide.mjs';
+pages['typing-guide'] = typingGuide;
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 try { process.loadEnvFile(path.join(root, '.env.local')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
 const output = path.join(root, 'dist');
-const origin = new URL(process.env.SITE_URL || process.env.URL || 'http://127.0.0.1:4174').origin;
-const production = origin.startsWith('https://') && (!process.env.CONTEXT || process.env.CONTEXT === 'production');
+const {origin, production} = siteConfig();
 const posthogKey = process.env.PUBLIC_POSTHOG_KEY || '';
 const posthogHost = process.env.PUBLIC_POSTHOG_HOST || '';
 if (Boolean(posthogKey) !== Boolean(posthogHost)) throw Error('Set PUBLIC_POSTHOG_KEY and PUBLIC_POSTHOG_HOST together.');
@@ -36,6 +38,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('No connection needed</span>', 'इन्टरनेट चाहिँदैन</span>')
     .replaceAll('Copy example <span>', 'उदाहरण कपी गर्नुहोस् <span>')
     .replaceAll('Try another spelling</div>', 'अर्को हिज्जे रोज्नुहोस्</div>')
+    .replaceAll('href="/typing-guide/"', 'href="/ne/typing-guide/"')
     .replaceAll('href="/mac/"', 'href="/ne/mac/"')
     .replaceAll('href="/faq/"', 'href="/ne/faq/"')
     .replaceAll('href="/about/"', 'href="/ne/about/"')
@@ -45,16 +48,34 @@ function localize(html, locale, slug = '') {
     .replaceAll('alt="NepType Mac app showing Roman input, Nepali spelling suggestions, and mixed Nepali and English output."', 'alt="NepType Mac एपमा रोमन इनपुट, नेपाली हिज्जे सुझाव र नेपाली तथा अंग्रेजी मिसिएको पाठ।"')
     .replaceAll('aria-label="Toggle navigation"', 'aria-label="नेभिगेसन खोल्नुहोस्"')
     .replaceAll('aria-label="Close dialog"', 'aria-label="बन्द गर्नुहोस्"')
-    .replaceAll('Skip to content', 'मुख्य सामग्रीमा जानुहोस्');
+    .replaceAll('Skip to content', 'मुख्य सामग्रीमा जानुहोस्')
+    .replaceAll('aria-label="Main navigation"', 'aria-label="मुख्य नेभिगेसन"')
+    .replaceAll('aria-label="Spelling suggestions"', 'aria-label="हिज्जेका सुझाव"')
+    .replaceAll('aria-label="Platform availability"', 'aria-label="प्लेटफर्मको उपलब्धता"')
+    .replaceAll('aria-label="NepType on Mac"', 'aria-label="Mac मा NepType"')
+    .replaceAll('aria-label="Choose the meaning of pani"', 'aria-label="pani को हिज्जे रोज्नुहोस्"')
+    .replaceAll('>All Nepali</option>', '>सबै नेपाली</option>')
+    .replaceAll('This typing pad needs JavaScript. The app and instructions are available on', 'यो टाइपिङ प्याडलाई JavaScript चाहिन्छ। एप र निर्देशन यहाँ उपलब्ध छन्:');
   return html.replace('<!-- LANGUAGE_SWITCH -->', languageLink);
 }
 
 function metadata(locale, slug, title, description) {
   const url = canonical(locale, slug);
+  const content = pages[slug]?.[locale];
+  const webappId = origin + '/#browser-tool';
+  const appId = origin + '/#mac-app';
   const graph = [
     {'@type': 'WebSite', '@id': origin + '/#website', name: 'NepType', url: origin + '/', inLanguage: ['en', 'ne']},
-    {'@type': 'SoftwareApplication', '@id': origin + '/#app', name: 'NepType', url: origin + '/', applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description: homeDescription, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', license: repository + '/blob/main/LICENSE', sameAs: repository}
+    {'@type': content?.kind === 'article' ? 'TechArticle' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
+      ...(!slug || slug === 'mac' ? {mainEntity: {'@id': slug === 'mac' ? appId : webappId}} : {}),
+      ...(content?.kind === 'article' ? {headline: content.heading, datePublished: content.published, author: {'@type': 'Organization', name: 'NepType', url: origin + '/about/'}} : {})}
   ];
+  if (!slug) graph.push({'@type': 'WebApplication', '@id': webappId, name: 'NepType Online Typing Pad', url: canonical(locale, '') + '#try', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript and an initial network connection', isAccessibleForFree: true, description: homeDescriptions[locale], inLanguage: ['en', 'ne'], sameAs: repository});
+  if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository});
+  if (slug) graph.push({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: [
+    {'@type': 'ListItem', position: 1, name: 'NepType', item: canonical(locale, '')},
+    {'@type': 'ListItem', position: 2, name: content.heading, item: url}
+  ]});
   return `<title>${escape(title)}</title>
   <meta name="description" content="${escape(description)}">
   <link rel="canonical" href="${url}">
@@ -62,12 +83,13 @@ function metadata(locale, slug, title, description) {
   <link rel="alternate" hreflang="ne" href="${canonical('ne', slug)}">
   <link rel="alternate" hreflang="x-default" href="${canonical('en', slug)}">
   <meta name="robots" content="${production ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="${content?.kind === 'article' ? 'article' : 'website'}">
   <meta property="og:site_name" content="NepType">
   <meta property="og:title" content="${escape(title)}">
   <meta property="og:description" content="${escape(description)}">
   <meta property="og:url" content="${url}">
   <meta property="og:locale" content="${locale === 'ne' ? 'ne_NP' : 'en_US'}">
+  <meta property="og:locale:alternate" content="${locale === 'ne' ? 'en_US' : 'ne_NP'}">
   <meta property="og:image" content="${origin}/assets/neptype-mac.png">
   <meta property="og:image:width" content="720">
   <meta property="og:image:height" content="540">
@@ -76,9 +98,25 @@ function metadata(locale, slug, title, description) {
   <meta name="twitter:title" content="${escape(title)}">
   <meta name="twitter:description" content="${escape(description)}">
   <meta name="twitter:image" content="${origin}/assets/neptype-mac.png">
+  <meta name="twitter:image:alt" content="${locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap">
   <script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': graph}).replaceAll('<', '\\u003c')}</script>`;
+}
+
+function renderSections(sections, locale) {
+  const href = value => locale === 'ne' ? '/ne' + value : value;
+  return sections.map(([heading, text, extra = {}]) => `${heading ? `<h2>${escape(heading)}</h2>` : ''}<p>${escape(text)}</p>
+    ${extra.steps ? `<ol>${extra.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol>` : ''}
+    ${extra.code ? `<pre><code>${escape(extra.code)}</code></pre>` : ''}
+    ${extra.examples ? `<div class="table-scroll"><table><caption>${locale === 'ne' ? 'Nepali + EN का उदाहरण' : 'Nepali + EN examples'}</caption><thead><tr><th scope="col">${locale === 'ne' ? 'रोमन लेखाइ' : 'Roman input'}</th><th scope="col">${locale === 'ne' ? 'नेपाली पाठ' : 'Nepali output'}</th></tr></thead><tbody>${extra.examples.map(([roman, output]) => `<tr><td><code>${escape(roman)}</code></td><td lang="ne">${escape(output)}</td></tr>`).join('')}</tbody></table></div>` : ''}
+    ${extra.links ? `<ul class="related-links">${extra.links.map(([label, target]) => `<li><a href="${escape(href(target))}">${escape(label)}</a></li>`).join('')}</ul>` : ''}`).join('\n');
+}
+
+function renderHomeHelp(locale) {
+  const copy = homeHelp[locale];
+  return `<section class="typing-help container" aria-labelledby="how-to-title"><h2 id="how-to-title">${escape(copy.heading)}</h2><p>${escape(copy.intro)}</p><div class="typing-steps">${copy.steps.map(([heading, text]) => `<div><h3>${escape(heading)}</h3><p>${escape(text)}</p></div>`).join('')}</div><p>${escape(copy.note)}</p><ul class="related-links"><li><a href="${route(locale, 'typing-guide')}">${escape(copy.guide)}</a></li><li><a href="${route(locale, 'faq')}">${escape(copy.faq)}</a></li><li><a href="${route(locale, 'mac')}">${escape(copy.mac)}</a></li></ul></section>`;
 }
 
 function finish(html, locale, slug, title, description) {
@@ -105,26 +143,28 @@ await writeFile(path.join(output, 'assets/web-dictionary.json'), JSON.stringify(
 await copyFile(path.join(root, '../data/sources/CMUDICT-LICENSE.txt'), path.join(output, 'assets/CMUDICT-LICENSE.txt'));
 await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production)}});
 let styles = await readFile(path.join(root, 'styles.css'), 'utf8');
-styles = styles.replace('&family=Playfair+Display:ital,wght@0,500;0,600;1,500', '');
+// Load fonts directly from the document head instead of a blocking CSS import chain.
+styles = styles.replace(/^@import url\([^\n]+\);\n/, '');
 await writeFile(path.join(output, 'styles.css'), styles);
 
 const urls = [];
 for (const locale of ['en', 'ne']) {
-  const homeTitle = locale === 'en' ? 'NepType | Open-Source Nepali Typing for Mac' : 'NepType | Mac का लागि खुला स्रोत नेपाली टाइपिङ';
-  const description = locale === 'en' ? homeDescription : 'NepType मा रोमन अक्षरबाट नेपाली लेख्नुहोस्। Mac का लागि खुला स्रोत एप अफलाइन चल्छ र नेपालीसँग अंग्रेजी शब्द पनि राख्न मिल्छ।';
-  const home = finish(localize(template, locale), locale, '', homeTitle, description);
+  const description = homeDescriptions[locale];
+  const home = finish(localize(template, locale).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
   const directory = path.join(output, route(locale));
   await mkdir(directory, {recursive: true});
   await writeFile(path.join(directory, 'index.html'), home);
   urls.push({slug: '', locale});
   for (const [slug, translated] of Object.entries(pages)) {
     const content = translated[locale];
-    const sections = content.sections.map(([heading, text]) => `${heading ? `<h2>${escape(heading)}</h2>` : ''}<p>${escape(text)}</p>`).join('\n');
+    const sections = renderSections(content.sections, locale);
+    const byline = content.kind === 'article' ? `<p class="article-byline">${locale === 'ne' ? 'लेखन: ' : 'By '}<a href="${route(locale, 'about')}">${locale === 'ne' ? 'NepType परियोजना' : 'NepType project'}</a> · <time datetime="${content.published}">${locale === 'ne' ? '१ नोभेम्बर २०२६' : 'November 1, 2026'}</time></p>` : '';
+    const related = `<p class="page-tool-link"><a href="${route(locale)}#try">${locale === 'ne' ? 'अनलाइन नेपाली टाइपिङ प्याड खोल्नुहोस्' : 'Open the online Nepali typing pad'} →</a></p>`;
     const linkUrl = slug === 'mac' && downloadUrl ? downloadUrl : repository;
     const linkText = slug === 'mac' && downloadUrl ? (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस्' : 'Download for Mac') : content.link;
     const linkEvent = slug === 'mac' && downloadUrl ? 'neptype_download_clicked' : 'neptype_source_opened';
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
-    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${sections}${linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}" target="_blank" rel="noopener noreferrer">${escape(linkText)}</a></p>` : ''}${privacyControl}</main>`;
+    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${sections}${related}${linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}" target="_blank" rel="noopener noreferrer">${escape(linkText)}</a></p>` : ''}${privacyControl}</main>`;
     let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);
@@ -137,7 +177,9 @@ for (const locale of ['en', 'ne']) {
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(({locale, slug}) => `  <url><loc>${canonical(locale, slug)}</loc></url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(output, 'sitemap.xml'), sitemap);
-await writeFile(path.join(output, 'robots.txt'), `User-agent: *\n${production ? 'Allow: /' : 'Disallow: /'}\nSitemap: ${origin}/sitemap.xml\n`);
+// Crawlers must be allowed to fetch previews to see their noindex directive.
+await writeFile(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\n${production ? `Sitemap: ${origin}/sitemap.xml\n` : ''}`);
+if (!production) await writeFile(path.join(output, '_headers'), '/*\n  X-Robots-Tag: noindex, follow\n');
 const notFound = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | NepType</title><meta name="robots" content="noindex"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"></head><body><main class="document-page container"><h1>Page not found.</h1><p><a href="/">Back to NepType</a></p></main></body></html>`;
 await writeFile(path.join(output, '404.html'), notFound);
 console.log(`Built ${urls.length} static pages for ${origin} (${production ? 'indexable production' : 'noindex preview'}).`);
