@@ -30,6 +30,7 @@ try {
   base=base.replace(/\/$/,'');
   browser=await chromium.launch({channel:'chrome',headless:true});
   const context=await browser.newContext();
+  await context.addInitScript(()=>localStorage.setItem('neptype-analytics-opt-out','true'));
   const page=await context.newPage();
   page.on('pageerror',error=>errors.push(error.message));
   page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
@@ -43,13 +44,18 @@ try {
       assert.equal(await windows.count(),1);
       assert.equal(await page.locator('a[data-mac-download]').getAttribute('href'),mac.url);
       await windows.click();
+      await page.waitForLoadState('networkidle');
+      await page.evaluate(()=>document.fonts.ready);
+      await page.locator('h1').waitFor({state:'visible'});
       assert.equal(new URL(page.url()).pathname,prefix+'windows/');
       assert.equal(await page.locator('dialog[open]').count(),0);
       assert.equal(await page.locator('h1').count(),1);
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://neptype.com'+prefix+'windows/');
       assert.equal(await page.locator('link[hreflang="en"]').getAttribute('href'),'https://neptype.com/windows/');
       assert.equal(await page.locator('link[hreflang="ne"]').getAttribute('href'),'https://neptype.com/ne/windows/');
-      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+      const fits=await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1);
+      if(!fits) await page.screenshot({path:fileURLToPath(new URL(`overflow-${width}-${prefix==='/ne/'?'ne':'en'}.png`,reports)),fullPage:true});
+      assert.ok(fits, `Windows page overflow: ${width}px ${prefix}`);
       const downloads=page.locator('main a[data-analytics-event="neptype_download_clicked"]');
       if(release) {
         assert.equal(await downloads.getAttribute('href'),release.url);
