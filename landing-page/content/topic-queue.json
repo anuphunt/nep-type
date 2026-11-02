@@ -228,6 +228,215 @@
       "title": "Nepali full stops, numbers and links: a practical typing walkthrough",
       "keywordEvidence": [],
       "evidenceNote": "No measured volume for this exact question. Verify actual punctuation behavior and prioritize only when it answers a real support need. Improve the existing typing guide or mixed-language article first unless a distinct reader need is established."
+    },
+    {
+      "id": "nepali-gmail-email",
+      "status": "research_needed",
+      "query": "type Nepali email in Gmail",
+      "title": "Write a Nepali email in Gmail with a clear subject and signature",
+      "intent": "Compose an email whose subject, message and signature stay readable",
+      "angle": "Verify current Gmail composing, paste-formatting and draft behavior; use a personal family update. Never send a message as part of research.",
+      "overlapBoundary": "Email-specific subject/body/signature checks, not another generic copy/paste tutorial.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-whatsapp-web",
+      "status": "research_needed",
+      "query": "Nepali typing WhatsApp Web line breaks",
+      "title": "Write Nepali messages in WhatsApp Web without losing line breaks",
+      "intent": "Prepare a multiline Nepali chat message on a computer",
+      "angle": "Test draft-only line breaks, pasted Unicode and mixed-script contact details using current official help. Do not send messages.",
+      "overlapBoundary": "Multiline chat formatting and review, not mobile keyboard installation or the general mixed-language article.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-canva-invitations",
+      "status": "research_needed",
+      "query": "Nepali font Canva invitation",
+      "title": "Create a Nepali invitation in Canva: fonts, spacing and proofreading",
+      "intent": "Lay out readable Nepali invitation text in a design",
+      "angle": "Use a fictional birthday invitation; verify font availability, conjunct rendering and line wrapping in the current tool and official documentation.",
+      "overlapBoundary": "Design-specific font/layout diagnosis; publish only with original visual checks beyond composing text.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-pdf-export",
+      "status": "research_needed",
+      "query": "Nepali text PDF font problem",
+      "title": "Export Nepali text to PDF and check that the letters survive",
+      "intent": "Produce a PDF that retains readable, selectable Nepali text",
+      "angle": "Test a document-app export, font embedding where supported, search, selection and a second PDF viewer. NepType produces text, not PDFs.",
+      "overlapBoundary": "Export and cross-viewer checks after composition, beyond Word setup and generic paste troubleshooting.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-spreadsheet-csv",
+      "status": "research_needed",
+      "query": "Nepali text CSV UTF-8 spreadsheet",
+      "title": "Keep Nepali names readable in spreadsheets and UTF-8 CSV files",
+      "intent": "Move a small Nepali table between spreadsheet and CSV without garbling it",
+      "angle": "Use fictional school-library rows; verify actual UTF-8 export/import and distinguish character encoding from number formatting.",
+      "overlapBoundary": "A reproducible spreadsheet round trip, not a general font explainer.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-html-utf8",
+      "status": "research_needed",
+      "query": "display Nepali text HTML UTF-8",
+      "title": "Display Nepali text on a website with UTF-8 and suitable fonts",
+      "intent": "Render existing Nepali Unicode correctly in a web page",
+      "angle": "Build a minimal tested HTML example with encoding, lang and a documented font fallback; cite official web standards.",
+      "overlapBoundary": "Developer rendering task with working code; not instructions for typing or a full accessibility article.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-markdown-code",
+      "status": "research_needed",
+      "query": "Nepali text Markdown code blocks",
+      "title": "Write Nepali notes in Markdown while keeping code unchanged",
+      "intent": "Combine Nepali explanations with literal code and links",
+      "angle": "Use a small README example and verify rendered Markdown. Type prose separately and preserve code literals; never promise arbitrary code is protected by the engine.",
+      "overlapBoundary": "Document structure and code isolation, beyond mixed words and email preservation.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-online-forms",
+      "status": "research_needed",
+      "query": "type Nepali name address online form",
+      "title": "Enter Nepali names and addresses in online forms",
+      "intent": "Prepare accurate Nepali field values without changing required identifiers",
+      "angle": "Use fictional names/addresses and a local form. Check field limits and paste behavior; each real form decides accepted scripts. No personal data or submissions.",
+      "overlapBoundary": "Field-by-field constraints and validation, not general name transliteration or official acceptance advice.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-numbers-dates",
+      "status": "research_needed",
+      "query": "Nepali typing numbers dates English digits",
+      "title": "Use numbers and dates inside Nepali sentences without changing their value",
+      "intent": "Keep quantities, dates and reference numbers correct in a message",
+      "angle": "Verify ASCII and Devanagari digit examples, leading zeros and date ambiguity. No calendar conversion or automatic numeral-conversion claim.",
+      "overlapBoundary": "Digit preservation and date clarity; punctuation is a separate decision task.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-conjunct-letters",
+      "status": "research_needed",
+      "query": "Nepali typing half letters conjuncts",
+      "title": "Type Nepali half letters and conjuncts using Roman input",
+      "intent": "Find and correct words containing joined consonants",
+      "angle": "Use sourced spelling examples and actual engine candidates. Explain Unicode shaping only where needed; no invented fixed-layout shortcut chart.",
+      "overlapBoundary": "Consonant clusters and their verification, not a second beginner keyboard guide.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-vowel-matras",
+      "status": "research_needed",
+      "query": "Nepali typing short long vowel matra",
+      "title": "Check short and long vowels when typing Nepali in Roman letters",
+      "intent": "Choose the intended vowel spelling in a Nepali word",
+      "angle": "Use authoritative Nepali spelling references and engine-tested contrasting examples. Do not infer one universal Roman spelling rule.",
+      "overlapBoundary": "Vowel distinctions and proofreading, separate from consonant clusters and general ambiguity.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-nasal-marks",
+      "status": "research_needed",
+      "query": "Nepali typing chandrabindu anusvara",
+      "title": "Type चन्द्रबिन्दु and अनुस्वार in Nepali words",
+      "intent": "Check nasal marks in specific Nepali words",
+      "angle": "Research authoritative spellings, verify engine choices and give a small sourced practice set; do not invent an accent picker.",
+      "overlapBoundary": "Nasal-mark spelling question with evidence; consolidate if the guide already answers it fully.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-dental-retroflex",
+      "status": "research_needed",
+      "query": "Nepali typing dental retroflex letters",
+      "title": "Choose त or ट, द or ड when typing Nepali",
+      "intent": "Correct similar-sounding consonants in Roman-to-Nepali output",
+      "angle": "Use sourced minimal examples and verified candidate behavior; distinguish spelling from pronunciation without a fabricated keyboard mapping.",
+      "overlapBoundary": "Specific consonant contrasts, separate from vowels, conjuncts and homonymous words.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-long-paragraph-editing",
+      "status": "research_needed",
+      "query": "edit Roman Nepali paragraph spelling corrections",
+      "title": "Edit a long Nepali paragraph without losing your spelling choices",
+      "intent": "Revise a multi-sentence draft and review affected choices",
+      "angle": "Test selections, edits, undo and copying on a fresh travel-story paragraph. Record actual behavior and save drafts outside the pad.",
+      "overlapBoundary": "A complete editing task with localized changes, beyond the guide control list or first mixed sentence.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-local-typing-privacy",
+      "status": "research_needed",
+      "query": "Nepali online typing privacy local processing",
+      "title": "Where does your typed Nepali text go? Checking local processing",
+      "intent": "Understand which typing data stays on the device",
+      "angle": "Inspect the current engine, storage and network behavior using fictional text. Distinguish page loading and analytics from conversion; avoid blanket privacy guarantees.",
+      "overlapBoundary": "Evidence-based data-flow walkthrough that supports, rather than duplicates, the privacy policy.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-pad-versus-system-keyboard",
+      "status": "research_needed",
+      "query": "Nepali browser typing pad vs installed keyboard",
+      "title": "Browser typing pad or system keyboard: which fits your task?",
+      "intent": "Choose between copy/paste composition and typing directly in apps",
+      "angle": "Verify available platform features and compare a short message with sustained app typing. Link existing installation pages; no unsupported downloads.",
+      "overlapBoundary": "Workflow/integration decision, distinct from fixed-layout versus phonetic input and connectivity/offline behavior.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-google-input-transition",
+      "status": "research_needed",
+      "query": "Google Input Tools Nepali alternative workflow",
+      "title": "Moving from Google Input Tools to a Nepali browser typing pad",
+      "intent": "Transfer a familiar transliteration workflow to NepType",
+      "angle": "Verify current official Google availability and NepType controls; compare correction and copy behavior using original examples. Avoid best-tool or superiority claims.",
+      "overlapBoundary": "A migration checklist for an existing workflow; publish only if it adds evidence beyond the pad-versus-keyboard comparison.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-transliteration-translation",
+      "status": "research_needed",
+      "query": "Nepali transliteration vs translation",
+      "title": "Nepali transliteration or translation: choose the right tool",
+      "intent": "Understand why changing letters does not translate meaning",
+      "angle": "Test the same Roman Nepali phrase and English sentence, cite linguistic/tool documentation and explain the correct next step. NepType does not translate.",
+      "overlapBoundary": "A meaning-versus-script decision with diagnostic examples; consolidate into the guide if that fully answers the question.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-accessible-text",
+      "status": "research_needed",
+      "query": "Nepali Unicode accessible text screen reader",
+      "title": "Use selectable Nepali text instead of text-only images",
+      "intent": "Share Nepali content that can be selected, searched and read with assistive tools",
+      "angle": "Compare actual Unicode text and a text-in-image example. Test language tagging with a named screen reader/voice; qualify support rather than promising universal pronunciation.",
+      "overlapBoundary": "User-facing accessibility and sharing checks, distinct from HTML encoding implementation and PDF export.",
+      "keywordEvidence": [],
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
     }
   ],
   "researchFile": "research/2026-11-01-keywords.json",
@@ -283,5 +492,7 @@
       ],
       "reason": "No scored test or exam-specific feature. Do not target these with misleading tool pages."
     }
-  ]
+  ],
+  "backlogPolicy": "30 upcoming research candidates, excluding the published article. Eight have related measured Keyword Planner evidence; 22 need additional validation. This is not a commitment to publish 30 separate pages. Retain, refine, consolidate or reject based on reader value and overlap.",
+  "selectionPolicy": "Research eligible candidates first. When none remain, review research_needed candidates and promote only after recording evidence and distinct value. A missing exact volume may be supported by a real reader question; never fabricate a metric."
 }

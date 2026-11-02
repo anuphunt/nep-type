@@ -91,13 +91,13 @@
     }
   ],
   "en": {
-    "title": "Type Nepali and English Together — Keep English Words | NepType",
+    "title": "Type Nepali and English together | NepType",
     "heading": "How to type Nepali and English in the same sentence",
     "description": "Keep English words in Nepali sentences with NepType. Try tested mixed-script examples, choose individual spellings, and copy your message without changing keyboards.",
     "sections": [
       [
         "Start with Nepali + EN mode",
-        "If you write ma school janchu, you may want म and जान्छु in Nepali while leaving school in English. In NepType, choose Nepali + EN above the Roman input box. Write Nepali words with Roman letters and let the pad keep English words it recognizes. You do not need to install a keyboard to use the browser pad.",
+        "Choose Nepali + EN above the Roman input box. Write Nepali words with Roman letters; the pad keeps English words it recognizes. For example, ma school janchu gives you म and जान्छु in Nepali with school in English. You can use the browser pad without installing a keyboard.",
         {
           "links": [
             [
@@ -109,7 +109,7 @@
       ],
       [
         "Try a message before writing a paragraph",
-        "Try these messages in Nepali + EN mode: a school update, a photo comment, a coffee preference and an exam reminder. English words stay in Roman letters when recognized. In the final example, pani becomes पनि by default. These show the current engine behavior, rather than a promise that every word will be recognized.",
+        "These messages cover school, photos, coffee and an exam reminder. Recognized English words stay in Roman letters. In the last example, pani becomes पनि by default. Check unfamiliar words: the pad may not recognize them as English.",
         {
           "examples": [
             [
@@ -141,7 +141,7 @@
       ],
       [
         "Correct a Nepali word without switching the whole sentence",
-        "Some Roman spellings have more than one Nepali reading. Select pani and choose पानी when you mean water, or पनि when you mean also. That correction changes the selected occurrence while keeping school or photo in English. The output box is read-only; edit the Roman input to rewrite a phrase. After a larger edit, review the text again rather than assuming earlier choices still apply.",
+        "Some Roman spellings have more than one Nepali reading. Select pani and choose पानी when you mean water, or पनि when you mean also. The choice applies to that occurrence; school or photo stays in English. To rewrite a phrase, edit the Roman input. The output box is read-only. Review your spelling choices again after a larger edit.",
         {
           "links": [
             [
@@ -153,7 +153,7 @@
       ],
       [
         "Leave an email address intact",
-        "A mixed message can include an email address. In this example, namaste changes script while me@example.com stays intact. An address is handled differently from an ordinary word. Do not transliterate its letters before copying it, and check the finished address as you would in any message.",
+        "Here, namaste changes script and me@example.com stays intact. The pad handles an email address differently from an ordinary word. Keep its letters unchanged and check the complete address before copying.",
         {
           "examples": [
             [
@@ -164,12 +164,12 @@
         }
       ],
       [
-        "When should you choose All Nepali instead?",
-        "Choose All Nepali when you want English words written in Nepali letters as well. This changes the script, not the meaning: it does not translate an English sentence. Phonetic output can need correction. If your goal is to keep school, photo or a person's Roman spelling visible, stay with Nepali + EN and select the original spelling for any word the pad guesses incorrectly."
+        "When to choose All Nepali",
+        "All Nepali writes English words in Nepali letters too. It does not translate an English sentence into Nepali. Check the phonetic spelling and correct it when needed. To keep school, photo or a person's name in Roman letters, use Nepali + EN. Select the original spelling for any word the pad guesses incorrectly."
       ],
       [
         "Review and copy your final message",
-        "Read the Nepali words for meaning, check which English words stayed in Roman letters, and confirm names and addresses. Then use Copy text to paste the output into a message or document. Copy a draft you want to keep before closing or reloading; the editor does not save documents. Conversion runs on your device after the engine has loaded. Website analytics does not collect the text you type.",
+        "Check the meaning of the Nepali words, the English spellings, names and addresses. Use Copy text to paste the finished output into your message or document. Save drafts in your own app before closing or reloading the page; the editor does not save documents. Conversion runs on your device after the engine loads. Website analytics does not collect the text you type.",
         {
           "steps": [
             "Choose Nepali + EN and write one sentence.",
@@ -190,8 +190,8 @@
         }
       ],
       [
-        "About these examples",
-        "The examples were checked against NepType's shared browser engine for this article. Dictionary changes can alter suggestions. If a sentence does not look right, choose another spelling and report a reproducible example through the project.",
+        "If a suggestion looks wrong",
+        "Dictionary updates can change these suggestions. Choose another spelling if a word looks wrong. To report a problem through the project, include an example that reproduces it.",
         {
           "links": [
             [
@@ -218,7 +218,7 @@
     "sections": [
       [
         "Nepali + EN मोडबाट सुरु गर्नुहोस्",
-        "ma school janchu लेख्दा म र जान्छु नेपालीमा तर school अंग्रेजीमै राख्न मन लाग्न सक्छ। NepType को रोमन बाकसमाथि Nepali + EN रोज्नुहोस्। नेपाली शब्द रोमन अक्षरमा लेख्नुहोस्। प्याडले चिनेका अंग्रेजी शब्द अंग्रेजीमै राख्छ। ब्राउजर प्याड प्रयोग गर्न छुट्टै किबोर्ड इन्स्टल गर्नु पर्दैन।",
+        "ma school janchu लेख्दा म र जान्छु नेपालीमा, school अंग्रेजीमै चाहिएको हो भने NepType को रोमन बाकसमाथि Nepali + EN रोज्नुहोस्। नेपाली शब्द रोमन अक्षरमा लेख्नुहोस्। प्याडले चिनेका अंग्रेजी शब्द अंग्रेजीमै राख्छ। ब्राउजरमा यो प्याड चलाउन छुट्टै किबोर्ड इन्स्टल गर्नु पर्दैन।",
         {
           "links": [
             [
@@ -230,7 +230,7 @@
       ],
       [
         "पहिले एउटा सन्देश लेखेर हेर्नुहोस्",
-        "Nepali + EN मोडमा विद्यालय, तस्बिर, कफी र परीक्षाबारे सन्देश लेखेर हेर्नुहोस्। चिनेका अंग्रेजी शब्द रोमनमै रहन्छन्। अन्तिम उदाहरणमा pani बाट सुरुमा पनि आउँछ। यी अहिलेको इन्जिनमा जाँचिएका उदाहरण हुन्। हरेक शब्द सधैँ सही चिनिन्छ भन्ने ग्यारेन्टी होइन।",
+        "यी सन्देश विद्यालय, तस्बिर, कफी र परीक्षाबारे छन्। प्याडले चिनेका अंग्रेजी शब्द रोमनमै रहन्छन्। अन्तिम उदाहरणमा pani बाट सुरुमा पनि आउँछ। अपरिचित अंग्रेजी शब्द नेपालीमा बदलिन सक्छन्, त्यसैले नतिजा जाँच्नुहोस्।",
         {
           "examples": [
             [
@@ -258,11 +258,11 @@
       ],
       [
         "कुनै एउटा शब्द रोमनमै राख्नुहोस्",
-        "अपरिचित अंग्रेजी शब्द वा नाम मिश्रित मोडमा पनि नेपाली अक्षरमा बदलिन सक्छ। रोमन वा नेपाली बाकसमा त्यो शब्द छानेर सुझाव हेर्नुहोस्। त्यही ठाउँको शब्द उस्तै राख्न मूल रोमन हिज्जे रोज्नुहोस्। सुझावको हरेक पृष्ठमा मूल शब्द उपलब्ध हुन्छ। एउटै शब्द फेरि लेख्दा पछिल्लो ठाउँ पनि जाँच्नुहोस्। एउटा छनोटले सबै ठाउँका शब्द बदल्दैन।"
+        "अपरिचित अंग्रेजी शब्द वा नाम मिश्रित मोडमा पनि नेपाली अक्षरमा बदलिन सक्छ। रोमन वा नेपाली बाकसमा त्यो शब्द छानेर सुझाव हेर्नुहोस्। मूल रोमन हिज्जे रोज्दा छानेको शब्द उस्तै रहन्छ। सुझावको हरेक पृष्ठमा मूल शब्द उपलब्ध हुन्छ। एउटै शब्द फेरि आएमा त्यसलाई पनि जाँच्नुहोस्। एउटा छनोट सबै ठाउँमा लागू हुँदैन।"
       ],
       [
         "पूरै वाक्यको मोड नफेरी नेपाली हिज्जे सच्याउनुहोस्",
-        "एउटै रोमन हिज्जेबाट फरक नेपाली शब्द बन्न सक्छन्। पानी जनाउन pani को सुझावबाट पानी रोज्नुहोस्। साथै भन्ने अर्थमा पनि रोज्नुहोस्। यो छनोट त्यही शब्दमा लागू हुन्छ; school वा photo अंग्रेजीमै रहन्छ। नेपाली नतिजाको बाकस सिधै सम्पादन हुँदैन। वाक्यांश फेरि लेख्न रोमन बाकस सम्पादन गर्नुहोस्। ठूलो परिवर्तन गरेपछि पुराना छनोट उस्तै छन् भनेर नमान्नुहोस्; फेरि जाँच्नुहोस्।",
+        "एउटै रोमन हिज्जेबाट फरक नेपाली शब्द बन्न सक्छन्। पानीको अर्थ चाहिएको हो भने pani को सुझावबाट पानी रोज्नुहोस्। “म पनि” जस्तो अर्थ चाहिएको हो भने पनि रोज्नुहोस्। छनोट छानेको शब्दमा लागू हुन्छ; school वा photo अंग्रेजीमै रहन्छ। वाक्यांश फेर्न रोमन बाकस सम्पादन गर्नुहोस्। नेपाली नतिजाको बाकस सिधै सम्पादन हुँदैन। ठूलो परिवर्तन गरेपछि हिज्जेका छनोट फेरि जाँच्नुहोस्।",
         {
           "links": [
             [
@@ -274,7 +274,7 @@
       ],
       [
         "इमेल ठेगाना उस्तै राख्नुहोस्",
-        "मिश्रित सन्देशमा इमेल ठेगाना पनि हुन सक्छ। तल namaste नेपालीमा बदलिन्छ तर me@example.com उस्तै रहन्छ। ठेगाना साधारण शब्दझैँ रूपान्तरण हुँदैन। कपी गर्नुअघि त्यसका अक्षर नेपालीमा नबदल्नुहोस्। अरू सन्देशमा झैँ ठेगाना सही छ कि छैन जाँच्नुहोस्।",
+        "यस उदाहरणमा namaste नेपालीमा बदलिन्छ र me@example.com उस्तै रहन्छ। प्याडले इमेल ठेगानालाई साधारण शब्दभन्दा फरक तरिकाले सम्हाल्छ। ठेगानाका अक्षर उस्तै राख्नुहोस् र कपी गर्नुअघि पूरै ठेगाना जाँच्नुहोस्।",
         {
           "examples": [
             [
@@ -286,11 +286,11 @@
       ],
       [
         "All Nepali कहिले रोज्ने?",
-        "अंग्रेजी शब्द पनि नेपाली अक्षरमा चाहिँदा All Nepali रोज्नुहोस्। यसले लिपि बदल्छ, अर्थ बदल्दैन। अंग्रेजी वाक्यको अर्थ नेपालीमा अनुवाद गर्दैन। उच्चारणका आधारमा आएको हिज्जे सच्याउनुपर्ने हुन सक्छ। school, photo वा कसैको रोमन नाम उस्तै राख्ने उद्देश्य हो भने Nepali + EN प्रयोग गर्नुहोस्। गलत अनुमान भएको शब्दको मूल हिज्जे रोज्नुहोस्।"
+        "अंग्रेजी शब्द पनि नेपाली अक्षरमा लेख्न All Nepali रोज्नुहोस्। यसले अंग्रेजी वाक्यको अर्थ नेपालीमा अनुवाद गर्दैन। उच्चारणका आधारमा आएको हिज्जे जाँचेर आवश्यक परे सच्याउनुहोस्। school, photo वा कसैको नाम रोमनमै राख्न Nepali + EN प्रयोग गर्नुहोस्। प्याडले गलत अनुमान गरेको शब्दको मूल हिज्जे रोज्नुहोस्।"
       ],
       [
         "अन्तिम सन्देश जाँचेर कपी गर्नुहोस्",
-        "कपी गर्नुअघि नेपाली शब्दको अर्थ मिलेको छ कि छैन पढ्नुहोस्। कुन अंग्रेजी शब्द रोमनमै छन् हेर्नुहोस् र नाम तथा ठेगाना जाँच्नुहोस्। त्यसपछि पाठ कपी गर्नुहोस् बटनबाट सन्देश वा कागजातमा पेस्ट गर्नुहोस्। पृष्ठ बन्द गर्दा वा फेरि लोड गर्दा मस्यौदा हराउँछ। राख्नुपर्ने पाठ पहिले कपी गर्नुहोस्। इन्जिन लोड भएपछि रूपान्तरण यही उपकरणमा हुन्छ। वेबसाइट एनालिटिक्सले तपाईंले लेखेको पाठ सङ्कलन गर्दैन।",
+        "नेपाली शब्दको अर्थ, अंग्रेजी हिज्जे, नाम र ठेगाना जाँच्नुहोस्। त्यसपछि पाठ कपी गर्नुहोस् बटनबाट तयार पाठ आफ्नो सन्देश वा कागजातमा पेस्ट गर्नुहोस्। पृष्ठ बन्द गर्दा वा फेरि लोड गर्दा मस्यौदा हराउँछ। राख्नुपर्ने पाठ पहिले आफ्नो एपमा सुरक्षित गर्नुहोस्। इन्जिन लोड भएपछि रूपान्तरण यही उपकरणमा हुन्छ। वेबसाइट एनालिटिक्सले तपाईंले लेखेको पाठ सङ्कलन गर्दैन।",
         {
           "steps": [
             "Nepali + EN रोजेर एउटा वाक्य लेख्नुहोस्।",
@@ -311,8 +311,8 @@
         }
       ],
       [
-        "यी उदाहरणबारे",
-        "यस लेखका उदाहरण NepType को साझा ब्राउजर इन्जिनमा जाँचिएका हुन्। शब्दकोश बदलिँदा सुझाव बदलिन सक्छन्। वाक्य ठीक नदेखिए अर्को हिज्जे रोज्नुहोस्। समस्या दोहोर्‍याएर देखाउन मिल्ने उदाहरण परियोजनामा पठाउन सक्नुहुन्छ।",
+        "सुझाव नमिले के गर्ने?",
+        "शब्दकोश फेरिँदा यी सुझाव बदलिन सक्छन्। शब्द ठीक नदेखिए अर्को हिज्जे रोज्नुहोस्। समस्या परियोजनामा पठाउँदा त्यसलाई दोहोर्‍याएर देखाउन मिल्ने उदाहरण दिनुहोस्।",
         {
           "links": [
             [
@@ -339,5 +339,15 @@
     "spelling",
     "contacts"
   ],
-  "modified": "2026-11-01"
+  "modified": "2026-11-01",
+  "editorialReview": {
+    "skill": "neptype-seo-articles",
+    "prosePass": "humanizer",
+    "checked": "2026-11-01",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "scope": "Reviewed and revised both language versions; preserved executable examples, checks, sources, links and publication dates. Automated editorial work, not human expert review."
+  }
 }
