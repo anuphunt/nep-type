@@ -2,6 +2,7 @@
 """Standalone GTK4 Graphite typing-pad UI. Does not register or activate IBus."""
 import argparse
 import sys
+from pathlib import Path
 
 CSS = b"""
 window.neptype-pad { background: #1e1e1e; color: #e8e8e8; }
@@ -58,7 +59,9 @@ def run(argv):
                 getattr(content, "set_margin_" + edge)(16)
             self.window.set_child(content)
             toolbar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-            brand = Gtk.Label(label="NT"); brand.add_css_class("brand")
+            brand = Gtk.Image.new_from_file(str(Path(__file__).resolve().parent / "assets/neptype-mark.png"))
+            brand.set_pixel_size(32)
+            brand.set_tooltip_text("NepType logo")
             toolbar.append(brand)
             name = Gtk.Label(label="NepType"); name.add_css_class("name"); toolbar.append(name)
             space = Gtk.Box(); space.set_hexpand(True); toolbar.append(space)

@@ -141,7 +141,8 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         PAINTSTRUCT paint{}; HDC dc=BeginPaint(window,&paint);
         RECT client{}; GetClientRect(window,&client); FillRect(dc,&client,backgroundBrush);
         panel(dc,sourceRect); panel(dc,resultRect);
-        text(dc,L"NT",{px(16),px(12),px(65),px(48)},brandFont,ink);
+        DrawIconEx(dc,px(16),px(14),LoadIconW(GetModuleHandleW(nullptr),MAKEINTRESOURCEW(101)),
+                   px(32),px(32),0,nullptr,DI_NORMAL);
         text(dc,L"NepType",{px(72),px(12),px(132),px(48)},bodyFont,ink);
         EndPaint(window,&paint); return 0;
     }
@@ -194,6 +195,7 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE,PWSTR,int show) {
     WNDCLASSW type{}; type.lpfnWndProc=WindowProc; type.hInstance=instance;
     type.lpszClassName=L"NepTypePrototypeWindow"; type.hCursor=LoadCursor(nullptr,IDC_ARROW);
     type.hbrBackground=backgroundBrush;
+    type.hIcon=LoadIconW(instance,MAKEINTRESOURCEW(101));
     if(!RegisterClassW(&type)) return 1;
     RECT size{0,0,px(620),px(430)}; AdjustWindowRectEx(&size,WS_OVERLAPPEDWINDOW,FALSE,0);
     HWND window=CreateWindowExW(0,type.lpszClassName,L"NepType · Typing pad",WS_OVERLAPPEDWINDOW,

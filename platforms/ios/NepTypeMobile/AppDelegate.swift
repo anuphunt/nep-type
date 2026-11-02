@@ -33,6 +33,7 @@ final class WelcomeViewController: UIViewController, UITextViewDelegate {
     private let copy = UIButton(type: .system)
     private let status = UILabel()
     private let sizeValue = UILabel()
+    private var brandWordmark: UILabel?
     private var composer = Composer()
     private let queue = DispatchQueue(label: "app.neptype.pad.render", qos: .userInitiated)
     private var generation = 0
@@ -52,9 +53,15 @@ final class WelcomeViewController: UIViewController, UITextViewDelegate {
         view.addSubview(scroll)
         scroll.contentInsetAdjustmentBehavior = .never
         scroll.alwaysBounceVertical = true
-        let brand = label("NepType", size: 18, color: Graphite.ink)
-        brand.adjustsFontSizeToFitWidth = true
-        brand.minimumScaleFactor = 0.75
+        let mark = UIImageView(image: UIImage(named: "NepTypeMark"))
+        mark.contentMode = .scaleAspectFit
+        mark.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        mark.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        let wordmark = label("NepType", size: 15, color: Graphite.ink)
+        wordmark.numberOfLines = 1
+        brandWordmark = wordmark
+        let brand = row([mark, wordmark], spacing: 6)
+        brand.isAccessibilityElement = true
         brand.accessibilityLabel = "NepType"
         mode.selectedSegmentIndex = 0
         mode.accessibilityLabel = "Output mode"
@@ -215,6 +222,11 @@ final class WelcomeViewController: UIViewController, UITextViewDelegate {
         input.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: .monospacedSystemFont(ofSize: points, weight: .regular))
         output.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: .systemFont(ofSize: points + 6))
         sizeValue.text = "\(Int(points)) pt · typing pad only"
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Keep the output-mode and help controls usable on narrow phones.
+        brandWordmark?.isHidden = view.safeAreaLayoutGuide.layoutFrame.width < 360
     }
     private func label(_ text: String, size: CGFloat, color: UIColor = Graphite.muted) -> UILabel {
         let label = UILabel()

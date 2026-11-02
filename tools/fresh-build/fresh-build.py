@@ -49,6 +49,7 @@ def checked_input(root, relative):
 
 def collect(root):
     required = [Path('Package.swift'), Path('data/compiled/google-ne-aliases.tsv'), Path('data/compiled/aksharantar-indiccorp-v1.tsv'), Path('data/compiled/aksharantar-indiccorp-v1.manifest.json'), Path('data/sources/CMUDICT-LICENSE.txt'), Path('data/sources/GOOGLE-NE-ATTRIBUTION.txt'), Path('data/sources/AKSHARANTAR-ATTRIBUTION.txt')]
+    required.extend([Path('branding/assets/NepType.icns'), Path('branding/assets/neptype-mark.png')])
     for base in ('Sources', 'Tests'):
         directory = root / base
         if not directory.is_dir() or directory.is_symlink():
@@ -66,7 +67,8 @@ def plist(executable, identifier, name, display, version, is_ime):
     d = {'CFBundleExecutable': executable, 'CFBundleIdentifier': identifier,
          'CFBundleName': name, 'CFBundleDisplayName': display, 'CFBundlePackageType': 'APPL',
          'CFBundleVersion': '1', 'CFBundleShortVersionString': version,
-         'LSMinimumSystemVersion': '13.0', 'NSPrincipalClass': 'NSApplication'}
+         'LSMinimumSystemVersion': '13.0', 'NSPrincipalClass': 'NSApplication',
+         'CFBundleIconFile': 'NepType.icns'}
     if is_ime:
         d.update({'LSUIElement': True, 'InputMethodConnectionName': 'NepTypeInput_Connection',
                   'InputMethodServerControllerClass': 'NepTypeInputController',
@@ -81,6 +83,8 @@ def assemble(stage, snapshot, binary, name, executable, identifier, display, ver
     macos = app / 'Contents/MacOS'; resources = app / 'Contents/Resources'; licenses = resources / 'Licenses'
     macos.mkdir(parents=True); licenses.mkdir(parents=True)
     shutil.copy2(binary, macos / executable)
+    shutil.copyfile(snapshot / 'branding/assets/NepType.icns', resources / 'NepType.icns')
+    shutil.copyfile(snapshot / 'branding/assets/neptype-mark.png', resources / 'NepTypeMark.png')
     # The copied data is never rewritten or filtered, preserving existing attribution.
     for filename in ('google-ne-aliases.tsv', 'aksharantar-indiccorp-v1.tsv'):
         shutil.copyfile(snapshot / 'data/compiled' / filename, resources / filename)

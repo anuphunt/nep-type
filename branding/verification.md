@@ -17,4 +17,10 @@ Strict signature verification of the workspace Mac bundles encountered the exist
 
 The language TSV files were preserved. Remaining occurrences of the old letter sequence in the language fixtures are ordinary Roman transliterations, not app branding.
 
-Three logo concept PNGs and their prompts are saved in this directory. No final logo direction has been applied.
+## Approved blue NT logo
+
+The owner selected direction 1. A graphite app variant with a white N and blue T/cursor was created using the built-in imagegen tool. Its master and native icon exports are in `branding/assets`, with the exact final prompt in `branding/final-logo-prompt.txt`. The original three explorations are retained.
+
+The logo is used by the Mac header and app/input bundle icons, iOS app icon and header, Android launcher icon and setup header, Linux header and source-preview assets, Windows executable/window/header icon, and landing-page previews. Both Mac build paths include the assets. The old iOS icon-generator entry point exports the approved artwork instead of drawing a placeholder.
+
+After integration, both Mac bundles rebuilt successfully. The Mac UI smoke test passed all 86 checks, and `evidence/blue-nt/prototype.png` was inspected for the actual monogram and wordmark. The iOS simulator build succeeded with the new image set. All three Linux packaging tests and five isolated-build guard tests passed. The iOS app icon is 1024 × 1024 with no alpha channel. Native Android and Windows builds and real Linux rendering were not run for this visual change.

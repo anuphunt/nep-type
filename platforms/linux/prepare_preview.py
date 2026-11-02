@@ -14,11 +14,11 @@ FIXED = (2020, 1, 1, 0, 0, 0)
 
 def files(root):
     """Use an allowlist so generated data, caches and unrelated files cannot leak."""
-    fixed = ["app.py", "run-pad.sh", "README.md", "run-engine.sh", "generate_descriptor.py", "diagnose.py", "prepare_preview.py",
+    fixed = ["app.py", "assets/neptype-mark.png", "run-pad.sh", "README.md", "run-engine.sh", "generate_descriptor.py", "diagnose.py", "prepare_preview.py",
              "neptype_ibus/__init__.py", "neptype_ibus/__main__.py", "neptype_ibus/engine.py", "neptype_ibus/policy.py",
              "neptype_ibus/bridge.py", "neptype_ibus/worker.py", "tests/test_bridge.py", "tests/test_foundation.py",
              "tests/test_mode_property.py", "tests/test_policy.py", "tests/test_packaging.py"]
-    for directory in ("neptype_ibus", "tests"):
+    for directory in ("assets", "neptype_ibus", "tests"):
         base = root / directory
         if base.is_symlink() or not base.is_dir():
             raise ValueError(f"Missing or linked source directory: {directory}")

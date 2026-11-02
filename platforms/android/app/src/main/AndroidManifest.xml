@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application android:label="NepType Keyboard (prototype)" android:allowBackup="false" android:supportsRtl="true" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+    <application android:label="NepType Keyboard (prototype)" android:icon="@drawable/neptype_mark" android:allowBackup="false" android:supportsRtl="true" android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity android:name="app.neptype.keyboard.SettingsActivity" android:label="NepType setup" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

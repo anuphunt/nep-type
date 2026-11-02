@@ -374,7 +374,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         root.layer?.backgroundColor = background.cgColor
         window.contentView = root
 
-        let glyph = label("NT", size: 25, weight: .medium, color: accent)
+        let glyph = NSImageView()
+        if let url = Bundle.main.url(forResource: "NepTypeMark", withExtension: "png") {
+            glyph.image = NSImage(contentsOf: url)
+        }
+        glyph.imageScaling = .scaleProportionallyUpOrDown
+        glyph.setAccessibilityLabel("NepType logo")
+        glyph.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        glyph.heightAnchor.constraint(equalToConstant: 32).isActive = true
         let name = label("NepType", size: 13, weight: .medium)
         mode = NSSegmentedControl(labels: ["Nepali + EN", "All Nepali"], trackingMode: .selectOne, target: self, action: #selector(modeChanged(_:)))
         mode.controlSize = .small

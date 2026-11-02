@@ -8,6 +8,7 @@ swift build --product NepTypeInput --scratch-path "$SCRATCH" --cache-path "$SCRA
 APP="$SCRATCH/NepType Input.app"
 mkdir -p "$APP/Contents/MacOS"
 mkdir -p "$APP/Contents/Resources/Licenses"
+cp branding/assets/NepType.icns "$APP/Contents/Resources/NepType.icns"
 cp data/sources/CMUDICT-LICENSE.txt "$APP/Contents/Resources/Licenses/CMUDICT-LICENSE.txt"
 cp data/compiled/google-ne-aliases.tsv "$APP/Contents/Resources/google-ne-aliases.tsv"
 cp data/compiled/aksharantar-indiccorp-v1.tsv "$APP/Contents/Resources/aksharantar-indiccorp-v1.tsv"
@@ -23,6 +24,7 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <key>CFBundleIdentifier</key><string>local.anup.inputmethod.NepType</string>
 <key>CFBundleName</key><string>NepType Input</string>
 <key>CFBundleDisplayName</key><string>NepType Nepali</string>
+<key>CFBundleIconFile</key><string>NepType.icns</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>CFBundleVersion</key><string>1</string>
 <key>CFBundleShortVersionString</key><string>0.1</string>

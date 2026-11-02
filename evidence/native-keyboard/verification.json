@@ -1,0 +1,18 @@
+{
+  "reference": "User-supplied iPhone system keyboard screenshots",
+  "source": "platforms/ios/NepTypeKeyboard/KeyboardViewController.swift",
+  "source_sha256": "b2183fddee72f120a1a43e677db17024abe40b5cfc81224108a51613286d91cf",
+  "layout": "Fixed QWERTY pitch, staggered home row, standard large spacebar, three prediction slots, adaptive appearance",
+  "keyboard_checks": 126,
+  "keyboard_checks_passed": true,
+  "simulator_integration_build": "passed",
+  "iphone_device_release_build": "passed with signing disabled",
+  "real_system_extension_host_tested": false,
+  "testflight_uploaded": false,
+  "previews": [
+    "dark.png",
+    "shift.png",
+    "light.png",
+    "suggestions.png"
+  ]
+}

@@ -1,0 +1,65 @@
+/* Selected Graphite direction. Shared styles keep the earlier concepts available. */
+.final-site{scroll-padding-top:30px}
+.final-site .site-header{height:80px}
+.final-site .skip-link:focus{top:12px}
+.final-site .hero{background:radial-gradient(ellipse at 79% 46%,#303030,transparent 61%)}
+.final-site .hero-grid{grid-template-columns:.95fr 1.1fr;gap:52px;min-height:610px;padding:65px 0 70px}
+.final-site .hero h1{font-size:clamp(43px,4.3vw,58px);font-weight:500;line-height:1.15;letter-spacing:-2.7px;margin:24px 0 21px}
+.final-site .hero h1 em{color:#aaa}
+.final-site .badge{padding:7px 12px;font:11px/1.4 'Noto Sans Devanagari',sans-serif;color:#c2c2c2}
+.final-site .hero-description{font-size:15px;line-height:1.7;max-width:320px;margin:0 0 27px;color:#aaa}
+.final-site .primary{font-size:12px;min-height:48px;padding:13px 18px}
+.final-site .hero-visual{position:relative;margin:0;width:100%;height:auto;min-width:0;isolation:isolate}
+.final-site .hero-visual:before{inset:-35px;background:radial-gradient(ellipse,#bcbcbc0a,transparent 70%)}
+.product-window{overflow:hidden;border:1px solid #454545;border-radius:12px;box-shadow:0 30px 75px #0005;background:#1e1e1e}
+.product-chrome{height:31px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:0 12px;background:#292929;border-bottom:1px solid #393939;font-size:9px;color:#aaa;text-align:center}
+.product-chrome .traffic{justify-self:start}
+.product-chrome .traffic i{background:#777}
+.product-chrome .traffic i:nth-child(2){background:#595959}
+.product-chrome .traffic i:nth-child(3){background:#454545}
+.product-screenshot{display:block;width:100%;height:auto}
+.final-site .platform-row{gap:17px;margin-top:26px}
+.final-site .platform-row button{font-size:10px;gap:5px}
+.final-site .platform-row svg{width:14px;height:15px}
+.final-site .hero-meta{font-size:9px;margin-top:18px}
+.final-site .features{padding-top:56px;padding-bottom:65px}
+.final-site .section-heading{margin-bottom:27px}
+.final-site .section-heading h2{font-size:30px;font-weight:450;letter-spacing:-1.1px;line-height:1.25;margin:0}
+.final-site .feature-card{padding:25px;min-height:305px}
+.final-site .feature-card h3{font-size:18px;margin:15px 0 10px;letter-spacing:-.4px}
+.final-site .feature-card>p,.final-site .flow-copy>p{font-size:12px;line-height:1.7}
+.final-site .word-table{margin-top:29px}
+.final-site .word-table>div{padding:13px 0}
+.final-site .word-table>div:first-child{font-size:7px;padding:0 0 11px}
+.final-site .word-table code{font-size:9px}
+.final-site .word-table [lang=ne]{font-size:11px}
+.final-site .platform-list{margin-top:18px}
+.final-site .platform-list>button{font-size:11px;padding:11px 0}
+.platform-name{display:inline-flex;align-items:center;gap:8px}
+.platform-name svg{height:15px;width:15px;color:#aaa}
+.final-site .platform-list small{font-size:8px}
+.final-site .privacy-art{margin-top:19px;height:169px}
+.final-site .privacy-chip{font-size:8px}
+.final-site .choice-card,.final-site .flow-card{min-height:290px}
+.final-site .choice-demo{margin-top:23px}
+.final-site .choice-demo .editor-label{font-size:7px}
+.final-site .choice-note{font-size:8px}
+.final-site .flow-copy{width:50%}
+.final-site .flow-copy h3{max-width:none}
+.final-site .flow-art{width:50%;min-height:220px}
+.final-site .copy-button{font-size:11px;margin-top:25px}
+.final-site .copy-status{font-size:10px;line-height:1.5}
+.final-site .footer-brand p{font-size:12px}
+.final-site .footer-grid>div:not(:first-child),.final-site .footer-grid button{font-size:11px}
+.final-site .footer-grid h4{font-size:11px}
+.final-site .footer-badge{font-size:8px}
+.final-site dialog{padding:32px}
+.final-site dialog h2{font-size:25px}
+.final-site dialog details{padding:12px 0}
+.final-site dialog summary{font-size:13px}
+.final-site .dialog-done{font-size:12px}
+@media(min-width:1450px){.final-site .hero-grid{min-height:650px;gap:60px}.final-site .hero h1{font-size:61px}}
+@media(max-width:1100px){.final-site .hero-grid{gap:32px;min-height:550px}.final-site .hero h1{font-size:46px;letter-spacing:-2px}.final-site .hero-description{font-size:14px}.final-site .platform-row{gap:12px}.final-site .feature-card{padding:23px}.final-site .feature-card h3{font-size:17px}.final-site .word-table code{font-size:8px}}
+@media(max-width:800px){.final-site .hero-grid{grid-template-columns:1fr;gap:35px;min-height:0;padding:44px 0 50px}.final-site .hero h1{font-size:50px;letter-spacing:-2px}.final-site .hero-description{font-size:15px;max-width:360px}.final-site .hero-visual{max-width:600px;margin:0 auto}.final-site .platform-row{max-width:none;gap:18px}.final-site .primary{font-size:12px;padding:13px 17px}.final-site .hero-meta{font-size:9px}.final-site .section-heading h2{font-size:28px}.final-site .feature-card{min-height:290px}.final-site .flow-card{min-height:250px}.final-site .flow-copy{width:55%}.final-site .flow-art{width:45%;min-height:190px}.final-site .word-table code{font-size:9px}}
+@media(max-width:600px){.final-site .site-header{height:72px}.final-site .nav-links{top:72px}.final-site .hero-grid{grid-template-columns:1fr;gap:39px;padding:39px 0 43px;min-height:0}.final-site .hero h1{font-size:clamp(37px,10.6vw,55px);letter-spacing:-1.8px;margin:22px 0 17px}.final-site .hero-description{font-size:14px;max-width:300px;margin-bottom:25px}.final-site .primary{font-size:12px;padding:13px 17px}.final-site .platform-row{gap:16px;flex-wrap:wrap;max-width:none}.final-site .platform-row button{font-size:10px;min-height:22px}.final-site .hero-meta{font-size:9px;margin-top:12px}.final-site .hero-visual{width:100%;max-width:none;height:auto;margin:0}.product-window{border-radius:8px;box-shadow:0 20px 40px #0004}.product-chrome{height:25px;font-size:8px;padding:0 10px}.product-chrome .traffic{gap:4px}.product-chrome .traffic i{width:6px;height:6px}.final-site .features{padding-top:39px;padding-bottom:40px}.final-site .section-heading{margin-bottom:22px}.final-site .section-heading h2{font-size:27px;letter-spacing:-.9px}.final-site .feature-card{padding:24px;min-height:0}.final-site .feature-card h3{font-size:19px}.final-site .feature-card>p,.final-site .flow-copy>p{font-size:13px}.final-site .word-table{margin-top:25px}.final-site .word-table code{font-size:9px}.final-site .word-table [lang=ne]{font-size:12px}.final-site .platform-list>button{padding:13px 0;font-size:12px}.final-site .platform-list small{font-size:9px}.final-site .privacy-art{height:190px;margin-top:13px}.final-site .flow-card{min-height:265px;gap:8px}.final-site .flow-copy{width:51%}.final-site .flow-art{width:49%;min-height:208px}.final-site .note-paper{width:155px;left:0;top:10px}.final-site .copy-button{font-size:10px;gap:15px}.final-site .choice-note{font-size:9px}.final-site .footer-grid{gap:26px}.final-site dialog{padding:25px}}
+@media(max-width:360px){.final-site .hero h1{font-size:35px}.final-site .platform-row{column-gap:12px}.final-site .flow-card{flex-direction:column;min-height:430px}.final-site .flow-copy,.final-site .flow-art{width:100%}.final-site .flow-art{min-height:210px}.final-site .note-paper{left:30%}.final-site .keycap{left:17%}.final-site .keycap-c{left:35%}}

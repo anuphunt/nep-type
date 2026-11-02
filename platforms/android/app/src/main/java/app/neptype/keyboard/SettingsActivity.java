@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -44,7 +45,18 @@ public final class SettingsActivity extends Activity {
 
         TextView brand = text("NepType", 30);
         heading(brand);
-        page.addView(brand);
+        LinearLayout brandRow = new LinearLayout(this);
+        brandRow.setGravity(Gravity.CENTER_VERTICAL);
+        ImageView mark = new ImageView(this);
+        mark.setImageResource(R.drawable.neptype_mark);
+        mark.setContentDescription("NepType logo");
+        LinearLayout.LayoutParams markLayout = new LinearLayout.LayoutParams(dp(48), dp(48));
+        markLayout.setMarginEnd(dp(12));
+        brandRow.addView(mark, markLayout);
+        brandRow.addView(brand, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+        LinearLayout.LayoutParams brandLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        brandLayout.bottomMargin = dp(16);
+        page.addView(brandRow, brandLayout);
         page.addView(text("Nepali typing, at your pace", 18));
         page.addView(text("EXPERIMENTAL KEYBOARD", 12));
         page.addView(text("NepType suggests Nepali spellings from local indexes. Roman text stays in place until you choose a suggestion. Review your text before using it.", 16));
