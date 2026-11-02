@@ -34,3 +34,6 @@ landing-page/node_modules/
 engine/target/
 engine/data/neptype.pack
 landing-page/engine-build/
+
+# Generated article browser verification artifacts.
+landing-page/reports/

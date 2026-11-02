@@ -1,0 +1,15 @@
+{
+  "objective": "Help people solve real Nepali typing problems and discover NepType through relevant organic searches.",
+  "timeZone": "America/Los_Angeles",
+  "dailyPublicationLimit": 1,
+  "topics": [
+    {"id":"mixed-nepali-english","status":"eligible","query":"type Nepali and English together","intent":"Keep English words inside a Nepali sentence","angle":"A worked mixed-mode message, deliberate spelling choices, and the limits of English word recognition."},
+    {"id":"unicode-copy-troubleshooting","status":"eligible","query":"Nepali Unicode text not displaying after copy paste","intent":"Diagnose garbled or missing Nepali characters after pasting","angle":"Distinguish Unicode content, missing glyphs, and legacy-font text using reproducible checks and official font/app documentation."},
+    {"id":"nepali-phone-browser","status":"eligible","query":"type Nepali on phone without installing keyboard","intent":"Write a Nepali message in a mobile browser","angle":"Verified small-screen walkthrough, selecting spellings, clipboard behavior and app switching. Separate browser access from native keyboard installation."},
+    {"id":"ambiguous-pani-spelling","status":"eligible","query":"pani पानी पनि Roman Nepali typing","intent":"Choose between ambiguous Nepali spellings","angle":"A complete example with two occurrences, candidate selection, original spelling, and current undo behavior. Publish only if it adds depth beyond the existing guide."},
+    {"id":"nepali-message-links","status":"eligible","query":"type Nepali with English names and website links","intent":"Keep names, links and email addresses readable inside Nepali text","angle":"Engine-verified literal-preservation examples and the correction workflow; do not promise all names will be recognized."},
+    {"id":"unicode-versus-preeti","status":"eligible","query":"Nepali Unicode vs Preeti copy paste difference","intent":"Choose the right text workflow","angle":"Use authoritative encoding/font references and an original copy/paste demonstration. Explain that NepType is not a Preeti converter."},
+    {"id":"offline-typing-choice","status":"eligible","query":"offline Nepali typing browser vs Mac app","intent":"Choose a reliable local typing workflow","angle":"Test actual first-load, reload, cache and offline behavior. Distinguish the website, cached engine and native Mac pad; avoid duplicating setup instructions."},
+    {"id":"nepali-punctuation","status":"eligible","query":"Nepali typing full stop purna viram Unicode","intent":"Use sentence punctuation while preserving decimals and URLs","angle":"Verified contextual punctuation examples, decimal numbers, URLs and manual corrections, with clear engine limits."}
+  ]
+}

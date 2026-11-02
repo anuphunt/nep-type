@@ -132,3 +132,8 @@ html[lang=ne] .document-page h2{line-height:1.8}
 /* Audit findings: increase contrast for helper labels without changing the palette. */
 .final-site .word-table>div:first-child,.final-site .choice-demo .editor-label,.final-site .choice-note,.final-site .footer-brand>span{color:#aaa}
 .final-site .note-paper>span{color:#555}
+.article-list{margin-top:35px}
+.article-list article{padding:24px 0;border-top:1px solid var(--line)}
+.article-list h2{font-size:23px;line-height:1.5;margin:8px 0 12px}
+.article-list h2 a{text-decoration:underline;text-underline-offset:5px}
+.article-list .article-date{font-size:12px;margin:0}

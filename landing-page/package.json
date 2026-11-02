@@ -5,10 +5,15 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "pretest": "bash ../scripts/build-web-engine.sh"
+    "pretest": "bash ../scripts/build-web-engine.sh",
+    "articles:next": "node scripts/article-next.mjs",
+    "articles:verify-browser": "node scripts/verify-articles-browser.mjs"
   },
   "dependencies": {
     "esbuild": "0.28.2",
     "posthog-js": "1.444.0"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1"
   }
 }

@@ -9,6 +9,9 @@ import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
 import {homeHelp, typingGuide} from './typing-guide.mjs';
+import {loadArticles, articlePages} from './article-content.mjs';
+const articles = await loadArticles();
+Object.assign(pages, articlePages(articles));
 pages['typing-guide'] = typingGuide;
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -41,6 +44,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('No connection needed</span>', 'इन्टरनेट चाहिँदैन</span>')
     .replaceAll('Copy example <span>', 'उदाहरण कपी गर्नुहोस् <span>')
     .replaceAll('Try another spelling</div>', 'अर्को हिज्जे रोज्नुहोस्</div>')
+    .replaceAll('href="/articles/"', 'href="/ne/articles/"')
     .replaceAll('href="/typing-guide/"', 'href="/ne/typing-guide/"')
     .replaceAll('href="/mac/"', 'href="/ne/mac/"')
     .replaceAll('href="/faq/"', 'href="/ne/faq/"')
@@ -69,15 +73,16 @@ function metadata(locale, slug, title, description) {
   const appId = origin + '/#mac-app';
   const graph = [
     {'@type': 'WebSite', '@id': origin + '/#website', name: 'NepType', url: origin + '/', inLanguage: ['en', 'ne']},
-    {'@type': content?.kind === 'article' ? 'TechArticle' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
+    {'@type': content?.kind === 'article' ? 'TechArticle' : content?.kind === 'collection' ? 'CollectionPage' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
       ...(!slug || slug === 'mac' ? {mainEntity: {'@id': slug === 'mac' ? appId : webappId}} : {}),
-      ...(content?.kind === 'article' ? {headline: content.heading, datePublished: content.published, author: {'@type': 'Organization', name: 'NepType', url: origin + '/about/'}} : {})}
+      ...(content?.kind === 'article' ? {headline: content.heading, datePublished: content.published, ...(content.modified ? {dateModified:content.modified} : {}), author: {'@type': 'Organization', name: 'NepType', url: origin + '/about/'}} : {})}
   ];
   if (!slug) graph.push({'@type': 'WebApplication', '@id': webappId, name: 'NepType Online Typing Pad', url: canonical(locale, '') + '#try', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript and an initial network connection', isAccessibleForFree: true, description: homeDescriptions[locale], inLanguage: ['en', 'ne'], sameAs: repository});
   if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository});
   if (slug) graph.push({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: [
     {'@type': 'ListItem', position: 1, name: 'NepType', item: canonical(locale, '')},
-    {'@type': 'ListItem', position: 2, name: content.heading, item: url}
+    ...(slug.startsWith('articles/') ? [{'@type':'ListItem',position:2,name:locale === 'ne' ? 'लेखहरू' : 'Articles',item:canonical(locale,'articles')}] : []),
+    {'@type': 'ListItem', position: slug.startsWith('articles/') ? 3 : 2, name: content.heading, item: url}
   ]});
   return `<title>${escape(title)}</title>
   <meta name="description" content="${escape(description)}">
@@ -86,6 +91,7 @@ function metadata(locale, slug, title, description) {
   <link rel="alternate" hreflang="ne" href="${canonical('ne', slug)}">
   <link rel="alternate" hreflang="x-default" href="${canonical('en', slug)}">
   <meta name="robots" content="${production ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">
+  <link rel="alternate" type="application/rss+xml" title="NepType articles" href="${canonical(locale, 'articles')}feed.xml">
   <meta property="og:type" content="${content?.kind === 'article' ? 'article' : 'website'}">
   <meta property="og:site_name" content="NepType">
   <meta property="og:title" content="${escape(title)}">
@@ -107,7 +113,7 @@ function metadata(locale, slug, title, description) {
 }
 
 function renderSections(sections, locale) {
-  const href = value => locale === 'ne' ? '/ne' + value : value;
+  const href = value => locale === 'ne' && value.startsWith('/') && !value.startsWith('/ne/') ? '/ne' + value : value;
   return sections.map(([heading, text, extra = {}]) => `${heading ? `<h2>${escape(heading)}</h2>` : ''}<p>${escape(text)}</p>
     ${extra.steps ? `<ol>${extra.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol>` : ''}
     ${extra.code ? `<pre><code>${escape(extra.code)}</code></pre>` : ''}
@@ -117,7 +123,16 @@ function renderSections(sections, locale) {
 
 function renderHomeHelp(locale) {
   const copy = homeHelp[locale];
-  return `<section class="typing-help container" aria-labelledby="how-to-title"><h2 id="how-to-title">${escape(copy.heading)}</h2><p>${escape(copy.intro)}</p><div class="typing-steps">${copy.steps.map(([heading, text]) => `<div><h3>${escape(heading)}</h3><p>${escape(text)}</p></div>`).join('')}</div><p>${escape(copy.note)}</p><ul class="related-links"><li><a href="${route(locale, 'typing-guide')}">${escape(copy.guide)}</a></li><li><a href="${route(locale, 'faq')}">${escape(copy.faq)}</a></li><li><a href="${route(locale, 'mac')}">${escape(copy.mac)}</a></li></ul></section>`;
+  return `<section class="typing-help container" aria-labelledby="how-to-title"><h2 id="how-to-title">${escape(copy.heading)}</h2><p>${escape(copy.intro)}</p><div class="typing-steps">${copy.steps.map(([heading, text]) => `<div><h3>${escape(heading)}</h3><p>${escape(text)}</p></div>`).join('')}</div><p>${escape(copy.note)}</p><ul class="related-links"><li><a href="${route(locale, 'typing-guide')}">${escape(copy.guide)}</a></li><li><a href="${route(locale, 'faq')}">${escape(copy.faq)}</a></li><li><a href="${route(locale, 'mac')}">${escape(copy.mac)}</a></li><li><a href="${route(locale, 'articles')}">${locale === 'ne' ? 'टाइपिङका लेख र सुझाव' : 'More typing articles and tips'}</a></li>${articles.slice(0,2).map(article => `<li><a href="${route(locale, 'articles/'+article.slug)}">${escape(article[locale].heading)}</a></li>`).join('')}</ul></section>`;
+}
+
+function displayDate(value, locale) {
+  return new Intl.DateTimeFormat(locale === 'ne' ? 'ne-NP' : 'en-US', {year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(value+'T12:00:00Z'));
+}
+
+function renderArticleList(content, locale) {
+  if (!content.articleList) return '';
+  return `<div class="article-list">${content.articleList.map(article => `<article><p class="article-date"><time datetime="${article.published}">${escape(displayDate(article.published,locale))}</time></p><h2><a href="${route(locale,'articles/'+article.slug)}">${escape(article.heading)}</a></h2><p>${escape(article.description)}</p></article>`).join('')}</div>`;
 }
 
 function finish(html, locale, slug, title, description) {
@@ -166,13 +181,13 @@ for (const locale of ['en', 'ne']) {
   for (const [slug, translated] of Object.entries(pages)) {
     const content = translated[locale];
     const sections = renderSections(content.sections, locale);
-    const byline = content.kind === 'article' ? `<p class="article-byline">${locale === 'ne' ? 'लेखन: ' : 'By '}<a href="${route(locale, 'about')}">${locale === 'ne' ? 'NepType परियोजना' : 'NepType project'}</a> · <time datetime="${content.published}">${locale === 'ne' ? '१ नोभेम्बर २०२६' : 'November 1, 2026'}</time></p>` : '';
+    const byline = content.kind === 'article' ? `<p class="article-byline">${locale === 'ne' ? 'लेखन: ' : 'By '}<a href="${route(locale, 'about')}">${locale === 'ne' ? 'NepType परियोजना' : 'NepType project'}</a> · <time datetime="${content.published}">${escape(displayDate(content.published,locale))}</time></p>` : '';
     const related = `<p class="page-tool-link"><a href="${route(locale)}#try">${locale === 'ne' ? 'अनलाइन नेपाली टाइपिङ प्याड खोल्नुहोस्' : 'Open the online Nepali typing pad'} →</a></p>`;
     const linkUrl = slug === 'mac' && downloadUrl ? downloadUrl : repository;
     const linkText = slug === 'mac' && downloadUrl ? (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस्' : 'Download for Mac') : content.link;
     const linkEvent = slug === 'mac' && downloadUrl ? 'neptype_download_clicked' : 'neptype_source_opened';
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
-    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${sections}${related}${linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}" target="_blank" rel="noopener noreferrer">${escape(linkText)}</a></p>` : ''}${privacyControl}</main>`;
+    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${sections}${renderArticleList(content,locale)}${related}${linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}" target="_blank" rel="noopener noreferrer">${escape(linkText)}</a></p>` : ''}${privacyControl}</main>`;
     let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);
@@ -183,8 +198,12 @@ for (const locale of ['en', 'ne']) {
   }
 }
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(({locale, slug}) => `  <url><loc>${canonical(locale, slug)}</loc></url>`).join('\n')}\n</urlset>\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(({locale, slug}) => `  <url><loc>${canonical(locale, slug)}</loc>${pages[slug]?.[locale]?.published ? `<lastmod>${pages[slug][locale].modified || pages[slug][locale].published}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(output, 'sitemap.xml'), sitemap);
+for (const locale of ['en','ne']) {
+  const feed = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>NepType ${locale === 'ne' ? 'लेखहरू' : 'typing articles'}</title><link>${canonical(locale,'articles')}</link><description>${escape(pages.articles[locale].description)}</description><language>${locale}</language>${articles.slice(0,20).map(article => `<item><title>${escape(article[locale].heading)}</title><link>${canonical(locale,'articles/'+article.slug)}</link><guid isPermaLink="true">${canonical(locale,'articles/'+article.slug)}</guid><description>${escape(article[locale].description)}</description></item>`).join('')}</channel></rss>`;
+  await writeFile(path.join(output,route(locale,'articles'),'feed.xml'),feed);
+}
 // Crawlers must be allowed to fetch previews to see their noindex directive.
 await writeFile(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\n${production ? `Sitemap: ${origin}/sitemap.xml\n` : ''}`);
 if (!production) await writeFile(path.join(output, '_headers'), '/*\n  X-Robots-Tag: noindex, follow\n');

@@ -42,3 +42,15 @@
   for = "/engine/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/articles/:article/index.html"
+  to = "/articles/:article/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ne/articles/:article/index.html"
+  to = "/ne/articles/:article/"
+  status = 301
+  force = true

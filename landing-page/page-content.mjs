@@ -28,7 +28,7 @@ export const nepaliCopy = {
 };
 
 export const labels = {
-  'Typing guide': 'टाइपिङ सिक्नुहोस्', Features: 'सुविधाहरू', FAQ: 'प्रश्नहरू', Changelog: 'परिवर्तनहरू',
+  Articles: 'लेखहरू', 'Typing guide': 'टाइपिङ सिक्नुहोस्', Features: 'सुविधाहरू', FAQ: 'प्रश्नहरू', Changelog: 'परिवर्तनहरू',
   'Get NepType': 'NepType लिनुहोस्', Home: 'गृहपृष्ठ', Platforms: 'प्लेटफर्महरू',
   Support: 'सहयोग', Feedback: 'प्रतिक्रिया', Privacy: 'गोपनीयता', Project: 'परियोजना',
   'About NepType': 'NepType बारे', 'Open source': 'खुला स्रोत', 'In progress': 'काम हुँदैछ',

@@ -5,6 +5,7 @@ import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {siteConfig} from '../site-config.mjs';
 import {examples} from '../typing-guide.mjs';
+import {loadArticles} from '../article-content.mjs';
 import initRust, {query} from '../engine-build/neptype_engine.js';
 await initRust({module_or_path:await readFile(new URL('../engine-build/neptype_engine_bg.wasm',import.meta.url))});
 
@@ -33,7 +34,7 @@ test('production pages expose unique crawlable content, correct locales and vali
   build('production');
   const sitemap = await read('sitemap.xml');
   const urls = matches(sitemap, /<loc>(.*?)<\/loc>/g).map(match => match[1]);
-  assert.equal(urls.length, 14);
+  assert.equal(urls.length, 16 + 2 * (await loadArticles()).length);
   assert.equal(new Set(urls).size, urls.length);
   const titles = new Set(), descriptions = new Set(), documents = new Map();
   for (const url of urls) {
@@ -90,6 +91,13 @@ test('production pages expose unique crawlable content, correct locales and vali
   assert.match(await read('robots.txt'), /Sitemap: https:\/\/neptype.com\/sitemap.xml/);
   assert.match(await read('404.html'), /name="robots" content="noindex"/);
   assert.ok(!(await read('styles.css')).includes('@import'));
+  for (const path of ['/articles/','/ne/articles/','/articles/type-nepali-and-english-together/','/ne/articles/type-nepali-and-english-together/']) assert.ok(documents.has(path), path);
+  const article = graph(documents.get('/articles/type-nepali-and-english-together/')).find(entity => entity['@type'] === 'TechArticle');
+  assert.equal(article.datePublished, '2026-11-01');
+  assert.equal(graph(documents.get('/articles/type-nepali-and-english-together/')).find(entity => entity['@type'] === 'BreadcrumbList').itemListElement.length, 3);
+  assert.match(await read('articles/feed.xml'), /type-nepali-and-english-together/);
+  assert.match(await read('ne/articles/feed.xml'), /https:\/\/neptype.com\/ne\/articles\/type-nepali-and-english-together\//);
+  assert.ok(!urls.some(url => url.endsWith('.xml')));
   assert.ok(!(await read('styles.css')).includes('fonts.gstatic.com'));
   for (const file of ['dmsans-OFL.txt','notosansdevanagari-OFL.txt','NOTICE.txt']) assert.ok((await read('assets/fonts/' + file)).length > 100);
   await assert.rejects(access(new URL('_headers', dist)));
