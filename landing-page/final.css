@@ -9,6 +9,7 @@
 .final-site .badge{padding:7px 12px;font:11px/1.4 'Noto Sans Devanagari',sans-serif;color:#c2c2c2}
 .final-site .hero-description{font-size:15px;line-height:1.7;max-width:320px;margin:0 0 27px;color:#aaa}
 .final-site .primary{font-size:12px;min-height:48px;padding:13px 18px}
+.final-site .primary>[data-copy="cta"]{margin-left:0;font-size:inherit;font-weight:inherit}
 .final-site .hero-visual{position:relative;margin:0;width:100%;height:auto;min-width:0;isolation:isolate}
 .final-site .hero-visual:before{inset:-35px;background:radial-gradient(ellipse,#bcbcbc0a,transparent 70%)}
 .product-window{overflow:hidden;border:1px solid #454545;border-radius:12px;box-shadow:0 30px 75px #0005;background:#1e1e1e}
@@ -58,6 +59,17 @@
 .final-site dialog details{padding:12px 0}
 .final-site dialog summary{font-size:13px}
 .final-site .dialog-done{font-size:12px}
+.final-site .platform-row a{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--muted)}
+.final-site .platform-row a:hover{color:var(--ink)}
+.final-site .platform-list>a{display:flex;align-items:center;justify-content:space-between;width:100%;border-bottom:1px solid var(--line);padding:11px 0;font-size:11px;text-align:left;gap:8px}
+.final-site .platform-list>a:hover>.platform-name{color:var(--muted)}
+.final-site .document-page{max-width:760px;min-height:60vh;padding:55px 0 65px}
+.document-page .back-link{font-size:12px;color:var(--muted)}
+.document-page h1{font-size:clamp(32px,5vw,44px);font-weight:500;letter-spacing:-1.5px;line-height:1.25;margin:27px 0 33px}
+.document-page h2{font-size:17px;font-weight:500;margin:28px 0 10px;letter-spacing:-.3px}
+.document-page p{font-size:14px;line-height:1.85;color:var(--muted);margin:0 0 20px}
+.document-page .button{margin-top:12px}
+html[lang="ne"] .hero h1{font-family:'Noto Sans Devanagari',sans-serif;font-size:clamp(32px,3.5vw,46px);line-height:1.45;letter-spacing:-1.3px}
 @media(min-width:1450px){.final-site .hero-grid{min-height:650px;gap:60px}.final-site .hero h1{font-size:61px}}
 @media(max-width:1100px){.final-site .hero-grid{gap:32px;min-height:550px}.final-site .hero h1{font-size:46px;letter-spacing:-2px}.final-site .hero-description{font-size:14px}.final-site .platform-row{gap:12px}.final-site .feature-card{padding:23px}.final-site .feature-card h3{font-size:17px}.final-site .word-table code{font-size:8px}}
 @media(max-width:800px){.final-site .hero-grid{grid-template-columns:1fr;gap:35px;min-height:0;padding:44px 0 50px}.final-site .hero h1{font-size:50px;letter-spacing:-2px}.final-site .hero-description{font-size:15px;max-width:360px}.final-site .hero-visual{max-width:600px;margin:0 auto}.final-site .platform-row{max-width:none;gap:18px}.final-site .primary{font-size:12px;padding:13px 17px}.final-site .hero-meta{font-size:9px}.final-site .section-heading h2{font-size:28px}.final-site .feature-card{min-height:290px}.final-site .flow-card{min-height:250px}.final-site .flow-copy{width:55%}.final-site .flow-art{width:45%;min-height:190px}.final-site .word-table code{font-size:9px}}

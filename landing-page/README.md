@@ -1,21 +1,39 @@
-# NepType landing page
+# NepType website
 
-The selected Graphite landing page is `index.html`. It uses the app's palette, one actual Mac screenshot, and short product copy edited with the humanizer skill. Run from this directory:
+The Graphite landing page keeps the product copy short and shows one actual Mac app screenshot. Supporting pages contain the FAQ, Mac setup, project details, privacy information, and development updates.
+
+## Build and preview
+
+No package installation is required. From the repository root:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+node landing-page/build.mjs
+python3 -m http.server 4174 --bind 127.0.0.1 --directory landing-page/dist
 ```
 
-Open `http://127.0.0.1:4173/` for the final page. It has mobile navigation, FAQ and platform dialogs, an English/Nepali copy toggle, selectable word suggestions, and a copy example. `site.js` owns its interactions and copy, with `final.css` refining the shared `styles.css`.
+Open `http://127.0.0.1:4174/`. The English homepage is `/`, with Nepali at `/ne/`. Each supporting page has an equivalent Nepali URL. All page content is present in the generated HTML, including when JavaScript is disabled.
 
-Earlier design directions remain at `designs.html` and `concept.html`:
+`index.html` is the homepage template. `page-content.mjs` holds the supporting pages and Nepali copy. `build.mjs` generates the static site; `site.js` handles the mobile menu, platform-status dialogs, and word-choice/copy examples.
 
-- **Graphite**: the app's exact palette, dark surfaces and native window styling.
-- **Silver**: a light inversion of the same neutral palette with dark product windows.
-- **Editorial**: silver hero, Graphite framing, serif type and crisp feature-grid borders.
+## Netlify continuous deployment
 
-The final page preserves the reference's sequence: navigation → split hero → platform links → five-card feature grid → multi-column footer. Layout reference: https://vikey.app/en/ (reviewed November 1, 2026). The hero uses `assets/neptype-mac.png`, copied from the current app evidence at `evidence/neptype/prototype.png`. The earlier concepts retain their HTML illustrations. The word-choice interaction is an illustrative example; the landing page does not run the transliteration engine.
+The repository-root `netlify.toml` sets:
 
-Colors from `Sources/NepaliKeyboard/main.swift`: background `#1e1e1e`, surface `#272727`, ink `#e8e8e8`, secondary `#aaaaaa`, accent `#d7d7d7`, accent ink `#222222`, line `#3d3d3d`. Additional neutral shades support each direction. The approved blue NT icon is exported from `branding/assets/neptype-icon-master.png` by `scripts/export-brand-assets.py`; native app icons and these previews share the same artwork.
+- Production branch: `main` (configured in Netlify's Git integration).
+- Build command: `node landing-page/build.mjs`.
+- Publish directory: `landing-page/dist`.
+- Node.js: 22.
 
-Platform controls explain development status and link to the repository. There are no public installers linked here. Primary copy has an English/Nepali toggle; navigation and dialogs remain in English. Shared styles load DM Sans, Noto Sans Devanagari and Playfair Display from Google Fonts, with system fallbacks. No application files are changed and no site is published.
+Connect the existing GitHub repository, `anuphunt/nep-type`, to the Netlify project. Pushes to `main` then trigger production builds. `.netlify/` and the generated `dist/` are ignored in Git.
+
+Canonical URLs, Open Graph metadata, and the sitemap use Netlify's production `URL` environment variable. Set `SITE_URL` to the primary HTTPS origin if a custom domain needs to override it. Local builds and Netlify preview contexts generate `noindex` pages; production builds are indexable. `robots.txt` follows the same distinction. There is no catch-all SPA rewrite, so missing pages return a real 404.
+
+Only the final pages, styles, script, and two product assets are copied to the publish directory. Design variations, screenshots used for review, source files, and app code are not published.
+
+## SEO and content
+
+The build includes unique titles and descriptions, self-referencing canonical URLs, reciprocal English/Nepali `hreflang` links, social cards, `WebSite` and `SoftwareApplication` JSON-LD, and `sitemap.xml`. App markup uses actual product details without invented offers, reviews, or ratings. Search Console verification and sitemap submission require the production site and an authorized Google account.
+
+The Mac page links to source build instructions; there is no public installer linked here. Other platform controls show development status. The illustrative word-choice interaction does not run the transliteration engine.
+
+The hero asset is copied from `evidence/neptype/prototype.png`. The Graphite colors come from `Sources/NepaliKeyboard/main.swift`. Original design references remain at `designs.html` and `concept.html` for local review. Layout reference: https://vikey.app/en/ (reviewed November 1, 2026).
