@@ -3,6 +3,9 @@
 import argparse
 import sys
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared/python"))
+from neptype_engine import Engine, EngineError
 
 CSS = b"""
 window.neptype-pad { background: #1e1e1e; color: #e8e8e8; }
@@ -39,6 +42,11 @@ def run(argv):
             super().__init__(application_id="app.neptype.typingpad")
             self.window = None
             self.feedback_generation = 0
+            self.mode = 0
+            self.lookup_generation = 0
+            self.pending = None
+            self.engine = None
+            self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="neptype-pad")
 
         def do_activate(self):
             if self.window is not None:
@@ -70,9 +78,8 @@ def run(argv):
             mixed = Gtk.ToggleButton(label="Nepali + EN")
             nepali = Gtk.ToggleButton(label="All Nepali")
             nepali.set_group(mixed); mixed.set_active(True)
-            # This new frontend has no pad-render transport. Do not pretend
-            # that the separate experimental IBus worker renders a document.
-            mixed.set_sensitive(False); nepali.set_sensitive(False)
+            mixed.connect("toggled", lambda button: self.mode_changed(0) if button.get_active() else None)
+            nepali.connect("toggled", lambda button: self.mode_changed(2) if button.get_active() else None)
             modes.append(mixed); modes.append(nepali); toolbar.append(modes)
             help_button = Gtk.Button.new_from_icon_name("help-about-symbolic")
             help_button.set_tooltip_text("About this typing pad")
@@ -81,6 +88,7 @@ def run(argv):
             content.append(toolbar)
             self.source = self.editor(True, "source")
             self.source.get_buffer().connect("changed", self.source_changed)
+            self.source.get_buffer().connect("mark-set", lambda *args: self.source_changed(None) if hasattr(self, "status") else None)
             clear = Gtk.Button(label="Clear")
             clear.connect("clicked", lambda _: self.source.get_buffer().set_text(""))
             content.append(self.panel("Roman input", self.source, clear, 72))
@@ -95,10 +103,12 @@ def run(argv):
             result = self.panel("नेपाली", self.output, self.copy, 90)
             result.set_vexpand(True)
             content.append(result)
-            self.status = Gtk.Label(label="Linux preview · Conversion unavailable", xalign=0)
+            self.status = Gtk.Label(label="Loading shared offline engine…", xalign=0)
             self.status.add_css_class("status")
             content.append(self.status)
+            self.window.connect("close-request", self.close_engine)
             self.window.present()
+            self.source_changed(None)
 
         def editor(self, editable, style):
             text = Gtk.TextView()
@@ -127,12 +137,56 @@ def run(argv):
             panel.append(scroll)
             return panel
 
-        def source_changed(self, _):
+        def mode_changed(self, mode):
+            self.mode = mode
+            if hasattr(self, "output"): self.source_changed(None)
+
+        def close_engine(self, *_):
+            self.lookup_generation += 1
+            if self.pending: self.pending.cancel()
+            def close():
+                if self.engine: self.engine.close()
+            self.executor.submit(close)
+            self.executor.shutdown(wait=False, cancel_futures=False)
+            return False
+
+        def source_changed(self, _, choice=None, expected=None):
             self.feedback_generation += 1
-            if hasattr(self, "output"):
-                self.output.get_buffer().set_text("")
-                self.copy.set_sensitive(False)
-                self.copy.set_icon_name("edit-copy-symbolic")
+            if not hasattr(self, "output"): return
+            buffer = self.source.get_buffer()
+            source = buffer.get_text(*buffer.get_bounds(), False)
+            if expected is not None and expected != source: return
+            caret = len(buffer.get_text(buffer.get_start_iter(), buffer.get_iter_at_mark(buffer.get_insert()), False).encode("utf-16-le")) // 2
+            self.lookup_generation += 1
+            generation, mode = self.lookup_generation, self.mode
+            self.copy.set_sensitive(False)
+            self.copy.set_icon_name("edit-copy-symbolic")
+            while (child := self.suggestions.get_first_child()) is not None: self.suggestions.remove(child)
+            if self.pending: self.pending.cancel()
+            def work():
+                try:
+                    if self.engine is None: self.engine = Engine()
+                    value = self.engine.document(source, mode, caret, choice)
+                    error = None
+                except (EngineError, ValueError, OSError) as failure:
+                    value, error = None, str(failure)
+                GLib.idle_add(self.apply_result, generation, source, value, error)
+            self.pending = self.executor.submit(work)
+
+        def apply_result(self, generation, source, value, error):
+            if generation != self.lookup_generation: return GLib.SOURCE_REMOVE
+            self.output.get_buffer().set_text(value["output"] if value else "")
+            self.copy.set_sensitive(bool(value and value["output"]))
+            self.status.set_text("Local · Shared offline engine" if value else "Shared engine unavailable · " + (error or "unknown error"))
+            if value:
+                # Three visible choices are presentation only; ranking comes from Swift.
+                for candidate in value["candidates"][:3]:
+                    button = Gtk.Button(label=candidate)
+                    button.add_css_class("suggestion")
+                    button.connect("clicked", lambda _, selected=candidate, original=source, shown=generation:
+                        self.source_changed(None, selected, original) if shown == self.lookup_generation else None)
+                    self.suggestions.append(button)
+            return GLib.SOURCE_REMOVE
 
         def copy_text(self, _):
             buffer = self.output.get_buffer()
@@ -155,7 +209,7 @@ def run(argv):
             dialog = Gtk.MessageDialog(transient_for=self.window, modal=True,
                 message_type=Gtk.MessageType.INFO, buttons=Gtk.ButtonsType.CLOSE,
                 text="NepType typing pad")
-            dialog.set_property("secondary-text", "This standalone Graphite preview does not yet connect to the typing engine. No IBus input source is installed or enabled.")
+            dialog.set_property("secondary-text", "This typing pad uses the shared offline Swift engine and canonical dictionaries. No IBus input source is installed or enabled.")
             dialog.connect("response", lambda message, response: message.destroy())
             dialog.present()
 

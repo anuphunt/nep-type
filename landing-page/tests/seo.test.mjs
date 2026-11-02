@@ -5,7 +5,8 @@ import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {siteConfig} from '../site-config.mjs';
 import {examples} from '../typing-guide.mjs';
-import {WebEngine} from '../web-engine.mjs';
+import initRust, {query} from '../engine-build/neptype_engine.js';
+await initRust({module_or_path:await readFile(new URL('../engine-build/neptype_engine_bg.wasm',import.meta.url))});
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = new URL('../dist/', import.meta.url);
@@ -90,7 +91,7 @@ test('production pages expose unique crawlable content, correct locales and vali
 });
 
 test('published typing examples match the actual browser dictionary', async () => {
-  const engine = new WebEngine(JSON.parse(await read('assets/web-dictionary.json')));
+  const engine = {render:source=>JSON.parse(query(JSON.stringify({op:'render',source}))),candidates:source=>JSON.parse(query(JSON.stringify({op:'candidates',source})))};
   for (const [input, output] of examples) assert.equal(engine.render(input, 'mixed').text, output, input);
   for (const word of ['पानी', 'पनि', 'pani']) assert.ok(engine.candidates('pani').includes(word));
 });

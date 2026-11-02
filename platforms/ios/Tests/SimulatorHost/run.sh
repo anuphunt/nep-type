@@ -13,8 +13,9 @@ app="$work/NepTypeHost.app"
 mkdir -p "$app" "$work/cache"
 cleanup() { xcrun simctl uninstall "$udid" "$app_id" >/dev/null 2>&1 || true; rm -rf "$work"; }
 trap cleanup EXIT HUP INT TERM
-xcrun --sdk iphonesimulator swiftc -sdk "$(xcrun --sdk iphonesimulator --show-sdk-path)" -target arm64-apple-ios17.0-simulator -module-cache-path "$work/cache" -parse-as-library "$project/NepTypeKeyboard/KeyboardViewController.swift" "$project"/NepTypeKeyboard/SharedCore/*.swift "$project/Tests/SimulatorHost/main.swift" -o "$app/NepTypeHost"
-cp "$project"/NepTypeKeyboard/Resources/*.tsv "$app/"
+bash "$project/../../scripts/build-apple-engine.sh" iphonesimulator
+xcrun --sdk iphonesimulator swiftc -I "$project/../../shared/include" "$project/../../build/rust-apple/iphonesimulator/libneptype_engine.a" -sdk "$(xcrun --sdk iphonesimulator --show-sdk-path)" -target arm64-apple-ios17.0-simulator -module-cache-path "$work/cache" -parse-as-library "$project/NepTypeKeyboard/KeyboardViewController.swift" "$project"/../../Sources/NepaliCore/*.swift "$project/Tests/SimulatorHost/main.swift" -o "$app/NepTypeHost"
+python3 "$project/../../scripts/engine-data.py" stage "$app/"
 cat > "$app/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>CFBundleIdentifier</key><string>app.neptype.simulatorhost</string><key>CFBundleName</key><string>NepType Test Host</string><key>CFBundleExecutable</key><string>NepTypeHost</string><key>CFBundlePackageType</key><string>APPL</string><key>CFBundleVersion</key><string>1</string><key>CFBundleShortVersionString</key><string>1.0</string><key>MinimumOSVersion</key><string>17.0</string><key>UILaunchScreen</key><dict/></dict></plist>
 PLIST

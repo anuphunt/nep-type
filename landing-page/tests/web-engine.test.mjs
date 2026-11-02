@@ -1,64 +1,35 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {WebEngine, tokens, retainChoices, phonetic} from '../web-engine.mjs';
+import init, {query, dictionaryId, PadEngine} from '../engine-build/neptype_engine.js';
+await init({module_or_path:await readFile(new URL('../engine-build/neptype_engine_bg.wasm',import.meta.url))});
+const run = request => JSON.parse(query(JSON.stringify(request)));
 
-const lexicon = JSON.parse(await readFile(new URL('../../data/sources/nepali-authored-v1.json', import.meta.url), 'utf8'));
-const engine = new WebEngine({lexicon, englishWords:['office','meeting','hello','world','the','an','a','i','test','please','maile'], commonEnglish:['office','meeting','hello','world','the','an','a','test','please']});
-
-test('real mixed-language typing and Nepali sentence endings', () => {
-  assert.equal(engine.render('ma office janchu.').text, 'म office जान्छु।');
-  assert.equal(engine.render('bholi meeting pachi bhetau.').text, 'भोलि meeting पछि भेटौँ।');
-  assert.equal(engine.render('namaste!').text, 'नमस्ते!');
+test('WebAssembly matches all frozen Swift candidate, rendering and session cases',async()=>{
+  const cases=(await readFile(new URL('../../shared/fixtures/swift-baseline.jsonl',import.meta.url),'utf8')).trim().split('\n');
+  for (const line of cases) { const {request,expected}=JSON.parse(line); const value=run(request); assert.deepEqual(request.op==='session'?{trace:value.trace}:value,expected,JSON.stringify(request)); }
+  assert.ok(cases.length>2000);
 });
-test('maile uses its Nepali spelling despite English dictionary membership', () => {
-  for (const word of ['maile', 'Maile']) {
-    assert.equal(engine.render(word).text, 'मैले');
-    assert.equal(engine.render(`${word} yo`).text, 'मैले यो');
-    assert.equal(engine.render(`${word} office`).text, 'मैले office');
-    assert.equal(engine.render(word, 'all').text, 'मैले');
-    assert.equal(engine.render(word, 'english').text, word);
-    assert.equal(engine.candidates(word)[0], 'मैले');
-    assert.ok(engine.candidates(word).includes(word));
-    assert.equal(engine.render(word, 'mixed', new Map([[0, {word, value: word}]])).text, word);
-  }
+test('browser embeds the exact pinned native dictionary and source versions',async()=>{
+  const manifest=JSON.parse(await readFile(new URL('../../engine/data/manifest.json',import.meta.url),'utf8'));
+  assert.equal(dictionaryId(),manifest.id);
+  assert.deepEqual(run({op:'info'}).dictionary,manifest);
+  for(const [source,spelling] of [['bato','बाटो'],['bhaisakeko','भइसकेको']]) assert.ok(run({op:'candidates',source}).includes(spelling));
 });
-test('protect URLs, email, code, identifiers, numbers, emoji and existing Nepali', () => {
-  const literal = 'https://example.com/a?x=1 me@example.com `namaste` foo_bar fooBar hello-world x1 config.json src/main.swift 3.14 😀 नेपाली';
-  assert.equal(engine.render(literal).text, literal);
-  assert.equal(engine.render(literal, 'all').text, literal);
-  assert.equal(tokens('hello-world')[0].literal, true);
-  assert.equal(engine.render('```\nnamaste\nma\n```').text, '```\nnamaste\nma\n```');
+test('shared pad preserves explicit corrections, undo/redo, emoji ranges and repeated-word safety',()=>{
+  const session = new PadEngine();
+  const pad=(source,extra={})=>JSON.parse(session.request(JSON.stringify({op:"pad",source,mode:0,caret:source.length,...extra})));
+  let value=pad('ma pani');const token=value.active;
+  assert.equal(value.rendered.text,'म पनि');
+  value=pad('ma pani',{token,choice:'पानी'});assert.equal(value.rendered.text,'म पानी');
+  assert.equal(pad('👋 ma pani').rendered.text,'👋 म पानी');
+  assert.equal(pad('👋 ma pani',{operation:'undo'}).rendered.text,'म पानी');
+  assert.equal(pad('ma pani',{operation:'undo'}).rendered.text,'म पनि');
+  assert.equal(pad('ma pani',{operation:'redo'}).rendered.text,'म पानी');
+  assert.equal(pad('ma pani pani').rendered.text,'म पनि पनि');
 });
-test('All Nepali converts English; English mode preserves the entire source', () => {
-  assert.equal(engine.render('office', 'mixed').text, 'office');
-  assert.match(engine.render('office', 'all').text, /[\u0900-\u097f]/);
-  assert.equal(engine.render('namaste. ma office janchu.', 'english').text, 'namaste. ma office janchu.');
-});
-test('spelling choices apply to one occurrence with UTF-16 positions', () => {
-  const source = '😀 pani pani';
-  const choices = new Map([[3,{word:'pani',value:'पनि'}]]);
-  const rendered = engine.render(source, 'mixed', choices);
-  assert.equal(rendered.words[0].start, 3);
-  assert.equal(rendered.words[0].value, 'पनि');
-  assert.equal(rendered.words[1].value, lexicon.pani[0]);
-  assert.equal(engine.render(source,'english',choices).text,source);
-  assert.ok(engine.candidates('pani').includes('पानी'));
-  assert.ok(engine.candidates('pani').includes('पनि'));
-  assert.ok(engine.candidates('pani').includes('pani'));
-});
-test('editing a word invalidates its saved choice and later choices', () => {
-  const choices = new Map([[0,{word:'pani',value:'पनि'}],[5,{word:'pani',value:'पानी'}]]);
-  assert.equal(retainChoices('pani pani','paani pani',choices).size,0);
-  const kept = retainChoices('pani pani','pani paani',choices);
-  assert.equal(kept.size,1);
-  assert.equal(kept.get(0).value,'पनि');
-  assert.equal(retainChoices('pani','pani next',new Map([[0,{word:'pani',value:'पनि'}]])).size,1);
-});
-test('phonetic fallback handles unseen input and preserves safe punctuation', () => {
-  assert.equal(phonetic('ksh'), 'क्ष');
-  assert.equal(phonetic('chha'), 'छ');
-  assert.equal(engine.render('hello world.').text,'hello world.');
-  assert.equal(engine.render('namaste...').text,'नमस्ते...');
-  assert.equal(engine.render('namaste 3.14.').text,'नमस्ते 3.14।');
+test('existing Roman input remains literal in English mode and protects typed identifiers',()=>{
+  const source='HTTPS://example.com `ma` foo_bar fooBar me@example.com 😀 नेपाली';
+  for(const mode of [0,1,2]) assert.equal(run({op:'render',source,mode}).text,source);
+  assert.equal(run({op:'render',source:'Maile yo',mode:0}).text,'मैले यो');
 });

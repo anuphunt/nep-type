@@ -3,13 +3,33 @@ plugins { id 'com.android.application' }
 android {
     namespace 'app.neptype.keyboard'
     compileSdk 35
-    // FileChannel lookups require uncompressed, seekable APK asset segments.
-    androidResources { noCompress += ['tsv'] }
-    defaultConfig {
+        defaultConfig {
         applicationId 'app.neptype.keyboard.prototype'
-        minSdk 26
+        minSdk 28
         targetSdk 35
         versionCode 1
         versionName '0.1-dev'
     }
+}
+
+// Every APK stages exactly the canonical pack. There is no Java ranking fallback.
+def repoRoot = rootProject.file('../..')
+def sharedAssets = layout.buildDirectory.dir('generated/shared-assets')
+tasks.register('stageSharedDictionaries', Exec) {
+    inputs.file(new File(repoRoot, 'shared/dictionaries.json'))
+    inputs.dir(new File(repoRoot, 'engine/data'))
+    inputs.dir(new File(repoRoot, 'data/sources'))
+    outputs.dir(sharedAssets)
+    commandLine 'python3', new File(repoRoot, 'scripts/engine-data.py'), 'stage', sharedAssets.get().asFile
+}
+preBuild.dependsOn tasks.named('stageSharedDictionaries')
+android {
+    defaultConfig {
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+        externalNativeBuild { cmake { cppFlags '-std=c++17' } }
+    }
+    sourceSets.main.assets.srcDirs = [sharedAssets.get().asFile]
+    sourceSets.main.jniLibs.srcDirs = [layout.buildDirectory.dir('generated/shared-jni').get().asFile]
+    externalNativeBuild { cmake { path file('src/main/cpp/CMakeLists.txt'); version '3.22.1' } }
+    packaging { jniLibs { pickFirsts += ['**/libNepTypeEngine.so'] } }
 }

@@ -1,0 +1,19 @@
+{
+  "captured_from": "Swift core before Rust migration, with both original full TSV dictionaries loaded explicitly",
+  "cases": 2286,
+  "dictionary_sources": {
+    "data/compiled/aksharantar-indiccorp-v1.tsv": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",
+    "data/compiled/google-ne-aliases.tsv": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159",
+    "data/sources/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+    "data/sources/english-common-v1.json": "d09e37e5141de0973b6b6ad99481102cfeedb3ba6bb96957a2aa53a752f65c1d",
+    "data/sources/nepali-authored-v1.json": "2cf7f7c3f3a10ea58cdd73bef11a066ae78bf7628e54b80bbe2663639237c43d"
+  },
+  "fixture_sha256": "d10a45638d8de3d14de969c5ffd7ea8b406ed8fd3cffb2f1bc8cd9bd5d0b156d",
+  "swift_sources": {
+    "Composer.swift": "0063f3c535f617b044bc1f4f2e881ea8d3a285a430c6ead2af49226f39f3763a",
+    "GeneratedAliasIndex.swift": "47c99e54606db82bba42df5bd2ecda45f3fe36da5df400103251079d160e5096",
+    "GeneratedIndexes.swift": "f74234be59f16e550d0c4428b2e67eacdd801f30a2148fc624b53729ceeed49f",
+    "InputSession.swift": "d38f348c35c84d3b13092b32abeeab6b73fbf304c0e1f3ef8e7fee2789c0564f",
+    "Transliterator.swift": "c0464bc3fde70b87f6ecd67478eac81144f9036e178b6d14d3e2a7dfc3fe620d"
+  }
+}

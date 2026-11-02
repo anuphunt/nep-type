@@ -4,7 +4,11 @@
 
 Brand name: **NepType** (capital N and T). Logo concepts and brand guidance are in [branding/README.md](branding/README.md).
 
-A native macOS Nepali typing prototype, built with Swift and AppKit. Everything runs locally. There are no model downloads, accounts, telemetry, or network requests. The project includes a pinned CMU English dictionary; see `evaluation/phase1/REPORT.md` and `data/sources/CMUDICT-LICENSE.txt`.
+A native macOS Nepali typing prototype, with an AppKit interface and a shared Rust typing engine. Everything runs locally. There are no model downloads, accounts, telemetry, or network requests. The project includes a pinned CMU English dictionary; see `evaluation/phase1/REPORT.md` and `data/sources/CMUDICT-LICENSE.txt`.
+
+## Shared engine
+
+All production frontends use the shared offline Rust engine and one embedded dictionary pack while retaining native UI. Apple builds link Rust through Swift value adapters; Android, Linux and Windows use thin native bindings. The website compiles the identical engine and pack to WebAssembly. See [architecture, build and verification](shared/README.md) for the platform integration and remaining native validation.
 
 ## Free and open source
 
@@ -22,7 +26,7 @@ Double-click `build/NepType.app`, or run:
 bash scripts/run.sh
 ```
 
-To rebuild or test (Xcode command-line tools required):
+To rebuild or test (Rust/rustup, Python 3 and Xcode command-line tools required):
 
 ```sh
 bash scripts/build.sh
@@ -51,13 +55,15 @@ To try the experimental input source, copy `build/NepType Input.app` to `~/Libra
 
 Rebuild the input source with `bash scripts/build-input-source.sh`. It does not request Accessibility or Input Monitoring permission.
 
-Transliteration uses local English and Nepali indexes, simple neighboring-word evidence, and deterministic phonetic fallback. These evidence scores are hand-authored rules, not AI probabilities or a trained language model. The candidate row also shows lower-confidence pronunciation-derived Nepali suggestions marked with a dot (·) and Aksharantar-derived alternatives marked with a dagger (†). It is not AI language detection, translation, or a comprehensive dictionary. Unfamiliar names, long vowels, retroflex consonants, nasalization, and mixed English may need corrections. Candidate choices apply to individual word occurrences. Editing a word invalidates its saved choice and choices after it, to avoid assigning a choice to the wrong word.
+Transliteration uses local English and Nepali indexes, simple neighboring-word evidence, and deterministic phonetic fallback. These evidence scores are hand-authored rules, not AI probabilities or a trained language model. The candidate row also shows lower-confidence pronunciation-derived Nepali suggestions marked with a dot (·) and Aksharantar-derived alternatives marked with a dagger (†). It is not AI language detection, translation, or a comprehensive dictionary. Unfamiliar names, long vowels, retroflex consonants, nasalization, and mixed English may need corrections. Candidate choices apply to individual word occurrences. Editing a word invalidates its saved choice; untouched words retain corrections across unambiguous insertions and deletions.
 
 English/Nepali switching applies to the whole preview. In Nepali mode, a small hand-written English list and uppercase acronyms stay in Roman letters; a Nepali word list supplies common spellings, and unrecognized words are converted using phonetic rules. This is not automatic language detection, so unlisted English words may be converted and ambiguous words can be guessed incorrectly. Choose the original Roman word in the suggestions to correct a word. For example, `football` becomes `फुटबल` by default, with `football` also offered as a suggestion. URLs, email addresses, inline backtick code, numbers, existing Devanagari, whitespace, and emoji are preserved. This is not a full code-editor parser. The app does not save documents between launches; copy text you want to keep before quitting.
 
 ## Structure
 
-- `Sources/NepaliCore`: transliteration, tokenization, candidate choices, undo/redo.
+- `engine/src`: shared Rust transliteration, ranking, composition, corrections and undo/redo.
+- `Sources/NepaliCore`: Swift types and transport adapters for the Rust engine.
+- `engine/data/manifest.json`: one dictionary fingerprint for native apps and the website.
 - `Sources/NepaliKeyboard`: native UI, shortcuts, clipboard, UI smoke test.
 - `Tests/NepaliCoreTests`: phrase correctness, literal preservation, UTF-16 cursor positions, history, and choice invalidation.
 - `scripts/build.sh`: builds a local app bundle and applies an ad-hoc signature. No paid signing account is required for this local prototype.
@@ -67,7 +73,7 @@ No ViKey or other GPL code was used. The app includes derived CMU English, Googl
 
 The Phase 1 English dictionary is exposed as offline membership evidence but is not yet used to change typing decisions; curated Nepali first choices remain the original small handwritten vocabulary; the Google-derived index adds marked suggestions only. See `evaluation/phase1/REPORT.md` for coverage and source limitations.
 
-Rebuild the reproducible candidate resources with `python3 scripts/build-indexes.py` and `python3 scripts/build-google-aliases.py`. The latter checks the pinned source hash and rebuilds `data/compiled/google-ne-aliases.tsv`. The original Google source and attribution are under `data/sources/`. See `evaluation/phase1/REPORT.md` for quality and licensing details.
+Rebuild the shared pack with `python3 scripts/engine-data.py refresh`. `python3 scripts/build-indexes.py` is a compatibility entry point for that same pack. The optional `python3 scripts/build-google-aliases.py` regenerates the source alias index before repacking. The latter checks the pinned source hash and rebuilds `data/compiled/google-ne-aliases.tsv`. The original Google source and attribution are under `data/sources/`. See `evaluation/phase1/REPORT.md` for quality and licensing details.
 
 Aksharantar IndicCorp-labeled training pairs are included in the normal local app by user request. `†` marks those suggestions. The local context rules may choose a unique matching entry automatically; the original input remains available. The candidate row says UNSURE when the rules cannot make a confident choice, though the preview may still use a phonetic fallback. The index can be regenerated from the pinned archive using `python3 scripts/build-aksharantar-index.py /path/to/nep.zip`. It is an exact-match index, not a language model, frequency list, or guarantee of good coverage. The project owner will handle unresolved commercial licensing before distribution; no commercial clearance is asserted. See `evaluation/phase1/REPORT.md`.
 

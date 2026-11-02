@@ -2,6 +2,9 @@ import {readFile, writeFile, mkdir, copyFile, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import process from 'node:process';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {gzipSync} from 'node:zlib';
 import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
@@ -131,16 +134,22 @@ for (const asset of ['neptype-icon.png', 'neptype-mac.png']) {
   await copyFile(path.join(root, 'assets', asset), path.join(output, 'assets', asset));
 }
 // Only production assets are published; design variations and evidence stay in the repo.
-for (const asset of ['site.js', 'final.css', 'web-engine.mjs', 'web-tool.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
-const generated = await readFile(path.join(root, '../Sources/NepaliCore/GeneratedIndexes.swift'), 'utf8');
-const commonSource = await readFile(path.join(root, '../Sources/NepaliCore/Transliterator.swift'), 'utf8');
-const englishText = generated.match(/englishText\s*=\s*"""\n([\s\S]*?)\n"""/)?.[1];
-const commonText = commonSource.match(/private static let english:\s*Set<String>\s*=\s*\[([\s\S]*?)\n\s*\]/)?.[1];
-if (!englishText || !commonText) throw Error('Cannot find the native English word data for the browser pad.');
-const lexicon = JSON.parse(await readFile(path.join(root, '../data/sources/nepali-authored-v1.json'), 'utf8'));
-const dictionary = {lexicon, englishWords: englishText.trim().split('\n'), commonEnglish: [...commonText.matchAll(/"([^"]+)"/g)].map(match => match[1])};
-await writeFile(path.join(output, 'assets/web-dictionary.json'), JSON.stringify(dictionary));
-await copyFile(path.join(root, '../data/sources/CMUDICT-LICENSE.txt'), path.join(output, 'assets/CMUDICT-LICENSE.txt'));
+for (const asset of ['site.js', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
+// Build the same Rust engine and embedded dictionary used by native adapters.
+execFileSync('bash', [path.join(root, '../scripts/build-web-engine.sh')], {stdio:'inherit'});
+const wasm = await readFile(path.join(root, 'engine-build/neptype_engine_bg.wasm'));
+const wasmSha256 = createHash('sha256').update(wasm).digest('hex');
+const compressed = gzipSync(wasm, {level:9});
+const assetPath = `/engine/${wasmSha256}`;
+await mkdir(path.join(output, assetPath), {recursive:true});
+await copyFile(path.join(root, 'engine-build/neptype_engine.js'), path.join(output, assetPath, 'neptype_engine.js'));
+await writeFile(path.join(output, assetPath, 'neptype_engine_bg.wasm'), wasm);
+await writeFile(path.join(output, assetPath, 'neptype_engine_bg.wasm.bin'), compressed);
+const dictionary = JSON.parse(await readFile(path.join(root, '../engine/data/manifest.json'), 'utf8'));
+await writeFile(path.join(output, 'engine-config.json'), JSON.stringify({module:assetPath+'/neptype_engine.js',wasm:assetPath+'/neptype_engine_bg.wasm',compressed:assetPath+'/neptype_engine_bg.wasm.bin',wasmSha256,wasmBytes:wasm.length,compressedBytes:compressed.length,compressedSha256:createHash('sha256').update(compressed).digest('hex'),dictionaryId:dictionary.id}));
+await writeFile(path.join(output, 'assets/neptype-dictionaries.json'), JSON.stringify(dictionary));
+await copyFile(path.join(root, '../engine/data/RUST-LICENSES.txt'), path.join(output, 'assets/RUST-LICENSES.txt'));
+for (const license of ['CMUDICT-LICENSE.txt','GOOGLE-NE-ATTRIBUTION.txt','AKSHARANTAR-ATTRIBUTION.txt']) await copyFile(path.join(root, '../data/sources', license), path.join(output, 'assets', license));
 await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production)}});
 let styles = await readFile(path.join(root, 'styles.css'), 'utf8');
 // Load fonts directly from the document head instead of a blocking CSS import chain.

@@ -22,8 +22,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import app.neptype.keyboard.core.Composition;
 import app.neptype.keyboard.core.DisplaySettings;
-import app.neptype.keyboard.core.CandidateMerger;
-import app.neptype.keyboard.core.PhoneticCandidates;
 import app.neptype.keyboard.core.CandidatePreview;
 import app.neptype.keyboard.core.CandidatePages;
 import app.neptype.keyboard.core.InputSafety;
@@ -34,7 +32,7 @@ import app.neptype.keyboard.core.RenderActionGuard;
 import app.neptype.keyboard.core.RecoveryBuffer;
 import app.neptype.keyboard.core.LanguagePreferences;
 import app.neptype.keyboard.core.PersistentLanguagePreferences;
-import app.neptype.keyboard.core.SortedCandidateIndex;
+import app.neptype.keyboard.core.SharedEngine;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,12 +42,13 @@ import java.util.Locale;
 
 /** Experimental offline input method: original Roman text is always the default. */
 public final class NepTypeKeyboardService extends InputMethodService {
+    private volatile SharedEngine sharedEngine;
+    private volatile boolean serviceDestroyed;
     private boolean shifted;
     private boolean symbols;
     private boolean literalOnly = true;
-    // Session-only opt-in: approximate fallback can be noisy.
+    // Session-only output mode; candidate ranking is owned by the shared engine.
     private boolean allNepaliSuggestions;
-    private String approximateSuggestion;
     private LinearLayout keyboard;
     private final Composition composition = new Composition();
     private final LanguagePreferences languagePreferences = new LanguagePreferences();
@@ -80,7 +79,6 @@ public final class NepTypeKeyboardService extends InputMethodService {
     @Override public void onStartInput(EditorInfo info, boolean restarting) {
         super.onStartInput(info, restarting);
         allNepaliSuggestions = false;
-        approximateSuggestion = null;
         // Recovery never crosses an editor/session boundary.
         recovery.clear();
         candidateDisplayLimit = DisplaySettings.candidateLimit(getSharedPreferences(SettingsActivity.PREFS, MODE_PRIVATE)
@@ -115,7 +113,13 @@ public final class NepTypeKeyboardService extends InputMethodService {
         activePackage = null;
         super.onFinishInput();
     }
-    @Override public void onDestroy() { actionGuard.invalidate(); recovery.clear(); generation++; lookupScheduler.close(); super.onDestroy(); }
+    @Override public void onDestroy() {
+        actionGuard.invalidate(); recovery.clear(); generation++; lookupScheduler.close();
+        final SharedEngine closing;
+        synchronized (this) { serviceDestroyed = true; closing = sharedEngine; sharedEngine = null; }
+        if (closing != null) new Thread(closing::close, "neptype-engine-close").start();
+        super.onDestroy();
+    }
     @Override public void onUpdateSelection(int oldStart, int oldEnd, int newStart, int newEnd, int candidatesStart, int candidatesEnd) {
         super.onUpdateSelection(oldStart, oldEnd, newStart, newEnd, candidatesStart, candidatesEnd);
         // A cursor/selection moved inside or outside the marked token invalidates
@@ -148,9 +152,8 @@ public final class NepTypeKeyboardService extends InputMethodService {
                 for (int i = start; i < Math.min(start + candidateDisplayLimit, suggestions.size()); i++) {
                     String candidate = suggestions.get(i);
                     boolean selected = candidate.equals(pending);
-                    boolean approximate = candidate.equals(approximateSuggestion);
-                    Button choice = add(candidates, approximate ? "≈ " + candidate : candidate,
-                            (approximate ? "Approximate phonetic suggestion. " : "") + (selected ? "Selected preview " : "Preview ") + candidate
+                    Button choice = add(candidates, candidate,
+                            (selected ? "Selected preview " : "Preview ") + candidate
                                     + ", suggestion " + (i + 1) + " of " + suggestions.size(),
                             () -> previewCandidate(candidate, shownGeneration, shownToken, shownPage), 1f);
                     choice.setLayoutParams(new LinearLayout.LayoutParams(dp(112), dp(48)));
@@ -159,13 +162,13 @@ public final class NepTypeKeyboardService extends InputMethodService {
             }
         } else {
             TextView title = new TextView(this);
-            title.setText(!editGuard.mayEdit() ? "Typing paused · refocus field" : (literalOnly ? "Literal typing in this field" : (composition.isNepali() ? (allNepaliSuggestions ? "All Nepali · ≈ means approximate" : "Nepali · tap a suggestion to convert") : "English · literal typing")));
+            title.setText(!editGuard.mayEdit() ? "Typing paused · refocus field" : (literalOnly ? "Literal typing in this field" : (composition.isNepali() ? (allNepaliSuggestions ? "All Nepali suggestions" : "Nepali · tap a suggestion to convert") : "English · literal typing")));
             title.setTextColor(INK); title.setGravity(Gravity.CENTER); title.setTextSize(14);
             candidates.addView(title, new LinearLayout.LayoutParams(0, dp(40), 1f));
             if (!literalOnly && composition.isNepali()) {
-                Button all = add(candidates, allNepaliSuggestions ? "All ≈ ✓" : "All ≈",
+                Button all = add(candidates, allNepaliSuggestions ? "All ✓" : "All",
                         "All Nepali suggestions " + (allNepaliSuggestions ? "on" : "off")
-                                + "; tap to change approximate fallback", () -> {
+                                + "; tap to change suggestion mode", () -> {
                             if (!editGuard.mayEdit() || literalOnly || composition.active() || !composition.isNepali()) return;
                             allNepaliSuggestions = !allNepaliSuggestions; generation++; render();
                         }, 1f);
@@ -223,9 +226,8 @@ public final class NepTypeKeyboardService extends InputMethodService {
             final long shownGeneration = generation;
             final String shownToken = composition.text();
             LinearLayout actions = new LinearLayout(this);
-            boolean approximate = pending.equals(approximateSuggestion);
-            add(actions, "Use " + (approximate ? "≈ " : "") + pending,
-                    "Use " + (approximate ? "approximate phonetic spelling " : "") + pending + "; replace the current Roman word",
+            add(actions, "Use " + pending,
+                    "Use " + pending + "; replace the current Roman word",
                     () -> commitPreview(shownGeneration, shownToken, pending), 1f);
             add(actions, "Cancel choice", "Cancel preview and keep the Roman word",
                     () -> cancelPreview(shownGeneration, shownToken, pending), 1f);
@@ -277,36 +279,37 @@ public final class NepTypeKeyboardService extends InputMethodService {
     }
     private void requestCandidates() {
         final String source = composition.text();
-        final boolean useApproximate = allNepaliSuggestions;
+        final boolean useAllNepali = allNepaliSuggestions;
         final long request = ++generation;
-        approximateSuggestion = null;
         preview.clear();
         candidatePage = 0;
         suggestions = Collections.emptyList();
         boolean accepted = lookupScheduler.submit(() -> {
-            List<String> found = new ArrayList<>();
-            int unavailable = 0;
-            for (String asset : new String[]{"nepali-authored-v1.tsv", "aksharantar-indiccorp-v1.tsv", "google-ne-aliases.tsv"}) {
-                try {
-                    AssetFileDescriptor fd = getAssets().openFd(asset);
-                    long start = fd.getStartOffset(), length = fd.getLength();
-                    // The AutoCloseInputStream owns and closes the AssetFileDescriptor.
-                    try (FileInputStream stream = fd.createInputStream()) {
-                        SortedCandidateIndex index = new SortedCandidateIndex(stream.getChannel(), start, length);
-                        CandidateMerger.add(found, index.lookup(source, 4), 4);
-                    }
-                } catch (IOException ignored) { unavailable++; }
-            }
-            final String approximate = useApproximate ? PhoneticCandidates.lastResort(source, found) : "";
-            if (!approximate.isEmpty()) found.add(approximate);
-            final boolean allUnavailable = unavailable == 3;
+            List<String> values;
+            boolean failed = false;
+            try { values = obtainSharedEngine().candidates(source, useAllNepali ? SharedEngine.ALL_NEPALI : SharedEngine.NEPALI); }
+            catch (Exception | LinkageError error) { values = Collections.emptyList(); failed = true; }
+            final List<String> found = new ArrayList<>(values);
+            found.remove(source); // The native UI offers the original separately.
+            final boolean allUnavailable = failed;
             main.post(() -> {
                 if (!InputSafety.acceptsLookup(request, generation, source, composition.text(), composition.active())) return;
                 if (allUnavailable) feedback.dictionariesUnavailable();
-                suggestions = found; approximateSuggestion = approximate.isEmpty() ? null : approximate; candidatePage = 0; render();
+                suggestions = found; candidatePage = 0; render();
             });
         });
         if (!accepted) feedback.dictionariesUnavailable();
+    }
+    private SharedEngine obtainSharedEngine() throws IOException {
+        if (serviceDestroyed) throw new IOException("Keyboard session closed");
+        SharedEngine current = sharedEngine;
+        if (current != null) return current;
+        SharedEngine created = new SharedEngine("");
+        synchronized (this) {
+            if (serviceDestroyed) { created.close(); throw new IOException("Keyboard session closed"); }
+            sharedEngine = created;
+        }
+        return created;
     }
     private void changeCandidatePage(long shownGeneration, String shownToken, int shownPage, int requestedPage) {
         if (!CandidatePages.acceptsChange(shownGeneration, generation, shownToken, composition.text(),

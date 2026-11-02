@@ -1,0 +1,4 @@
+module CNepTypeEngine {
+    header "neptype_engine.h"
+    export *
+}

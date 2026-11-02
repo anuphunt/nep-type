@@ -2,37 +2,17 @@
 
 The project includes an original native setup activity with user-triggered links to Android's keyboard settings and picker, plus a 2–4 candidate display preference. It does not enable or select NepType itself. The original word remains shown separately, and the display preference is read at the next input session. The activity, preference integration, Android settings navigation, accessibility and field safety have **not** been compiled or exercised on Android. The existing JDK test verifies preference bounds and the XML parses; these do not validate the native UI.
 
-This is an **uncompiled, uninstalled experimental keyboard**, not production-ready. It is not the same ranking engine as macOS. The Java service keeps Roman text as marked composition and looks up exact Roman spellings in the project-authored Nepali lexicon, Aksharantar and Google-derived indexes on a background worker. Tapping a suggestion selects a reversible preview while the Roman token remains marked. Tap “Use” to replace it, or cancel the choice and keep the original; pressing space commits the original. English mode sends literal keys. If indexes are unavailable, the original remains the default. Stale worker results are discarded after subsequent typing, switching or focus changes. The implementation does not automatically determine English versus Nepali or match the Mac's context ranking, and index candidates can be noisy. Literal mode remains safest for code and sensitive text.
+The keyboard now delegates candidate generation and ranking to the shared Rust engine through `SharedEngine` and JNI. It keeps its native Java UI and host ownership/composition guards. The former independent Java indexes and phonetic fallback are removed from the app build; regression fixtures live only under `tests/legacy`. The original is still offered separately and applying a suggestion remains explicit.
 
-The app contains no network permission. It packages the same 94 MB Aksharantar and 10 MB Google alias indexes used by the Mac prototype, in uncompressed APK assets so it can seek them without loading either into memory. The original dataset's attribution and manifest are included in `app/src/main/assets`; the user will handle Aksharantar commercial licensing before distribution, which remains unresolved. Resource size, load/lookup latency, memory and Android packaging have not been measured on a device. Do not ship before license review.
+One dictionary pack is embedded in the Rust library. Gradle preBuild stages only its identity manifest and notices; no vocabulary is extracted or replaced at runtime. There are no checked-in Android TSV copies. Missing libraries fail the native build; missing runtime data leaves suggestions unavailable without substituting another engine.
 
-## Verification on the development Mac
+See [shared-engine build instructions](../../shared/README.md) for Rust Android/NDK builds, supported ABIs, API 28 minimum, and verification. The JNI binding passes real candidate parity tests on the development Mac. `JDK_BIN=/path/to/jdk/bin ./tests/run-core.sh` checks host-independent Java guards and legacy format fixtures; it does not compile the Android service.
 
-A usable existing JDK is at `/opt/homebrew/opt/openjdk/bin` (Java 27). With `JDK_BIN` set to an installed JDK's `bin` directory, run:
-
-```sh
-JDK_BIN=/opt/homebrew/opt/openjdk/bin ./tests/run-core.sh
-```
-
-This compiles and runs the platform-independent Java index/composition tests: 600 deterministic synthetic indexed keys, byte segment boundaries, duplicate candidates, original-text preservation and English mode, plus representative lookup checks against the bundled actual indexes. An independent spot check of ten actual indexes on the Mac observed approximately 0.6–6.7 ms per lookup; this is not an Android benchmark or an accuracy estimate. The Android manifest and input-method XML parse successfully.
-
-No Android SDK, Gradle or adb was found in the checked environment. Consequently neither the service source nor the Android package has been compiled, installed, activated or exercised. The Gradle project requests AGP 8.9.3 and SDK 35, whose compatibility has not been verified. Do not install or enable the prototype without required user authorization.
-
-## Open safety and product work
-
-- A rejected `setComposingText` invalidates local state and is not retried because the host may have applied it despite returning false. The new keystroke may be missing, and the old marked span may remain in the host; this uncertainty must be resolved with real-host tests before use. Missing composing ranges with a selection change invalidate local ownership and stale candidates.
-- Test InputConnection marked-text replacement, user-selected candidates, stale callback rejection, focus changes, cursor movement, deletion, editor action, hardware keys and host failures on actual Android apps and devices. Android APIs may report selection or composing ranges differently across clients; the current checks cannot guarantee against stale edits. Secure fields and IME lifecycle are unverified.
-- Expand and test numeric/symbol layouts, punctuation, host-specific enter actions, accessible touch targets, visual resizing and accessibility. The current UI rebuilds views per key and its performance is unknown.
-- Use shared versioned engine/conformance fixtures and make a deliberate ranking/portable-core decision; the three local index layers use simple exact match and preserve source order. Do not claim model accuracy or equivalence to the Swift engine.
-- Verify SDK/Gradle dependencies, reproducible source and asset hashes, build Android with an approved toolchain, and run the real-device and privacy matrix before any distribution.
+The Android SDK, Gradle, NDK and adb were unavailable here. The APK, Android resource extraction, lifecycle, editor interaction and runtime packaging still require compilation and device validation. Dataset redistribution permissions remain unresolved as documented in the repository notices.
 
 ## Additional input safety and return-action work
 
 The service now invalidates local composition and pending suggestions after a failed candidate replacement, failed composition deletion, or failed finish operation; it never automatically retries an uncertain host edit. Such failures may still leave the host's actual text or cursor in an unknown state. Pure-Java tests cover current/stale candidate generations, changed text, cursor moves, selections, missing/malformed composing ranges and host return-action decision flags. The return key attempts an explicitly requested editor action (such as Done or Search) unless the host requests a newline; otherwise it inserts a newline. Actual Android editor interactions, callback ordering and API compilation remain unverified because the Android SDK is unavailable. Failed or asynchronous editor actions are not retried. These tests do not prove host text integrity.
-
-## Project-authored candidate index
-
-The entire project-authored `data/sources/nepali-authored-v1.json` lexicon (259 Roman keys) is transformed reproducibly to the byte-sorted `app/src/main/assets/nepali-authored-v1.tsv` by `python3 scripts/build-authored-index.py`; use `--check` to detect drift, or `--source /path/to/nepali-authored-v1.json` for a separate workspace. Candidate lookup merges sources in priority order: authored alternatives first, followed by Aksharantar, then Google aliases, preserving each source's order, removing duplicates and limiting the visible list to four. The Roman original remains marked while a candidate is previewed; only the explicit Use action replaces it, and space retains the original. This adds authored candidates, not the Mac engine's phonetic fallback, contextual scoring, automatic classification or exact overall candidate ranking. Tests check authored `football` and `bhetau`, source-order merging, original preservation and generator reproducibility. The authored data is project-authored; dataset attribution and commercial licensing status remain as previously documented. `ASSET_HASHES.sha256` covers the generated index. Android host code remains uncompiled and untested on-device.
 
 ## Literal-field safeguards and basic symbols
 

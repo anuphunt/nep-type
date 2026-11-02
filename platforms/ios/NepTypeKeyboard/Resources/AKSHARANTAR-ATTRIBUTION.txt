@@ -1,6 +1,0 @@
-Aksharantar — AI4Bharat (Madhani et al.), Nepali training data.
-Source and dataset card: https://huggingface.co/datasets/ai4bharat/Aksharantar
-Pinned revision: e418c1fc928d9f5393af33268472cf20c1891be8
-Paper: https://arxiv.org/abs/2205.03018
-This index retains only IndicCorp-labeled training rows, filters script/length, removes duplicates, and sorts by Roman and native spelling. Scores were discarded and no frequency was inferred. See AKSHARANTAR-PROVENANCE.json for hashes and exact counts.
-The dataset card assigns CC0 to packaging of mined data while saying the authors do not own the underlying text. The source chain and commercial redistribution rights remain unresolved; the project owner will resolve commercial licensing before distribution. This source notice is not a representation of license clearance or endorsement by AI4Bharat.

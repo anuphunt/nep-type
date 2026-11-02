@@ -1,91 +1,43 @@
 import Foundation
+import CNepTypeEngine
 
 public struct CompositionSnapshot: Equatable, Sendable {
     public var source = ""
     public var language: TypingLanguage = .nepali
-    public var overrides: [Int: String] = [:]
+    public var overrides: [Int:String] = [:]
     public init() {}
 }
-
+/// Reference-counted foreign handle; Swift copies clone Rust state on mutation.
+private final class RustComposerBox: @unchecked Sendable {
+    let handle: UnsafeMutableRawPointer
+    init(handle: UnsafeMutableRawPointer? = nil) { self.handle = handle ?? neptype_composer_create()! }
+    func clone() -> RustComposerBox { RustComposerBox(handle: neptype_composer_clone(handle)) }
+    deinit { neptype_engine_destroy(handle) }
+}
+/// Native editor history stays inside Rust and preserves Swift value semantics.
 public struct Composer: Sendable {
-    public private(set) var state = CompositionSnapshot()
-    private var past: [CompositionSnapshot] = []
-    private var future: [CompositionSnapshot] = []
-    public let engine = Transliterator()
-    public init() {}
-    public var output: String { engine.render(state.source, language: state.language, overrides: state.overrides) }
-    public var canUndo: Bool { !past.isEmpty }
-    public var canRedo: Bool { !future.isEmpty }
-
-    private mutating func checkpoint() {
-        past.append(state)
-        if past.count > 200 { past.removeFirst() }
-        future.removeAll()
+    private var box = RustComposerBox()
+    private var cached: Data?
+    public let engine: Transliterator
+    public init(engine: Transliterator = Transliterator()) { self.engine = engine }
+    private var response: [String:Any] { cached.map(RustEngine.decode) ?? RustEngine.query(["op":"composer"], composer:box.handle) as! [String:Any] }
+    public var state: CompositionSnapshot {
+        let current=(response["state"] as! [String:Any])["current"] as! [String:Any]
+        var s=CompositionSnapshot();s.source=current["source"] as! String;s.language=RustEngine.language(current["mode"] as! Int)
+        s.overrides=Dictionary(uniqueKeysWithValues:(current["overrides"] as! [String:String]).compactMap{key,value in Int(key).map{($0,value)}})
+        return s
     }
-
-    public mutating func setSource(_ value: String) {
-        guard value != state.source else { return }
-        checkpoint()
-        if !state.overrides.isEmpty {
-            let oldUnits = Array(state.source.utf16), newUnits = Array(value.utf16)
-            let prefix = zip(oldUnits, newUnits).prefix { $0 == $1 }.count
-            var suffix = 0
-            while suffix < oldUnits.count - prefix && suffix < newUnits.count - prefix &&
-                    oldUnits[oldUnits.count - 1 - suffix] == newUnits[newUnits.count - 1 - suffix] {
-                suffix += 1
-            }
-            let oldWords = engine.tokens(in: state.source)
-            let newWords = engine.tokens(in: value)
-            let oldByPosition = Dictionary(uniqueKeysWithValues: oldWords.map { ($0.range.location, $0) })
-            let newByPosition = Dictionary(uniqueKeysWithValues: newWords.map { ($0.range.location, $0) })
-            func counts(_ words: [WordToken]) -> [String: Int] {
-                words.filter { !$0.isLiteral }.reduce(into: [:]) { $0[$1.text.lowercased(), default: 0] += 1 }
-            }
-            let oldCounts = counts(oldWords), newCounts = counts(newWords)
-            let suffixStart = oldUnits.count - suffix
-            let delta = newUnits.count - oldUnits.count
-            var retained: [Int: String] = [:]
-            for (position, selected) in state.overrides {
-                guard let oldWord = oldByPosition[position], !oldWord.isLiteral,
-                      oldCounts[oldWord.text.lowercased()] == newCounts[oldWord.text.lowercased()] else { continue }
-                let newPosition: Int
-                if NSMaxRange(oldWord.range) <= prefix { newPosition = position }
-                else if oldWord.range.location >= suffixStart { newPosition = position + delta }
-                else { continue }
-                guard newPosition >= 0, let newWord = newByPosition[newPosition],
-                      !newWord.isLiteral, newWord.text == oldWord.text,
-                      newWord.range.length == oldWord.range.length else { continue }
-                retained[newPosition] = selected
-            }
-            state.overrides = retained
-        }
-        state.source = value
+    public var output: String { (response["rendered"] as! [String:Any])["text"] as! String }
+    public var canUndo: Bool { response["canUndo"] as! Bool }
+    public var canRedo: Bool { response["canRedo"] as! Bool }
+    private mutating func change(_ action: [String:Any]) {
+        if !isKnownUniquelyReferenced(&box) { box = box.clone() }
+        let r=RustEngine.query(["op":"composer","actions":[action]], composer:box.handle)
+        cached=RustEngine.encode(r)
     }
-
-    public mutating func setLanguage(_ language: TypingLanguage) {
-        guard language != state.language else { return }
-        checkpoint()
-        state.language = language
-    }
-
-    public mutating func choose(_ candidate: String, for token: WordToken) {
-        guard state.language != .english, !token.isLiteral,
-              engine.tokens(in: state.source).contains(token),
-              engine.candidates(for: token.text).contains(candidate),
-              state.overrides[token.range.location] != candidate else { return }
-        checkpoint()
-        state.overrides[token.range.location] = candidate
-    }
-
-    public mutating func undo() {
-        guard let previous = past.popLast() else { return }
-        future.append(state)
-        state = previous
-    }
-
-    public mutating func redo() {
-        guard let next = future.popLast() else { return }
-        past.append(state)
-        state = next
-    }
+    public mutating func setSource(_ value: String) { change(["op":"source","text":value]) }
+    public mutating func setLanguage(_ value: TypingLanguage) { change(["op":"mode","mode":RustEngine.mode(value)]) }
+    public mutating func choose(_ candidate: String, for token: WordToken) { change(["op":"choose","token":RustEngine.token(token),"value":candidate]) }
+    public mutating func undo() { change(["op":"undo"]) }
+    public mutating func redo() { change(["op":"redo"]) }
 }

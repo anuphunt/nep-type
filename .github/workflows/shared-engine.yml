@@ -1,0 +1,104 @@
+name: Shared Rust engine
+on:
+  push:
+    branches: [main]
+  pull_request:
+env:
+  PYTHONUTF8: '1'
+permissions:
+  contents: read
+concurrency:
+  group: rust-engine-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            library: engine/target/release/libneptype_engine.so
+          - os: macos-latest
+            library: engine/target/release/libneptype_engine.dylib
+          - os: windows-latest
+            library: engine/target/release/neptype_engine.dll
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - if: runner.os == 'macOS'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: python scripts/engine-data.py check
+      - run: cargo test --locked --release --manifest-path engine/Cargo.toml
+      - run: cargo build --locked --release --manifest-path engine/Cargo.toml
+      - run: python shared/tests/abi_smoke.py '${{ matrix.library }}'
+      - run: python portable-core/tests/conformance.py engine/target/release/neptype-conformance${{ runner.os == 'Windows' && '.exe' || '' }}
+      - run: python portable-core/tests/safety_corpus.py engine/target/release/neptype-conformance${{ runner.os == 'Windows' && '.exe' || '' }}
+      - if: runner.os == 'macOS'
+        run: |
+          JDK_BIN="$JAVA_HOME/bin" bash shared/tests/run.sh
+          swift test --disable-sandbox
+          bash scripts/build.sh
+      - if: runner.os == 'Linux'
+        run: |
+          NEPTYPE_TEST_CORE="$GITHUB_WORKSPACE/engine/target/release/neptype-conformance" bash platforms/windows/tests/run.sh
+          cd platforms/linux
+          NEPTYPE_TEST_CORE="$GITHUB_WORKSPACE/engine/target/release/neptype-conformance" python -m unittest discover -s tests -q
+      - if: runner.os == 'Windows'
+        run: |
+          mkdir -p build/rust-windows
+          cp engine/target/release/neptype_engine.dll build/rust-windows/NepTypeEngine.dll
+          cmake -S platforms/windows -B build/windows -DNEPTYPE_ENGINE_BINARY_DIR="$GITHUB_WORKSPACE/build/rust-windows"
+          cmake --build build/windows --config Release
+          ctest --test-dir build/windows -C Release --output-on-failure
+  apple:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/engine-data.py check
+      - run: xcodebuild -project platforms/ios/NepTypeMobile.xcodeproj -scheme NepTypeMobile -configuration Release -destination generic/platform=iOS CODE_SIGNING_ALLOWED=NO build
+      - run: xcodebuild -project platforms/ios/NepTypeMobile.xcodeproj -scheme NepTypeMobile -configuration Debug -sdk iphonesimulator -destination generic/platform=iOS\ Simulator CODE_SIGNING_ALLOWED=NO build
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - run: |
+          NDK_PATH=$(find "$ANDROID_HOME/ndk" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -1)
+          python scripts/build-android-engine.py --abi arm64-v8a --ndk "$NDK_PATH"
+          python scripts/build-android-engine.py --abi x86_64 --ndk "$NDK_PATH"
+          JDK_BIN="$JAVA_HOME/bin" bash platforms/android/tests/run-core.sh
+          cd platforms/android
+          gradle assembleDebug
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm --prefix landing-page ci
+      - run: npm --prefix landing-page test

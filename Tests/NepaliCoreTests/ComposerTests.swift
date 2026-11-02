@@ -2,6 +2,30 @@ import XCTest
 @testable import NepaliCore
 
 final class ComposerTests: XCTestCase {
+    func testCopiedComposerHasIndependentRustHistory() {
+        var original = Composer()
+        original.setSource("ma pani")
+        var copy = original
+        let token = copy.engine.tokens(in: copy.state.source).last!
+        copy.choose("पानी", for: token)
+        XCTAssertEqual(original.output, "म पनि")
+        XCTAssertEqual(copy.output, "म पानी")
+        copy.undo()
+        XCTAssertEqual(copy.output, original.output)
+        original.setSource("namaste")
+        XCTAssertEqual(copy.output, "म पनि")
+    }
+
+    func testLongDocumentHistoryStaysInsideRust() {
+        var composer = Composer()
+        let prefix = String(repeating: " ", count: 80_000)
+        for index in 0..<110 { composer.setSource(prefix + "namaste" + String(index)) }
+        XCTAssertEqual(composer.state.source, prefix + "namaste109")
+        composer.undo()
+        XCTAssertEqual(composer.state.source, prefix + "namaste108")
+        composer.redo()
+        XCTAssertEqual(composer.state.source, prefix + "namaste109")
+    }
     override class func setUp() {
         super.setUp()
         let project = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()

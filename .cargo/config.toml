@@ -1,0 +1,5 @@
+[target.'cfg(target_os = "android")']
+rustflags = ["-C", "link-arg=-Wl,-soname,libNepTypeEngine.so", "-C", "link-arg=-Wl,-z,max-page-size=16384"]
+
+[target.'cfg(target_os = "linux")']
+rustflags = ["-C", "link-arg=-Wl,-soname,libNepTypeEngine.so"]

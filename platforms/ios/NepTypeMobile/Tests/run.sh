@@ -13,8 +13,9 @@ app="$work/ContainerHost.app"
 mkdir -p "$app" "$work/cache"
 cleanup() { xcrun simctl uninstall "$udid" "$app_id" >/dev/null 2>&1 || true; rm -rf "$work"; }
 trap cleanup EXIT HUP INT TERM
-xcrun --sdk iphonesimulator swiftc -D NEPTYPE_CONTAINER_TEST -sdk "$(xcrun --sdk iphonesimulator --show-sdk-path)" -target arm64-apple-ios17.0-simulator -module-cache-path "$work/cache" -parse-as-library "$project/NepTypeMobile/AppDelegate.swift" "$project/../../Sources/NepaliCore/Composer.swift" "$project/NepTypeKeyboard/SharedCore/Transliterator.swift" "$project/NepTypeKeyboard/SharedCore/GeneratedIndexes.swift" "$project/NepTypeKeyboard/SharedCore/GeneratedAliasIndex.swift" "$project/NepTypeMobile/Tests/ContainerHost.swift" -o "$app/ContainerHost"
-cp "$project"/NepTypeKeyboard/Resources/*.tsv "$app/"
+bash "$project/../../scripts/build-apple-engine.sh" iphonesimulator
+xcrun --sdk iphonesimulator swiftc -I "$project/../../shared/include" "$project/../../build/rust-apple/iphonesimulator/libneptype_engine.a" -D NEPTYPE_CONTAINER_TEST -sdk "$(xcrun --sdk iphonesimulator --show-sdk-path)" -target arm64-apple-ios17.0-simulator -module-cache-path "$work/cache" -parse-as-library "$project/NepTypeMobile/AppDelegate.swift" "$project/../../Sources/NepaliCore/Composer.swift" "$project/../../Sources/NepaliCore/Transliterator.swift" "$project/../../Sources/NepaliCore/GeneratedIndexes.swift" "$project/../../Sources/NepaliCore/GeneratedAliasIndex.swift" "$project/NepTypeMobile/Tests/ContainerHost.swift" -o "$app/ContainerHost"
+python3 "$project/../../scripts/engine-data.py" stage "$app/"
 cat > "$app/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>CFBundleIdentifier</key><string>app.neptype.containerhost</string><key>CFBundleName</key><string>NepType Container Test</string><key>CFBundleExecutable</key><string>ContainerHost</string><key>CFBundlePackageType</key><string>APPL</string><key>CFBundleVersion</key><string>1</string><key>CFBundleShortVersionString</key><string>1.0</string><key>MinimumOSVersion</key><string>17.0</string><key>UILaunchScreen</key><dict/></dict></plist>
 PLIST
@@ -32,6 +33,9 @@ done
 mkdir -p "$project/../../evidence/platforms"
 if [ -f "$result" ]; then
   xcrun simctl io "$udid" screenshot "$project/../../evidence/platforms/iphone-keyboard.png"
+fi
+if [ ! -f "$result" ]; then
+  xcrun simctl terminate "$udid" "$app_id" >/dev/null 2>&1 || true
 fi
 wait "$host_pid" || true
 test -f "$result" || { echo "Host produced no result" >&2; exit 1; }

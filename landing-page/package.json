@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "pretest": "bash ../scripts/build-web-engine.sh"
   },
   "dependencies": {
     "esbuild": "0.28.2",

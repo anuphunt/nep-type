@@ -35,9 +35,9 @@ Only production pages, styles, scripts, product images, and the browser dictiona
 
 ## Browser typing pad
 
-The homepages include a working local transliterator with mixed Nepali/English and All Nepali modes, spelling choices, and clipboard copy. Use Option/Alt + the displayed number to choose a spelling while either editor has focus. Input is held in memory and is never sent to a server. The dictionary is loaded as the pad approaches the viewport; typing then runs locally. Reloading requires a connection.
+The homepages include a working local transliterator with mixed Nepali/English and All Nepali modes, spelling choices, and clipboard copy. Use Option/Alt + the displayed number to choose a spelling while either editor has focus. Candidate pages use Previous/Next or Command/Control + Alt + brackets; original spelling stays available on every page. Command/Control + Z and Shift + Z undo/redo both typing and spelling choices. Input is held in memory and is never sent to a server. The full engine and dictionary load as the pad approaches the viewport, then typing runs locally. The engine is cached where browser storage is available; loading the website itself still requires a connection.
 
-`web-engine.mjs` implements deterministic phonetic/context rules with the authored Nepali lexicon and CMU English membership data. It uses a smaller dictionary than the desktop app, so spelling suggestions can differ. The CMU license is published alongside that data. `web-tool.mjs` handles the editors and word choices. Run `npm --prefix landing-page test` for engine and generated-site checks. The SEO tests build production, preview, and local variants; run the build command afterward to select the variant you want to preview.
+`web-engine.mjs` is a worker transport for the shared Rust WebAssembly engine. It embeds the identical full dictionary pack as every native app. The worker verifies the asset and dictionary fingerprints, caches the engine locally where supported, and keeps typing off the UI thread. All dictionary attributions are published alongside the engine. `web-tool.mjs` handles the editors and word choices. Run `npm --prefix landing-page test` for engine and generated-site checks. The SEO tests build production, preview, and local variants; run the build command afterward to select the variant you want to preview.
 
 ## Analytics
 

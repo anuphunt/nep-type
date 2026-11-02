@@ -2,9 +2,9 @@
 
 **Current behavior:** The security-review section at the end supersedes earlier dated experiment descriptions. The production proxy now pauses when ownership is uncertain; earlier descriptions of committing on callbacks are historical.
 
-This project builds a container and an iOS custom-keyboard extension with the same offline Swift engine and local indexes as the Mac prototype. Roman text is displayed as marked text; tap a candidate to select it, then use Space or Return to commit it. The selected candidate is highlighted while the text remains Roman until acceptance. Delete restores the exact Roman token while a preview is active; without a preview, Space commits the original. The language toggle switches to literal English. It does not request Full Access. No keyboard has been installed or enabled, and its behavior in a real host has not been verified; it is not production-ready.
+This project builds a container and an iOS custom-keyboard extension with the same shared Rust engine and embedded dictionary as the Mac prototype. Roman text is displayed as marked text; tap a candidate to select it, then use Space or Return to commit it. The selected candidate is highlighted while the text remains Roman until acceptance. Delete restores the exact Roman token while a preview is active; without a preview, Space commits the original. The language toggle switches to literal English. It does not request Full Access. No keyboard has been installed or enabled, and its behavior in a real host has not been verified; it is not production-ready.
 
-The Swift source and indexes in `NepTypeKeyboard` are a snapshot of the primary project. Before each extension build a script compares the snapshot with the project root and fails on any difference. After intentionally updating the main engine or data, run `./sync-core.sh --sync` from this directory, then rebuild and retest. In a separate workspace, pass the main project root explicitly: `./sync-core.sh --sync /path/to/neptype`, and add `NEPTYPE_CORE_ROOT=/path/to/neptype` to xcodebuild. The script uses ordinary copies and compares bytes; it does not edit the source tree. Run `Tests/run-core.sh` (optionally followed by the root path) to check the snapshot and exercise candidates, literal preservation and language switching as a macOS process.
+The app and extension now reference `Sources/NepaliCore` and canonical dictionaries directly from this repository. There are no maintained SharedCore or resource snapshots. `sync-core.sh --check` (and the compatibility `--sync` spelling) verifies those references and dictionary hashes; it no longer copies files. Keep the repository structure intact when opening Xcode. `Tests/run-core.sh` exercises the canonical core as a macOS process. See [shared-engine architecture](../../shared/README.md).
 
 A generic iOS Simulator build succeeded using Xcode 27.1 with signing disabled. The compiled extension is roughly 107 MB uncompressed: about 94 MB of Aksharantar data, 10 MB of Google aliases and the executable/other resources. The core uses memory-mapped index files, but actual iOS extension peak memory, startup, latency and termination behavior have not been measured. A macOS process running the snapshot's first small composition sequence took 56 ms; this is not an iOS benchmark. Simulator devices exist outside the sandbox; the build was not installed and its keyboard was not activated or exercised.
 
@@ -97,3 +97,16 @@ The extension now follows the supplied iPhone keyboard reference: a 44-point pre
 The compact अA control switches Nepali/English on tap. Touch and hold it for All Nepali and cursor options. During composition, swipe the three prediction slots to page through alternatives, or use the same menu's Previous/More actions. The original Roman spelling remains in the first slot on every page. A later lookup cannot move the key grid. Globe-key handling still uses UIKit's required input-mode switcher behavior; this UI does not draw a replacement system dictation control.
 
 The simulator harness exercises the real buttons and menu actions, stale actions, correction/recovery safeguards, host capitalization, light appearance, and key geometry at 320, 393, and 430 points. Its keyboard-only screenshots are saved under evidence/native-keyboard/. These are injected-editor checks, not verification of real system-extension callbacks, dictation, QuickPath, or host-specific behavior.
+
+## TestFlight app identity
+
+The registered TestFlight app is Apple ID 6829130224, bundle ID `app.lekha.prototype`,
+with extension ID `app.lekha.prototype.keyboard`. These stable identifiers are kept
+through the NepType rebrand so installed testers receive updates. The Xcode project
+defines `NEPTYPE_APP_BUNDLE_IDENTIFIER` once and derives the extension identifier
+from it. Product names, icons and display names remain NepType. Version 0.1.0 build 2
+includes the native keyboard layout updates and canonical shared engine/dictionaries.
+
+Build 3 sets the installed app display name to exactly `NepType`. The App Store
+Connect/TestFlight listing was also renamed to `NepType`; the registered bundle
+identifiers stay stable for existing testers.

@@ -29,3 +29,8 @@ landing-page/node_modules/
 *.mobileprovision
 *.keystore
 *.jks
+
+# Rust build outputs; the canonical pack is rebuilt from pinned sources.
+engine/target/
+engine/data/neptype.pack
+landing-page/engine-build/

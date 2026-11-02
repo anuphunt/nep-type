@@ -32,6 +32,11 @@ def files(root):
 def prepare(output, root=ROOT):
     source = files(root)
     payload = [(path.relative_to(root).as_posix(), path.read_bytes()) for path in source]
+    # Include the canonical client directly, never a maintained platform copy.
+    client = ROOT.parents[1] / "shared/python/neptype_engine.py"
+    if not client.is_file() or client.is_symlink():
+        raise ValueError("Missing canonical shared engine client")
+    payload.append(("neptype_engine.py", client.read_bytes()))
     manifest = {
         "format": "neptype-linux-source-preview-v1",
         "notice": "Source-only local research preview. No IBus registration, compiled core or datasets included; not a release.",

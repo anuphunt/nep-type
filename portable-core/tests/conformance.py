@@ -108,13 +108,14 @@ print("PASS: All Nepali composition, original choice and literal protection")
 
 # A live adapter must receive a response without closing stdin. This checks
 # transport delivery only; it does not make blocking IPC suitable for an IME.
-import select
+import threading, queue
 live = subprocess.Popen([exe], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 try:
     live.stdin.write(json.dumps({"id":"live", "op":"create"}) + "\n")
     live.stdin.flush()
-    assert select.select([live.stdout], [], [], 3)[0], "response was not delivered while stdin remained open"
-    assert json.loads(live.stdout.readline())["ok"]
+    replies = queue.Queue()
+    threading.Thread(target=lambda: replies.put(live.stdout.readline()), daemon=True).start()
+    assert json.loads(replies.get(timeout=3))["ok"], "response was not delivered while stdin remained open"
 finally:
     live.stdin.close()
     live.wait(timeout=3)
