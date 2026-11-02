@@ -3,13 +3,285 @@
   "timeZone": "America/Los_Angeles",
   "dailyPublicationLimit": 1,
   "topics": [
-    {"id":"mixed-nepali-english","status":"eligible","query":"type Nepali and English together","intent":"Keep English words inside a Nepali sentence","angle":"A worked mixed-mode message, deliberate spelling choices, and the limits of English word recognition."},
-    {"id":"unicode-copy-troubleshooting","status":"eligible","query":"Nepali Unicode text not displaying after copy paste","intent":"Diagnose garbled or missing Nepali characters after pasting","angle":"Distinguish Unicode content, missing glyphs, and legacy-font text using reproducible checks and official font/app documentation."},
-    {"id":"nepali-phone-browser","status":"eligible","query":"type Nepali on phone without installing keyboard","intent":"Write a Nepali message in a mobile browser","angle":"Verified small-screen walkthrough, selecting spellings, clipboard behavior and app switching. Separate browser access from native keyboard installation."},
-    {"id":"ambiguous-pani-spelling","status":"eligible","query":"pani पानी पनि Roman Nepali typing","intent":"Choose between ambiguous Nepali spellings","angle":"A complete example with two occurrences, candidate selection, original spelling, and current undo behavior. Publish only if it adds depth beyond the existing guide."},
-    {"id":"nepali-message-links","status":"eligible","query":"type Nepali with English names and website links","intent":"Keep names, links and email addresses readable inside Nepali text","angle":"Engine-verified literal-preservation examples and the correction workflow; do not promise all names will be recognized."},
-    {"id":"unicode-versus-preeti","status":"eligible","query":"Nepali Unicode vs Preeti copy paste difference","intent":"Choose the right text workflow","angle":"Use authoritative encoding/font references and an original copy/paste demonstration. Explain that NepType is not a Preeti converter."},
-    {"id":"offline-typing-choice","status":"eligible","query":"offline Nepali typing browser vs Mac app","intent":"Choose a reliable local typing workflow","angle":"Test actual first-load, reload, cache and offline behavior. Distinguish the website, cached engine and native Mac pad; avoid duplicating setup instructions."},
-    {"id":"nepali-punctuation","status":"eligible","query":"Nepali typing full stop purna viram Unicode","intent":"Use sentence punctuation while preserving decimals and URLs","angle":"Verified contextual punctuation examples, decimal numbers, URLs and manual corrections, with clear engine limits."}
+    {
+      "id": "mixed-nepali-english",
+      "status": "published",
+      "query": "type Nepali and English together",
+      "intent": "Keep English words inside a Nepali sentence",
+      "angle": "A worked mixed-mode message, deliberate spelling choices, and the limits of English word recognition.",
+      "title": "Type Nepali and English in the same sentence"
+    },
+    {
+      "id": "romanized-versus-phonetic",
+      "status": "eligible",
+      "query": "nepali romanized keyboard",
+      "title": "Romanized Nepali keyboard versus phonetic typing: which do you need?",
+      "intent": "Understand fixed keyboard layouts versus word transliteration before choosing a tool",
+      "angle": "Use an authoritative layout reference, show the different input workflows and explain what NepType does. Do not claim NepType implements the fixed Romanized layout.",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali romanized keyboard",
+          "averageMonthlySearches": "1K–10K",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        },
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali roman typing",
+          "averageMonthlySearches": "1K–10K",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "nepali-word-workflow",
+      "status": "eligible",
+      "query": "english to nepali typing in ms word",
+      "title": "How to type Nepali in Microsoft Word using English letters",
+      "intent": "Create Nepali Unicode text for a Word document",
+      "angle": "Original copy/paste walkthrough, appropriate Unicode fonts, formatting and draft saving. Verify with current Microsoft documentation and the actual tool; no imaginary Word add-in.",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "english to nepali typing in ms word",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        },
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "ms word nepali typing",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "nepali-google-docs",
+      "status": "eligible",
+      "query": "nepali font in google docs",
+      "title": "Type Nepali in Google Docs: copy, fonts and common display problems",
+      "intent": "Write and correctly display Nepali Unicode in a Google document",
+      "angle": "Distinct Google Docs workflow using supported fonts and clipboard behavior. Use official documentation; do not imply legacy Preeti conversion.",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali font in google docs",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "nepali-phone-browser",
+      "status": "eligible",
+      "query": "type Nepali on phone without installing keyboard",
+      "intent": "Write a Nepali message in a mobile browser",
+      "angle": "Verified small-screen walkthrough, selecting spellings, clipboard behavior and app switching. Separate browser access from native keyboard installation.",
+      "title": "Type Nepali on iPhone or Android without installing a keyboard",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali keyboard for iphone",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        },
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali keyboard android",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "unicode-versus-preeti",
+      "status": "eligible",
+      "query": "Nepali Unicode vs Preeti copy paste difference",
+      "intent": "Choose the right text workflow",
+      "angle": "A clear text-encoding and font explanation with original examples and authoritative references. This is an explanatory article, not a Preeti converter landing page. Reject conversion promises.",
+      "title": "Unicode versus Preeti: why Nepali text changes when you copy it",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "preeti unicode",
+          "averageMonthlySearches": "10K–100K",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        },
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali font converter",
+          "averageMonthlySearches": "100–1K",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "unicode-copy-troubleshooting",
+      "status": "eligible",
+      "query": "Nepali Unicode text not displaying after copy paste",
+      "intent": "Diagnose garbled or missing Nepali characters after pasting",
+      "angle": "Troubleshoot missing glyphs, font choice and legacy text with a decision tree. Explain the additional value beyond the planned Unicode/Preeti introduction; merge if it would repeat the same answer.",
+      "title": "Why copied Nepali text shows boxes or wrong letters",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali unicode font",
+          "averageMonthlySearches": "100–1K",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "offline-typing-choice",
+      "status": "eligible",
+      "query": "offline Nepali typing browser vs Mac app",
+      "intent": "Choose a reliable local typing workflow",
+      "angle": "Test actual first-load, reload, cache and offline behavior. Distinguish the website, cached engine and native Mac pad; avoid duplicating setup instructions.",
+      "title": "Does Nepali typing work offline? Browser loading versus the Mac app",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali typing offline",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "nepali-message-links",
+      "status": "research_needed",
+      "query": "type Nepali with English names and website links",
+      "intent": "Keep names, links and email addresses readable inside Nepali text",
+      "angle": "Engine-verified literal-preservation examples and the correction workflow; do not promise all names will be recognized.",
+      "title": "Keep names, email addresses and links readable inside Nepali messages",
+      "keywordEvidence": [],
+      "evidenceNote": "Qualitative product-help topic. No measured volume for this exact long tail in the current report. Improve the existing typing guide or mixed-language article first unless a distinct reader need is established."
+    },
+    {
+      "id": "everyday-typing-practice",
+      "status": "eligible",
+      "query": "nepali typing practice app",
+      "title": "Practice Nepali typing with everyday sentences",
+      "intent": "Practice composing useful messages and reviewing spellings",
+      "angle": "Fresh exercises about family, food, school, travel and celebrations with verified answers. State that NepType is a writing pad, not a scored speed-test service.",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali typing practice app",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+        }
+      ]
+    },
+    {
+      "id": "ambiguous-pani-spelling",
+      "status": "research_needed",
+      "query": "pani पानी पनि Roman Nepali typing",
+      "intent": "Choose between ambiguous Nepali spellings",
+      "angle": "A complete example with two occurrences, candidate selection, original spelling, and current undo behavior. Publish only if it adds depth beyond the existing guide.",
+      "title": "Choose पानी or पनि without rewriting your sentence",
+      "keywordEvidence": [],
+      "evidenceNote": "No measured volume for the exact phrase. Publish only with a distinct worked problem beyond the existing guide and mixed-language article. Improve the existing typing guide or mixed-language article first unless a distinct reader need is established."
+    },
+    {
+      "id": "nepali-punctuation",
+      "status": "research_needed",
+      "query": "Nepali typing full stop purna viram Unicode",
+      "intent": "Use sentence punctuation while preserving decimals and URLs",
+      "angle": "Verified contextual punctuation examples, decimal numbers, URLs and manual corrections, with clear engine limits.",
+      "title": "Nepali full stops, numbers and links: a practical typing walkthrough",
+      "keywordEvidence": [],
+      "evidenceNote": "No measured volume for this exact question. Verify actual punctuation behavior and prioritize only when it answers a real support need. Improve the existing typing guide or mixed-language article first unless a distinct reader need is established."
+    }
+  ],
+  "researchFile": "research/2026-11-01-keywords.json",
+  "exampleBank": "example-bank.json",
+  "priorityMethod": "Editorial ordering based on product fit, distinct intent, evidence and search ranges. This is not an organic difficulty or predicted-traffic score.",
+  "existingPageWork": [
+    {
+      "page": "/",
+      "keywords": [
+        "nepali typing",
+        "english to nepali typing",
+        "roman to nepali"
+      ],
+      "reason": "Existing homepage owns the broad tool intent. Improve its introduction/examples instead of creating overlapping landing pages."
+    },
+    {
+      "page": "/typing-guide/",
+      "keywords": [
+        "nepali unicode",
+        "nepali roman typing"
+      ],
+      "reason": "Keep broad beginner guidance here; related articles should solve narrower tasks."
+    },
+    {
+      "page": "/mac/",
+      "keywords": [
+        "nepali keyboard for mac"
+      ],
+      "evidence": {
+        "provider": "Google Ads Keyword Planner",
+        "keyword": "nepali keyboard for mac",
+        "averageMonthlySearches": "10–100",
+        "location": "Nepal",
+        "language": "English",
+        "period": "2025-10-01/2026-09-30",
+        "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
+      },
+      "reason": "Update this existing page when product availability changes. Do not write a second Mac-download page."
+    }
+  ],
+  "deferredIntents": [
+    {
+      "keywords": [
+        "Preeti to Unicode converter",
+        "Unicode to Preeti converter"
+      ],
+      "reason": "The app does not implement conversion. Explain the distinction without promising a converter."
+    },
+    {
+      "keywords": [
+        "Nepali typing speed test",
+        "Loksewa typing test"
+      ],
+      "reason": "No scored test or exam-specific feature. Do not target these with misleading tool pages."
+    }
   ]
 }

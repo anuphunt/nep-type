@@ -1,8 +1,9 @@
 // Examples are checked against the published browser dictionary in seo.test.mjs.
 export const examples = [
   ['namaste', 'नमस्ते'],
-  ['ma office janchu.', 'म office जान्छु।'],
-  ['bholi meeting pachi bhetau.', 'भोलि meeting पछि भेटौँ।']
+  ['malai momo man parcha.', 'मलाई मोमो मन पर्छ।'],
+  ['aaja class cha.', 'आज class छ।'],
+  ['mero phone naya cha.', 'मेरो phone नयाँ छ।']
 ];
 
 export const homeHelp = {
@@ -39,7 +40,7 @@ export const typingGuide = {
     sections: [
       ['Start with a word you already know', 'You do not need to learn a new keyboard layout to use NepType. Open the free browser typing pad and type a Nepali word using Roman letters, such as namaste. The output appears in Devanagari as नमस्ते. You are writing the sound of a Nepali word, rather than translating an English word.', {links: [['Open the Nepali typing pad', '/#try']]}],
       ['Type, choose, and copy', 'The browser pad has two boxes: Roman input on the left and Nepali output on the right. On a small screen, the output appears below the input.', {steps: ['Type in Roman input. The output updates as you write.', 'Choose Nepali + EN to keep recognized English words, or All Nepali to write those words in Nepali letters too.', 'Select a word in either box to see spelling suggestions. Click the spelling you want.', 'Use Copy text and paste the result into your message, document, or social post. Keep a copy before closing or reloading the page.']}],
-      ['Examples you can try in NepType', 'These examples use Nepali + EN mode in the browser tool. Notice that office and meeting stay in English, while the Nepali words change script. A sentence-ending period becomes the Nepali punctuation mark ।.', {examples}],
+      ['Examples you can try in NepType', 'These examples use Nepali + EN mode in the browser tool. The food example becomes Nepali, while class and phone stay in English in the other messages. A sentence-ending period becomes the Nepali punctuation mark ।.', {examples}],
       ['Choose between पानी and पनि', 'Roman spelling can be ambiguous. The input pani has both पानी and पनि among its suggestions. Click the word, then choose the spelling that fits your sentence. The choice applies to that occurrence, so you can use different spellings of pani in the same paragraph. You can also keep the original Roman word. Names and unfamiliar words may need correction.'],
       ['Use spelling shortcuts', 'With either editor focused, use Option plus the displayed number on Mac, or Alt plus the number on Windows or Linux, to choose a suggestion. The numbers shown beside the suggestions tell you which key to press. The output box is read-only; edit the Roman input or pick another suggestion to change it.'],
       ['English to Nepali typing versus translation', 'People sometimes call Roman-to-Nepali typing “English to Nepali typing” because they use an English keyboard. NepType transliterates Nepali words written with Roman letters. It does not turn the meaning of an English sentence into Nepali. All Nepali mode changes how English words are written; it does not translate them.'],
@@ -56,7 +57,7 @@ export const typingGuide = {
     sections: [
       ['चिनेको शब्दबाट सुरु गर्नुहोस्', 'NepType प्रयोग गर्न नयाँ किबोर्ड लेआउट सिक्नु पर्दैन। निःशुल्क ब्राउजर प्याड खोल्नुहोस् र नेपाली शब्द रोमन अक्षरमा लेख्नुहोस्। जस्तै, namaste लेख्दा नमस्ते आउँछ। तपाईं नेपाली शब्दको उच्चारण लेख्दै हुनुहुन्छ, अंग्रेजी शब्दको अर्थ अनुवाद गर्दै हुनुहुन्न।', {links: [['नेपाली टाइपिङ प्याड खोल्नुहोस्', '/#try']]}],
       ['लेख्नुहोस्, हिज्जे रोज्नुहोस् र कपी गर्नुहोस्', 'प्याडमा रोमन लेखाइ र नेपाली लेखाइका दुई बाकस छन्। सानो स्क्रिनमा नेपाली पाठ रोमन बाकसको तल देखिन्छ।', {steps: ['रोमन लेखाइमा शब्द लेख्नुहोस्। तयार नेपाली पाठ सँगसँगै देखिन्छ।', 'चिनेका अंग्रेजी शब्द उस्तै राख्न Nepali + EN रोज्नुहोस्। तिनलाई पनि नेपाली अक्षरमा लेख्न All Nepali रोज्नुहोस्।', 'कुनै पनि बाकसमा शब्द छानेर हिज्जेका विकल्प हेर्नुहोस्। चाहिएको हिज्जे थिच्नुहोस्।', 'पाठ कपी गर्नुहोस् बटन थिचेर सन्देश वा कागजातमा पेस्ट गर्नुहोस्। पृष्ठ बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्।']}],
-      ['आफैँ लेखेर हेर्ने उदाहरण', 'यी उदाहरण ब्राउजरको Nepali + EN मोडका हुन्। office र meeting अंग्रेजीमै रहन्छन्। नेपाली शब्द देवनागरीमा बदलिन्छन्। वाक्यको अन्त्यमा लेखेको बिन्दु नेपाली पूर्णविराम । बन्छ।', {examples}],
+      ['आफैँ लेखेर हेर्ने उदाहरण', 'यी उदाहरण ब्राउजरको Nepali + EN मोडका हुन्। खानाबारेको वाक्य नेपालीमा बन्छ। अरू सन्देशमा class र phone अंग्रेजीमै रहन्छन्। वाक्यको अन्त्यमा लेखेको बिन्दु नेपाली पूर्णविराम । बन्छ।', {examples}],
       ['पानी वा पनि कसरी रोज्ने?', 'एउटै रोमन हिज्जेले फरक नेपाली शब्द जनाउन सक्छ। pani लेख्दा सुझावमा पानी र पनि दुवै आउँछन्। शब्द छानेर वाक्यमा मिल्ने हिज्जे रोज्नुहोस्। यो छनोट त्यही ठाउँको शब्दमा मात्र लागू हुन्छ। त्यसैले एउटै अनुच्छेदमा pani का फरक हिज्जे राख्न सकिन्छ। मूल रोमन शब्द पनि राख्न मिल्छ। नाम र अपरिचित शब्द सच्याउनुपर्ने हुन सक्छ।'],
       ['हिज्जे रोज्ने सर्टकट', 'कुनै पनि सम्पादकमा कर्सर राखेर Mac मा Option र देखाइएको नम्बर थिच्नुहोस्। Windows वा Linux मा Alt र नम्बर थिच्नुहोस्। सुझावसँगै देखिने नम्बरले कुन कुञ्जी प्रयोग गर्ने बताउँछ। नेपाली नतिजाको बाकस सिधै सम्पादन हुँदैन। बदल्न रोमन लेखाइ सच्याउनुहोस् वा अर्को सुझाव रोज्नुहोस्।'],
       ['टाइपिङ र अनुवादको फरक', 'अंग्रेजी किबोर्ड प्रयोग हुने भएकाले रोमनबाट नेपाली लेखाइलाई कहिलेकाहीँ “English to Nepali typing” भनिन्छ। NepType ले रोमनमा लेखेका नेपाली शब्दको लिपि बदल्छ। अंग्रेजी वाक्यको अर्थ नेपालीमा अनुवाद गर्दैन। All Nepali मोडले पनि अंग्रेजी शब्द नेपाली अक्षरमा लेख्छ, तिनको अर्थ अनुवाद गर्दैन।'],

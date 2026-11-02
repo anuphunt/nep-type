@@ -1,0 +1,123 @@
+{
+  "checkedOn": "2026-11-01",
+  "usage": "Choose examples that fit the article, vary everyday contexts, and rerun the engine checks. This bank is not a reason to repeat the same phrases in every article.",
+  "examples": [
+    {
+      "context": "greeting",
+      "request": {
+        "op": "render",
+        "source": "namaste",
+        "mode": 0
+      },
+      "expectedText": "नमस्ते"
+    },
+    {
+      "context": "education",
+      "request": {
+        "op": "render",
+        "source": "ma school janchu.",
+        "mode": 0
+      },
+      "expectedText": "म school जान्छु।"
+    },
+    {
+      "context": "photos",
+      "request": {
+        "op": "render",
+        "source": "yo photo ramro cha.",
+        "mode": 0
+      },
+      "expectedText": "यो photo राम्रो छ।"
+    },
+    {
+      "context": "technology",
+      "request": {
+        "op": "render",
+        "source": "mero phone naya cha.",
+        "mode": 0
+      },
+      "expectedText": "मेरो phone नयाँ छ।"
+    },
+    {
+      "context": "education",
+      "request": {
+        "op": "render",
+        "source": "aaja class cha.",
+        "mode": 0
+      },
+      "expectedText": "आज class छ।"
+    },
+    {
+      "context": "food",
+      "request": {
+        "op": "render",
+        "source": "malai momo man parcha.",
+        "mode": 0
+      },
+      "expectedText": "मलाई मोमो मन पर्छ।"
+    },
+    {
+      "context": "food",
+      "request": {
+        "op": "render",
+        "source": "malai coffee man parcha.",
+        "mode": 0
+      },
+      "expectedText": "मलाई coffee मन पर्छ।"
+    },
+    {
+      "context": "travel",
+      "request": {
+        "op": "render",
+        "source": "mero ticket confirm bhayo.",
+        "mode": 0
+      },
+      "expectedText": "मेरो ticket कन्फर्म भयो।"
+    },
+    {
+      "context": "education",
+      "request": {
+        "op": "render",
+        "source": "bholi exam cha.",
+        "mode": 0
+      },
+      "expectedText": "भोलि exam छ।"
+    },
+    {
+      "context": "celebration",
+      "request": {
+        "op": "render",
+        "source": "aaja birthday party cha.",
+        "mode": 0
+      },
+      "expectedText": "आज birthday party छ।"
+    },
+    {
+      "context": "cooking",
+      "request": {
+        "op": "render",
+        "source": "yo recipe sajilo cha.",
+        "mode": 0
+      },
+      "expectedText": "यो recipe सजिलो छ।"
+    },
+    {
+      "context": "contacts",
+      "request": {
+        "op": "render",
+        "source": "namaste! mero email: hello@example.com",
+        "mode": 0
+      },
+      "expectedText": "नमस्ते! मेरो email: hello@example.com"
+    },
+    {
+      "context": "spelling",
+      "request": {
+        "op": "render",
+        "source": "ma pani school janchu.",
+        "mode": 0
+      },
+      "expectedText": "म पनि school जान्छु।"
+    }
+  ]
+}

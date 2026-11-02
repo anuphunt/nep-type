@@ -1,0 +1,211 @@
+{
+  "researchedOn": "2026-11-01",
+  "provider": "Google Ads Keyword Planner",
+  "method": "Signed-in browser keyword ideas lookup, checked against the visible UI and the downloaded unmodified report.",
+  "sourceUrl": "https://ads.google.com/aw/keywordplanner/home",
+  "location": "Nepal",
+  "language": "English",
+  "network": "Google",
+  "period": {
+    "start": "2025-10-01",
+    "end": "2026-09-30"
+  },
+  "ideaCount": 395,
+  "seeds": [
+    "nepali typing",
+    "roman to nepali",
+    "nepali unicode",
+    "nepali keyboard",
+    "nepali typing mac",
+    "nepali typing iphone",
+    "preeti unicode",
+    "nepali typing word"
+  ],
+  "interpretation": [
+    "Average monthly searches are broad ranges shown by this account, not exact counts.",
+    "The export represents these ranges with values such as 50, 500, 5000 and 50000. Those values must not be published as exact search counts. Range mapping was checked against the visible UI.",
+    "Competition is paid-advertiser competition, not organic SEO difficulty.",
+    "Related variants may overlap. Do not add volumes together.",
+    "A missing or omitted keyword is not proven to have zero searches.",
+    "These numbers apply to the exact reported keyword, geography, language and period. An article long tail can have different or unmeasured volume.",
+    "No account was reactivated, campaign launched, budget set or paid subscription purchased."
+  ],
+  "keywords": [
+    {
+      "keyword": "nepali typing",
+      "averageMonthlySearches": "10K–100K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50000"
+    },
+    {
+      "keyword": "english to nepali typing",
+      "averageMonthlySearches": "10K–100K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50000"
+    },
+    {
+      "keyword": "roman to nepali",
+      "averageMonthlySearches": "1K–10K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "5000"
+    },
+    {
+      "keyword": "nepali unicode",
+      "averageMonthlySearches": "10K–100K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50000"
+    },
+    {
+      "keyword": "nepali keyboard",
+      "averageMonthlySearches": "10K–100K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50000"
+    },
+    {
+      "keyword": "nepali romanized keyboard",
+      "averageMonthlySearches": "1K–10K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "5000"
+    },
+    {
+      "keyword": "nepali roman typing",
+      "averageMonthlySearches": "1K–10K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "5000"
+    },
+    {
+      "keyword": "preeti unicode",
+      "averageMonthlySearches": "10K–100K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50000"
+    },
+    {
+      "keyword": "converter preeti to unicode",
+      "averageMonthlySearches": "1K–10K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "5000"
+    },
+    {
+      "keyword": "nepali font converter",
+      "averageMonthlySearches": "100–1K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "500"
+    },
+    {
+      "keyword": "nepali unicode font",
+      "averageMonthlySearches": "100–1K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "500"
+    },
+    {
+      "keyword": "nepali keyboard for pc",
+      "averageMonthlySearches": "100–1K",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "500"
+    },
+    {
+      "keyword": "nepali keyboard for mac",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "nepali keyboard for iphone",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "nepali keyboard android",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "english to nepali typing in ms word",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "ms word nepali typing",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "nepali font in google docs",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "nepali typing offline",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    },
+    {
+      "keyword": "nepali typing practice app",
+      "averageMonthlySearches": "10–100",
+      "adsCompetition": "Low",
+      "rawExportRepresentative": "50"
+    }
+  ],
+  "pageStrategy": [
+    {
+      "page": "/",
+      "terms": [
+        "nepali typing",
+        "english to nepali typing",
+        "roman to nepali"
+      ],
+      "action": "Improve the existing tool and introduction. Do not create a separate thin page for each variation."
+    },
+    {
+      "page": "/typing-guide/",
+      "terms": [
+        "nepali unicode",
+        "nepali roman typing"
+      ],
+      "action": "Keep the beginner introduction here. Articles must add a distinct workflow or problem."
+    },
+    {
+      "page": "/mac/",
+      "terms": [
+        "nepali keyboard for mac"
+      ],
+      "action": "Update the existing Mac page after checking actual installer/system-keyboard availability."
+    },
+    {
+      "page": "/articles/",
+      "terms": [
+        "Word workflows",
+        "Google Docs workflows",
+        "Romanized layout versus transliteration",
+        "Unicode/font troubleshooting",
+        "phone browser typing",
+        "offline typing"
+      ],
+      "action": "Prioritize distinct tasks and link to the tool. Do not promise unavailable native downloads, Preeti conversion or scored typing tests."
+    }
+  ],
+  "supportingEvidence": [
+    {
+      "url": "https://www.reddit.com/r/technepal/comments/1x40f8h/people_who_regularly_work_with_nepali_documents/",
+      "note": "Recent discussion of Word/PDF/Unicode/typing workflow frustrations; qualitative evidence only."
+    },
+    {
+      "url": "https://www.reddit.com/r/technepal/comments/1omavfd",
+      "note": "Question about Roman-to-Nepali typing alternatives on iOS; qualitative evidence only."
+    },
+    {
+      "url": "https://www.ltk.org.np/keyboard_layouts.php",
+      "note": "Primary Nepali keyboard-layout reference for a future layout/transliteration explanation."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/word/choose-text-encoding-when-you-open-and-save-files",
+      "note": "Official encoding documentation for future Word troubleshooting research."
+    }
+  ]
+}

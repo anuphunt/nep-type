@@ -67,9 +67,9 @@ document.querySelectorAll('[data-word]').forEach(button => {
 document.getElementById('copy-example')?.addEventListener('click', async () => {
   const status = document.querySelector('.copy-status');
   try {
-    await navigator.clipboard.writeText('नमस्ते, भोलि meeting पछि भेटौँ।');
+    await navigator.clipboard.writeText('नमस्ते, आज class छ।');
     status.textContent = isNepali ? 'कपी भयो।' : 'Copied.';
   } catch {
-    status.textContent = isNepali ? 'कपी गर्न छान्नुहोस्: नमस्ते, भोलि meeting पछि भेटौँ।' : 'Select to copy: नमस्ते, भोलि meeting पछि भेटौँ।';
+    status.textContent = isNepali ? 'कपी गर्न छान्नुहोस्: नमस्ते, आज class छ।' : 'Select to copy: नमस्ते, आज class छ।';
   }
 });

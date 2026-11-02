@@ -10,8 +10,18 @@ import {loadAllArticles, loadArticles, validateArticle, validateCollection, sele
 await init({module_or_path:await readFile(new URL('../engine-build/neptype_engine_bg.wasm',import.meta.url))});
 const articles = await loadAllArticles();
 const first = articles[0];
-const copy = () => structuredClone(first);
+// A fixture represents a new article, not a revision of the published source.
+const copy = () => { const article = structuredClone(first); delete article.modified; return article; };
 const queue = JSON.parse(await readFile(queueFile,'utf8'));
+
+test('the varied everyday example bank matches the current shared engine', async () => {
+  const bank = JSON.parse(await readFile(new URL('../content/example-bank.json',import.meta.url),'utf8'));
+  assert.ok(new Set(bank.examples.map(example=>example.context)).size>3);
+  for (const example of bank.examples) {
+    const result = JSON.parse(query(JSON.stringify(example.request)));
+    assert.equal(result.text,example.expectedText,example.request.source);
+  }
+});
 
 test('every published or draft article example and candidate claim matches the shared engine', () => {
   assert.ok(articles.length);
