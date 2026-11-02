@@ -1,4 +1,4 @@
-import {readFile, writeFile, mkdir, copyFile, rm} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, copyFile, cp, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import process from 'node:process';
@@ -99,9 +99,7 @@ function metadata(locale, slug, title, description) {
   <meta name="twitter:description" content="${escape(description)}">
   <meta name="twitter:image" content="${origin}/assets/neptype-mac.png">
   <meta name="twitter:image:alt" content="${locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap">
+  <link rel="preload" href="/assets/fonts/${locale === 'ne' ? 'noto-sans-devanagari' : 'dm-sans-latin'}.woff2" as="font" type="font/woff2" crossorigin>
   <script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': graph}).replaceAll('<', '\\u003c')}</script>`;
 }
 
@@ -130,6 +128,7 @@ await mkdir(path.join(output, 'assets'), {recursive: true});
 for (const asset of ['neptype-icon.png', 'neptype-mac.png']) {
   await copyFile(path.join(root, 'assets', asset), path.join(output, 'assets', asset));
 }
+await cp(path.join(root, 'assets/fonts'), path.join(output, 'assets/fonts'), {recursive: true});
 // Only production assets are published; design variations and evidence stay in the repo.
 for (const asset of ['site.js', 'final.css', 'web-engine.mjs', 'web-tool.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
 const generated = await readFile(path.join(root, '../Sources/NepaliCore/GeneratedIndexes.swift'), 'utf8');
@@ -143,8 +142,8 @@ await writeFile(path.join(output, 'assets/web-dictionary.json'), JSON.stringify(
 await copyFile(path.join(root, '../data/sources/CMUDICT-LICENSE.txt'), path.join(output, 'assets/CMUDICT-LICENSE.txt'));
 await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production)}});
 let styles = await readFile(path.join(root, 'styles.css'), 'utf8');
-// Load fonts directly from the document head instead of a blocking CSS import chain.
-styles = styles.replace(/^@import url\([^\n]+\);\n/, '');
+// Self-host licensed fonts to avoid the external stylesheet and connection chain.
+styles = await readFile(path.join(root, 'fonts.css'), 'utf8') + '\n' + styles.replace(/^@import url\([^\n]+\);\n/, '');
 await writeFile(path.join(output, 'styles.css'), styles);
 
 const urls = [];

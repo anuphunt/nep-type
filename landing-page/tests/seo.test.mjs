@@ -58,6 +58,9 @@ test('production pages expose unique crawlable content, correct locales and vali
     assert.ok(graph(html).some(entity => entity.inLanguage === (ne ? 'ne' : 'en')));
     assert.ok(!html.includes('<!-- HOME_HELP -->'));
     assert.ok(!html.includes('Playfair'));
+    assert.ok(!html.includes('fonts.googleapis.com'));
+    assert.ok(html.includes('rel="preload" href="/assets/fonts/'));
+    assert.ok(!html.includes('fonts.gstatic.com'));
     for (const [, kind, raw] of matches(html, /\b(href|src)="([^"]+)"/g)) {
       if (raw.startsWith('http') || raw.startsWith('mailto:')) continue;
       const target = new URL(raw.replaceAll('&amp;', '&'), 'https://neptype.com' + pathname);
@@ -86,6 +89,8 @@ test('production pages expose unique crawlable content, correct locales and vali
   assert.match(await read('robots.txt'), /Sitemap: https:\/\/neptype.com\/sitemap.xml/);
   assert.match(await read('404.html'), /name="robots" content="noindex"/);
   assert.ok(!(await read('styles.css')).includes('@import'));
+  assert.ok(!(await read('styles.css')).includes('fonts.gstatic.com'));
+  for (const file of ['dmsans-OFL.txt','notosansdevanagari-OFL.txt','NOTICE.txt']) assert.ok((await read('assets/fonts/' + file)).length > 100);
   await assert.rejects(access(new URL('_headers', dist)));
 });
 
