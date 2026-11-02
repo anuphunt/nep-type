@@ -1,8 +1,18 @@
 # NepType
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Brand name: **NepType** (capital N and T). Logo concepts and brand guidance are in [branding/README.md](branding/README.md).
 
 A native macOS Nepali typing prototype, built with Swift and AppKit. Everything runs locally. There are no model downloads, accounts, telemetry, or network requests. The project includes a pinned CMU English dictionary; see `evaluation/phase1/REPORT.md` and `data/sources/CMUDICT-LICENSE.txt`.
+
+## Free and open source
+
+NepType is free to use, with no license fee or subscription. Its project-authored code, documentation, artwork, and authored vocabulary are available under the [MIT license](LICENSE). You can use, study, modify, and redistribute that work, including commercially, while retaining the copyright and license notice.
+
+Bundled third-party dictionaries and derived indexes retain their own terms. In particular, redistribution rights for the included Aksharantar index remain unresolved; MIT does not clear that resource. See [third-party notices](THIRD_PARTY_NOTICES.md) before redistributing a build or dataset.
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for reporting typing issues and submitting changes.
 
 ## Run
 
