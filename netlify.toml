@@ -7,6 +7,12 @@
   NODE_VERSION = "22"
 
 [[redirects]]
+  from = "https://neptype-app.netlify.app/*"
+  to = "https://neptype.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
