@@ -7,13 +7,11 @@ const platforms = {
   macOS: ['NepType for Mac', 'Build NepType for Mac from source. A public installer isn’t available yet.', 'Open source'],
   iOS: ['NepType for iPhone', 'The iPhone pad and keyboard are experimental. An App Store release isn’t available yet.', 'In progress'],
   Android: ['NepType for Android', 'The Android keyboard is in development. A download isn’t available yet.', 'In progress'],
-  Windows: ['NepType for Windows', 'Windows support is in development. An installer isn’t available yet.', 'In progress'],
   Linux: ['NepType for Linux', 'Linux support is experimental. A public package isn’t available yet.', 'In progress']
 };
 const nepaliPlatforms = {
   iOS: ['iPhone का लागि NepType', 'iPhone प्याड र किबोर्ड परीक्षणको चरणमा छन्। App Store संस्करण उपलब्ध भइसकेको छैन।', 'काम हुँदैछ'],
   Android: ['Android का लागि NepType', 'Android किबोर्डको काम हुँदैछ। डाउनलोड उपलब्ध भइसकेको छैन।', 'काम हुँदैछ'],
-  Windows: ['Windows का लागि NepType', 'Windows का लागि काम हुँदैछ। इन्स्टलर उपलब्ध भइसकेको छैन।', 'काम हुँदैछ'],
   Linux: ['Linux का लागि NepType', 'Linux संस्करण परीक्षणको चरणमा छ। सार्वजनिक प्याकेज उपलब्ध भइसकेको छैन।', 'काम हुँदैछ']
 };
 function showDialog(heading, html) {
@@ -21,7 +19,7 @@ function showDialog(heading, html) {
   dialogBody.innerHTML = html;
   dialog.showModal();
 }
-document.querySelectorAll('[data-platform]').forEach(button => {
+document.querySelectorAll('button[data-platform]').forEach(button => {
   button.addEventListener('click', () => {
     const [heading, description, status] = (isNepali ? nepaliPlatforms : platforms)[button.dataset.platform];
     showDialog(heading, `<span class="status-tag">${status}</span><p>${description}</p><p>${projectLink}</p>`);

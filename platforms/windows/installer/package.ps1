@@ -3,6 +3,7 @@ $root = (Resolve-Path "$PSScriptRoot/../../..").Path
 $version = '0.1.0-preview.1'
 $output = Join-Path $root 'build/windows-installer'
 $payload = Join-Path $root 'build/windows-payload'
+if (Test-Path $payload) { Remove-Item $payload -Recurse -Force }
 New-Item -ItemType Directory $output, $payload -Force | Out-Null
 Copy-Item "$root/build/windows/Release/NepTypeWindows.exe" "$payload/NepType.exe"
 Copy-Item "$root/build/windows/Release/NepTypeEngine.dll" $payload

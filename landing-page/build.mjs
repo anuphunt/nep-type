@@ -8,6 +8,7 @@ import {gzipSync} from 'node:zlib';
 import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
+import {windowsDownload, windowsPage} from './windows-release.mjs';
 import {homeHelp, typingGuide} from './typing-guide.mjs';
 import {loadArticles, articlePages} from './article-content.mjs';
 const articles = await loadArticles();
@@ -23,6 +24,8 @@ const posthogHost = process.env.PUBLIC_POSTHOG_HOST || '';
 if (Boolean(posthogKey) !== Boolean(posthogHost)) throw Error('Set PUBLIC_POSTHOG_KEY and PUBLIC_POSTHOG_HOST together.');
 if (posthogHost && new URL(posthogHost).protocol !== 'https:') throw Error('PUBLIC_POSTHOG_HOST must use HTTPS.');
 const macRelease = JSON.parse(await readFile(path.join(root, 'mac-release.json'), 'utf8'));
+const windowsRelease = windowsDownload(JSON.parse(await readFile(path.join(root, 'windows-release.json'), 'utf8')));
+pages.windows = {en: windowsPage(windowsRelease, 'en'), ne: windowsPage(windowsRelease, 'ne')};
 const downloadUrl = process.env.APP_DOWNLOAD_URL || macRelease.url;
 if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -48,6 +51,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('href="/articles/"', 'href="/ne/articles/"')
     .replaceAll('href="/typing-guide/"', 'href="/ne/typing-guide/"')
     .replaceAll('href="/mac/"', 'href="/ne/mac/"')
+    .replaceAll('href="/windows/"', 'href="/ne/windows/"')
     .replaceAll('href="/faq/"', 'href="/ne/faq/"')
     .replaceAll('href="/about/"', 'href="/ne/about/"')
     .replaceAll('href="/privacy/"', 'href="/ne/privacy/"')
@@ -80,6 +84,7 @@ function metadata(locale, slug, title, description) {
   ];
   if (!slug) graph.push({'@type': 'WebApplication', '@id': webappId, name: 'NepType Online Typing Pad', url: canonical(locale, '') + '#try', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript and an initial network connection', isAccessibleForFree: true, description: homeDescriptions[locale], inLanguage: ['en', 'ne'], sameAs: repository});
   if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository, ...(downloadUrl ? {downloadUrl, softwareVersion:macRelease.version, softwareRequirements:'macOS 13 or later; Apple silicon or Intel'} : {})});
+  if (slug === 'windows' && windowsRelease) graph.push({'@type':'SoftwareApplication', '@id':origin+'/#windows-app', name:'NepType for Windows (preview)', url, applicationCategory:'UtilitiesApplication', operatingSystem:'Windows 10 or 11 (x64)', description, downloadUrl:windowsRelease.url, softwareVersion:windowsRelease.version, sameAs:repository});
   if (slug) graph.push({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: [
     {'@type': 'ListItem', position: 1, name: 'NepType', item: canonical(locale, '')},
     ...(slug.startsWith('articles/') ? [{'@type':'ListItem',position:2,name:locale === 'ne' ? 'लेखहरू' : 'Articles',item:canonical(locale,'articles')}] : []),
@@ -185,11 +190,12 @@ for (const locale of ['en', 'ne']) {
     const sections = renderSections(content.sections, locale);
     const byline = content.kind === 'article' ? `<p class="article-byline">${locale === 'ne' ? 'लेखन: ' : 'By '}<a href="${route(locale, 'about')}">${locale === 'ne' ? 'NepType परियोजना' : 'NepType project'}</a> · <time datetime="${content.published}">${escape(displayDate(content.published,locale))}</time></p>` : '';
     const related = `<p class="page-tool-link"><a href="${route(locale)}#try">${locale === 'ne' ? 'अनलाइन नेपाली टाइपिङ प्याड खोल्नुहोस्' : 'Open the online Nepali typing pad'} →</a></p>`;
-    const linkUrl = slug === 'mac' && downloadUrl ? downloadUrl : repository;
-    const linkText = slug === 'mac' && downloadUrl ? (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस् (.dmg)' : 'Download for Mac (.dmg)') : content.link;
-    const linkEvent = slug === 'mac' && downloadUrl ? 'neptype_download_clicked' : 'neptype_source_opened';
+    const nativeDownload = slug === 'mac' ? downloadUrl : slug === 'windows' ? windowsRelease?.url : null;
+    const linkUrl = nativeDownload || repository;
+    const linkText = nativeDownload ? (slug === 'windows' ? (locale === 'ne' ? 'Windows प्रिभ्यु डाउनलोड गर्नुहोस् (.exe)' : 'Download Windows preview (.exe)') : (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस् (.dmg)' : 'Download for Mac (.dmg)')) : content.link;
+    const linkEvent = nativeDownload ? 'neptype_download_clicked' : 'neptype_source_opened';
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
-    const pageAction = linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'mac' && downloadUrl ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '';
+    const pageAction = (linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'windows' ? ' data-platform="Windows"' : ''}${nativeDownload ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '') + (slug === 'windows' && windowsRelease ? `<p class="download-checksum">SHA-256: <code>${windowsRelease.sha256}</code></p><p><a href="${escape(windowsRelease.url + '.sha256')}">${locale === 'ne' ? 'चेकसम फाइल' : 'Checksum file'}</a> · <a href="${escape(windowsRelease.verificationUrl)}">${locale === 'ne' ? 'Windows परीक्षणको नतिजा' : 'Windows verification results'}</a></p>` : '');
     const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${slug === 'mac' ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${slug === 'mac' ? '' : pageAction}${privacyControl}</main>`;
     let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);

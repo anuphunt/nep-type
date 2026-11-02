@@ -3,6 +3,7 @@ $root = (Resolve-Path "$PSScriptRoot/../../..").Path
 $output = Join-Path $root 'build/windows-installer'
 $packagePath = Join-Path $output 'package.json'
 $package = Get-Content $packagePath -Raw | ConvertFrom-Json
+$package.tested = $false
 $installer = Join-Path $output $package.filename
 $installed = Join-Path $env:LOCALAPPDATA 'Programs/NepType preview परीक्षण'
 $shortcut = Join-Path ([Environment]::GetFolderPath('Programs')) 'NepType.lnk'
@@ -143,6 +144,7 @@ try {
     $package | ConvertTo-Json | Set-Content $packagePath -Encoding utf8
 } finally {
     if ($app -and !$app.HasExited) { $app.Kill(); $app.WaitForExit() }
+    $package | ConvertTo-Json | Set-Content $packagePath -Encoding utf8
     [ordered]@{
         sourceCommit = $package.sourceCommit
         installerSha256 = $package.sha256

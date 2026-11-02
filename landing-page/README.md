@@ -53,6 +53,16 @@ The build includes unique titles and descriptions, self-referencing canonical UR
 
 The Mac page offers the signed, notarized universal DMG and drag-to-Applications instructions, with source builds as an alternative. Other platform controls retain development status until a downloadable release is available.
 
+### Windows preview downloads
+
+`/windows/` and `/ne/windows/` describe the standalone x64 typing-pad preview,
+unsigned status, setup/removal and testing limits. Homepage Windows controls link
+to these pages. `windows-release.json` remains unverified until a Windows build,
+installed-app checks, immutable upload and public checksum re-download succeed.
+No installer link or app download schema is emitted for a pending release. Follow
+[the Windows release runbook](../docs/WINDOWS_RELEASE.md); do not invent release
+metadata or treat a failed workflow artifact as a tested release.
+
 ### Mac download releases
 
 Run `bash scripts/package-mac.sh` from the repository root with `NEPTYPE_MAC_SIGNING_IDENTITY` set to an existing Developer ID Application identity and `NEPTYPE_MAC_NOTARY_PROFILE` set to an existing notarytool Keychain profile. `NEPTYPE_MAC_VERSION` and `NEPTYPE_MAC_BUILD` default to 0.1.0 and 1. The script builds both macOS 13 architectures, signs and notarizes the app, creates a DMG with an Applications shortcut, then signs, notarizes, staples and verifies the DMG. It does not create credentials or change Keychain permissions.

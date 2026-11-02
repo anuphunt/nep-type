@@ -1,5 +1,19 @@
 # NepType Windows prototype
 
+## Installer preview preparation
+
+The standalone pad now has an Inno Setup 6 per-user x64 installer definition in
+`installer/`. It distributes only the pad, shared Rust DLL, license notices and
+dictionary identity. The experimental TSF DLL is excluded. No keyboard, service,
+hook, COM registration or machine-wide setting is installed. The C++ and Rust
+release builds use the static MSVC runtime to avoid a separate runtime installer.
+
+The `Windows installer` workflow builds and tests on `windows-2022`, packages an
+**unsigned** preview, and runs `installer/verify.ps1` against the installed app.
+Until that workflow succeeds, this is unverified packaging source, not a working
+download. See [the release runbook](../../docs/WINDOWS_RELEASE.md) for exact gates
+and remaining consumer-Windows and manual testing limitations.
+
 The native Win32 window now uses the compact Graphite typing-pad layout: Roman input, space for horizontal suggestions, read-only Nepali output, and a small copy icon. Clear edits only this local pad. Document conversion and three suggestion slots now call the shared Rust engine through the C++ DLL client on a serial, coalescing worker. Mode and copy controls enable when usable output is available. See [shared-engine architecture and build instructions](../../shared/README.md); Windows native SDK compilation and runtime validation remain required. The UI does **not** install or register a TSF text service or capture typing in other apps. `composition.cpp` is a host-independent transactional composition state machine intended to inform a future Windows TSF adapter. It can buffer a printable ASCII token, produce marked-text and commit intents, keep literal punctuation together, restore original text on an interrupt, and explicitly select a candidate carrying the current generation. It uses `std::u16string` for text so Devanagari candidate contents can pass unchanged; only the original Roman token is edited character by character. Independent instances isolate document sessions. It contains no embedded Nepali engine, no TSF integration, and does not itself edit an application.
 
 Each intent requires an explicit host acknowledgement. State is advanced only when an edit is reported successful; a failed edit keeps the previous original and invalidates candidate generations. No subsequent key should be consumed while an edit is pending. The optional candidate adapter matches responses to an explicit session, generation and original token, bounds response sizes, rejects malformed UTF-16 and unsafe control/format characters, and only permits choosing from the accepted list. The transport must still authenticate or otherwise validate the source; matching a request alone does not establish engine provenance. `forward_after_commit` is an instruction to the future adapter, not evidence that Windows can replay or safely defer a key. In particular, async edit sessions, host rejection, interrupted compositions, engine hangs and focus loss require platform testing and must not cause replay, duplicate characters, stale results or lost text. The implementation presently includes no networking, subprocess launch, keyboard hook or background service.
