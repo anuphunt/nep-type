@@ -1,6 +1,7 @@
 [build]
-  command = "node landing-page/build.mjs"
-  publish = "landing-page/dist"
+  base = "landing-page"
+  command = "node build.mjs"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"

@@ -20,11 +20,12 @@ Open `http://127.0.0.1:4174/`. The English homepage is `/`, with Nepali at `/ne/
 The repository-root `netlify.toml` sets:
 
 - Production branch: `main` (configured in Netlify's Git integration).
-- Build command: `node landing-page/build.mjs`.
-- Publish directory: `landing-page/dist`.
+- Base directory: `landing-page` (isolates website dependencies from the native apps).
+- Build command: `node build.mjs`.
+- Publish directory: `dist`, relative to that base.
 - Node.js: 22.
 
-Connect the existing GitHub repository, `anuphunt/nep-type`, to the Netlify project. Pushes to `main` then trigger production builds. `.netlify/` and the generated `dist/` are ignored in Git.
+The Netlify project is `neptype-app` in the PNW Devs team, linked to `anuphunt/nep-type`. Its public URL is `https://neptype-app.netlify.app/`, and its dashboard is `https://app.netlify.com/projects/neptype-app/overview`. Pushes to `main` trigger production builds. `.netlify/` and the generated `dist/` are ignored in Git.
 
 Canonical URLs, Open Graph metadata, and the sitemap use Netlify's production `URL` environment variable. Set `SITE_URL` to the primary HTTPS origin if a custom domain needs to override it. Local builds and Netlify preview contexts generate `noindex` pages; production builds are indexable. `robots.txt` follows the same distinction. There is no catch-all SPA rewrite, so missing pages return a real 404.
 
