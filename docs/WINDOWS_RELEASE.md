@@ -16,12 +16,26 @@ Preparation is isolated from the unfinished primary checkout. Base source:
 `964a4bb27d1d355e99f62726890992c90a94bd60` (includes the published Mac DMG).
 Local branch: `codex/windows-installer`.
 
-**Current release blocker:** automatic approval review rejected the initial
-`git push -u origin codex/windows-installer` as an external commitment requiring
-explicit user approval. The push did not execute; read-only `git ls-remote`
-confirmed the branch was absent. Do not retry, push through another transport,
-create a substitute remote branch, or publish until new trusted authorization
-addresses this rejection. No Windows installer has been built or tested yet.
+The initial branch push was rejected by automatic approval review. The user then
+explicitly approved that exact push and publication of the unsigned preview only
+if Windows checks pass. The absent remote branch was checked again, and the push
+succeeded. Windows verification runs at
+https://github.com/anuphunt/nep-type/actions/runs/41526035759 on commit
+`4f067ea9b0a717a4dd3ad800104ee46910e4e7f9`. Follow the release gates below; authorization
+does not substitute for successful verification.
+
+**Current gate result: failed; no release or website publication.** The installer
+built and installed; installed-file hashes, native dependencies, startup, engine
+load, `namaste → नमस्ते` and Unicode clipboard copy passed. The run then timed out
+at `Pani default spelling`, which expected `पानी`. A read-only check of the same
+shared Wasm engine returned `पनि` first and candidates `पनि`, `पानी`, `pani`, so the
+fixture's default-spelling expectation is inconsistent with that engine. The
+actual Windows output at failure was not captured. Later candidate/editing,
+reinstall and uninstall checks did not execute. No tests were changed or bypassed.
+
+Unverified artifact: `NepType-0.1.0-preview.1-windows-x64-setup.exe`, 18,402,218 bytes,
+SHA-256 `373feb617b3391b5fbd38f2160d44af4263606fe27cb6854617ee3bacf9e7259`.
+Its `package.tested` and `verification.success` remain false. Do not publish it.
 
 ## Packaging
 
