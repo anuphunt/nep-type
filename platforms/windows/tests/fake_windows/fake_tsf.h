@@ -1,7 +1,9 @@
 #pragma once
 #include <cstdint>
 #include <cstring>
+#ifndef _MSC_VER
 #define __declspec(x)
+#endif
 #define __stdcall
 #define STDMETHODCALLTYPE
 using HRESULT = std::int32_t;
@@ -15,7 +17,7 @@ using DWORD = std::uint32_t;
 using LONG = std::int32_t;
 using WCHAR = char16_t;
 enum TfAnchor { TF_ANCHOR_START, TF_ANCHOR_END };
-enum TfActiveSelEnd { TFAE_NONE, TFAE_START, TFAE_END };
+enum TfActiveSelEnd { TF_AE_NONE, TF_AE_START, TF_AE_END };
 struct ITfRange;
 struct TF_SELECTIONSTYLE { TfActiveSelEnd ase; BOOL fInterimChar; };
 struct TF_SELECTION { ITfRange* range; TF_SELECTIONSTYLE style; };

@@ -164,14 +164,14 @@ private:
 };
 }
 
-extern "C" __declspec(dllexport) HRESULT __stdcall DllGetClassObject(REFCLSID clsid, REFIID iid, void** out) {
+extern "C" HRESULT __stdcall DllGetClassObject(REFCLSID clsid, REFIID iid, void** out) {
     if (!out) return E_POINTER; *out = nullptr;
     if (!IsEqualCLSID(clsid, CLSID_NepTypeTextService)) return CLASS_E_CLASSNOTAVAILABLE;
     auto* factory = new(std::nothrow) Factory();
     if (!factory) return E_OUTOFMEMORY;
     HRESULT hr = factory->QueryInterface(iid, out); factory->Release(); return hr;
 }
-extern "C" __declspec(dllexport) HRESULT __stdcall DllCanUnloadNow() {
+extern "C" HRESULT __stdcall DllCanUnloadNow() {
     return live_objects.load() == 0 && server_locks.load() == 0 && neptype::live_edit_sessions.load() == 0 ? S_OK : S_FALSE;
 }
 

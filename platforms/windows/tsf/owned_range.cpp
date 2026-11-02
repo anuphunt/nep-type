@@ -63,7 +63,7 @@ bool OwnedRange::apply(TfEditCookie cookie, const Intent& intent) {
     ComPtr<ITfRange> caret;
     if (FAILED(composition_->GetRange(caret.out())) || !caret.value || FAILED(caret.value->Collapse(cookie, TF_ANCHOR_END))) return false;
     selected.range = caret.value;
-    selected.style.ase = TFAE_NONE;
+    selected.style.ase = TF_AE_NONE;
     selected.style.fInterimChar = FALSE;
     if (FAILED(context_->SetSelection(cookie, 1, &selected))) return false;
     if (intent.kind == Kind::Commit) {

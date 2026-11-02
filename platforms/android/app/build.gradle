@@ -16,7 +16,7 @@ android {
 def repoRoot = rootProject.file('../..')
 def sharedAssets = layout.buildDirectory.dir('generated/shared-assets')
 tasks.register('stageSharedDictionaries', Exec) {
-    inputs.file(new File(repoRoot, 'shared/dictionaries.json'))
+    inputs.file(new File(repoRoot, 'engine/data/manifest.json'))
     inputs.dir(new File(repoRoot, 'engine/data'))
     inputs.dir(new File(repoRoot, 'data/sources'))
     outputs.dir(sharedAssets)
