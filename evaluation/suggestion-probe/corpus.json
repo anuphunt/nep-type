@@ -1,6 +1,6 @@
 {
   "version": "suggestion-probe-v1",
-  "description": "Synthetic unreviewed candidate recall and original-preservation fixture, frozen without running Lekha.",
+  "description": "Synthetic unreviewed candidate recall and original-preservation fixture, frozen without running NepType.",
   "cases": [
     {
       "id": "C001",

@@ -11,7 +11,7 @@ archive=pathlib.Path(sys.argv[1]); sha='8bdcc5957d701ea36b63c00c713b43bc30902774
 if hashlib.sha256(archive.read_bytes()).hexdigest()!=sha: raise SystemExit('Archive SHA-256 mismatch')
 out=root/'data/compiled/aksharantar-indiccorp-v1.tsv';out.parent.mkdir(parents=True,exist_ok=True)
 counts=collections.Counter()
-with tempfile.TemporaryDirectory(prefix='lekha-aksh-') as tmp:
+with tempfile.TemporaryDirectory(prefix='neptype-aksh-') as tmp:
  db=sqlite3.connect(str(pathlib.Path(tmp)/'pairs.sqlite'))
  db.execute('PRAGMA journal_mode=OFF');db.execute('PRAGMA synchronous=OFF')
  db.execute('CREATE TABLE pairs (roman TEXT NOT NULL, native TEXT NOT NULL, PRIMARY KEY(roman,native)) WITHOUT ROWID')

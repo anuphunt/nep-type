@@ -2,7 +2,7 @@
 import subprocess,tempfile,struct,sys
 from pathlib import Path
 root=Path(sys.argv[1]); exe=sys.argv[2]
-with tempfile.TemporaryDirectory(prefix='lekha-packed-corrupt-') as folder:
+with tempfile.TemporaryDirectory(prefix='neptype-packed-corrupt-') as folder:
  p=Path(folder);source=p/'source.tsv';source.write_text('hello\tनमस्ते\n',encoding='utf8');good=p/'good.lki'
  subprocess.run(['python3',str(root/'pack-index.py'),str(source),str(good)],check=True,capture_output=True)
  data=good.read_bytes();cases=[]

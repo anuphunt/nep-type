@@ -28,10 +28,10 @@ class PackagingTests(unittest.TestCase):
                 names = archive.namelist()
                 self.assertFalse(any("unrelated" in n for n in names))
                 self.assertFalse(any(n.endswith((".tsv", ".app", ".pyc")) for n in names))
-                manifest = json.loads(archive.read("lekha-linux-preview/PREVIEW-MANIFEST.json"))
-                self.assertEqual(manifest["format"], "lekha-linux-source-preview-v1")
+                manifest = json.loads(archive.read("neptype-linux-preview/PREVIEW-MANIFEST.json"))
+                self.assertEqual(manifest["format"], "neptype-linux-source-preview-v1")
                 for name, expected in manifest["sha256"].items():
-                    self.assertEqual(hashlib.sha256(archive.read("lekha-linux-preview/" + name)).hexdigest(), expected)
+                    self.assertEqual(hashlib.sha256(archive.read("neptype-linux-preview/" + name)).hexdigest(), expected)
             with self.assertRaises(FileExistsError):
                 prepare(one, root)
 
@@ -39,7 +39,7 @@ class PackagingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp) / "source"
             shutil.copytree(ROOT, root)
-            candidate = root / "lekha_ibus" / "policy.py"
+            candidate = root / "neptype_ibus" / "policy.py"
             candidate.unlink()
             candidate.symlink_to(root / "README.md")
             with self.assertRaises(ValueError):

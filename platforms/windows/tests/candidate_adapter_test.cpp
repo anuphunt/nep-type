@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-using namespace lekha;
+using namespace neptype;
 
 static void ack(Composition& c, Intent i, bool applied = true) {
     assert(i.kind == Kind::Mark || i.kind == Kind::Commit);

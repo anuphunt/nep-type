@@ -6,7 +6,7 @@ harness, classes, index_a, index_g, curated = sys.argv[1:]
 fixture = [("namaste", "नमस्ते"), ("mero", "मेरो"), ("pani", "पानी"),
            ("ma", "म"), ("man", "मन"), ("bhaisakeko", "भइसकेको"),
            ("football", "फुटबल"), ("ramro", "राम्रो")]
-env = dict(os.environ, LEKHA_AKSHARANTAR_INDEX=index_a, LEKHA_ALIAS_INDEX=index_g)
+env = dict(os.environ, NEPTYPE_AKSHARANTAR_INDEX=index_a, NEPTYPE_ALIAS_INDEX=index_g)
 commands = []
 for i, (word, _) in enumerate(fixture):
     sid = str(i)

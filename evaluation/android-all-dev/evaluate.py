@@ -13,7 +13,7 @@ parser.add_argument('root', type=Path)
 parser.add_argument('--jdk', type=Path, default=Path('/opt/homebrew/opt/openjdk/bin'))
 args = parser.parse_args()
 root = args.root.resolve()
-core = root / 'platforms/android/app/src/main/java/app/lekha/keyboard/core'
+core = root / 'platforms/android/app/src/main/java/app/neptype/keyboard/core'
 fixture = root / 'evaluation/phonetic-dev/dev.json'
 indexes = [root / 'platforms/android/app/src/main/assets/nepali-authored-v1.tsv',
            root / 'data/compiled/aksharantar-indiccorp-v1.tsv', root / 'data/compiled/google-ne-aliases.tsv']
@@ -21,7 +21,7 @@ files = [fixture, *(core / (name + '.java') for name in ('CandidateMerger', 'Sor
          root / 'evaluation/platform-compare/ServiceLookup.java', *indexes]
 hashes = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 cases = json.loads(fixture.read_text())['cases']
-with tempfile.TemporaryDirectory(prefix='lekha-android-all-eval-') as tmp:
+with tempfile.TemporaryDirectory(prefix='neptype-android-all-eval-') as tmp:
     subprocess.run([str(args.jdk / 'javac'), '--release', '8', '-d', tmp, *map(str, files[1:5])], check=True)
     command = [str(args.jdk / 'java'), '-cp', tmp, 'ServiceLookup', *map(str, indexes)]
     source = ''.join(case['roman'] + '\n' for case in cases)

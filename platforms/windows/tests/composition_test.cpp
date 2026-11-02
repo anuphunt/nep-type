@@ -4,7 +4,7 @@
 #endif
 #include <cassert>
 #include <iostream>
-using namespace lekha;
+using namespace neptype;
 
 static void ok(Composition& c, const Intent& i) {
     assert(i.kind == Kind::Mark || i.kind == Kind::Commit);

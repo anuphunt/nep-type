@@ -1,5 +1,5 @@
 import unittest
-from lekha_ibus.policy import CompositionPolicy, BACKSPACE, TAB, ISO_LEFT_TAB, SHIFT_MASK, CONTROL_MASK, RELEASE_MASK
+from neptype_ibus.policy import CompositionPolicy, BACKSPACE, TAB, ISO_LEFT_TAB, SHIFT_MASK, CONTROL_MASK, RELEASE_MASK
 
 class Host:
     def __init__(self): self.committed = ''; self.display = ''

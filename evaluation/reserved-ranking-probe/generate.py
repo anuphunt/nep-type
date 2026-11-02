@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write a frozen, manually authored synthetic probe; does not import Lekha."""
+"""Write a frozen, manually authored synthetic probe; does not import NepType."""
 import json
 from pathlib import Path
 

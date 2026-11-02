@@ -4,12 +4,12 @@ set -euo pipefail
 if [ "$#" -ne 1 ]; then printf 'Usage: %s SIGNED-DEV.app\n' "$0" >&2; exit 2; fi
 source_app=$1
 root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-test_dir=$(mktemp -d "${TMPDIR:-/tmp}/lekha-stage-test.XXXXXXXX")
+test_dir=$(mktemp -d "${TMPDIR:-/tmp}/neptype-stage-test.XXXXXXXX")
 trap 'rm -rf -- "$test_dir"' EXIT
 cp -a "$source_app" "$test_dir/Source.app"
-xattr -w com.example.lekha-test marker "$test_dir/Source.app"
+xattr -w com.example.neptype-test marker "$test_dir/Source.app"
 "$root/stage-preview.sh" "$test_dir/Source.app" "$test_dir/Output.app"
-test "$(xattr -p com.example.lekha-test "$test_dir/Output.app")" = marker
+test "$(xattr -p com.example.neptype-test "$test_dir/Output.app")" = marker
 printf 'PASS: unrelated custom attribute preserved in this test\n'
 if "$root/stage-preview.sh" "$test_dir/Source.app" "$test_dir/Output.app"; then
     printf 'FAIL: existing destination accepted\n' >&2; exit 1
@@ -42,5 +42,5 @@ if "$root/stage-preview.sh" "$test_dir/Source.app" "$test_dir/QuarantineOutput.a
 fi
 printf 'PASS: quarantined source refused\n'
 test "$(xattr -p com.apple.quarantine "$test_dir/Source.app")" = '0081;60000000;Example;'
-test "$(xattr -p com.example.lekha-test "$test_dir/Source.app")" = marker
+test "$(xattr -p com.example.neptype-test "$test_dir/Source.app")" = marker
 printf 'PASS: test source attributes retained\n'

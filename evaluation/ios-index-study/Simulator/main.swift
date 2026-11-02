@@ -22,7 +22,7 @@ func memory() -> (UInt64, UInt64) {
         let root = Bundle.main.resourceURL!
         let tsv = root.appendingPathComponent("aksharantar-indiccorp-v1.tsv").path
         let lki = root.appendingPathComponent("aksharantar-indiccorp-v1.lki").path
-        setenv("LEKHA_AKSHARANTAR_INDEX", tsv, 1)
+        setenv("NEPTYPE_AKSHARANTAR_INDEX", tsv, 1)
         let before = memory(), start = DispatchTime.now().uptimeNanoseconds
         let packed = mode == "packed" ? PackedIndex(path:lki) : nil
         let initialization = Double(DispatchTime.now().uptimeNanoseconds-start)/1_000_000

@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace lekha {
+namespace neptype {
 // Host-independent edit intents. A future TSF adapter must apply each intent
 // in an edit session against the original composition, then acknowledge it.
 // This class does not invoke TSF and performs no IO or text transformation.

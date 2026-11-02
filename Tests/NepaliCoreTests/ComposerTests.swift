@@ -5,8 +5,8 @@ final class ComposerTests: XCTestCase {
     override class func setUp() {
         super.setUp()
         let project = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
-        setenv("LEKHA_ALIAS_INDEX", project.appendingPathComponent("data/compiled/google-ne-aliases.tsv").path, 1)
-        setenv("LEKHA_AKSHARANTAR_INDEX", project.appendingPathComponent("data/compiled/aksharantar-indiccorp-v1.tsv").path, 1)
+        setenv("NEPTYPE_ALIAS_INDEX", project.appendingPathComponent("data/compiled/google-ne-aliases.tsv").path, 1)
+        setenv("NEPTYPE_AKSHARANTAR_INDEX", project.appendingPathComponent("data/compiled/aksharantar-indiccorp-v1.tsv").path, 1)
     }
     let engine = Transliterator()
 

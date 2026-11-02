@@ -7,7 +7,7 @@ examples = json.load(open(fixture, encoding="utf-8"))
 commands = []
 for i, (word, _) in enumerate(examples):
     commands.extend([{"id": str(i), "op": "create"}, {"id": str(i), "op": "append", "text": word}])
-env = dict(os.environ, LEKHA_AKSHARANTAR_INDEX=index_a, LEKHA_ALIAS_INDEX=index_g)
+env = dict(os.environ, NEPTYPE_AKSHARANTAR_INDEX=index_a, NEPTYPE_ALIAS_INDEX=index_g)
 swift = subprocess.run([harness], input="".join(json.dumps(c)+"\n" for c in commands), text=True, capture_output=True, env=env, check=True)
 responses = [json.loads(line) for line in swift.stdout.splitlines()]
 java = subprocess.run(["java", "-cp", classes, "CandidateProbe", index_a, index_g, curated], input="".join(word+"\n" for word, _ in examples), text=True, capture_output=True, check=True)

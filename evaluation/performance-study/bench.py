@@ -32,8 +32,8 @@ def scenario(indexed):
     for run in range(args.runs):
         env = dict(os.environ)
         # A nonexistent explicit path prevents accidental fallback to bundled data.
-        env['LEKHA_ALIAS_INDEX'] = args.alias_index if indexed else '/tmp/lekha-benchmark-no-such-alias-index'
-        env['LEKHA_AKSHARANTAR_INDEX'] = args.mined_index if indexed else '/tmp/lekha-benchmark-no-such-mined-index'
+        env['NEPTYPE_ALIAS_INDEX'] = args.alias_index if indexed else '/tmp/neptype-benchmark-no-such-alias-index'
+        env['NEPTYPE_AKSHARANTAR_INDEX'] = args.mined_index if indexed else '/tmp/neptype-benchmark-no-such-mined-index'
         start = time.perf_counter_ns()
         proc = subprocess.Popen(['/usr/bin/time', '-l', args.executable], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env, text=True, bufsize=1)
         def request(op, **extra):

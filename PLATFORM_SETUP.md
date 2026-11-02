@@ -1,4 +1,4 @@
-# Lekha developer setup and current platform status
+# NepType developer setup and current platform status
 
 This guide is for the current **experimental local project**, not a release or a claim that system keyboards work. Project root on this Mac:
 
@@ -13,16 +13,16 @@ Keep existing input sources available. No step below enables or installs a keybo
 Open the **standalone copy-and-paste pad**, not the input-method bundle:
 
 ```sh
-open 'build/Lekha Parity Preview.app'
+open 'build/NepType Parity Preview.app'
 ```
 
-Type Roman text in the top box; select a word to inspect alternatives, keep the Roman original if desired, and copy the result. The pad has its own language and text-size settings, candidate paging and offline emoji picker; those controls do **not** configure the system input method. The app is an ad-hoc-signed local preview, not notarized. The file-provider-backed project folder can reintroduce Finder metadata and make strict signature verification fail even when an immediately verified temporary staged copy passes. See `LEKHA_RELEASE_AUDIT.md`; do not clear quarantine to work around this.
+Type Roman text in the top box; select a word to inspect alternatives, keep the Roman original if desired, and copy the result. The pad has its own language and text-size settings, candidate paging and offline emoji picker; those controls do **not** configure the system input method. The app is an ad-hoc-signed local preview, not notarized. The file-provider-backed project folder can reintroduce Finder metadata and make strict signature verification fail even when an immediately verified temporary staged copy passes. See `NEPTYPE_RELEASE_AUDIT.md`; do not clear quarantine to work around this.
 
 To rebuild the pad locally with an already installed Xcode/Swift toolchain:
 
 ```sh
 bash scripts/build.sh --disable-sandbox
-open 'build/Lekha.app'
+open 'build/NepType.app'
 ```
 
 An optional fresh local build experiment is documented in `tools/fresh-build/README.md`; it writes only to a new output outside the project, runs tests and records source hashes. It uses the same ad-hoc development signing policy and is not a release builder.
@@ -45,25 +45,25 @@ The separate InputMethodKit bundle is experimental. To build only, without insta
 
 ```sh
 bash scripts/build-input-source.sh --disable-sandbox
-'build/Lekha Input.app/Contents/MacOS/LekhaInput' --server-check
-'build/Lekha Input.app/Contents/MacOS/LekhaInput' --mode-menu-check
+'build/NepType Input.app/Contents/MacOS/NepTypeInput' --server-check
+'build/NepType Input.app/Contents/MacOS/NepTypeInput' --mode-menu-check
 ```
 
 Server construction and synthetic menu checks do not prove that macOS registered the source, routes menu/keys correctly, or preserves host text, focus, selections, secure fields or undo. The guide in `docs/PHASE4_INPUT_METHOD.md` records the prospective installation and removal flow; those external settings/files remain subject to the pending approval and must not be performed by this guide alone. Client-proxy ownership is conservative and an unfinished mark may remain unresolved or be lost.
 
 ## iOS
 
-The project `platforms/ios/LekhaMobile.xcodeproj` contains a container app and an experimental keyboard extension. Check that its copied source and indexes match the root, then perform an **unsigned generic Simulator build**:
+The project `platforms/ios/NepTypeMobile.xcodeproj` contains a container app and an experimental keyboard extension. Check that its copied source and indexes match the root, then perform an **unsigned generic Simulator build**:
 
 ```sh
 cd platforms/ios
 ./sync-core.sh --check
-xcodebuild -project LekhaMobile.xcodeproj -scheme LekhaMobile -configuration Debug \
+xcodebuild -project NepTypeMobile.xcodeproj -scheme NepTypeMobile -configuration Debug \
   -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
-  -derivedDataPath /tmp/lekha-ios-development CODE_SIGNING_ALLOWED=NO build
+  -derivedDataPath /tmp/neptype-ios-development CODE_SIGNING_ALLOWED=NO build
 ```
 
-A mismatch means the snapshot must be deliberately synchronized and retested; see `platforms/ios/README.md`. The project uses local raw TSV indexes, requests no Full Access, and the simulator build does not enable a keyboard. `Tests/run-core.sh` runs a Mac-process snapshot check. The separate `Tests/SimulatorHost/run.sh BOOTED_SIMULATOR_UDID` and `LekhaMobile/Tests/run.sh BOOTED_SIMULATOR_UDID` create and remove temporary **standalone simulator test apps**, not keyboard extensions, and refuse to replace an existing test ID. Run them only in an authorized simulator environment; they do not establish actual system-extension behavior. Actual extension-host testing requires adding/enabling the keyboard in simulator settings and remains pending approval. On uncertain ownership the prototype may pause and leave an old mark unresolved or lost; do not use it for real typing.
+A mismatch means the snapshot must be deliberately synchronized and retested; see `platforms/ios/README.md`. The project uses local raw TSV indexes, requests no Full Access, and the simulator build does not enable a keyboard. `Tests/run-core.sh` runs a Mac-process snapshot check. The separate `Tests/SimulatorHost/run.sh BOOTED_SIMULATOR_UDID` and `NepTypeMobile/Tests/run.sh BOOTED_SIMULATOR_UDID` create and remove temporary **standalone simulator test apps**, not keyboard extensions, and refuse to replace an existing test ID. Run them only in an authorized simulator environment; they do not establish actual system-extension behavior. Actual extension-host testing requires adding/enabling the keyboard in simulator settings and remains pending approval. On uncertain ownership the prototype may pause and leave an old mark unresolved or lost; do not use it for real typing.
 
 The compressed-index work in `evaluation/ios-index-study` is research only. It was not integrated; the shipping prototype still bundles the raw indexes. Simulator memory measurements did not establish a reliable extension-memory reduction.
 
@@ -103,4 +103,4 @@ The real Windows SDK and runtime were not available here. The production TSF key
 
 ## Data and release gates
 
-The indexes are local project resources. The user has chosen to use Aksharantar during development and will address its commercial licensing before distribution; source-chain and redistribution rights remain unresolved. Preserve notices in `data/sources` and the manifest. Google-derived data and code dependencies have their own attribution/license requirements. Before an external release, review all rights, signing and notarization, privacy and update behavior, accessibility, memory/latency on devices, failure recovery, actual host matrices, installation/removal and support. Distribution, publication and paid services require separate approval. `LEKHA_READINESS.md` and `LEKHA_PRODUCT_PLAN.md` are the current detailed status and roadmap.
+The indexes are local project resources. The user has chosen to use Aksharantar during development and will address its commercial licensing before distribution; source-chain and redistribution rights remain unresolved. Preserve notices in `data/sources` and the manifest. Google-derived data and code dependencies have their own attribution/license requirements. Before an external release, review all rights, signing and notarization, privacy and update behavior, accessibility, memory/latency on devices, failure recovery, actual host matrices, installation/removal and support. Distribution, publication and paid services require separate approval. `NEPTYPE_READINESS.md` and `NEPTYPE_PRODUCT_PLAN.md` are the current detailed status and roadmap.

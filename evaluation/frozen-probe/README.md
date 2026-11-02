@@ -14,4 +14,4 @@ The current Swift engine, fixture and evaluator were hashed before scoring; no r
 
 `evaluator.swift` matches annotations in order to the engine's tokens, skipping unannotated tokens. Non-tokenized literal spans such as emoji are checked by containment in the output. Candidates are the first four contextual choices plus the original. Strict sentence scores compare against the listed full-sentence alternatives; unlisted acceptable spellings or spacing may be marked wrong. No actual input-method host is exercised.
 
-Run the evaluator by compiling it as `main.swift` alongside the four Swift core files, setting `LEKHA_ALIAS_INDEX` and `LEKHA_AKSHARANTAR_INDEX` to the project indexes, and passing `corpus.json`. `pre-evaluation-hashes.txt` records fixture, source and evaluator hashes captured before the run.
+Run the evaluator by compiling it as `main.swift` alongside the four Swift core files, setting `NEPTYPE_ALIAS_INDEX` and `NEPTYPE_AKSHARANTAR_INDEX` to the project indexes, and passing `corpus.json`. `pre-evaluation-hashes.txt` records fixture, source and evaluator hashes captured before the run.

@@ -12,7 +12,7 @@ The full authored diagnostic is `results.json`; `sampled-index.json` and `sample
 
 ## Repeat locally
 
-Copy this folder to `evaluation/consistency-study`, then from the Lekha project root run:
+Copy this folder to `evaluation/consistency-study`, then from the NepType project root run:
 
 ```sh
 JDK_BIN=/path/to/installed/jdk/bin ./evaluation/consistency-study/run.sh

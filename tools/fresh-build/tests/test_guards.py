@@ -14,7 +14,7 @@ spec.loader.exec_module(module)
 
 class GuardTests(unittest.TestCase):
     def test_existing_destination_untouched(self):
-        with tempfile.TemporaryDirectory(prefix='lekha-output-guard-') as tmp:
+        with tempfile.TemporaryDirectory(prefix='neptype-output-guard-') as tmp:
             target = Path(tmp) / 'existing'
             target.mkdir()
             marker = target / 'keep.txt'
@@ -26,7 +26,7 @@ class GuardTests(unittest.TestCase):
             self.assertEqual([x.name for x in target.iterdir()], ['keep.txt'])
 
     def test_refuses_symlink_inputs(self):
-        with tempfile.TemporaryDirectory(prefix='lekha-source-guard-') as tmp:
+        with tempfile.TemporaryDirectory(prefix='neptype-source-guard-') as tmp:
             root = Path(tmp)
             (root / 'Sources').mkdir(); (root / 'Tests').mkdir()
             (root / 'Sources' / 'linked.swift').symlink_to('/etc/hosts')
@@ -34,7 +34,7 @@ class GuardTests(unittest.TestCase):
                 module.collect(root)
 
     def test_refuses_output_inside_source(self):
-        with tempfile.TemporaryDirectory(prefix='lekha-source-output-') as tmp:
+        with tempfile.TemporaryDirectory(prefix='neptype-source-output-') as tmp:
             output = Path(tmp) / 'new-output'
             p = subprocess.run([sys.executable, str(ROOT / 'fresh-build.py'), '--project', tmp, '--output', str(output)], capture_output=True, text=True)
             self.assertNotEqual(p.returncode, 0)
@@ -42,22 +42,22 @@ class GuardTests(unittest.TestCase):
             self.assertFalse(output.exists())
 
     def test_refuses_quarantined_input(self):
-        with tempfile.TemporaryDirectory(prefix='lekha-quarantine-guard-') as tmp:
+        with tempfile.TemporaryDirectory(prefix='neptype-quarantine-guard-') as tmp:
             root = Path(tmp)
             path = root / 'file.swift'
             path.write_text('test', encoding='utf-8')
-            subprocess.run(['xattr', '-w', 'com.apple.quarantine', '0081;00000000;LekhaTest;', str(path)], check=True)
+            subprocess.run(['xattr', '-w', 'com.apple.quarantine', '0081;00000000;NepTypeTest;', str(path)], check=True)
             with self.assertRaisesRegex(ValueError, 'quarantined input refused'):
                 module.checked_input(root, Path('file.swift'))
             self.assertEqual(subprocess.run(['xattr', '-p', 'com.apple.quarantine', str(path)], capture_output=True).returncode, 0)
 
     def test_refuses_quarantined_parent(self):
-        with tempfile.TemporaryDirectory(prefix='lekha-quarantine-parent-') as tmp:
+        with tempfile.TemporaryDirectory(prefix='neptype-quarantine-parent-') as tmp:
             root = Path(tmp)
             parent = root / 'Sources'
             parent.mkdir()
             (parent / 'file.swift').write_text('test', encoding='utf-8')
-            subprocess.run(['xattr', '-w', 'com.apple.quarantine', '0081;00000000;LekhaTest;', str(parent)], check=True)
+            subprocess.run(['xattr', '-w', 'com.apple.quarantine', '0081;00000000;NepTypeTest;', str(parent)], check=True)
             with self.assertRaisesRegex(ValueError, 'quarantined input refused'):
                 module.checked_input(root, Path('Sources/file.swift'))
             self.assertEqual(subprocess.run(['xattr', '-p', 'com.apple.quarantine', str(parent)], capture_output=True).returncode, 0)

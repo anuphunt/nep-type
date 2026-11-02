@@ -1,4 +1,4 @@
-import app.lekha.keyboard.core.PhoneticCandidates;
+import app.neptype.keyboard.core.PhoneticCandidates;
 import java.util.Arrays;
 
 /** Small hot-process measurement; not an Android-device or keystroke benchmark. */

@@ -28,13 +28,13 @@ class ModePropertyTests(unittest.TestCase):
         repository.GLib=types.SimpleNamespace(idle_add=lambda fn,*a:fn(*a))
         gi=types.ModuleType('gi'); gi.repository=repository
         with patch.dict(sys.modules, {'gi':gi, 'gi.repository':repository}):
-            sys.modules.pop('lekha_ibus.engine', None)
-            from lekha_ibus.engine import LekhaEngine
-            from lekha_ibus.policy import CompositionPolicy
+            sys.modules.pop('neptype_ibus.engine', None)
+            from neptype_ibus.engine import NepTypeEngine
+            from neptype_ibus.policy import CompositionPolicy
             class Worker:
                 def submit(self,*args): pass
                 def close(self): pass
-            e=LekhaEngine(); e.do_enable(); self.assertIn(('register','नेपाली'),e.events)
+            e=NepTypeEngine(); e.do_enable(); self.assertIn(('register','नेपाली'),e.events)
             self.assertIn('Tab or Shift-Tab', e._mode_property().tooltip)
             self.assertIn('Space or Return', e._mode_property().tooltip)
             self.assertIn('Backspace restores', e._mode_property().tooltip)
@@ -42,7 +42,7 @@ class ModePropertyTests(unittest.TestCase):
             self.assertTrue(e.do_process_key_event(ord('m'),0,0))
             e.do_property_activate('wrong-property', 0)
             self.assertEqual(e.language, 'nepali')
-            e.do_property_activate('lekha-language', 0)
+            e.do_property_activate('neptype-language', 0)
             self.assertEqual(e.language, 'nepali')
             self.assertEqual(e.policy.raw, 'm')
             self.assertNotIn(('commit','m'),e.events)
@@ -51,7 +51,7 @@ class ModePropertyTests(unittest.TestCase):
             # property event itself never commits an unverified composition.
             self.assertFalse(e.do_process_key_event(32,0,0))
             self.assertIn(('commit','m'),e.events)
-            e.do_property_activate('lekha-language', 0)
+            e.do_property_activate('neptype-language', 0)
             self.assertEqual(e.language, 'english')
             self.assertIn(('update','English'),e.events)
             self.assertFalse(e.do_process_key_event(ord('a'),0,0))
@@ -59,10 +59,10 @@ class ModePropertyTests(unittest.TestCase):
             self.assertIn(('register','English'),e.events)
             self.assertFalse(e.do_process_key_event(ord('a'),0,0))
             self.assertEqual(e.policy.language, 'english')
-            e.do_property_activate('lekha-language',0)
+            e.do_property_activate('neptype-language',0)
             self.assertEqual(e.policy.language, 'allNepali')
             self.assertIn(('update','सबै ने'),e.events)
-            e.do_property_activate('lekha-language',0)
+            e.do_property_activate('neptype-language',0)
             self.assertEqual(e.policy.language, 'nepali')
 
 if __name__ == '__main__': unittest.main()

@@ -3,7 +3,7 @@
 #include <limits>
 #include <vector>
 
-namespace lekha {
+namespace neptype {
 namespace {
 template<class T> struct ComPtr {
     T* value = nullptr;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit frozen synthetic references. Does not invoke or inspect Lekha."""
+"""Emit frozen synthetic references. Does not invoke or inspect NepType."""
 import json
 from pathlib import Path
 

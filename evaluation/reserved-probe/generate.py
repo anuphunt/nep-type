@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write frozen, manually authored synthetic references; never invokes Lekha."""
+"""Write frozen, manually authored synthetic references; never invokes NepType."""
 import hashlib, json
 from pathlib import Path
 

@@ -1,7 +1,7 @@
 #include "candidate_adapter.h"
 #include <algorithm>
 
-namespace lekha {
+namespace neptype {
 namespace {
 bool safe_candidate(const std::u16string& value) {
     if (value.empty() || value.size() > 512) return false;

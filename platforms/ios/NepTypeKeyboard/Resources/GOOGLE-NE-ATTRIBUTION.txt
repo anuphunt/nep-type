@@ -1,0 +1,5 @@
+Google Nepali pronunciation lexicon, Copyright 2018 Google Inc.
+Source: https://github.com/google/language-resources/blob/a90601024f07ab7e96c911243324e0adeb16da96/ne/data/lexicon.tsv
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+Changes: NepType selects Devanagari spelling and phonemic transcription rows and generates approximate Roman aliases using project-authored rules, with bounded variants. It sorts and groups resulting pairs. This adapted data is not endorsed by Google. The original file and its copyright/license notice are included in the project as google-ne-lexicon.tsv.

@@ -1,4 +1,4 @@
-package app.lekha.keyboard.core;
+package app.neptype.keyboard.core;
 
 import java.util.Collections;
 import java.util.HashMap;

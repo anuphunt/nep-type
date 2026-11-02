@@ -5,7 +5,7 @@ This is a local, read-only input benchmark of the **debug** JSON-lines portable-
 ## Environment and method
 
 - Apple M4 Max, 64 GiB memory, macOS 26.6.2, arm64; Apple Swift 6.4.
-- The debug executable used was `/tmp/lekha-portable-build/debug/lekha-conformance`, SHA-256 `d1095c80487beb35311a6981aaee835864e55e0f1e1f74f52abbd36e3564327c`. All five portable core source files byte-matched the current project; its Transliterator source (`7c18905dabbe524c76a2908ca17231f277233adae0ad25f1de6c60badaed9540`). This process is a test transport, not a stable production API.
+- The debug executable used was `/tmp/neptype-portable-build/debug/neptype-conformance`, SHA-256 `d1095c80487beb35311a6981aaee835864e55e0f1e1f74f52abbd36e3564327c`. All five portable core source files byte-matched the current project; its Transliterator source (`7c18905dabbe524c76a2908ca17231f277233adae0ad25f1de6c60badaed9540`). This process is a test transport, not a stable production API.
 - Google alias index: 10,618,399 bytes. Aksharantar index: 98,652,429 bytes. Both are memory-mapped by the engine where available; total index files are 109,270,828 bytes (104.2 MiB). SHA-256 values: Google `87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159`, Aksharantar `a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d`. Original source rights and redistribution remain unresolved as documented in the project.
 - Ten fresh processes per condition. Filesystem/OS page cache was **not cleared**; fresh process is not a cold-disk test. Each sends one initial `bhaisakeko` lookup then repeats ten words 20 times. First lookup initializes more engine state than the empty session. Request timings include process pipe transport, JSON parsing/encoding, state/candidate serialization and scheduling; they are not a single internal index lookup or typing latency. Repeated words are a small hot working set.
 - `/usr/bin/time -l` reports each wrapped process's maximum resident set size and peak memory footprint; the latter is macOS-specific and is not interchangeable with RSS. Memory-map pages are demand-loaded. These runs touch a tiny subset of the indexes and do not estimate worst-case resident memory, multi-app use, iOS extension memory or battery.
@@ -26,11 +26,11 @@ With only ten processes, process-level p95 is the maximum sample under the neare
 
 ## Repeat
 
-From the Lekha project root, first build the portable test executable with the documented `portable-core/README.md` instructions. On macOS, allow access to local process memory statistics if the execution environment requires it, then run:
+From the NepType project root, first build the portable test executable with the documented `portable-core/README.md` instructions. On macOS, allow access to local process memory statistics if the execution environment requires it, then run:
 
 ```sh
 python3 evaluation/performance-study/bench.py \
-  --executable /path/to/lekha-conformance \
+  --executable /path/to/neptype-conformance \
   --alias-index "$PWD/data/compiled/google-ne-aliases.tsv" \
   --mined-index "$PWD/data/compiled/aksharantar-indiccorp-v1.tsv" \
   --runs 10 --rounds 20 > results.json

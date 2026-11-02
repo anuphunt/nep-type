@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-namespace lekha {
+namespace neptype {
 // A request/response boundary, not a transport. Caller owns the worker thread,
 // validates the engine process and delivers responses to the owning thread.
 struct CandidateQuery {

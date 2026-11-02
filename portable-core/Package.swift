@@ -2,13 +2,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "LekhaPortableCore",
+    name: "NepTypePortableCore",
     products: [
-        .library(name: "LekhaPortableCore", targets: ["LekhaPortableCore"]),
-        .executable(name: "lekha-conformance", targets: ["lekha-conformance"])
+        .library(name: "NepTypePortableCore", targets: ["NepTypePortableCore"]),
+        .executable(name: "neptype-conformance", targets: ["neptype-conformance"])
     ],
     targets: [
-        .target(name: "LekhaPortableCore"),
-        .executableTarget(name: "lekha-conformance", dependencies: ["LekhaPortableCore"])
+        .target(name: "NepTypePortableCore"),
+        .executableTarget(name: "neptype-conformance", dependencies: ["NepTypePortableCore"])
     ]
 )

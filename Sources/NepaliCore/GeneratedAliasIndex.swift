@@ -5,7 +5,7 @@ import Foundation
 enum GeneratedAliasIndex {
     private static let data: Data? = {
         let url: URL?
-        if let path = ProcessInfo.processInfo.environment["LEKHA_ALIAS_INDEX"], !path.isEmpty {
+        if let path = ProcessInfo.processInfo.environment["NEPTYPE_ALIAS_INDEX"], !path.isEmpty {
             url = URL(fileURLWithPath: path)
         } else {
             url = Bundle.main.resourceURL?.appendingPathComponent("google-ne-aliases.tsv")
@@ -16,7 +16,7 @@ enum GeneratedAliasIndex {
 
     private static let aksharantarData: Data? = {
         let url: URL?
-        if let path = ProcessInfo.processInfo.environment["LEKHA_AKSHARANTAR_INDEX"], !path.isEmpty {
+        if let path = ProcessInfo.processInfo.environment["NEPTYPE_AKSHARANTAR_INDEX"], !path.isEmpty {
             url = URL(fileURLWithPath: path)
         } else {
             url = Bundle.main.resourceURL?.appendingPathComponent("aksharantar-indiccorp-v1.tsv")

@@ -1,7 +1,7 @@
 #include "composition.h"
 #include <utility>
 
-namespace lekha {
+namespace neptype {
 bool Composition::matches_pending(const Intent& intent) const {
     if (!pending_) return false;
     const auto& expected = pending_->intent;

@@ -1,6 +1,6 @@
 # Vowel-length lookup development experiment — rejected
 
-This is an isolated offline development experiment. It does not edit or replace the Lekha engine, and no input source was installed. It explores a bounded single `a`/`aa`, `i`/`ii`, or `u`/`uu` Roman-key variant against the existing Aksharantar and pronunciation-derived Google alias indexes. At most four alternative keys and two suggestions are considered. Exact/base choices retain priority; the original remains available and automatic output never changes. The guard excludes known English words, uppercase/non-ASCII, long inputs, and inputs with two or more exact mined candidates. Candidate order is source order, not a claimed word frequency.
+This is an isolated offline development experiment. It does not edit or replace the NepType engine, and no input source was installed. It explores a bounded single `a`/`aa`, `i`/`ii`, or `u`/`uu` Roman-key variant against the existing Aksharantar and pronunciation-derived Google alias indexes. At most four alternative keys and two suggestions are considered. Exact/base choices retain priority; the original remains available and automatic output never changes. The guard excludes known English words, uppercase/non-ASCII, long inputs, and inputs with two or more exact mined candidates. Candidate order is source order, not a claimed word frequency.
 
 ## Development findings
 
@@ -15,12 +15,12 @@ This is an isolated offline development experiment. It does not edit or replace 
 Run from this directory, using the source indexes already in the parent project:
 
 ```sh
-swiftc -O -module-cache-path /tmp/lekha-phonetic-dev-cache Transliterator.swift Composer.swift GeneratedIndexes.swift GeneratedAliasIndex.swift main.swift -o /tmp/lekha-phonetic-dev
-export LEKHA_ALIAS_INDEX=/absolute/path/to/google-ne-aliases.tsv
-export LEKHA_AKSHARANTAR_INDEX=/absolute/path/to/aksharantar-indiccorp-v1.tsv
-/tmp/lekha-phonetic-dev dev.json > results-google.json
-python3 generate-synthetic.py "$LEKHA_AKSHARANTAR_INDEX" > synthetic-index-dev.json
-/tmp/lekha-phonetic-dev synthetic-index-dev.json --bench > synthetic-results.json
+swiftc -O -module-cache-path /tmp/neptype-phonetic-dev-cache Transliterator.swift Composer.swift GeneratedIndexes.swift GeneratedAliasIndex.swift main.swift -o /tmp/neptype-phonetic-dev
+export NEPTYPE_ALIAS_INDEX=/absolute/path/to/google-ne-aliases.tsv
+export NEPTYPE_AKSHARANTAR_INDEX=/absolute/path/to/aksharantar-indiccorp-v1.tsv
+/tmp/neptype-phonetic-dev dev.json > results-google.json
+python3 generate-synthetic.py "$NEPTYPE_AKSHARANTAR_INDEX" > synthetic-index-dev.json
+/tmp/neptype-phonetic-dev synthetic-index-dev.json --bench > synthetic-results.json
 ```
 
 The timing line goes to standard error. `source-hashes.txt` records the source and index hashes used. The fixture, renderer and index sources in this directory are developer research artifacts and carry the main project's existing attribution and unresolved Aksharantar commercial review. The hand-written examples and same-index sample are development data, not independent held-out tests. Results depend on these specific index versions.

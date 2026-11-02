@@ -5,7 +5,7 @@ swift_exe, java_exe, classes, curated, mined, google, fixture = sys.argv[1:]
 items=json.load(open(fixture,encoding="utf-8"))["cases"]
 requests=[]
 for i,item in enumerate(items): requests.extend([{"id":str(i),"op":"create"},{"id":str(i),"op":"append","text":item["roman"]}])
-env=dict(os.environ,LEKHA_AKSHARANTAR_INDEX=mined,LEKHA_ALIAS_INDEX=google)
+env=dict(os.environ,NEPTYPE_AKSHARANTAR_INDEX=mined,NEPTYPE_ALIAS_INDEX=google)
 raw=subprocess.run([swift_exe],input="".join(json.dumps(x)+"\n" for x in requests),capture_output=True,text=True,check=True,env=env)
 swift=[json.loads(x) for x in raw.stdout.splitlines()]
 raw=subprocess.run([java_exe,"-cp",classes,"ServiceLookup",curated,mined,google],input="".join(x["roman"]+"\n" for x in items),capture_output=True,text=True,check=True)

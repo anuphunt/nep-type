@@ -2,13 +2,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "Lekha",
+    name: "NepType",
     platforms: [.macOS(.v13)],
-    products: [.executable(name: "Lekha", targets: ["NepaliKeyboard"]), .executable(name: "LekhaInput", targets: ["LekhaInput"])],
+    products: [.executable(name: "NepType", targets: ["NepaliKeyboard"]), .executable(name: "NepTypeInput", targets: ["NepTypeInput"])],
     targets: [
         .target(name: "NepaliCore"),
         .executableTarget(name: "NepaliKeyboard", dependencies: ["NepaliCore"]),
-        .executableTarget(name: "LekhaInput", dependencies: ["NepaliCore"]),
+        .executableTarget(name: "NepTypeInput", dependencies: ["NepaliCore"]),
         .testTarget(name: "NepaliCoreTests", dependencies: ["NepaliCore"])
     ]
 )

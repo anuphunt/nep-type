@@ -2,7 +2,7 @@
 #include <cassert>
 #include <iostream>
 #include <thread>
-using namespace lekha;
+using namespace neptype;
 class FakeContext final : public ITfContext {
 public:
     ULONG refs = 1; bool deny = false, skip = false, dishonest = false, foreign = false; int calls = 0;

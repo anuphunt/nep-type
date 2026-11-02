@@ -6,7 +6,7 @@ report={}
 for mode in ('raw','packed'):
  values=[]
  for _ in range(10):
-  env=dict(os.environ,LEKHA_AKSHARANTAR_INDEX=tsv)
+  env=dict(os.environ,NEPTYPE_AKSHARANTAR_INDEX=tsv)
   p=subprocess.run(['/usr/bin/time','-l',exe,mode,lki],capture_output=True,text=True,check=True,env=env)
   row=json.loads(p.stdout);match=re.search(r'^\s*(\d+)\s+maximum resident set size',p.stderr,re.M)
   if not match:raise RuntimeError('memory statistic unavailable')

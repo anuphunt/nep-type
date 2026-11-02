@@ -1,4 +1,4 @@
-import app.lekha.keyboard.core.LatestLookupScheduler;
+import app.neptype.keyboard.core.LatestLookupScheduler;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

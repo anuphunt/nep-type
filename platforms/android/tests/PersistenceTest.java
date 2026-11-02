@@ -1,4 +1,4 @@
-import app.lekha.keyboard.core.PersistentLanguagePreferences;
+import app.neptype.keyboard.core.PersistentLanguagePreferences;
 import java.util.concurrent.CountDownLatch;
 
 public final class PersistenceTest {

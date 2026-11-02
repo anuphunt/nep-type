@@ -1,6 +1,6 @@
 # Frozen mixed-language candidate-ordering probe
 
-`corpus.json` contains 60 synthetic cases: ten each English, Nepali, mixed, ambiguity, personal-name and literal/technical text. The fixture was authored separately without running or inspecting Lekha's outputs. The accompanying generator constructs only this reference JSON; it does not import the engine. Do not provide the cases to an implementation author before their candidate and evaluator are frozen.
+`corpus.json` contains 60 synthetic cases: ten each English, Nepali, mixed, ambiguity, personal-name and literal/technical text. The fixture was authored separately without running or inspecting NepType's outputs. The accompanying generator constructs only this reference JSON; it does not import the engine. Do not provide the cases to an implementation author before their candidate and evaluator are frozen.
 
 These sentences were AI-authored with project/conversation context, not sampled from real users, and no Nepali speaker reviewed the intended spellings, word boundaries, name handling, or translations. They are not an independent or representative population accuracy sample. The ambiguity category explicitly encodes one possible intent; especially in mixed text, other intents may be valid. English-labeled proper names are preservation controls, not a claim that names belong to English.
 

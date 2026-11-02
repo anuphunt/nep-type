@@ -37,11 +37,11 @@ def diagnostics(environ=None):
         "python": platform.python_version(),
         "ibus_command": "available" if shutil.which("ibus") else "not found",
         "ibus_bindings": bindings,
-        "core": file_status(env.get("LEKHA_IBUS_CORE_EXECUTABLE"), executable=True),
-        "google_alias_index": file_status(env.get("LEKHA_ALIAS_INDEX")),
-        "aksharantar_index": file_status(env.get("LEKHA_AKSHARANTAR_INDEX")),
-        "focus_id_experiment": env.get("LEKHA_IBUS_FOCUS_ID") == "1",
-        "focus_commit_experiment": env.get("LEKHA_IBUS_FOCUS_COMMIT") == "1",
+        "core": file_status(env.get("NEPTYPE_IBUS_CORE_EXECUTABLE"), executable=True),
+        "google_alias_index": file_status(env.get("NEPTYPE_ALIAS_INDEX")),
+        "aksharantar_index": file_status(env.get("NEPTYPE_AKSHARANTAR_INDEX")),
+        "focus_id_experiment": env.get("NEPTYPE_IBUS_FOCUS_ID") == "1",
+        "focus_commit_experiment": env.get("NEPTYPE_IBUS_FOCUS_COMMIT") == "1",
         "notice": "Read-only check. No daemon connection, input source registration, architecture validation or real typing test was performed.",
     }
 

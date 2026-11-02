@@ -4,8 +4,8 @@
 #include <iostream>
 extern "C" HRESULT DllGetClassObject(REFCLSID, REFIID, void**);
 extern "C" HRESULT DllCanUnloadNow();
-extern "C" lekha::EditBridge* LekhaTestBridge(ITfTextInputProcessor*);
-extern "C" bool LekhaTestEnableSink(ITfTextInputProcessor*, ITfContext*, lekha::HostEdit*);
+extern "C" neptype::EditBridge* NepTypeTestBridge(ITfTextInputProcessor*);
+extern "C" bool NepTypeTestEnableSink(ITfTextInputProcessor*, ITfContext*, neptype::HostEdit*);
 class MockContext : public ITfContext {
 public:
     ULONG refs = 1; bool reject = false, retain = false;
@@ -19,14 +19,14 @@ public:
         *result = edit->DoEditSession(17); return S_OK;
     }
 };
-class MockHost : public lekha::HostEdit {
+class MockHost : public neptype::HostEdit {
 public:
     ITfContext* context; std::u16string text; int calls = 0;
     explicit MockHost(ITfContext* c):context(c) {}
     bool owns_context(ITfContext* c) const override { return c == context; }
-    bool apply(TfEditCookie, const lekha::Intent& intent) override { ++calls; text = intent.text; return true; }
+    bool apply(TfEditCookie, const neptype::Intent& intent) override { ++calls; text = intent.text; return true; }
 };
-constexpr GUID CLSID_Lekha = {0xb6a68f96, 0x5819, 0x4b7f, {0x85,0x69,0xa1,0x15,0x90,0xd1,0x20,0x01}};
+constexpr GUID CLSID_NepType = {0xb6a68f96, 0x5819, 0x4b7f, {0x85,0x69,0xa1,0x15,0x90,0xd1,0x20,0x01}};
 class FakeKeys : public ITfKeystrokeMgr {
 public:
     ULONG refs = 1; ITfKeyEventSink* sink = nullptr; TfClientId id = 0;
@@ -48,15 +48,15 @@ int main() {
     assert(DllCanUnloadNow() == S_OK);
     void* raw = nullptr; GUID other{42,0,0,{}};
     assert(DllGetClassObject(other,IID_IClassFactory,&raw) == CLASS_E_CLASSNOTAVAILABLE && !raw);
-    assert(DllGetClassObject(CLSID_Lekha,IID_IClassFactory,nullptr) == E_POINTER);
-    assert(DllGetClassObject(CLSID_Lekha,IID_IClassFactory,&raw) == S_OK);
+    assert(DllGetClassObject(CLSID_NepType,IID_IClassFactory,nullptr) == E_POINTER);
+    assert(DllGetClassObject(CLSID_NepType,IID_IClassFactory,&raw) == S_OK);
     auto* factory=static_cast<IClassFactory*>(raw); assert(DllCanUnloadNow()==S_FALSE);
     assert(factory->LockServer(TRUE)==S_OK); assert(factory->LockServer(FALSE)==S_OK);
     assert(factory->LockServer(FALSE)==E_UNEXPECTED);
     assert(factory->CreateInstance(factory,IID_ITfTextInputProcessor,&raw)==CLASS_E_NOAGGREGATION && !raw);
     assert(factory->CreateInstance(nullptr,IID_ITfTextInputProcessor,&raw)==S_OK);
     auto* service=static_cast<ITfTextInputProcessor*>(raw);
-    auto* bridge = LekhaTestBridge(service);
+    auto* bridge = NepTypeTestBridge(service);
     assert(bridge && bridge->usable() && !bridge->adapter().query());
     FakeThread thread;
     assert(service->Activate(nullptr, 1)==E_INVALIDARG);
@@ -74,7 +74,7 @@ int main() {
     // Mock-only end-to-end sink path. WPARAM here is injected text, not a
     // real Windows virtual key; production callbacks remain pass-through.
     MockContext context; MockHost host(&context);
-    assert(LekhaTestEnableSink(service, &context, &host));
+    assert(NepTypeTestEnableSink(service, &context, &host));
     eaten=FALSE; assert(thread.keys.sink->OnTestKeyDown(&context,'m',0,&eaten)==S_OK && eaten);
     assert(host.calls==0 && bridge->adapter().composition().original().empty());
     eaten=FALSE; assert(thread.keys.sink->OnKeyDown(&context,'m',0,&eaten)==S_OK && eaten && host.text==u"m");
@@ -83,7 +83,7 @@ int main() {
     auto query = bridge->adapter().query();
     assert(query && bridge->adapter().accept(*query, {u"म"}));
     auto chosen = bridge->adapter().choose(1);
-    assert(bridge->apply(&context, 1, chosen, std::shared_ptr<lekha::HostEdit>(&host, [](lekha::HostEdit*){})));
+    assert(bridge->apply(&context, 1, chosen, std::shared_ptr<neptype::HostEdit>(&host, [](neptype::HostEdit*){})));
     assert(host.text == u"म" && bridge->adapter().composition().original().empty());
     eaten=FALSE; assert(thread.keys.sink->OnKeyDown(&context,'a',0,&eaten)==S_OK && eaten && host.text==u"a");
     eaten=FALSE; assert(thread.keys.sink->OnKeyDown(&context,' ',0,&eaten)==S_OK && eaten && host.text==u"a ");
@@ -96,10 +96,10 @@ int main() {
     // A hostile or broken host may retain an uncalled synchronous session.
     // After its service is released, that reference must still pin the DLL.
     MockContext retainedContext; MockHost retainedHost(&retainedContext);
-    lekha::EditBridge retainedBridge(99);
+    neptype::EditBridge retainedBridge(99);
     auto pending = retainedBridge.adapter().composition().character(u'z');
     retainedContext.retain = true;
-    assert(!retainedBridge.apply(&retainedContext, 1, pending, std::shared_ptr<lekha::HostEdit>(&retainedHost, [](lekha::HostEdit*){})));
+    assert(!retainedBridge.apply(&retainedContext, 1, pending, std::shared_ptr<neptype::HostEdit>(&retainedHost, [](neptype::HostEdit*){})));
     assert(retainedContext.retained && !retainedBridge.usable());
     assert(retainedContext.retained->DoEditSession(17)==E_UNEXPECTED && retainedHost.calls==0);
     thread.keys.failUnadvise=true; assert(service->Deactivate()==E_UNEXPECTED && thread.keys.sink);
@@ -112,12 +112,12 @@ int main() {
     auto* secondService = static_cast<ITfTextInputProcessor*>(secondRaw);
     assert(secondService->Activate(&thread,2)==S_OK);
     MockContext focusedContext; MockHost focusedHost(&focusedContext);
-    assert(LekhaTestEnableSink(secondService, &focusedContext, &focusedHost));
+    assert(NepTypeTestEnableSink(secondService, &focusedContext, &focusedHost));
     eaten=FALSE; assert(thread.keys.sink->OnKeyDown(&focusedContext,'n',0,&eaten)==S_OK && eaten);
     assert(focusedHost.text==u"n" && focusedContext.refs==2);
     assert(thread.keys.sink->OnSetFocus(FALSE)==S_OK && focusedContext.refs==1);
     eaten=TRUE; assert(thread.keys.sink->OnTestKeyDown(&focusedContext,'x',0,&eaten)==S_OK && !eaten);
-    assert(!LekhaTestEnableSink(secondService, &focusedContext, &focusedHost));
+    assert(!NepTypeTestEnableSink(secondService, &focusedContext, &focusedHost));
     assert(focusedHost.text==u"n" && focusedHost.calls==1);
     assert(secondService->Deactivate()==S_OK); secondService->Release();
     void* thirdRaw = nullptr;
@@ -125,11 +125,11 @@ int main() {
     auto* thirdService = static_cast<ITfTextInputProcessor*>(thirdRaw);
     assert(thirdService->Activate(&thread,3)==S_OK);
     MockContext deactivatedContext; MockHost deactivatedHost(&deactivatedContext);
-    assert(LekhaTestEnableSink(thirdService, &deactivatedContext, &deactivatedHost));
+    assert(NepTypeTestEnableSink(thirdService, &deactivatedContext, &deactivatedHost));
     eaten=FALSE; assert(thread.keys.sink->OnKeyDown(&deactivatedContext,'p',0,&eaten)==S_OK && eaten);
     assert(thirdService->Deactivate()==S_OK && deactivatedContext.refs==1);
     assert(thirdService->Activate(&thread,4)==S_OK);
-    assert(!LekhaTestEnableSink(thirdService, &deactivatedContext, &deactivatedHost));
+    assert(!NepTypeTestEnableSink(thirdService, &deactivatedContext, &deactivatedHost));
     eaten=TRUE; assert(thread.keys.sink->OnTestKeyDown(&deactivatedContext,'x',0,&eaten)==S_OK && !eaten);
     assert(deactivatedHost.text==u"p" && deactivatedHost.calls==1);
     assert(thirdService->Deactivate()==S_OK); thirdService->Release();

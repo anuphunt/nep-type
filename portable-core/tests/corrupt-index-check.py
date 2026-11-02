@@ -23,12 +23,12 @@ fixtures = {
     "oversized_candidate": ("bhaisakeko\t" + "क" * 61 + "\n").encode(),
     "empty_candidate": "bhaisakeko\tभइसकेको\t\n".encode(),
 }
-with tempfile.TemporaryDirectory(prefix="lekha-corrupt-index-") as directory:
+with tempfile.TemporaryDirectory(prefix="neptype-corrupt-index-") as directory:
     root = Path(directory)
     for name, raw in fixtures.items():
         index = root / (name + ".tsv")
         index.write_bytes(raw)
-        env = dict(os.environ, LEKHA_ALIAS_INDEX=str(index), LEKHA_AKSHARANTAR_INDEX=str(index))
+        env = dict(os.environ, NEPTYPE_ALIAS_INDEX=str(index), NEPTYPE_AKSHARANTAR_INDEX=str(index))
         commands = [{"id":"s","op":"create"}, {"id":"s","op":"append","text":"bhaisakeko"}, {"id":"s","op":"cancel"}]
         p = subprocess.run([exe], input="".join(json.dumps(x)+"\n" for x in commands), text=True, capture_output=True, env=env, timeout=10, check=True)
         rows = [json.loads(line) for line in p.stdout.splitlines()]

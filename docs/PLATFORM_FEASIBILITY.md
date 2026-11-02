@@ -1,6 +1,6 @@
-# Lekha platform feasibility notes — 30 October 2026
+# NepType platform feasibility notes — 30 October 2026
 
-These are implementation proposals based on platform documentation, not demonstrated builds. Existing Lekha is a Swift macOS application and experimental InputMethodKit service. Do not claim system or cross-platform compatibility until tested in actual hosts. ViKey's release claims and Lekha's target matrix are in LEKHA_PRODUCT_PLAN.md.
+These are implementation proposals based on platform documentation, not demonstrated builds. Existing NepType is a Swift macOS application and experimental InputMethodKit service. Do not claim system or cross-platform compatibility until tested in actual hosts. ViKey's release claims and NepType's target matrix are in NEPTYPE_PRODUCT_PLAN.md.
 
 ## Shared boundary
 

@@ -11,11 +11,11 @@ def build_descriptor(project_dir: Path, python: str) -> str:
     # IBus executes this command; quote paths, including those containing spaces.
     launcher = project_dir.resolve() / "run-engine.sh"
     component = ET.Element("component")
-    for tag, value in [("name", "org.freedesktop.IBus.Lekha"), ("description", "Lekha experimental input method; pass-through unless core is configured"), ("exec", shlex.join([str(launcher), python])), ("version", "0.0.1"), ("license", "Unspecified"), ("author", "Lekha project"), ("homepage", ""), ("textdomain", "lekha")]:
+    for tag, value in [("name", "org.freedesktop.IBus.NepType"), ("description", "NepType experimental input method; pass-through unless core is configured"), ("exec", shlex.join([str(launcher), python])), ("version", "0.0.1"), ("license", "Unspecified"), ("author", "NepType project"), ("homepage", ""), ("textdomain", "neptype")]:
         ET.SubElement(component, tag).text = value
     engines = ET.SubElement(component, "engines")
     engine = ET.SubElement(engines, "engine")
-    for tag, value in [("name", "lekha"), ("longname", "Lekha (experimental)"), ("description", "Pass-through by default; optional offline candidates"), ("language", "ne"), ("license", "Unspecified"), ("author", "Lekha project"), ("layout", "default")]:
+    for tag, value in [("name", "neptype"), ("longname", "NepType (experimental)"), ("description", "Pass-through by default; optional offline candidates"), ("language", "ne"), ("license", "Unspecified"), ("author", "NepType project"), ("layout", "default")]:
         ET.SubElement(engine, tag).text = value
     ET.indent(component)
     return ET.tostring(component, encoding="unicode", xml_declaration=True)

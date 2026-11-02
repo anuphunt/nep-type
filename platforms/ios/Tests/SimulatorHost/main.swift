@@ -1,6 +1,6 @@
 import UIKit
 
-final class ViewEditor: LekhaDocumentEditing {
+final class ViewEditor: NepTypeDocumentEditing {
     let view: UITextView
     var markedWrites = 0
     var hideContext = false
@@ -25,10 +25,10 @@ final class ViewEditor: LekhaDocumentEditing {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let host = UIViewController(); host.view.backgroundColor = .white
+        let host = UIViewController(); host.overrideUserInterfaceStyle = .dark; host.view.backgroundColor = .systemBackground
         let text = UITextView(frame: CGRect(x: 20, y: 90, width: 340, height: 180)); text.font = .systemFont(ofSize: 24)
         host.view.addSubview(text)
-        let keyboard = KeyboardViewController(); keyboard.testEditor = ViewEditor(text)
+        let keyboard = KeyboardViewController(); keyboard.testAutoCapitalization = UITextAutocapitalizationType.none; keyboard.testEditor = ViewEditor(text)
         host.addChild(keyboard); keyboard.view.frame = CGRect(x: 0, y: 340, width: 380, height: 300); host.view.addSubview(keyboard.view); keyboard.didMove(toParent: host)
         window.rootViewController = host; window.makeKeyAndVisible(); self.window = window
         text.becomeFirstResponder()
@@ -41,9 +41,19 @@ final class ViewEditor: LekhaDocumentEditing {
             if let b = view as? UIButton, b.accessibilityLabel == label { return b }
             return view.subviews.lazy.compactMap { find(label, in: $0) }.first
         }
+        func command(_ label: String, in root: UIView) -> (UIButton, UIAction)? {
+            if let button = root as? UIButton, let action = button.menu?.children.compactMap({ $0 as? UIAction }).first(where: { $0.title == label }) { return (button, action) }
+            return root.subviews.lazy.compactMap { command(label, in: $0) }.first
+        }
         func press(_ label: String) {
-            guard let button = find(label, in: keyboard.view) else { results["missing_" + label] = false; return }
-            button.sendActions(for: .touchUpInside)
+            if let button = find(label, in: keyboard.view) { button.sendActions(for: .touchUpInside) }
+            else if let (button, action) = command(label, in: keyboard.view) { button.sendAction(action) }
+            else { results["missing_" + label] = false }
+        }
+        func visiblySelected(_ button: UIButton?) -> Bool {
+            guard let button, let fill = button.backgroundColor else { return false }
+            return button.accessibilityTraits.contains(.selected)
+                && fill.resolvedColor(with: keyboard.traitCollection).cgColor.alpha > 0.9
         }
         func write(_ string: String) { for char in string { press(String(char)) } }
         func textIs(_ name: String, _ expected: String) { results[name] = text.text == expected }
@@ -73,7 +83,53 @@ final class ViewEditor: LekhaDocumentEditing {
         }
         results["controls_fit_narrow_width"] = buttonsFit(320)
         results["controls_fit_wide_width"] = buttonsFit(430)
-        keyboard.view.frame = CGRect(x: 0, y: 340, width: 380, height: 300)
+        for width in [CGFloat(320), 393, 430] {
+            _ = buttonsFit(width)
+            guard let q = find("q", in: keyboard.view), let a = find("a", in: keyboard.view),
+                  let s = find("s", in: keyboard.view), let z = find("z", in: keyboard.view),
+                  let x = find("x", in: keyboard.view), let space = find("Space", in: keyboard.view),
+                  let shift = find("Shift", in: keyboard.view), let backspace = find("Delete", in: keyboard.view),
+                  let numbers = find("Numbers and symbols", in: keyboard.view), let enter = find("Return", in: keyboard.view) else { results["native_layout_\(Int(width))"] = false; continue }
+            func rect(_ v: UIView) -> CGRect { v.convert(v.bounds, to: keyboard.view) }
+            let pitch = rect(s).minX - rect(a).minX
+            results["home_row_half_key_stagger_\(Int(width))"] = abs(rect(a).minX - rect(q).minX - pitch / 2) < 0.5
+            results["letter_keys_same_width_\(Int(width))"] = abs(q.bounds.width - a.bounds.width) < 0.5 && abs(q.bounds.width - z.bounds.width) < 0.5
+            results["third_row_centered_\(Int(width))"] = abs((rect(z).midX + rect(x).midX + 5 * pitch) / 2 - width / 2) < 0.5
+            results["spacebar_is_largest_\(Int(width))"] = space.bounds.width > numbers.bounds.width * 1.6 && space.bounds.width > enter.bounds.width * 1.6
+            results["shift_delete_align_\(Int(width))"] = abs(rect(shift).minY - rect(backspace).minY) < 0.5 && abs(rect(shift).minX - rect(q).minX) < 0.5
+            results["numbers_space_return_baseline_\(Int(width))"] = abs(rect(space).midY - rect(numbers).midY) < 0.5 && abs(rect(space).midY - rect(enter).midY) < 0.5
+            results["no_extra_bottom_punctuation_\(Int(width))"] = find("Comma", in: keyboard.view) == nil && find("Period", in: keyboard.view) == nil
+            results["cursor_controls_in_options_\(Int(width))"] = find("Move cursor left", in: keyboard.view) == nil && command("Move cursor left", in: keyboard.view) != nil
+        }
+        keyboard.view.frame = CGRect(x: 0, y: 340, width: 380, height: 271)
+        keyboard.view.setNeedsLayout(); keyboard.view.layoutIfNeeded()
+        func capture(_ name: String) {
+            keyboard.view.setNeedsLayout(); keyboard.view.layoutIfNeeded()
+            let preview = UIGraphicsImageRenderer(size: keyboard.view.bounds.size).image { _ in keyboard.view.drawHierarchy(in: keyboard.view.bounds, afterScreenUpdates: true) }
+            try? preview.pngData()?.write(to: URL(fileURLWithPath: NSTemporaryDirectory() + name))
+        }
+        keyboard.view.frame = CGRect(x: 0, y: 340, width: 440, height: 271)
+        capture("neptype-native-keyboard-dark.png")
+        press("Shift")
+        capture("neptype-native-keyboard-shift.png")
+        press("Shift")
+        keyboard.overrideUserInterfaceStyle = .light
+        capture("neptype-native-keyboard-light.png")
+        results["light_appearance_uses_dark_key_labels"] = (find("q", in: keyboard.view) ?? find("Q", in: keyboard.view))?.titleColor(for: .normal)?.resolvedColor(with: keyboard.traitCollection) == UIColor.black
+        keyboard.overrideUserInterfaceStyle = .unspecified
+        keyboard.testResetAfterHostResolution()
+        keyboard.testAutoCapitalization = .sentences
+        keyboard.textDidChange(nil)
+        results["host_sentence_capitalization"] = find("Q", in: keyboard.view) != nil
+        press("Shift")
+        results["shift_can_override_sentence_capitalization"] = find("q", in: keyboard.view) != nil
+        press("Shift"); press("N"); press("a")
+        textIs("sentence_capitalization_types_only_first_uppercase", "Na")
+        text.unmarkText(); keyboard.testResetAfterHostResolution()
+        text.text = ""; text.selectedRange = NSRange(location: 0, length: 0)
+        keyboard.testAutoCapitalization = UITextAutocapitalizationType.none
+        keyboard.textDidChange(nil)
+        keyboard.view.frame = CGRect(x: 0, y: 340, width: 380, height: 271)
         write("ma"); textIs("roman_marked", "ma")
         // The live controller now computes candidates away from the UI thread.
         // Poll rather than sleeping for a fixed index load time.
@@ -86,8 +142,15 @@ final class ViewEditor: LekhaDocumentEditing {
             }
             results["async_candidate_arrived"] = find("Choose म", in: keyboard.view) != nil
         if !staleCheckDone {
+            let frame = keyboard.view.frame
+            keyboard.view.frame = CGRect(x: 0, y: 340, width: 440, height: 271)
+            capture("neptype-native-keyboard-suggestions.png")
+            results["three_prediction_slots"] = find("Choose ma", in: keyboard.view)?.superview?.subviews.filter { $0 is UIButton }.count == 3
+            keyboard.view.frame = frame
+            keyboard.view.setNeedsLayout(); keyboard.view.layoutIfNeeded()
+
             let original = find("Choose ma", in: keyboard.view)
-            results["original_visibly_selected_by_default"] = original?.backgroundColor == UIColor(white: 215/255, alpha: 1) && original?.accessibilityTraits.contains(.selected) == true && original?.accessibilityValue == "Original selected"
+            results["original_visibly_selected_by_default"] = visiblySelected(original) && original?.accessibilityValue == "Original selected"
         }
             if !staleCheckDone, let old = find("Choose म", in: keyboard.view) {
                 press("n") // change the token before delivering the queued old tap
@@ -95,14 +158,14 @@ final class ViewEditor: LekhaDocumentEditing {
                 textIs("stale_candidate_tap_does_not_rewrite_new_token", "man")
                 let pageDeadline = Date().addingTimeInterval(10)
                 func checkPages() {
-                    guard let more = find("More suggestions", in: keyboard.view) else {
+                    guard let (_, more) = command("More suggestions", in: keyboard.view) else {
                         if Date() < pageDeadline { DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { checkPages() }; return }
                         results["candidate_page_available"] = false
                         press("Delete"); staleCheckDone = true; continueWhenReady(); return
                     }
-                    results["candidate_page_available"] = more.accessibilityValue == "Page 1 of 2"
+                    results["candidate_page_available"] = more.subtitle == "Page 1 of 3"
                     results["paged_controls_fit_narrow_width"] = buttonsFit(320)
-                    let pageControls = ["Previous suggestions", "More suggestions", "Choose man", "Choose मन"]
+                    let pageControls = ["Choose man", "Choose मन"]
                     results["paged_controls_minimum_width_320"] = pageControls.allSatisfy { label in
                         guard let button = find(label, in: keyboard.view) else { return false }
                         return button.bounds.width >= 44
@@ -112,15 +175,15 @@ final class ViewEditor: LekhaDocumentEditing {
                     press("Choose मन")
                     results["first_page_preview_selected"] = find("Choose मन", in: keyboard.view)?.accessibilityValue == "Selected preview"
                     press("More suggestions")
-                    results["candidate_page_advances"] = find("More suggestions", in: keyboard.view)?.accessibilityValue == "Page 2 of 2"
+                    results["candidate_page_advances"] = command("More suggestions", in: keyboard.view)?.1.subtitle == "Page 2 of 3"
                     results["original_available_on_second_page"] = find("Choose man", in: keyboard.view) != nil
-                    results["previous_page_accessibility"] = find("Previous suggestions", in: keyboard.view)?.accessibilityValue == "Page 2 of 2"
+                    results["previous_page_accessibility"] = command("Previous suggestions", in: keyboard.view)?.1.subtitle == "Page 2 of 3"
                     oldPageChoice?.sendActions(for: .touchUpInside)
-                    let oldPrevious = find("Previous suggestions", in: keyboard.view)
+                    let oldPrevious = command("Previous suggestions", in: keyboard.view)
                     press("Previous suggestions")
-                    results["candidate_page_reverses"] = find("More suggestions", in: keyboard.view)?.accessibilityValue == "Page 1 of 2"
-                    oldPrevious?.sendActions(for: .touchUpInside)
-                    results["stale_previous_page_tap_ignored"] = find("More suggestions", in: keyboard.view)?.accessibilityValue == "Page 1 of 2"
+                    results["candidate_page_reverses"] = command("More suggestions", in: keyboard.view)?.1.subtitle == "Page 1 of 3"
+                    if let (button, action) = oldPrevious { button.sendAction(action) }
+                    results["stale_previous_page_tap_ignored"] = command("More suggestions", in: keyboard.view)?.1.subtitle == "Page 1 of 3"
                     results["page_change_clears_preview_and_stale_tap"] = find("Choose मन", in: keyboard.view)?.accessibilityValue != "Selected preview"
                     press("Delete") // restore ma and let its new candidates arrive
                     staleCheckDone = true
@@ -135,7 +198,7 @@ final class ViewEditor: LekhaDocumentEditing {
         press("Choose म"); textIs("candidate_selected_keeps_roman_marked", "ma")
         let selected = find("Choose म", in: keyboard.view)
         results["candidate_preview_accessibility"] = selected?.accessibilityValue == "Selected preview" && selected?.accessibilityTraits.contains(.selected) == true
-        results["candidate_preview_visibly_selected"] = selected?.backgroundColor == UIColor(white: 215/255, alpha: 1) && selected?.titleColor(for: .normal) == UIColor(white: 34/255, alpha: 1)
+        results["candidate_preview_visibly_selected"] = visiblySelected(selected) && selected?.titleColor(for: .normal)?.resolvedColor(with: keyboard.traitCollection) == UIColor.white
         results["original_deselected_on_preview"] = find("Choose ma", in: keyboard.view)?.accessibilityTraits.contains(.selected) == false
         press("Delete"); textIs("delete_restores_original_preview", "ma")
         results["delete_reselects_original"] = find("Choose ma", in: keyboard.view)?.accessibilityValue == "Original selected"
@@ -195,10 +258,10 @@ final class ViewEditor: LekhaDocumentEditing {
             results["cursor_missing_context_does_not_move"] = text.selectedRange == before
             viewEditor.hideContext = false
         } else { results["cursor_missing_context_does_not_move"] = false }
-        let oldCursor = find("Move cursor left", in: keyboard.view)
+        let oldCursor = command("Move cursor left", in: keyboard.view)
         press("Switch language"); write("ma")
         let beforeStaleCursor = text.selectedRange
-        oldCursor?.sendActions(for: .touchUpInside)
+        if let (button, action) = oldCursor { button.sendAction(action) }
         results["stale_cursor_ignored_during_composition"] = text.selectedRange == beforeStaleCursor && keyboard.testHasComposition
         press("Space")
         // Number/symbol mode preserves identifiers and returns to letters.
@@ -232,7 +295,7 @@ final class ViewEditor: LekhaDocumentEditing {
         textIs("literal_field_preserves_roman", "ma")
         results["literal_field_disables_switch"] = find("Switch language", in: keyboard.view)?.isEnabled == false
         results["literal_field_hides_candidates"] = find("Choose म", in: keyboard.view) == nil
-        results["literal_field_hides_all_nepali"] = find("All Nepali suggestions", in: keyboard.view) == nil
+        results["literal_field_hides_all_nepali"] = command("All Nepali suggestions", in: keyboard.view) == nil
         keyboard.testLiteralField = false
         press("Space")
         results["language_restored_after_literal_field"] = find("Switch language", in: keyboard.view)?.accessibilityValue == "Nepali"
@@ -365,12 +428,12 @@ final class ViewEditor: LekhaDocumentEditing {
                 results["late_result_does_not_show_stale_candidate"] = find("Choose म", in: keyboard.view) == nil
                 keyboard.testCandidateDelay = 0
                 text.text = ""; text.selectedRange = NSRange(location: 0, length: 0)
-                let staleAll = find("All Nepali suggestions", in: keyboard.view)
+                let staleAll = command("All Nepali suggestions", in: keyboard.view)
                 press("All Nepali suggestions")
-                results["all_nepali_mode_enabled"] = find("All Nepali suggestions", in: keyboard.view)?.accessibilityValue == "On"
+                results["all_nepali_mode_enabled"] = command("All Nepali suggestions", in: keyboard.view)?.1.state == .on
                 results["all_nepali_mode_fits_narrow"] = buttonsFit(320)
                 write("office")
-                staleAll?.sendActions(for: .touchUpInside)
+                if let (button, action) = staleAll { button.sendAction(action) }
                 results["all_nepali_stale_control_ignored"] = find("Switch language", in: keyboard.view)?.accessibilityValue == "All Nepali" && text.text == "office"
                 var expectedSession = InputSession(); expectedSession.setLanguage(.allNepali); _ = expectedSession.append("office")
                 let expected = expectedSession.candidates.first ?? ""
@@ -392,7 +455,7 @@ final class ViewEditor: LekhaDocumentEditing {
                     }
                     press("Switch language")
                     results["all_nepali_can_switch_to_english"] = find("Switch language", in: keyboard.view)?.accessibilityValue == "English"
-                    let path = ProcessInfo.processInfo.environment["LEKHA_TEST_RESULT"] ?? NSTemporaryDirectory() + "lekha-simulator-host.json"
+                    let path = ProcessInfo.processInfo.environment["NEPTYPE_TEST_RESULT"] ?? NSTemporaryDirectory() + "neptype-simulator-host.json"
                     let payload: [String: Any] = ["checks": results, "passed": results.values.allSatisfy { $0 }, "final_text": text.text ?? "", "note": "UITextView-backed injected editor; not a system keyboard extension host"]
                     do { let data = try JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys]); try data.write(to: URL(fileURLWithPath: path)); print(String(decoding: data, as: UTF8.self)) } catch { print("RESULT ERROR: \(error)") }
                     exit(results.values.allSatisfy { $0 } ? 0 : 1)

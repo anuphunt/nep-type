@@ -4,7 +4,7 @@
   "format": 1,
   "inputs_sha256": {
     "Package.swift": "5cdfa4e42f85043796fb4327b0b1ea2910774a71d4add502cfc8ccea86017431",
-    "Sources/LekhaInput/main.swift": "e20a2a0bd58b822ebc788907f31cd4c57fc839bfa98c3b30f44b24f7ff18e2d4",
+    "Sources/NepTypeInput/main.swift": "e20a2a0bd58b822ebc788907f31cd4c57fc839bfa98c3b30f44b24f7ff18e2d4",
     "Sources/NepaliCore/Composer.swift": "c99d1f889b4480e0c45c5143d88efdb1fb3e96f3eb3a78458d8e4ff61ab44d9f",
     "Sources/NepaliCore/GeneratedAliasIndex.swift": "0b41ac173a379c343d7be41359928cc4d7938968c57bb093064536360b1a96de",
     "Sources/NepaliCore/GeneratedIndexes.swift": "6e9d6f6c30e413d17824f2e7300f66812eac0d31781537be6b3c8c8cb1b371f5",

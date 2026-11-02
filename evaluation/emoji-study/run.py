@@ -16,7 +16,7 @@ import tempfile
 
 root = Path(__file__).resolve().parent
 project_source = root.parents[1] / "Sources/NepaliKeyboard/main.swift"
-workspace_source = root.parent / "lekha-dev/Sources/NepaliKeyboard/main.swift"
+workspace_source = root.parent / "neptype-dev/Sources/NepaliKeyboard/main.swift"
 source = Path(sys.argv[1]) if len(sys.argv) > 1 else (project_source if project_source.exists() else workspace_source)
 raw = source.read_text(encoding="utf-8")
 catalog = raw[raw.index("    lazy var emojiCatalog:"):raw.index("    var statusItem:")]
@@ -54,7 +54,7 @@ let output: [String: Any] = ["catalog_count":catalog.count,"summary":summary,"ca
 let data = try JSONSerialization.data(withJSONObject: output, options: [.prettyPrinted,.sortedKeys,.withoutEscapingSlashes])
 FileHandle.standardOutput.write(data); FileHandle.standardOutput.write(Data("\\n".utf8))
 '''
-with tempfile.TemporaryDirectory(prefix="lekha-emoji-study-") as temp:
+with tempfile.TemporaryDirectory(prefix="neptype-emoji-study-") as temp:
     temp = Path(temp)
     (temp / "main.swift").write_text(swift, encoding="utf-8")
     subprocess.run(["xcrun", "swiftc", "-O", "-module-cache-path", str(temp / "cache"), str(temp / "main.swift"), "-o", str(temp / "evaluate")], check=True)

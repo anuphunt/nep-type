@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write frozen references; deliberately does not import or invoke Lekha."""
+"""Write frozen references; deliberately does not import or invoke NepType."""
 import hashlib
 import json
 from pathlib import Path
@@ -56,7 +56,7 @@ for category, entries in groups.items():
     for roman, acceptable in entries:
         rows.append({"id": f"C{len(rows)+1:03}", "category": category,
                      "role": role, "roman": roman, "acceptable": acceptable})
-corpus = {"version": "suggestion-probe-v1", "description": "Synthetic unreviewed candidate recall and original-preservation fixture, frozen without running Lekha.", "cases": rows}
+corpus = {"version": "suggestion-probe-v1", "description": "Synthetic unreviewed candidate recall and original-preservation fixture, frozen without running NepType.", "cases": rows}
 path = Path(__file__).with_name("corpus.json")
 path.write_text(json.dumps(corpus, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"{len(rows)} cases; sha256 {hashlib.sha256(path.read_bytes()).hexdigest()}")

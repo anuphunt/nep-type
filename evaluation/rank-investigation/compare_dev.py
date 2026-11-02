@@ -9,8 +9,8 @@ requests=[]
 for i,(prev,word,_) in enumerate(cases):
     for op in ({'op':'create'},{'op':'append','text':prev},{'op':'commit','keepContext':True},{'op':'append','text':word}): requests.append(dict(id=str(i),**op))
 mined=str(p/'data/compiled/aksharantar-indiccorp-v1.tsv'); google=str(p/'data/compiled/google-ne-aliases.tsv'); authored=str(p/'platforms/android/app/src/main/assets/nepali-authored-v1.tsv')
-env=dict(os.environ,LEKHA_AKSHARANTAR_INDEX=mined,LEKHA_ALIAS_INDEX=google)
-swift=subprocess.run(['/tmp/lekha-rank-swift/debug/lekha-conformance'],input=''.join(json.dumps(x)+'\n' for x in requests),text=True,capture_output=True,check=True,env=env)
+env=dict(os.environ,NEPTYPE_AKSHARANTAR_INDEX=mined,NEPTYPE_ALIAS_INDEX=google)
+swift=subprocess.run(['/tmp/neptype-rank-swift/debug/neptype-conformance'],input=''.join(json.dumps(x)+'\n' for x in requests),text=True,capture_output=True,check=True,env=env)
 resp=[json.loads(x) for x in swift.stdout.splitlines()]
 assert len(resp)==4*len(cases)
 java=subprocess.run(['/opt/homebrew/opt/openjdk/bin/java','-cp','rank-investigation/classes','ServiceLookup',authored,mined,google],input=''.join(w+'\n' for _,w,_ in cases),text=True,capture_output=True,check=True)

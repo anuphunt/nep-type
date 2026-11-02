@@ -1,7 +1,7 @@
 #pragma once
 #include "edit_bridge.h"
 
-namespace lekha {
+namespace neptype {
 // Experimental owner for exactly one TSF context. Never wire to the live sink
 // until selection, composition termination and lifetime behavior are verified
 // on Windows. Every call must be made on the owning thread within a write edit.

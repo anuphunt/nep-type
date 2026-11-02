@@ -2,9 +2,9 @@
   "note": "Previously inspected, unreviewed development cases; not held out or representative. Original is separately available.",
   "sha256": {
     "evaluation/phonetic-dev/dev.json": "5c500a03124600a271f4ce17e3e4ec87f15ed2d2868a577a8d26410756ee085d",
-    "platforms/android/app/src/main/java/app/lekha/keyboard/core/CandidateMerger.java": "b72be8c795e1568b4b0797dc7f20e70d2295de1116b46e6ca934577cf7f9125f",
-    "platforms/android/app/src/main/java/app/lekha/keyboard/core/SortedCandidateIndex.java": "cd859c604ae0418cd751e6ca6cc363419a82582c5614b61d953f8705e9e0d623",
-    "platforms/android/app/src/main/java/app/lekha/keyboard/core/PhoneticCandidates.java": "8ce02f9d9dd2ba0aa07cf036b55886237437c25744f6e0d98dbbac640d154c8a",
+    "platforms/android/app/src/main/java/app/neptype/keyboard/core/CandidateMerger.java": "b72be8c795e1568b4b0797dc7f20e70d2295de1116b46e6ca934577cf7f9125f",
+    "platforms/android/app/src/main/java/app/neptype/keyboard/core/SortedCandidateIndex.java": "cd859c604ae0418cd751e6ca6cc363419a82582c5614b61d953f8705e9e0d623",
+    "platforms/android/app/src/main/java/app/neptype/keyboard/core/PhoneticCandidates.java": "8ce02f9d9dd2ba0aa07cf036b55886237437c25744f6e0d98dbbac640d154c8a",
     "evaluation/platform-compare/ServiceLookup.java": "41df6b75b3b8e17f55ae1257549c2cce8f58044b6d54b7a4ed9af81bda7b63b1",
     "platforms/android/app/src/main/assets/nepali-authored-v1.tsv": "802eeda5c144d8f2bbac16be01db86dc6ba67e1741950a68a9bfdcb87e780c80",
     "data/compiled/aksharantar-indiccorp-v1.tsv": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",

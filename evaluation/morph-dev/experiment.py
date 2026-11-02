@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Development-only suffix-composition experiment; never changes Lekha."""
+"""Development-only suffix-composition experiment; never changes NepType."""
 import json
 import re
 import time

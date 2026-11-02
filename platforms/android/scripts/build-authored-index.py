@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate or check a byte-sorted Android index from Lekha's authored JSON."""
+"""Generate or check a byte-sorted Android index from NepType's authored JSON."""
 import argparse
 import json
 import re

@@ -1,10 +1,10 @@
 #!/bin/sh
 set -eu
 experiment=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-root=${LEKHA_ROOT:-$(CDPATH= cd -- "$experiment/../../../.." && pwd)}
+root=${NEPTYPE_ROOT:-$(CDPATH= cd -- "$experiment/../../../.." && pwd)}
 jdk=${JDK_BIN:-/opt/homebrew/opt/openjdk/bin}
 test -x "$jdk/javac" && test -x "$jdk/java"
-scratch=$(mktemp -d "${TMPDIR:-/tmp}/lekha-android-phonetic.XXXXXXXX")
+scratch=$(mktemp -d "${TMPDIR:-/tmp}/neptype-android-phonetic.XXXXXXXX")
 trap 'rm -rf "$scratch"' EXIT
 cp "$experiment/phonetic-reference.swift" "$scratch/main.swift"
 swiftc -O -module-cache-path "$scratch/cache" \
@@ -12,7 +12,7 @@ swiftc -O -module-cache-path "$scratch/cache" \
     "$root/Sources/NepaliCore/GeneratedIndexes.swift" "$root/Sources/NepaliCore/GeneratedAliasIndex.swift" \
     "$scratch/main.swift" -o "$scratch/swift-reference"
 "$jdk/javac" --release 8 -d "$scratch/classes" "$experiment/PhoneticCandidates.java" \
-    "$root/platforms/android/app/src/main/java/app/lekha/keyboard/core/CandidateMerger.java" "$experiment/PhoneticProbe.java"
+    "$root/platforms/android/app/src/main/java/app/neptype/keyboard/core/CandidateMerger.java" "$experiment/PhoneticProbe.java"
 python3 - "$scratch" <<'PY'
 import random, sys
 from pathlib import Path

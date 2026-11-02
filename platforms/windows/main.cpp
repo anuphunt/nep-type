@@ -141,8 +141,8 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         PAINTSTRUCT paint{}; HDC dc=BeginPaint(window,&paint);
         RECT client{}; GetClientRect(window,&client); FillRect(dc,&client,backgroundBrush);
         panel(dc,sourceRect); panel(dc,resultRect);
-        text(dc,L"लेख",{px(16),px(12),px(65),px(48)},brandFont,ink);
-        text(dc,L"Lekha",{px(72),px(12),px(132),px(48)},bodyFont,ink);
+        text(dc,L"NT",{px(16),px(12),px(65),px(48)},brandFont,ink);
+        text(dc,L"NepType",{px(72),px(12),px(132),px(48)},bodyFont,ink);
         EndPaint(window,&paint); return 0;
     }
     case WM_CTLCOLORSTATIC: {
@@ -175,7 +175,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
     case WM_COMMAND:
         if(LOWORD(wParam)==clearID) { SetWindowTextW(source,L""); SetWindowTextW(result,L""); copied=false; EnableWindow(copyButton,FALSE); SetFocus(source); }
         if(LOWORD(wParam)==copyID) copyOutput(window);
-        if(LOWORD(wParam)==helpID) MessageBoxW(window,L"This standalone typing-pad preview uses the Graphite layout.\n\nWindows conversion is not connected yet. The keyboard service is not installed or enabled.",L"Lekha",MB_OK|MB_ICONINFORMATION);
+        if(LOWORD(wParam)==helpID) MessageBoxW(window,L"This standalone typing-pad preview uses the Graphite layout.\n\nWindows conversion is not connected yet. The keyboard service is not installed or enabled.",L"NepType",MB_OK|MB_ICONINFORMATION);
         return 0;
     case WM_TIMER: copied=false; KillTimer(window,1); InvalidateRect(copyButton,nullptr,TRUE); return 0;
     case WM_DESTROY: PostQuitMessage(0); return 0;
@@ -192,11 +192,11 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE,PWSTR,int show) {
     bodyFont=font(13,L"Segoe UI"); smallFont=font(11,L"Segoe UI");
     inputFont=font(18,L"Consolas"); outputFont=font(24,L"Nirmala UI"); brandFont=font(25,L"Nirmala UI");
     WNDCLASSW type{}; type.lpfnWndProc=WindowProc; type.hInstance=instance;
-    type.lpszClassName=L"LekhaPrototypeWindow"; type.hCursor=LoadCursor(nullptr,IDC_ARROW);
+    type.lpszClassName=L"NepTypePrototypeWindow"; type.hCursor=LoadCursor(nullptr,IDC_ARROW);
     type.hbrBackground=backgroundBrush;
     if(!RegisterClassW(&type)) return 1;
     RECT size{0,0,px(620),px(430)}; AdjustWindowRectEx(&size,WS_OVERLAPPEDWINDOW,FALSE,0);
-    HWND window=CreateWindowExW(0,type.lpszClassName,L"Lekha · Typing pad",WS_OVERLAPPEDWINDOW,
+    HWND window=CreateWindowExW(0,type.lpszClassName,L"NepType · Typing pad",WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT,CW_USEDEFAULT,size.right-size.left,size.bottom-size.top,nullptr,nullptr,instance,nullptr);
     if(!window) return 1;
     HMODULE dwm=LoadLibraryW(L"dwmapi.dll");

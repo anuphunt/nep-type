@@ -15,7 +15,7 @@ The observed run was on macOS 26.6.2 arm64, Apple Swift 6.4 with `swiftc -O`, an
 
 All results matched the index-derived exact ordered lists, and all verified-absent/invalid controls returned an empty list. This verifies implementation consistency for these samples, **not** whether the listed spellings are correct, privacy of host apps, candidate ranking, memory pressure, or corrupted-index safety. `swift-results.json`, `java-results.txt`, workload and `SHA256SUMS.txt` record the results and source/data snapshots. Invalid-control distributions contain only 21 observations and are not meaningful tails. The maximum values are retained; p99 here is within-process and cannot predict user-facing latency.
 
-## Repeat from the Lekha project root
+## Repeat from the NepType project root
 
 Set `JDK_BIN` to an already installed JDK bin directory and run:
 

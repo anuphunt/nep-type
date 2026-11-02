@@ -4,7 +4,7 @@
 #include <new>
 #include <thread>
 
-namespace lekha {
+namespace neptype {
 struct EditBridge::State {
     explicit State(std::uint64_t session) : adapter(session) {}
     CandidateAdapter adapter;

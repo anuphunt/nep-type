@@ -3,12 +3,12 @@
 import json, os, subprocess, sys
 
 swift_exe, java_exe, classes = sys.argv[1:]
-missing = "/this-path-is-intentionally-absent-lekha-consistency"
+missing = "/this-path-is-intentionally-absent-neptype-consistency"
 words=["namaste","bhaisakeko","pani","football"]
 requests=[]
 for i,word in enumerate(words):
     requests.extend([{"id":str(i),"op":"create"}, {"id":str(i),"op":"append","text":word}])
-env=dict(os.environ, LEKHA_AKSHARANTAR_INDEX=missing, LEKHA_ALIAS_INDEX=missing)
+env=dict(os.environ, NEPTYPE_AKSHARANTAR_INDEX=missing, NEPTYPE_ALIAS_INDEX=missing)
 p=subprocess.run([swift_exe],input="".join(json.dumps(x)+"\n" for x in requests),capture_output=True,text=True,check=True,env=env)
 rows=[json.loads(x) for x in p.stdout.splitlines()]
 assert len(rows)==2*len(words)

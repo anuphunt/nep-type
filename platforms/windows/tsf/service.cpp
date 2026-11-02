@@ -1,6 +1,6 @@
 // Experimental COM/TSF lifecycle only. No registration or text edits.
 // Until a real engine and host-owned edit sessions are verified, all keys pass.
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
 #include "fake_tsf.h"
 #else
 #define WIN32_LEAN_AND_MEAN
@@ -14,7 +14,7 @@
 
 namespace {
 // Private, development-only identity: no profile or COM registry entries are created.
-const GUID CLSID_LekhaTextService = {0xb6a68f96, 0x5819, 0x4b7f, {0x85,0x69,0xa1,0x15,0x90,0xd1,0x20,0x01}};
+const GUID CLSID_NepTypeTextService = {0xb6a68f96, 0x5819, 0x4b7f, {0x85,0x69,0xa1,0x15,0x90,0xd1,0x20,0x01}};
 std::atomic<long> live_objects{0};
 std::atomic<long> server_locks{0};
 std::atomic<std::uint64_t> next_session{1};
@@ -23,7 +23,7 @@ class TextService final : public ITfTextInputProcessor, public ITfKeyEventSink {
 public:
     TextService() { ++live_objects; }
     ~TextService() {
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
         if (test_context_) test_context_->Release();
 #endif
         if (manager_) manager_->Release(); --live_objects;
@@ -57,16 +57,16 @@ public:
         // would produce a dangling pointer. The host may retry Deactivate.
         HRESULT hr = manager_->UnadviseKeyEventSink(client_);
         if (FAILED(hr)) return hr;
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
         if (test_context_) { bridge_.abandon(); testDisable(); }
 #endif
         ITfKeystrokeMgr* old = manager_; manager_ = nullptr; client_ = TF_CLIENTID_NULL;
         old->Release();
         return S_OK;
     }
-#ifdef LEKHA_TSF_TEST
-    lekha::EditBridge& testBridge() { return bridge_; }
-    bool testEnable(ITfContext* context, std::shared_ptr<lekha::HostEdit> host) {
+#ifdef NEPTYPE_TSF_TEST
+    neptype::EditBridge& testBridge() { return bridge_; }
+    bool testEnable(ITfContext* context, std::shared_ptr<neptype::HostEdit> host) {
         if (!manager_ || !bridge_.usable() || !context || !host || !host->owns_context(context) || test_context_) return false;
         context->AddRef(); test_context_ = context; test_host_ = std::move(host); return true;
     }
@@ -83,10 +83,10 @@ public:
         *eaten = FALSE;
         if (!testHandles(context, key)) return S_OK;
         auto& composition = bridge_.adapter().composition();
-        lekha::Intent intent = key == 8 ? composition.backspace()
+        neptype::Intent intent = key == 8 ? composition.backspace()
             : (key == 9 || key == 10 || key == 32) ? composition.boundary(static_cast<char16_t>(key))
             : composition.character(static_cast<char16_t>(key));
-        if (intent.kind != lekha::Kind::Mark && intent.kind != lekha::Kind::Commit) return S_OK;
+        if (intent.kind != neptype::Kind::Mark && intent.kind != neptype::Kind::Commit) return S_OK;
         // In the mock, a failed edit may already have mutated host text. Never
         // replay that key; disable this path and surface uncertainty to tests.
         *eaten = TRUE;
@@ -95,7 +95,7 @@ public:
     }
 #endif
     HRESULT STDMETHODCALLTYPE OnSetFocus(BOOL focused) override {
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
         if (!focused && test_context_) { bridge_.abandon(); testDisable(); }
 #else
         (void)focused;
@@ -103,7 +103,7 @@ public:
         return S_OK;
     }
     HRESULT STDMETHODCALLTYPE OnTestKeyDown(ITfContext* context, WPARAM key, LPARAM, BOOL* eaten) override {
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
         if (!eaten) return E_POINTER;
         *eaten = testHandles(context, key) ? TRUE : FALSE; return S_OK;
 #else
@@ -112,7 +112,7 @@ public:
     }
     HRESULT STDMETHODCALLTYPE OnTestKeyUp(ITfContext*, WPARAM, LPARAM, BOOL* eaten) override { return pass(eaten); }
     HRESULT STDMETHODCALLTYPE OnKeyDown(ITfContext* context, WPARAM key, LPARAM, BOOL* eaten) override {
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
         return testDown(context, key, eaten);
 #else
         (void)context; (void)key; return pass(eaten);
@@ -124,10 +124,10 @@ private:
     static HRESULT pass(BOOL* eaten) { if (!eaten) return E_POINTER; *eaten = FALSE; return S_OK; }
     std::atomic<ULONG> refs_{1};
     // Dormant until a concrete safe host range adapter and engine exist.
-    lekha::EditBridge bridge_{next_session.fetch_add(1)};
-#ifdef LEKHA_TSF_TEST
+    neptype::EditBridge bridge_{next_session.fetch_add(1)};
+#ifdef NEPTYPE_TSF_TEST
     ITfContext* test_context_ = nullptr;
-    std::shared_ptr<lekha::HostEdit> test_host_;
+    std::shared_ptr<neptype::HostEdit> test_host_;
 #endif
     ITfKeystrokeMgr* manager_ = nullptr;
     TfClientId client_ = TF_CLIENTID_NULL;
@@ -166,24 +166,24 @@ private:
 
 extern "C" __declspec(dllexport) HRESULT __stdcall DllGetClassObject(REFCLSID clsid, REFIID iid, void** out) {
     if (!out) return E_POINTER; *out = nullptr;
-    if (!IsEqualCLSID(clsid, CLSID_LekhaTextService)) return CLASS_E_CLASSNOTAVAILABLE;
+    if (!IsEqualCLSID(clsid, CLSID_NepTypeTextService)) return CLASS_E_CLASSNOTAVAILABLE;
     auto* factory = new(std::nothrow) Factory();
     if (!factory) return E_OUTOFMEMORY;
     HRESULT hr = factory->QueryInterface(iid, out); factory->Release(); return hr;
 }
 extern "C" __declspec(dllexport) HRESULT __stdcall DllCanUnloadNow() {
-    return live_objects.load() == 0 && server_locks.load() == 0 && lekha::live_edit_sessions.load() == 0 ? S_OK : S_FALSE;
+    return live_objects.load() == 0 && server_locks.load() == 0 && neptype::live_edit_sessions.load() == 0 ? S_OK : S_FALSE;
 }
 
-#ifdef LEKHA_TSF_TEST
-extern "C" lekha::EditBridge* LekhaTestBridge(ITfTextInputProcessor* service) {
+#ifdef NEPTYPE_TSF_TEST
+extern "C" neptype::EditBridge* NepTypeTestBridge(ITfTextInputProcessor* service) {
     return service ? &static_cast<TextService*>(service)->testBridge() : nullptr;
 }
 #endif
 
-#ifdef LEKHA_TSF_TEST
-extern "C" bool LekhaTestEnableSink(ITfTextInputProcessor* service, ITfContext* context, lekha::HostEdit* host) {
+#ifdef NEPTYPE_TSF_TEST
+extern "C" bool NepTypeTestEnableSink(ITfTextInputProcessor* service, ITfContext* context, neptype::HostEdit* host) {
     if (!service || !host) return false;
-    return static_cast<TextService*>(service)->testEnable(context, std::shared_ptr<lekha::HostEdit>(host, [](lekha::HostEdit*){}));
+    return static_cast<TextService*>(service)->testEnable(context, std::shared_ptr<neptype::HostEdit>(host, [](neptype::HostEdit*){}));
 }
 #endif

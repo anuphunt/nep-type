@@ -1,4 +1,4 @@
-import app.lekha.keyboard.core.*;
+import app.neptype.keyboard.core.*;
 import java.nio.channels.FileChannel;
 import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
@@ -172,7 +172,7 @@ public final class CoreTest {
         for (int i = 0; i < 128; i++) check(c.append("a"), "bounded token " + i);
         check(!c.accepts("a") && c.text().length() == 128, "bounded token does not discard source");
         check(c.takeOriginal().length() == 128, "bounded original preserved");
-        Path file = Files.createTempFile("lekha-index", ".tsv");
+        Path file = Files.createTempFile("neptype-index", ".tsv");
         try {
             String data = "PADDING" + "aa\tआ\tआँ\naa\tआए\nma\tम\npani\tपानी\nz\tज" + "TRAIL";
             Files.write(file, data.getBytes(StandardCharsets.UTF_8));
@@ -187,7 +187,7 @@ public final class CoreTest {
                 check(index.lookup("aa", 1).size() == 1, "limit");
             }
         } finally { Files.deleteIfExists(file); }
-        Path randomized = Files.createTempFile("lekha-random-index", ".tsv");
+        Path randomized = Files.createTempFile("neptype-random-index", ".tsv");
         try {
             Random random = new Random(71);
             SortedMap<String,String> oracle = new TreeMap<>();
@@ -209,7 +209,7 @@ public final class CoreTest {
         } finally { Files.deleteIfExists(randomized); }
         // Force a UTF-8 row, line break and key search across multiple 4 KiB
         // windows, while segment padding cannot be read as index contents.
-        Path windows = Files.createTempFile("lekha-window-index", ".tsv");
+        Path windows = Files.createTempFile("neptype-window-index", ".tsv");
         try {
             StringBuilder content = new StringBuilder("PAD");
             for (int i = 0; i < 700; i++) {
@@ -247,7 +247,7 @@ public final class CoreTest {
                 check(overflow, "overflowing segment rejected");
             }
         } finally { Files.deleteIfExists(windows); }
-        Path corrupt = Files.createTempFile("lekha-corrupt-index", ".tsv");
+        Path corrupt = Files.createTempFile("neptype-corrupt-index", ".tsv");
         try {
             List<String> badRows = Arrays.asList(
                 "bad\tम\tASCII\n", "bad\tम\t\n", "bad\tम\t" + new String(new char[61]).replace('\0', 'क') + "\n",

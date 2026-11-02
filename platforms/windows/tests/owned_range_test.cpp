@@ -3,7 +3,7 @@
 #include <cassert>
 #include <iostream>
 
-using namespace lekha;
+using namespace neptype;
 struct Doc { std::u16string text; std::size_t start=0, end=0, caret=0; bool selected=false, ended=false, fail_set=false; };
 struct Range final : ITfRange {
     Doc* d; std::size_t start,end; ULONG refs=1;

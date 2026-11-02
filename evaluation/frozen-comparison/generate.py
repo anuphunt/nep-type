@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create frozen synthetic references only. Does not run Lekha."""
+"""Create frozen synthetic references only. Does not run NepType."""
 import hashlib,json
 from pathlib import Path
 

@@ -1,5 +1,5 @@
-import app.lekha.keyboard.core.CandidateMerger;
-import app.lekha.keyboard.core.SortedCandidateIndex;
+import app.neptype.keyboard.core.CandidateMerger;
+import app.neptype.keyboard.core.SortedCandidateIndex;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.nio.channels.FileChannel;
@@ -27,7 +27,7 @@ public final class ServiceLookup {
         else throw new IllegalArgumentException("invalid mode");
         // Reflection lets one identical harness compile against a baseline with
         // no phonetic class. A missing candidate implementation must fail.
-        Method fallback = candidate ? Class.forName("app.lekha.keyboard.core.PhoneticCandidates").getMethod("lastResort", String.class, List.class) : null;
+        Method fallback = candidate ? Class.forName("app.neptype.keyboard.core.PhoneticCandidates").getMethod("lastResort", String.class, List.class) : null;
         try (FileChannel authored = open(args[0]); FileChannel mined = open(args[1]);
              FileChannel google = open(args[2]); Scanner input = new Scanner(System.in, "UTF-8")) {
             while (input.hasNextLine()) {

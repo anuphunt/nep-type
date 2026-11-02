@@ -3,7 +3,7 @@
 This evaluates the existing `NepaliCore.Transliterator` in Nepali mode. It does not modify its data or ranking. Run from the project root on macOS with Swift installed:
 
 ```sh
-bash evaluation/phase0/run.sh > /tmp/lekha-baseline.json
+bash evaluation/phase0/run.sh > /tmp/neptype-baseline.json
 ```
 
 The script compiles the current engine and evaluation runner into a temporary directory and cleans it afterward. Results are JSON containing each input, accepted sentence reference, actual rendering, exact-match status, and per-word annotations, top choice and the suggestions displayed in the standalone pad. `baseline-results.json` is the recorded run; a later run uses the then-current engine. Invalid case IDs, splits, token annotations or empty expected lists cause an error rather than silently dropping examples.

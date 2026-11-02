@@ -8,7 +8,7 @@ items = [(case["id"], annotation) for case in cases for annotation in case["anno
 commands = []
 for i, (_, a) in enumerate(items):
     commands.extend([{"id":str(i),"op":"create"}, {"id":str(i),"op":"append","text":a["token"]}])
-env = dict(os.environ, LEKHA_AKSHARANTAR_INDEX=index_a, LEKHA_ALIAS_INDEX=index_g)
+env = dict(os.environ, NEPTYPE_AKSHARANTAR_INDEX=index_a, NEPTYPE_ALIAS_INDEX=index_g)
 swift = subprocess.run([harness], input="".join(json.dumps(c)+"\n" for c in commands), text=True, capture_output=True, env=env, check=True)
 responses = [json.loads(line) for line in swift.stdout.splitlines()]
 java = subprocess.run(["java","-cp",classes,"CandidateProbe",index_a,index_g,curated], input="".join(a["token"]+"\n" for _,a in items), text=True, capture_output=True, check=True)

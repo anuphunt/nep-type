@@ -1,12 +1,12 @@
 plugins { id 'com.android.application' }
 
 android {
-    namespace 'app.lekha.keyboard'
+    namespace 'app.neptype.keyboard'
     compileSdk 35
     // FileChannel lookups require uncompressed, seekable APK asset segments.
     androidResources { noCompress += ['tsv'] }
     defaultConfig {
-        applicationId 'app.lekha.keyboard.prototype'
+        applicationId 'app.neptype.keyboard.prototype'
         minSdk 26
         targetSdk 35
         versionCode 1

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build isolated local Lekha development bundles into a new directory only.
+"""Build isolated local NepType development bundles into a new directory only.
 
 This is not a release, notarization, input-source installation or publishing tool.
 """
@@ -68,8 +68,8 @@ def plist(executable, identifier, name, display, version, is_ime):
          'CFBundleVersion': '1', 'CFBundleShortVersionString': version,
          'LSMinimumSystemVersion': '13.0', 'NSPrincipalClass': 'NSApplication'}
     if is_ime:
-        d.update({'LSUIElement': True, 'InputMethodConnectionName': 'LekhaInput_Connection',
-                  'InputMethodServerControllerClass': 'LekhaInputController',
+        d.update({'LSUIElement': True, 'InputMethodConnectionName': 'NepTypeInput_Connection',
+                  'InputMethodServerControllerClass': 'NepTypeInputController',
                   'TISIntendedLanguage': 'ne', 'tsInputMethodCharacterRepertoireKey': ['Devanagari']})
     else:
         d['NSHighResolutionCapable'] = True
@@ -87,7 +87,7 @@ def assemble(stage, snapshot, binary, name, executable, identifier, display, ver
     for filename in ('CMUDICT-LICENSE.txt', 'GOOGLE-NE-ATTRIBUTION.txt', 'AKSHARANTAR-ATTRIBUTION.txt'):
         shutil.copyfile(snapshot / 'data/sources' / filename, licenses / filename)
     shutil.copyfile(snapshot / 'data/compiled/aksharantar-indiccorp-v1.manifest.json', licenses / 'AKSHARANTAR-PROVENANCE.json')
-    (app / 'Contents/Info.plist').write_bytes(plist(executable, identifier, 'Lekha Input' if is_ime else 'Lekha', display, version, is_ime))
+    (app / 'Contents/Info.plist').write_bytes(plist(executable, identifier, 'NepType Input' if is_ime else 'NepType', display, version, is_ime))
     # Exactly the existing ad-hoc development signing policy; not Developer ID signing.
     run(['codesign', '--force', '--sign', '-', app])
     run(['codesign', '--verify', '--deep', '--strict', app])
@@ -117,7 +117,7 @@ def main():
         raise ValueError('output must be outside the source project')
     files = collect(project)
     print(f'Snapshotting {len(files)} inputs; no project files will be changed.', flush=True)
-    with tempfile.TemporaryDirectory(prefix='lekha-fresh-build-') as temp:
+    with tempfile.TemporaryDirectory(prefix='neptype-fresh-build-') as temp:
         scratch = Path(temp); snap = scratch / 'project'; stage = scratch / 'artifacts'
         snap.mkdir(); stage.mkdir()
         manifest = {}
@@ -146,8 +146,8 @@ def main():
         run(['swift', 'build', *common, '--disable-automatic-resolution', '--scratch-path', scratch / 'swift', '-c', 'release'], env=env)
         run(['swift', 'test', *common, '--disable-automatic-resolution', '--scratch-path', scratch / 'swift'], env=env)
         binaries = scratch / 'swift/release'
-        assemble(stage, snap, binaries / 'Lekha', 'Lekha.app', 'Lekha', 'local.anup.lekha.prototype', 'Lekha', '0.1.0', False)
-        assemble(stage, snap, binaries / 'LekhaInput', 'Lekha Input.app', 'LekhaInput', 'local.anup.inputmethod.Lekha', 'Lekha Nepali', '0.1', True)
+        assemble(stage, snap, binaries / 'NepType', 'NepType.app', 'NepType', 'local.anup.neptype.prototype', 'NepType', '0.1.0', False)
+        assemble(stage, snap, binaries / 'NepTypeInput', 'NepType Input.app', 'NepTypeInput', 'local.anup.inputmethod.NepType', 'NepType Nepali', '0.1', True)
         swift_version = subprocess.run(['swift', '--version'], check=True, capture_output=True, text=True).stdout.strip()
         metadata = {'format': 1, 'inputs_sha256': manifest, 'swift_version': swift_version,
                     'machine': platform.machine(), 'macos_version': platform.mac_ver()[0],
@@ -167,7 +167,7 @@ def main():
                 shutil.copytree(child, destination, copy_function=shutil.copy2)
             else:
                 shutil.copy2(child, destination)
-        for app in (target / 'Lekha.app', target / 'Lekha Input.app'):
+        for app in (target / 'NepType.app', target / 'NepType Input.app'):
             # Do not remove quarantine or other attributes. Fail visibly if the output
             # filesystem attaches FinderInfo or otherwise invalidates strict signing.
             run(['codesign', '--verify', '--deep', '--strict', app])

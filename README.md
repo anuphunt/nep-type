@@ -1,10 +1,12 @@
-# Lekha · लेख
+# NepType
+
+Brand name: **NepType** (capital N and T). Logo concepts and brand guidance are in [branding/README.md](branding/README.md).
 
 A native macOS Nepali typing prototype, built with Swift and AppKit. Everything runs locally. There are no model downloads, accounts, telemetry, or network requests. The project includes a pinned CMU English dictionary; see `evaluation/phase1/REPORT.md` and `data/sources/CMUDICT-LICENSE.txt`.
 
 ## Run
 
-Double-click `build/Lekha.app`, or run:
+Double-click `build/NepType.app`, or run:
 
 ```sh
 bash scripts/run.sh
@@ -15,7 +17,7 @@ To rebuild or test (Xcode command-line tools required):
 ```sh
 bash scripts/build.sh
 swift test
-build/Lekha.app/Contents/MacOS/Lekha --smoke-test evidence
+build/NepType.app/Contents/MacOS/NepType --smoke-test evidence
 ```
 
 ## Try it
@@ -33,9 +35,9 @@ Shortcuts: **⌘⇧Space** switches languages, **⌥1–5** chooses a suggestion
 
 ## Scope and limits
 
-The standalone pad works today. A separate experimental InputMethodKit input source is in `build/Lekha Input.app`. It has been compiled but has not yet been installed, activated, or tested in other apps; its registration and typing behavior remain unverified. It is not installed automatically.
+The standalone pad works today. A separate experimental InputMethodKit input source is in `build/NepType Input.app`. It has been compiled but has not yet been installed, activated, or tested in other apps; its registration and typing behavior remain unverified. It is not installed automatically.
 
-To try the experimental input source, copy `build/Lekha Input.app` to `~/Library/Input Methods/`, log out and back in if needed, then open System Settings → Keyboard → Text Input → Edit → Add Input Source and search for Lekha under Nepali. Use the macOS input menu to switch between it and your normal English keyboard. Type a Roman word, press Tab to cycle alternatives (including the original), Space to commit, or Escape to keep the original. Backspace edits the current Roman word. If it fails to appear, remove the app from `~/Library/Input Methods/` and log out and back in. These steps are experimental and have not been verified on this Mac.
+To try the experimental input source, copy `build/NepType Input.app` to `~/Library/Input Methods/`, log out and back in if needed, then open System Settings → Keyboard → Text Input → Edit → Add Input Source and search for NepType under Nepali. Use the macOS input menu to switch between it and your normal English keyboard. Type a Roman word, press Tab to cycle alternatives (including the original), Space to commit, or Escape to keep the original. Backspace edits the current Roman word. If it fails to appear, remove the app from `~/Library/Input Methods/` and log out and back in. These steps are experimental and have not been verified on this Mac.
 
 Rebuild the input source with `bash scripts/build-input-source.sh`. It does not request Accessibility or Input Monitoring permission.
 

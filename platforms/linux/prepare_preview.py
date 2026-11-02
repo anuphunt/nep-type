@@ -15,10 +15,10 @@ FIXED = (2020, 1, 1, 0, 0, 0)
 def files(root):
     """Use an allowlist so generated data, caches and unrelated files cannot leak."""
     fixed = ["app.py", "run-pad.sh", "README.md", "run-engine.sh", "generate_descriptor.py", "diagnose.py", "prepare_preview.py",
-             "lekha_ibus/__init__.py", "lekha_ibus/__main__.py", "lekha_ibus/engine.py", "lekha_ibus/policy.py",
-             "lekha_ibus/bridge.py", "lekha_ibus/worker.py", "tests/test_bridge.py", "tests/test_foundation.py",
+             "neptype_ibus/__init__.py", "neptype_ibus/__main__.py", "neptype_ibus/engine.py", "neptype_ibus/policy.py",
+             "neptype_ibus/bridge.py", "neptype_ibus/worker.py", "tests/test_bridge.py", "tests/test_foundation.py",
              "tests/test_mode_property.py", "tests/test_policy.py", "tests/test_packaging.py"]
-    for directory in ("lekha_ibus", "tests"):
+    for directory in ("neptype_ibus", "tests"):
         base = root / directory
         if base.is_symlink() or not base.is_dir():
             raise ValueError(f"Missing or linked source directory: {directory}")
@@ -33,7 +33,7 @@ def prepare(output, root=ROOT):
     source = files(root)
     payload = [(path.relative_to(root).as_posix(), path.read_bytes()) for path in source]
     manifest = {
-        "format": "lekha-linux-source-preview-v1",
+        "format": "neptype-linux-source-preview-v1",
         "notice": "Source-only local research preview. No IBus registration, compiled core or datasets included; not a release.",
         "sha256": {name: hashlib.sha256(data).hexdigest() for name, data in payload},
     }
@@ -41,7 +41,7 @@ def prepare(output, root=ROOT):
     # Exclusive creation avoids overwriting any existing file or following an existing symlink.
     with open(output, "xb") as raw, zipfile.ZipFile(raw, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for name, data in payload:
-            entry = zipfile.ZipInfo("lekha-linux-preview/" + name, FIXED)
+            entry = zipfile.ZipInfo("neptype-linux-preview/" + name, FIXED)
             entry.create_system = 3
             mode = 0o755 if name.endswith(".sh") else 0o644
             entry.external_attr = (stat.S_IFREG | mode) << 16

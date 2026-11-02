@@ -246,18 +246,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     }
 
     func preferredPadTextSize(_ defaults: UserDefaults = .standard) -> Double {
-        let stored = defaults.double(forKey: "lekhaPadTextSize")
+        let stored = defaults.double(forKey: "neptypePadTextSize")
         return (16...30).contains(stored) ? stored : 18
     }
 
     func preferredStartupLanguage(_ defaults: UserDefaults = .standard) -> TypingLanguage {
-        guard let stored = defaults.string(forKey: "lekhaPadStartupLanguage"),
+        guard let stored = defaults.string(forKey: "neptypePadStartupLanguage"),
               let language = TypingLanguage(rawValue: stored), language != .english else { return .nepali }
         return language
     }
 
     func storeStartupLanguage(_ language: TypingLanguage, defaults: UserDefaults = .standard) {
-        defaults.set(language.rawValue, forKey: "lekhaPadStartupLanguage")
+        defaults.set(language.rawValue, forKey: "neptypePadStartupLanguage")
     }
 
     func pin(_ view: NSView, inside parent: NSView, inset: CGFloat) {
@@ -361,7 +361,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     func makeWindow() {
         window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 720, height: 540),
                           styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-        window.title = "Lekha · Typing pad"
+        window.title = "NepType · Typing pad"
         window.titlebarAppearsTransparent = true
         window.isReleasedWhenClosed = false
         window.contentMinSize = NSSize(width: 520, height: 398)
@@ -374,8 +374,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         root.layer?.backgroundColor = background.cgColor
         window.contentView = root
 
-        let glyph = label("लेख", size: 25, weight: .medium, color: accent)
-        let name = label("Lekha", size: 13, weight: .medium)
+        let glyph = label("NT", size: 25, weight: .medium, color: accent)
+        let name = label("NepType", size: 13, weight: .medium)
         mode = NSSegmentedControl(labels: ["Nepali + EN", "All Nepali"], trackingMode: .selectOne, target: self, action: #selector(modeChanged(_:)))
         mode.controlSize = .small
         mode.segmentStyle = .rounded
@@ -470,11 +470,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         menu.addItem(appItem)
         let appMenu = NSMenu()
         appItem.submenu = appMenu
-        appMenu.addItem(withTitle: "About Lekha", action: #selector(aboutAction(_:)), keyEquivalent: "").target = self
+        appMenu.addItem(withTitle: "About NepType", action: #selector(aboutAction(_:)), keyEquivalent: "").target = self
         appMenu.addItem(withTitle: "Getting Started…", action: #selector(guideAction(_:)), keyEquivalent: "").target = self
         appMenu.addItem(withTitle: "Typing Settings…", action: #selector(settingsAction(_:)), keyEquivalent: ",").target = self
         appMenu.addItem(.separator())
-        appMenu.addItem(withTitle: "Quit Lekha", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: "Quit NepType", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         let editItem = NSMenuItem()
         menu.addItem(editItem)
         let edit = NSMenu(title: "Edit")
@@ -512,7 +512,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     func makeStatusMenu() {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         item.button?.title = "ले"
-        item.button?.setAccessibilityLabel("Lekha typing pad")
+        item.button?.setAccessibilityLabel("NepType typing pad")
         let menu = NSMenu()
         let open = menu.addItem(withTitle: "Open typing pad", action: #selector(showPad(_:)), keyEquivalent: "")
         open.target = self
@@ -524,7 +524,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         let guide = menu.addItem(withTitle: "Getting started…", action: #selector(guideAction(_:)), keyEquivalent: "")
         guide.target = self
         menu.addItem(.separator())
-        menu.addItem(withTitle: "Quit Lekha", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Quit NepType", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "")
         item.menu = menu
         statusItem = item
     }
@@ -552,12 +552,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         padTextSize = sender.doubleValue
         applyPadFonts()
         if !CommandLine.arguments.contains("--smoke-test") && !CommandLine.arguments.contains("--benchmark-startup") {
-            UserDefaults.standard.set(sender.doubleValue, forKey: "lekhaPadTextSize")
+            UserDefaults.standard.set(sender.doubleValue, forKey: "neptypePadTextSize")
         }
     }
 
     func resetPadPreferences(_ defaults: UserDefaults = .standard) {
-        for key in ["lekhaPadTextSize", "lekhaPadGuideSeen"] { defaults.removeObject(forKey: key) }
+        for key in ["neptypePadTextSize", "neptypePadGuideSeen"] { defaults.removeObject(forKey: key) }
     }
 
     @objc func resetPadSettings(_ sender: Any?) {
@@ -600,8 +600,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
 
     @objc func guideAction(_ sender: Any?) {
         let guide = NSAlert()
-        guide.messageText = "Get started with Lekha"
-        guide.informativeText = "1. Type Romanized Nepali in the typing pad.\n2. Place the cursor in a word and choose a suggestion, or use ⌘⇧O to keep its original spelling.\n3. Copy the result into any app.\n\nChoose Nepali + EN to preserve English words, or All Nepali to write them in Nepali letters. Lekha works offline. The system-wide keyboard is not enabled."
+        guide.messageText = "Get started with NepType"
+        guide.informativeText = "1. Type Romanized Nepali in the typing pad.\n2. Place the cursor in a word and choose a suggestion, or use ⌘⇧O to keep its original spelling.\n3. Copy the result into any app.\n\nChoose Nepali + EN to preserve English words, or All Nepali to write them in Nepali letters. NepType works offline. The system-wide keyboard is not enabled."
         guide.addButton(withTitle: "Start typing")
         guide.runModal()
         showPad(nil)
@@ -713,7 +713,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         }
         settingsMode?.selectedSegment = mode.selectedSegment
         let languageName = mode.selectedSegment == 0 ? "Nepali + EN" : "All Nepali"
-        statusItem?.button?.toolTip = "Lekha typing pad · " + languageName
+        statusItem?.button?.toolTip = "NepType typing pad · " + languageName
         statusLanguageItem?.title = "Pad language: " + languageName + " (switch)"
         copyButton.isEnabled = !rendered.text.isEmpty
         refreshing = false
@@ -862,7 +862,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
 
     @objc func aboutAction(_ sender: Any?) {
         let alert = NSAlert()
-        alert.messageText = "Lekha · लेख"
+        alert.messageText = "NepType"
         alert.informativeText = "A local Nepali typing prototype. Version 0.1.\n\nUses local word indexes, simple context rules and phonetic fallback. No network requests, accounts, analytics, or global keyboard monitoring.\n\nCompose here and copy into other apps. System-wide input-method integration is not included."
         alert.runModal()
     }
@@ -900,18 +900,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         settingsTextSize?.doubleValue = 26
         if let settingsTextSize { textSizeChanged(settingsTextSize) }
         check("settings_text_size", input.font?.pointSize == 26 && output.font?.pointSize == 32)
-        let testSuiteName = "local.lekha.pad-test.\(UUID().uuidString)"
+        let testSuiteName = "local.neptype.pad-test.\(UUID().uuidString)"
         if let testDefaults = UserDefaults(suiteName: testSuiteName) {
-            testDefaults.set(27.0, forKey: "lekhaPadTextSize")
+            testDefaults.set(27.0, forKey: "neptypePadTextSize")
             check("settings_saved_size", preferredPadTextSize(testDefaults) == 27)
-            testDefaults.set(99.0, forKey: "lekhaPadTextSize")
+            testDefaults.set(99.0, forKey: "neptypePadTextSize")
             check("settings_invalid_size_fallback", preferredPadTextSize(testDefaults) == 18)
             check("startup_language_defaults_nepali", preferredStartupLanguage(testDefaults) == .nepali)
-            testDefaults.set("english", forKey: "lekhaPadStartupLanguage")
+            testDefaults.set("english", forKey: "neptypePadStartupLanguage")
             check("legacy_original_mode_defaults_to_mixed", preferredStartupLanguage(testDefaults) == .nepali)
             storeStartupLanguage(.allNepali, defaults: testDefaults)
             check("startup_language_saved", preferredStartupLanguage(testDefaults) == .allNepali)
-            testDefaults.set("invalid", forKey: "lekhaPadStartupLanguage")
+            testDefaults.set("invalid", forKey: "neptypePadStartupLanguage")
             check("startup_language_invalid_fallback", preferredStartupLanguage(testDefaults) == .nepali)
             modePersistence = testDefaults
             toggleLanguage(nil)
@@ -924,10 +924,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
             check("mode_toggle_back_persists", preferredStartupLanguage(testDefaults) == .nepali)
             modePersistence = nil
             storeStartupLanguage(.allNepali, defaults: testDefaults)
-            testDefaults.set(true, forKey: "lekhaPadGuideSeen")
+            testDefaults.set(true, forKey: "neptypePadGuideSeen")
             testDefaults.set("keep", forKey: "unrelatedPreference")
             resetPadPreferences(testDefaults)
-            check("reset_pad_owned_preferences", testDefaults.object(forKey: "lekhaPadTextSize") == nil && preferredStartupLanguage(testDefaults) == .allNepali && testDefaults.object(forKey: "lekhaPadGuideSeen") == nil && testDefaults.string(forKey: "unrelatedPreference") == "keep")
+            check("reset_pad_owned_preferences", testDefaults.object(forKey: "neptypePadTextSize") == nil && preferredStartupLanguage(testDefaults) == .allNepali && testDefaults.object(forKey: "neptypePadGuideSeen") == nil && testDefaults.string(forKey: "unrelatedPreference") == "keep")
             testDefaults.removePersistentDomain(forName: testSuiteName)
         } else {
             check("settings_saved_size", false)

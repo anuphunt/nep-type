@@ -3,4 +3,4 @@
 set -eu
 project_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 cd "$project_dir"
-exec "${1:-python3}" -m lekha_ibus
+exec "${1:-python3}" -m neptype_ibus

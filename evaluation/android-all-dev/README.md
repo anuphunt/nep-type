@@ -9,7 +9,7 @@ No ranking or phonetic rule was changed based on this sample. The UI source reta
 From the project root:
 
 ```sh
-python3 evaluation/android-all-dev/evaluate.py "$PWD" > /tmp/lekha-android-all-dev.json
+python3 evaluation/android-all-dev/evaluate.py "$PWD" > /tmp/neptype-android-all-dev.json
 ```
 
 The JSON records hashes for sources, fixture and indexes; its Java harness mirrors lookup but does not run Android UI or verify candidate selection in a real editor. Index provenance and unresolved licensing are documented in the main project.

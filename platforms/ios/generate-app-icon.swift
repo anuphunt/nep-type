@@ -2,7 +2,7 @@
 import AppKit
 
 let folder = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
-let target = folder.appendingPathComponent("LekhaMobile/Assets.xcassets/AppIcon.appiconset/AppIcon.png")
+let target = folder.appendingPathComponent("NepTypeMobile/Assets.xcassets/AppIcon.appiconset/AppIcon.png")
 let context = CGContext(data: nil, width: 1024, height: 1024, bitsPerComponent: 8,
     bytesPerRow: 4096, space: CGColorSpaceCreateDeviceRGB(),
     bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
@@ -10,7 +10,7 @@ NSGraphicsContext.saveGraphicsState()
 NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
 context.setFillColor(CGColor(gray: 30/255, alpha: 1))
 context.fill(CGRect(x: 0, y: 0, width: 1024, height: 1024))
-let title = NSAttributedString(string: "लेख", attributes: [
+let title = NSAttributedString(string: "NT", attributes: [
     .font: NSFont.systemFont(ofSize: 390, weight: .regular),
     .foregroundColor: NSColor(white: 232/255, alpha: 1)
 ])

@@ -1,4 +1,4 @@
-# Lekha desktop platform interfaces
+# NepType desktop platform interfaces
 
 The Windows and Linux standalone frontend sources now follow the Mac app's compact Graphite layout: Roman input, a horizontal suggestion area, read-only Nepali output and a quiet copy icon. Both default to 620 × 430 and support smaller desktop windows.
 

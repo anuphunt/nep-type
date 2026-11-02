@@ -7,12 +7,12 @@ The first comparison exposed a missing curated `football → फुटबल` op
 To repeat on the development Mac after building `portable-core` and setting `JDK_BIN` to an installed JDK's `bin` directory:
 
 ```sh
-mkdir -p /tmp/lekha-cross-probe
-"$JDK_BIN/javac" -d /tmp/lekha-cross-probe platforms/android/app/src/main/java/app/lekha/keyboard/core/SortedCandidateIndex.java evaluation/cross-platform/CandidateProbe.java
-PATH="$JDK_BIN:$PATH" python3 evaluation/cross-platform/compare.py /path/to/lekha-conformance /tmp/lekha-cross-probe data/compiled/aksharantar-indiccorp-v1.tsv data/compiled/google-ne-aliases.tsv platforms/android/app/src/main/assets/nepali-authored-v1.tsv
+mkdir -p /tmp/neptype-cross-probe
+"$JDK_BIN/javac" -d /tmp/neptype-cross-probe platforms/android/app/src/main/java/app/neptype/keyboard/core/SortedCandidateIndex.java evaluation/cross-platform/CandidateProbe.java
+PATH="$JDK_BIN:$PATH" python3 evaluation/cross-platform/compare.py /path/to/neptype-conformance /tmp/neptype-cross-probe data/compiled/aksharantar-indiccorp-v1.tsv data/compiled/google-ne-aliases.tsv platforms/android/app/src/main/assets/nepali-authored-v1.tsv
 ```
 
-Run from the Lekha project root. The dataset licensing status remains as described in the main plan.
+Run from the NepType project root. The dataset licensing status remains as described in the main plan.
 
 `evaluate_fixture.py` accepts the same five arguments plus a JSON fixture containing `[roman, [acceptable spellings]]` pairs. Using the existing `evaluation/phase1/alias-holdout-v1.json` fixture returned 45/59 for the Swift candidate list and 41/59 for the Android top four. This earlier manually curated Google-alias holdout is not independent of the current curated or Aksharantar sources. It measures only whether an expected string appears in the candidate lists; it does not measure ranking quality, context, key events, or typing accuracy. The detailed results are in `alias-fixture-results.json`.
 

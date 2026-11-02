@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from lekha_ibus.policy import should_consume_key, literal_purpose
+from neptype_ibus.policy import should_consume_key, literal_purpose
 from generate_descriptor import build_descriptor
 
 class FoundationTests(unittest.TestCase):
@@ -38,8 +38,8 @@ class FoundationTests(unittest.TestCase):
         gi = types.ModuleType("gi")
         gi.repository = repository
         with patch.dict(sys.modules, {"gi": gi, "gi.repository": repository}):
-            from lekha_ibus.engine import LekhaEngine
-            adapter = LekhaEngine()
+            from neptype_ibus.engine import NepTypeEngine
+            adapter = NepTypeEngine()
             self.assertFalse(adapter.do_process_key_event(ord("a"), 38, 0))
             self.assertFalse(adapter.do_process_key_event(0xff08, 22, 0))
             self.assertIsNone(adapter.do_reset())
@@ -63,10 +63,10 @@ class FoundationTests(unittest.TestCase):
             def submit(self, raw, generation, language="nepali"): pass
             def close(self): pass
         with patch.dict(sys.modules, {"gi":gi,"gi.repository":repository}):
-            sys.modules.pop("lekha_ibus.engine",None)
-            from lekha_ibus.engine import LekhaEngine
-            from lekha_ibus.policy import CompositionPolicy
-            adapter=LekhaEngine(); adapter.policy=CompositionPolicy(Worker(),adapter)
+            sys.modules.pop("neptype_ibus.engine",None)
+            from neptype_ibus.engine import NepTypeEngine
+            from neptype_ibus.policy import CompositionPolicy
+            adapter=NepTypeEngine(); adapter.policy=CompositionPolicy(Worker(),adapter)
             self.assertTrue(adapter.do_process_key_event(ord('m'),0,0))
             self.assertTrue(adapter.do_process_key_event(ord('a'),0,0))
             adapter.policy.candidates_ready(adapter.policy.generation, "ma", ["म"], False)
@@ -111,10 +111,10 @@ class FoundationTests(unittest.TestCase):
             def submit(self, raw, generation, language="nepali"): pass
             def close(self): self.closed=True
         with patch.dict(sys.modules, {"gi":gi,"gi.repository":repository}):
-            sys.modules.pop("lekha_ibus.engine",None)
-            from lekha_ibus.engine import LekhaEngine
-            from lekha_ibus.policy import CompositionPolicy
-            adapter=LekhaEngine(); old_worker=Worker(); old=CompositionPolicy(old_worker,adapter); adapter.policy=old
+            sys.modules.pop("neptype_ibus.engine",None)
+            from neptype_ibus.engine import NepTypeEngine
+            from neptype_ibus.policy import CompositionPolicy
+            adapter=NepTypeEngine(); old_worker=Worker(); old=CompositionPolicy(old_worker,adapter); adapter.policy=old
             old.process(ord('m'),0); old.process(ord('a'),0)
             old_events=list(adapter.events)
             adapter.do_focus_in()
@@ -158,15 +158,15 @@ class FoundationTests(unittest.TestCase):
             def submit(self, raw, generation, language="nepali"): pass
             def close(self): pass
         with patch.dict(sys.modules,{"gi":gi,"gi.repository":repository}), patch.dict("os.environ",{},clear=True):
-            sys.modules.pop("lekha_ibus.engine",None)
-            from lekha_ibus.engine import LekhaEngine
-            from lekha_ibus.policy import CompositionPolicy,TAB
-            adapter=LekhaEngine(); p=CompositionPolicy(Worker(),adapter)
+            sys.modules.pop("neptype_ibus.engine",None)
+            from neptype_ibus.engine import NepTypeEngine
+            from neptype_ibus.policy import CompositionPolicy,TAB
+            adapter=NepTypeEngine(); p=CompositionPolicy(Worker(),adapter)
             p.process(ord("m"),0); p.process(ord("a"),0)
             p.candidates_ready(p.generation,"ma",["म"],False); p.process(TAB,0)
             self.assertEqual(adapter.events[-1],("default","ma",2,True))
             self.assertEqual(p.options[p.selection],"म")
-            with patch.dict("os.environ",{"LEKHA_IBUS_FOCUS_COMMIT":"1"}):
+            with patch.dict("os.environ",{"NEPTYPE_IBUS_FOCUS_COMMIT":"1"}):
                 p._show()
                 self.assertEqual(adapter.events[-1],("mode","ma",2,True,42))
             # Focus callbacks only relinquish ownership: they never issue a
@@ -174,7 +174,7 @@ class FoundationTests(unittest.TestCase):
             adapter.policy=p; adapter.do_focus_out()
             self.assertTrue(p.closed)
             # Unsupported runtimes keep the ordinary update path.
-            with patch.dict("os.environ",{"LEKHA_IBUS_FOCUS_COMMIT":"1"}):
+            with patch.dict("os.environ",{"NEPTYPE_IBUS_FOCUS_COMMIT":"1"}):
                 saved = ibus.PreeditFocusMode
                 del ibus.PreeditFocusMode
                 try:
@@ -184,10 +184,10 @@ class FoundationTests(unittest.TestCase):
                     ibus.PreeditFocusMode = saved
 
     def test_descriptor_is_valid_xml_and_respects_paths(self):
-        root = ET.fromstring(build_descriptor(Path('/tmp/Lekha project'), '/usr/bin/python3'))
-        self.assertEqual(root.findtext('name'), 'org.freedesktop.IBus.Lekha')
-        self.assertEqual(shlex.split(root.findtext("exec")), [str((Path("/tmp/Lekha project") / "run-engine.sh").resolve()), "/usr/bin/python3"])
-        self.assertEqual(root.findtext('engines/engine/name'), 'lekha')
+        root = ET.fromstring(build_descriptor(Path('/tmp/NepType project'), '/usr/bin/python3'))
+        self.assertEqual(root.findtext('name'), 'org.freedesktop.IBus.NepType')
+        self.assertEqual(shlex.split(root.findtext("exec")), [str((Path("/tmp/NepType project") / "run-engine.sh").resolve()), "/usr/bin/python3"])
+        self.assertEqual(root.findtext('engines/engine/name'), 'neptype')
         self.assertIn('experimental', root.findtext('engines/engine/longname'))
         self.assertIn('Pass-through by default', root.findtext('engines/engine/description'))
 
@@ -211,11 +211,11 @@ class FoundationTests(unittest.TestCase):
             def __init__(self): self.closed=False
             def submit(self, raw, generation, language="nepali"): pass
             def close(self): self.closed=True
-        with patch.dict(sys.modules, {"gi":gi,"gi.repository":repository}), patch.dict("os.environ", {"LEKHA_IBUS_FOCUS_ID":"1"}):
-            sys.modules.pop("lekha_ibus.engine",None)
-            from lekha_ibus.engine import LekhaEngine
-            from lekha_ibus.policy import CompositionPolicy
-            adapter=LekhaEngine()
+        with patch.dict(sys.modules, {"gi":gi,"gi.repository":repository}), patch.dict("os.environ", {"NEPTYPE_IBUS_FOCUS_ID":"1"}):
+            sys.modules.pop("neptype_ibus.engine",None)
+            from neptype_ibus.engine import NepTypeEngine
+            from neptype_ibus.policy import CompositionPolicy
+            adapter=NepTypeEngine()
             self.assertTrue(adapter.construct_kwargs["has_focus_id"])
             self.assertFalse(adapter.do_process_key_event(ord("a"),0,0)) # no known context
             adapter.do_focus_in_id("/context/old", "generic toolkit")

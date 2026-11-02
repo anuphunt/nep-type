@@ -1,5 +1,5 @@
-import app.lekha.keyboard.core.SortedCandidateIndex;
-import app.lekha.keyboard.core.Composition;
+import app.neptype.keyboard.core.SortedCandidateIndex;
+import app.neptype.keyboard.core.Composition;
 import java.nio.channels.FileChannel;
 import java.nio.file.*;
 import java.util.*;

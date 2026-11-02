@@ -1,5 +1,5 @@
 #pragma once
-#ifdef LEKHA_TSF_TEST
+#ifdef NEPTYPE_TSF_TEST
 #include "fake_tsf.h"
 #else
 #define WIN32_LEAN_AND_MEAN
@@ -9,7 +9,7 @@
 #include "candidate_adapter.h"
 #include <memory>
 
-namespace lekha {
+namespace neptype {
 // The implementation must apply only to the composition it owns, under the
 // supplied TSF cookie. There is deliberately no concrete Windows host yet.
 class HostEdit {

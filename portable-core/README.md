@@ -1,18 +1,18 @@
-# Lekha portable-core feasibility and conformance harness
+# NepType portable-core feasibility and conformance harness
 
-This is a **source snapshot of the existing offline Swift engine**, packaged separately from AppKit and InputMethodKit. It builds a Swift library and a JSON-lines executable for testing session behavior. It is an experiment towards a common engine contract, not an independently verified Linux, Windows, Android or iOS library and not a finished keyboard. It makes no network requests. The sources were copied from `lekha-dev/Sources/NepaliCore`; `SOURCE_HASHES.sha256` records the exact snapshot. Changes to the Mac engine do not automatically propagate; reconcile and compare before using this as a product dependency. The current generated data files are not included here. The original project remains authoritative.
+This is a **source snapshot of the existing offline Swift engine**, packaged separately from AppKit and InputMethodKit. It builds a Swift library and a JSON-lines executable for testing session behavior. It is an experiment towards a common engine contract, not an independently verified Linux, Windows, Android or iOS library and not a finished keyboard. It makes no network requests. The sources were copied from `neptype-dev/Sources/NepaliCore`; `SOURCE_HASHES.sha256` records the exact snapshot. Changes to the Mac engine do not automatically propagate; reconcile and compare before using this as a product dependency. The current generated data files are not included here. The original project remains authoritative.
 
 On this Mac with Xcode 27.1 and Swift 6, the following builds and tests the core. The two environment paths are optional but necessary to evaluate exactly the same Aksharantar and Google indexes as the Mac engine; if absent, lookup silently falls back to other sources and results may differ. Data provenance/licensing remains in the original project's `data/sources`, including the user-managed Aksharantar commercial review before distribution.
 
 ```sh
-export CLANG_MODULE_CACHE_PATH=/tmp/lekha-portable-cache
-export SWIFTPM_MODULECACHE_OVERRIDE=/tmp/lekha-portable-cache
-swift build --disable-sandbox --scratch-path /tmp/lekha-portable-build \
-  --cache-path /tmp/lekha-portable-spm-cache --config-path /tmp/lekha-portable-config \
-  --security-path /tmp/lekha-portable-security
-export LEKHA_ALIAS_INDEX="/path/to/google-ne-aliases.tsv"
-export LEKHA_AKSHARANTAR_INDEX="/path/to/aksharantar-indiccorp-v1.tsv"
-python3 tests/conformance.py /tmp/lekha-portable-build/debug/lekha-conformance
+export CLANG_MODULE_CACHE_PATH=/tmp/neptype-portable-cache
+export SWIFTPM_MODULECACHE_OVERRIDE=/tmp/neptype-portable-cache
+swift build --disable-sandbox --scratch-path /tmp/neptype-portable-build \
+  --cache-path /tmp/neptype-portable-spm-cache --config-path /tmp/neptype-portable-config \
+  --security-path /tmp/neptype-portable-security
+export NEPTYPE_ALIAS_INDEX="/path/to/google-ne-aliases.tsv"
+export NEPTYPE_AKSHARANTAR_INDEX="/path/to/aksharantar-indiccorp-v1.tsv"
+python3 tests/conformance.py /tmp/neptype-portable-build/debug/neptype-conformance
 ```
 
 `--disable-sandbox` avoids nested sandboxing in this managed environment. It does not install software, access network or change system settings. A normal local Swift build can use the default SwiftPM sandbox where it is available.

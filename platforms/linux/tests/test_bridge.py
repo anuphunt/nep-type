@@ -4,9 +4,9 @@ import tempfile
 import time
 import unittest
 from pathlib import Path
-from lekha_ibus.bridge import BridgeError, CoreBridge, core_environment
-from lekha_ibus.worker import CandidateWorker
-from lekha_ibus.policy import CompositionPolicy, TAB
+from neptype_ibus.bridge import BridgeError, CoreBridge, core_environment
+from neptype_ibus.worker import CandidateWorker
+from neptype_ibus.policy import CompositionPolicy, TAB
 
 class Host:
     def __init__(self): self.result=''; self.marked=''
@@ -15,9 +15,9 @@ class Host:
 
 class BridgeTests(unittest.TestCase):
     def test_child_environment_excludes_unrelated_credentials(self):
-        env = {'LEKHA_ALIAS_INDEX': '/local/index', 'LANG': 'en_US.UTF-8',
+        env = {'NEPTYPE_ALIAS_INDEX': '/local/index', 'LANG': 'en_US.UTF-8',
                'UNRELATED_SECRET': 'must-not-be-forwarded', 'HOME': '/private/home'}
-        self.assertEqual(core_environment(env), {'LEKHA_ALIAS_INDEX': '/local/index', 'LANG': 'en_US.UTF-8'})
+        self.assertEqual(core_environment(env), {'NEPTYPE_ALIAS_INDEX': '/local/index', 'LANG': 'en_US.UTF-8'})
 
     def test_spawned_child_receives_only_allowed_environment(self):
         from unittest.mock import patch
@@ -26,10 +26,10 @@ class BridgeTests(unittest.TestCase):
             script.write_text('#!' + sys.executable + '\nimport json,os,sys\n'
                               'x=json.loads(sys.stdin.readline())\n'
                               'print(json.dumps({"id":x["id"],"ok":'
-                              '"LEKHA_TEST_SECRET" not in os.environ and '
-                              'os.environ.get("LEKHA_ALIAS_INDEX")=="/local/index"}),flush=True)\n')
+                              '"NEPTYPE_TEST_SECRET" not in os.environ and '
+                              'os.environ.get("NEPTYPE_ALIAS_INDEX")=="/local/index"}),flush=True)\n')
             script.chmod(0o755)
-            with patch.dict(os.environ, {'LEKHA_TEST_SECRET': 'private', 'LEKHA_ALIAS_INDEX': '/local/index'}):
+            with patch.dict(os.environ, {'NEPTYPE_TEST_SECRET': 'private', 'NEPTYPE_ALIAS_INDEX': '/local/index'}):
                 bridge = CoreBridge(str(script), timeout=1.0)
                 bridge.close()
 
@@ -230,11 +230,11 @@ class BridgeTests(unittest.TestCase):
                 self.assertFalse(p.process(ord(' '),0)); self.assertEqual(host.result,'ma')
             finally: p.close()
 
-    @unittest.skipUnless(os.environ.get('LEKHA_TEST_CORE'), 'No core binary provided')
+    @unittest.skipUnless(os.environ.get('NEPTYPE_TEST_CORE'), 'No core binary provided')
     def test_live_core_all_nepali_requires_explicit_choice(self):
         import queue
         pending=queue.Queue(); host=Host(); p=CompositionPolicy(None,host, language='allNepali')
-        worker=CandidateWorker(os.environ['LEKHA_TEST_CORE'],lambda fn,*a:pending.put((fn,a)),p.candidates_ready,timeout=2)
+        worker=CandidateWorker(os.environ['NEPTYPE_TEST_CORE'],lambda fn,*a:pending.put((fn,a)),p.candidates_ready,timeout=2)
         p.worker=worker; p.disabled=False
         try:
             for c in 'office': self.assertTrue(p.process(ord(c),0))
@@ -248,11 +248,11 @@ class BridgeTests(unittest.TestCase):
             self.assertFalse(p.process(ord(' '),0)); self.assertEqual(host.result,selected)
         finally: p.close()
 
-    @unittest.skipUnless(os.environ.get('LEKHA_TEST_CORE'), 'No core binary provided')
+    @unittest.skipUnless(os.environ.get('NEPTYPE_TEST_CORE'), 'No core binary provided')
     def test_live_core_explicit_candidate(self):
         import queue
         pending=queue.Queue(); host=Host(); p=CompositionPolicy(None,host)
-        worker=CandidateWorker(os.environ['LEKHA_TEST_CORE'],lambda fn,*a:pending.put((fn,a)),p.candidates_ready,timeout=2)
+        worker=CandidateWorker(os.environ['NEPTYPE_TEST_CORE'],lambda fn,*a:pending.put((fn,a)),p.candidates_ready,timeout=2)
         p.worker=worker; p.disabled=False
         try:
             for c in 'namaste': self.assertTrue(p.process(ord(c),0))

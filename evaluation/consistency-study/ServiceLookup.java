@@ -1,5 +1,5 @@
-import app.lekha.keyboard.core.SortedCandidateIndex;
-import app.lekha.keyboard.core.CandidateMerger;
+import app.neptype.keyboard.core.SortedCandidateIndex;
+import app.neptype.keyboard.core.CandidateMerger;
 import java.nio.channels.FileChannel;
 import java.io.IOException;
 import java.nio.file.Paths;

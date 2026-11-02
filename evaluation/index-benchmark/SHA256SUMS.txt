@@ -1,5 +1,5 @@
 0b41ac173a379c343d7be41359928cc4d7938968c57bb093064536360b1a96de  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/Sources/NepaliCore/GeneratedAliasIndex.swift
-cd859c604ae0418cd751e6ca6cc363419a82582c5614b61d953f8705e9e0d623  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/platforms/android/app/src/main/java/app/lekha/keyboard/core/SortedCandidateIndex.java
+cd859c604ae0418cd751e6ca6cc363419a82582c5614b61d953f8705e9e0d623  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/platforms/android/app/src/main/java/app/neptype/keyboard/core/SortedCandidateIndex.java
 a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/data/compiled/aksharantar-indiccorp-v1.tsv
 055dfa682a61d7490c800122669efb76fb01089d28168fb31c48896078ce8827  generate.py
 22559f41314a1d8cdb2370d59326e5894d4b75cf2f9960e003d4ab3d7f7e6813  main.swift

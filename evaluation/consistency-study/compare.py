@@ -8,7 +8,7 @@ items = sorted(data.items())
 requests = []
 for i, (word, _) in enumerate(items):
     requests.extend([{"id":str(i),"op":"create"}, {"id":str(i),"op":"append","text":word}])
-environment = dict(os.environ, LEKHA_AKSHARANTAR_INDEX=mined, LEKHA_ALIAS_INDEX=google)
+environment = dict(os.environ, NEPTYPE_AKSHARANTAR_INDEX=mined, NEPTYPE_ALIAS_INDEX=google)
 swift = subprocess.run([swift_exe],input="".join(json.dumps(x)+"\n" for x in requests),text=True,capture_output=True,check=True,env=environment)
 responses=[json.loads(line) for line in swift.stdout.splitlines()]
 android=subprocess.run([java_exe,"-cp",classes,"ServiceLookup",curated,mined,google],input="".join(word+"\n" for word,_ in items),text=True,capture_output=True,check=True)

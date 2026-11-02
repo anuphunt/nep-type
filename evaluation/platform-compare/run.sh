@@ -11,12 +11,12 @@ jdk=$4
 output=$5
 if [ -e "$output" ] || [ -L "$output" ]; then echo "Output exists; refusing to overwrite." >&2; exit 2; fi
 mkdir "$output"
-scratch=$(mktemp -d "${TMPDIR:-/tmp}/lekha-platform-compare.XXXXXXXX")
+scratch=$(mktemp -d "${TMPDIR:-/tmp}/neptype-platform-compare.XXXXXXXX")
 trap 'rm -rf "$scratch"' EXIT
 here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 baseline="$root/platforms/android"
-baselineCore="$baseline/app/src/main/java/app/lekha/keyboard/core"
-candidateCore="$candidate/app/src/main/java/app/lekha/keyboard/core"
+baselineCore="$baseline/app/src/main/java/app/neptype/keyboard/core"
+candidateCore="$candidate/app/src/main/java/app/neptype/keyboard/core"
 authored="$baseline/app/src/main/assets/nepali-authored-v1.tsv"
 mined="$root/data/compiled/aksharantar-indiccorp-v1.tsv"
 google="$root/data/compiled/google-ne-aliases.tsv"
@@ -32,8 +32,8 @@ cmp -s "$baseline/app/src/main/assets/google-ne-aliases.tsv" "$google"
 shasum -a 256 "$fixture" "$here/run.sh" "$here/SwiftEvaluator.swift" "$here/ServiceLookup.java" "$here/compare.py" \
   "$baselineCore/SortedCandidateIndex.java" "$baselineCore/CandidateMerger.java" \
   "$candidateCore/SortedCandidateIndex.java" "$candidateCore/CandidateMerger.java" "$candidateCore/PhoneticCandidates.java" \
-  "$baseline/app/src/main/java/app/lekha/keyboard/LekhaKeyboardService.java" \
-  "$candidate/app/src/main/java/app/lekha/keyboard/LekhaKeyboardService.java" \
+  "$baseline/app/src/main/java/app/neptype/keyboard/NepTypeKeyboardService.java" \
+  "$candidate/app/src/main/java/app/neptype/keyboard/NepTypeKeyboardService.java" \
   "$root/Sources/NepaliCore/Transliterator.swift" "$root/Sources/NepaliCore/Composer.swift" \
   "$root/Sources/NepaliCore/GeneratedIndexes.swift" "$root/Sources/NepaliCore/GeneratedAliasIndex.swift" \
   "$authored" "$mined" "$google" > "$output/pre-evaluation-hashes.txt"
@@ -43,7 +43,7 @@ mkdir -p "$scratch/baseline" "$scratch/candidate"
 cp "$here/SwiftEvaluator.swift" "$scratch/main.swift"
 xcrun swiftc -O -module-cache-path "$scratch/cache" "$root/Sources/NepaliCore/Transliterator.swift" "$root/Sources/NepaliCore/Composer.swift" \
   "$root/Sources/NepaliCore/GeneratedIndexes.swift" "$root/Sources/NepaliCore/GeneratedAliasIndex.swift" "$scratch/main.swift" -o "$scratch/swift-evaluator"
-export LEKHA_ALIAS_INDEX="$google" LEKHA_AKSHARANTAR_INDEX="$mined"
+export NEPTYPE_ALIAS_INDEX="$google" NEPTYPE_AKSHARANTAR_INDEX="$mined"
 "$scratch/swift-evaluator" "$fixture" > "$output/swift.json"
 python3 "$here/compare.py" "$fixture" "$output/swift.json" "$jdk/java" "$scratch/baseline" "$scratch/candidate" "$authored" "$mined" "$google" > "$output/comparison.json"
 cp "$fixture" "$output/corpus.json"

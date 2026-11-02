@@ -1,4 +1,4 @@
-import app.lekha.keyboard.core.SortedCandidateIndex;
+import app.neptype.keyboard.core.SortedCandidateIndex;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.channels.FileChannel;
