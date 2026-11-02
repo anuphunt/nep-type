@@ -22,8 +22,12 @@ let browser;
 const checks=[],errors=[];
 try {
   await mkdir(reports,{recursive:true});
-  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-  const base='http://127.0.0.1:'+server.address().port;
+  let base=process.argv.find(value=>value.startsWith('--base-url='))?.slice('--base-url='.length);
+  if(!base) {
+    await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+    base='http://127.0.0.1:'+server.address().port;
+  }
+  base=base.replace(/\/$/,'');
   browser=await chromium.launch({channel:'chrome',headless:true});
   const context=await browser.newContext();
   const page=await context.newPage();
@@ -34,6 +38,7 @@ try {
     await page.setViewportSize({width,height:900});
     for(const prefix of ['/','/ne/']) {
       await page.goto(base+prefix,{waitUntil:'networkidle'});
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1), `Home overflow: ${width}px ${prefix}`);
       const windows=page.locator('.hero-actions a[href="'+prefix+'windows/"]');
       assert.equal(await windows.count(),1);
       assert.equal(await page.locator('a[data-mac-download]').getAttribute('href'),mac.url);
@@ -69,9 +74,9 @@ try {
     checks.push(`No JavaScript: ${route}`);
   }
   assert.deepEqual(errors,[]);
-  await writeFile(new URL('results.json',reports),JSON.stringify({checks,errors,releaseVerified:Boolean(release),testedAt:new Date().toISOString()},null,2));
+  await writeFile(new URL('results.json',reports),JSON.stringify({base,checks,errors,releaseVerified:Boolean(release),testedAt:new Date().toISOString()},null,2));
   console.log(JSON.stringify({checks:checks.length,errors:errors.length,releaseVerified:Boolean(release)}));
 } finally {
   if(browser) await browser.close();
-  await new Promise(resolve=>server.close(resolve));
+  if(server.listening) await new Promise(resolve=>server.close(resolve));
 }

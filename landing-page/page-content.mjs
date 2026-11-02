@@ -1,5 +1,5 @@
 export const repository = 'https://github.com/anuphunt/nep-type';
-export const homeDescription = 'Free Nepali typing online: turn Roman letters into Nepali Unicode, choose spellings, and copy your text. No account needed. Also available as a Mac typing pad.';
+export const homeDescription = 'Free Nepali typing online: turn Roman letters into Nepali Unicode, choose spellings, and copy your text. No account needed. Offline Mac app and Windows preview available.';
 export const homeTitle = {en: 'Nepali Typing Online — Roman to Nepali | NepType', ne: 'अनलाइन नेपाली टाइपिङ — रोमनबाट नेपाली | NepType'};
 export const homeDescriptions = {en: homeDescription, ne: 'NepType मा रोमन अक्षरबाट नेपाली युनिकोड लेख्नुहोस्। हिज्जे रोज्नुहोस् र तयार पाठ कपी गर्नुहोस्। निःशुल्क अनलाइन टाइपिङ, खाता खोल्नु पर्दैन।'};
 
@@ -7,7 +7,7 @@ export const nepaliCopy = {
   badge: 'नेपाली लेखौँ',
   headline: 'अनलाइन नेपाली लेख्नुहोस्।',
   headlineAccent: 'रोमन अक्षरबाट।',
-  description: 'अंग्रेजी अक्षरमा नेपाली शब्द लेख्नुहोस्। हिज्जे रोजेर पाठ कपी गर्नुहोस्। ब्राउजरमा निःशुल्क चल्छ। अफलाइन लेख्न Mac एप डाउनलोड गर्नुहोस्।',
+  description: 'अंग्रेजी अक्षरमा नेपाली शब्द लेख्नुहोस्। हिज्जे रोजेर पाठ कपी गर्नुहोस्। ब्राउजरमा निःशुल्क चल्छ। अफलाइन लेख्न Mac एप वा Windows प्रिभ्यु रोज्नुहोस्।',
   cta: 'Mac का लागि डाउनलोड गर्नुहोस्',
   windowsCta: 'Windows प्रिभ्यु', windowsStatus: 'प्रिभ्युको जानकारी',
   offline: 'खुला स्रोत',
@@ -15,8 +15,8 @@ export const nepaliCopy = {
   featuresTitle: 'दैनिक नेपाली लेखाइका लागि।',
   mixedTitle: 'English पनि राख्नुहोस्।',
   mixedDescription: 'दुवै भाषामा लेख्न Nepali + EN रोज्नुहोस्।',
-  platformTitle: 'Mac बाट सुरु गर्नुहोस्।',
-  platformDescription: 'अन्य प्लेटफर्मको काम हुँदैछ।',
+  platformTitle: 'कम्प्युटरका लागि टाइपिङ प्याड।',
+  platformDescription: 'Mac एप र Windows प्रिभ्यु उपलब्ध छन्।',
   privacyTitle: 'अफलाइन चल्छ।',
   privacyDescription: 'तपाईंले लेखेका कुरा उपकरणमै रहन्छन्।',
   choiceTitle: 'सही शब्द रोज्नुहोस्।',

@@ -27,7 +27,7 @@ export function windowsPage(release, locale) {
       ['हस्ताक्षर नभएको प्रिभ्यु', 'यो प्रिभ्युमा डिजिटल हस्ताक्षर छैन। Windows वा ब्राउजरले अपरिचित प्रकाशक वा SmartScreen चेतावनी देखाउन सक्छ।'],
       ['इन्स्टल र हटाउने तरिका', 'इन्स्टलर खोल्नुहोस्। एप तपाईंको प्रयोगकर्ता खातामा इन्स्टल हुन्छ। त्यसपछि Start बाट NepType खोल्नुहोस्। हटाउन Windows Settings > Apps > Installed apps > NepType > Uninstall रोज्नुहोस्।'],
       ['आफ्नो पाठ राख्नुहोस्', 'टाइपिङ अफलाइन हुन्छ। प्याडले कागजात सुरक्षित राख्दैन। बन्द गर्नुअघि राख्नुपर्ने पाठ कपी गर्नुहोस्।'],
-      ['परीक्षणको सीमा', 'स्वचालित जाँचका लागि Windows Server 2022 को रनर प्रयोग गर्ने व्यवस्था छ। प्रयोगकर्ताको Windows 10/11 कम्प्युटर, उच्च DPI र पहुँचयोग्यताको म्यानुअल परीक्षण बाँकी छ।']
+      ['परीक्षणको सीमा', ready ? 'Windows Server 2022 x64 मा इन्स्टल, टाइपिङ, हिज्जे चयन, युनिकोड कपी, पुनः इन्स्टल र अनइन्स्टलका स्वचालित जाँच पास भएका छन्। प्रयोगकर्ताको Windows 10/11 कम्प्युटर, उच्च DPI र पहुँचयोग्यताको म्यानुअल परीक्षण बाँकी छ।' : 'स्वचालित जाँचका लागि Windows Server 2022 को रनर प्रयोग गर्ने व्यवस्था छ। प्रयोगकर्ताको Windows 10/11 कम्प्युटर, उच्च DPI र पहुँचयोग्यताको म्यानुअल परीक्षण बाँकी छ।']
     ], link: 'Windows को स्रोत हेर्नुहोस्'
   };
   return {
@@ -40,7 +40,7 @@ export function windowsPage(release, locale) {
       ['Unsigned preview', 'This preview has no digital signature. Windows or your browser may display an unknown-publisher or SmartScreen warning.'],
       ['Install and remove', 'Open the installer to install for your user account, then open NepType from Start. To remove it, use Windows Settings > Apps > Installed apps > NepType > Uninstall.'],
       ['Keep your text', 'Typing works offline. The pad does not save documents. Copy any text you want to keep before closing it.'],
-      ['Testing limits', 'Automated verification is configured for a Windows Server 2022 runner. Manual testing on consumer Windows 10/11 computers, high-DPI displays, and assistive technology is still needed.']
+      ['Testing limits', ready ? 'Automated installation, typing, candidate selection, Unicode copy, reinstall, and uninstall checks passed on Windows Server 2022 x64. Manual testing on consumer Windows 10/11 computers, high-DPI displays, and assistive technology is still needed.' : 'Automated verification is configured for a Windows Server 2022 runner. Manual testing on consumer Windows 10/11 computers, high-DPI displays, and assistive technology is still needed.']
     ], link: 'View Windows source'
   };
 }

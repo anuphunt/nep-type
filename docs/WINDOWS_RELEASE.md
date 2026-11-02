@@ -16,26 +16,26 @@ Preparation is isolated from the unfinished primary checkout. Base source:
 `964a4bb27d1d355e99f62726890992c90a94bd60` (includes the published Mac DMG).
 Local branch: `codex/windows-installer`.
 
-The initial branch push was rejected by automatic approval review. The user then
-explicitly approved that exact push and publication of the unsigned preview only
-if Windows checks pass. The absent remote branch was checked again, and the push
-succeeded. Windows verification runs at
-https://github.com/anuphunt/nep-type/actions/runs/41526035759 on commit
-`4f067ea9b0a717a4dd3ad800104ee46910e4e7f9`. Follow the release gates below; authorization
-does not substitute for successful verification.
+The user explicitly approved the installer-branch push and unsigned publication
+conditional on passing Windows checks. All Windows gates passed at
+https://github.com/anuphunt/nep-type/actions/runs/41527376340 on tested source
+`2d4eb1be5f5f7cf0d8529266df7d3e242e9ba14b`.
 
-**Current gate result: failed; no release or website publication.** The installer
-built and installed; installed-file hashes, native dependencies, startup, engine
-load, `namaste → नमस्ते` and Unicode clipboard copy passed. The run then timed out
-at `Pani default spelling`, which expected `पानी`. A read-only check of the same
-shared Wasm engine returned `पनि` first and candidates `पनि`, `पानी`, `pani`, so the
-fixture's default-spelling expectation is inconsistent with that engine. The
-actual Windows output at failure was not captured. Later candidate/editing,
-reinstall and uninstall checks did not execute. No tests were changed or bypassed.
+Version `0.1.0-preview.1` is published as a GitHub prerelease at
+https://github.com/anuphunt/nep-type/releases/tag/windows-v0.1.0-preview.1.
+The public installer was downloaded without GitHub authentication and its SHA-256
+and byte count match the passing CI artifact: 18,402,724 bytes,
+`738ddb170a0db676f2f4f3a2f61c9d43eb32c12aed5e2ab87b3e85205b88cd68`.
+Authenticode reports `NotSigned`.
 
-Unverified artifact: `NepType-0.1.0-preview.1-windows-x64-setup.exe`, 18,402,218 bytes,
-SHA-256 `373feb617b3391b5fbd38f2160d44af4263606fe27cb6854617ee3bacf9e7259`.
-Its `package.tested` and `verification.success` remain false. Do not publish it.
+The first run failed because its fixture expected `pani` to default to `पानी`.
+The independent native contract and captured Windows controls confirm default
+`पनि`, alternatives `पनि`, `पानी`, `pani`, then a genuine output change to `पानी`
+after selection and recovery of original `pani`. Only verification and diagnostics
+changed; engine and shortcut behavior did not. The passing run also completed
+mixed/All Nepali modes, clear, clean exit, same-version reinstall, relaunch and
+complete removal. Its installed-window screenshot was inspected. The failed
+artifact remains unverified and must not be distributed as this release.
 
 ## Packaging
 
