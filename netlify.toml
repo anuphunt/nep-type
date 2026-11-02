@@ -1,5 +1,7 @@
 [build]
   base = "landing-page"
+  # Shared Rust and dictionary changes live outside the website directory.
+  ignore = "exit 1"
   command = "npm test && node build.mjs"
   publish = "dist"
 
