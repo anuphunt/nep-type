@@ -1,0 +1,13 @@
+{
+  "name": "neptype-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.28.2",
+    "posthog-js": "1.444.0"
+  }
+}

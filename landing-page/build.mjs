@@ -1,12 +1,21 @@
 import {readFile, writeFile, mkdir, copyFile, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import process from 'node:process';
+import {build as bundle} from 'esbuild';
 import {homeDescription, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
+try { process.loadEnvFile(path.join(root, '.env.local')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
 const output = path.join(root, 'dist');
 const origin = new URL(process.env.SITE_URL || process.env.URL || 'http://127.0.0.1:4174').origin;
 const production = origin.startsWith('https://') && (!process.env.CONTEXT || process.env.CONTEXT === 'production');
+const posthogKey = process.env.PUBLIC_POSTHOG_KEY || '';
+const posthogHost = process.env.PUBLIC_POSTHOG_HOST || '';
+if (Boolean(posthogKey) !== Boolean(posthogHost)) throw Error('Set PUBLIC_POSTHOG_KEY and PUBLIC_POSTHOG_HOST together.');
+if (posthogHost && new URL(posthogHost).protocol !== 'https:') throw Error('PUBLIC_POSTHOG_HOST must use HTTPS.');
+const downloadUrl = process.env.APP_DOWNLOAD_URL || '';
+if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const route = (locale, slug = '') => `${locale === 'ne' ? '/ne' : ''}/${slug ? slug + '/' : ''}`;
 const canonical = (locale, slug) => origin + route(locale, slug);
@@ -84,7 +93,17 @@ for (const asset of ['neptype-icon.png', 'neptype-mac.png']) {
   await copyFile(path.join(root, 'assets', asset), path.join(output, 'assets', asset));
 }
 // Only production assets are published; design variations and evidence stay in the repo.
-for (const asset of ['site.js', 'final.css']) await copyFile(path.join(root, asset), path.join(output, asset));
+for (const asset of ['site.js', 'final.css', 'web-engine.mjs', 'web-tool.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
+const generated = await readFile(path.join(root, '../Sources/NepaliCore/GeneratedIndexes.swift'), 'utf8');
+const commonSource = await readFile(path.join(root, '../Sources/NepaliCore/Transliterator.swift'), 'utf8');
+const englishText = generated.match(/englishText\s*=\s*"""\n([\s\S]*?)\n"""/)?.[1];
+const commonText = commonSource.match(/private static let english:\s*Set<String>\s*=\s*\[([\s\S]*?)\n\s*\]/)?.[1];
+if (!englishText || !commonText) throw Error('Cannot find the native English word data for the browser pad.');
+const lexicon = JSON.parse(await readFile(path.join(root, '../data/sources/nepali-authored-v1.json'), 'utf8'));
+const dictionary = {lexicon, englishWords: englishText.trim().split('\n'), commonEnglish: [...commonText.matchAll(/"([^"]+)"/g)].map(match => match[1])};
+await writeFile(path.join(output, 'assets/web-dictionary.json'), JSON.stringify(dictionary));
+await copyFile(path.join(root, '../data/sources/CMUDICT-LICENSE.txt'), path.join(output, 'assets/CMUDICT-LICENSE.txt'));
+await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production)}});
 let styles = await readFile(path.join(root, 'styles.css'), 'utf8');
 styles = styles.replace('&family=Playfair+Display:ital,wght@0,500;0,600;1,500', '');
 await writeFile(path.join(output, 'styles.css'), styles);
@@ -101,9 +120,13 @@ for (const locale of ['en', 'ne']) {
   for (const [slug, translated] of Object.entries(pages)) {
     const content = translated[locale];
     const sections = content.sections.map(([heading, text]) => `${heading ? `<h2>${escape(heading)}</h2>` : ''}<p>${escape(text)}</p>`).join('\n');
-    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${sections}${content.link ? `<p><a class="button" href="${repository}" target="_blank" rel="noopener noreferrer">${escape(content.link)}</a></p>` : ''}</main>`;
-    let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
-    html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`);
+    const linkUrl = slug === 'mac' && downloadUrl ? downloadUrl : repository;
+    const linkText = slug === 'mac' && downloadUrl ? (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस्' : 'Download for Mac') : content.link;
+    const linkEvent = slug === 'mac' && downloadUrl ? 'neptype_download_clicked' : 'neptype_source_opened';
+    const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
+    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${sections}${linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}" target="_blank" rel="noopener noreferrer">${escape(linkText)}</a></p>` : ''}${privacyControl}</main>`;
+    let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
+    html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);
     const pageDirectory = path.join(output, route(locale, slug));
     await mkdir(pageDirectory, {recursive: true});

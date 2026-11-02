@@ -20,7 +20,9 @@ export const nepaliCopy = {
   choiceDescription: 'हिज्जे रोज्नुहोस् वा मूल शब्द राख्नुहोस्।',
   flowTitle: 'जहाँ चाहिन्छ, पेस्ट गर्नुहोस्।',
   flowDescription: 'नेपाली पाठ कपी गरेर आफ्नो एपमा लैजानुहोस्।',
-  footerTagline: 'नेपाली लेख्ने प्याड।'
+  footerTagline: 'नेपाली लेख्ने प्याड।',
+  tryLink: 'यहीँ प्रयोग गर्नुहोस्', tryTitle: 'यहीँ प्रयोग गर्नुहोस्।', tryDescription: 'तल लेख्नुहोस्। तपाईंको लेखाइ यही ब्राउजरमा रहन्छ।',
+  webModeLabel: 'लेखाइको मोड', webExample: 'उदाहरण हेर्नुहोस्', webInputLabel: 'रोमन लेखाइ', webOutputLabel: 'नेपाली लेखाइ', webClear: 'खाली गर्नुहोस्', webCopy: 'पाठ कपी गर्नुहोस्', webSuggestions: 'अर्को हिज्जे हेर्न शब्द छान्नुहोस्।', webLocal: 'स्थानीय र अफलाइन', webReady: 'तपाईंको लेखाइ यही ब्राउजरमा रहन्छ।'
 };
 
 export const labels = {
@@ -28,6 +30,7 @@ export const labels = {
   'Get NepType': 'NepType लिनुहोस्', Home: 'गृहपृष्ठ', Platforms: 'प्लेटफर्महरू',
   Support: 'सहयोग', Feedback: 'प्रतिक्रिया', Privacy: 'गोपनीयता', Project: 'परियोजना',
   'About NepType': 'NepType बारे', 'Open source': 'खुला स्रोत', 'In progress': 'काम हुँदैछ',
+  'Try it': 'प्रयोग गर्नुहोस्',
   'Works offline': 'अफलाइन चल्छ', 'YOU TYPE': 'तपाईंको लेखाइ', NEPTYPE: 'NEPTYPE',
   'ON YOUR DEVICE': 'तपाईंकै उपकरणमा', 'No connection needed': 'इन्टरनेट चाहिँदैन',
   'Try another spelling': 'अर्को हिज्जे रोज्नुहोस्', 'Copy example': 'उदाहरण कपी गर्नुहोस्',
@@ -84,8 +87,8 @@ export const pages = {
     ne: {title: 'NepType बारे | खुला स्रोत नेपाली टाइपिङ', heading: 'NepType बारे।', description: 'अनुप ढकाल र योगदानकर्ताहरूले बनाएको Mac का लागि खुला स्रोत नेपाली टाइपिङ एप।', sections: [['', 'NepType अनुप ढकाल र योगदानकर्ताहरूले बनाएको Mac का लागि खुला स्रोत नेपाली टाइपिङ प्याड हो। यसले स्थानीय शब्दकोश र ध्वनिसम्बन्धी नियमबाट रोमन अक्षरलाई नेपालीमा बदल्छ।'], ['', 'परियोजनाको मूल कोड MIT लाइसेन्समा उपलब्ध छ। बाह्य डेटाका छुट्टै सर्तहरू रिपोजिटरीमा छन्।']], link: 'परियोजना हेर्नुहोस्'}
   },
   privacy: {
-    en: {title: 'Privacy | NepType', heading: 'Your typing stays on your device.', description: 'NepType processes typing offline without accounts or telemetry. Learn how the app and this website handle data.', sections: [['The app', 'Typing runs locally. The pad has no accounts, telemetry, or network requests. Documents and undo history stay in memory. Copy what you need before quitting.'], ['This website', 'This website has no analytics or account forms. Netlify hosts it and processes requests to serve the pages. Fonts load from Google Fonts.']]},
-    ne: {title: 'गोपनीयता | NepType', heading: 'तपाईंको लेखाइ उपकरणमै रहन्छ।', description: 'NepType ले खाता वा टेलिमेट्रीबिना अफलाइन लेखाइ प्रशोधन गर्छ। एप र वेबसाइटको गोपनीयताबारे जानकारी।', sections: [['एप', 'लेखाइ स्थानीय रूपमा प्रशोधन हुन्छ। प्याडमा खाता, टेलिमेट्री वा नेटवर्क अनुरोध छैनन्। कागजात र अन्डु इतिहास मेमोरीमा रहन्छन्। बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्।'], ['वेबसाइट', 'यो वेबसाइटमा एनालिटिक्स वा खाता फारम छैनन्। Netlify ले पृष्ठ उपलब्ध गराउन अनुरोध प्रशोधन गर्छ। फन्टहरू Google Fonts बाट आउँछन्।']]}
+    en: {title: 'Privacy | NepType', heading: 'Your typing stays on your device.', description: 'How NepType handles typing and website analytics. Typed text is processed locally and is not sent to PostHog.', sections: [['Your text', 'The browser pad processes text on your device. We do not send what you type, the output, or spelling choices to analytics. Copy text you want to keep before closing the page.'], ['Website analytics', 'We use PostHog to count visits, app-button and download clicks, and use of the browser pad. A browser identifier is stored in local storage. Session recording and automatic input capture are off. We respect Do Not Track and Global Privacy Control signals.'], ['The Mac app', 'The native typing pad works offline without accounts or telemetry.'], ['Hosting', 'Netlify processes requests to serve this website. Fonts load from Google Fonts.']]},
+    ne: {title: 'गोपनीयता | NepType', heading: 'तपाईंको लेखाइ उपकरणमै रहन्छ।', description: 'NepType को लेखाइ र वेबसाइट एनालिटिक्सबारे जानकारी। लेखेका कुरा स्थानीय रूपमा प्रशोधन हुन्छन् र PostHog मा पठाइँदैनन्।', sections: [['तपाईंको पाठ', 'ब्राउजर प्याडले पाठ उपकरणमै प्रशोधन गर्छ। तपाईंले लेखेको पाठ, तयार पाठ वा रोजेको हिज्जे एनालिटिक्समा पठाइँदैन। पृष्ठ बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्।'], ['वेबसाइट एनालिटिक्स', 'भ्रमण, एप र डाउनलोड बटनका क्लिक तथा प्याडको प्रयोग गन्न PostHog प्रयोग गर्छौँ। ब्राउजरको पहिचान स्थानीय स्टोरेजमा रहन्छ। सेसन रेकर्डिङ र स्वचालित इनपुट सङ्कलन बन्द छन्। Do Not Track र Global Privacy Control संकेत पालना गर्छौँ।'], ['Mac एप', 'नेटिभ टाइपिङ प्याड खाता र टेलिमेट्रीबिना अफलाइन चल्छ।'], ['होस्टिङ', 'Netlify ले वेबसाइट उपलब्ध गराउन अनुरोध प्रशोधन गर्छ। फन्टहरू Google Fonts बाट आउँछन्।']]}
   },
   changelog: {
     en: {title: 'What’s New | NepType', heading: 'What’s new.', description: 'Current NepType features and development updates for the open-source Nepali typing app.', sections: [['Mac typing pad', 'Nepali + EN and All Nepali modes, spelling suggestions, and copy controls.'], ['Other platforms', 'Work is underway on iPhone, Android, Windows, and Linux integrations.']], link: 'Follow development on GitHub'},

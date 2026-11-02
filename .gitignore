@@ -21,6 +21,7 @@ local.properties
 .env
 .netlify/
 landing-page/dist/
+landing-page/node_modules/
 .env.*
 !.env.example
 *.p12
