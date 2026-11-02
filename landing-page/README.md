@@ -27,7 +27,7 @@ The repository-root `netlify.toml` sets:
 - Publish directory: `dist`, relative to that base.
 - Node.js: 22.
 
-The Netlify project is `neptype-app` in the PNW Devs team, linked to `anuphunt/nep-type`. Its public URL is `https://neptype-app.netlify.app/`, and its dashboard is `https://app.netlify.com/projects/neptype-app/overview`. Pushes to `main` trigger production builds. `.netlify/` and the generated `dist/` are ignored in Git.
+The Netlify project is `neptype-app` in the PNW Devs team, linked to `anuphunt/nep-type`. Its primary public URL is `https://neptype.com/` (`www.neptype.com` redirects to the primary domain), and its dashboard is `https://app.netlify.com/projects/neptype-app/overview`. Pushes to `main` trigger production builds. `.netlify/` and the generated `dist/` are ignored in Git.
 
 Canonical URLs, Open Graph metadata, and the sitemap use Netlify's production `URL` environment variable. Set `SITE_URL` to the primary HTTPS origin if a custom domain needs to override it. Local builds and Netlify preview contexts generate `noindex` pages; production builds are indexable. `robots.txt` follows the same distinction. There is no catch-all SPA rewrite, so missing pages return a real 404.
 
