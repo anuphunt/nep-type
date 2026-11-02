@@ -1,6 +1,6 @@
 # NepType website
 
-The Graphite landing page keeps the product copy short and shows one actual Mac app screenshot. The homepage leads with the free online typing pad. Supporting pages contain a bilingual typing guide, FAQ, Mac setup, project details, privacy information, and development updates.
+The Graphite landing page keeps the product copy short and shows one actual Mac app screenshot. The homepage offers one device-specific download button, a small link to all platforms, and the free online typing pad. Supporting pages contain a bilingual typing guide, FAQ, Mac setup, project details, privacy information, and development updates.
 
 ## Build and preview
 
@@ -13,9 +13,9 @@ npm --prefix landing-page run build
 python3 -m http.server 4174 --bind 127.0.0.1 --directory landing-page/dist
 ```
 
-Open `http://127.0.0.1:4174/`. The English homepage is `/`, with Nepali at `/ne/`. Each supporting page has an equivalent Nepali URL. All page content is present in the generated HTML, including when JavaScript is disabled.
+Open `http://127.0.0.1:4174/`. The English homepage is `/`, with Nepali at `/ne/`. Each supporting page has an equivalent Nepali URL. The all-platform download page is `/download/`, with Nepali at `/ne/download/`. All page content is present in the generated HTML, including when JavaScript is disabled.
 
-`index.html` is the homepage template. `page-content.mjs` holds the supporting pages and Nepali copy. `typing-guide.mjs` holds the guide, tested input/output examples, and homepage instructions. `build.mjs` generates the static site; `site.js` handles the mobile menu, platform-status dialogs, and word-choice/copy examples.
+`index.html` is the homepage template. `page-content.mjs` holds the supporting pages and Nepali copy. `typing-guide.mjs` holds the guide, tested input/output examples, and homepage instructions. `download-page.mjs` renders the platform cards and `platform.mjs` handles device detection. `build.mjs` generates the static site; `site.js` handles the mobile menu, platform-status dialogs, and word-choice/copy examples.
 
 ## Netlify continuous deployment
 
@@ -51,17 +51,27 @@ Add `?analytics_test=1` when checking the deployed site; these events are exclud
 
 The build includes unique titles and descriptions, self-referencing canonical URLs, reciprocal English/Nepali `hreflang` links, social cards, page-specific JSON-LD, and `sitemap.xml`. Homepage markup describes the browser `WebApplication`; the Mac page describes the native `SoftwareApplication`. Supporting pages have breadcrumbs and the bilingual guide has `TechArticle` markup matching its visible project byline and publication date. App markup uses actual product details without invented offers, reviews, or ratings. Search Console verification and sitemap submission require the production site and an authorized Google account.
 
-The Mac page offers the signed, notarized universal DMG and drag-to-Applications instructions, with source builds as an alternative. Other platform controls retain development status until a downloadable release is available.
+The Mac page offers the signed, notarized universal DMG and drag-to-Applications instructions, with source builds as an alternative. The all-platform page also lists the unsigned Windows preview and marks iPhone and Linux as coming soon.
 
-### Windows preview downloads
+### Download page and device detection
 
-`/windows/` and `/ne/windows/` describe the standalone x64 typing-pad preview,
-unsigned status, setup/removal and testing limits. Homepage Windows controls link
-to these pages. `windows-release.json` remains unverified until a Windows build,
-installed-app checks, immutable upload and public checksum re-download succeed.
-No installer link or app download schema is emitted for a pending release. Follow
-[the Windows release runbook](../docs/WINDOWS_RELEASE.md); do not invent release
-metadata or treat a failed workflow artifact as a tested release.
+`/download/` and `/ne/download/` show Mac, Windows, iPhone, and Linux cards. Mac and Windows use the existing release metadata; iPhone and Linux have coming-soon labels and browser-pad links without fake download controls. Both setup pages remain available.
+
+`platform.mjs` selects the Mac or Windows installer when available, checking iPad desktop mode before Mac. iPhone, iPad, Android, Linux, and ChromeOS visitors get the browser pad. Unknown devices and browsers without JavaScript get the all-platform page. Detection is a convenience; the all-platform link and footer remain available.
+
+`windows-release.mjs` exposes the Windows installer only when `windows-release.json` has verified preview metadata. The homepage, platform card, and setup page disclose that the Windows preview is unsigned. No installer link or download schema is emitted for a pending release. Follow [the Windows release runbook](../docs/WINDOWS_RELEASE.md).
+
+After building, verify the download experience with installed Google Chrome:
+
+```sh
+npm --prefix landing-page run downloads:verify-browser
+# Also re-download both public installers and check their size and SHA-256, without executing them:
+npm --prefix landing-page run downloads:verify-browser -- --verify-downloads
+# Optional WCAG A/AA audit using an existing axe-core installation:
+AXE_CORE_PATH=/path/to/axe-core/axe.min.js npm --prefix landing-page run downloads:verify-browser
+```
+
+The check covers both languages at 320, 390, 768, 1024, and 1440 pixels, eight device profiles, coming-soon states, setup links, keyboard access, mobile menus, no-JavaScript fallback, and the browser engine/clipboard. Screenshots and a JSON report go to the ignored `landing-page/reports/downloads/` directory.
 
 ### Mac download releases
 

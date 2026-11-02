@@ -1,3 +1,6 @@
+import {configureDownloads} from './platform.mjs';
+configureDownloads(document, navigator);
+
 const dialog = document.getElementById('info-dialog');
 const dialogTitle = document.getElementById('dialog-title');
 const dialogBody = document.getElementById('dialog-body');

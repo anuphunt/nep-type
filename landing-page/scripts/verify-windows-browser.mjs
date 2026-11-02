@@ -40,9 +40,11 @@ try {
     for(const prefix of ['/','/ne/']) {
       await page.goto(base+prefix,{waitUntil:'networkidle'});
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1), `Home overflow: ${width}px ${prefix}`);
-      const windows=page.locator('.hero-actions a[href="'+prefix+'windows/"]');
+      await page.locator('.other-platforms-link').click();
+      await page.waitForLoadState('networkidle');
+      const windows=page.locator('main .setup-link[href="'+prefix+'windows/"]');
       assert.equal(await windows.count(),1);
-      assert.equal(await page.locator('a[data-mac-download]').getAttribute('href'),mac.url);
+      assert.equal(await page.locator('main .platform-download[data-platform="macOS"]').getAttribute('href'),mac.url);
       await windows.click();
       await page.waitForLoadState('networkidle');
       await page.evaluate(()=>document.fonts.ready);

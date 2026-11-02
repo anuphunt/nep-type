@@ -9,6 +9,7 @@ import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
 import {windowsDownload, windowsPage} from './windows-release.mjs';
+import {downloadPage, renderDownloadPage} from './download-page.mjs';
 import {homeHelp, typingGuide} from './typing-guide.mjs';
 import {loadArticles, articlePages} from './article-content.mjs';
 const articles = await loadArticles();
@@ -26,6 +27,7 @@ if (posthogHost && new URL(posthogHost).protocol !== 'https:') throw Error('PUBL
 const macRelease = JSON.parse(await readFile(path.join(root, 'mac-release.json'), 'utf8'));
 const windowsRelease = windowsDownload(JSON.parse(await readFile(path.join(root, 'windows-release.json'), 'utf8')));
 pages.windows = {en: windowsPage(windowsRelease, 'en'), ne: windowsPage(windowsRelease, 'ne')};
+pages.download = downloadPage;
 const downloadUrl = process.env.APP_DOWNLOAD_URL || macRelease.url;
 if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -52,6 +54,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('href="/typing-guide/"', 'href="/ne/typing-guide/"')
     .replaceAll('href="/mac/"', 'href="/ne/mac/"')
     .replaceAll('href="/windows/"', 'href="/ne/windows/"')
+    .replaceAll('href="/download/"', 'href="/ne/download/"')
     .replaceAll('href="/faq/"', 'href="/ne/faq/"')
     .replaceAll('href="/about/"', 'href="/ne/about/"')
     .replaceAll('href="/privacy/"', 'href="/ne/privacy/"')
@@ -142,6 +145,7 @@ function renderArticleList(content, locale) {
 }
 
 function finish(html, locale, slug, title, description) {
+  html = html.replaceAll('data-device-download', `data-device-download data-mac-url="${escape(downloadUrl || '')}" data-windows-url="${escape(windowsRelease?.url || '')}"`);
   if (downloadUrl) html = html.replace(/<a\b[^>]*data-mac-download[^>]*>/g, tag => tag.replace(/href="[^"]*"/, `href="${escape(downloadUrl)}"`).replace('neptype_app_cta_clicked','neptype_download_clicked'));
   html = html.replace(/<title>[\s\S]*?<\/title>/, '').replace(/\s*<meta name="description"[^>]*>/, '');
   html = html.replace('<html lang="en"', `<html lang="${locale}"`);
@@ -155,7 +159,7 @@ for (const asset of ['neptype-icon.png', 'neptype-mac.png']) {
 }
 await cp(path.join(root, 'assets/fonts'), path.join(output, 'assets/fonts'), {recursive: true});
 // Only production assets are published; design variations and evidence stay in the repo.
-for (const asset of ['site.js', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
+for (const asset of ['site.js', 'platform.mjs', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
 // Build the same Rust engine and embedded dictionary used by native adapters.
 execFileSync('bash', [path.join(root, '../scripts/build-web-engine.sh')], {stdio:'inherit'});
 const wasm = await readFile(path.join(root, 'engine-build/neptype_engine_bg.wasm'));
@@ -196,8 +200,8 @@ for (const locale of ['en', 'ne']) {
     const linkEvent = nativeDownload ? 'neptype_download_clicked' : 'neptype_source_opened';
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
     const pageAction = (linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'windows' ? ' data-platform="Windows"' : ''}${nativeDownload ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '') + (slug === 'windows' && windowsRelease ? `<p class="download-checksum">SHA-256: <code>${windowsRelease.sha256}</code></p><p><a href="${escape(windowsRelease.url + '.sha256')}">${locale === 'ne' ? 'चेकसम फाइल' : 'Checksum file'}</a> · <a href="${escape(windowsRelease.verificationUrl)}">${locale === 'ne' ? 'Windows परीक्षणको नतिजा' : 'Windows verification results'}</a></p>` : '');
-    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${slug === 'mac' ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${slug === 'mac' ? '' : pageAction}${privacyControl}</main>`;
-    let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
+    const body = slug === 'download' ? renderDownloadPage(locale, {mac:downloadUrl, windows:windowsRelease?.url, macVersion:macRelease.version, windowsVersion:windowsRelease?.version}, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${slug === 'mac' ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${slug === 'mac' ? '' : pageAction}${privacyControl}</main>`;
+    let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script type="module" src="/site.js"></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);
     const pageDirectory = path.join(output, route(locale, slug));

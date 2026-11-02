@@ -9,6 +9,9 @@ export const nepaliCopy = {
   headlineAccent: 'रोमन अक्षरबाट।',
   description: 'अंग्रेजी अक्षरमा नेपाली शब्द लेख्नुहोस्। हिज्जे रोजेर पाठ कपी गर्नुहोस्। ब्राउजरमा निःशुल्क चल्छ। अफलाइन लेख्न Mac एप वा Windows प्रिभ्यु रोज्नुहोस्।',
   cta: 'Mac का लागि डाउनलोड गर्नुहोस्',
+  getApp: 'NepType लिनुहोस्',
+  otherPlatforms: 'अन्य प्लेटफर्मका लागि डाउनलोड →',
+  downloadNote: 'Mac एप र Windows प्रिभ्यु उपलब्ध छन्।',
   windowsCta: 'Windows प्रिभ्यु', windowsStatus: 'प्रिभ्युको जानकारी',
   offline: 'खुला स्रोत',
   source: 'स्रोत हेर्नुहोस्',
@@ -29,7 +32,7 @@ export const nepaliCopy = {
 };
 
 export const labels = {
-  Articles: 'लेखहरू', 'Typing guide': 'टाइपिङ सिक्नुहोस्', Features: 'सुविधाहरू', FAQ: 'प्रश्नहरू', Changelog: 'परिवर्तनहरू',
+  Downloads: 'डाउनलोड', Articles: 'लेखहरू', 'Typing guide': 'टाइपिङ सिक्नुहोस्', Features: 'सुविधाहरू', FAQ: 'प्रश्नहरू', Changelog: 'परिवर्तनहरू',
   'Get NepType': 'NepType लिनुहोस्', Home: 'गृहपृष्ठ', Platforms: 'प्लेटफर्महरू',
   Support: 'सहयोग', Feedback: 'प्रतिक्रिया', Privacy: 'गोपनीयता', Project: 'परियोजना',
   'About NepType': 'NepType बारे', 'Open source': 'खुला स्रोत', 'In progress': 'काम हुँदैछ',

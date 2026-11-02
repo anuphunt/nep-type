@@ -34,7 +34,7 @@ test('production pages expose unique crawlable content, correct locales and vali
   build('production');
   const sitemap = await read('sitemap.xml');
   const urls = matches(sitemap, /<loc>(.*?)<\/loc>/g).map(match => match[1]);
-  assert.equal(urls.length, 18 + 2 * (await loadArticles()).length);
+  assert.equal(urls.length, 20 + 2 * (await loadArticles()).length);
   assert.equal(new Set(urls).size, urls.length);
   const titles = new Set(), descriptions = new Set(), documents = new Map();
   for (const url of urls) {

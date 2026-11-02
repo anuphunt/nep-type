@@ -72,7 +72,58 @@
 .document-page .download-checksum{overflow-wrap:anywhere}
 html[lang="ne"] .hero h1{font-family:'Noto Sans Devanagari',sans-serif;font-size:clamp(32px,3.5vw,46px);line-height:1.45;letter-spacing:-1.3px}
 .hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.other-platforms-link{display:inline-flex;align-items:center;gap:12px;font-size:12px;color:var(--muted);padding:12px 0 5px;text-decoration:underline;text-underline-offset:4px}
+.other-platforms-link:hover{color:var(--ink)}
+.device-download-note{font-size:11px;line-height:1.7;color:var(--muted);margin:10px 0 0;max-width:340px;min-height:38px}
+.downloads-page{padding-top:72px;padding-bottom:68px}
+.download-intro{text-align:center;max-width:740px;margin:0 auto 48px}
+.download-eyebrow{font-size:11px;letter-spacing:2px;color:#bce1ce;margin:0 0 23px}
+.download-intro h1{font-size:clamp(40px,4.5vw,62px);line-height:1.15;font-weight:450;letter-spacing:-2.5px;margin:0 0 22px}
+.download-intro>p:not(.download-eyebrow){font-size:15px;line-height:1.8;color:var(--muted);max-width:520px;margin:0 auto}
+.download-intro-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 22px;margin-top:25px;font-size:11px;color:#c5c5c5}
+.download-intro-meta span{display:inline-flex;align-items:center;gap:8px}
+.download-intro-meta span:before{content:'✓';color:#bce1ce}
+.download-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.download-card{min-width:0;padding:25px 23px 20px;border:1px solid #494d4b;border-radius:16px;background:linear-gradient(155deg,#303331,#252525 55%);display:flex;flex-direction:column;position:relative}
+.download-card.is-current{border-color:#a2c9b4;box-shadow:0 0 0 1px #a2c9b422,0 18px 45px #0002}
+.download-card-pending{background:linear-gradient(155deg,#292929,#232323 60%);border-color:var(--line)}
+.download-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;min-height:77px}
+.platform-logo{width:53px;height:53px;display:grid;place-items:center;background:#ffffff06;border:1px solid #ffffff12;border-radius:14px}
+.platform-logo svg{width:30px;height:32px}
+.logo-macOS{color:#ece8df}.logo-Windows{color:#9ad3f4}.logo-iOS{color:#c8b7eb}.logo-Linux{color:#e7cb82}
+.device-badge{font-size:10px;color:#c7edda;border:1px solid #6d8b7b;border-radius:20px;padding:5px 7px;text-align:center;line-height:1.4}
+.device-badge[hidden]{display:none}
+.release-status{font-size:10px;line-height:1.6;color:#bed7c9;margin-bottom:10px}
+.download-card-pending .release-status{color:#bbb}
+.download-card h2{font-size:29px;font-weight:500;letter-spacing:-.9px;margin:0 0 9px;line-height:1.2}
+.platform-subtitle{color:#d0d0d0;font-size:12px;line-height:1.6;margin:0 0 13px}
+.platform-description{color:var(--muted);font-size:12px;line-height:1.85;margin:0 0 26px}
+.platform-requirements{margin-top:auto;padding:17px 0 21px;border-top:1px solid var(--line);min-height:102px}
+.platform-requirements p{margin:0 0 5px;font-size:11px;line-height:1.6;color:#ccc}
+.platform-requirements .release-version{font-size:10px;color:var(--muted)}
+.download-card-action{display:flex;flex-direction:column;gap:10px}
+.download-card .platform-download{width:100%;font-size:11px;padding:12px 8px;gap:7px;min-height:46px;background:#d2e6da;color:#1e2923;text-align:center;line-height:1.5}
+.platform-download svg{width:17px;height:17px}
+.download-card .platform-download:hover{background:#e2f3e9}
+.setup-link{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:#bcbcbc;min-height:32px;text-align:center;line-height:1.6}
+.setup-link:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.coming-soon{display:flex;align-items:center;justify-content:center;min-height:46px;border:1px solid #464646;border-radius:7px;color:#bbb;font-size:11px;background:#ffffff03;text-align:center}
+.windows-preview-note{display:flex;align-items:flex-start;gap:15px;padding:22px 24px;margin-top:24px;border:1px solid var(--line);border-radius:12px;background:#ffffff02}
+.preview-note-icon{display:grid;place-items:center;flex-shrink:0;width:21px;height:21px;border:1px solid #888;border-radius:50%;font:12px Georgia,serif;color:#ccc}
+.windows-preview-note h2{font-size:13px;line-height:1.5;font-weight:500;margin:0 0 7px}
+.windows-preview-note p{font-size:12px;line-height:1.9;color:var(--muted);margin:0}
+.windows-preview-note a{text-decoration:underline;text-underline-offset:4px;color:#d0d0d0}
+.download-browser{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:38px;margin-top:12px}
+.download-browser h2{font-size:19px;font-weight:450;letter-spacing:-.4px;margin:0 0 9px;line-height:1.5}
+.download-browser p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+.download-browser>a{display:inline-flex;align-items:center;gap:16px;font-size:12px;white-space:nowrap;min-height:44px;text-decoration:underline;text-underline-offset:5px}
+html[lang="ne"] .download-intro h1{font-family:'Noto Sans Devanagari',sans-serif;line-height:1.5;letter-spacing:-1px;font-size:clamp(30px,3.5vw,47px)}
+html[lang="ne"] .download-card .platform-download{font-size:11px}
+@media(max-width:1100px){.download-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.download-card{padding:28px}.download-card-top{min-height:85px}.platform-description{max-width:340px}.download-card .platform-download{font-size:12px}}
+@media(max-width:600px){.downloads-page{padding-top:44px;padding-bottom:42px}.download-intro{margin-bottom:32px;text-align:left}.download-intro h1{font-size:42px;letter-spacing:-1.8px}.download-intro>p:not(.download-eyebrow){font-size:14px}.download-intro-meta{justify-content:flex-start;gap:10px 16px}.download-grid{grid-template-columns:1fr;gap:16px}.download-card{padding:25px}.download-card-top{min-height:76px}.platform-description{max-width:none}.windows-preview-note{padding:19px 17px;gap:12px}.download-browser{flex-direction:column;align-items:flex-start;gap:14px;padding-top:26px}.download-browser>a{white-space:normal}.download-eyebrow{margin-bottom:18px}html[lang="ne"] .download-intro h1{font-size:34px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}
 .try-link{font-size:12px;text-decoration:underline;text-underline-offset:5px;color:var(--muted)}
+.try-link[hidden]{display:none}
 .try-link:hover{color:var(--ink)}
 .try-section{padding-top:52px;padding-bottom:12px;scroll-margin-top:30px}
 .try-section .section-heading p{font-size:13px;line-height:1.7;color:var(--muted);margin:12px 0 0}
