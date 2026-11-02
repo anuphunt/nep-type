@@ -64,6 +64,7 @@ if (pad) {
   function render() {
     rendered = engine.render(input.value, mode.value, overrides);
     output.value = rendered.text;
+    status.textContent = words.ready;
     copy.disabled = !output.value;
     drawSuggestions();
   }

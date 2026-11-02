@@ -26,14 +26,12 @@ if (production && key && host && !privacySignal && !isOptedOut()) {
     person_profiles: 'identified_only',
     persistence: 'localStorage',
     respect_dnt: true,
-    ip: false,
     before_send(event) {
       if (!event || !safeEvents.has(event.event)) return null;
       // No tool input, output, selected words, URL query strings, or fragments.
       event.properties.$current_url = location.origin + location.pathname;
-      for (const property of ['$initial_current_url','$referrer','$initial_referrer']) {
-        const value = event.properties[property];
-        if (typeof value === 'string' && value.startsWith('http')) {
+      for (const [property, value] of Object.entries(event.properties)) {
+        if (/(url|referrer)$/i.test(property) && typeof value === 'string' && value.startsWith('http')) {
           try { const url = new URL(value); event.properties[property] = url.origin + url.pathname; } catch { delete event.properties[property]; }
         }
       }
