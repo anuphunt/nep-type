@@ -29,6 +29,7 @@ jobs:
       - run: cargo test --locked --release --manifest-path engine/Cargo.toml
       - run: cargo build --locked --release --manifest-path engine/Cargo.toml
       - run: python shared/tests/abi_smoke.py engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll
+      - run: python shared/tests/windows_pad_regression.py engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll
       - run: python portable-core/tests/conformance.py engine/target/x86_64-pc-windows-msvc/release/neptype-conformance.exe
       - run: python portable-core/tests/safety_corpus.py engine/target/x86_64-pc-windows-msvc/release/neptype-conformance.exe
       - name: Build native pad and test fixtures

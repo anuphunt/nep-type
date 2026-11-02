@@ -9,6 +9,19 @@ $installed = Join-Path $env:LOCALAPPDATA 'Programs/NepType preview परीक�
 $shortcut = Join-Path ([Environment]::GetFolderPath('Programs')) 'NepType.lnk'
 $uninstallKey = 'HKCU:/Software/Microsoft/Windows/CurrentVersion/Uninstall/{5E4BC5AE-0272-4601-9D59-3018815A456C}_is1'
 $checks = [System.Collections.Generic.List[string]]::new()
+$observations = [System.Collections.Generic.List[object]]::new()
+function Record-PadState([string]$label) {
+    if (!$window) { return }
+    $snapshot = [ordered]@{
+        label = $label
+        input = [PadUI]::Text([PadUI]::GetDlgItem($window, 101))
+        output = [PadUI]::Text([PadUI]::GetDlgItem($window, 102))
+        status = [PadUI]::Text([PadUI]::GetDlgItem($window, 110))
+        candidates = @(201..203 | ForEach-Object { [PadUI]::Text([PadUI]::GetDlgItem($window, $_)) })
+    }
+    $observations.Add($snapshot)
+    Write-Host ('PAD STATE: ' + ($snapshot | ConvertTo-Json -Compress))
+}
 function Check($value, [string]$name) {
     if (!$value) { throw "FAILED: $name" }
     $checks.Add($name)
@@ -20,6 +33,7 @@ function Wait-For([scriptblock]$condition, [string]$name) {
         if (& $condition) { Check $true $name; return }
         Start-Sleep -Milliseconds 100
     } while ([DateTime]::UtcNow -lt $deadline)
+    Record-PadState "Timeout: $name"
     throw "Timed out: $name"
 }
 Add-Type @'
@@ -95,17 +109,33 @@ try {
     Click ([PadUI]::GetDlgItem($window, 104))
     Wait-For { (Get-Clipboard -Raw) -eq 'नमस्ते' } 'Copy button writes Unicode clipboard'
     Type-Text $inputBox 'pani'
-    Wait-For { [PadUI]::Text($result) -eq 'पानी' } 'Pani default spelling'
+    # The frozen shared-engine contract defaults to पनि. Select पानी so this
+    # assertion exercises an actual output change rather than selecting default.
+    Wait-For { [PadUI]::Text($result) -eq 'पनि' } 'Pani default spelling matches shared engine'
+    Record-PadState 'Pani default before selection'
     $candidate = [IntPtr]::Zero
     Wait-For {
         foreach ($id in 201..203) {
             $button = [PadUI]::GetDlgItem($window, $id)
-            if ([PadUI]::Text($button) -eq 'पनि') { $script:candidate = $button; return $true }
+            if ([PadUI]::Text($button) -eq 'पानी') { $script:candidate = $button; return $true }
         }
         return $false
     } 'Alternative spelling appears'
     Click $candidate
-    Wait-For { [PadUI]::Text($result) -eq 'पनि' } 'Candidate selection changes output'
+    Wait-For { [PadUI]::Text($result) -eq 'पानी' } 'Alternative candidate selection changes output'
+    Check ([PadUI]::Text($inputBox) -eq 'pani') 'Candidate selection preserves Roman input'
+    Record-PadState 'Pani alternative selected'
+    $candidate = [IntPtr]::Zero
+    Wait-For {
+        foreach ($id in 201..203) {
+            $button = [PadUI]::GetDlgItem($window, $id)
+            if ([PadUI]::Text($button) -eq 'pani') { $script:candidate = $button; return $true }
+        }
+        return $false
+    } 'Original Roman spelling remains offered'
+    Click $candidate
+    Wait-For { [PadUI]::Text($result) -eq 'pani' } 'Original Roman spelling can be selected'
+    Record-PadState 'Pani original selected'
     Type-Text $inputBox 'school'
     Wait-For { [PadUI]::Text($result) -eq 'school' } 'Mixed mode preserves English'
     Click ([PadUI]::GetDlgItem($window, 106))
@@ -143,6 +173,7 @@ try {
     $package.tested = $true
     $package | ConvertTo-Json | Set-Content $packagePath -Encoding utf8
 } finally {
+    $observations | ConvertTo-Json -Depth 5 -AsArray | Set-Content "$output/observations.json" -Encoding utf8
     if ($app -and !$app.HasExited) { $app.Kill(); $app.WaitForExit() }
     $package | ConvertTo-Json | Set-Content $packagePath -Encoding utf8
     [ordered]@{
