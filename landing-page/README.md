@@ -31,7 +31,7 @@ The Netlify project is `neptype-app` in the PNW Devs team, linked to `anuphunt/n
 
 Canonical URLs, Open Graph metadata, and the sitemap default to `https://neptype.com`, independently of preview URLs. Set `SITE_URL` to override the public HTTPS canonical origin. Preview hostnames, credentials, paths, and localhost origins are rejected. Only an explicit `CONTEXT=production` build is indexable; setting `SITE_URL` alone does not enable indexing. Local and preview builds emit HTML `noindex` plus an `_headers` rule. Their robots.txt allows crawling so crawlers can read the noindex directive, and advertises no sitemap. Production robots.txt advertises the sitemap. For a local production audit, run `CONTEXT=production npm --prefix landing-page run build`. There is no catch-all SPA rewrite, so missing pages return a real 404.
 
-Only production pages, styles, scripts, product images, and the browser dictionary are published. Design variations and review screenshots stay in the repository.
+Only production pages, styles, scripts, product images, licensed fonts, and the browser dictionary are published. `fonts.css` defines the local variable font subsets; source URLs and SIL Open Font License texts are included in `assets/fonts/`. Design variations and review screenshots stay in the repository.
 
 ## Browser typing pad
 
@@ -64,7 +64,7 @@ The November 1, 2026 audit found a working indexable site whose homepage metadat
 | `/mac/` and `/ne/mac/` | Offline Nepali typing for Mac | Source setup, typing pad versus system input source |
 | `/faq/` and `/ne/faq/` | Questions about NepType | Browser loading, privacy, drafts, platform availability |
 
-Changes include browser-first homepage titles/headings/actions, original bilingual instructions and a guide with engine-verified examples, clearer offline/translation limits, contextual links, and page-specific structured data. Font stylesheets are discovered directly in HTML rather than through a CSS import; label contrast and icon dimensions are corrected. Metadata is not a guarantee of rich results. The native-app markup deliberately has no invented reviews, ratings, or offers.
+Changes include browser-first homepage titles/headings/actions, original bilingual instructions and a guide with engine-verified examples, clearer offline/translation limits, contextual links, and page-specific structured data. Licensed variable fonts are hosted with the website, with a locale-specific font preload and no Google Fonts stylesheet/connection chain; label contrast and icon dimensions are corrected. Metadata is not a guarantee of rich results. The native-app markup deliberately has no invented reviews, ratings, or offers.
 
 After deployment, verify ownership of `neptype.com` in Google Search Console, submit `https://neptype.com/sitemap.xml`, and inspect the English/Nepali homepages and guides. Use an authorized owner account for these steps. Do not use the Google Indexing API for these ordinary pages or repeatedly request indexing. Compare 28-day periods for impressions, clicks, CTR, page/query coverage, and browser-pad usage/copy events. Search Console and PostHog measure different things: query-level conversions are not available by joining anonymous visitors. No ranking gains or field Core Web Vitals have been established by this release.
 

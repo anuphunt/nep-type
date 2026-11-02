@@ -1,0 +1,11 @@
+DM Sans and Noto Sans Devanagari, distributed under the SIL Open Font License 1.1.
+License texts are included in this directory. Original variable WOFF2 subsets downloaded from Google Fonts on November 1, 2026.
+
+Sources:
+https://github.com/google/fonts/tree/main/ofl/dmsans
+https://github.com/google/fonts/tree/main/ofl/notosansdevanagari
+https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2
+https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2
+https://fonts.gstatic.com/s/notosansdevanagari/v33/TuG7UUFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN5TV_5Kl4-GIB.woff2
+https://fonts.gstatic.com/s/notosansdevanagari/v33/TuG7UUFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN6jV_5Kl4-GIB.woff2
+https://fonts.gstatic.com/s/notosansdevanagari/v33/TuG7UUFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHN5DV_5Kl4-A.woff2
