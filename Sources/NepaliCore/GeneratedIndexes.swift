@@ -173,6 +173,7 @@ enum GeneratedIndexes {
         "ma": ["म", "मा"],
         "maa": ["मा", "म"],
         "maaf": ["माफ"],
+        "maile": ["मैले"],
         "malai": ["मलाई"],
         "man": ["मन"],
         "manche": ["मान्छे"],

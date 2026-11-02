@@ -10,6 +10,20 @@ final class ComposerTests: XCTestCase {
     }
     let engine = Transliterator()
 
+    func testMaileUsesNepaliSpellingDespiteEnglishDictionaryMembership() {
+        XCTAssertTrue(engine.isKnownEnglish("maile"))
+        for word in ["maile", "Maile"] {
+            XCTAssertEqual(engine.render(word), "मैले")
+            XCTAssertEqual(engine.render("\(word) yo"), "मैले यो")
+            XCTAssertEqual(engine.render("\(word) office"), "मैले office")
+            XCTAssertEqual(engine.render(word, language: .allNepali), "मैले")
+            XCTAssertEqual(engine.render(word, language: .english), word)
+            XCTAssertEqual(engine.candidates(for: word).first, "मैले")
+            XCTAssertTrue(engine.candidates(for: word).contains(word))
+            XCTAssertEqual(engine.render(word, overrides: [0: word]), word)
+        }
+    }
+
     func testUndoRedoAcrossEmojiInsertionAndCandidateSelection() {
         var composer = Composer()
         composer.setSource("ma pani")

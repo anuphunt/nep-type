@@ -4,12 +4,24 @@ import {readFile} from 'node:fs/promises';
 import {WebEngine, tokens, retainChoices, phonetic} from '../web-engine.mjs';
 
 const lexicon = JSON.parse(await readFile(new URL('../../data/sources/nepali-authored-v1.json', import.meta.url), 'utf8'));
-const engine = new WebEngine({lexicon, englishWords:['office','meeting','hello','world','the','an','a','i','test','please'], commonEnglish:['office','meeting','hello','world','the','an','a','test','please']});
+const engine = new WebEngine({lexicon, englishWords:['office','meeting','hello','world','the','an','a','i','test','please','maile'], commonEnglish:['office','meeting','hello','world','the','an','a','test','please']});
 
 test('real mixed-language typing and Nepali sentence endings', () => {
   assert.equal(engine.render('ma office janchu.').text, 'म office जान्छु।');
   assert.equal(engine.render('bholi meeting pachi bhetau.').text, 'भोलि meeting पछि भेटौँ।');
   assert.equal(engine.render('namaste!').text, 'नमस्ते!');
+});
+test('maile uses its Nepali spelling despite English dictionary membership', () => {
+  for (const word of ['maile', 'Maile']) {
+    assert.equal(engine.render(word).text, 'मैले');
+    assert.equal(engine.render(`${word} yo`).text, 'मैले यो');
+    assert.equal(engine.render(`${word} office`).text, 'मैले office');
+    assert.equal(engine.render(word, 'all').text, 'मैले');
+    assert.equal(engine.render(word, 'english').text, word);
+    assert.equal(engine.candidates(word)[0], 'मैले');
+    assert.ok(engine.candidates(word).includes(word));
+    assert.equal(engine.render(word, 'mixed', new Map([[0, {word, value: word}]])).text, word);
+  }
 });
 test('protect URLs, email, code, identifiers, numbers, emoji and existing Nepali', () => {
   const literal = 'https://example.com/a?x=1 me@example.com `namaste` foo_bar fooBar hello-world x1 config.json src/main.swift 3.14 😀 नेपाली';
