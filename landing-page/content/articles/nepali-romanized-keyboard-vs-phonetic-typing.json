@@ -1,0 +1,300 @@
+{
+  "slug": "nepali-romanized-keyboard-vs-phonetic-typing",
+  "topicId": "romanized-versus-phonetic",
+  "status": "published",
+  "published": "2026-11-02",
+  "primaryQuery": "nepali romanized keyboard",
+  "queryVariants": [
+    "romanized keyboard vs transliteration",
+    "Nepali phonetic typing",
+    "रोमनाइज्ड किबोर्ड र रोमनबाट नेपाली टाइपिङ"
+  ],
+  "searchIntent": "Choose between learning a named fixed Nepali Romanized keyboard layout and writing Roman words in a word-based transliteration pad.",
+  "originalValue": "A task-based choice between key mapping and word conversion, with fresh home, family and village-travel examples executed against NepType, a named layout reference, and explicit limits on keyboard installation and old setup instructions.",
+  "overlapReview": "The homepage owns the broad typing tool query and the guide explains NepType controls. The mixed-language article solves English preservation. None compares the named MPP/LTK Romanized layout's key mapping with dictionary-based Roman-word input or helps a reader choose the appropriate reference. This comparison links to those pages instead of repeating their complete setup or mixed-language walkthrough. It does not claim a new download, exam compatibility or platform integration.",
+  "keywordEvidence": {
+    "provider": "Google Ads Keyword Planner",
+    "researchFile": "research/2026-11-01-keywords.json",
+    "keyword": "nepali romanized keyboard",
+    "averageMonthlySearches": "1K–10K",
+    "location": "Nepal",
+    "language": "English",
+    "network": "Google",
+    "period": "2025-10-01/2026-09-30",
+    "note": "Related measured query range, not predicted article traffic. Search Console is unavailable; no ranking or exact long-tail volume is claimed."
+  },
+  "research": [
+    {
+      "url": "https://www.ltk.org.np/keyboard_layouts.php",
+      "checked": "2026-11-02",
+      "note": "Primary layout reference describes Traditional and Romanized keyboard mappings as semi-phonetic. Its Windows XP and older Linux setup steps are historical; no current OS installation claim is derived from them."
+    },
+    {
+      "url": "https://help.keyman.com/keyboard/nepali_mpp_romanized/1.0.0/nepali_mpp_romanized",
+      "checked": "2026-11-02",
+      "note": "Named Nepali MPP Romanized package documentation supplies a desktop layout and special-key reference. Used as a reference for that package, not proof of universal key equivalence or tested installation on this Mac."
+    },
+    {
+      "url": "https://ads.google.com/aw/keywordplanner/home",
+      "checked": "2026-11-02",
+      "note": "Reviewed the repository's November 1 signed-in Keyword Planner report: Nepal, English, Google, October 2025 through September 2026, 395 ideas. The exact related query nepali romanized keyboard has a 1K–10K monthly range. No new lookup, summed variants, exact volume or organic-difficulty inference."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/132e97a58334bc6c84fcd00e81eede2be38916cc/landing-page/web-tool.mjs",
+      "checked": "2026-11-02",
+      "note": "Current fetched product implementation: editable Roman source, word suggestions, copy control and local browser pad, not installation of an OS input source. Fresh examples and candidate claims were executed against the matching current shared Wasm engine."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/132e97a58334bc6c84fcd00e81eede2be38916cc/landing-page/typing-guide.mjs",
+      "checked": "2026-11-02",
+      "note": "Reviewed both guide languages and existing mixed-language article for overlap, modes, ambiguous spellings and read-only output behavior."
+    }
+  ],
+  "exampleContexts": [
+    "home location",
+    "family",
+    "village travel"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "mero ghar najik cha.",
+        "mode": 0
+      },
+      "expectedText": "मेरो घर नजिक छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aama gharma hunuhunchha.",
+        "mode": 0
+      },
+      "expectedText": "आमा घरमा हुनुहुन्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bholi gau janchu.",
+        "mode": 0
+      },
+      "expectedText": "भोलि गाउँ जान्छु।"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "pani"
+      },
+      "includes": [
+        "पनि",
+        "पानी",
+        "pani"
+      ]
+    }
+  ],
+  "en": {
+    "title": "Nepali Romanized keyboard vs phonetic typing | NepType",
+    "heading": "Nepali Romanized keyboard or phonetic typing?",
+    "description": "See how a fixed Romanized key layout differs from NepType's word conversion, with tested examples and links to named keyboard references.",
+    "sections": [
+      [
+        "Choose an input method",
+        "If you want to type familiar Roman words and choose Nepali spellings, use a word-based transliteration pad such as NepType. If you need to learn the key positions of a particular Nepali Romanized keyboard, use that named layout's chart. Both may be described as phonetic. The word Romanized alone does not tell you which input method a tool uses.",
+        {
+          "links": [
+            [
+              "Try NepType's Roman-word input",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "A Romanized layout maps keys to Nepali characters",
+        "Language Technology Kendra describes its Romanized layout as semi-phonetic: the keys follow a sound-related mapping. You build the spelling with that layout's keys and combinations. The key chart, including its Shift layer and vowel signs, is your reference. The layout controls text entry; a font controls the appearance of the letters. Check the exact layout name before following a chart.",
+        {
+          "links": [
+            [
+              "Read LTK's Romanized layout reference",
+              "https://www.ltk.org.np/keyboard_layouts.php"
+            ],
+            [
+              "See the named MPP Romanized package's keyboard help",
+              "https://help.keyman.com/keyboard/nepali_mpp_romanized/1.0.0/nepali_mpp_romanized"
+            ]
+          ]
+        }
+      ],
+      [
+        "NepType converts the Roman words you write",
+        "In NepType, leave your usual English keyboard active and type into the Roman input box. The shared engine produces Nepali words and offers spelling choices. These examples use Nepali + EN mode. They are tested NepType inputs, not keystroke instructions for the LTK or Keyman layout.",
+        {
+          "examples": [
+            [
+              "mero ghar najik cha.",
+              "मेरो घर नजिक छ।"
+            ],
+            [
+              "aama gharma hunuhunchha.",
+              "आमा घरमा हुनुहुन्छ।"
+            ],
+            [
+              "bholi gau janchu.",
+              "भोलि गाउँ जान्छु।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Choose the spelling the sentence needs",
+        "A Roman word can have several Nepali readings. For pani, NepType offers both पनि and पानी, as well as the original Roman spelling. Choose the word that fits your meaning. A layout chart will not choose that meaning for you. In NepType, edit the Roman source or select a spelling suggestion; the Nepali output box is read-only.",
+        {
+          "links": [
+            [
+              "Read the spelling and shortcut guide",
+              "/typing-guide/"
+            ],
+            [
+              "Keep English words inside a Nepali sentence",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Match the tool to the task",
+        "For a message you plan to copy into another app, try a short sentence in the browser pad and check its spelling. For practice in a specifically named keyboard layout, learn that layout's key positions and test the selected input source in your destination app. If a course or task requires a particular layout, check its stated requirements first. NepType's browser pad does not install or switch a system keyboard.",
+        {
+          "steps": [
+            "Check whether your task names a required keyboard layout.",
+            "Use the matching key chart for layout practice, or use Roman-word input for a copyable message.",
+            "Review the finished Nepali spelling before copying it into your document."
+          ]
+        }
+      ],
+      [
+        "Use current setup instructions for your chosen layout",
+        "The LTK reference includes old Windows XP and Linux setup instructions. Do not treat those steps as a verified guide for a current computer. Its layout chart remains a reference for the layout it names. When choosing a keyboard package, check that package's current documentation for your operating system. In NepType, use Copy text to move the finished output into your own app.",
+        {
+          "links": [
+            [
+              "Open the browser typing pad",
+              "/#try"
+            ],
+            [
+              "Read the current NepType browser guide",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "रोमनाइज्ड नेपाली किबोर्ड कि रोमनबाट टाइपिङ? | NepType",
+    "heading": "रोमनाइज्ड किबोर्ड सिक्ने कि रोमनबाट नेपाली लेख्ने?",
+    "description": "निश्चित कुञ्जी भएको रोमनाइज्ड नेपाली किबोर्ड र रोमन शब्दबाट नेपाली बनाउने तरिकाको फरक बुझ्नुहोस्। उदाहरण जाँच्नुहोस् र आफ्नो कामअनुसार तरिका रोज्नुहोस्।",
+    "sections": [
+      [
+        "लेख्ने तरिका रोज्नुहोस्",
+        "रोमनमा नेपाली शब्द लेखेर हिज्जे रोज्न चाहनुहुन्छ भने NepType जस्तो रूपान्तरण प्याड प्रयोग गर्नुहोस्। कुनै निश्चित रोमनाइज्ड किबोर्डका कुञ्जी सिक्नुपर्ने हो भने त्यही लेआउटको नक्सा हेर्नुहोस्। दुवैलाई उच्चारणमा आधारित वा phonetic भनिएको भेट्न सकिन्छ। Romanized भन्ने नामले मात्र उपकरणले कुन तरिका प्रयोग गर्छ भन्ने खुल्दैन।",
+        {
+          "links": [
+            [
+              "NepType मा रोमनबाट लेखेर हेर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "रोमनाइज्ड लेआउटमा कुञ्जीको स्थान तोकिएको हुन्छ",
+        "Language Technology Kendra ले आफ्नो रोमनाइज्ड लेआउटलाई उच्चारणसँग मिल्दोजुल्दो कुञ्जी व्यवस्था भनेर वर्णन गरेको छ। यसमा तोकिएका कुञ्जी र तिनका संयोजन प्रयोग गरेर हिज्जे बनाइन्छ। Shift थिच्दा आउने अक्षर र मात्राका लागि पनि त्यही नक्सा हेर्नुपर्छ। लेआउटले कुन कुञ्जीबाट के लेखिन्छ भन्ने तोक्छ। फन्टले अक्षरको रूप बदल्छ। नक्सा हेर्नुअघि लेआउटको पूरा नाम मिलाउनुहोस्।",
+        {
+          "links": [
+            [
+              "LTK को रोमनाइज्ड लेआउट हेर्नुहोस्",
+              "https://www.ltk.org.np/keyboard_layouts.php"
+            ],
+            [
+              "MPP Romanized प्याकेजको किबोर्ड विवरण",
+              "https://help.keyman.com/keyboard/nepali_mpp_romanized/1.0.0/nepali_mpp_romanized"
+            ]
+          ]
+        }
+      ],
+      [
+        "NepType ले रोमनमा लेखेका शब्द बदल्छ",
+        "NepType मा आफ्नो सामान्य अंग्रेजी किबोर्ड चलिरहेकै अवस्थामा रोमन बाकसमा लेख्नुहोस्। साझा इन्जिनले नेपाली शब्द बनाउँछ र हिज्जेका विकल्प दिन्छ। यी उदाहरण Nepali + EN मोडका हुन्। यी NepType मा जाँचिएका रोमन वाक्य हुन्; LTK वा Keyman लेआउटमा थिच्नुपर्ने कुञ्जीको क्रम होइनन्।",
+        {
+          "examples": [
+            [
+              "mero ghar najik cha.",
+              "मेरो घर नजिक छ।"
+            ],
+            [
+              "aama gharma hunuhunchha.",
+              "आमा घरमा हुनुहुन्छ।"
+            ],
+            [
+              "bholi gau janchu.",
+              "भोलि गाउँ जान्छु।"
+            ]
+          ]
+        }
+      ],
+      [
+        "वाक्यको अर्थअनुसार हिज्जे रोज्नुहोस्",
+        "एउटै रोमन शब्दका फरक नेपाली रूप हुन सक्छन्। NepType मा pani का विकल्पमा पनि, पानी र मूल रोमन हिज्जे पाइन्छन्। आफूले भन्न खोजेको अर्थ मिल्ने शब्द रोज्नुहोस्। कुञ्जीको नक्साले अर्थअनुसार शब्द रोजिदिँदैन। NepType मा रोमन बाकस सम्पादन गर्नुहोस् वा हिज्जेको सुझाव छान्नुहोस्। नेपाली नतिजाको बाकस सिधै सम्पादन हुँदैन।",
+        {
+          "links": [
+            [
+              "हिज्जे र सर्टकटको गाइड पढ्नुहोस्",
+              "/typing-guide/"
+            ],
+            [
+              "नेपाली वाक्यमा अंग्रेजी शब्द राख्ने तरिका",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "कामअनुसार लेख्ने तरिका रोज्नुहोस्",
+        "अर्को एपमा कपी गर्ने सन्देशका लागि ब्राउजर प्याडमा छोटो वाक्य लेखेर हिज्जे जाँच्नुहोस्। तोकिएको किबोर्ड लेआउटको अभ्यास गर्न त्यसैका कुञ्जी सिक्नुहोस् र लेख्ने एपमा छानिएको किबोर्ड जाँच्नुहोस्। कुनै पाठ्यक्रम वा कामले निश्चित लेआउट मागेको छ भने त्यसका सर्त पहिले पढ्नुहोस्। NepType को ब्राउजर प्याडले प्रणालीको किबोर्ड इन्स्टल वा परिवर्तन गर्दैन।",
+        {
+          "steps": [
+            "आफ्नो काममा कुनै निश्चित किबोर्ड लेआउट मागिएको छ कि हेर्नुहोस्।",
+            "लेआउटको अभ्यासमा मिल्ने कुञ्जी नक्सा प्रयोग गर्नुहोस्; कपी गर्ने सन्देशका लागि रोमनबाट लेख्न सक्नुहुन्छ।",
+            "कागजातमा कपी गर्नुअघि तयार नेपाली हिज्जे जाँच्नुहोस्।"
+          ]
+        }
+      ],
+      [
+        "छानेको लेआउटको हालको निर्देशन पढ्नुहोस्",
+        "LTK को सन्दर्भ पृष्ठमा पुराना Windows XP र Linux का सेटअप निर्देशन पनि छन्। तिनलाई अहिलेको कम्प्युटरमा जाँचिएको निर्देशन नमान्नुहोस्। त्यसको कुञ्जी नक्सा त्यहाँ उल्लेख भएको लेआउटको सन्दर्भ हो। किबोर्ड प्याकेज रोज्दा आफ्नो अपरेटिङ सिस्टमका लागि त्यस प्याकेजको हालको विवरण पढ्नुहोस्। NepType मा तयार पाठ आफ्नो एपमा लैजान पाठ कपी गर्नुहोस् बटन प्रयोग गर्नुहोस्।",
+        {
+          "links": [
+            [
+              "ब्राउजर टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ],
+            [
+              "NepType को ब्राउजर गाइड पढ्नुहोस्",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-02",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both complete drafts, marked the font not-just/but contrast and its Nepali equivalent, repeated guide narration and repeated closing workflow. Rewrote those passages directly, simplified the English description and opening headings, then reread both versions for equivalent practical instructions. Kept corrective distinctions about input methods, read-only output and old setup steps because they affect reader choices. Compared all example strings, checks, links, source URLs, dates and metadata against the pre-pass file; they are unchanged."
+  }
+}

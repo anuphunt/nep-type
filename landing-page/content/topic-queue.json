@@ -13,7 +13,7 @@
     },
     {
       "id": "romanized-versus-phonetic",
-      "status": "eligible",
+      "status": "published",
       "query": "nepali romanized keyboard",
       "title": "Romanized Nepali keyboard versus phonetic typing: which do you need?",
       "intent": "Understand fixed keyboard layouts versus word transliteration before choosing a tool",
@@ -37,7 +37,8 @@
           "period": "2025-10-01/2026-09-30",
           "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
         }
-      ]
+      ],
+      "articleSlug": "nepali-romanized-keyboard-vs-phonetic-typing"
     },
     {
       "id": "nepali-word-workflow",
@@ -493,6 +494,6 @@
       "reason": "No scored test or exam-specific feature. Do not target these with misleading tool pages."
     }
   ],
-  "backlogPolicy": "30 upcoming research candidates, excluding the published article. Eight have related measured Keyword Planner evidence; 22 need additional validation. This is not a commitment to publish 30 separate pages. Retain, refine, consolidate or reject based on reader value and overlap.",
+  "backlogPolicy": "The November 1 plan added 30 research candidates beyond the first published article: eight with related measured Keyword Planner evidence and 22 requiring validation. Published candidates remain in this queue for history. This is not a commitment to publish 30 separate pages. Retain, refine, consolidate or reject based on reader value and overlap.",
   "selectionPolicy": "Research eligible candidates first. When none remain, review research_needed candidates and promote only after recording evidence and distinct value. A missing exact volume may be supported by a real reader question; never fabricate a metric."
 }
