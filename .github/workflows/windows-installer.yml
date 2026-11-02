@@ -1,0 +1,56 @@
+name: Windows installer
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/windows-installer]
+  pull_request:
+    paths:
+      - '.github/workflows/windows-installer.yml'
+      - 'platforms/windows/**'
+      - 'engine/**'
+      - 'shared/**'
+      - 'scripts/engine-data.py'
+permissions:
+  contents: read
+env:
+  PYTHONUTF8: '1'
+  RUSTFLAGS: '-C target-feature=+crt-static'
+  CARGO_BUILD_TARGET: x86_64-pc-windows-msvc
+jobs:
+  package:
+    runs-on: windows-2022
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/engine-data.py check
+      - run: cargo test --locked --release --manifest-path engine/Cargo.toml
+      - run: cargo build --locked --release --manifest-path engine/Cargo.toml
+      - run: python shared/tests/abi_smoke.py engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll
+      - run: python portable-core/tests/conformance.py engine/target/x86_64-pc-windows-msvc/release/neptype-conformance.exe
+      - run: python portable-core/tests/safety_corpus.py engine/target/x86_64-pc-windows-msvc/release/neptype-conformance.exe
+      - name: Build native pad and test fixtures
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory build/rust-windows -Force | Out-Null
+          Copy-Item engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll build/rust-windows/NepTypeEngine.dll
+          cmake -S platforms/windows -B build/windows -A x64 "-DNEPTYPE_ENGINE_BINARY_DIR=$pwd/build/rust-windows"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build build/windows --config Release
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          ctest --test-dir build/windows -C Release --output-on-failure
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Package unsigned preview
+        shell: pwsh
+        run: ./platforms/windows/installer/package.ps1
+      - name: Install, launch, type, copy, and uninstall
+        shell: pwsh
+        run: ./platforms/windows/installer/verify.ps1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: neptype-windows-x64
+          path: build/windows-installer/
+          if-no-files-found: error

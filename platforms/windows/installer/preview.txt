@@ -1,0 +1,13 @@
+NepType for Windows — typing-pad preview
+
+Windows 10/11, Intel or AMD 64-bit (x64).
+
+Write Roman letters in NepType, choose a spelling, and copy the Nepali output into another app. The engine works offline. This installer does not install, register, or enable a system keyboard, background service, or keyboard hook.
+
+This preview is unsigned. Windows or your browser may show an unknown-publisher or SmartScreen warning. No code-signing or SmartScreen reputation is claimed.
+
+The pad does not save documents. Copy any text you want to keep before closing it.
+
+Installs for your user account without administrator access. Remove it through Windows Settings > Apps > Installed apps > NepType > Uninstall.
+
+Source, license notices, and support: https://github.com/anuphunt/nep-type

@@ -267,7 +267,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         }
         if(LOWORD(wParam)==clearID) { SetWindowTextW(source,L""); SetWindowTextW(result,L""); copied=false; EnableWindow(copyButton,FALSE); SetFocus(source); }
         if(LOWORD(wParam)==copyID) copyOutput(window);
-        if(LOWORD(wParam)==helpID) MessageBoxW(window,L"This standalone typing-pad preview uses the Graphite layout.\n\nUses the shared offline Swift engine and canonical dictionaries. The keyboard service is not installed or enabled.",L"NepType",MB_OK|MB_ICONINFORMATION);
+        if(LOWORD(wParam)==helpID) MessageBoxW(window,L"Write Roman letters, choose a Nepali spelling, and copy the result into another app.\n\nThis standalone typing-pad preview uses the shared offline Rust engine. It does not install a system keyboard. Copy any text you want to keep before closing.",L"NepType",MB_OK|MB_ICONINFORMATION);
         return 0;
     case WM_TIMER: copied=false; KillTimer(window,1); InvalidateRect(copyButton,nullptr,TRUE); return 0;
     case WM_DESTROY: {
