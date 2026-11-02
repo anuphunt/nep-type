@@ -19,7 +19,7 @@ export function downloadAction(platform, locale, releases) {
     event: 'neptype_download_clicked', platform, note: ne ? 'macOS 13 वा पछिल्लो · Apple silicon र Intel' : 'macOS 13 or later · Apple silicon & Intel'
   };
   if (platform === 'Windows' && releases.windows) return {
-    href: releases.windows, label: ne ? 'Windows प्रिभ्यु डाउनलोड गर्नुहोस्' : 'Download Windows preview',
+    href: releases.windows, label: ne ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows',
     event: 'neptype_download_clicked', platform,
     note: ne ? 'x64 · डिजिटल हस्ताक्षर छैन; SmartScreen चेतावनी आउन सक्छ।' : 'x64 · Unsigned preview; SmartScreen may show a warning.'
   };
