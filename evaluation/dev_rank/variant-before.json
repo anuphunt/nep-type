@@ -1,0 +1,87 @@
+[
+  {
+    "available" : false,
+    "expected" : "फर्किन्छु",
+    "input" : "farkinchu",
+    "shown" : [
+      "फर्किन्चु",
+      "farkinchu"
+    ],
+    "top" : "फर्किन्चु"
+  },
+  {
+    "available" : false,
+    "expected" : "आउँछन्",
+    "input" : "aaunchan",
+    "shown" : [
+      "आउन्चन",
+      "aaunchan"
+    ],
+    "top" : "आउन्चन"
+  },
+  {
+    "available" : true,
+    "expected" : "बोल्छु",
+    "input" : "bolchu",
+    "shown" : [
+      "बोल्छु",
+      "बोल्चु",
+      "bolchu"
+    ],
+    "top" : "बोल्छु"
+  },
+  {
+    "available" : true,
+    "expected" : "पढ्छु",
+    "input" : "padhchu",
+    "shown" : [
+      "पढ्छु",
+      "पध्चु",
+      "padhchu"
+    ],
+    "top" : "पढ्छु"
+  },
+  {
+    "available" : true,
+    "expected" : "भनिन्छ",
+    "input" : "bhanincha",
+    "shown" : [
+      "भनिन्च",
+      "भनिन्छ",
+      "bhanincha"
+    ],
+    "top" : "भनिन्च"
+  },
+  {
+    "available" : true,
+    "expected" : "सकिन्छ",
+    "input" : "sakincha",
+    "shown" : [
+      "सकिन्च",
+      "सकिन्छ",
+      "sakincha"
+    ],
+    "top" : "सकिन्च"
+  },
+  {
+    "available" : true,
+    "expected" : "गर्छन्",
+    "input" : "garchan",
+    "shown" : [
+      "गर्चन",
+      "गर्छन्",
+      "garchan"
+    ],
+    "top" : "गर्चन"
+  },
+  {
+    "available" : false,
+    "expected" : "हिन्छु",
+    "input" : "hinchu",
+    "shown" : [
+      "हिन्चु",
+      "hinchu"
+    ],
+    "top" : "हिन्चु"
+  }
+]

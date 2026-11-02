@@ -1,0 +1,10 @@
+[
+{"input":"farkinchu","expected":"फर्किन्छु"},
+{"input":"aaunchan","expected":"आउँछन्"},
+{"input":"bolchu","expected":"बोल्छु"},
+{"input":"padhchu","expected":"पढ्छु"},
+{"input":"bhanincha","expected":"भनिन्छ"},
+{"input":"sakincha","expected":"सकिन्छ"},
+{"input":"garchan","expected":"गर्छन्"},
+{"input":"hinchu","expected":"हिन्छु"}
+]

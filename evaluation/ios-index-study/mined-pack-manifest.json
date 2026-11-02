@@ -1,0 +1,9 @@
+{
+  "blocks": 1506,
+  "packed_bytes": 18324907,
+  "packed_sha256": "3b0746aafbf31db589c8155e52ce0a2dae4ecd17a54510cfb763fd14e8a71717",
+  "raw_bytes": 98652429,
+  "rows": 2171523,
+  "source": "aksharantar-indiccorp-v1.tsv",
+  "source_sha256": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d"
+}

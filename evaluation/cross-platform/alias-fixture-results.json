@@ -1,0 +1,943 @@
+{
+  "fixture": "/Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/evaluation/phase1/alias-holdout-v1.json",
+  "count": 59,
+  "swift_candidates_any": 45,
+  "android_candidates_any": 41,
+  "caveat": "Earlier hand-curated Google-alias holdout, not independent of current curated and Aksharantar indexes; no context, host input or typing accuracy measured.",
+  "results": [
+    {
+      "roman": "bato",
+      "expected": [
+        "बाटो"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "बतो",
+        "बाटो",
+        "बातो",
+        "bato"
+      ],
+      "android_candidates": [
+        "बाटो",
+        "बातो"
+      ]
+    },
+    {
+      "roman": "sundar",
+      "expected": [
+        "सुन्दर"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "सुन्दर",
+        "असुन्दर",
+        "sundar"
+      ],
+      "android_candidates": [
+        "सुन्दर",
+        "असुन्दर"
+      ]
+    },
+    {
+      "roman": "biralo",
+      "expected": [
+        "बिरालो"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "बिरलो",
+        "बिरालो",
+        "biralo"
+      ],
+      "android_candidates": [
+        "बिरालो"
+      ]
+    },
+    {
+      "roman": "kukkur",
+      "expected": [
+        "कुकुर"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "कुक्कुर",
+        "kukkur"
+      ],
+      "android_candidates": [
+        "कुक्कुर"
+      ]
+    },
+    {
+      "roman": "kagaj",
+      "expected": [
+        "कागज"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "कागज",
+        "कगज",
+        "kagaj"
+      ],
+      "android_candidates": [
+        "कागज"
+      ]
+    },
+    {
+      "roman": "dokan",
+      "expected": [
+        "दोकान"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "दोकन",
+        "दोकान",
+        "dokan"
+      ],
+      "android_candidates": [
+        "दोकान"
+      ]
+    },
+    {
+      "roman": "bazaar",
+      "expected": [
+        "बजार"
+      ],
+      "swift_match": true,
+      "android_match": false,
+      "swift_candidates": [
+        "bazaar",
+        "बजार"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "surya",
+      "expected": [
+        "सूर्य"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "सुर्य",
+        "सूर्य",
+        "सूर्या",
+        "surya"
+      ],
+      "android_candidates": [
+        "सूर्य",
+        "सूर्या"
+      ]
+    },
+    {
+      "roman": "chandra",
+      "expected": [
+        "चन्द्र"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "chandra",
+        "चन्द्र",
+        "चन्द्रा"
+      ],
+      "android_candidates": [
+        "चन्द्र",
+        "चन्द्रा"
+      ]
+    },
+    {
+      "roman": "pustak",
+      "expected": [
+        "पुस्तक"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "पुस्तक",
+        "pustak"
+      ],
+      "android_candidates": [
+        "पुस्तक"
+      ]
+    },
+    {
+      "roman": "madhur",
+      "expected": [
+        "मधुर"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "मधुर",
+        "madhur"
+      ],
+      "android_candidates": [
+        "मधुर"
+      ]
+    },
+    {
+      "roman": "khusi",
+      "expected": [
+        "खुसी",
+        "खुशी"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "खुसी",
+        "खुशी",
+        "खुसि",
+        "khusi"
+      ],
+      "android_candidates": [
+        "खुसी",
+        "खुशी"
+      ]
+    },
+    {
+      "roman": "duniya",
+      "expected": [
+        "दुनियाँ"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "दुनिय",
+        "दुनिया",
+        "duniya"
+      ],
+      "android_candidates": [
+        "दुनिया"
+      ]
+    },
+    {
+      "roman": "pustakalaya",
+      "expected": [
+        "पुस्तकालय"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "पुस्तकलय",
+        "पुस्तकालय",
+        "pustakalaya"
+      ],
+      "android_candidates": [
+        "पुस्तकालय"
+      ]
+    },
+    {
+      "roman": "bimar",
+      "expected": [
+        "बिरामी"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "बिमर",
+        "बिमार",
+        "bimar"
+      ],
+      "android_candidates": [
+        "बिमार"
+      ]
+    },
+    {
+      "roman": "bihana",
+      "expected": [
+        "बिहान"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "बिहान",
+        "बिहन",
+        "बिहाना",
+        "bihana"
+      ],
+      "android_candidates": [
+        "बिहान",
+        "बिहाना"
+      ]
+    },
+    {
+      "roman": "beluka",
+      "expected": [
+        "बेलुका"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "बेलुका",
+        "बेलुक",
+        "beluka"
+      ],
+      "android_candidates": [
+        "बेलुका"
+      ]
+    },
+    {
+      "roman": "baisakh",
+      "expected": [
+        "वैशाख"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "बैसाख",
+        "बैसख",
+        "वैशाख",
+        "baisakh"
+      ],
+      "android_candidates": [
+        "बैसाख",
+        "वैशाख"
+      ]
+    },
+    {
+      "roman": "asaar",
+      "expected": [
+        "असार"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "असार",
+        "asaar"
+      ],
+      "android_candidates": [
+        "असार"
+      ]
+    },
+    {
+      "roman": "pokhara",
+      "expected": [
+        "पोखरा"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "पोखरा",
+        "पोखर",
+        "pokhara"
+      ],
+      "android_candidates": [
+        "पोखरा"
+      ]
+    },
+    {
+      "roman": "biratnagar",
+      "expected": [
+        "विराटनगर"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "बिराटनगर",
+        "बिरत्नगर",
+        "विराटनगर",
+        "biratnagar"
+      ],
+      "android_candidates": [
+        "बिराटनगर",
+        "विराटनगर"
+      ]
+    },
+    {
+      "roman": "bharat",
+      "expected": [
+        "भारत"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "bharat",
+        "भरत",
+        "भारत"
+      ],
+      "android_candidates": [
+        "भारत"
+      ]
+    },
+    {
+      "roman": "himal",
+      "expected": [
+        "हिमाल"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "हिमाल",
+        "हिमल",
+        "himal"
+      ],
+      "android_candidates": [
+        "हिमाल"
+      ]
+    },
+    {
+      "roman": "pahad",
+      "expected": [
+        "पहाड"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "पहद",
+        "पहाड",
+        "पाहाड",
+        "pahad"
+      ],
+      "android_candidates": [
+        "पहाड",
+        "पाहाड"
+      ]
+    },
+    {
+      "roman": "sagarmatha",
+      "expected": [
+        "सगरमाथा"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "सगर्मथ",
+        "सगरमाथा",
+        "सागरमाथा",
+        "sagarmatha"
+      ],
+      "android_candidates": [
+        "सगरमाथा",
+        "सागरमाथा"
+      ]
+    },
+    {
+      "roman": "chautara",
+      "expected": [
+        "चौतारा"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "चौतारा",
+        "चौतर",
+        "chautara"
+      ],
+      "android_candidates": [
+        "चौतारा"
+      ]
+    },
+    {
+      "roman": "nadi",
+      "expected": [
+        "नदी"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "नदि",
+        "नदी",
+        "nadi"
+      ],
+      "android_candidates": [
+        "नदी"
+      ]
+    },
+    {
+      "roman": "samundra",
+      "expected": [
+        "समुद्र"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "समुन्द्र",
+        "सामुन्द्र",
+        "samundra"
+      ],
+      "android_candidates": [
+        "समुन्द्र",
+        "सामुन्द्र"
+      ]
+    },
+    {
+      "roman": "aakash",
+      "expected": [
+        "आकाश"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "आकश",
+        "aakash"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "manchhe",
+      "expected": [
+        "मान्छे"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "मान्छे",
+        "मन्छे",
+        "manchhe"
+      ],
+      "android_candidates": [
+        "मान्छे"
+      ]
+    },
+    {
+      "roman": "sathiharu",
+      "expected": [
+        "साथीहरू"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "साथीहरू",
+        "सथिहरु",
+        "sathiharu"
+      ],
+      "android_candidates": [
+        "साथीहरू"
+      ]
+    },
+    {
+      "roman": "chhorachhori",
+      "expected": [
+        "छोराछोरी"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "छोराछोरी",
+        "छोरछोरि",
+        "chhorachhori"
+      ],
+      "android_candidates": [
+        "छोराछोरी"
+      ]
+    },
+    {
+      "roman": "karyalaya",
+      "expected": [
+        "कार्यालय"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "कर्यलय",
+        "karyalaya"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "bidhyalaya",
+      "expected": [
+        "विद्यालय"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "बिध्यालय",
+        "बिध्यलय",
+        "bidhyalaya"
+      ],
+      "android_candidates": [
+        "बिध्यालय"
+      ]
+    },
+    {
+      "roman": "shikshak",
+      "expected": [
+        "शिक्षक"
+      ],
+      "swift_match": true,
+      "android_match": false,
+      "swift_candidates": [
+        "शिक्षक",
+        "shikshak"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "bidhyarthi",
+      "expected": [
+        "विद्यार्थी"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "बिध्यार्थी",
+        "बिध्यर्थि",
+        "bidhyarthi"
+      ],
+      "android_candidates": [
+        "बिध्यार्थी"
+      ]
+    },
+    {
+      "roman": "aushadhi",
+      "expected": [
+        "औषधि"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "औशधि",
+        "aushadhi"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "swasthya",
+      "expected": [
+        "स्वास्थ्य"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "स्वस्थ्य",
+        "स्वास्थ्य",
+        "swasthya"
+      ],
+      "android_candidates": [
+        "स्वास्थ्य"
+      ]
+    },
+    {
+      "roman": "aspatal",
+      "expected": [
+        "अस्पताल"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "आस्पताल",
+        "अस्पतल",
+        "अस्पताल",
+        "aspatal"
+      ],
+      "android_candidates": [
+        "आस्पताल",
+        "अस्पताल"
+      ]
+    },
+    {
+      "roman": "sarkar",
+      "expected": [
+        "सरकार"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "sarkar",
+        "सर्कर",
+        "सरकार"
+      ],
+      "android_candidates": [
+        "सरकार"
+      ]
+    },
+    {
+      "roman": "samaj",
+      "expected": [
+        "समाज"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "समज",
+        "समाज",
+        "samaj"
+      ],
+      "android_candidates": [
+        "समाज"
+      ]
+    },
+    {
+      "roman": "sanskriti",
+      "expected": [
+        "संस्कृति"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "सन्स्क्रिति",
+        "sanskriti"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "sangeet",
+      "expected": [
+        "संगीत",
+        "सङ्गीत"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "सङीत",
+        "sangeet"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "pariksha",
+      "expected": [
+        "परीक्षा"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "परिक्ष",
+        "pariksha"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "sambandha",
+      "expected": [
+        "सम्बन्ध"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "सम्बन्ध",
+        "सम्वन्ध",
+        "sambandha"
+      ],
+      "android_candidates": [
+        "सम्बन्ध",
+        "सम्वन्ध"
+      ]
+    },
+    {
+      "roman": "nagarik",
+      "expected": [
+        "नागरिक"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "नगरिक",
+        "नागरिक",
+        "nagarik"
+      ],
+      "android_candidates": [
+        "नागरिक"
+      ]
+    },
+    {
+      "roman": "bikash",
+      "expected": [
+        "विकास"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "बिकश",
+        "bikash"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "samachar",
+      "expected": [
+        "समाचार"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "समचर",
+        "समाचार",
+        "samachar"
+      ],
+      "android_candidates": [
+        "समाचार"
+      ]
+    },
+    {
+      "roman": "pariwartan",
+      "expected": [
+        "परिवर्तन"
+      ],
+      "swift_match": true,
+      "android_match": false,
+      "swift_candidates": [
+        "परिवर्तन",
+        "pariwartan"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "rajniti",
+      "expected": [
+        "राजनीति"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "रज्ञिति",
+        "राजनीति",
+        "rajniti"
+      ],
+      "android_candidates": [
+        "राजनीति"
+      ]
+    },
+    {
+      "roman": "yojana",
+      "expected": [
+        "योजना"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "योजन",
+        "योजना",
+        "yojana"
+      ],
+      "android_candidates": [
+        "योजना"
+      ]
+    },
+    {
+      "roman": "kheti",
+      "expected": [
+        "खेती"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "खेति",
+        "खेती",
+        "kheti"
+      ],
+      "android_candidates": [
+        "खेती"
+      ]
+    },
+    {
+      "roman": "pustakharu",
+      "expected": [
+        "पुस्तकहरू"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "पुस्तखरु",
+        "पुस्तकहरू",
+        "pustakharu"
+      ],
+      "android_candidates": [
+        "पुस्तकहरू"
+      ]
+    },
+    {
+      "roman": "phool",
+      "expected": [
+        "फूल"
+      ],
+      "swift_match": true,
+      "android_match": false,
+      "swift_candidates": [
+        "फूल",
+        "phool"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "phul",
+      "expected": [
+        "फूल"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "फुल",
+        "फूल",
+        "phul"
+      ],
+      "android_candidates": [
+        "फुल",
+        "फूल"
+      ]
+    },
+    {
+      "roman": "rukh",
+      "expected": [
+        "रुख",
+        "रूख"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "रुख",
+        "rukh"
+      ],
+      "android_candidates": [
+        "रुख"
+      ]
+    },
+    {
+      "roman": "pakshi",
+      "expected": [
+        "पक्षी"
+      ],
+      "swift_match": false,
+      "android_match": false,
+      "swift_candidates": [
+        "पक्षि",
+        "pakshi"
+      ],
+      "android_candidates": []
+    },
+    {
+      "roman": "prajatantra",
+      "expected": [
+        "प्रजातन्त्र"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "प्रजतन्त्र",
+        "प्रजातंत्र",
+        "प्रजातन्त्र",
+        "प्रजातान्त्र",
+        "prajatantra"
+      ],
+      "android_candidates": [
+        "प्रजातंत्र",
+        "प्रजातन्त्र",
+        "प्रजातान्त्र"
+      ]
+    },
+    {
+      "roman": "samjhana",
+      "expected": [
+        "सम्झना"
+      ],
+      "swift_match": true,
+      "android_match": true,
+      "swift_candidates": [
+        "सम्झना",
+        "सम्झन",
+        "samjhana"
+      ],
+      "android_candidates": [
+        "सम्झना",
+        "सम्झन"
+      ]
+    }
+  ]
+}

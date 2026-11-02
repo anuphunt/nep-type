@@ -1,0 +1,146 @@
+[
+  {
+    "actual" : "म आज घर बस्छु",
+    "expected" : "म आज घर बस्छु",
+    "input" : "ma aaja ghar baschu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "तिमीलाई कस्तो छ",
+    "expected" : "तिमीलाई कस्तो छ",
+    "input" : "timilai kasto cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो laptop बिग्रियो",
+    "expected" : "मेरो laptop बिग्रियो",
+    "input" : "mero laptop bigriyo",
+    "split" : "dev"
+  },
+  {
+    "actual" : "भोलि बिहान office जान्छु",
+    "expected" : "भोलि बिहान office जान्छु",
+    "input" : "bholi bihana office janchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "उस्ले message pathayo",
+    "expected" : "उसले message पठायो",
+    "input" : "usle message pathayo",
+    "split" : "dev"
+  },
+  {
+    "actual" : "हामी बेलुका movie हेर्चौ",
+    "expected" : "हामी बेलुका movie हेर्छौँ",
+    "input" : "hami beluka movie herchau",
+    "split" : "dev"
+  },
+  {
+    "actual" : "please मलाई help gara",
+    "expected" : "please मलाई help गर",
+    "input" : "please malai help gara",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो book धेरै राम्रो छ",
+    "expected" : "यो book धेरै राम्रो छ",
+    "input" : "yo book dherai ramro cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "पनि खानु पर्छ",
+    "expected" : "पानी खानु पर्छ",
+    "input" : "pani khanu parcha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "the dog is sleeping",
+    "expected" : "the dog is sleeping",
+    "input" : "the dog is sleeping",
+    "split" : "dev"
+  },
+  {
+    "actual" : "meeting सुरु भैसक्यो",
+    "expected" : "meeting सुरु भइसक्यो",
+    "input" : "meeting suru bhaisakyo",
+    "split" : "dev"
+  },
+  {
+    "actual" : "maile coffee piye",
+    "expected" : "मैले coffee पिएँ",
+    "input" : "maile coffee piye",
+    "split" : "dev"
+  },
+  {
+    "actual" : "आज weather कस्तो छ",
+    "expected" : "आज weather कस्तो छ",
+    "input" : "aaja weather kasto cha",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "त्यो photo मलाई पठाउ",
+    "expected" : "त्यो photo मलाई पठाऊ",
+    "input" : "tyo photo malai pathau",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "म bazaar बाट फर्किदै छु",
+    "expected" : "म बजारबाट फर्किँदै छु",
+    "input" : "ma bazaar bata farkidai chu",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "my friend lives in london",
+    "expected" : "my friend lives in london",
+    "input" : "my friend lives in london",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "तिम्रो घर कहाँ छ",
+    "expected" : "तिम्रो घर कहाँ छ",
+    "input" : "timro ghar kaha cha",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "हिजो राति धेरै पनि पर्यो",
+    "expected" : "हिजो राति धेरै पानी पर्यो",
+    "input" : "hijo rati dherai pani paryo",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "can you send the file",
+    "expected" : "can you send the file",
+    "input" : "can you send the file",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "maile homework सकये",
+    "expected" : "मैले homework सकाएँ",
+    "input" : "maile homework sakaye",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "यो phone को screen फुत्यो",
+    "expected" : "यो phone को screen फुट्यो",
+    "input" : "yo phone ko screen futyo",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "उस्को नाम ram हो",
+    "expected" : "उसको नाम राम हो",
+    "input" : "usko naam ram ho",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "please call me tomorrow",
+    "expected" : "please call me tomorrow",
+    "input" : "please call me tomorrow",
+    "split" : "heldout"
+  },
+  {
+    "actual" : "हामी आज cricket खेल्चौ",
+    "expected" : "हामी आज cricket खेल्छौँ",
+    "input" : "hami aaja cricket khelchau",
+    "split" : "heldout"
+  }
+]

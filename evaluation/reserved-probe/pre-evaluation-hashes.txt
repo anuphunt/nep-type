@@ -1,0 +1,4 @@
+7c18905dabbe524c76a2908ca17231f277233adae0ad25f1de6c60badaed9540  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/Sources/NepaliCore/Transliterator.swift
+3bbceac5ae3e3e9814da1311e0798f59366767956af488d92802e9fc2dacbd42  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/Sources/NepaliCore/GeneratedAliasIndex.swift
+77b99b6f26d4bc1e3f523a195a1bda14e18819da858fa4a88f274dc1c768d11c  corpus.json
+bf786e5790a24b720487af2584eafe68253f6c0149284dbaefad6084a76c6e2d  /Users/anupdhakal/Documents/Codex/2026-10-29/task/verification/candidate-eval.swift

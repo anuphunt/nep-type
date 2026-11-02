@@ -1,0 +1,6853 @@
+{
+  "summary": {
+    "total": 400,
+    "swift_original": 400,
+    "swift_indexed_any": 400,
+    "swift_indexed_first_four": 400,
+    "android_indexed_four": 400,
+    "swift_auto_roman": 3
+  },
+  "note": "Index-derived synthetic sample; first indexed reading is not ground truth, frequency, language intent or an accuracy label. Android preserves original as a separate default UI control.",
+  "cases": [
+    {
+      "roman": "abps",
+      "first_indexed": "एबिपीएस",
+      "swift_original": true,
+      "swift_top": "अब्प्स",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "एबिपीएस",
+        "एबीपीएस"
+      ],
+      "swift_first_four": [
+        "अब्प्स",
+        "एबिपीएस",
+        "एबीपीएस",
+        "abps"
+      ]
+    },
+    {
+      "roman": "achemogluko",
+      "first_indexed": "अचेमोग्लुको",
+      "swift_original": true,
+      "swift_top": "अचेमोग्लुको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अचेमोग्लुको"
+      ],
+      "swift_first_four": [
+        "अचेमोग्लुको",
+        "achemogluko"
+      ]
+    },
+    {
+      "roman": "adhikarharubata",
+      "first_indexed": "अधिकारहरूबाट",
+      "swift_original": true,
+      "swift_top": "अधिकारहरूबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अधिकारहरूबाट"
+      ],
+      "swift_first_four": [
+        "अधिकारहरूबाट",
+        "अधिकर्हरुबत",
+        "adhikarharubata"
+      ]
+    },
+    {
+      "roman": "adhikariwirudhka",
+      "first_indexed": "अधिकारीविरुद्धका",
+      "swift_original": true,
+      "swift_top": "अधिकारीविरुद्धका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अधिकारीविरुद्धका"
+      ],
+      "swift_first_four": [
+        "अधिकारीविरुद्धका",
+        "अधिकरिविरुध्क",
+        "adhikariwirudhka"
+      ]
+    },
+    {
+      "roman": "adhyayanalagayatko",
+      "first_indexed": "अध्ययनलगायतको",
+      "swift_original": true,
+      "swift_top": "अध्ययनलगायतको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अध्ययनलगायतको"
+      ],
+      "swift_first_four": [
+        "अध्ययनलगायतको",
+        "अध्ययनलगयत्को",
+        "adhyayanalagayatko"
+      ]
+    },
+    {
+      "roman": "airpotmai",
+      "first_indexed": "एयरपोटमै",
+      "swift_original": true,
+      "swift_top": "एयरपोटमै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "एयरपोटमै"
+      ],
+      "swift_first_four": [
+        "एयरपोटमै",
+        "ऐर्पोत्मै",
+        "airpotmai"
+      ]
+    },
+    {
+      "roman": "akedemyko",
+      "first_indexed": "अकेडेमीको",
+      "swift_original": true,
+      "swift_top": "अकेडेमीको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अकेडेमीको"
+      ],
+      "swift_first_four": [
+        "अकेडेमीको",
+        "अकेदेम्य्को",
+        "akedemyko"
+      ]
+    },
+    {
+      "roman": "akharia",
+      "first_indexed": "अखरिया",
+      "swift_original": true,
+      "swift_top": "अखरिया",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अखरिया"
+      ],
+      "swift_first_four": [
+        "अखरिया",
+        "अखरिअ",
+        "akharia"
+      ]
+    },
+    {
+      "roman": "akramanpidit",
+      "first_indexed": "आक्रमणपीडित",
+      "swift_original": true,
+      "swift_top": "आक्रमणपीडित",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "आक्रमणपीडित"
+      ],
+      "swift_first_four": [
+        "आक्रमणपीडित",
+        "अक्रमन्पिदित",
+        "akramanpidit"
+      ]
+    },
+    {
+      "roman": "albhs",
+      "first_indexed": "अल्भ्स",
+      "swift_original": true,
+      "swift_top": "अल्भ्स",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अल्भ्स"
+      ],
+      "swift_first_four": [
+        "अल्भ्स",
+        "albhs"
+      ]
+    },
+    {
+      "roman": "aliman",
+      "first_indexed": "अलिमान",
+      "swift_original": true,
+      "swift_top": "अलिमान",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अलिमान"
+      ],
+      "swift_first_four": [
+        "अलिमान",
+        "अलिमन",
+        "aliman"
+      ]
+    },
+    {
+      "roman": "alviaka",
+      "first_indexed": "अलवियाका",
+      "swift_original": true,
+      "swift_top": "अलवियाका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अलवियाका"
+      ],
+      "swift_first_four": [
+        "अलवियाका",
+        "अल्विअक",
+        "alviaka"
+      ]
+    },
+    {
+      "roman": "andharkama",
+      "first_indexed": "अन्धरकामा",
+      "swift_original": true,
+      "swift_top": "अन्धरकामा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अन्धरकामा"
+      ],
+      "swift_first_four": [
+        "अन्धरकामा",
+        "अन्धर्कम",
+        "andharkama"
+      ]
+    },
+    {
+      "roman": "anurodadh",
+      "first_indexed": "अनुरोदध",
+      "swift_original": true,
+      "swift_top": "अनुरोदध",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अनुरोदध"
+      ],
+      "swift_first_four": [
+        "अनुरोदध",
+        "anurodadh"
+      ]
+    },
+    {
+      "roman": "apanamanlai",
+      "first_indexed": "अपनामानलाई",
+      "swift_original": true,
+      "swift_top": "अपनामानलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अपनामानलाई"
+      ],
+      "swift_first_four": [
+        "अपनामानलाई",
+        "अपनमन्लै",
+        "apanamanlai"
+      ]
+    },
+    {
+      "roman": "apperalska",
+      "first_indexed": "एपरल्सका",
+      "swift_original": true,
+      "swift_top": "एपरल्सका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "एपरल्सका"
+      ],
+      "swift_first_four": [
+        "एपरल्सका",
+        "अप्पेरल्स्क",
+        "apperalska"
+      ]
+    },
+    {
+      "roman": "aptimoko",
+      "first_indexed": "अप्टिमोको",
+      "swift_original": true,
+      "swift_top": "अप्टिमोको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अप्टिमोको"
+      ],
+      "swift_first_four": [
+        "अप्टिमोको",
+        "अप्तिमोको",
+        "aptimoko"
+      ]
+    },
+    {
+      "roman": "apurtimama",
+      "first_indexed": "आपूर्तिमामा",
+      "swift_original": true,
+      "swift_top": "आपूर्तिमामा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "आपूर्तिमामा"
+      ],
+      "swift_first_four": [
+        "आपूर्तिमामा",
+        "अपुर्तिमम",
+        "apurtimama"
+      ]
+    },
+    {
+      "roman": "arunachanchal",
+      "first_indexed": "अरुणाचञ्चल",
+      "swift_original": true,
+      "swift_top": "अरुणाचञ्चल",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अरुणाचञ्चल"
+      ],
+      "swift_first_four": [
+        "अरुणाचञ्चल",
+        "अरुनचन्चल",
+        "arunachanchal"
+      ]
+    },
+    {
+      "roman": "asahakarya",
+      "first_indexed": "असहकार्य",
+      "swift_original": true,
+      "swift_top": "असहकार्य",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "असहकार्य"
+      ],
+      "swift_first_four": [
+        "असहकार्य",
+        "असहकर्य",
+        "asahakarya"
+      ]
+    },
+    {
+      "roman": "asepaselai",
+      "first_indexed": "आसेपासेलाई",
+      "swift_original": true,
+      "swift_top": "आसेपासेलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "आसेपासेलाई"
+      ],
+      "swift_first_four": [
+        "आसेपासेलाई",
+        "असेपसेलै",
+        "asepaselai"
+      ]
+    },
+    {
+      "roman": "atishayyukta",
+      "first_indexed": "अतिशययुक्त",
+      "swift_original": true,
+      "swift_top": "अतिशययुक्त",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अतिशययुक्त"
+      ],
+      "swift_first_four": [
+        "अतिशययुक्त",
+        "अतिशय्युक्त",
+        "atishayyukta"
+      ]
+    },
+    {
+      "roman": "atyaunegari",
+      "first_indexed": "अत्याउनेगरी",
+      "swift_original": true,
+      "swift_top": "अत्याउनेगरी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अत्याउनेगरी"
+      ],
+      "swift_first_four": [
+        "अत्याउनेगरी",
+        "अत्यौनेगरि",
+        "atyaunegari"
+      ]
+    },
+    {
+      "roman": "aundaichhu",
+      "first_indexed": "आउँदैछु",
+      "swift_original": true,
+      "swift_top": "आउँदैछु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "आउँदैछु"
+      ],
+      "swift_first_four": [
+        "आउँदैछु",
+        "औन्दैछु",
+        "aundaichhu"
+      ]
+    },
+    {
+      "roman": "aurahilai",
+      "first_indexed": "औरहीलाई",
+      "swift_original": true,
+      "swift_top": "औरहीलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "औरहीलाई"
+      ],
+      "swift_first_four": [
+        "औरहीलाई",
+        "औरहिलै",
+        "aurahilai"
+      ]
+    },
+    {
+      "roman": "awasarbadbata",
+      "first_indexed": "अवसरबादबाट",
+      "swift_original": true,
+      "swift_top": "अवसरबादबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अवसरबादबाट"
+      ],
+      "swift_first_four": [
+        "अवसरबादबाट",
+        "अवसर्बद्बत",
+        "awasarbadbata"
+      ]
+    },
+    {
+      "roman": "babunmadhye",
+      "first_indexed": "बबुनमध्ये",
+      "swift_original": true,
+      "swift_top": "बबुनमध्ये",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बबुनमध्ये"
+      ],
+      "swift_first_four": [
+        "बबुनमध्ये",
+        "बबुन्मध्ये",
+        "babunmadhye"
+      ]
+    },
+    {
+      "roman": "badigaunlai",
+      "first_indexed": "बडिगाउँलाई",
+      "swift_original": true,
+      "swift_top": "बडिगाउँलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बडिगाउँलाई"
+      ],
+      "swift_first_four": [
+        "बडिगाउँलाई",
+        "बदिगौन्लै",
+        "badigaunlai"
+      ]
+    },
+    {
+      "roman": "badisemingbare",
+      "first_indexed": "बडिसेमिङबारे",
+      "swift_original": true,
+      "swift_top": "बडिसेमिङबारे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बडिसेमिङबारे"
+      ],
+      "swift_first_four": [
+        "बडिसेमिङबारे",
+        "बदिसेमिङ्बरे",
+        "badisemingbare"
+      ]
+    },
+    {
+      "roman": "bagaka",
+      "first_indexed": "बगाका",
+      "swift_original": true,
+      "swift_top": "बगक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बगाका",
+        "बागाका"
+      ],
+      "swift_first_four": [
+        "बगक",
+        "बगाका",
+        "बागाका",
+        "bagaka"
+      ]
+    },
+    {
+      "roman": "bahudhruwiya",
+      "first_indexed": "बहुध्रुविय",
+      "swift_original": true,
+      "swift_top": "बहुध्रुविय",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बहुध्रुविय"
+      ],
+      "swift_first_four": [
+        "बहुध्रुविय",
+        "bahudhruwiya"
+      ]
+    },
+    {
+      "roman": "bakobh",
+      "first_indexed": "बाकोभ",
+      "swift_original": true,
+      "swift_top": "बाकोभ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बाकोभ"
+      ],
+      "swift_first_four": [
+        "बाकोभ",
+        "बकोभ",
+        "bakobh"
+      ]
+    },
+    {
+      "roman": "balapursammako",
+      "first_indexed": "बालापुरसम्मको",
+      "swift_original": true,
+      "swift_top": "बालापुरसम्मको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बालापुरसम्मको"
+      ],
+      "swift_first_four": [
+        "बालापुरसम्मको",
+        "बलपुर्सम्मको",
+        "balapursammako"
+      ]
+    },
+    {
+      "roman": "balikaha",
+      "first_indexed": "बालिकाः",
+      "swift_original": true,
+      "swift_top": "बालिकाः",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बालिकाः"
+      ],
+      "swift_first_four": [
+        "बालिकाः",
+        "बलिकह",
+        "balikaha"
+      ]
+    },
+    {
+      "roman": "balsanrakshansangai",
+      "first_indexed": "बालसंरक्षणसँगै",
+      "swift_original": true,
+      "swift_top": "बालसंरक्षणसँगै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बालसंरक्षणसँगै"
+      ],
+      "swift_first_four": [
+        "बालसंरक्षणसँगै",
+        "बल्सन्रक्षन्सङै",
+        "balsanrakshansangai"
+      ]
+    },
+    {
+      "roman": "bardoko",
+      "first_indexed": "बार्दोको",
+      "swift_original": true,
+      "swift_top": "बार्दोको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बार्दोको"
+      ],
+      "swift_first_four": [
+        "बार्दोको",
+        "बर्दोको",
+        "bardoko"
+      ]
+    },
+    {
+      "roman": "bastabastai",
+      "first_indexed": "बस्ताबस्तै",
+      "swift_original": true,
+      "swift_top": "बस्ताबस्तै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बस्ताबस्तै"
+      ],
+      "swift_first_four": [
+        "बस्ताबस्तै",
+        "बस्तबस्तै",
+        "bastabastai"
+      ]
+    },
+    {
+      "roman": "bauryainubhaeko",
+      "first_indexed": "बौर्याइनुभएको",
+      "swift_original": true,
+      "swift_top": "बौर्याइनुभएको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बौर्याइनुभएको"
+      ],
+      "swift_first_four": [
+        "बौर्याइनुभएको",
+        "बौर्यैनुभएको",
+        "bauryainubhaeko"
+      ]
+    },
+    {
+      "roman": "benighatle",
+      "first_indexed": "बेनिघाटले",
+      "swift_original": true,
+      "swift_top": "बेनिघाटले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बेनिघाटले"
+      ],
+      "swift_first_four": [
+        "बेनिघाटले",
+        "बेनिघत्ले",
+        "benighatle"
+      ]
+    },
+    {
+      "roman": "bhaejajastai",
+      "first_indexed": "भएजजस्तै",
+      "swift_original": true,
+      "swift_top": "भएजजस्तै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भएजजस्तै"
+      ],
+      "swift_first_four": [
+        "भएजजस्तै",
+        "bhaejajastai"
+      ]
+    },
+    {
+      "roman": "bhagatanile",
+      "first_indexed": "भगतानीले",
+      "swift_original": true,
+      "swift_top": "भगतानीले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भगतानीले"
+      ],
+      "swift_first_four": [
+        "भगतानीले",
+        "भगतनिले",
+        "bhagatanile"
+      ]
+    },
+    {
+      "roman": "bhairahekothyo",
+      "first_indexed": "भइरहेकोथ्यो",
+      "swift_original": true,
+      "swift_top": "भइरहेकोथ्यो",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भइरहेकोथ्यो"
+      ],
+      "swift_first_four": [
+        "भइरहेकोथ्यो",
+        "भैरहेकोथ्यो",
+        "bhairahekothyo"
+      ]
+    },
+    {
+      "roman": "bhaktajoshi",
+      "first_indexed": "भक्तजोशी",
+      "swift_original": true,
+      "swift_top": "भक्तजोशी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भक्तजोशी"
+      ],
+      "swift_first_four": [
+        "भक्तजोशी",
+        "भक्तजोशि",
+        "bhaktajoshi"
+      ]
+    },
+    {
+      "roman": "bharatisthat",
+      "first_indexed": "भारतिस्थत",
+      "swift_original": true,
+      "swift_top": "भारतिस्थत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भारतिस्थत"
+      ],
+      "swift_first_four": [
+        "भारतिस्थत",
+        "भरतिस्थत",
+        "bharatisthat"
+      ]
+    },
+    {
+      "roman": "bharjanmabatai",
+      "first_indexed": "भरजन्मबाटै",
+      "swift_original": true,
+      "swift_top": "भरजन्मबाटै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भरजन्मबाटै"
+      ],
+      "swift_first_four": [
+        "भरजन्मबाटै",
+        "भर्जन्मबतै",
+        "bharjanmabatai"
+      ]
+    },
+    {
+      "roman": "bhashmanchal",
+      "first_indexed": "भष्माञ्चल",
+      "swift_original": true,
+      "swift_top": "भष्माञ्चल",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भष्माञ्चल"
+      ],
+      "swift_first_four": [
+        "भष्माञ्चल",
+        "भश्मन्चल",
+        "bhashmanchal"
+      ]
+    },
+    {
+      "roman": "bhijirakhepachhi",
+      "first_indexed": "भिजिराखेपछि",
+      "swift_original": true,
+      "swift_top": "भिजिराखेपछि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भिजिराखेपछि"
+      ],
+      "swift_first_four": [
+        "भिजिराखेपछि",
+        "भिजिरखेपछि",
+        "bhijirakhepachhi"
+      ]
+    },
+    {
+      "roman": "bhogachalanle",
+      "first_indexed": "भोगचलनले",
+      "swift_original": true,
+      "swift_top": "भोगचलनले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भोगचलनले"
+      ],
+      "swift_first_four": [
+        "भोगचलनले",
+        "भोगचलन्ले",
+        "bhogachalanle"
+      ]
+    },
+    {
+      "roman": "bhojpurabahek",
+      "first_indexed": "भोजपुराबाहेक",
+      "swift_original": true,
+      "swift_top": "भोजपुराबाहेक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भोजपुराबाहेक"
+      ],
+      "swift_first_four": [
+        "भोजपुराबाहेक",
+        "भोज्पुरबहेक",
+        "bhojpurabahek"
+      ]
+    },
+    {
+      "roman": "bhumibalbahek",
+      "first_indexed": "भूमिबलबाहेक",
+      "swift_original": true,
+      "swift_top": "भूमिबलबाहेक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भूमिबलबाहेक"
+      ],
+      "swift_first_four": [
+        "भूमिबलबाहेक",
+        "भुमिबल्बहेक",
+        "bhumibalbahek"
+      ]
+    },
+    {
+      "roman": "bhungrobata",
+      "first_indexed": "भुंग्रोबाट",
+      "swift_original": true,
+      "swift_top": "भुङ्रोबत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "भुंग्रोबाट",
+        "भुङ्ग्रोबाट",
+        "भूंग्रोबाट"
+      ],
+      "swift_first_four": [
+        "भुङ्रोबत",
+        "भुंग्रोबाट",
+        "भुङ्ग्रोबाट",
+        "भूंग्रोबाट"
+      ]
+    },
+    {
+      "roman": "bokrabahek",
+      "first_indexed": "बोक्राबाहेक",
+      "swift_original": true,
+      "swift_top": "बोक्राबाहेक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बोक्राबाहेक"
+      ],
+      "swift_first_four": [
+        "बोक्राबाहेक",
+        "बोक्रबहेक",
+        "bokrabahek"
+      ]
+    },
+    {
+      "roman": "bornera",
+      "first_indexed": "बोर्नेर",
+      "swift_original": true,
+      "swift_top": "बोर्नेर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बोर्नेर"
+      ],
+      "swift_first_four": [
+        "बोर्नेर",
+        "bornera"
+      ]
+    },
+    {
+      "roman": "brishashenko",
+      "first_indexed": "बृषशेनको",
+      "swift_original": true,
+      "swift_top": "बृषशेनको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बृषशेनको"
+      ],
+      "swift_first_four": [
+        "बृषशेनको",
+        "ब्रिशशेन्को",
+        "brishashenko"
+      ]
+    },
+    {
+      "roman": "briswenka",
+      "first_indexed": "ब्रिसवेनका",
+      "swift_original": true,
+      "swift_top": "ब्रिसवेनका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ब्रिसवेनका"
+      ],
+      "swift_first_four": [
+        "ब्रिसवेनका",
+        "ब्रिस्वेन्क",
+        "briswenka"
+      ]
+    },
+    {
+      "roman": "bryopteris",
+      "first_indexed": "ब्रायोप्टेरिस",
+      "swift_original": true,
+      "swift_top": "ब्रायोप्टेरिस",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ब्रायोप्टेरिस"
+      ],
+      "swift_first_four": [
+        "ब्रायोप्टेरिस",
+        "ब्र्योप्तेरिस",
+        "bryopteris"
+      ]
+    },
+    {
+      "roman": "budhaputra",
+      "first_indexed": "बुधपुत्र",
+      "swift_original": true,
+      "swift_top": "बुधपुत्र",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बुधपुत्र"
+      ],
+      "swift_first_four": [
+        "बुधपुत्र",
+        "budhaputra"
+      ]
+    },
+    {
+      "roman": "bujhabar",
+      "first_indexed": "बुझबार",
+      "swift_original": true,
+      "swift_top": "बुझबार",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "बुझबार"
+      ],
+      "swift_first_four": [
+        "बुझबार",
+        "बुझबर",
+        "bujhabar"
+      ]
+    },
+    {
+      "roman": "byajdarbichko",
+      "first_indexed": "ब्याजदरबीचको",
+      "swift_original": true,
+      "swift_top": "ब्याजदरबीचको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ब्याजदरबीचको"
+      ],
+      "swift_first_four": [
+        "ब्याजदरबीचको",
+        "ब्यज्दर्बिच्को",
+        "byajdarbichko"
+      ]
+    },
+    {
+      "roman": "callisle",
+      "first_indexed": "क्यालिसले",
+      "swift_original": true,
+      "swift_top": "क्यालिसले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्यालिसले"
+      ],
+      "swift_first_four": [
+        "क्यालिसले",
+        "चल्लिस्ले",
+        "callisle"
+      ]
+    },
+    {
+      "roman": "camaroup",
+      "first_indexed": "क्यामारुप",
+      "swift_original": true,
+      "swift_top": "क्यामारुप",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्यामारुप"
+      ],
+      "swift_first_four": [
+        "क्यामारुप",
+        "चमरोउप",
+        "camaroup"
+      ]
+    },
+    {
+      "roman": "cangingsomma",
+      "first_indexed": "क्यान्जिङसम्म",
+      "swift_original": true,
+      "swift_top": "क्यान्जिङसम्म",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्यान्जिङसम्म"
+      ],
+      "swift_first_four": [
+        "क्यान्जिङसम्म",
+        "चङिङ्सोम्म",
+        "cangingsomma"
+      ]
+    },
+    {
+      "roman": "cardgari",
+      "first_indexed": "कार्डगरी",
+      "swift_original": true,
+      "swift_top": "कार्डगरी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कार्डगरी"
+      ],
+      "swift_first_four": [
+        "कार्डगरी",
+        "चर्द्गरि",
+        "cardgari"
+      ]
+    },
+    {
+      "roman": "carrierslai",
+      "first_indexed": "क्यारियर्सलाई",
+      "swift_original": true,
+      "swift_top": "क्यारियर्सलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्यारियर्सलाई"
+      ],
+      "swift_first_four": [
+        "क्यारियर्सलाई",
+        "चर्रिएर्स्लै",
+        "carrierslai"
+      ]
+    },
+    {
+      "roman": "celherst",
+      "first_indexed": "सेल्हर्स्ट",
+      "swift_original": true,
+      "swift_top": "सेल्हर्स्ट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सेल्हर्स्ट"
+      ],
+      "swift_first_four": [
+        "सेल्हर्स्ट",
+        "चेल्हेर्स्त",
+        "celherst"
+      ]
+    },
+    {
+      "roman": "centiments",
+      "first_indexed": "सेन्टिमेन्टस",
+      "swift_original": true,
+      "swift_top": "चेन्तिमेन्त्स",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सेन्टिमेन्टस",
+        "सेन्टिमेन्टस्",
+        "सेन्टिमेन्ट्स",
+        "सेन्टीमेन्ट्स"
+      ],
+      "swift_first_four": [
+        "चेन्तिमेन्त्स",
+        "सेन्टिमेन्टस",
+        "सेन्टिमेन्टस्",
+        "सेन्टिमेन्ट्स"
+      ]
+    },
+    {
+      "roman": "chahadainathie",
+      "first_indexed": "चाहदैनथिए",
+      "swift_original": true,
+      "swift_top": "चाहदैनथिए",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चाहदैनथिए"
+      ],
+      "swift_first_four": [
+        "चाहदैनथिए",
+        "चहदैनथिए",
+        "chahadainathie"
+      ]
+    },
+    {
+      "roman": "chakrakunda",
+      "first_indexed": "चक्रकुण्ड",
+      "swift_original": true,
+      "swift_top": "चक्रकुण्ड",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चक्रकुण्ड"
+      ],
+      "swift_first_four": [
+        "चक्रकुण्ड",
+        "चक्रकुन्द",
+        "chakrakunda"
+      ]
+    },
+    {
+      "roman": "chaparna",
+      "first_indexed": "चपर्न",
+      "swift_original": true,
+      "swift_top": "चपर्न",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चपर्न"
+      ],
+      "swift_first_four": [
+        "चपर्न",
+        "chaparna"
+      ]
+    },
+    {
+      "roman": "charambima",
+      "first_indexed": "चरम्बीमा",
+      "swift_original": true,
+      "swift_top": "चरम्बीमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चरम्बीमा"
+      ],
+      "swift_first_four": [
+        "चरम्बीमा",
+        "चरम्बिम",
+        "charambima"
+      ]
+    },
+    {
+      "roman": "chatrachitra",
+      "first_indexed": "चत्रचित्र",
+      "swift_original": true,
+      "swift_top": "चत्रचित्र",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चत्रचित्र"
+      ],
+      "swift_first_four": [
+        "चत्रचित्र",
+        "chatrachitra"
+      ]
+    },
+    {
+      "roman": "chaughuda",
+      "first_indexed": "चौघुडा",
+      "swift_original": true,
+      "swift_top": "चौघुडा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चौघुडा"
+      ],
+      "swift_first_four": [
+        "चौघुडा",
+        "चौघुद",
+        "chaughuda"
+      ]
+    },
+    {
+      "roman": "chesmanai",
+      "first_indexed": "चेसमानै",
+      "swift_original": true,
+      "swift_top": "चेसमानै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चेसमानै"
+      ],
+      "swift_first_four": [
+        "चेसमानै",
+        "चेस्मनै",
+        "chesmanai"
+      ]
+    },
+    {
+      "roman": "chhatrawritiantargat",
+      "first_indexed": "छात्रवृतिअन्तर्गत",
+      "swift_original": true,
+      "swift_top": "छात्रवृतिअन्तर्गत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "छात्रवृतिअन्तर्गत"
+      ],
+      "swift_first_four": [
+        "छात्रवृतिअन्तर्गत",
+        "छत्रव्रितिअन्तर्गत",
+        "chhatrawritiantargat"
+      ]
+    },
+    {
+      "roman": "chhopejhain",
+      "first_indexed": "छोपेझैँ",
+      "swift_original": true,
+      "swift_top": "छोपेझैन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "छोपेझैँ",
+        "छोपेझैं"
+      ],
+      "swift_first_four": [
+        "छोपेझैन",
+        "छोपेझैँ",
+        "छोपेझैं",
+        "chhopejhain"
+      ]
+    },
+    {
+      "roman": "chhorihar",
+      "first_indexed": "छोरीहर",
+      "swift_original": true,
+      "swift_top": "छोरीहर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "छोरीहर"
+      ],
+      "swift_first_four": [
+        "छोरीहर",
+        "छोरिहर",
+        "chhorihar"
+      ]
+    },
+    {
+      "roman": "chhotepatan",
+      "first_indexed": "छोटेपाटन",
+      "swift_original": true,
+      "swift_top": "छोटेपाटन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "छोटेपाटन"
+      ],
+      "swift_first_four": [
+        "छोटेपाटन",
+        "छोतेपतन",
+        "chhotepatan"
+      ]
+    },
+    {
+      "roman": "chhuttayaepani",
+      "first_indexed": "छुट्टयाएपनि",
+      "swift_original": true,
+      "swift_top": "छुट्टयाएपनि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "छुट्टयाएपनि"
+      ],
+      "swift_first_four": [
+        "छुट्टयाएपनि",
+        "छुत्तयएपनि",
+        "chhuttayaepani"
+      ]
+    },
+    {
+      "roman": "chhuwaun",
+      "first_indexed": "छुवाउँ",
+      "swift_original": true,
+      "swift_top": "छुवाउँ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "छुवाउँ"
+      ],
+      "swift_first_four": [
+        "छुवाउँ",
+        "छुवौन",
+        "chhuwaun"
+      ]
+    },
+    {
+      "roman": "chikistakko",
+      "first_indexed": "चिकिस्तकको",
+      "swift_original": true,
+      "swift_top": "चिकिस्तकको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चिकिस्तकको"
+      ],
+      "swift_first_four": [
+        "चिकिस्तकको",
+        "चिकिस्तक्को",
+        "chikistakko"
+      ]
+    },
+    {
+      "roman": "chilimebahekaka",
+      "first_indexed": "चिलिमेबाहेकका",
+      "swift_original": true,
+      "swift_top": "चिलिमेबाहेकका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चिलिमेबाहेकका"
+      ],
+      "swift_first_four": [
+        "चिलिमेबाहेकका",
+        "चिलिमेबहेकक",
+        "chilimebahekaka"
+      ]
+    },
+    {
+      "roman": "choriepachhi",
+      "first_indexed": "चोरिएपछि",
+      "swift_original": true,
+      "swift_top": "चोरिएपछि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "चोरिएपछि",
+        "चोरीएपछि"
+      ],
+      "swift_first_four": [
+        "चोरिएपछि",
+        "चोरीएपछि",
+        "choriepachhi"
+      ]
+    },
+    {
+      "roman": "clarete",
+      "first_indexed": "क्लारेट",
+      "swift_original": true,
+      "swift_top": "क्लारेट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्लारेट"
+      ],
+      "swift_first_four": [
+        "क्लारेट",
+        "च्लरेते",
+        "clarete"
+      ]
+    },
+    {
+      "roman": "connects",
+      "first_indexed": "कनेक्ट्स",
+      "swift_original": true,
+      "swift_top": "connects",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कनेक्ट्स"
+      ],
+      "swift_first_four": [
+        "connects",
+        "चोन्नेच्त्स",
+        "कनेक्ट्स"
+      ]
+    },
+    {
+      "roman": "dadulla",
+      "first_indexed": "दादुल्ला",
+      "swift_original": true,
+      "swift_top": "दादुल्ला",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दादुल्ला"
+      ],
+      "swift_first_four": [
+        "दादुल्ला",
+        "ददुल्ल",
+        "dadulla"
+      ]
+    },
+    {
+      "roman": "daivinbata",
+      "first_indexed": "दैविनबाट",
+      "swift_original": true,
+      "swift_top": "दैविनबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दैविनबाट"
+      ],
+      "swift_first_four": [
+        "दैविनबाट",
+        "दैविन्बत",
+        "daivinbata"
+      ]
+    },
+    {
+      "roman": "darechokbata",
+      "first_indexed": "दारेचोकबाट",
+      "swift_original": true,
+      "swift_top": "दारेचोकबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दारेचोकबाट"
+      ],
+      "swift_first_four": [
+        "दारेचोकबाट",
+        "दरेचोक्बत",
+        "darechokbata"
+      ]
+    },
+    {
+      "roman": "darshanharumadhye",
+      "first_indexed": "दर्शनहरूमध्ये",
+      "swift_original": true,
+      "swift_top": "दर्शनहरूमध्ये",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दर्शनहरूमध्ये"
+      ],
+      "swift_first_four": [
+        "दर्शनहरूमध्ये",
+        "दर्शन्हरुमध्ये",
+        "darshanharumadhye"
+      ]
+    },
+    {
+      "roman": "dekhichhaina",
+      "first_indexed": "देखिछैन",
+      "swift_original": true,
+      "swift_top": "देखिछैन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "देखिछैन"
+      ],
+      "swift_first_four": [
+        "देखिछैन",
+        "dekhichhaina"
+      ]
+    },
+    {
+      "roman": "dhanikatantralai",
+      "first_indexed": "धनिकतन्त्रलाई",
+      "swift_original": true,
+      "swift_top": "धनिकतन्त्रलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "धनिकतन्त्रलाई"
+      ],
+      "swift_first_four": [
+        "धनिकतन्त्रलाई",
+        "धनिकतन्त्रलै",
+        "dhanikatantralai"
+      ]
+    },
+    {
+      "roman": "dharabasile",
+      "first_indexed": "धराबासीले",
+      "swift_original": true,
+      "swift_top": "धरबसिले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "धराबासीले",
+        "धाराबासीले"
+      ],
+      "swift_first_four": [
+        "धरबसिले",
+        "धराबासीले",
+        "धाराबासीले",
+        "dharabasile"
+      ]
+    },
+    {
+      "roman": "dharmadesh",
+      "first_indexed": "धर्मदेश",
+      "swift_original": true,
+      "swift_top": "धर्मदेश",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "धर्मदेश",
+        "धर्मादेश"
+      ],
+      "swift_first_four": [
+        "धर्मदेश",
+        "धर्मादेश",
+        "dharmadesh"
+      ]
+    },
+    {
+      "roman": "dhyangsengko",
+      "first_indexed": "ध्याङसेङको",
+      "swift_original": true,
+      "swift_top": "ध्याङसेङको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ध्याङसेङको"
+      ],
+      "swift_first_four": [
+        "ध्याङसेङको",
+        "ध्यङ्सेङ्को",
+        "dhyangsengko"
+      ]
+    },
+    {
+      "roman": "didibahiniharuprati",
+      "first_indexed": "दिदीबहिनीहरूप्रति",
+      "swift_original": true,
+      "swift_top": "दिदीबहिनीहरूप्रति",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दिदीबहिनीहरूप्रति"
+      ],
+      "swift_first_four": [
+        "दिदीबहिनीहरूप्रति",
+        "दिदिबहिनिहरुप्रति",
+        "didibahiniharuprati"
+      ]
+    },
+    {
+      "roman": "dimut",
+      "first_indexed": "दिमुत",
+      "swift_original": true,
+      "swift_top": "दिमुत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दिमुत"
+      ],
+      "swift_first_four": [
+        "दिमुत",
+        "dimut"
+      ]
+    },
+    {
+      "roman": "dioxine",
+      "first_indexed": "डायक्सिन",
+      "swift_original": true,
+      "swift_top": "डायक्सिन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "डायक्सिन"
+      ],
+      "swift_first_four": [
+        "डायक्सिन",
+        "दिओक्सिने",
+        "dioxine"
+      ]
+    },
+    {
+      "roman": "diware",
+      "first_indexed": "दिवारे",
+      "swift_original": true,
+      "swift_top": "दिवारे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दिवारे"
+      ],
+      "swift_first_four": [
+        "दिवारे",
+        "दिवरे",
+        "diware"
+      ]
+    },
+    {
+      "roman": "drishyachitrabata",
+      "first_indexed": "दृश्यचित्रबाट",
+      "swift_original": true,
+      "swift_top": "दृश्यचित्रबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दृश्यचित्रबाट"
+      ],
+      "swift_first_four": [
+        "दृश्यचित्रबाट",
+        "द्रिश्यचित्रबत",
+        "drishyachitrabata"
+      ]
+    },
+    {
+      "roman": "duculay",
+      "first_indexed": "डुक्युले",
+      "swift_original": true,
+      "swift_top": "दुचुलय",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "डुक्युले",
+        "ड्युक्युले"
+      ],
+      "swift_first_four": [
+        "दुचुलय",
+        "डुक्युले",
+        "ड्युक्युले",
+        "duculay"
+      ]
+    },
+    {
+      "roman": "dussahasko",
+      "first_indexed": "दुस्साहसको",
+      "swift_original": true,
+      "swift_top": "दुस्साहसको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "दुस्साहसको"
+      ],
+      "swift_first_four": [
+        "दुस्साहसको",
+        "दुस्सहस्को",
+        "dussahasko"
+      ]
+    },
+    {
+      "roman": "ekaiwyakti",
+      "first_indexed": "एकैव्यक्ति",
+      "swift_original": true,
+      "swift_top": "एकैव्यक्ति",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "एकैव्यक्ति"
+      ],
+      "swift_first_four": [
+        "एकैव्यक्ति",
+        "ekaiwyakti"
+      ]
+    },
+    {
+      "roman": "ekinominsko",
+      "first_indexed": "इकिनोमिन्सको",
+      "swift_original": true,
+      "swift_top": "इकिनोमिन्सको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "इकिनोमिन्सको"
+      ],
+      "swift_first_four": [
+        "इकिनोमिन्सको",
+        "एकिनोमिन्स्को",
+        "ekinominsko"
+      ]
+    },
+    {
+      "roman": "ekward",
+      "first_indexed": "एकवार्ड",
+      "swift_original": true,
+      "swift_top": "एकवार्ड",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "एकवार्ड"
+      ],
+      "swift_first_four": [
+        "एकवार्ड",
+        "एक्वर्द",
+        "ekward"
+      ]
+    },
+    {
+      "roman": "elemony",
+      "first_indexed": "एलिमनी",
+      "swift_original": true,
+      "swift_top": "एलिमनी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "एलिमनी"
+      ],
+      "swift_first_four": [
+        "एलिमनी",
+        "एलेमोञ",
+        "elemony"
+      ]
+    },
+    {
+      "roman": "falet",
+      "first_indexed": "फलेट",
+      "swift_original": true,
+      "swift_top": "फलेट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फलेट"
+      ],
+      "swift_first_four": [
+        "फलेट",
+        "फलेत",
+        "falet"
+      ]
+    },
+    {
+      "roman": "falidinchhan",
+      "first_indexed": "फलिदिन्छन्",
+      "swift_original": true,
+      "swift_top": "फलिदिन्छन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फलिदिन्छन्",
+        "फालिदिन्छन्"
+      ],
+      "swift_first_four": [
+        "फलिदिन्छन",
+        "फलिदिन्छन्",
+        "फालिदिन्छन्",
+        "falidinchhan"
+      ]
+    },
+    {
+      "roman": "falnug",
+      "first_indexed": "फाल्नुग",
+      "swift_original": true,
+      "swift_top": "फाल्नुग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फाल्नुग"
+      ],
+      "swift_first_four": [
+        "फाल्नुग",
+        "फल्नुग",
+        "falnug"
+      ]
+    },
+    {
+      "roman": "fankasanko",
+      "first_indexed": "फंकसनको",
+      "swift_original": true,
+      "swift_top": "फंकसनको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फंकसनको"
+      ],
+      "swift_first_four": [
+        "फंकसनको",
+        "फन्कसन्को",
+        "fankasanko"
+      ]
+    },
+    {
+      "roman": "faraunuko",
+      "first_indexed": "फराउनुको",
+      "swift_original": true,
+      "swift_top": "फराउनुको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फराउनुको"
+      ],
+      "swift_first_four": [
+        "फराउनुको",
+        "फरौनुको",
+        "faraunuko"
+      ]
+    },
+    {
+      "roman": "farkaunamai",
+      "first_indexed": "फर्काउनमै",
+      "swift_original": true,
+      "swift_top": "फर्काउनमै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फर्काउनमै"
+      ],
+      "swift_first_four": [
+        "फर्काउनमै",
+        "फर्कौनमै",
+        "farkaunamai"
+      ]
+    },
+    {
+      "roman": "fillauriko",
+      "first_indexed": "फिल्लौरीको",
+      "swift_original": true,
+      "swift_top": "फिल्लौरीको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फिल्लौरीको"
+      ],
+      "swift_first_four": [
+        "फिल्लौरीको",
+        "फिल्लौरिको",
+        "fillauriko"
+      ]
+    },
+    {
+      "roman": "filmfarema",
+      "first_indexed": "फिल्मफेयरमा",
+      "swift_original": true,
+      "swift_top": "फिल्मफेयरमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फिल्मफेयरमा"
+      ],
+      "swift_first_four": [
+        "फिल्मफेयरमा",
+        "फिल्म्फरेम",
+        "filmfarema"
+      ]
+    },
+    {
+      "roman": "firotiko",
+      "first_indexed": "फिरोतीको",
+      "swift_original": true,
+      "swift_top": "फिरोतीको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फिरोतीको"
+      ],
+      "swift_first_four": [
+        "फिरोतीको",
+        "फिरोतिको",
+        "firotiko"
+      ]
+    },
+    {
+      "roman": "fojianle",
+      "first_indexed": "फोजियानले",
+      "swift_original": true,
+      "swift_top": "फोजियानले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फोजियानले"
+      ],
+      "swift_first_four": [
+        "फोजियानले",
+        "फोजिअन्ले",
+        "fojianle"
+      ]
+    },
+    {
+      "roman": "forwardprati",
+      "first_indexed": "फरवार्डप्रति",
+      "swift_original": true,
+      "swift_top": "फरवार्डप्रति",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फरवार्डप्रति"
+      ],
+      "swift_first_four": [
+        "फरवार्डप्रति",
+        "फोर्वर्द्प्रति",
+        "forwardprati"
+      ]
+    },
+    {
+      "roman": "frenchbhashi",
+      "first_indexed": "फ्रेञ्चभाषी",
+      "swift_original": true,
+      "swift_top": "फ्रेञ्चभाषी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फ्रेञ्चभाषी"
+      ],
+      "swift_first_four": [
+        "फ्रेञ्चभाषी",
+        "फ्रेन्च्भशि",
+        "frenchbhashi"
+      ]
+    },
+    {
+      "roman": "fupuchhiring",
+      "first_indexed": "फुपुछिरिङ",
+      "swift_original": true,
+      "swift_top": "फुपुछिरिङ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "फुपुछिरिङ"
+      ],
+      "swift_first_four": [
+        "फुपुछिरिङ",
+        "fupuchhiring"
+      ]
+    },
+    {
+      "roman": "gaanjnechhah",
+      "first_indexed": "गाँज्नेछः",
+      "swift_original": true,
+      "swift_top": "गाँज्नेछः",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गाँज्नेछः"
+      ],
+      "swift_first_four": [
+        "गाँज्नेछः",
+        "गान्ज्ञेछह",
+        "gaanjnechhah"
+      ]
+    },
+    {
+      "roman": "gagoi",
+      "first_indexed": "गगोई",
+      "swift_original": true,
+      "swift_top": "गगोई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गगोई"
+      ],
+      "swift_first_four": [
+        "गगोई",
+        "गगोइ",
+        "gagoi"
+      ]
+    },
+    {
+      "roman": "gairayuropeliharubare",
+      "first_indexed": "गैरयूरोपेलीहरूबारे",
+      "swift_original": true,
+      "swift_top": "गैरयूरोपेलीहरूबारे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गैरयूरोपेलीहरूबारे"
+      ],
+      "swift_first_four": [
+        "गैरयूरोपेलीहरूबारे",
+        "गैरयुरोपेलिहरुबरे",
+        "gairayuropeliharubare"
+      ]
+    },
+    {
+      "roman": "gajurelmathi",
+      "first_indexed": "गजुरेलमाथि",
+      "swift_original": true,
+      "swift_top": "गजुरेलमाथि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गजुरेलमाथि"
+      ],
+      "swift_first_four": [
+        "गजुरेलमाथि",
+        "गजुरेल्मथि",
+        "gajurelmathi"
+      ]
+    },
+    {
+      "roman": "galele",
+      "first_indexed": "गलेले",
+      "swift_original": true,
+      "swift_top": "गलेले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गलेले",
+        "गालेले"
+      ],
+      "swift_first_four": [
+        "गलेले",
+        "गालेले",
+        "galele"
+      ]
+    },
+    {
+      "roman": "gamber",
+      "first_indexed": "गम्बर",
+      "swift_original": true,
+      "swift_top": "gamber",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गम्बर"
+      ],
+      "swift_first_four": [
+        "gamber",
+        "गम्बेर",
+        "गम्बर"
+      ]
+    },
+    {
+      "roman": "garaekamadhya",
+      "first_indexed": "गराएकामध्य",
+      "swift_original": true,
+      "swift_top": "गराएकामध्य",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गराएकामध्य"
+      ],
+      "swift_first_four": [
+        "गराएकामध्य",
+        "गरएकमध्य",
+        "garaekamadhya"
+      ]
+    },
+    {
+      "roman": "garauneka",
+      "first_indexed": "गराउनेका",
+      "swift_original": true,
+      "swift_top": "गराउनेका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गराउनेका"
+      ],
+      "swift_first_four": [
+        "गराउनेका",
+        "गरौनेक",
+        "garauneka"
+      ]
+    },
+    {
+      "roman": "garekaharulematra",
+      "first_indexed": "गरेकाहरुलेमात्र",
+      "swift_original": true,
+      "swift_top": "गरेकाहरुलेमात्र",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गरेकाहरुलेमात्र"
+      ],
+      "swift_first_four": [
+        "गरेकाहरुलेमात्र",
+        "गरेकहरुलेमत्र",
+        "garekaharulematra"
+      ]
+    },
+    {
+      "roman": "gasakekole",
+      "first_indexed": "गसकेकोले",
+      "swift_original": true,
+      "swift_top": "गसकेकोले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गसकेकोले"
+      ],
+      "swift_first_four": [
+        "गसकेकोले",
+        "gasakekole"
+      ]
+    },
+    {
+      "roman": "gaunjuna",
+      "first_indexed": "गाउँजुन",
+      "swift_original": true,
+      "swift_top": "गाउँजुन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गाउँजुन"
+      ],
+      "swift_first_four": [
+        "गाउँजुन",
+        "गौन्जुन",
+        "gaunjuna"
+      ]
+    },
+    {
+      "roman": "ghamapratirodhi",
+      "first_indexed": "घामप्रतिरोधी",
+      "swift_original": true,
+      "swift_top": "घामप्रतिरोधी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "घामप्रतिरोधी"
+      ],
+      "swift_first_four": [
+        "घामप्रतिरोधी",
+        "घमप्रतिरोधि",
+        "ghamapratirodhi"
+      ]
+    },
+    {
+      "roman": "gharaniyanharusanga",
+      "first_indexed": "घरानियाँहरूसँग",
+      "swift_original": true,
+      "swift_top": "घरानियाँहरूसँग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "घरानियाँहरूसँग"
+      ],
+      "swift_first_four": [
+        "घरानियाँहरूसँग",
+        "घरनियन्हरुसङ",
+        "gharaniyanharusanga"
+      ]
+    },
+    {
+      "roman": "ghargharanaka",
+      "first_indexed": "घरघरानाका",
+      "swift_original": true,
+      "swift_top": "घरघरानाका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "घरघरानाका"
+      ],
+      "swift_first_four": [
+        "घरघरानाका",
+        "घर्घरनक",
+        "ghargharanaka"
+      ]
+    },
+    {
+      "roman": "ghokdaichhan",
+      "first_indexed": "घोक्दैछन्",
+      "swift_original": true,
+      "swift_top": "घोक्दैछन्",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "घोक्दैछन्"
+      ],
+      "swift_first_four": [
+        "घोक्दैछन्",
+        "घोक्दैछन",
+        "ghokdaichhan"
+      ]
+    },
+    {
+      "roman": "ghrishtatapurna",
+      "first_indexed": "घृष्टतापूर्ण",
+      "swift_original": true,
+      "swift_top": "घृष्टतापूर्ण",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "घृष्टतापूर्ण"
+      ],
+      "swift_first_four": [
+        "घृष्टतापूर्ण",
+        "घ्रिश्ततपुर्न",
+        "ghrishtatapurna"
+      ]
+    },
+    {
+      "roman": "ghwain",
+      "first_indexed": "घ्वाइँ",
+      "swift_original": true,
+      "swift_top": "घ्वाइँ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "घ्वाइँ"
+      ],
+      "swift_first_four": [
+        "घ्वाइँ",
+        "घ्वैन",
+        "ghwain"
+      ]
+    },
+    {
+      "roman": "glusterle",
+      "first_indexed": "ग्लस्टरले",
+      "swift_original": true,
+      "swift_top": "ग्लस्टरले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ग्लस्टरले"
+      ],
+      "swift_first_four": [
+        "ग्लस्टरले",
+        "ग्लुस्तेर्ले",
+        "glusterle"
+      ]
+    },
+    {
+      "roman": "goriklale",
+      "first_indexed": "गोरीकलाले",
+      "swift_original": true,
+      "swift_top": "गोरीकलाले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गोरीकलाले"
+      ],
+      "swift_first_four": [
+        "गोरीकलाले",
+        "गोरिक्लले",
+        "goriklale"
+      ]
+    },
+    {
+      "roman": "goshthiharubata",
+      "first_indexed": "गोष्ठीहरूबाट",
+      "swift_original": true,
+      "swift_top": "गोष्ठीहरूबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गोष्ठीहरूबाट"
+      ],
+      "swift_first_four": [
+        "गोष्ठीहरूबाट",
+        "गोश्थिहरुबत",
+        "goshthiharubata"
+      ]
+    },
+    {
+      "roman": "granthabahek",
+      "first_indexed": "ग्रन्थबाहेक",
+      "swift_original": true,
+      "swift_top": "ग्रन्थबाहेक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ग्रन्थबाहेक"
+      ],
+      "swift_first_four": [
+        "ग्रन्थबाहेक",
+        "ग्रन्थबहेक",
+        "granthabahek"
+      ]
+    },
+    {
+      "roman": "groundbata",
+      "first_indexed": "ग्राउण्डबाट",
+      "swift_original": true,
+      "swift_top": "ग्रोउन्द्बत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ग्राउण्डबाट",
+        "ग्राउन्डबाट"
+      ],
+      "swift_first_four": [
+        "ग्रोउन्द्बत",
+        "ग्राउण्डबाट",
+        "ग्राउन्डबाट",
+        "groundbata"
+      ]
+    },
+    {
+      "roman": "gudamba",
+      "first_indexed": "गुदम्ब",
+      "swift_original": true,
+      "swift_top": "गुदम्ब",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गुदम्ब"
+      ],
+      "swift_first_four": [
+        "गुदम्ब",
+        "gudamba"
+      ]
+    },
+    {
+      "roman": "gugka",
+      "first_indexed": "गुगका",
+      "swift_original": true,
+      "swift_top": "गुगका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गुगका"
+      ],
+      "swift_first_four": [
+        "गुगका",
+        "गुग्क",
+        "gugka"
+      ]
+    },
+    {
+      "roman": "gujaratika",
+      "first_indexed": "गुजरातीका",
+      "swift_original": true,
+      "swift_top": "गुजरातीका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गुजरातीका"
+      ],
+      "swift_first_four": [
+        "गुजरातीका",
+        "गुजरतिक",
+        "gujaratika"
+      ]
+    },
+    {
+      "roman": "gurdi",
+      "first_indexed": "गुर्दी",
+      "swift_original": true,
+      "swift_top": "गुर्दी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "गुर्दी"
+      ],
+      "swift_first_four": [
+        "गुर्दी",
+        "गुर्दि",
+        "gurdi"
+      ]
+    },
+    {
+      "roman": "hairstylebare",
+      "first_indexed": "हेयरस्टाइलबारे",
+      "swift_original": true,
+      "swift_top": "हेयरस्टाइलबारे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हेयरस्टाइलबारे"
+      ],
+      "swift_first_four": [
+        "हेयरस्टाइलबारे",
+        "हैर्स्त्य्लेबरे",
+        "hairstylebare"
+      ]
+    },
+    {
+      "roman": "haisiyatbichko",
+      "first_indexed": "हैसियतबीचको",
+      "swift_original": true,
+      "swift_top": "हैसियतबीचको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हैसियतबीचको"
+      ],
+      "swift_first_four": [
+        "हैसियतबीचको",
+        "हैसियत्बिच्को",
+        "haisiyatbichko"
+      ]
+    },
+    {
+      "roman": "haliudasangai",
+      "first_indexed": "हलिउडसँगै",
+      "swift_original": true,
+      "swift_top": "हलिउडसँगै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हलिउडसँगै"
+      ],
+      "swift_first_four": [
+        "हलिउडसँगै",
+        "हलिउदसङै",
+        "haliudasangai"
+      ]
+    },
+    {
+      "roman": "hapton",
+      "first_indexed": "ह्याप्टन",
+      "swift_original": true,
+      "swift_top": "ह्याप्टन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ह्याप्टन"
+      ],
+      "swift_first_four": [
+        "ह्याप्टन",
+        "हप्तोन",
+        "hapton"
+      ]
+    },
+    {
+      "roman": "harishasharan",
+      "first_indexed": "हरिशशरण",
+      "swift_original": true,
+      "swift_top": "हरिशशरण",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हरिशशरण"
+      ],
+      "swift_first_four": [
+        "हरिशशरण",
+        "हरिशशरन",
+        "harishasharan"
+      ]
+    },
+    {
+      "roman": "hariyanamai",
+      "first_indexed": "हरियाणामै",
+      "swift_original": true,
+      "swift_top": "हरियाणामै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हरियाणामै"
+      ],
+      "swift_first_four": [
+        "हरियाणामै",
+        "हरियनमै",
+        "hariyanamai"
+      ]
+    },
+    {
+      "roman": "hatarinnan",
+      "first_indexed": "हतारिन्नँ",
+      "swift_original": true,
+      "swift_top": "हतारिन्नँ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हतारिन्नँ"
+      ],
+      "swift_first_four": [
+        "हतारिन्नँ",
+        "हतरिन्नन",
+        "hatarinnan"
+      ]
+    },
+    {
+      "roman": "hembargapachhiko",
+      "first_indexed": "हेम्बर्गपछिको",
+      "swift_original": true,
+      "swift_top": "हेम्बर्गपछिको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हेम्बर्गपछिको"
+      ],
+      "swift_first_four": [
+        "हेम्बर्गपछिको",
+        "hembargapachhiko"
+      ]
+    },
+    {
+      "roman": "hirabahadurmathi",
+      "first_indexed": "हीराबहादुरमाथि",
+      "swift_original": true,
+      "swift_top": "हीराबहादुरमाथि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हीराबहादुरमाथि"
+      ],
+      "swift_first_four": [
+        "हीराबहादुरमाथि",
+        "हिरबहदुर्मथि",
+        "hirabahadurmathi"
+      ]
+    },
+    {
+      "roman": "hukkaunelai",
+      "first_indexed": "हुक्काउनेलाई",
+      "swift_original": true,
+      "swift_top": "हुक्काउनेलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हुक्काउनेलाई"
+      ],
+      "swift_first_four": [
+        "हुक्काउनेलाई",
+        "हुक्कौनेलै",
+        "hukkaunelai"
+      ]
+    },
+    {
+      "roman": "hunuparyom",
+      "first_indexed": "हुनपर्योम",
+      "swift_original": true,
+      "swift_top": "हुनुपर्योम",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हुनपर्योम",
+        "हुनुपर्योम"
+      ],
+      "swift_first_four": [
+        "हुनुपर्योम",
+        "हुनपर्योम",
+        "hunuparyom"
+      ]
+    },
+    {
+      "roman": "hurahuri",
+      "first_indexed": "हुराहुरी",
+      "swift_original": true,
+      "swift_top": "हुराहुरी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हुराहुरी"
+      ],
+      "swift_first_four": [
+        "हुराहुरी",
+        "हुरहुरि",
+        "hurahuri"
+      ]
+    },
+    {
+      "roman": "hydeted",
+      "first_indexed": "हाइडेटेड",
+      "swift_original": true,
+      "swift_top": "हाइडेटेड",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "हाइडेटेड"
+      ],
+      "swift_first_four": [
+        "हाइडेटेड",
+        "ह्य्देतेद",
+        "hydeted"
+      ]
+    },
+    {
+      "roman": "ibmko",
+      "first_indexed": "आइबिएमको",
+      "swift_original": true,
+      "swift_top": "इब्म्को",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "आइबिएमको",
+        "आइबीएमको",
+        "आईबीएमको",
+        "ईबीएमको"
+      ],
+      "swift_first_four": [
+        "इब्म्को",
+        "आइबिएमको",
+        "आइबीएमको",
+        "आईबीएमको"
+      ]
+    },
+    {
+      "roman": "ine",
+      "first_indexed": "इने",
+      "swift_original": true,
+      "swift_top": "इने",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "इने"
+      ],
+      "swift_first_four": [
+        "इने",
+        "ine"
+      ]
+    },
+    {
+      "roman": "inglishle",
+      "first_indexed": "इंग्लिशले",
+      "swift_original": true,
+      "swift_top": "इंग्लिशले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "इंग्लिशले"
+      ],
+      "swift_first_four": [
+        "इंग्लिशले",
+        "इङ्लिश्ले",
+        "inglishle"
+      ]
+    },
+    {
+      "roman": "istoniyasangko",
+      "first_indexed": "इस्टोनियासँगको",
+      "swift_original": true,
+      "swift_top": "इस्टोनियासँगको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "इस्टोनियासँगको"
+      ],
+      "swift_first_four": [
+        "इस्टोनियासँगको",
+        "इस्तोनियसङ्को",
+        "istoniyasangko"
+      ]
+    },
+    {
+      "roman": "itarbatai",
+      "first_indexed": "इतरबाटै",
+      "swift_original": true,
+      "swift_top": "इतरबाटै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "इतरबाटै"
+      ],
+      "swift_first_four": [
+        "इतरबाटै",
+        "इतर्बतै",
+        "itarbatai"
+      ]
+    },
+    {
+      "roman": "jakinuparne",
+      "first_indexed": "जाकिनुपर्ने",
+      "swift_original": true,
+      "swift_top": "जाकिनुपर्ने",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जाकिनुपर्ने"
+      ],
+      "swift_first_four": [
+        "जाकिनुपर्ने",
+        "जकिनुपर्ने",
+        "jakinuparne"
+      ]
+    },
+    {
+      "roman": "jalipobhale",
+      "first_indexed": "जालिपोभाले",
+      "swift_original": true,
+      "swift_top": "जालिपोभाले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जालिपोभाले"
+      ],
+      "swift_first_four": [
+        "जालिपोभाले",
+        "जलिपोभले",
+        "jalipobhale"
+      ]
+    },
+    {
+      "roman": "janenajane",
+      "first_indexed": "जानेनजाने",
+      "swift_original": true,
+      "swift_top": "जानेनजाने",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जानेनजाने"
+      ],
+      "swift_first_four": [
+        "जानेनजाने",
+        "जनेनजने",
+        "janenajane"
+      ]
+    },
+    {
+      "roman": "januttardayitwayukta",
+      "first_indexed": "जनउत्तरदायित्वयुक्त",
+      "swift_original": true,
+      "swift_top": "जनउत्तरदायित्वयुक्त",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जनउत्तरदायित्वयुक्त"
+      ],
+      "swift_first_four": [
+        "जनउत्तरदायित्वयुक्त",
+        "जनुत्तर्दयित्वयुक्त",
+        "januttardayitwayukta"
+      ]
+    },
+    {
+      "roman": "jarbajstikarani",
+      "first_indexed": "जरबजस्तीकरणी",
+      "swift_original": true,
+      "swift_top": "जरबजस्तीकरणी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जरबजस्तीकरणी"
+      ],
+      "swift_first_four": [
+        "जरबजस्तीकरणी",
+        "जर्बज्स्तिकरनि",
+        "jarbajstikarani"
+      ]
+    },
+    {
+      "roman": "jarginholgayatka",
+      "first_indexed": "जर्गिन्होलगायतका",
+      "swift_original": true,
+      "swift_top": "जर्गिन्होलगायतका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जर्गिन्होलगायतका"
+      ],
+      "swift_first_four": [
+        "जर्गिन्होलगायतका",
+        "जर्गिन्होल्गयत्क",
+        "jarginholgayatka"
+      ]
+    },
+    {
+      "roman": "jawakholalgayat",
+      "first_indexed": "जवाखोलालगायत",
+      "swift_original": true,
+      "swift_top": "जवाखोलालगायत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जवाखोलालगायत"
+      ],
+      "swift_first_four": [
+        "जवाखोलालगायत",
+        "जवखोलल्गयत",
+        "jawakholalgayat"
+      ]
+    },
+    {
+      "roman": "jheliharuko",
+      "first_indexed": "झेलीहरूको",
+      "swift_original": true,
+      "swift_top": "झेलीहरूको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "झेलीहरूको"
+      ],
+      "swift_first_four": [
+        "झेलीहरूको",
+        "झेलिहरुको",
+        "jheliharuko"
+      ]
+    },
+    {
+      "roman": "jhimkie",
+      "first_indexed": "झिम्किए",
+      "swift_original": true,
+      "swift_top": "झिम्किए",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "झिम्किए"
+      ],
+      "swift_first_four": [
+        "झिम्किए",
+        "jhimkie"
+      ]
+    },
+    {
+      "roman": "johansanle",
+      "first_indexed": "जोहनसनले",
+      "swift_original": true,
+      "swift_top": "जोहनसनले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जोहनसनले"
+      ],
+      "swift_first_four": [
+        "जोहनसनले",
+        "जोहन्सन्ले",
+        "johansanle"
+      ]
+    },
+    {
+      "roman": "jotikhane",
+      "first_indexed": "जोतिखाने",
+      "swift_original": true,
+      "swift_top": "जोतिखाने",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जोतिखाने"
+      ],
+      "swift_first_four": [
+        "जोतिखाने",
+        "जोतिखने",
+        "jotikhane"
+      ]
+    },
+    {
+      "roman": "junkiko",
+      "first_indexed": "जुनकीको",
+      "swift_original": true,
+      "swift_top": "जुनकीको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जुनकीको"
+      ],
+      "swift_first_four": [
+        "जुनकीको",
+        "जुन्किको",
+        "junkiko"
+      ]
+    },
+    {
+      "roman": "juristaska",
+      "first_indexed": "जुरिस्टस्का",
+      "swift_original": true,
+      "swift_top": "जुरिस्टस्का",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "जुरिस्टस्का"
+      ],
+      "swift_first_four": [
+        "जुरिस्टस्का",
+        "जुरिस्तस्क",
+        "juristaska"
+      ]
+    },
+    {
+      "roman": "jwol",
+      "first_indexed": "ज्वोल",
+      "swift_original": true,
+      "swift_top": "ज्वोल",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ज्वोल"
+      ],
+      "swift_first_four": [
+        "ज्वोल",
+        "jwol"
+      ]
+    },
+    {
+      "roman": "kadhadai",
+      "first_indexed": "काढदै",
+      "swift_original": true,
+      "swift_top": "काढदै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "काढदै"
+      ],
+      "swift_first_four": [
+        "काढदै",
+        "कधदै",
+        "kadhadai"
+      ]
+    },
+    {
+      "roman": "kaeki",
+      "first_indexed": "काएकी",
+      "swift_original": true,
+      "swift_top": "काएकी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "काएकी"
+      ],
+      "swift_first_four": [
+        "काएकी",
+        "कएकि",
+        "kaeki"
+      ]
+    },
+    {
+      "roman": "kagasanko",
+      "first_indexed": "कागासनको",
+      "swift_original": true,
+      "swift_top": "कागासनको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कागासनको"
+      ],
+      "swift_first_four": [
+        "कागासनको",
+        "कगसन्को",
+        "kagasanko"
+      ]
+    },
+    {
+      "roman": "kalkattawiruddha",
+      "first_indexed": "कलकत्ताविरुद्ध",
+      "swift_original": true,
+      "swift_top": "कलकत्ताविरुद्ध",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कलकत्ताविरुद्ध"
+      ],
+      "swift_first_four": [
+        "कलकत्ताविरुद्ध",
+        "कल्कत्तविरुद्ध",
+        "kalkattawiruddha"
+      ]
+    },
+    {
+      "roman": "kamadhenupan",
+      "first_indexed": "कामधेनुपन",
+      "swift_original": true,
+      "swift_top": "कामधेनुपन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कामधेनुपन"
+      ],
+      "swift_first_four": [
+        "कामधेनुपन",
+        "कमधेनुपन",
+        "kamadhenupan"
+      ]
+    },
+    {
+      "roman": "kamalamaiki",
+      "first_indexed": "कमलामाईकी",
+      "swift_original": true,
+      "swift_top": "कमलामाईकी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कमलामाईकी"
+      ],
+      "swift_first_four": [
+        "कमलामाईकी",
+        "कमलमैकि",
+        "kamalamaiki"
+      ]
+    },
+    {
+      "roman": "karelko",
+      "first_indexed": "करेलको",
+      "swift_original": true,
+      "swift_top": "करेलको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "करेलको"
+      ],
+      "swift_first_four": [
+        "करेलको",
+        "करेल्को",
+        "karelko"
+      ]
+    },
+    {
+      "roman": "karmalko",
+      "first_indexed": "कर्मालको",
+      "swift_original": true,
+      "swift_top": "कर्मालको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कर्मालको"
+      ],
+      "swift_first_four": [
+        "कर्मालको",
+        "कर्मल्को",
+        "karmalko"
+      ]
+    },
+    {
+      "roman": "karrya",
+      "first_indexed": "कार्र्य",
+      "swift_original": true,
+      "swift_top": "कार्र्य",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कार्र्य"
+      ],
+      "swift_first_four": [
+        "कार्र्य",
+        "कर्र्य",
+        "karrya"
+      ]
+    },
+    {
+      "roman": "karyalayakolekhapadhiko",
+      "first_indexed": "कार्यालयकोलेखापढीको",
+      "swift_original": true,
+      "swift_top": "कार्यालयकोलेखापढीको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कार्यालयकोलेखापढीको"
+      ],
+      "swift_first_four": [
+        "कार्यालयकोलेखापढीको",
+        "कर्यलयकोलेखपधिको",
+        "karyalayakolekhapadhiko"
+      ]
+    },
+    {
+      "roman": "kaschit",
+      "first_indexed": "कस्चित",
+      "swift_original": true,
+      "swift_top": "कस्चित",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कस्चित"
+      ],
+      "swift_first_four": [
+        "कस्चित",
+        "kaschit"
+      ]
+    },
+    {
+      "roman": "kathamadaunsangaiko",
+      "first_indexed": "काठमाडौँसँगैको",
+      "swift_original": true,
+      "swift_top": "कथमदौन्सङैको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "काठमाडौँसँगैको",
+        "काठमाडौंसँगैको"
+      ],
+      "swift_first_four": [
+        "कथमदौन्सङैको",
+        "काठमाडौँसँगैको",
+        "काठमाडौंसँगैको",
+        "kathamadaunsangaiko"
+      ]
+    },
+    {
+      "roman": "kesilal",
+      "first_indexed": "केसीलाल",
+      "swift_original": true,
+      "swift_top": "केसीलाल",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "केसीलाल"
+      ],
+      "swift_first_four": [
+        "केसीलाल",
+        "केसिलल",
+        "kesilal"
+      ]
+    },
+    {
+      "roman": "khabarpatrikasanga",
+      "first_indexed": "खबरपत्रिकासँग",
+      "swift_original": true,
+      "swift_top": "खबरपत्रिकासँग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खबरपत्रिकासँग"
+      ],
+      "swift_first_four": [
+        "खबरपत्रिकासँग",
+        "खबर्पत्रिकसङ",
+        "khabarpatrikasanga"
+      ]
+    },
+    {
+      "roman": "khairwa",
+      "first_indexed": "खैर्वा",
+      "swift_original": true,
+      "swift_top": "खैर्वा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खैर्वा"
+      ],
+      "swift_first_four": [
+        "खैर्वा",
+        "खैर्व",
+        "khairwa"
+      ]
+    },
+    {
+      "roman": "khalyat",
+      "first_indexed": "खल्यात",
+      "swift_original": true,
+      "swift_top": "खल्यात",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खल्यात"
+      ],
+      "swift_first_four": [
+        "खल्यात",
+        "खल्यत",
+        "khalyat"
+      ]
+    },
+    {
+      "roman": "khanekurakai",
+      "first_indexed": "खानेकुराकै",
+      "swift_original": true,
+      "swift_top": "खानेकुराकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खानेकुराकै"
+      ],
+      "swift_first_four": [
+        "खानेकुराकै",
+        "खनेकुरकै",
+        "khanekurakai"
+      ]
+    },
+    {
+      "roman": "khanto",
+      "first_indexed": "खान्तो",
+      "swift_original": true,
+      "swift_top": "खान्तो",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खान्तो"
+      ],
+      "swift_first_four": [
+        "खान्तो",
+        "खन्तो",
+        "khanto"
+      ]
+    },
+    {
+      "roman": "khilafka",
+      "first_indexed": "खिलाफका",
+      "swift_original": true,
+      "swift_top": "खिलाफका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खिलाफका"
+      ],
+      "swift_first_four": [
+        "खिलाफका",
+        "खिलफ्क",
+        "khilafka"
+      ]
+    },
+    {
+      "roman": "khullamanchama",
+      "first_indexed": "खुल्लामञ्चमा",
+      "swift_original": true,
+      "swift_top": "खुल्लमन्चम",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "खुल्लामञ्चमा",
+        "खुल्लामन्चमा"
+      ],
+      "swift_first_four": [
+        "खुल्लमन्चम",
+        "खुल्लामञ्चमा",
+        "खुल्लामन्चमा",
+        "khullamanchama"
+      ]
+    },
+    {
+      "roman": "kinekau",
+      "first_indexed": "किनेकौ",
+      "swift_original": true,
+      "swift_top": "किनेकौ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "किनेकौ"
+      ],
+      "swift_first_four": [
+        "किनेकौ",
+        "kinekau"
+      ]
+    },
+    {
+      "roman": "kinihalnubhanda",
+      "first_indexed": "किनिहाल्नुभन्दा",
+      "swift_original": true,
+      "swift_top": "किनिहाल्नुभन्दा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "किनिहाल्नुभन्दा"
+      ],
+      "swift_first_four": [
+        "किनिहाल्नुभन्दा",
+        "किनिहल्नुभन्द",
+        "kinihalnubhanda"
+      ]
+    },
+    {
+      "roman": "kisanasametlai",
+      "first_indexed": "किसानसमेतलाई",
+      "swift_original": true,
+      "swift_top": "किसानसमेतलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "किसानसमेतलाई"
+      ],
+      "swift_first_four": [
+        "किसानसमेतलाई",
+        "किसनसमेत्लै",
+        "kisanasametlai"
+      ]
+    },
+    {
+      "roman": "kocharnu",
+      "first_indexed": "कोचार्नु",
+      "swift_original": true,
+      "swift_top": "कोचार्नु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कोचार्नु"
+      ],
+      "swift_first_four": [
+        "कोचार्नु",
+        "कोचर्नु",
+        "kocharnu"
+      ]
+    },
+    {
+      "roman": "kotiviryaka",
+      "first_indexed": "कोटिवीर्यका",
+      "swift_original": true,
+      "swift_top": "कोटिवीर्यका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कोटिवीर्यका"
+      ],
+      "swift_first_four": [
+        "कोटिवीर्यका",
+        "कोतिविर्यक",
+        "kotiviryaka"
+      ]
+    },
+    {
+      "roman": "kraefkai",
+      "first_indexed": "क्राएफकै",
+      "swift_original": true,
+      "swift_top": "क्राएफकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्राएफकै"
+      ],
+      "swift_first_four": [
+        "क्राएफकै",
+        "क्रएफ्कै",
+        "kraefkai"
+      ]
+    },
+    {
+      "roman": "kramasuchianiwarya",
+      "first_indexed": "क्रमसूचीअनिवार्य",
+      "swift_original": true,
+      "swift_top": "क्रमसूचीअनिवार्य",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्रमसूचीअनिवार्य"
+      ],
+      "swift_first_four": [
+        "क्रमसूचीअनिवार्य",
+        "क्रमसुचिअनिवर्य",
+        "kramasuchianiwarya"
+      ]
+    },
+    {
+      "roman": "krantibhar",
+      "first_indexed": "क्रान्तिभर",
+      "swift_original": true,
+      "swift_top": "क्रान्तिभर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्रान्तिभर"
+      ],
+      "swift_first_four": [
+        "क्रान्तिभर",
+        "क्रन्तिभर",
+        "krantibhar"
+      ]
+    },
+    {
+      "roman": "kuiyachhada",
+      "first_indexed": "कुइयाछडा",
+      "swift_original": true,
+      "swift_top": "कुइयाछडा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कुइयाछडा"
+      ],
+      "swift_first_four": [
+        "कुइयाछडा",
+        "कुइयछद",
+        "kuiyachhada"
+      ]
+    },
+    {
+      "roman": "kuvendral",
+      "first_indexed": "कुवेन्द्रल",
+      "swift_original": true,
+      "swift_top": "कुवेन्द्रल",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "कुवेन्द्रल"
+      ],
+      "swift_first_four": [
+        "कुवेन्द्रल",
+        "kuvendral"
+      ]
+    },
+    {
+      "roman": "kwairika",
+      "first_indexed": "क्वाइरीका",
+      "swift_original": true,
+      "swift_top": "क्वाइरीका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "क्वाइरीका"
+      ],
+      "swift_first_four": [
+        "क्वाइरीका",
+        "क्वैरिक",
+        "kwairika"
+      ]
+    },
+    {
+      "roman": "lailasitko",
+      "first_indexed": "लैलासितको",
+      "swift_original": true,
+      "swift_top": "लैलासितको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लैलासितको"
+      ],
+      "swift_first_four": [
+        "लैलासितको",
+        "लैलसित्को",
+        "lailasitko"
+      ]
+    },
+    {
+      "roman": "laingikmatrai",
+      "first_indexed": "लैङ्गिकमात्रै",
+      "swift_original": true,
+      "swift_top": "लैङ्गिकमात्रै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लैङ्गिकमात्रै"
+      ],
+      "swift_first_four": [
+        "लैङ्गिकमात्रै",
+        "लैङिक्मत्रै",
+        "laingikmatrai"
+      ]
+    },
+    {
+      "roman": "lalpattasthit",
+      "first_indexed": "लालपत्तास्थित",
+      "swift_original": true,
+      "swift_top": "लालपत्तास्थित",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लालपत्तास्थित"
+      ],
+      "swift_first_four": [
+        "लालपत्तास्थित",
+        "लल्पत्तस्थित",
+        "lalpattasthit"
+      ]
+    },
+    {
+      "roman": "lefranchise",
+      "first_indexed": "लेफ्राञ्चाइज",
+      "swift_original": true,
+      "swift_top": "लेफ्राञ्चाइज",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लेफ्राञ्चाइज"
+      ],
+      "swift_first_four": [
+        "लेफ्राञ्चाइज",
+        "लेफ्रन्चिसे",
+        "lefranchise"
+      ]
+    },
+    {
+      "roman": "legat",
+      "first_indexed": "लेगत",
+      "swift_original": true,
+      "swift_top": "लेगत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लेगत"
+      ],
+      "swift_first_four": [
+        "लेगत",
+        "legat"
+      ]
+    },
+    {
+      "roman": "lekherbhanda",
+      "first_indexed": "लेखेरभन्दा",
+      "swift_original": true,
+      "swift_top": "लेखेरभन्दा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लेखेरभन्दा"
+      ],
+      "swift_first_four": [
+        "लेखेरभन्दा",
+        "लेखेर्भन्द",
+        "lekherbhanda"
+      ]
+    },
+    {
+      "roman": "lhasaki",
+      "first_indexed": "ल्हासाकी",
+      "swift_original": true,
+      "swift_top": "ल्हासाकी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ल्हासाकी"
+      ],
+      "swift_first_four": [
+        "ल्हासाकी",
+        "ल्हसकि",
+        "lhasaki"
+      ]
+    },
+    {
+      "roman": "lobhipapikai",
+      "first_indexed": "लोभीपापीकै",
+      "swift_original": true,
+      "swift_top": "लोभीपापीकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लोभीपापीकै"
+      ],
+      "swift_first_four": [
+        "लोभीपापीकै",
+        "लोभिपपिकै",
+        "lobhipapikai"
+      ]
+    },
+    {
+      "roman": "lukairahe",
+      "first_indexed": "लुकाइरहे",
+      "swift_original": true,
+      "swift_top": "लुकाइरहे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "लुकाइरहे"
+      ],
+      "swift_first_four": [
+        "लुकाइरहे",
+        "लुकैरहे",
+        "lukairahe"
+      ]
+    },
+    {
+      "roman": "mahabhukampamarfat",
+      "first_indexed": "महाभूकम्पमार्फत",
+      "swift_original": true,
+      "swift_top": "महाभूकम्पमार्फत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "महाभूकम्पमार्फत"
+      ],
+      "swift_first_four": [
+        "महाभूकम्पमार्फत",
+        "महभुकम्पमर्फत",
+        "mahabhukampamarfat"
+      ]
+    },
+    {
+      "roman": "maharajdhirale",
+      "first_indexed": "महाराजधिराले",
+      "swift_original": true,
+      "swift_top": "महाराजधिराले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "महाराजधिराले"
+      ],
+      "swift_first_four": [
+        "महाराजधिराले",
+        "महरज्धिरले",
+        "maharajdhirale"
+      ]
+    },
+    {
+      "roman": "mamilabareko",
+      "first_indexed": "मामिलाबारेको",
+      "swift_original": true,
+      "swift_top": "मामिलाबारेको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मामिलाबारेको"
+      ],
+      "swift_first_four": [
+        "मामिलाबारेको",
+        "ममिलबरेको",
+        "mamilabareko"
+      ]
+    },
+    {
+      "roman": "manawalokma",
+      "first_indexed": "मानवलोकमा",
+      "swift_original": true,
+      "swift_top": "मानवलोकमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मानवलोकमा"
+      ],
+      "swift_first_four": [
+        "मानवलोकमा",
+        "मनवलोक्म",
+        "manawalokma"
+      ]
+    },
+    {
+      "roman": "manchhako",
+      "first_indexed": "मान्छको",
+      "swift_original": true,
+      "swift_top": "मन्छको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मान्छको",
+        "मान्छाको"
+      ],
+      "swift_first_four": [
+        "मन्छको",
+        "मान्छको",
+        "मान्छाको",
+        "manchhako"
+      ]
+    },
+    {
+      "roman": "mangeskar",
+      "first_indexed": "मंगेसकर",
+      "swift_original": true,
+      "swift_top": "मङेस्कर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मंगेसकर",
+        "मंगेस्कर",
+        "मङ्गेस्कर"
+      ],
+      "swift_first_four": [
+        "मङेस्कर",
+        "मंगेसकर",
+        "मंगेस्कर",
+        "मङ्गेस्कर"
+      ]
+    },
+    {
+      "roman": "maniwachdwara",
+      "first_indexed": "मनिवाचद्वारा",
+      "swift_original": true,
+      "swift_top": "मनिवाचद्वारा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मनिवाचद्वारा"
+      ],
+      "swift_first_four": [
+        "मनिवाचद्वारा",
+        "मनिवच्द्वर",
+        "maniwachdwara"
+      ]
+    },
+    {
+      "roman": "mantrapradhan",
+      "first_indexed": "मन्त्रप्रधान",
+      "swift_original": true,
+      "swift_top": "मन्त्रप्रधान",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मन्त्रप्रधान"
+      ],
+      "swift_first_four": [
+        "मन्त्रप्रधान",
+        "मन्त्रप्रधन",
+        "mantrapradhan"
+      ]
+    },
+    {
+      "roman": "manusmritikarle",
+      "first_indexed": "मनुस्मृतिकारले",
+      "swift_original": true,
+      "swift_top": "मनुस्मृतिकारले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मनुस्मृतिकारले"
+      ],
+      "swift_first_four": [
+        "मनुस्मृतिकारले",
+        "मनुस्म्रितिकर्ले",
+        "manusmritikarle"
+      ]
+    },
+    {
+      "roman": "marnarahawa",
+      "first_indexed": "मर्नरहवा",
+      "swift_original": true,
+      "swift_top": "मर्नरहवा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मर्नरहवा"
+      ],
+      "swift_first_four": [
+        "मर्नरहवा",
+        "मर्नरहव",
+        "marnarahawa"
+      ]
+    },
+    {
+      "roman": "marwariwiruddha",
+      "first_indexed": "मार्वरीविरुद्ध",
+      "swift_original": true,
+      "swift_top": "मार्वरीविरुद्ध",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मार्वरीविरुद्ध"
+      ],
+      "swift_first_four": [
+        "मार्वरीविरुद्ध",
+        "मर्वरिविरुद्ध",
+        "marwariwiruddha"
+      ]
+    },
+    {
+      "roman": "menusahit",
+      "first_indexed": "मेनुसहित",
+      "swift_original": true,
+      "swift_top": "मेनुसहित",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मेनुसहित"
+      ],
+      "swift_first_four": [
+        "मेनुसहित",
+        "menusahit"
+      ]
+    },
+    {
+      "roman": "mesdar",
+      "first_indexed": "मेस्दार",
+      "swift_original": true,
+      "swift_top": "मेस्दार",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मेस्दार"
+      ],
+      "swift_first_four": [
+        "मेस्दार",
+        "मेस्दर",
+        "mesdar"
+      ]
+    },
+    {
+      "roman": "methyl",
+      "first_indexed": "मिथाइल",
+      "swift_original": true,
+      "swift_top": "methyl",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मिथाइल",
+        "मेथाइल"
+      ],
+      "swift_first_four": [
+        "methyl",
+        "मेथ्य्ल",
+        "मिथाइल",
+        "मेथाइल"
+      ]
+    },
+    {
+      "roman": "meunira",
+      "first_indexed": "मेउनिर",
+      "swift_original": true,
+      "swift_top": "मेउनिर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मेउनिर"
+      ],
+      "swift_first_four": [
+        "मेउनिर",
+        "meunira"
+      ]
+    },
+    {
+      "roman": "michaiprati",
+      "first_indexed": "मिचाइप्रति",
+      "swift_original": true,
+      "swift_top": "मिचाइप्रति",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मिचाइप्रति"
+      ],
+      "swift_first_four": [
+        "मिचाइप्रति",
+        "मिचैप्रति",
+        "michaiprati"
+      ]
+    },
+    {
+      "roman": "misingma",
+      "first_indexed": "मिसिङमा",
+      "swift_original": true,
+      "swift_top": "मिसिङमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मिसिङमा"
+      ],
+      "swift_first_four": [
+        "मिसिङमा",
+        "मिसिङ्म",
+        "misingma"
+      ]
+    },
+    {
+      "roman": "monotypeko",
+      "first_indexed": "मोनोटाइपको",
+      "swift_original": true,
+      "swift_top": "मोनोटाइपको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मोनोटाइपको"
+      ],
+      "swift_first_four": [
+        "मोनोटाइपको",
+        "मोनोत्य्पेको",
+        "monotypeko"
+      ]
+    },
+    {
+      "roman": "mulyabodhka",
+      "first_indexed": "मूल्यबोधका",
+      "swift_original": true,
+      "swift_top": "मूल्यबोधका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मूल्यबोधका"
+      ],
+      "swift_first_four": [
+        "मूल्यबोधका",
+        "मुल्यबोध्क",
+        "mulyabodhka"
+      ]
+    },
+    {
+      "roman": "mungarsanga",
+      "first_indexed": "मुंगरसँग",
+      "swift_original": true,
+      "swift_top": "मुंगरसँग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "मुंगरसँग"
+      ],
+      "swift_first_four": [
+        "मुंगरसँग",
+        "मुङर्सङ",
+        "mungarsanga"
+      ]
+    },
+    {
+      "roman": "nachhiring",
+      "first_indexed": "नाछिरिङ",
+      "swift_original": true,
+      "swift_top": "नाछिरिङ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नाछिरिङ"
+      ],
+      "swift_first_four": [
+        "नाछिरिङ",
+        "नछिरिङ",
+        "nachhiring"
+      ]
+    },
+    {
+      "roman": "nadiadwalko",
+      "first_indexed": "नाडियाडवालको",
+      "swift_original": true,
+      "swift_top": "नाडियाडवालको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नाडियाडवालको"
+      ],
+      "swift_first_four": [
+        "नाडियाडवालको",
+        "नदिअद्वल्को",
+        "nadiadwalko"
+      ]
+    },
+    {
+      "roman": "nahuneka",
+      "first_indexed": "नहुनेका",
+      "swift_original": true,
+      "swift_top": "नहुनेका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नहुनेका"
+      ],
+      "swift_first_four": [
+        "नहुनेका",
+        "नहुनेक",
+        "nahuneka"
+      ]
+    },
+    {
+      "roman": "nahusakchha",
+      "first_indexed": "नहुसक्छ",
+      "swift_original": true,
+      "swift_top": "नहुसक्छ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नहुसक्छ"
+      ],
+      "swift_first_four": [
+        "नहुसक्छ",
+        "nahusakchha"
+      ]
+    },
+    {
+      "roman": "nemwangsamaksha",
+      "first_indexed": "नेम्वाङसमक्ष",
+      "swift_original": true,
+      "swift_top": "नेम्वाङसमक्ष",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नेम्वाङसमक्ष"
+      ],
+      "swift_first_four": [
+        "नेम्वाङसमक्ष",
+        "नेम्वङ्समक्ष",
+        "nemwangsamaksha"
+      ]
+    },
+    {
+      "roman": "nepalwadi",
+      "first_indexed": "नेपालवादी",
+      "swift_original": true,
+      "swift_top": "नेपालवादी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नेपालवादी"
+      ],
+      "swift_first_four": [
+        "नेपालवादी",
+        "नेपल्वदि",
+        "nepalwadi"
+      ]
+    },
+    {
+      "roman": "netrahinharule",
+      "first_indexed": "नेत्रहीनहरूले",
+      "swift_original": true,
+      "swift_top": "नेत्रहीनहरूले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नेत्रहीनहरूले"
+      ],
+      "swift_first_four": [
+        "नेत्रहीनहरूले",
+        "नेत्रहिन्हरुले",
+        "netrahinharule"
+      ]
+    },
+    {
+      "roman": "nikakne",
+      "first_indexed": "निकाक्ने",
+      "swift_original": true,
+      "swift_top": "निकाक्ने",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "निकाक्ने"
+      ],
+      "swift_first_four": [
+        "निकाक्ने",
+        "निकक्ने",
+        "nikakne"
+      ]
+    },
+    {
+      "roman": "nimtinchhan",
+      "first_indexed": "निम्तिन्छन्",
+      "swift_original": true,
+      "swift_top": "निम्तिन्छन्",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "निम्तिन्छन्"
+      ],
+      "swift_first_four": [
+        "निम्तिन्छन्",
+        "निम्तिन्छन",
+        "nimtinchhan"
+      ]
+    },
+    {
+      "roman": "nowostisanga",
+      "first_indexed": "नोवोस्तीसँग",
+      "swift_original": true,
+      "swift_top": "नोवोस्तीसँग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नोवोस्तीसँग"
+      ],
+      "swift_first_four": [
+        "नोवोस्तीसँग",
+        "नोवोस्तिसङ",
+        "nowostisanga"
+      ]
+    },
+    {
+      "roman": "nuhaidinchhe",
+      "first_indexed": "नुहाइदिन्छे",
+      "swift_original": true,
+      "swift_top": "नुहाइदिन्छे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नुहाइदिन्छे"
+      ],
+      "swift_first_four": [
+        "नुहाइदिन्छे",
+        "नुहैदिन्छे",
+        "nuhaidinchhe"
+      ]
+    },
+    {
+      "roman": "nunbhanda",
+      "first_indexed": "नुनभन्दा",
+      "swift_original": true,
+      "swift_top": "नुनभन्दा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "नुनभन्दा"
+      ],
+      "swift_first_four": [
+        "नुनभन्दा",
+        "नुन्भन्द",
+        "nunbhanda"
+      ]
+    },
+    {
+      "roman": "nyanokai",
+      "first_indexed": "न्यानोकै",
+      "swift_original": true,
+      "swift_top": "न्यानोकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "न्यानोकै"
+      ],
+      "swift_first_four": [
+        "न्यानोकै",
+        "ञनोकै",
+        "nyanokai"
+      ]
+    },
+    {
+      "roman": "nyayavid",
+      "first_indexed": "न्यायविद",
+      "swift_original": true,
+      "swift_top": "न्यायविद",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "न्यायविद"
+      ],
+      "swift_first_four": [
+        "न्यायविद",
+        "ञयविद",
+        "nyayavid"
+      ]
+    },
+    {
+      "roman": "oirirahane",
+      "first_indexed": "ओइरिरहने",
+      "swift_original": true,
+      "swift_top": "ओइरिरहने",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ओइरिरहने"
+      ],
+      "swift_first_four": [
+        "ओइरिरहने",
+        "oirirahane"
+      ]
+    },
+    {
+      "roman": "ojholma",
+      "first_indexed": "ओझोलमा",
+      "swift_original": true,
+      "swift_top": "ओझोलमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ओझोलमा"
+      ],
+      "swift_first_four": [
+        "ओझोलमा",
+        "ओझोल्म",
+        "ojholma"
+      ]
+    },
+    {
+      "roman": "padyanidhi",
+      "first_indexed": "पद्यनिधि",
+      "swift_original": true,
+      "swift_top": "पद्यनिधि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पद्यनिधि"
+      ],
+      "swift_first_four": [
+        "पद्यनिधि",
+        "padyanidhi"
+      ]
+    },
+    {
+      "roman": "pahenlolagayat",
+      "first_indexed": "पहेँलोलगायत",
+      "swift_original": true,
+      "swift_top": "पहेन्लोलगयत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पहेँलोलगायत",
+        "पहेंलोलगायत"
+      ],
+      "swift_first_four": [
+        "पहेन्लोलगयत",
+        "पहेँलोलगायत",
+        "पहेंलोलगायत",
+        "pahenlolagayat"
+      ]
+    },
+    {
+      "roman": "pahilkadmi",
+      "first_indexed": "पहिलकदमी",
+      "swift_original": true,
+      "swift_top": "पहिलकदमी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पहिलकदमी"
+      ],
+      "swift_first_four": [
+        "पहिलकदमी",
+        "पहिल्कद्मि",
+        "pahilkadmi"
+      ]
+    },
+    {
+      "roman": "paibaksanchha",
+      "first_indexed": "पाइबक्सन्छ",
+      "swift_original": true,
+      "swift_top": "पाइबक्सन्छ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पाइबक्सन्छ"
+      ],
+      "swift_first_four": [
+        "पाइबक्सन्छ",
+        "पैबक्सन्छ",
+        "paibaksanchha"
+      ]
+    },
+    {
+      "roman": "paisamarfat",
+      "first_indexed": "पैसामार्फत",
+      "swift_original": true,
+      "swift_top": "पैसामार्फत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पैसामार्फत"
+      ],
+      "swift_first_four": [
+        "पैसामार्फत",
+        "पैसमर्फत",
+        "paisamarfat"
+      ]
+    },
+    {
+      "roman": "paitharile",
+      "first_indexed": "पैठारीले",
+      "swift_original": true,
+      "swift_top": "पैठारीले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पैठारीले"
+      ],
+      "swift_first_four": [
+        "पैठारीले",
+        "पैथरिले",
+        "paitharile"
+      ]
+    },
+    {
+      "roman": "pakistansammalai",
+      "first_indexed": "पाकिस्तानसम्मलाई",
+      "swift_original": true,
+      "swift_top": "पाकिस्तानसम्मलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पाकिस्तानसम्मलाई"
+      ],
+      "swift_first_four": [
+        "पाकिस्तानसम्मलाई",
+        "पकिस्तन्सम्मलै",
+        "pakistansammalai"
+      ]
+    },
+    {
+      "roman": "palediyamko",
+      "first_indexed": "पलेडियमको",
+      "swift_original": true,
+      "swift_top": "पलेडियमको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पलेडियमको"
+      ],
+      "swift_first_four": [
+        "पलेडियमको",
+        "पलेदियम्को",
+        "palediyamko"
+      ]
+    },
+    {
+      "roman": "parisarasma",
+      "first_indexed": "परिसरसमा",
+      "swift_original": true,
+      "swift_top": "परिसरसमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "परिसरसमा"
+      ],
+      "swift_first_four": [
+        "परिसरसमा",
+        "परिसरस्म",
+        "parisarasma"
+      ]
+    },
+    {
+      "roman": "pariwarjansahitko",
+      "first_indexed": "परिवारजनसहितको",
+      "swift_original": true,
+      "swift_top": "परिवारजनसहितको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "परिवारजनसहितको"
+      ],
+      "swift_first_four": [
+        "परिवारजनसहितको",
+        "परिवर्जन्सहित्को",
+        "pariwarjansahitko"
+      ]
+    },
+    {
+      "roman": "parkandai",
+      "first_indexed": "पर्कँदै",
+      "swift_original": true,
+      "swift_top": "पर्कन्दै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पर्कँदै",
+        "पर्कंदै"
+      ],
+      "swift_first_four": [
+        "पर्कन्दै",
+        "पर्कँदै",
+        "पर्कंदै",
+        "parkandai"
+      ]
+    },
+    {
+      "roman": "parnusathai",
+      "first_indexed": "पार्नुसाथै",
+      "swift_original": true,
+      "swift_top": "पार्नुसाथै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पार्नुसाथै"
+      ],
+      "swift_first_four": [
+        "पार्नुसाथै",
+        "पर्नुसथै",
+        "parnusathai"
+      ]
+    },
+    {
+      "roman": "pashubalijasta",
+      "first_indexed": "पशुबलिजस्ता",
+      "swift_original": true,
+      "swift_top": "पशुबलिजस्ता",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पशुबलिजस्ता"
+      ],
+      "swift_first_four": [
+        "पशुबलिजस्ता",
+        "पशुबलिजस्त",
+        "pashubalijasta"
+      ]
+    },
+    {
+      "roman": "pashupankshibid",
+      "first_indexed": "पशुपंक्षीबिद्",
+      "swift_original": true,
+      "swift_top": "पशुपंक्षीबिद्",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पशुपंक्षीबिद्"
+      ],
+      "swift_first_four": [
+        "पशुपंक्षीबिद्",
+        "पशुपन्क्षिबिद",
+        "pashupankshibid"
+      ]
+    },
+    {
+      "roman": "patramitratalai",
+      "first_indexed": "पत्रमित्रतालाई",
+      "swift_original": true,
+      "swift_top": "पत्रमित्रतालाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पत्रमित्रतालाई"
+      ],
+      "swift_first_four": [
+        "पत्रमित्रतालाई",
+        "पत्रमित्रतलै",
+        "patramitratalai"
+      ]
+    },
+    {
+      "roman": "pitinu",
+      "first_indexed": "पिटिनु",
+      "swift_original": true,
+      "swift_top": "पिटिनु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पिटिनु"
+      ],
+      "swift_first_four": [
+        "पिटिनु",
+        "पितिनु",
+        "pitinu"
+      ]
+    },
+    {
+      "roman": "plclai",
+      "first_indexed": "पीएलसीलाई",
+      "swift_original": true,
+      "swift_top": "पीएलसीलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पीएलसीलाई"
+      ],
+      "swift_first_four": [
+        "पीएलसीलाई",
+        "प्ल्च्लै",
+        "plclai"
+      ]
+    },
+    {
+      "roman": "policeclub",
+      "first_indexed": "पुलिसक्लब",
+      "swift_original": true,
+      "swift_top": "पुलिसक्लब",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पुलिसक्लब"
+      ],
+      "swift_first_four": [
+        "पुलिसक्लब",
+        "पोलिचेच्लुब",
+        "policeclub"
+      ]
+    },
+    {
+      "roman": "pracharprasarkosmet",
+      "first_indexed": "प्रचारप्रसारकोसमेत",
+      "swift_original": true,
+      "swift_top": "प्रचारप्रसारकोसमेत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रचारप्रसारकोसमेत"
+      ],
+      "swift_first_four": [
+        "प्रचारप्रसारकोसमेत",
+        "प्रचर्प्रसर्कोस्मेत",
+        "pracharprasarkosmet"
+      ]
+    },
+    {
+      "roman": "prantasangai",
+      "first_indexed": "प्रान्तसँगै",
+      "swift_original": true,
+      "swift_top": "प्रान्तसँगै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रान्तसँगै"
+      ],
+      "swift_first_four": [
+        "प्रान्तसँगै",
+        "प्रन्तसङै",
+        "prantasangai"
+      ]
+    },
+    {
+      "roman": "prasarko",
+      "first_indexed": "प्रसारको",
+      "swift_original": true,
+      "swift_top": "प्रसारको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रसारको"
+      ],
+      "swift_first_four": [
+        "प्रसारको",
+        "प्रसर्को",
+        "prasarko"
+      ]
+    },
+    {
+      "roman": "prathanmantri",
+      "first_indexed": "प्रथानमन्त्री",
+      "swift_original": true,
+      "swift_top": "प्रथानमन्त्री",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रथानमन्त्री"
+      ],
+      "swift_first_four": [
+        "प्रथानमन्त्री",
+        "प्रथन्मन्त्रि",
+        "prathanmantri"
+      ]
+    },
+    {
+      "roman": "pratinidhitwaka",
+      "first_indexed": "प्रतिनिधित्वका",
+      "swift_original": true,
+      "swift_top": "प्रतिनिधित्वका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रतिनिधित्वका"
+      ],
+      "swift_first_four": [
+        "प्रतिनिधित्वका",
+        "प्रतिनिधित्वक",
+        "pratinidhitwaka"
+      ]
+    },
+    {
+      "roman": "preranaputra",
+      "first_indexed": "प्रेरणापुत्र",
+      "swift_original": true,
+      "swift_top": "प्रेरणापुत्र",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रेरणापुत्र"
+      ],
+      "swift_first_four": [
+        "प्रेरणापुत्र",
+        "प्रेरनपुत्र",
+        "preranaputra"
+      ]
+    },
+    {
+      "roman": "protey",
+      "first_indexed": "प्रोटी",
+      "swift_original": true,
+      "swift_top": "प्रोटी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "प्रोटी"
+      ],
+      "swift_first_four": [
+        "प्रोटी",
+        "प्रोतेय",
+        "protey"
+      ]
+    },
+    {
+      "roman": "publicitykai",
+      "first_indexed": "पब्लिसिटीकै",
+      "swift_original": true,
+      "swift_top": "पब्लिसिटीकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पब्लिसिटीकै"
+      ],
+      "swift_first_four": [
+        "पब्लिसिटीकै",
+        "पुब्लिचित्य्कै",
+        "publicitykai"
+      ]
+    },
+    {
+      "roman": "punapariksha",
+      "first_indexed": "पुनपरीक्षा",
+      "swift_original": true,
+      "swift_top": "पुनपरीक्षा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पुनपरीक्षा"
+      ],
+      "swift_first_four": [
+        "पुनपरीक्षा",
+        "पुनपरिक्ष",
+        "punapariksha"
+      ]
+    },
+    {
+      "roman": "punasrthapanapachhikai",
+      "first_indexed": "पुनस्र्थापनापछिकै",
+      "swift_original": true,
+      "swift_top": "पुनस्र्थापनापछिकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पुनस्र्थापनापछिकै"
+      ],
+      "swift_first_four": [
+        "पुनस्र्थापनापछिकै",
+        "पुनस्र्थपनपछिकै",
+        "punasrthapanapachhikai"
+      ]
+    },
+    {
+      "roman": "punatarlikikaran",
+      "first_indexed": "पुनतार्लिकीकरण",
+      "swift_original": true,
+      "swift_top": "पुनतार्लिकीकरण",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "पुनतार्लिकीकरण"
+      ],
+      "swift_first_four": [
+        "पुनतार्लिकीकरण",
+        "पुनतर्लिकिकरन",
+        "punatarlikikaran"
+      ]
+    },
+    {
+      "roman": "rabbanile",
+      "first_indexed": "रब्बानीले",
+      "swift_original": true,
+      "swift_top": "रब्बानीले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रब्बानीले"
+      ],
+      "swift_first_four": [
+        "रब्बानीले",
+        "रब्बनिले",
+        "rabbanile"
+      ]
+    },
+    {
+      "roman": "rajashwamaitri",
+      "first_indexed": "राजश्वमैत्री",
+      "swift_original": true,
+      "swift_top": "राजश्वमैत्री",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "राजश्वमैत्री"
+      ],
+      "swift_first_four": [
+        "राजश्वमैत्री",
+        "रजश्वमैत्रि",
+        "rajashwamaitri"
+      ]
+    },
+    {
+      "roman": "rajdhaniware",
+      "first_indexed": "राजधानीवारे",
+      "swift_original": true,
+      "swift_top": "राजधानीवारे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "राजधानीवारे"
+      ],
+      "swift_first_four": [
+        "राजधानीवारे",
+        "रज्धनिवरे",
+        "rajdhaniware"
+      ]
+    },
+    {
+      "roman": "ramkahaniko",
+      "first_indexed": "रामकहानीको",
+      "swift_original": true,
+      "swift_top": "रम्कहनिको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रामकहानीको",
+        "रामकाहानीको"
+      ],
+      "swift_first_four": [
+        "रम्कहनिको",
+        "रामकहानीको",
+        "रामकाहानीको",
+        "ramkahaniko"
+      ]
+    },
+    {
+      "roman": "rashtapremy",
+      "first_indexed": "राष्टप्रेमी",
+      "swift_original": true,
+      "swift_top": "राष्टप्रेमी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "राष्टप्रेमी"
+      ],
+      "swift_first_four": [
+        "राष्टप्रेमी",
+        "रश्तप्रेम्य",
+        "rashtapremy"
+      ]
+    },
+    {
+      "roman": "rashtrapatimasatha",
+      "first_indexed": "राष्ट्रपतिमासथ",
+      "swift_original": true,
+      "swift_top": "राष्ट्रपतिमासथ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "राष्ट्रपतिमासथ"
+      ],
+      "swift_first_four": [
+        "राष्ट्रपतिमासथ",
+        "रश्त्रपतिमसथ",
+        "rashtrapatimasatha"
+      ]
+    },
+    {
+      "roman": "rasidwinai",
+      "first_indexed": "रसिदविनै",
+      "swift_original": true,
+      "swift_top": "रसिदविनै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रसिदविनै"
+      ],
+      "swift_first_four": [
+        "रसिदविनै",
+        "रसिद्विनै",
+        "rasidwinai"
+      ]
+    },
+    {
+      "roman": "ratewiruddha",
+      "first_indexed": "रातेविरुद्ध",
+      "swift_original": true,
+      "swift_top": "रातेविरुद्ध",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रातेविरुद्ध"
+      ],
+      "swift_first_four": [
+        "रातेविरुद्ध",
+        "रतेविरुद्ध",
+        "ratewiruddha"
+      ]
+    },
+    {
+      "roman": "ridethru",
+      "first_indexed": "राइडथ्रु",
+      "swift_original": true,
+      "swift_top": "राइडथ्रु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "राइडथ्रु"
+      ],
+      "swift_first_four": [
+        "राइडथ्रु",
+        "रिदेथ्रु",
+        "ridethru"
+      ]
+    },
+    {
+      "roman": "rihayaka",
+      "first_indexed": "रिहायका",
+      "swift_original": true,
+      "swift_top": "रिहायका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रिहायका"
+      ],
+      "swift_first_four": [
+        "रिहायका",
+        "रिहयक",
+        "rihayaka"
+      ]
+    },
+    {
+      "roman": "rojnuparchha",
+      "first_indexed": "रोज्नुपर्छ",
+      "swift_original": true,
+      "swift_top": "रोज्नुपर्छ",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रोज्नुपर्छ"
+      ],
+      "swift_first_four": [
+        "रोज्नुपर्छ",
+        "रोज्ञुपर्छ",
+        "rojnuparchha"
+      ]
+    },
+    {
+      "roman": "rompu",
+      "first_indexed": "रोम्पू",
+      "swift_original": true,
+      "swift_top": "रोम्पू",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रोम्पू"
+      ],
+      "swift_first_four": [
+        "रोम्पू",
+        "रोम्पु",
+        "rompu"
+      ]
+    },
+    {
+      "roman": "ruchibahirko",
+      "first_indexed": "रुचिबाहिरको",
+      "swift_original": true,
+      "swift_top": "रुचिबाहिरको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "रुचिबाहिरको"
+      ],
+      "swift_first_four": [
+        "रुचिबाहिरको",
+        "रुचिबहिर्को",
+        "ruchibahirko"
+      ]
+    },
+    {
+      "roman": "sadasyaharko",
+      "first_indexed": "सदस्यहरको",
+      "swift_original": true,
+      "swift_top": "सदस्यहरको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सदस्यहरको"
+      ],
+      "swift_first_four": [
+        "सदस्यहरको",
+        "सदस्यहर्को",
+        "sadasyaharko"
+      ]
+    },
+    {
+      "roman": "sadasyiyabhitrama",
+      "first_indexed": "सदस्यीयभित्रमा",
+      "swift_original": true,
+      "swift_top": "सदस्यीयभित्रमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सदस्यीयभित्रमा"
+      ],
+      "swift_first_four": [
+        "सदस्यीयभित्रमा",
+        "सदस्यियभित्रम",
+        "sadasyiyabhitrama"
+      ]
+    },
+    {
+      "roman": "sagunpahilo",
+      "first_indexed": "सगुनपहिलो",
+      "swift_original": true,
+      "swift_top": "सगुनपहिलो",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सगुनपहिलो"
+      ],
+      "swift_first_four": [
+        "सगुनपहिलो",
+        "सगुन्पहिलो",
+        "sagunpahilo"
+      ]
+    },
+    {
+      "roman": "sahabhagitamatra",
+      "first_indexed": "सहभागितामात्र",
+      "swift_original": true,
+      "swift_top": "सहभगितमत्र",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सहभागितामात्र",
+        "सहभागीतामात्र"
+      ],
+      "swift_first_four": [
+        "सहभगितमत्र",
+        "सहभागितामात्र",
+        "सहभागीतामात्र",
+        "sahabhagitamatra"
+      ]
+    },
+    {
+      "roman": "sajindrale",
+      "first_indexed": "साजिन्द्रले",
+      "swift_original": true,
+      "swift_top": "साजिन्द्रले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "साजिन्द्रले"
+      ],
+      "swift_first_four": [
+        "साजिन्द्रले",
+        "सजिन्द्रले",
+        "sajindrale"
+      ]
+    },
+    {
+      "roman": "sakshiharusangko",
+      "first_indexed": "साक्षीहरूसँगको",
+      "swift_original": true,
+      "swift_top": "साक्षीहरूसँगको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "साक्षीहरूसँगको"
+      ],
+      "swift_first_four": [
+        "साक्षीहरूसँगको",
+        "सक्षिहरुसङ्को",
+        "sakshiharusangko"
+      ]
+    },
+    {
+      "roman": "samajwadirajyako",
+      "first_indexed": "समाजवादीराज्यको",
+      "swift_original": true,
+      "swift_top": "समाजवादीराज्यको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "समाजवादीराज्यको"
+      ],
+      "swift_first_four": [
+        "समाजवादीराज्यको",
+        "समज्वदिरज्यको",
+        "samajwadirajyako"
+      ]
+    },
+    {
+      "roman": "samawadanta",
+      "first_indexed": "समवदन्त",
+      "swift_original": true,
+      "swift_top": "समवदन्त",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "समवदन्त"
+      ],
+      "swift_first_four": [
+        "समवदन्त",
+        "samawadanta"
+      ]
+    },
+    {
+      "roman": "samirale",
+      "first_indexed": "समिराले",
+      "swift_original": true,
+      "swift_top": "समिरले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "समिराले",
+        "समीराले"
+      ],
+      "swift_first_four": [
+        "समिरले",
+        "समिराले",
+        "समीराले",
+        "samirale"
+      ]
+    },
+    {
+      "roman": "samjhaiekai",
+      "first_indexed": "सम्झाइएकै",
+      "swift_original": true,
+      "swift_top": "सम्झाइएकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सम्झाइएकै"
+      ],
+      "swift_first_four": [
+        "सम्झाइएकै",
+        "सम्झैएकै",
+        "samjhaiekai"
+      ]
+    },
+    {
+      "roman": "samjhautapatrama",
+      "first_indexed": "सम्झौतपत्रमा",
+      "swift_original": true,
+      "swift_top": "सम्झौतपत्रम",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सम्झौतपत्रमा",
+        "सम्झौतापत्रमा"
+      ],
+      "swift_first_four": [
+        "सम्झौतपत्रम",
+        "सम्झौतपत्रमा",
+        "सम्झौतापत्रमा",
+        "samjhautapatrama"
+      ]
+    },
+    {
+      "roman": "sampaitdevi",
+      "first_indexed": "सम्पैतदेवी",
+      "swift_original": true,
+      "swift_top": "सम्पैतदेवी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सम्पैतदेवी"
+      ],
+      "swift_first_four": [
+        "सम्पैतदेवी",
+        "सम्पैत्देवि",
+        "sampaitdevi"
+      ]
+    },
+    {
+      "roman": "sangri",
+      "first_indexed": "सांग्री",
+      "swift_original": true,
+      "swift_top": "सङ्रि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सांग्री",
+        "साङ्ग्री"
+      ],
+      "swift_first_four": [
+        "सङ्रि",
+        "सांग्री",
+        "साङ्ग्री",
+        "sangri"
+      ]
+    },
+    {
+      "roman": "sanskritibichma",
+      "first_indexed": "संस्कृतिबिचमा",
+      "swift_original": true,
+      "swift_top": "सन्स्क्रितिबिच्म",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "संस्कृतिबिचमा",
+        "संस्कृतिबीचमा"
+      ],
+      "swift_first_four": [
+        "सन्स्क्रितिबिच्म",
+        "संस्कृतिबिचमा",
+        "संस्कृतिबीचमा",
+        "sanskritibichma"
+      ]
+    },
+    {
+      "roman": "sanskrityayan",
+      "first_indexed": "सांस्कृत्यायन",
+      "swift_original": true,
+      "swift_top": "सांस्कृत्यायन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सांस्कृत्यायन"
+      ],
+      "swift_first_four": [
+        "सांस्कृत्यायन",
+        "सन्स्क्रित्ययन",
+        "sanskrityayan"
+      ]
+    },
+    {
+      "roman": "sanwadatataharuko",
+      "first_indexed": "संवादताताहरूको",
+      "swift_original": true,
+      "swift_top": "संवादताताहरूको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "संवादताताहरूको"
+      ],
+      "swift_first_four": [
+        "संवादताताहरूको",
+        "सन्वदततहरुको",
+        "sanwadatataharuko"
+      ]
+    },
+    {
+      "roman": "saparekai",
+      "first_indexed": "सपारेकै",
+      "swift_original": true,
+      "swift_top": "सपारेकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सपारेकै"
+      ],
+      "swift_first_four": [
+        "सपारेकै",
+        "सपरेकै",
+        "saparekai"
+      ]
+    },
+    {
+      "roman": "sayamalai",
+      "first_indexed": "सायमालाई",
+      "swift_original": true,
+      "swift_top": "सयमलै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सायमालाई",
+        "सायामालाई"
+      ],
+      "swift_first_four": [
+        "सयमलै",
+        "सायमालाई",
+        "सायामालाई",
+        "sayamalai"
+      ]
+    },
+    {
+      "roman": "sensarharudwara",
+      "first_indexed": "सेन्सरहरूद्वारा",
+      "swift_original": true,
+      "swift_top": "सेन्सरहरूद्वारा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सेन्सरहरूद्वारा"
+      ],
+      "swift_first_four": [
+        "सेन्सरहरूद्वारा",
+        "सेन्सर्हरुद्वर",
+        "sensarharudwara"
+      ]
+    },
+    {
+      "roman": "sewapradayaksahit",
+      "first_indexed": "सेवाप्रदायकसहित",
+      "swift_original": true,
+      "swift_top": "सेवाप्रदायकसहित",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सेवाप्रदायकसहित"
+      ],
+      "swift_first_four": [
+        "सेवाप्रदायकसहित",
+        "सेवप्रदयक्सहित",
+        "sewapradayaksahit"
+      ]
+    },
+    {
+      "roman": "sewapraweshpachhi",
+      "first_indexed": "सेवाप्रवेशपछि",
+      "swift_original": true,
+      "swift_top": "सेवाप्रवेशपछि",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सेवाप्रवेशपछि"
+      ],
+      "swift_first_four": [
+        "सेवाप्रवेशपछि",
+        "सेवप्रवेश्पछि",
+        "sewapraweshpachhi"
+      ]
+    },
+    {
+      "roman": "shadyantrakariharuko",
+      "first_indexed": "षड्यन्त्रकारीहरुको",
+      "swift_original": true,
+      "swift_top": "शद्यन्त्रकरिहरुको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "षड्यन्त्रकारीहरुको",
+        "षड्यन्त्रकारीहरूको"
+      ],
+      "swift_first_four": [
+        "शद्यन्त्रकरिहरुको",
+        "षड्यन्त्रकारीहरुको",
+        "षड्यन्त्रकारीहरूको",
+        "shadyantrakariharuko"
+      ]
+    },
+    {
+      "roman": "shaktimagnu",
+      "first_indexed": "शक्तिमाग्नु",
+      "swift_original": true,
+      "swift_top": "शक्तिमाग्नु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "शक्तिमाग्नु"
+      ],
+      "swift_first_four": [
+        "शक्तिमाग्नु",
+        "शक्तिमग्नु",
+        "shaktimagnu"
+      ]
+    },
+    {
+      "roman": "shastrasahit",
+      "first_indexed": "शस्त्रसहित",
+      "swift_original": true,
+      "swift_top": "शस्त्रसहित",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "शस्त्रसहित",
+        "शास्त्रसहित"
+      ],
+      "swift_first_four": [
+        "शस्त्रसहित",
+        "शास्त्रसहित",
+        "shastrasahit"
+      ]
+    },
+    {
+      "roman": "shatrasuru",
+      "first_indexed": "शत्रसुरु",
+      "swift_original": true,
+      "swift_top": "शत्रसुरु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "शत्रसुरु"
+      ],
+      "swift_first_four": [
+        "शत्रसुरु",
+        "shatrasuru"
+      ]
+    },
+    {
+      "roman": "shishyale",
+      "first_indexed": "शिष्यले",
+      "swift_original": true,
+      "swift_top": "शिश्यले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "शिष्यले",
+        "शिष्याले"
+      ],
+      "swift_first_four": [
+        "शिश्यले",
+        "शिष्यले",
+        "शिष्याले",
+        "shishyale"
+      ]
+    },
+    {
+      "roman": "shradanjalika",
+      "first_indexed": "श्रदाञ्जलिका",
+      "swift_original": true,
+      "swift_top": "श्रदन्जलिक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "श्रदाञ्जलिका",
+        "श्रदान्जलिका"
+      ],
+      "swift_first_four": [
+        "श्रदन्जलिक",
+        "श्रदाञ्जलिका",
+        "श्रदान्जलिका",
+        "shradanjalika"
+      ]
+    },
+    {
+      "roman": "shriyandsharathe",
+      "first_indexed": "श्रियंदशरथे",
+      "swift_original": true,
+      "swift_top": "श्रियंदशरथे",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "श्रियंदशरथे"
+      ],
+      "swift_first_four": [
+        "श्रियंदशरथे",
+        "श्रियन्द्शरथे",
+        "shriyandsharathe"
+      ]
+    },
+    {
+      "roman": "shtale",
+      "first_indexed": "ष्टले",
+      "swift_original": true,
+      "swift_top": "ष्टले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ष्टले"
+      ],
+      "swift_first_four": [
+        "ष्टले",
+        "श्तले",
+        "shtale"
+      ]
+    },
+    {
+      "roman": "shubhsamacharka",
+      "first_indexed": "शुभसमाचारका",
+      "swift_original": true,
+      "swift_top": "शुभसमाचारका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "शुभसमाचारका"
+      ],
+      "swift_first_four": [
+        "शुभसमाचारका",
+        "शुभ्समचर्क",
+        "shubhsamacharka"
+      ]
+    },
+    {
+      "roman": "shwasprashwasasamet",
+      "first_indexed": "श्वासप्रश्वाससमेत",
+      "swift_original": true,
+      "swift_top": "श्वासप्रश्वाससमेत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "श्वासप्रश्वाससमेत"
+      ],
+      "swift_first_four": [
+        "श्वासप्रश्वाससमेत",
+        "श्वस्प्रश्वससमेत",
+        "shwasprashwasasamet"
+      ]
+    },
+    {
+      "roman": "shwetpatrako",
+      "first_indexed": "श्वेतपत्रको",
+      "swift_original": true,
+      "swift_top": "श्वेतपत्रको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "श्वेतपत्रको"
+      ],
+      "swift_first_four": [
+        "श्वेतपत्रको",
+        "श्वेत्पत्रको",
+        "shwetpatrako"
+      ]
+    },
+    {
+      "roman": "sijanbhitrakai",
+      "first_indexed": "सिजनभित्रकै",
+      "swift_original": true,
+      "swift_top": "सिजनभित्रकै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सिजनभित्रकै"
+      ],
+      "swift_first_four": [
+        "सिजनभित्रकै",
+        "सिजन्भित्रकै",
+        "sijanbhitrakai"
+      ]
+    },
+    {
+      "roman": "silpurbata",
+      "first_indexed": "सिलपुरबाट",
+      "swift_original": true,
+      "swift_top": "सिलपुरबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सिलपुरबाट"
+      ],
+      "swift_first_four": [
+        "सिलपुरबाट",
+        "सिल्पुर्बत",
+        "silpurbata"
+      ]
+    },
+    {
+      "roman": "sishtik",
+      "first_indexed": "सिष्टिक",
+      "swift_original": true,
+      "swift_top": "सिष्टिक",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सिष्टिक"
+      ],
+      "swift_first_four": [
+        "सिष्टिक",
+        "सिश्तिक",
+        "sishtik"
+      ]
+    },
+    {
+      "roman": "sohraki",
+      "first_indexed": "सोह्रकी",
+      "swift_original": true,
+      "swift_top": "सोह्रकी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सोह्रकी"
+      ],
+      "swift_first_four": [
+        "सोह्रकी",
+        "सोह्रकि",
+        "sohraki"
+      ]
+    },
+    {
+      "roman": "sthanapokharako",
+      "first_indexed": "स्थानपोखराको",
+      "swift_original": true,
+      "swift_top": "स्थानपोखराको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्थानपोखराको"
+      ],
+      "swift_first_four": [
+        "स्थानपोखराको",
+        "स्थनपोखरको",
+        "sthanapokharako"
+      ]
+    },
+    {
+      "roman": "sthitiyo",
+      "first_indexed": "स्थितियो",
+      "swift_original": true,
+      "swift_top": "स्थितियो",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्थितियो"
+      ],
+      "swift_first_four": [
+        "स्थितियो",
+        "sthitiyo"
+      ]
+    },
+    {
+      "roman": "storycycle",
+      "first_indexed": "स्टोरीसाइकल",
+      "swift_original": true,
+      "swift_top": "स्टोरीसाइकल",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्टोरीसाइकल"
+      ],
+      "swift_first_four": [
+        "स्टोरीसाइकल",
+        "स्तोर्य्च्य्च्ले",
+        "storycycle"
+      ]
+    },
+    {
+      "roman": "straberry",
+      "first_indexed": "स्ट्रबेरी",
+      "swift_original": true,
+      "swift_top": "स्त्रबेर्र्य",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्ट्रबेरी",
+        "स्ट्राबेरी"
+      ],
+      "swift_first_four": [
+        "स्त्रबेर्र्य",
+        "स्ट्रबेरी",
+        "स्ट्राबेरी",
+        "straberry"
+      ]
+    },
+    {
+      "roman": "subhayog",
+      "first_indexed": "सुभयोग",
+      "swift_original": true,
+      "swift_top": "सुभयोग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुभयोग"
+      ],
+      "swift_first_four": [
+        "सुभयोग",
+        "subhayog"
+      ]
+    },
+    {
+      "roman": "sugamyata",
+      "first_indexed": "सुगम्यता",
+      "swift_original": true,
+      "swift_top": "सुगम्यता",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुगम्यता"
+      ],
+      "swift_first_four": [
+        "सुगम्यता",
+        "सुगम्यत",
+        "sugamyata"
+      ]
+    },
+    {
+      "roman": "suhaglai",
+      "first_indexed": "सुहागलाई",
+      "swift_original": true,
+      "swift_top": "सुहागलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुहागलाई"
+      ],
+      "swift_first_four": [
+        "सुहागलाई",
+        "सुहग्लै",
+        "suhaglai"
+      ]
+    },
+    {
+      "roman": "suhiliyat",
+      "first_indexed": "सुहिलियत",
+      "swift_original": true,
+      "swift_top": "सुहिलियत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुहिलियत"
+      ],
+      "swift_first_four": [
+        "सुहिलियत",
+        "suhiliyat"
+      ]
+    },
+    {
+      "roman": "sukshmaparikshanka",
+      "first_indexed": "सूक्ष्मपरीक्षणका",
+      "swift_original": true,
+      "swift_top": "सूक्ष्मपरीक्षणका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सूक्ष्मपरीक्षणका"
+      ],
+      "swift_first_four": [
+        "सूक्ष्मपरीक्षणका",
+        "सुक्ष्मपरिक्षन्क",
+        "sukshmaparikshanka"
+      ]
+    },
+    {
+      "roman": "sunapasalbata",
+      "first_indexed": "सुनपसलबाट",
+      "swift_original": true,
+      "swift_top": "सुनपसलबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुनपसलबाट"
+      ],
+      "swift_first_four": [
+        "सुनपसलबाट",
+        "सुनपसल्बत",
+        "sunapasalbata"
+      ]
+    },
+    {
+      "roman": "sundarilgayatko",
+      "first_indexed": "सुन्दरीलगायतको",
+      "swift_original": true,
+      "swift_top": "सुन्दरीलगायतको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुन्दरीलगायतको"
+      ],
+      "swift_first_four": [
+        "सुन्दरीलगायतको",
+        "सुन्दरिल्गयत्को",
+        "sundarilgayatko"
+      ]
+    },
+    {
+      "roman": "sunilagowindako",
+      "first_indexed": "सुनीलगोविन्दको",
+      "swift_original": true,
+      "swift_top": "सुनीलगोविन्दको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुनीलगोविन्दको"
+      ],
+      "swift_first_four": [
+        "सुनीलगोविन्दको",
+        "सुनिलगोविन्दको",
+        "sunilagowindako"
+      ]
+    },
+    {
+      "roman": "suparmarketsangko",
+      "first_indexed": "सुपरमार्केटसँगको",
+      "swift_original": true,
+      "swift_top": "सुपरमार्केटसँगको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुपरमार्केटसँगको"
+      ],
+      "swift_first_four": [
+        "सुपरमार्केटसँगको",
+        "सुपर्मर्केत्सङ्को",
+        "suparmarketsangko"
+      ]
+    },
+    {
+      "roman": "supolbata",
+      "first_indexed": "सुपोलबाट",
+      "swift_original": true,
+      "swift_top": "सुपोलबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "सुपोलबाट"
+      ],
+      "swift_first_four": [
+        "सुपोलबाट",
+        "सुपोल्बत",
+        "supolbata"
+      ]
+    },
+    {
+      "roman": "swasthyakalagi",
+      "first_indexed": "स्वास्थ्यकालागी",
+      "swift_original": true,
+      "swift_top": "स्वास्थ्यकालागी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्वास्थ्यकालागी"
+      ],
+      "swift_first_four": [
+        "स्वास्थ्यकालागी",
+        "स्वस्थ्यकलगि",
+        "swasthyakalagi"
+      ]
+    },
+    {
+      "roman": "swayammale",
+      "first_indexed": "स्वयंमाले",
+      "swift_original": true,
+      "swift_top": "स्वयंमाले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्वयंमाले"
+      ],
+      "swift_first_four": [
+        "स्वयंमाले",
+        "स्वयम्मले",
+        "swayammale"
+      ]
+    },
+    {
+      "roman": "swedada",
+      "first_indexed": "स्वेददा",
+      "swift_original": true,
+      "swift_top": "स्वेददा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "स्वेददा"
+      ],
+      "swift_first_four": [
+        "स्वेददा",
+        "स्वेदद",
+        "swedada"
+      ]
+    },
+    {
+      "roman": "taansiyai",
+      "first_indexed": "टाँसियै",
+      "swift_original": true,
+      "swift_top": "टाँसियै",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टाँसियै"
+      ],
+      "swift_first_four": [
+        "टाँसियै",
+        "तान्सियै",
+        "taansiyai"
+      ]
+    },
+    {
+      "roman": "tabbu",
+      "first_indexed": "तब्बु",
+      "swift_original": true,
+      "swift_top": "तब्बु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "तब्बु",
+        "तब्बू"
+      ],
+      "swift_first_four": [
+        "तब्बु",
+        "तब्बू",
+        "tabbu"
+      ]
+    },
+    {
+      "roman": "tamiflu",
+      "first_indexed": "टामिफ्लु",
+      "swift_original": true,
+      "swift_top": "तमिफ्लु",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टामिफ्लु",
+        "तमिफ्लु"
+      ],
+      "swift_first_four": [
+        "तमिफ्लु",
+        "टामिफ्लु",
+        "tamiflu"
+      ]
+    },
+    {
+      "roman": "taskarharuma",
+      "first_indexed": "तस्करहरूमा",
+      "swift_original": true,
+      "swift_top": "तस्करहरूमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "तस्करहरूमा"
+      ],
+      "swift_first_four": [
+        "तस्करहरूमा",
+        "तस्कर्हरुम",
+        "taskarharuma"
+      ]
+    },
+    {
+      "roman": "tatpashchatasamet",
+      "first_indexed": "तत्पश्चातसमेत",
+      "swift_original": true,
+      "swift_top": "तत्पश्चातसमेत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "तत्पश्चातसमेत"
+      ],
+      "swift_first_four": [
+        "तत्पश्चातसमेत",
+        "तत्पश्चतसमेत",
+        "tatpashchatasamet"
+      ]
+    },
+    {
+      "roman": "technodrims",
+      "first_indexed": "टेक्नोड्रिम्स",
+      "swift_original": true,
+      "swift_top": "टेक्नोड्रिम्स",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टेक्नोड्रिम्स"
+      ],
+      "swift_first_four": [
+        "टेक्नोड्रिम्स",
+        "तेच्नोद्रिम्स",
+        "technodrims"
+      ]
+    },
+    {
+      "roman": "teretorylai",
+      "first_indexed": "टेरेटोरीलाई",
+      "swift_original": true,
+      "swift_top": "टेरेटोरीलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टेरेटोरीलाई"
+      ],
+      "swift_first_four": [
+        "टेरेटोरीलाई",
+        "तेरेतोर्य्लै",
+        "teretorylai"
+      ]
+    },
+    {
+      "roman": "teroviruddha",
+      "first_indexed": "तेरोविरुद्ध",
+      "swift_original": true,
+      "swift_top": "तेरोविरुद्ध",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "तेरोविरुद्ध"
+      ],
+      "swift_first_four": [
+        "तेरोविरुद्ध",
+        "teroviruddha"
+      ]
+    },
+    {
+      "roman": "thakurbabama",
+      "first_indexed": "ठाकुरबाबामा",
+      "swift_original": true,
+      "swift_top": "ठाकुरबाबामा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ठाकुरबाबामा"
+      ],
+      "swift_first_four": [
+        "ठाकुरबाबामा",
+        "थकुर्बबम",
+        "thakurbabama"
+      ]
+    },
+    {
+      "roman": "thekdarpakshale",
+      "first_indexed": "ठेकदारपक्षले",
+      "swift_original": true,
+      "swift_top": "ठेकदारपक्षले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "ठेकदारपक्षले"
+      ],
+      "swift_first_four": [
+        "ठेकदारपक्षले",
+        "थेक्दर्पक्षले",
+        "thekdarpakshale"
+      ]
+    },
+    {
+      "roman": "tithiharubata",
+      "first_indexed": "तिथिहरूबाट",
+      "swift_original": true,
+      "swift_top": "तिथिहरूबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "तिथिहरूबाट"
+      ],
+      "swift_first_four": [
+        "तिथिहरूबाट",
+        "तिथिहरुबत",
+        "tithiharubata"
+      ]
+    },
+    {
+      "roman": "tna",
+      "first_indexed": "टीएनए",
+      "swift_original": true,
+      "swift_top": "त्न",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टीएनए",
+        "त्न",
+        "तना"
+      ],
+      "swift_first_four": [
+        "त्न",
+        "टीएनए",
+        "तना",
+        "tna"
+      ]
+    },
+    {
+      "roman": "tolwasiharule",
+      "first_indexed": "टोलवासीहरूले",
+      "swift_original": true,
+      "swift_top": "टोलवासीहरूले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टोलवासीहरूले"
+      ],
+      "swift_first_four": [
+        "टोलवासीहरूले",
+        "तोल्वसिहरुले",
+        "tolwasiharule"
+      ]
+    },
+    {
+      "roman": "totage",
+      "first_indexed": "टोटेज",
+      "swift_original": true,
+      "swift_top": "टोटेज",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टोटेज"
+      ],
+      "swift_first_four": [
+        "टोटेज",
+        "तोतगे",
+        "totage"
+      ]
+    },
+    {
+      "roman": "tugedarsale",
+      "first_indexed": "टुगेदर्सले",
+      "swift_original": true,
+      "swift_top": "टुगेदर्सले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "टुगेदर्सले"
+      ],
+      "swift_first_four": [
+        "टुगेदर्सले",
+        "तुगेदर्सले",
+        "tugedarsale"
+      ]
+    },
+    {
+      "roman": "tulyaunutira",
+      "first_indexed": "तुल्याउनुतिर",
+      "swift_original": true,
+      "swift_top": "तुल्याउनुतिर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "तुल्याउनुतिर"
+      ],
+      "swift_first_four": [
+        "तुल्याउनुतिर",
+        "तुल्यौनुतिर",
+        "tulyaunutira"
+      ]
+    },
+    {
+      "roman": "tyahasma",
+      "first_indexed": "त्यहसमा",
+      "swift_original": true,
+      "swift_top": "त्यहसमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "त्यहसमा"
+      ],
+      "swift_first_four": [
+        "त्यहसमा",
+        "त्यहस्म",
+        "tyahasma"
+      ]
+    },
+    {
+      "roman": "tyasalehamra",
+      "first_indexed": "त्यसलेहाम्रा",
+      "swift_original": true,
+      "swift_top": "त्यसलेहाम्रा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "त्यसलेहाम्रा"
+      ],
+      "swift_first_four": [
+        "त्यसलेहाम्रा",
+        "त्यसलेहम्र",
+        "tyasalehamra"
+      ]
+    },
+    {
+      "roman": "uhuka",
+      "first_indexed": "उहुका",
+      "swift_original": true,
+      "swift_top": "उहुका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "उहुका"
+      ],
+      "swift_first_four": [
+        "उहुका",
+        "उहुक",
+        "uhuka"
+      ]
+    },
+    {
+      "roman": "uksaeka",
+      "first_indexed": "उक्साएका",
+      "swift_original": true,
+      "swift_top": "उक्साएका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "उक्साएका"
+      ],
+      "swift_first_four": [
+        "उक्साएका",
+        "उक्सएक",
+        "uksaeka"
+      ]
+    },
+    {
+      "roman": "ulderwireld",
+      "first_indexed": "अल्डरवाइरेल्ड",
+      "swift_original": true,
+      "swift_top": "अल्डरवाइरेल्ड",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अल्डरवाइरेल्ड"
+      ],
+      "swift_first_four": [
+        "अल्डरवाइरेल्ड",
+        "उल्देर्विरेल्द",
+        "ulderwireld"
+      ]
+    },
+    {
+      "roman": "unrelatedma",
+      "first_indexed": "अनरिलेटेडमा",
+      "swift_original": true,
+      "swift_top": "अनरिलेटेडमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "अनरिलेटेडमा"
+      ],
+      "swift_first_four": [
+        "अनरिलेटेडमा",
+        "उन्रेलतेद्म",
+        "unrelatedma"
+      ]
+    },
+    {
+      "roman": "upabhogalagayat",
+      "first_indexed": "उपभोगलगायत",
+      "swift_original": true,
+      "swift_top": "उपभोगलगायत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "उपभोगलगायत"
+      ],
+      "swift_first_four": [
+        "उपभोगलगायत",
+        "उपभोगलगयत",
+        "upabhogalagayat"
+      ]
+    },
+    {
+      "roman": "upamahanragarpalikako",
+      "first_indexed": "उपमहानरगरपालिकाको",
+      "swift_original": true,
+      "swift_top": "उपमहानरगरपालिकाको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "उपमहानरगरपालिकाको"
+      ],
+      "swift_first_four": [
+        "उपमहानरगरपालिकाको",
+        "उपमहन्रगर्पलिकको",
+        "upamahanragarpalikako"
+      ]
+    },
+    {
+      "roman": "upamahasachibma",
+      "first_indexed": "उपमहासचिबमा",
+      "swift_original": true,
+      "swift_top": "उपमहासचिबमा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "उपमहासचिबमा"
+      ],
+      "swift_first_four": [
+        "उपमहासचिबमा",
+        "उपमहसचिब्म",
+        "upamahasachibma"
+      ]
+    },
+    {
+      "roman": "upcharbahekka",
+      "first_indexed": "उपचारबाहेकका",
+      "swift_original": true,
+      "swift_top": "उपचारबाहेकका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "उपचारबाहेकका"
+      ],
+      "swift_first_four": [
+        "उपचारबाहेकका",
+        "उप्चर्बहेक्क",
+        "upcharbahekka"
+      ]
+    },
+    {
+      "roman": "velelonga",
+      "first_indexed": "वेलेलोङ्गा",
+      "swift_original": true,
+      "swift_top": "वेलेलोङ्गा",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वेलेलोङ्गा"
+      ],
+      "swift_first_four": [
+        "वेलेलोङ्गा",
+        "वेलेलोङ",
+        "velelonga"
+      ]
+    },
+    {
+      "roman": "verojgariviruddha",
+      "first_indexed": "वेरोजगारीविरुद्ध",
+      "swift_original": true,
+      "swift_top": "वेरोजगारीविरुद्ध",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वेरोजगारीविरुद्ध"
+      ],
+      "swift_first_four": [
+        "वेरोजगारीविरुद्ध",
+        "वेरोज्गरिविरुद्ध",
+        "verojgariviruddha"
+      ]
+    },
+    {
+      "roman": "vidrohiharusanga",
+      "first_indexed": "विद्रोहीहरूसँग",
+      "swift_original": true,
+      "swift_top": "विद्रोहीहरूसँग",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विद्रोहीहरूसँग"
+      ],
+      "swift_first_four": [
+        "विद्रोहीहरूसँग",
+        "विद्रोहिहरुसङ",
+        "vidrohiharusanga"
+      ]
+    },
+    {
+      "roman": "vigyako",
+      "first_indexed": "विज्ञाको",
+      "swift_original": true,
+      "swift_top": "विज्ञाको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विज्ञाको"
+      ],
+      "swift_first_four": [
+        "विज्ञाको",
+        "विज्ञको",
+        "vigyako"
+      ]
+    },
+    {
+      "roman": "vijayakrishna",
+      "first_indexed": "विजयकृष्ण",
+      "swift_original": true,
+      "swift_top": "विजयक्रिश्न",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विजयकृष्ण",
+        "विजयकृष्णा"
+      ],
+      "swift_first_four": [
+        "विजयक्रिश्न",
+        "विजयकृष्ण",
+        "विजयकृष्णा",
+        "vijayakrishna"
+      ]
+    },
+    {
+      "roman": "vikohi",
+      "first_indexed": "विकोही",
+      "swift_original": true,
+      "swift_top": "विकोही",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विकोही"
+      ],
+      "swift_first_four": [
+        "विकोही",
+        "विकोहि",
+        "vikohi"
+      ]
+    },
+    {
+      "roman": "vividhapakshiya",
+      "first_indexed": "विविधपक्षीय",
+      "swift_original": true,
+      "swift_top": "विविधपक्षीय",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विविधपक्षीय"
+      ],
+      "swift_first_four": [
+        "विविधपक्षीय",
+        "विविधपक्षिय",
+        "vividhapakshiya"
+      ]
+    },
+    {
+      "roman": "wadhyata",
+      "first_indexed": "वाध्यता",
+      "swift_original": true,
+      "swift_top": "वाध्यता",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वाध्यता"
+      ],
+      "swift_first_four": [
+        "वाध्यता",
+        "वध्यत",
+        "wadhyata"
+      ]
+    },
+    {
+      "roman": "wagainchale",
+      "first_indexed": "वगैंचाले",
+      "swift_original": true,
+      "swift_top": "वगैंचाले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वगैंचाले"
+      ],
+      "swift_first_four": [
+        "वगैंचाले",
+        "वगैन्चले",
+        "wagainchale"
+      ]
+    },
+    {
+      "roman": "wahut",
+      "first_indexed": "वहुत",
+      "swift_original": true,
+      "swift_top": "वहुत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वहुत"
+      ],
+      "swift_first_four": [
+        "वहुत",
+        "wahut"
+      ]
+    },
+    {
+      "roman": "waldole",
+      "first_indexed": "वाल्डोले",
+      "swift_original": true,
+      "swift_top": "वल्दोले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वाल्डोले",
+        "वाल्दोले"
+      ],
+      "swift_first_four": [
+        "वल्दोले",
+        "वाल्डोले",
+        "वाल्दोले",
+        "waldole"
+      ]
+    },
+    {
+      "roman": "warrinskale",
+      "first_indexed": "वारिन्सकाले",
+      "swift_original": true,
+      "swift_top": "वारिन्सकाले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वारिन्सकाले"
+      ],
+      "swift_first_four": [
+        "वारिन्सकाले",
+        "वर्रिन्स्कले",
+        "warrinskale"
+      ]
+    },
+    {
+      "roman": "wastuwigyan",
+      "first_indexed": "वास्तुविज्ञान",
+      "swift_original": true,
+      "swift_top": "वास्तुविज्ञान",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वास्तुविज्ञान"
+      ],
+      "swift_first_four": [
+        "वास्तुविज्ञान",
+        "वस्तुविज्ञन",
+        "wastuwigyan"
+      ]
+    },
+    {
+      "roman": "webhishtin",
+      "first_indexed": "वेभिष्टिन",
+      "swift_original": true,
+      "swift_top": "वेभिष्टिन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वेभिष्टिन"
+      ],
+      "swift_first_four": [
+        "वेभिष्टिन",
+        "वेभिश्तिन",
+        "webhishtin"
+      ]
+    },
+    {
+      "roman": "wenefitko",
+      "first_indexed": "वेनेफिटको",
+      "swift_original": true,
+      "swift_top": "वेनेफिटको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वेनेफिटको"
+      ],
+      "swift_first_four": [
+        "वेनेफिटको",
+        "वेनेफित्को",
+        "wenefitko"
+      ]
+    },
+    {
+      "roman": "widhanwiruddhako",
+      "first_indexed": "विधानविरुद्धको",
+      "swift_original": true,
+      "swift_top": "विधानविरुद्धको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विधानविरुद्धको"
+      ],
+      "swift_first_four": [
+        "विधानविरुद्धको",
+        "विधन्विरुद्धको",
+        "widhanwiruddhako"
+      ]
+    },
+    {
+      "roman": "wiltuniadevi",
+      "first_indexed": "विल्टुनियादेवी",
+      "swift_original": true,
+      "swift_top": "विल्टुनियादेवी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "विल्टुनियादेवी"
+      ],
+      "swift_first_four": [
+        "विल्टुनियादेवी",
+        "विल्तुनिअदेवि",
+        "wiltuniadevi"
+      ]
+    },
+    {
+      "roman": "wlickenle",
+      "first_indexed": "व्लिकेनले",
+      "swift_original": true,
+      "swift_top": "व्लिकेनले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "व्लिकेनले"
+      ],
+      "swift_first_four": [
+        "व्लिकेनले",
+        "व्लिच्केन्ले",
+        "wlickenle"
+      ]
+    },
+    {
+      "roman": "wratakathabata",
+      "first_indexed": "व्रतकथाबाट",
+      "swift_original": true,
+      "swift_top": "व्रतकथाबाट",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "व्रतकथाबाट"
+      ],
+      "swift_first_four": [
+        "व्रतकथाबाट",
+        "व्रतकथबत",
+        "wratakathabata"
+      ]
+    },
+    {
+      "roman": "wriddhilesmet",
+      "first_indexed": "वृद्धिलेसमेत",
+      "swift_original": true,
+      "swift_top": "वृद्धिलेसमेत",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "वृद्धिलेसमेत"
+      ],
+      "swift_first_four": [
+        "वृद्धिलेसमेत",
+        "व्रिद्धिलेस्मेत",
+        "wriddhilesmet"
+      ]
+    },
+    {
+      "roman": "wrigediera",
+      "first_indexed": "व्रिगेडिएर",
+      "swift_original": true,
+      "swift_top": "व्रिगेडिएर",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "व्रिगेडिएर"
+      ],
+      "swift_first_four": [
+        "व्रिगेडिएर",
+        "व्रिगेदिएर",
+        "wrigediera"
+      ]
+    },
+    {
+      "roman": "wyagka",
+      "first_indexed": "व्यागका",
+      "swift_original": true,
+      "swift_top": "व्यागका",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "व्यागका"
+      ],
+      "swift_first_four": [
+        "व्यागका",
+        "व्यग्क",
+        "wyagka"
+      ]
+    },
+    {
+      "roman": "yadyapteson",
+      "first_indexed": "याड्याप्टेसन",
+      "swift_original": true,
+      "swift_top": "याड्याप्टेसन",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "याड्याप्टेसन"
+      ],
+      "swift_first_four": [
+        "याड्याप्टेसन",
+        "यद्यप्तेसोन",
+        "yadyapteson"
+      ]
+    },
+    {
+      "roman": "yatharthawadile",
+      "first_indexed": "यथार्थवादीले",
+      "swift_original": true,
+      "swift_top": "यथार्थवादीले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "यथार्थवादीले"
+      ],
+      "swift_first_four": [
+        "यथार्थवादीले",
+        "यथर्थवदिले",
+        "yatharthawadile"
+      ]
+    },
+    {
+      "roman": "yatharthawadwirodhi",
+      "first_indexed": "यथार्थवादविरोधी",
+      "swift_original": true,
+      "swift_top": "यथार्थवादविरोधी",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "यथार्थवादविरोधी"
+      ],
+      "swift_first_four": [
+        "यथार्थवादविरोधी",
+        "यथर्थवद्विरोधि",
+        "yatharthawadwirodhi"
+      ]
+    },
+    {
+      "roman": "yogawigyako",
+      "first_indexed": "योगविज्ञको",
+      "swift_original": true,
+      "swift_top": "योगविज्ञको",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "योगविज्ञको"
+      ],
+      "swift_first_four": [
+        "योगविज्ञको",
+        "yogawigyako"
+      ]
+    },
+    {
+      "roman": "yojanamantralaylai",
+      "first_indexed": "योजनामन्त्रालयलाई",
+      "swift_original": true,
+      "swift_top": "योजनामन्त्रालयलाई",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "योजनामन्त्रालयलाई"
+      ],
+      "swift_first_four": [
+        "योजनामन्त्रालयलाई",
+        "योजनमन्त्रलय्लै",
+        "yojanamantralaylai"
+      ]
+    },
+    {
+      "roman": "yuchle",
+      "first_indexed": "युचले",
+      "swift_original": true,
+      "swift_top": "युचले",
+      "swift_indexed_any": true,
+      "swift_indexed_first_four": true,
+      "android_indexed_four": true,
+      "android_choices": [
+        "युचले"
+      ],
+      "swift_first_four": [
+        "युचले",
+        "युच्ले",
+        "yuchle"
+      ]
+    }
+  ]
+}

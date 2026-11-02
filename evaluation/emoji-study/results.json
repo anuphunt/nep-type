@@ -1,0 +1,981 @@
+{
+  "cases": [
+    {
+      "category": "authored",
+      "expected": [
+        "🙏"
+      ],
+      "first_results": [
+        {
+          "emoji": "🙏",
+          "name": "namaste thanks prayer"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🙏",
+          "name": "namaste thanks prayer"
+        }
+      ],
+      "prefix_found": true,
+      "query": "namaste",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "authored",
+      "expected": [
+        "☕"
+      ],
+      "first_results": [
+        {
+          "emoji": "☕",
+          "name": "coffee"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "☕",
+          "name": "coffee"
+        }
+      ],
+      "prefix_found": true,
+      "query": "coffee",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "authored",
+      "expected": [
+        "⚽"
+      ],
+      "first_results": [
+        {
+          "emoji": "⚽",
+          "name": "football soccer"
+        },
+        {
+          "emoji": "🏈",
+          "name": "american football"
+        },
+        {
+          "emoji": "🏉",
+          "name": "rugby football"
+        }
+      ],
+      "found": true,
+      "match_count": 3,
+      "prefix_count": 3,
+      "prefix_first_results": [
+        {
+          "emoji": "⚽",
+          "name": "football soccer"
+        },
+        {
+          "emoji": "🏈",
+          "name": "american football"
+        },
+        {
+          "emoji": "🏉",
+          "name": "rugby football"
+        }
+      ],
+      "prefix_found": true,
+      "query": "football",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "authored",
+      "expected": [
+        "🇳🇵"
+      ],
+      "first_results": [
+        {
+          "emoji": "🇳🇵",
+          "name": "nepal flag"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🇳🇵",
+          "name": "nepal flag"
+        }
+      ],
+      "prefix_found": true,
+      "query": "nepal flag",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "authored",
+      "expected": [
+        "🎉"
+      ],
+      "first_results": [
+        {
+          "emoji": "🎉",
+          "name": "celebration party"
+        },
+        {
+          "emoji": "🙌",
+          "name": "person raising both hands in celebration"
+        }
+      ],
+      "found": true,
+      "match_count": 2,
+      "prefix_count": 2,
+      "prefix_first_results": [
+        {
+          "emoji": "🎉",
+          "name": "celebration party"
+        },
+        {
+          "emoji": "🙌",
+          "name": "person raising both hands in celebration"
+        }
+      ],
+      "prefix_found": true,
+      "query": "celebration",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "authored",
+      "expected": [
+        "💻"
+      ],
+      "first_results": [
+        {
+          "emoji": "💻",
+          "name": "computer laptop"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "💻",
+          "name": "computer laptop"
+        }
+      ],
+      "prefix_found": true,
+      "query": "computer",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🚀"
+      ],
+      "first_results": [
+        {
+          "emoji": "🚀",
+          "name": "rocket"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🚀",
+          "name": "rocket"
+        }
+      ],
+      "prefix_found": true,
+      "query": "rocket",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🍕"
+      ],
+      "first_results": [
+        {
+          "emoji": "🍕",
+          "name": "slice of pizza"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🍕",
+          "name": "slice of pizza"
+        }
+      ],
+      "prefix_found": true,
+      "query": "pizza",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🐱"
+      ],
+      "first_results": [
+        {
+          "emoji": "🐱",
+          "name": "cat face"
+        },
+        {
+          "emoji": "😸",
+          "name": "grinning cat face with smiling eyes"
+        },
+        {
+          "emoji": "😹",
+          "name": "cat face with tears of joy"
+        },
+        {
+          "emoji": "😺",
+          "name": "smiling cat face with open mouth"
+        },
+        {
+          "emoji": "😻",
+          "name": "smiling cat face with heart-shaped eyes"
+        }
+      ],
+      "found": true,
+      "match_count": 10,
+      "prefix_count": 10,
+      "prefix_first_results": [
+        {
+          "emoji": "🐱",
+          "name": "cat face"
+        },
+        {
+          "emoji": "😸",
+          "name": "grinning cat face with smiling eyes"
+        },
+        {
+          "emoji": "😹",
+          "name": "cat face with tears of joy"
+        },
+        {
+          "emoji": "😺",
+          "name": "smiling cat face with open mouth"
+        },
+        {
+          "emoji": "😻",
+          "name": "smiling cat face with heart-shaped eyes"
+        }
+      ],
+      "prefix_found": true,
+      "query": "cat face",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🐶"
+      ],
+      "first_results": [
+        {
+          "emoji": "🐶",
+          "name": "dog face"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🐶",
+          "name": "dog face"
+        }
+      ],
+      "prefix_found": true,
+      "query": "dog face",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🚒"
+      ],
+      "first_results": [
+        {
+          "emoji": "🚒",
+          "name": "fire engine"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🚒",
+          "name": "fire engine"
+        }
+      ],
+      "prefix_found": true,
+      "query": "fire engine",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🌈"
+      ],
+      "first_results": [
+        {
+          "emoji": "🌈",
+          "name": "rainbow"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🌈",
+          "name": "rainbow"
+        }
+      ],
+      "prefix_found": true,
+      "query": "rainbow",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "❄️",
+        "❄"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "snowflake",
+      "rank_zero_based": null
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "✈️",
+        "✈"
+      ],
+      "first_results": [
+        {
+          "emoji": "🛫",
+          "name": "airplane departure"
+        },
+        {
+          "emoji": "🛬",
+          "name": "airplane arriving"
+        }
+      ],
+      "found": false,
+      "match_count": 2,
+      "prefix_count": 2,
+      "prefix_first_results": [
+        {
+          "emoji": "🛫",
+          "name": "airplane departure"
+        },
+        {
+          "emoji": "🛬",
+          "name": "airplane arriving"
+        }
+      ],
+      "prefix_found": false,
+      "query": "airplane",
+      "rank_zero_based": null
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "📷"
+      ],
+      "first_results": [
+        {
+          "emoji": "🎥",
+          "name": "movie camera"
+        },
+        {
+          "emoji": "📷",
+          "name": "camera"
+        },
+        {
+          "emoji": "📸",
+          "name": "camera with flash"
+        },
+        {
+          "emoji": "📹",
+          "name": "video camera"
+        }
+      ],
+      "found": true,
+      "match_count": 4,
+      "prefix_count": 4,
+      "prefix_first_results": [
+        {
+          "emoji": "🎥",
+          "name": "movie camera"
+        },
+        {
+          "emoji": "📷",
+          "name": "camera"
+        },
+        {
+          "emoji": "📸",
+          "name": "camera with flash"
+        },
+        {
+          "emoji": "📹",
+          "name": "video camera"
+        }
+      ],
+      "prefix_found": true,
+      "query": "camera",
+      "rank_zero_based": 1
+    },
+    {
+      "category": "unicode-name",
+      "expected": [
+        "🎂"
+      ],
+      "first_results": [
+        {
+          "emoji": "🎂",
+          "name": "birthday cake"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🎂",
+          "name": "birthday cake"
+        }
+      ],
+      "prefix_found": true,
+      "query": "birthday cake",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "😂",
+        "🤣"
+      ],
+      "first_results": [
+        {
+          "emoji": "🍭",
+          "name": "lollipop"
+        }
+      ],
+      "found": false,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "🍭",
+          "name": "lollipop"
+        }
+      ],
+      "prefix_found": false,
+      "query": "lol",
+      "rank_zero_based": null
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "😂",
+        "🤣"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "cry laughing",
+      "rank_zero_based": null
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "🙏"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "thank you",
+      "rank_zero_based": null
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "👌"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "okay",
+      "rank_zero_based": null
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "👍"
+      ],
+      "first_results": [
+        {
+          "emoji": "👍",
+          "name": "thumbs up yes"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "👍",
+          "name": "thumbs up yes"
+        }
+      ],
+      "prefix_found": true,
+      "query": "thumbs up",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "🎉",
+        "🥳"
+      ],
+      "first_results": [
+        {
+          "emoji": "🎉",
+          "name": "celebration party"
+        },
+        {
+          "emoji": "🥳",
+          "name": "face with party horn and party hat"
+        }
+      ],
+      "found": true,
+      "match_count": 2,
+      "prefix_count": 2,
+      "prefix_first_results": [
+        {
+          "emoji": "🎉",
+          "name": "celebration party"
+        },
+        {
+          "emoji": "🥳",
+          "name": "face with party horn and party hat"
+        }
+      ],
+      "prefix_found": true,
+      "query": "party",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "💩"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "poop",
+      "rank_zero_based": null
+    },
+    {
+      "category": "colloquial",
+      "expected": [
+        "💔"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "heartbreak",
+      "rank_zero_based": null
+    },
+    {
+      "category": "nepali-roman",
+      "expected": [
+        "🙏"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "namaskar",
+      "rank_zero_based": null
+    },
+    {
+      "category": "nepali-roman",
+      "expected": [
+        "🙏"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "dhanyabad",
+      "rank_zero_based": null
+    },
+    {
+      "category": "nepali-roman",
+      "expected": [
+        "❤️",
+        "💖"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "maya",
+      "rank_zero_based": null
+    },
+    {
+      "category": "nepali-roman",
+      "expected": [
+        "🏔️",
+        "🏔"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "himal",
+      "rank_zero_based": null
+    },
+    {
+      "category": "nepali-roman",
+      "expected": [
+        "☕",
+        "🍵"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "chiya",
+      "rank_zero_based": null
+    },
+    {
+      "category": "sequence",
+      "expected": [
+        "👨‍👩‍👧",
+        "👨‍👩‍👧‍👦",
+        "👪"
+      ],
+      "first_results": [
+        {
+          "emoji": "👪",
+          "name": "family"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "👪",
+          "name": "family"
+        }
+      ],
+      "prefix_found": true,
+      "query": "family",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "sequence",
+      "expected": [
+        "👩‍💻"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "woman technologist",
+      "rank_zero_based": null
+    },
+    {
+      "category": "sequence",
+      "expected": [
+        "👍🏽"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "thumbs up medium skin tone",
+      "rank_zero_based": null
+    },
+    {
+      "category": "sequence",
+      "expected": [
+        "🏳️‍🌈"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "rainbow flag",
+      "rank_zero_based": null
+    },
+    {
+      "category": "sequence",
+      "expected": [
+        "🇮🇳"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "india flag",
+      "rank_zero_based": null
+    },
+    {
+      "category": "sequence",
+      "expected": [
+        "🇺🇸"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "united states flag",
+      "rank_zero_based": null
+    },
+    {
+      "category": "symbols",
+      "expected": [
+        "✅"
+      ],
+      "first_results": [
+        {
+          "emoji": "✅",
+          "name": "check done"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "✅",
+          "name": "check done"
+        }
+      ],
+      "prefix_found": true,
+      "query": "check",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "symbols",
+      "expected": [
+        "⚠️",
+        "⚠"
+      ],
+      "first_results": [],
+      "found": false,
+      "match_count": 0,
+      "prefix_count": 0,
+      "prefix_first_results": [],
+      "prefix_found": false,
+      "query": "warning",
+      "rank_zero_based": null
+    },
+    {
+      "category": "symbols",
+      "expected": [
+        "❤️",
+        "❤"
+      ],
+      "first_results": [
+        {
+          "emoji": "😍",
+          "name": "love heart eyes"
+        },
+        {
+          "emoji": "🥰",
+          "name": "love hearts"
+        },
+        {
+          "emoji": "❤️",
+          "name": "red heart love"
+        },
+        {
+          "emoji": "💑",
+          "name": "couple with heart"
+        },
+        {
+          "emoji": "💓",
+          "name": "beating heart"
+        }
+      ],
+      "found": true,
+      "match_count": 27,
+      "prefix_count": 27,
+      "prefix_first_results": [
+        {
+          "emoji": "😍",
+          "name": "love heart eyes"
+        },
+        {
+          "emoji": "🥰",
+          "name": "love hearts"
+        },
+        {
+          "emoji": "❤️",
+          "name": "red heart love"
+        },
+        {
+          "emoji": "💑",
+          "name": "couple with heart"
+        },
+        {
+          "emoji": "💓",
+          "name": "beating heart"
+        }
+      ],
+      "prefix_found": true,
+      "query": "heart",
+      "rank_zero_based": 2
+    },
+    {
+      "category": "symbols",
+      "expected": [
+        "➕"
+      ],
+      "first_results": [
+        {
+          "emoji": "➕",
+          "name": "heavy plus sign"
+        }
+      ],
+      "found": true,
+      "match_count": 1,
+      "prefix_count": 1,
+      "prefix_first_results": [
+        {
+          "emoji": "➕",
+          "name": "heavy plus sign"
+        }
+      ],
+      "prefix_found": true,
+      "query": "plus",
+      "rank_zero_based": 0
+    },
+    {
+      "category": "symbols",
+      "expected": [
+        "❓"
+      ],
+      "first_results": [
+        {
+          "emoji": "❓",
+          "name": "black question mark ornament"
+        },
+        {
+          "emoji": "❔",
+          "name": "white question mark ornament"
+        }
+      ],
+      "found": true,
+      "match_count": 2,
+      "prefix_count": 2,
+      "prefix_first_results": [
+        {
+          "emoji": "❓",
+          "name": "black question mark ornament"
+        },
+        {
+          "emoji": "❔",
+          "name": "white question mark ornament"
+        }
+      ],
+      "prefix_found": true,
+      "query": "question mark",
+      "rank_zero_based": 0
+    }
+  ],
+  "catalog_count": 1174,
+  "summary": {
+    "authored": {
+      "first_page": 6,
+      "found": 6,
+      "prefix_found": 6,
+      "queries": 6
+    },
+    "colloquial": {
+      "first_page": 2,
+      "found": 2,
+      "prefix_found": 2,
+      "queries": 8
+    },
+    "nepali-roman": {
+      "queries": 5
+    },
+    "sequence": {
+      "first_page": 1,
+      "found": 1,
+      "prefix_found": 1,
+      "queries": 6
+    },
+    "symbols": {
+      "first_page": 4,
+      "found": 4,
+      "prefix_found": 4,
+      "queries": 5
+    },
+    "unicode-name": {
+      "first_page": 8,
+      "found": 8,
+      "prefix_found": 8,
+      "queries": 10
+    }
+  },
+  "app_source_sha256": "74d575395b053e7af4440aa926903d314cf04949575fb596b675f864c23cb703",
+  "fixture_sha256": "4554128517b4d01308cc6b56521f559ff501da01fe4b8354d8adf97c85be2856",
+  "method": "Exact extracted catalog, mirrored current whitespace/substring predicate; full UTF-8 emoji equality; not GUI/VoiceOver testing"
+}

@@ -1,0 +1,1917 @@
+{
+  "cases" : [
+    {
+      "all" : [
+        "प्यास",
+        "pyaas"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "प्यास"
+      ],
+      "id" : "C001",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "pyaas",
+      "top" : "प्यास",
+      "top_match" : true,
+      "visible" : [
+        "प्यास",
+        "pyaas"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "चिसो",
+        "चीसो",
+        "chiso"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "चिसो"
+      ],
+      "id" : "C002",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "chiso",
+      "top" : "चिसो",
+      "top_match" : true,
+      "visible" : [
+        "चिसो",
+        "चीसो",
+        "chiso"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "टाटो",
+        "ततो",
+        "तातो",
+        "tato"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "तातो"
+      ],
+      "id" : "C003",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "tato",
+      "top" : "टाटो",
+      "top_match" : false,
+      "visible" : [
+        "टाटो",
+        "ततो",
+        "तातो",
+        "tato"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "भोक",
+        "bhok"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "भोक"
+      ],
+      "id" : "C004",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bhok",
+      "top" : "भोक",
+      "top_match" : true,
+      "visible" : [
+        "भोक",
+        "bhok"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "बिस्तरै",
+        "बिस्तारै",
+        "bistarai"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "बिस्तारै"
+      ],
+      "id" : "C005",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bistarai",
+      "top" : "बिस्तरै",
+      "top_match" : false,
+      "visible" : [
+        "बिस्तरै",
+        "बिस्तारै",
+        "bistarai"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "छितो",
+        "छिटो",
+        "chhito"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "छिटो"
+      ],
+      "id" : "C006",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "chhito",
+      "top" : "छितो",
+      "top_match" : false,
+      "visible" : [
+        "छितो",
+        "छिटो",
+        "chhito"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "धेरै",
+        "ढेरै",
+        "dherai"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "धेरै"
+      ],
+      "id" : "C007",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "dherai",
+      "top" : "धेरै",
+      "top_match" : true,
+      "visible" : [
+        "धेरै",
+        "ढेरै",
+        "dherai"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "थोरै",
+        "thorai"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "थोरै"
+      ],
+      "id" : "C008",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "thorai",
+      "top" : "थोरै",
+      "top_match" : true,
+      "visible" : [
+        "थोरै",
+        "thorai"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "साफ",
+        "saafa"
+      ],
+      "all_match" : false,
+      "category" : "daily",
+      "expected" : [
+        "सफा"
+      ],
+      "id" : "C009",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "saafa",
+      "top" : "साफ",
+      "top_match" : false,
+      "visible" : [
+        "साफ",
+        "saafa"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "मिठो",
+        "मीठो",
+        "मिथो",
+        "mitho"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "मिठो",
+        "मीठो"
+      ],
+      "id" : "C010",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "mitho",
+      "top" : "मिठो",
+      "top_match" : true,
+      "visible" : [
+        "मिठो",
+        "मीठो",
+        "मिथो",
+        "mitho"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सस्तो",
+        "सास्तो",
+        "sasto"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "सस्तो"
+      ],
+      "id" : "C011",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sasto",
+      "top" : "सस्तो",
+      "top_match" : true,
+      "visible" : [
+        "सस्तो",
+        "सास्तो",
+        "sasto"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "महङो",
+        "महँगो",
+        "mahango"
+      ],
+      "all_match" : true,
+      "category" : "daily",
+      "expected" : [
+        "महँगो",
+        "महंगो"
+      ],
+      "id" : "C012",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "mahango",
+      "top" : "महङो",
+      "top_match" : false,
+      "visible" : [
+        "महङो",
+        "महँगो",
+        "mahango"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "साथी",
+        "सथि",
+        "साठी",
+        "sathi"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "साथी"
+      ],
+      "id" : "C013",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sathi",
+      "top" : "साथी",
+      "top_match" : true,
+      "visible" : [
+        "साथी",
+        "सथि",
+        "साठी",
+        "sathi"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "चिमेकि",
+        "छिमेकी",
+        "chimeki"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "छिमेकी"
+      ],
+      "id" : "C014",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "chimeki",
+      "top" : "चिमेकि",
+      "top_match" : false,
+      "visible" : [
+        "चिमेकि",
+        "छिमेकी",
+        "chimeki"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "परिवार",
+        "pariwaar"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "परिवार"
+      ],
+      "id" : "C015",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "pariwaar",
+      "top" : "परिवार",
+      "top_match" : true,
+      "visible" : [
+        "परिवार",
+        "pariwaar"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "भाइ",
+        "भै",
+        "भई",
+        "bhai"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "भाइ"
+      ],
+      "id" : "C016",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bhai",
+      "top" : "भाइ",
+      "top_match" : true,
+      "visible" : [
+        "भाइ",
+        "भै",
+        "भई",
+        "bhai"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "दिदी",
+        "दिदि",
+        "didi"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "दिदी"
+      ],
+      "id" : "C017",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "didi",
+      "top" : "दिदी",
+      "top_match" : true,
+      "visible" : [
+        "दिदी",
+        "दिदि",
+        "didi"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "बजे",
+        "बाजे",
+        "baje"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "बाजे"
+      ],
+      "id" : "C018",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "baje",
+      "top" : "बजे",
+      "top_match" : false,
+      "visible" : [
+        "बजे",
+        "बाजे",
+        "baje"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "गओन",
+        "gaon"
+      ],
+      "all_match" : false,
+      "category" : "people_places",
+      "expected" : [
+        "गाउँ"
+      ],
+      "id" : "C019",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "gaon",
+      "top" : "गओन",
+      "top_match" : false,
+      "visible" : [
+        "गओन",
+        "gaon"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "सहर",
+        "शहर",
+        "sahar"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "सहर",
+        "शहर"
+      ],
+      "id" : "C020",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sahar",
+      "top" : "सहर",
+      "top_match" : true,
+      "visible" : [
+        "सहर",
+        "शहर",
+        "sahar"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "पसल",
+        "पसाल",
+        "pasal"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "पसल"
+      ],
+      "id" : "C021",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "pasal",
+      "top" : "पसल",
+      "top_match" : true,
+      "visible" : [
+        "पसल",
+        "पसाल",
+        "pasal"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "jungle",
+        "जुङ्ले"
+      ],
+      "all_match" : false,
+      "category" : "people_places",
+      "expected" : [
+        "जंगल",
+        "जङ्गल"
+      ],
+      "id" : "C022",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "jungle",
+      "top" : "jungle",
+      "top_match" : false,
+      "visible" : [
+        "jungle",
+        "जुङ्ले"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "कोथ",
+        "कोठा",
+        "kotha"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "कोठा"
+      ],
+      "id" : "C023",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "kotha",
+      "top" : "कोथ",
+      "top_match" : false,
+      "visible" : [
+        "कोथ",
+        "कोठा",
+        "kotha"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "चौतारा",
+        "चौतर",
+        "chautara"
+      ],
+      "all_match" : true,
+      "category" : "people_places",
+      "expected" : [
+        "चौतारा"
+      ],
+      "id" : "C024",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "chautara",
+      "top" : "चौतारा",
+      "top_match" : true,
+      "visible" : [
+        "चौतारा",
+        "चौतर",
+        "chautara"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "खानु",
+        "खनु",
+        "khanu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "खानु"
+      ],
+      "id" : "C025",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "khanu",
+      "top" : "खानु",
+      "top_match" : true,
+      "visible" : [
+        "खानु",
+        "खनु",
+        "khanu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "पध्नु",
+        "padhnu"
+      ],
+      "all_match" : false,
+      "category" : "actions",
+      "expected" : [
+        "पढ्नु"
+      ],
+      "id" : "C026",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "padhnu",
+      "top" : "पध्नु",
+      "top_match" : false,
+      "visible" : [
+        "पध्नु",
+        "padhnu"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "सिक्नु",
+        "सिक्नू",
+        "siknu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "सिक्नु"
+      ],
+      "id" : "C027",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "siknu",
+      "top" : "सिक्नु",
+      "top_match" : true,
+      "visible" : [
+        "सिक्नु",
+        "सिक्नू",
+        "siknu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "लेख्नुस",
+        "लेख्नुस्",
+        "lekhnus"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "लेख्नुस्"
+      ],
+      "id" : "C028",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "lekhnus",
+      "top" : "लेख्नुस",
+      "top_match" : false,
+      "visible" : [
+        "लेख्नुस",
+        "लेख्नुस्",
+        "lekhnus"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "हिद्नु",
+        "हिड्नु",
+        "हिड्नू",
+        "hidnu"
+      ],
+      "all_match" : false,
+      "category" : "actions",
+      "expected" : [
+        "हिँड्नु",
+        "हिंड्नु"
+      ],
+      "id" : "C029",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "hidnu",
+      "top" : "हिद्नु",
+      "top_match" : false,
+      "visible" : [
+        "हिद्नु",
+        "हिड्नु",
+        "हिड्नू",
+        "hidnu"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "बस्नु",
+        "basnu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "बस्नु"
+      ],
+      "id" : "C030",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "basnu",
+      "top" : "बस्नु",
+      "top_match" : true,
+      "visible" : [
+        "बस्नु",
+        "basnu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सोध्नुस",
+        "सोध्नुस्",
+        "sodhnus"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "सोध्नुस्"
+      ],
+      "id" : "C031",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sodhnus",
+      "top" : "सोध्नुस",
+      "top_match" : false,
+      "visible" : [
+        "सोध्नुस",
+        "सोध्नुस्",
+        "sodhnus"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "खोल्नु",
+        "kholnu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "खोल्नु"
+      ],
+      "id" : "C032",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "kholnu",
+      "top" : "खोल्नु",
+      "top_match" : true,
+      "visible" : [
+        "खोल्नु",
+        "kholnu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सुन्नू",
+        "सुन्नु",
+        "sunnu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "सुन्नु"
+      ],
+      "id" : "C033",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sunnu",
+      "top" : "सुन्नू",
+      "top_match" : false,
+      "visible" : [
+        "सुन्नू",
+        "सुन्नु",
+        "sunnu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "पकाउनु",
+        "pakaaunu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "पकाउनु"
+      ],
+      "id" : "C034",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "pakaaunu",
+      "top" : "पकाउनु",
+      "top_match" : true,
+      "visible" : [
+        "पकाउनु",
+        "pakaaunu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "ल्याउनु",
+        "lyaaunu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "ल्याउनु"
+      ],
+      "id" : "C035",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "lyaaunu",
+      "top" : "ल्याउनु",
+      "top_match" : true,
+      "visible" : [
+        "ल्याउनु",
+        "lyaaunu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सुत्नु",
+        "sutnu"
+      ],
+      "all_match" : true,
+      "category" : "actions",
+      "expected" : [
+        "सुत्नु"
+      ],
+      "id" : "C036",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sutnu",
+      "top" : "सुत्नु",
+      "top_match" : true,
+      "visible" : [
+        "सुत्नु",
+        "sutnu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "नमस्कार",
+        "namaskaar"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "नमस्कार"
+      ],
+      "id" : "C037",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "namaskaar",
+      "top" : "नमस्कार",
+      "top_match" : true,
+      "visible" : [
+        "नमस्कार",
+        "namaskaar"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "धञबाद",
+        "dhanyabaad"
+      ],
+      "all_match" : false,
+      "category" : "variant_spellings",
+      "expected" : [
+        "धन्यवाद"
+      ],
+      "id" : "C038",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "dhanyabaad",
+      "top" : "धञबाद",
+      "top_match" : false,
+      "visible" : [
+        "धञबाद",
+        "dhanyabaad"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "शुभकामना",
+        "शुभकमन",
+        "shubhakamana"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "शुभकामना"
+      ],
+      "id" : "C039",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "shubhakamana",
+      "top" : "शुभकामना",
+      "top_match" : true,
+      "visible" : [
+        "शुभकामना",
+        "शुभकमन",
+        "shubhakamana"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "आवज",
+        "अावाज",
+        "आवाज",
+        "aawaj"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "आवाज"
+      ],
+      "id" : "C040",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "aawaj",
+      "top" : "आवज",
+      "top_match" : false,
+      "visible" : [
+        "आवज",
+        "अावाज",
+        "आवाज",
+        "aawaj"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "जिन्दगि",
+        "जिन्दगी",
+        "jindagi"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "जिन्दगी",
+        "जिंदगी"
+      ],
+      "id" : "C041",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "jindagi",
+      "top" : "जिन्दगि",
+      "top_match" : false,
+      "visible" : [
+        "जिन्दगि",
+        "जिन्दगी",
+        "jindagi"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "समस्य",
+        "samasya"
+      ],
+      "all_match" : false,
+      "category" : "variant_spellings",
+      "expected" : [
+        "समस्या"
+      ],
+      "id" : "C042",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "samasya",
+      "top" : "समस्य",
+      "top_match" : false,
+      "visible" : [
+        "समस्य",
+        "samasya"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "अवश्यक",
+        "awashyak"
+      ],
+      "all_match" : false,
+      "category" : "variant_spellings",
+      "expected" : [
+        "आवश्यक"
+      ],
+      "id" : "C043",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "awashyak",
+      "top" : "अवश्यक",
+      "top_match" : false,
+      "visible" : [
+        "अवश्यक",
+        "awashyak"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "काम",
+        "kaam"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "काम"
+      ],
+      "id" : "C044",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "kaam",
+      "top" : "काम",
+      "top_match" : true,
+      "visible" : [
+        "काम",
+        "kaam"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सपन",
+        "सपना",
+        "sapana"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "सपना"
+      ],
+      "id" : "C045",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sapana",
+      "top" : "सपन",
+      "top_match" : false,
+      "visible" : [
+        "सपन",
+        "सपना",
+        "sapana"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "बुझै",
+        "बुझाइ",
+        "बुझाई",
+        "bujhai"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "बुझाइ"
+      ],
+      "id" : "C046",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bujhai",
+      "top" : "बुझै",
+      "top_match" : false,
+      "visible" : [
+        "बुझै",
+        "बुझाइ",
+        "बुझाई",
+        "bujhai"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "भेत्घत",
+        "भेटघट",
+        "भेटघाट",
+        "bhetghat"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "भेटघाट"
+      ],
+      "id" : "C047",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bhetghat",
+      "top" : "भेत्घत",
+      "top_match" : false,
+      "visible" : [
+        "भेत्घत",
+        "भेटघट",
+        "भेटघाट",
+        "bhetghat"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "समचर",
+        "समाचार",
+        "samachar"
+      ],
+      "all_match" : true,
+      "category" : "variant_spellings",
+      "expected" : [
+        "समाचार"
+      ],
+      "id" : "C048",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "samachar",
+      "top" : "समचर",
+      "top_match" : false,
+      "visible" : [
+        "समचर",
+        "समाचार",
+        "samachar"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "खायेको",
+        "खयेको",
+        "khayeko"
+      ],
+      "all_match" : false,
+      "category" : "inflections",
+      "expected" : [
+        "खाएको"
+      ],
+      "id" : "C049",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "khayeko",
+      "top" : "खायेको",
+      "top_match" : false,
+      "visible" : [
+        "खायेको",
+        "खयेको",
+        "khayeko"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "पधेको",
+        "padheko"
+      ],
+      "all_match" : false,
+      "category" : "inflections",
+      "expected" : [
+        "पढेको"
+      ],
+      "id" : "C050",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "padheko",
+      "top" : "पधेको",
+      "top_match" : false,
+      "visible" : [
+        "पधेको",
+        "padheko"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "आयेको",
+        "aayeko"
+      ],
+      "all_match" : false,
+      "category" : "inflections",
+      "expected" : [
+        "आएको"
+      ],
+      "id" : "C051",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "aayeko",
+      "top" : "आयेको",
+      "top_match" : false,
+      "visible" : [
+        "आयेको",
+        "aayeko"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "गयेर",
+        "gayera"
+      ],
+      "all_match" : false,
+      "category" : "inflections",
+      "expected" : [
+        "गएर"
+      ],
+      "id" : "C052",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "gayera",
+      "top" : "गयेर",
+      "top_match" : false,
+      "visible" : [
+        "गयेर",
+        "gayera"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "भयेर",
+        "bhayera"
+      ],
+      "all_match" : false,
+      "category" : "inflections",
+      "expected" : [
+        "भएर"
+      ],
+      "id" : "C053",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bhayera",
+      "top" : "भयेर",
+      "top_match" : false,
+      "visible" : [
+        "भयेर",
+        "bhayera"
+      ],
+      "visible_match" : false
+    },
+    {
+      "all" : [
+        "गरेको",
+        "gareko"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "गरेको"
+      ],
+      "id" : "C054",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "gareko",
+      "top" : "गरेको",
+      "top_match" : true,
+      "visible" : [
+        "गरेको",
+        "gareko"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "भन्दै",
+        "bhandai"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "भन्दै"
+      ],
+      "id" : "C055",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bhandai",
+      "top" : "भन्दै",
+      "top_match" : true,
+      "visible" : [
+        "भन्दै",
+        "bhandai"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "बुझ्छु",
+        "bujhchhu"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "बुझ्छु"
+      ],
+      "id" : "C056",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "bujhchhu",
+      "top" : "बुझ्छु",
+      "top_match" : true,
+      "visible" : [
+        "बुझ्छु",
+        "bujhchhu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सुन्छु",
+        "sunchhu"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "सुन्छु"
+      ],
+      "id" : "C057",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sunchhu",
+      "top" : "सुन्छु",
+      "top_match" : true,
+      "visible" : [
+        "सुन्छु",
+        "sunchhu"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "लेखेको",
+        "lekheko"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "लेखेको"
+      ],
+      "id" : "C058",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "lekheko",
+      "top" : "लेखेको",
+      "top_match" : true,
+      "visible" : [
+        "लेखेको",
+        "lekheko"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "खोलेर",
+        "kholera"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "खोलेर"
+      ],
+      "id" : "C059",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "kholera",
+      "top" : "खोलेर",
+      "top_match" : true,
+      "visible" : [
+        "खोलेर",
+        "kholera"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "सोधेको",
+        "sodheko"
+      ],
+      "all_match" : true,
+      "category" : "inflections",
+      "expected" : [
+        "सोधेको"
+      ],
+      "id" : "C060",
+      "original_available" : true,
+      "role" : "nepali",
+      "roman" : "sodheko",
+      "top" : "सोधेको",
+      "top_match" : true,
+      "visible" : [
+        "सोधेको",
+        "sodheko"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "schedule",
+        "स्चेदुले"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "schedule"
+      ],
+      "id" : "C061",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "schedule",
+      "top" : "schedule",
+      "top_match" : true,
+      "visible" : [
+        "schedule",
+        "स्चेदुले"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "printer",
+        "प्रिन्तेर"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "printer"
+      ],
+      "id" : "C062",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "printer",
+      "top" : "printer",
+      "top_match" : true,
+      "visible" : [
+        "printer",
+        "प्रिन्तेर"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "weekend",
+        "वीकेन्द",
+        "वीकेन्ड"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "weekend"
+      ],
+      "id" : "C063",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "weekend",
+      "top" : "weekend",
+      "top_match" : true,
+      "visible" : [
+        "weekend",
+        "वीकेन्द",
+        "वीकेन्ड"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "review",
+        "रेविएव"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "review"
+      ],
+      "id" : "C064",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "review",
+      "top" : "review",
+      "top_match" : true,
+      "visible" : [
+        "review",
+        "रेविएव"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "folder",
+        "फोल्देर",
+        "फोल्डर"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "folder"
+      ],
+      "id" : "C065",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "folder",
+      "top" : "folder",
+      "top_match" : true,
+      "visible" : [
+        "folder",
+        "फोल्देर",
+        "फोल्डर"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "charger",
+        "चर्गेर"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "charger"
+      ],
+      "id" : "C066",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "charger",
+      "top" : "charger",
+      "top_match" : true,
+      "visible" : [
+        "charger",
+        "चर्गेर"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "flight",
+        "फ्लिघ्त"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "flight"
+      ],
+      "id" : "C067",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "flight",
+      "top" : "flight",
+      "top_match" : true,
+      "visible" : [
+        "flight",
+        "फ्लिघ्त"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "garden",
+        "गर्देन",
+        "गार्डेन"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "garden"
+      ],
+      "id" : "C068",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "garden",
+      "top" : "garden",
+      "top_match" : true,
+      "visible" : [
+        "garden",
+        "गर्देन",
+        "गार्डेन"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "library",
+        "लिब्रर्य"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "library"
+      ],
+      "id" : "C069",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "library",
+      "top" : "library",
+      "top_match" : true,
+      "visible" : [
+        "library",
+        "लिब्रर्य"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "receipt",
+        "रेचेइप्त",
+        "रिसिप्ट"
+      ],
+      "all_match" : true,
+      "category" : "english_control",
+      "expected" : [
+        "receipt"
+      ],
+      "id" : "C070",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "receipt",
+      "top" : "receipt",
+      "top_match" : true,
+      "visible" : [
+        "receipt",
+        "रेचेइप्त",
+        "रिसिप्ट"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Elena",
+        "एलेन"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Elena"
+      ],
+      "id" : "C071",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Elena",
+      "top" : "Elena",
+      "top_match" : true,
+      "visible" : [
+        "Elena",
+        "एलेन"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Sophie",
+        "सोफिए"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Sophie"
+      ],
+      "id" : "C072",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Sophie",
+      "top" : "Sophie",
+      "top_match" : true,
+      "visible" : [
+        "Sophie",
+        "सोफिए"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Mason",
+        "मसोन"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Mason"
+      ],
+      "id" : "C073",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Mason",
+      "top" : "Mason",
+      "top_match" : true,
+      "visible" : [
+        "Mason",
+        "मसोन"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Nora",
+        "नोर"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Nora"
+      ],
+      "id" : "C074",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Nora",
+      "top" : "Nora",
+      "top_match" : true,
+      "visible" : [
+        "Nora",
+        "नोर"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Avery",
+        "अवेर्य"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Avery"
+      ],
+      "id" : "C075",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Avery",
+      "top" : "Avery",
+      "top_match" : true,
+      "visible" : [
+        "Avery",
+        "अवेर्य"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Daniel",
+        "दनिएल"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Daniel"
+      ],
+      "id" : "C076",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Daniel",
+      "top" : "Daniel",
+      "top_match" : true,
+      "visible" : [
+        "Daniel",
+        "दनिएल"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Rohan",
+        "रोहन"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Rohan"
+      ],
+      "id" : "C077",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Rohan",
+      "top" : "Rohan",
+      "top_match" : true,
+      "visible" : [
+        "Rohan",
+        "रोहन"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "Sanjay",
+        "सन्जय",
+        "संजय",
+        "सञ्जय"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Sanjay"
+      ],
+      "id" : "C078",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Sanjay",
+      "top" : "Sanjay",
+      "top_match" : true,
+      "visible" : [
+        "Sanjay",
+        "सन्जय",
+        "संजय",
+        "सञ्जय"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "माया",
+        "मय",
+        "Maya"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Maya"
+      ],
+      "id" : "C079",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Maya",
+      "top" : "माया",
+      "top_match" : false,
+      "visible" : [
+        "माया",
+        "मय",
+        "Maya"
+      ],
+      "visible_match" : true
+    },
+    {
+      "all" : [
+        "किरन",
+        "किरण",
+        "Kiran"
+      ],
+      "all_match" : true,
+      "category" : "name_control",
+      "expected" : [
+        "Kiran"
+      ],
+      "id" : "C080",
+      "original_available" : true,
+      "role" : "preserve",
+      "roman" : "Kiran",
+      "top" : "किरन",
+      "top_match" : false,
+      "visible" : [
+        "किरन",
+        "किरण",
+        "Kiran"
+      ],
+      "visible_match" : true
+    }
+  ],
+  "fixture_version" : "suggestion-probe-v1",
+  "method" : "isolated token, contextual top; first four plus original; no native host",
+  "summary" : {
+    "actions" : {
+      "all" : 10,
+      "original" : 12,
+      "top" : 7,
+      "total" : 12,
+      "visible" : 10
+    },
+    "daily" : {
+      "all" : 11,
+      "original" : 12,
+      "top" : 7,
+      "total" : 12,
+      "visible" : 11
+    },
+    "english_control" : {
+      "all" : 10,
+      "original" : 10,
+      "top" : 10,
+      "total" : 10,
+      "visible" : 10
+    },
+    "inflections" : {
+      "all" : 7,
+      "original" : 12,
+      "top" : 7,
+      "total" : 12,
+      "visible" : 7
+    },
+    "name_control" : {
+      "all" : 10,
+      "original" : 10,
+      "top" : 8,
+      "total" : 10,
+      "visible" : 10
+    },
+    "people_places" : {
+      "all" : 10,
+      "original" : 12,
+      "top" : 7,
+      "total" : 12,
+      "visible" : 10
+    },
+    "variant_spellings" : {
+      "all" : 9,
+      "original" : 12,
+      "top" : 3,
+      "total" : 12,
+      "visible" : 9
+    }
+  }
+}

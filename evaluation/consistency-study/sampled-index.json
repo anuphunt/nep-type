@@ -1,0 +1,1607 @@
+{
+  "seed": 20261030,
+  "eligible_rows": 2171428,
+  "note": "Deterministic within this index; first indexed candidate is not a label or frequency estimate.",
+  "cases": [
+    {
+      "roman": "abps",
+      "first_indexed": "एबिपीएस"
+    },
+    {
+      "roman": "achemogluko",
+      "first_indexed": "अचेमोग्लुको"
+    },
+    {
+      "roman": "adhikarharubata",
+      "first_indexed": "अधिकारहरूबाट"
+    },
+    {
+      "roman": "adhikariwirudhka",
+      "first_indexed": "अधिकारीविरुद्धका"
+    },
+    {
+      "roman": "adhyayanalagayatko",
+      "first_indexed": "अध्ययनलगायतको"
+    },
+    {
+      "roman": "airpotmai",
+      "first_indexed": "एयरपोटमै"
+    },
+    {
+      "roman": "akedemyko",
+      "first_indexed": "अकेडेमीको"
+    },
+    {
+      "roman": "akharia",
+      "first_indexed": "अखरिया"
+    },
+    {
+      "roman": "akramanpidit",
+      "first_indexed": "आक्रमणपीडित"
+    },
+    {
+      "roman": "albhs",
+      "first_indexed": "अल्भ्स"
+    },
+    {
+      "roman": "aliman",
+      "first_indexed": "अलिमान"
+    },
+    {
+      "roman": "alviaka",
+      "first_indexed": "अलवियाका"
+    },
+    {
+      "roman": "andharkama",
+      "first_indexed": "अन्धरकामा"
+    },
+    {
+      "roman": "anurodadh",
+      "first_indexed": "अनुरोदध"
+    },
+    {
+      "roman": "apanamanlai",
+      "first_indexed": "अपनामानलाई"
+    },
+    {
+      "roman": "apperalska",
+      "first_indexed": "एपरल्सका"
+    },
+    {
+      "roman": "aptimoko",
+      "first_indexed": "अप्टिमोको"
+    },
+    {
+      "roman": "apurtimama",
+      "first_indexed": "आपूर्तिमामा"
+    },
+    {
+      "roman": "arunachanchal",
+      "first_indexed": "अरुणाचञ्चल"
+    },
+    {
+      "roman": "asahakarya",
+      "first_indexed": "असहकार्य"
+    },
+    {
+      "roman": "asepaselai",
+      "first_indexed": "आसेपासेलाई"
+    },
+    {
+      "roman": "atishayyukta",
+      "first_indexed": "अतिशययुक्त"
+    },
+    {
+      "roman": "atyaunegari",
+      "first_indexed": "अत्याउनेगरी"
+    },
+    {
+      "roman": "aundaichhu",
+      "first_indexed": "आउँदैछु"
+    },
+    {
+      "roman": "aurahilai",
+      "first_indexed": "औरहीलाई"
+    },
+    {
+      "roman": "awasarbadbata",
+      "first_indexed": "अवसरबादबाट"
+    },
+    {
+      "roman": "babunmadhye",
+      "first_indexed": "बबुनमध्ये"
+    },
+    {
+      "roman": "badigaunlai",
+      "first_indexed": "बडिगाउँलाई"
+    },
+    {
+      "roman": "badisemingbare",
+      "first_indexed": "बडिसेमिङबारे"
+    },
+    {
+      "roman": "bagaka",
+      "first_indexed": "बगाका"
+    },
+    {
+      "roman": "bahudhruwiya",
+      "first_indexed": "बहुध्रुविय"
+    },
+    {
+      "roman": "bakobh",
+      "first_indexed": "बाकोभ"
+    },
+    {
+      "roman": "balapursammako",
+      "first_indexed": "बालापुरसम्मको"
+    },
+    {
+      "roman": "balikaha",
+      "first_indexed": "बालिकाः"
+    },
+    {
+      "roman": "balsanrakshansangai",
+      "first_indexed": "बालसंरक्षणसँगै"
+    },
+    {
+      "roman": "bardoko",
+      "first_indexed": "बार्दोको"
+    },
+    {
+      "roman": "bastabastai",
+      "first_indexed": "बस्ताबस्तै"
+    },
+    {
+      "roman": "bauryainubhaeko",
+      "first_indexed": "बौर्याइनुभएको"
+    },
+    {
+      "roman": "benighatle",
+      "first_indexed": "बेनिघाटले"
+    },
+    {
+      "roman": "bhaejajastai",
+      "first_indexed": "भएजजस्तै"
+    },
+    {
+      "roman": "bhagatanile",
+      "first_indexed": "भगतानीले"
+    },
+    {
+      "roman": "bhairahekothyo",
+      "first_indexed": "भइरहेकोथ्यो"
+    },
+    {
+      "roman": "bhaktajoshi",
+      "first_indexed": "भक्तजोशी"
+    },
+    {
+      "roman": "bharatisthat",
+      "first_indexed": "भारतिस्थत"
+    },
+    {
+      "roman": "bharjanmabatai",
+      "first_indexed": "भरजन्मबाटै"
+    },
+    {
+      "roman": "bhashmanchal",
+      "first_indexed": "भष्माञ्चल"
+    },
+    {
+      "roman": "bhijirakhepachhi",
+      "first_indexed": "भिजिराखेपछि"
+    },
+    {
+      "roman": "bhogachalanle",
+      "first_indexed": "भोगचलनले"
+    },
+    {
+      "roman": "bhojpurabahek",
+      "first_indexed": "भोजपुराबाहेक"
+    },
+    {
+      "roman": "bhumibalbahek",
+      "first_indexed": "भूमिबलबाहेक"
+    },
+    {
+      "roman": "bhungrobata",
+      "first_indexed": "भुंग्रोबाट"
+    },
+    {
+      "roman": "bokrabahek",
+      "first_indexed": "बोक्राबाहेक"
+    },
+    {
+      "roman": "bornera",
+      "first_indexed": "बोर्नेर"
+    },
+    {
+      "roman": "brishashenko",
+      "first_indexed": "बृषशेनको"
+    },
+    {
+      "roman": "briswenka",
+      "first_indexed": "ब्रिसवेनका"
+    },
+    {
+      "roman": "bryopteris",
+      "first_indexed": "ब्रायोप्टेरिस"
+    },
+    {
+      "roman": "budhaputra",
+      "first_indexed": "बुधपुत्र"
+    },
+    {
+      "roman": "bujhabar",
+      "first_indexed": "बुझबार"
+    },
+    {
+      "roman": "byajdarbichko",
+      "first_indexed": "ब्याजदरबीचको"
+    },
+    {
+      "roman": "callisle",
+      "first_indexed": "क्यालिसले"
+    },
+    {
+      "roman": "camaroup",
+      "first_indexed": "क्यामारुप"
+    },
+    {
+      "roman": "cangingsomma",
+      "first_indexed": "क्यान्जिङसम्म"
+    },
+    {
+      "roman": "cardgari",
+      "first_indexed": "कार्डगरी"
+    },
+    {
+      "roman": "carrierslai",
+      "first_indexed": "क्यारियर्सलाई"
+    },
+    {
+      "roman": "celherst",
+      "first_indexed": "सेल्हर्स्ट"
+    },
+    {
+      "roman": "centiments",
+      "first_indexed": "सेन्टिमेन्टस"
+    },
+    {
+      "roman": "chahadainathie",
+      "first_indexed": "चाहदैनथिए"
+    },
+    {
+      "roman": "chakrakunda",
+      "first_indexed": "चक्रकुण्ड"
+    },
+    {
+      "roman": "chaparna",
+      "first_indexed": "चपर्न"
+    },
+    {
+      "roman": "charambima",
+      "first_indexed": "चरम्बीमा"
+    },
+    {
+      "roman": "chatrachitra",
+      "first_indexed": "चत्रचित्र"
+    },
+    {
+      "roman": "chaughuda",
+      "first_indexed": "चौघुडा"
+    },
+    {
+      "roman": "chesmanai",
+      "first_indexed": "चेसमानै"
+    },
+    {
+      "roman": "chhatrawritiantargat",
+      "first_indexed": "छात्रवृतिअन्तर्गत"
+    },
+    {
+      "roman": "chhopejhain",
+      "first_indexed": "छोपेझैँ"
+    },
+    {
+      "roman": "chhorihar",
+      "first_indexed": "छोरीहर"
+    },
+    {
+      "roman": "chhotepatan",
+      "first_indexed": "छोटेपाटन"
+    },
+    {
+      "roman": "chhuttayaepani",
+      "first_indexed": "छुट्टयाएपनि"
+    },
+    {
+      "roman": "chhuwaun",
+      "first_indexed": "छुवाउँ"
+    },
+    {
+      "roman": "chikistakko",
+      "first_indexed": "चिकिस्तकको"
+    },
+    {
+      "roman": "chilimebahekaka",
+      "first_indexed": "चिलिमेबाहेकका"
+    },
+    {
+      "roman": "choriepachhi",
+      "first_indexed": "चोरिएपछि"
+    },
+    {
+      "roman": "clarete",
+      "first_indexed": "क्लारेट"
+    },
+    {
+      "roman": "connects",
+      "first_indexed": "कनेक्ट्स"
+    },
+    {
+      "roman": "dadulla",
+      "first_indexed": "दादुल्ला"
+    },
+    {
+      "roman": "daivinbata",
+      "first_indexed": "दैविनबाट"
+    },
+    {
+      "roman": "darechokbata",
+      "first_indexed": "दारेचोकबाट"
+    },
+    {
+      "roman": "darshanharumadhye",
+      "first_indexed": "दर्शनहरूमध्ये"
+    },
+    {
+      "roman": "dekhichhaina",
+      "first_indexed": "देखिछैन"
+    },
+    {
+      "roman": "dhanikatantralai",
+      "first_indexed": "धनिकतन्त्रलाई"
+    },
+    {
+      "roman": "dharabasile",
+      "first_indexed": "धराबासीले"
+    },
+    {
+      "roman": "dharmadesh",
+      "first_indexed": "धर्मदेश"
+    },
+    {
+      "roman": "dhyangsengko",
+      "first_indexed": "ध्याङसेङको"
+    },
+    {
+      "roman": "didibahiniharuprati",
+      "first_indexed": "दिदीबहिनीहरूप्रति"
+    },
+    {
+      "roman": "dimut",
+      "first_indexed": "दिमुत"
+    },
+    {
+      "roman": "dioxine",
+      "first_indexed": "डायक्सिन"
+    },
+    {
+      "roman": "diware",
+      "first_indexed": "दिवारे"
+    },
+    {
+      "roman": "drishyachitrabata",
+      "first_indexed": "दृश्यचित्रबाट"
+    },
+    {
+      "roman": "duculay",
+      "first_indexed": "डुक्युले"
+    },
+    {
+      "roman": "dussahasko",
+      "first_indexed": "दुस्साहसको"
+    },
+    {
+      "roman": "ekaiwyakti",
+      "first_indexed": "एकैव्यक्ति"
+    },
+    {
+      "roman": "ekinominsko",
+      "first_indexed": "इकिनोमिन्सको"
+    },
+    {
+      "roman": "ekward",
+      "first_indexed": "एकवार्ड"
+    },
+    {
+      "roman": "elemony",
+      "first_indexed": "एलिमनी"
+    },
+    {
+      "roman": "falet",
+      "first_indexed": "फलेट"
+    },
+    {
+      "roman": "falidinchhan",
+      "first_indexed": "फलिदिन्छन्"
+    },
+    {
+      "roman": "falnug",
+      "first_indexed": "फाल्नुग"
+    },
+    {
+      "roman": "fankasanko",
+      "first_indexed": "फंकसनको"
+    },
+    {
+      "roman": "faraunuko",
+      "first_indexed": "फराउनुको"
+    },
+    {
+      "roman": "farkaunamai",
+      "first_indexed": "फर्काउनमै"
+    },
+    {
+      "roman": "fillauriko",
+      "first_indexed": "फिल्लौरीको"
+    },
+    {
+      "roman": "filmfarema",
+      "first_indexed": "फिल्मफेयरमा"
+    },
+    {
+      "roman": "firotiko",
+      "first_indexed": "फिरोतीको"
+    },
+    {
+      "roman": "fojianle",
+      "first_indexed": "फोजियानले"
+    },
+    {
+      "roman": "forwardprati",
+      "first_indexed": "फरवार्डप्रति"
+    },
+    {
+      "roman": "frenchbhashi",
+      "first_indexed": "फ्रेञ्चभाषी"
+    },
+    {
+      "roman": "fupuchhiring",
+      "first_indexed": "फुपुछिरिङ"
+    },
+    {
+      "roman": "gaanjnechhah",
+      "first_indexed": "गाँज्नेछः"
+    },
+    {
+      "roman": "gagoi",
+      "first_indexed": "गगोई"
+    },
+    {
+      "roman": "gairayuropeliharubare",
+      "first_indexed": "गैरयूरोपेलीहरूबारे"
+    },
+    {
+      "roman": "gajurelmathi",
+      "first_indexed": "गजुरेलमाथि"
+    },
+    {
+      "roman": "galele",
+      "first_indexed": "गलेले"
+    },
+    {
+      "roman": "gamber",
+      "first_indexed": "गम्बर"
+    },
+    {
+      "roman": "garaekamadhya",
+      "first_indexed": "गराएकामध्य"
+    },
+    {
+      "roman": "garauneka",
+      "first_indexed": "गराउनेका"
+    },
+    {
+      "roman": "garekaharulematra",
+      "first_indexed": "गरेकाहरुलेमात्र"
+    },
+    {
+      "roman": "gasakekole",
+      "first_indexed": "गसकेकोले"
+    },
+    {
+      "roman": "gaunjuna",
+      "first_indexed": "गाउँजुन"
+    },
+    {
+      "roman": "ghamapratirodhi",
+      "first_indexed": "घामप्रतिरोधी"
+    },
+    {
+      "roman": "gharaniyanharusanga",
+      "first_indexed": "घरानियाँहरूसँग"
+    },
+    {
+      "roman": "ghargharanaka",
+      "first_indexed": "घरघरानाका"
+    },
+    {
+      "roman": "ghokdaichhan",
+      "first_indexed": "घोक्दैछन्"
+    },
+    {
+      "roman": "ghrishtatapurna",
+      "first_indexed": "घृष्टतापूर्ण"
+    },
+    {
+      "roman": "ghwain",
+      "first_indexed": "घ्वाइँ"
+    },
+    {
+      "roman": "glusterle",
+      "first_indexed": "ग्लस्टरले"
+    },
+    {
+      "roman": "goriklale",
+      "first_indexed": "गोरीकलाले"
+    },
+    {
+      "roman": "goshthiharubata",
+      "first_indexed": "गोष्ठीहरूबाट"
+    },
+    {
+      "roman": "granthabahek",
+      "first_indexed": "ग्रन्थबाहेक"
+    },
+    {
+      "roman": "groundbata",
+      "first_indexed": "ग्राउण्डबाट"
+    },
+    {
+      "roman": "gudamba",
+      "first_indexed": "गुदम्ब"
+    },
+    {
+      "roman": "gugka",
+      "first_indexed": "गुगका"
+    },
+    {
+      "roman": "gujaratika",
+      "first_indexed": "गुजरातीका"
+    },
+    {
+      "roman": "gurdi",
+      "first_indexed": "गुर्दी"
+    },
+    {
+      "roman": "hairstylebare",
+      "first_indexed": "हेयरस्टाइलबारे"
+    },
+    {
+      "roman": "haisiyatbichko",
+      "first_indexed": "हैसियतबीचको"
+    },
+    {
+      "roman": "haliudasangai",
+      "first_indexed": "हलिउडसँगै"
+    },
+    {
+      "roman": "hapton",
+      "first_indexed": "ह्याप्टन"
+    },
+    {
+      "roman": "harishasharan",
+      "first_indexed": "हरिशशरण"
+    },
+    {
+      "roman": "hariyanamai",
+      "first_indexed": "हरियाणामै"
+    },
+    {
+      "roman": "hatarinnan",
+      "first_indexed": "हतारिन्नँ"
+    },
+    {
+      "roman": "hembargapachhiko",
+      "first_indexed": "हेम्बर्गपछिको"
+    },
+    {
+      "roman": "hirabahadurmathi",
+      "first_indexed": "हीराबहादुरमाथि"
+    },
+    {
+      "roman": "hukkaunelai",
+      "first_indexed": "हुक्काउनेलाई"
+    },
+    {
+      "roman": "hunuparyom",
+      "first_indexed": "हुनपर्योम"
+    },
+    {
+      "roman": "hurahuri",
+      "first_indexed": "हुराहुरी"
+    },
+    {
+      "roman": "hydeted",
+      "first_indexed": "हाइडेटेड"
+    },
+    {
+      "roman": "ibmko",
+      "first_indexed": "आइबिएमको"
+    },
+    {
+      "roman": "ine",
+      "first_indexed": "इने"
+    },
+    {
+      "roman": "inglishle",
+      "first_indexed": "इंग्लिशले"
+    },
+    {
+      "roman": "istoniyasangko",
+      "first_indexed": "इस्टोनियासँगको"
+    },
+    {
+      "roman": "itarbatai",
+      "first_indexed": "इतरबाटै"
+    },
+    {
+      "roman": "jakinuparne",
+      "first_indexed": "जाकिनुपर्ने"
+    },
+    {
+      "roman": "jalipobhale",
+      "first_indexed": "जालिपोभाले"
+    },
+    {
+      "roman": "janenajane",
+      "first_indexed": "जानेनजाने"
+    },
+    {
+      "roman": "januttardayitwayukta",
+      "first_indexed": "जनउत्तरदायित्वयुक्त"
+    },
+    {
+      "roman": "jarbajstikarani",
+      "first_indexed": "जरबजस्तीकरणी"
+    },
+    {
+      "roman": "jarginholgayatka",
+      "first_indexed": "जर्गिन्होलगायतका"
+    },
+    {
+      "roman": "jawakholalgayat",
+      "first_indexed": "जवाखोलालगायत"
+    },
+    {
+      "roman": "jheliharuko",
+      "first_indexed": "झेलीहरूको"
+    },
+    {
+      "roman": "jhimkie",
+      "first_indexed": "झिम्किए"
+    },
+    {
+      "roman": "johansanle",
+      "first_indexed": "जोहनसनले"
+    },
+    {
+      "roman": "jotikhane",
+      "first_indexed": "जोतिखाने"
+    },
+    {
+      "roman": "junkiko",
+      "first_indexed": "जुनकीको"
+    },
+    {
+      "roman": "juristaska",
+      "first_indexed": "जुरिस्टस्का"
+    },
+    {
+      "roman": "jwol",
+      "first_indexed": "ज्वोल"
+    },
+    {
+      "roman": "kadhadai",
+      "first_indexed": "काढदै"
+    },
+    {
+      "roman": "kaeki",
+      "first_indexed": "काएकी"
+    },
+    {
+      "roman": "kagasanko",
+      "first_indexed": "कागासनको"
+    },
+    {
+      "roman": "kalkattawiruddha",
+      "first_indexed": "कलकत्ताविरुद्ध"
+    },
+    {
+      "roman": "kamadhenupan",
+      "first_indexed": "कामधेनुपन"
+    },
+    {
+      "roman": "kamalamaiki",
+      "first_indexed": "कमलामाईकी"
+    },
+    {
+      "roman": "karelko",
+      "first_indexed": "करेलको"
+    },
+    {
+      "roman": "karmalko",
+      "first_indexed": "कर्मालको"
+    },
+    {
+      "roman": "karrya",
+      "first_indexed": "कार्र्य"
+    },
+    {
+      "roman": "karyalayakolekhapadhiko",
+      "first_indexed": "कार्यालयकोलेखापढीको"
+    },
+    {
+      "roman": "kaschit",
+      "first_indexed": "कस्चित"
+    },
+    {
+      "roman": "kathamadaunsangaiko",
+      "first_indexed": "काठमाडौँसँगैको"
+    },
+    {
+      "roman": "kesilal",
+      "first_indexed": "केसीलाल"
+    },
+    {
+      "roman": "khabarpatrikasanga",
+      "first_indexed": "खबरपत्रिकासँग"
+    },
+    {
+      "roman": "khairwa",
+      "first_indexed": "खैर्वा"
+    },
+    {
+      "roman": "khalyat",
+      "first_indexed": "खल्यात"
+    },
+    {
+      "roman": "khanekurakai",
+      "first_indexed": "खानेकुराकै"
+    },
+    {
+      "roman": "khanto",
+      "first_indexed": "खान्तो"
+    },
+    {
+      "roman": "khilafka",
+      "first_indexed": "खिलाफका"
+    },
+    {
+      "roman": "khullamanchama",
+      "first_indexed": "खुल्लामञ्चमा"
+    },
+    {
+      "roman": "kinekau",
+      "first_indexed": "किनेकौ"
+    },
+    {
+      "roman": "kinihalnubhanda",
+      "first_indexed": "किनिहाल्नुभन्दा"
+    },
+    {
+      "roman": "kisanasametlai",
+      "first_indexed": "किसानसमेतलाई"
+    },
+    {
+      "roman": "kocharnu",
+      "first_indexed": "कोचार्नु"
+    },
+    {
+      "roman": "kotiviryaka",
+      "first_indexed": "कोटिवीर्यका"
+    },
+    {
+      "roman": "kraefkai",
+      "first_indexed": "क्राएफकै"
+    },
+    {
+      "roman": "kramasuchianiwarya",
+      "first_indexed": "क्रमसूचीअनिवार्य"
+    },
+    {
+      "roman": "krantibhar",
+      "first_indexed": "क्रान्तिभर"
+    },
+    {
+      "roman": "kuiyachhada",
+      "first_indexed": "कुइयाछडा"
+    },
+    {
+      "roman": "kuvendral",
+      "first_indexed": "कुवेन्द्रल"
+    },
+    {
+      "roman": "kwairika",
+      "first_indexed": "क्वाइरीका"
+    },
+    {
+      "roman": "lailasitko",
+      "first_indexed": "लैलासितको"
+    },
+    {
+      "roman": "laingikmatrai",
+      "first_indexed": "लैङ्गिकमात्रै"
+    },
+    {
+      "roman": "lalpattasthit",
+      "first_indexed": "लालपत्तास्थित"
+    },
+    {
+      "roman": "lefranchise",
+      "first_indexed": "लेफ्राञ्चाइज"
+    },
+    {
+      "roman": "legat",
+      "first_indexed": "लेगत"
+    },
+    {
+      "roman": "lekherbhanda",
+      "first_indexed": "लेखेरभन्दा"
+    },
+    {
+      "roman": "lhasaki",
+      "first_indexed": "ल्हासाकी"
+    },
+    {
+      "roman": "lobhipapikai",
+      "first_indexed": "लोभीपापीकै"
+    },
+    {
+      "roman": "lukairahe",
+      "first_indexed": "लुकाइरहे"
+    },
+    {
+      "roman": "mahabhukampamarfat",
+      "first_indexed": "महाभूकम्पमार्फत"
+    },
+    {
+      "roman": "maharajdhirale",
+      "first_indexed": "महाराजधिराले"
+    },
+    {
+      "roman": "mamilabareko",
+      "first_indexed": "मामिलाबारेको"
+    },
+    {
+      "roman": "manawalokma",
+      "first_indexed": "मानवलोकमा"
+    },
+    {
+      "roman": "manchhako",
+      "first_indexed": "मान्छको"
+    },
+    {
+      "roman": "mangeskar",
+      "first_indexed": "मंगेसकर"
+    },
+    {
+      "roman": "maniwachdwara",
+      "first_indexed": "मनिवाचद्वारा"
+    },
+    {
+      "roman": "mantrapradhan",
+      "first_indexed": "मन्त्रप्रधान"
+    },
+    {
+      "roman": "manusmritikarle",
+      "first_indexed": "मनुस्मृतिकारले"
+    },
+    {
+      "roman": "marnarahawa",
+      "first_indexed": "मर्नरहवा"
+    },
+    {
+      "roman": "marwariwiruddha",
+      "first_indexed": "मार्वरीविरुद्ध"
+    },
+    {
+      "roman": "menusahit",
+      "first_indexed": "मेनुसहित"
+    },
+    {
+      "roman": "mesdar",
+      "first_indexed": "मेस्दार"
+    },
+    {
+      "roman": "methyl",
+      "first_indexed": "मिथाइल"
+    },
+    {
+      "roman": "meunira",
+      "first_indexed": "मेउनिर"
+    },
+    {
+      "roman": "michaiprati",
+      "first_indexed": "मिचाइप्रति"
+    },
+    {
+      "roman": "misingma",
+      "first_indexed": "मिसिङमा"
+    },
+    {
+      "roman": "monotypeko",
+      "first_indexed": "मोनोटाइपको"
+    },
+    {
+      "roman": "mulyabodhka",
+      "first_indexed": "मूल्यबोधका"
+    },
+    {
+      "roman": "mungarsanga",
+      "first_indexed": "मुंगरसँग"
+    },
+    {
+      "roman": "nachhiring",
+      "first_indexed": "नाछिरिङ"
+    },
+    {
+      "roman": "nadiadwalko",
+      "first_indexed": "नाडियाडवालको"
+    },
+    {
+      "roman": "nahuneka",
+      "first_indexed": "नहुनेका"
+    },
+    {
+      "roman": "nahusakchha",
+      "first_indexed": "नहुसक्छ"
+    },
+    {
+      "roman": "nemwangsamaksha",
+      "first_indexed": "नेम्वाङसमक्ष"
+    },
+    {
+      "roman": "nepalwadi",
+      "first_indexed": "नेपालवादी"
+    },
+    {
+      "roman": "netrahinharule",
+      "first_indexed": "नेत्रहीनहरूले"
+    },
+    {
+      "roman": "nikakne",
+      "first_indexed": "निकाक्ने"
+    },
+    {
+      "roman": "nimtinchhan",
+      "first_indexed": "निम्तिन्छन्"
+    },
+    {
+      "roman": "nowostisanga",
+      "first_indexed": "नोवोस्तीसँग"
+    },
+    {
+      "roman": "nuhaidinchhe",
+      "first_indexed": "नुहाइदिन्छे"
+    },
+    {
+      "roman": "nunbhanda",
+      "first_indexed": "नुनभन्दा"
+    },
+    {
+      "roman": "nyanokai",
+      "first_indexed": "न्यानोकै"
+    },
+    {
+      "roman": "nyayavid",
+      "first_indexed": "न्यायविद"
+    },
+    {
+      "roman": "oirirahane",
+      "first_indexed": "ओइरिरहने"
+    },
+    {
+      "roman": "ojholma",
+      "first_indexed": "ओझोलमा"
+    },
+    {
+      "roman": "padyanidhi",
+      "first_indexed": "पद्यनिधि"
+    },
+    {
+      "roman": "pahenlolagayat",
+      "first_indexed": "पहेँलोलगायत"
+    },
+    {
+      "roman": "pahilkadmi",
+      "first_indexed": "पहिलकदमी"
+    },
+    {
+      "roman": "paibaksanchha",
+      "first_indexed": "पाइबक्सन्छ"
+    },
+    {
+      "roman": "paisamarfat",
+      "first_indexed": "पैसामार्फत"
+    },
+    {
+      "roman": "paitharile",
+      "first_indexed": "पैठारीले"
+    },
+    {
+      "roman": "pakistansammalai",
+      "first_indexed": "पाकिस्तानसम्मलाई"
+    },
+    {
+      "roman": "palediyamko",
+      "first_indexed": "पलेडियमको"
+    },
+    {
+      "roman": "parisarasma",
+      "first_indexed": "परिसरसमा"
+    },
+    {
+      "roman": "pariwarjansahitko",
+      "first_indexed": "परिवारजनसहितको"
+    },
+    {
+      "roman": "parkandai",
+      "first_indexed": "पर्कँदै"
+    },
+    {
+      "roman": "parnusathai",
+      "first_indexed": "पार्नुसाथै"
+    },
+    {
+      "roman": "pashubalijasta",
+      "first_indexed": "पशुबलिजस्ता"
+    },
+    {
+      "roman": "pashupankshibid",
+      "first_indexed": "पशुपंक्षीबिद्"
+    },
+    {
+      "roman": "patramitratalai",
+      "first_indexed": "पत्रमित्रतालाई"
+    },
+    {
+      "roman": "pitinu",
+      "first_indexed": "पिटिनु"
+    },
+    {
+      "roman": "plclai",
+      "first_indexed": "पीएलसीलाई"
+    },
+    {
+      "roman": "policeclub",
+      "first_indexed": "पुलिसक्लब"
+    },
+    {
+      "roman": "pracharprasarkosmet",
+      "first_indexed": "प्रचारप्रसारकोसमेत"
+    },
+    {
+      "roman": "prantasangai",
+      "first_indexed": "प्रान्तसँगै"
+    },
+    {
+      "roman": "prasarko",
+      "first_indexed": "प्रसारको"
+    },
+    {
+      "roman": "prathanmantri",
+      "first_indexed": "प्रथानमन्त्री"
+    },
+    {
+      "roman": "pratinidhitwaka",
+      "first_indexed": "प्रतिनिधित्वका"
+    },
+    {
+      "roman": "preranaputra",
+      "first_indexed": "प्रेरणापुत्र"
+    },
+    {
+      "roman": "protey",
+      "first_indexed": "प्रोटी"
+    },
+    {
+      "roman": "publicitykai",
+      "first_indexed": "पब्लिसिटीकै"
+    },
+    {
+      "roman": "punapariksha",
+      "first_indexed": "पुनपरीक्षा"
+    },
+    {
+      "roman": "punasrthapanapachhikai",
+      "first_indexed": "पुनस्र्थापनापछिकै"
+    },
+    {
+      "roman": "punatarlikikaran",
+      "first_indexed": "पुनतार्लिकीकरण"
+    },
+    {
+      "roman": "rabbanile",
+      "first_indexed": "रब्बानीले"
+    },
+    {
+      "roman": "rajashwamaitri",
+      "first_indexed": "राजश्वमैत्री"
+    },
+    {
+      "roman": "rajdhaniware",
+      "first_indexed": "राजधानीवारे"
+    },
+    {
+      "roman": "ramkahaniko",
+      "first_indexed": "रामकहानीको"
+    },
+    {
+      "roman": "rashtapremy",
+      "first_indexed": "राष्टप्रेमी"
+    },
+    {
+      "roman": "rashtrapatimasatha",
+      "first_indexed": "राष्ट्रपतिमासथ"
+    },
+    {
+      "roman": "rasidwinai",
+      "first_indexed": "रसिदविनै"
+    },
+    {
+      "roman": "ratewiruddha",
+      "first_indexed": "रातेविरुद्ध"
+    },
+    {
+      "roman": "ridethru",
+      "first_indexed": "राइडथ्रु"
+    },
+    {
+      "roman": "rihayaka",
+      "first_indexed": "रिहायका"
+    },
+    {
+      "roman": "rojnuparchha",
+      "first_indexed": "रोज्नुपर्छ"
+    },
+    {
+      "roman": "rompu",
+      "first_indexed": "रोम्पू"
+    },
+    {
+      "roman": "ruchibahirko",
+      "first_indexed": "रुचिबाहिरको"
+    },
+    {
+      "roman": "sadasyaharko",
+      "first_indexed": "सदस्यहरको"
+    },
+    {
+      "roman": "sadasyiyabhitrama",
+      "first_indexed": "सदस्यीयभित्रमा"
+    },
+    {
+      "roman": "sagunpahilo",
+      "first_indexed": "सगुनपहिलो"
+    },
+    {
+      "roman": "sahabhagitamatra",
+      "first_indexed": "सहभागितामात्र"
+    },
+    {
+      "roman": "sajindrale",
+      "first_indexed": "साजिन्द्रले"
+    },
+    {
+      "roman": "sakshiharusangko",
+      "first_indexed": "साक्षीहरूसँगको"
+    },
+    {
+      "roman": "samajwadirajyako",
+      "first_indexed": "समाजवादीराज्यको"
+    },
+    {
+      "roman": "samawadanta",
+      "first_indexed": "समवदन्त"
+    },
+    {
+      "roman": "samirale",
+      "first_indexed": "समिराले"
+    },
+    {
+      "roman": "samjhaiekai",
+      "first_indexed": "सम्झाइएकै"
+    },
+    {
+      "roman": "samjhautapatrama",
+      "first_indexed": "सम्झौतपत्रमा"
+    },
+    {
+      "roman": "sampaitdevi",
+      "first_indexed": "सम्पैतदेवी"
+    },
+    {
+      "roman": "sangri",
+      "first_indexed": "सांग्री"
+    },
+    {
+      "roman": "sanskritibichma",
+      "first_indexed": "संस्कृतिबिचमा"
+    },
+    {
+      "roman": "sanskrityayan",
+      "first_indexed": "सांस्कृत्यायन"
+    },
+    {
+      "roman": "sanwadatataharuko",
+      "first_indexed": "संवादताताहरूको"
+    },
+    {
+      "roman": "saparekai",
+      "first_indexed": "सपारेकै"
+    },
+    {
+      "roman": "sayamalai",
+      "first_indexed": "सायमालाई"
+    },
+    {
+      "roman": "sensarharudwara",
+      "first_indexed": "सेन्सरहरूद्वारा"
+    },
+    {
+      "roman": "sewapradayaksahit",
+      "first_indexed": "सेवाप्रदायकसहित"
+    },
+    {
+      "roman": "sewapraweshpachhi",
+      "first_indexed": "सेवाप्रवेशपछि"
+    },
+    {
+      "roman": "shadyantrakariharuko",
+      "first_indexed": "षड्यन्त्रकारीहरुको"
+    },
+    {
+      "roman": "shaktimagnu",
+      "first_indexed": "शक्तिमाग्नु"
+    },
+    {
+      "roman": "shastrasahit",
+      "first_indexed": "शस्त्रसहित"
+    },
+    {
+      "roman": "shatrasuru",
+      "first_indexed": "शत्रसुरु"
+    },
+    {
+      "roman": "shishyale",
+      "first_indexed": "शिष्यले"
+    },
+    {
+      "roman": "shradanjalika",
+      "first_indexed": "श्रदाञ्जलिका"
+    },
+    {
+      "roman": "shriyandsharathe",
+      "first_indexed": "श्रियंदशरथे"
+    },
+    {
+      "roman": "shtale",
+      "first_indexed": "ष्टले"
+    },
+    {
+      "roman": "shubhsamacharka",
+      "first_indexed": "शुभसमाचारका"
+    },
+    {
+      "roman": "shwasprashwasasamet",
+      "first_indexed": "श्वासप्रश्वाससमेत"
+    },
+    {
+      "roman": "shwetpatrako",
+      "first_indexed": "श्वेतपत्रको"
+    },
+    {
+      "roman": "sijanbhitrakai",
+      "first_indexed": "सिजनभित्रकै"
+    },
+    {
+      "roman": "silpurbata",
+      "first_indexed": "सिलपुरबाट"
+    },
+    {
+      "roman": "sishtik",
+      "first_indexed": "सिष्टिक"
+    },
+    {
+      "roman": "sohraki",
+      "first_indexed": "सोह्रकी"
+    },
+    {
+      "roman": "sthanapokharako",
+      "first_indexed": "स्थानपोखराको"
+    },
+    {
+      "roman": "sthitiyo",
+      "first_indexed": "स्थितियो"
+    },
+    {
+      "roman": "storycycle",
+      "first_indexed": "स्टोरीसाइकल"
+    },
+    {
+      "roman": "straberry",
+      "first_indexed": "स्ट्रबेरी"
+    },
+    {
+      "roman": "subhayog",
+      "first_indexed": "सुभयोग"
+    },
+    {
+      "roman": "sugamyata",
+      "first_indexed": "सुगम्यता"
+    },
+    {
+      "roman": "suhaglai",
+      "first_indexed": "सुहागलाई"
+    },
+    {
+      "roman": "suhiliyat",
+      "first_indexed": "सुहिलियत"
+    },
+    {
+      "roman": "sukshmaparikshanka",
+      "first_indexed": "सूक्ष्मपरीक्षणका"
+    },
+    {
+      "roman": "sunapasalbata",
+      "first_indexed": "सुनपसलबाट"
+    },
+    {
+      "roman": "sundarilgayatko",
+      "first_indexed": "सुन्दरीलगायतको"
+    },
+    {
+      "roman": "sunilagowindako",
+      "first_indexed": "सुनीलगोविन्दको"
+    },
+    {
+      "roman": "suparmarketsangko",
+      "first_indexed": "सुपरमार्केटसँगको"
+    },
+    {
+      "roman": "supolbata",
+      "first_indexed": "सुपोलबाट"
+    },
+    {
+      "roman": "swasthyakalagi",
+      "first_indexed": "स्वास्थ्यकालागी"
+    },
+    {
+      "roman": "swayammale",
+      "first_indexed": "स्वयंमाले"
+    },
+    {
+      "roman": "swedada",
+      "first_indexed": "स्वेददा"
+    },
+    {
+      "roman": "taansiyai",
+      "first_indexed": "टाँसियै"
+    },
+    {
+      "roman": "tabbu",
+      "first_indexed": "तब्बु"
+    },
+    {
+      "roman": "tamiflu",
+      "first_indexed": "टामिफ्लु"
+    },
+    {
+      "roman": "taskarharuma",
+      "first_indexed": "तस्करहरूमा"
+    },
+    {
+      "roman": "tatpashchatasamet",
+      "first_indexed": "तत्पश्चातसमेत"
+    },
+    {
+      "roman": "technodrims",
+      "first_indexed": "टेक्नोड्रिम्स"
+    },
+    {
+      "roman": "teretorylai",
+      "first_indexed": "टेरेटोरीलाई"
+    },
+    {
+      "roman": "teroviruddha",
+      "first_indexed": "तेरोविरुद्ध"
+    },
+    {
+      "roman": "thakurbabama",
+      "first_indexed": "ठाकुरबाबामा"
+    },
+    {
+      "roman": "thekdarpakshale",
+      "first_indexed": "ठेकदारपक्षले"
+    },
+    {
+      "roman": "tithiharubata",
+      "first_indexed": "तिथिहरूबाट"
+    },
+    {
+      "roman": "tna",
+      "first_indexed": "टीएनए"
+    },
+    {
+      "roman": "tolwasiharule",
+      "first_indexed": "टोलवासीहरूले"
+    },
+    {
+      "roman": "totage",
+      "first_indexed": "टोटेज"
+    },
+    {
+      "roman": "tugedarsale",
+      "first_indexed": "टुगेदर्सले"
+    },
+    {
+      "roman": "tulyaunutira",
+      "first_indexed": "तुल्याउनुतिर"
+    },
+    {
+      "roman": "tyahasma",
+      "first_indexed": "त्यहसमा"
+    },
+    {
+      "roman": "tyasalehamra",
+      "first_indexed": "त्यसलेहाम्रा"
+    },
+    {
+      "roman": "uhuka",
+      "first_indexed": "उहुका"
+    },
+    {
+      "roman": "uksaeka",
+      "first_indexed": "उक्साएका"
+    },
+    {
+      "roman": "ulderwireld",
+      "first_indexed": "अल्डरवाइरेल्ड"
+    },
+    {
+      "roman": "unrelatedma",
+      "first_indexed": "अनरिलेटेडमा"
+    },
+    {
+      "roman": "upabhogalagayat",
+      "first_indexed": "उपभोगलगायत"
+    },
+    {
+      "roman": "upamahanragarpalikako",
+      "first_indexed": "उपमहानरगरपालिकाको"
+    },
+    {
+      "roman": "upamahasachibma",
+      "first_indexed": "उपमहासचिबमा"
+    },
+    {
+      "roman": "upcharbahekka",
+      "first_indexed": "उपचारबाहेकका"
+    },
+    {
+      "roman": "velelonga",
+      "first_indexed": "वेलेलोङ्गा"
+    },
+    {
+      "roman": "verojgariviruddha",
+      "first_indexed": "वेरोजगारीविरुद्ध"
+    },
+    {
+      "roman": "vidrohiharusanga",
+      "first_indexed": "विद्रोहीहरूसँग"
+    },
+    {
+      "roman": "vigyako",
+      "first_indexed": "विज्ञाको"
+    },
+    {
+      "roman": "vijayakrishna",
+      "first_indexed": "विजयकृष्ण"
+    },
+    {
+      "roman": "vikohi",
+      "first_indexed": "विकोही"
+    },
+    {
+      "roman": "vividhapakshiya",
+      "first_indexed": "विविधपक्षीय"
+    },
+    {
+      "roman": "wadhyata",
+      "first_indexed": "वाध्यता"
+    },
+    {
+      "roman": "wagainchale",
+      "first_indexed": "वगैंचाले"
+    },
+    {
+      "roman": "wahut",
+      "first_indexed": "वहुत"
+    },
+    {
+      "roman": "waldole",
+      "first_indexed": "वाल्डोले"
+    },
+    {
+      "roman": "warrinskale",
+      "first_indexed": "वारिन्सकाले"
+    },
+    {
+      "roman": "wastuwigyan",
+      "first_indexed": "वास्तुविज्ञान"
+    },
+    {
+      "roman": "webhishtin",
+      "first_indexed": "वेभिष्टिन"
+    },
+    {
+      "roman": "wenefitko",
+      "first_indexed": "वेनेफिटको"
+    },
+    {
+      "roman": "widhanwiruddhako",
+      "first_indexed": "विधानविरुद्धको"
+    },
+    {
+      "roman": "wiltuniadevi",
+      "first_indexed": "विल्टुनियादेवी"
+    },
+    {
+      "roman": "wlickenle",
+      "first_indexed": "व्लिकेनले"
+    },
+    {
+      "roman": "wratakathabata",
+      "first_indexed": "व्रतकथाबाट"
+    },
+    {
+      "roman": "wriddhilesmet",
+      "first_indexed": "वृद्धिलेसमेत"
+    },
+    {
+      "roman": "wrigediera",
+      "first_indexed": "व्रिगेडिएर"
+    },
+    {
+      "roman": "wyagka",
+      "first_indexed": "व्यागका"
+    },
+    {
+      "roman": "yadyapteson",
+      "first_indexed": "याड्याप्टेसन"
+    },
+    {
+      "roman": "yatharthawadile",
+      "first_indexed": "यथार्थवादीले"
+    },
+    {
+      "roman": "yatharthawadwirodhi",
+      "first_indexed": "यथार्थवादविरोधी"
+    },
+    {
+      "roman": "yogawigyako",
+      "first_indexed": "योगविज्ञको"
+    },
+    {
+      "roman": "yojanamantralaylai",
+      "first_indexed": "योजनामन्त्रालयलाई"
+    },
+    {
+      "roman": "yuchle",
+      "first_indexed": "युचले"
+    }
+  ]
+}

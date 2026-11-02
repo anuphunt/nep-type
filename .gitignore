@@ -1,0 +1,28 @@
+.build/
+build/
+.DS_Store
+.swiftpm/
+
+# Generated applications and compiled files
+*.app/
+*.class
+__pycache__/
+*.py[cod]
+.gradle/
+DerivedData/
+
+# Machine-specific IDE settings
+.idea/
+xcuserdata/
+*.xcuserstate
+local.properties
+
+# Local secrets and signing material
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.mobileprovision
+*.keystore
+*.jks

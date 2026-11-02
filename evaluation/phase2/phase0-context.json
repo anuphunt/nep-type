@@ -1,0 +1,2023 @@
+{
+  "cases" : [
+    {
+      "actual" : "आज मेरो phone को battery literally dead भैसकेको थियो",
+      "exact" : false,
+      "expected" : [
+        "आज मेरो phone को battery literally dead भइसकेको थियो"
+      ],
+      "id" : "D01",
+      "input" : "aaja mero phone ko battery literally dead bhaisakeko thiyo",
+      "source" : "user-example",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "आज",
+            "आजा",
+            "aaja"
+          ],
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aaja",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "मेरो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मेरो",
+            "mero"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मेरो"
+          ],
+          "input" : "mero",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "phone",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "phone",
+            "फोने"
+          ],
+          "correct" : true,
+          "expected" : [
+            "phone"
+          ],
+          "input" : "phone",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "को",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "को",
+            "ko"
+          ],
+          "correct" : true,
+          "expected" : [
+            "को"
+          ],
+          "input" : "ko",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "battery",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "battery",
+            "बत्तेर्य"
+          ],
+          "correct" : true,
+          "expected" : [
+            "battery"
+          ],
+          "input" : "battery",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "literally",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "literally",
+            "लितेरल्ल्य",
+            "लिटरेली"
+          ],
+          "correct" : true,
+          "expected" : [
+            "literally"
+          ],
+          "input" : "literally",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "dead",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "dead",
+            "देअद"
+          ],
+          "correct" : true,
+          "expected" : [
+            "dead"
+          ],
+          "input" : "dead",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "भैसकेको",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "भैसकेको",
+            "भइसकेको",
+            "bhaisakeko"
+          ],
+          "correct" : false,
+          "expected" : [
+            "भइसकेको"
+          ],
+          "input" : "bhaisakeko",
+          "role" : "nepali",
+          "uncertain" : true
+        },
+        {
+          "actual" : "थियो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "थियो",
+            "thiyo"
+          ],
+          "correct" : true,
+          "expected" : [
+            "थियो"
+          ],
+          "input" : "thiyo",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "hello तिम्रो नाम के हो? मेरो नाम अनुप हो. मलाई फुटबल खेल्न मन पर्छ.",
+      "exact" : true,
+      "expected" : [
+        "hello तिम्रो नाम के हो? मेरो नाम अनुप हो. मलाई फुटबल खेल्न मन पर्छ."
+      ],
+      "id" : "D02",
+      "input" : "hello timro naam k ho? mero naam anup ho. malai football khelna man parchha.",
+      "source" : "user-example",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "hello",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "hello",
+            "हेल्लो"
+          ],
+          "correct" : true,
+          "expected" : [
+            "hello"
+          ],
+          "input" : "hello",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "तिम्रो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "तिम्रो",
+            "टिम्रो",
+            "timro"
+          ],
+          "correct" : true,
+          "expected" : [
+            "तिम्रो"
+          ],
+          "input" : "timro",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "नाम",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "नाम",
+            "naam"
+          ],
+          "correct" : true,
+          "expected" : [
+            "नाम"
+          ],
+          "input" : "naam",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "के",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "के",
+            "क",
+            "k"
+          ],
+          "correct" : true,
+          "expected" : [
+            "के"
+          ],
+          "input" : "k",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "हो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "हो",
+            "ho"
+          ],
+          "correct" : true,
+          "expected" : [
+            "हो"
+          ],
+          "input" : "ho",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "मेरो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मेरो",
+            "mero"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मेरो"
+          ],
+          "input" : "mero",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "नाम",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "नाम",
+            "naam"
+          ],
+          "correct" : true,
+          "expected" : [
+            "नाम"
+          ],
+          "input" : "naam",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "अनुप",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "अनुप",
+            "अनूप",
+            "anup"
+          ],
+          "correct" : true,
+          "expected" : [
+            "अनुप",
+            "अनूप"
+          ],
+          "input" : "anup",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "हो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "हो",
+            "ho"
+          ],
+          "correct" : true,
+          "expected" : [
+            "हो"
+          ],
+          "input" : "ho",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "मलाई",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मलाई",
+            "मलै",
+            "malai"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मलाई"
+          ],
+          "input" : "malai",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "फुटबल",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "फुटबल",
+            "फूत्बल्ल",
+            "football"
+          ],
+          "correct" : true,
+          "expected" : [
+            "फुटबल"
+          ],
+          "input" : "football",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "खेल्न",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "खेल्न",
+            "khelna"
+          ],
+          "correct" : true,
+          "expected" : [
+            "खेल्न"
+          ],
+          "input" : "khelna",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "मन",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मन",
+            "अमन",
+            "अमान",
+            "मान",
+            "man"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मन"
+          ],
+          "input" : "man",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "पर्छ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "पर्छ",
+            "पार्छ",
+            "parchha"
+          ],
+          "correct" : true,
+          "expected" : [
+            "पर्छ"
+          ],
+          "input" : "parchha",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "म office जान्छु",
+      "exact" : true,
+      "expected" : [
+        "म office जान्छु"
+      ],
+      "id" : "D03",
+      "input" : "ma office janchu",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "म",
+            "मा",
+            "ma"
+          ],
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "office",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "office",
+            "ओफ्फिचे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "office"
+          ],
+          "input" : "office",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "जान्छु",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "जान्छु",
+            "जन्चु",
+            "जान्चु",
+            "janchu"
+          ],
+          "correct" : true,
+          "expected" : [
+            "जान्छु"
+          ],
+          "input" : "janchu",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "भोलि meeting पछि भेटौँ",
+      "exact" : true,
+      "expected" : [
+        "भोलि meeting पछि भेटौँ"
+      ],
+      "id" : "D04",
+      "input" : "bholi meeting pachi bhetau",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "भोलि",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "भोलि",
+            "bholi"
+          ],
+          "correct" : true,
+          "expected" : [
+            "भोलि"
+          ],
+          "input" : "bholi",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "meeting",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "meeting",
+            "मीतिङ"
+          ],
+          "correct" : true,
+          "expected" : [
+            "meeting"
+          ],
+          "input" : "meeting",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "पछि",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "पछि",
+            "पचि",
+            "pachi"
+          ],
+          "correct" : true,
+          "expected" : [
+            "पछि"
+          ],
+          "input" : "pachi",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "भेटौँ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "भेटौँ",
+            "भेतौ",
+            "भेटौ",
+            "bhetau"
+          ],
+          "correct" : true,
+          "expected" : [
+            "भेटौँ"
+          ],
+          "input" : "bhetau",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "म पनि खान्छु",
+      "exact" : false,
+      "expected" : [
+        "म पानी खान्छु"
+      ],
+      "id" : "D05",
+      "input" : "ma pani khanchu",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "म",
+            "मा",
+            "ma"
+          ],
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "पनि",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "पनि",
+            "पानी",
+            "pani"
+          ],
+          "correct" : false,
+          "expected" : [
+            "पानी"
+          ],
+          "input" : "pani",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "खान्छु",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "खान्छु",
+            "खन्चु",
+            "खान्चु",
+            "khanchu"
+          ],
+          "correct" : true,
+          "expected" : [
+            "खान्छु"
+          ],
+          "input" : "khanchu",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "म पनि जान्छु",
+      "exact" : true,
+      "expected" : [
+        "म पनि जान्छु"
+      ],
+      "id" : "D06",
+      "input" : "ma pani janchu",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "म",
+            "मा",
+            "ma"
+          ],
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "पनि",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "पनि",
+            "पानी",
+            "pani"
+          ],
+          "correct" : true,
+          "expected" : [
+            "पनि"
+          ],
+          "input" : "pani",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "जान्छु",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "जान्छु",
+            "जन्चु",
+            "जान्चु",
+            "janchu"
+          ],
+          "correct" : true,
+          "expected" : [
+            "जान्छु"
+          ],
+          "input" : "janchu",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "the man is here",
+      "exact" : true,
+      "expected" : [
+        "the man is here"
+      ],
+      "id" : "D07",
+      "input" : "the man is here",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "the",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "the",
+            "थे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "the"
+          ],
+          "input" : "the",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "man",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "man",
+            "मन",
+            "अमन",
+            "अमान"
+          ],
+          "correct" : true,
+          "expected" : [
+            "man"
+          ],
+          "input" : "man",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "is",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "is",
+            "इस",
+            "ईश"
+          ],
+          "correct" : true,
+          "expected" : [
+            "is"
+          ],
+          "input" : "is",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "here",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "here",
+            "हेरे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "here"
+          ],
+          "input" : "here",
+          "role" : "english",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "नमस्ते, तपाईं सन्चै हुनुहुन्छ?",
+      "exact" : true,
+      "expected" : [
+        "नमस्ते, तपाईं सन्चै हुनुहुन्छ?"
+      ],
+      "id" : "D08",
+      "input" : "namaste, tapai sanchai hunuhuncha?",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "नमस्ते",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "नमस्ते",
+            "namaste"
+          ],
+          "correct" : true,
+          "expected" : [
+            "नमस्ते"
+          ],
+          "input" : "namaste",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "तपाईं",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "तपाईं",
+            "तपाई",
+            "तपै",
+            "तपाइ",
+            "tapai"
+          ],
+          "correct" : true,
+          "expected" : [
+            "तपाईं",
+            "तपाई"
+          ],
+          "input" : "tapai",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "सन्चै",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "सन्चै",
+            "सञ्चै",
+            "साँचै",
+            "सान्चै",
+            "sanchai"
+          ],
+          "correct" : true,
+          "expected" : [
+            "सन्चै",
+            "सञ्चै"
+          ],
+          "input" : "sanchai",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "हुनुहुन्छ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "हुनुहुन्छ",
+            "हुनुहुन्च",
+            "hunuhuncha"
+          ],
+          "correct" : true,
+          "expected" : [
+            "हुनुहुन्छ"
+          ],
+          "input" : "hunuhuncha",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "म फुटबल खेल्छु",
+      "exact" : true,
+      "expected" : [
+        "म फुटबल खेल्छु"
+      ],
+      "id" : "D09",
+      "input" : "ma football khelchu",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "म",
+            "मा",
+            "ma"
+          ],
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "फुटबल",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "फुटबल",
+            "फूत्बल्ल",
+            "football"
+          ],
+          "correct" : true,
+          "expected" : [
+            "फुटबल"
+          ],
+          "input" : "football",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "खेल्छु",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "खेल्छु",
+            "खेल्चु",
+            "khelchu"
+          ],
+          "correct" : true,
+          "expected" : [
+            "खेल्छु"
+          ],
+          "input" : "khelchu",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "the football match is today",
+      "exact" : true,
+      "expected" : [
+        "the football match is today"
+      ],
+      "id" : "D10",
+      "input" : "the football match is today",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "the",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "the",
+            "थे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "the"
+          ],
+          "input" : "the",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "football",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "football",
+            "फुटबल",
+            "फूत्बल्ल"
+          ],
+          "correct" : true,
+          "expected" : [
+            "football"
+          ],
+          "input" : "football",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "match",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "match",
+            "मत्च"
+          ],
+          "correct" : true,
+          "expected" : [
+            "match"
+          ],
+          "input" : "match",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "is",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "is",
+            "इस",
+            "ईश"
+          ],
+          "correct" : true,
+          "expected" : [
+            "is"
+          ],
+          "input" : "is",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "today",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "today",
+            "तोदय"
+          ],
+          "correct" : true,
+          "expected" : [
+            "today"
+          ],
+          "input" : "today",
+          "role" : "english",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "👋 म www.example.com/namaste",
+      "exact" : true,
+      "expected" : [
+        "👋 म www.example.com/namaste"
+      ],
+      "id" : "D11",
+      "input" : "👋 ma www.example.com/namaste",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "म",
+            "मा",
+            "ma"
+          ],
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "email me at hello@example.com",
+      "exact" : true,
+      "expected" : [
+        "email me at hello@example.com"
+      ],
+      "id" : "D12",
+      "input" : "email me at hello@example.com",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "email",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "email",
+            "एमैल"
+          ],
+          "correct" : true,
+          "expected" : [
+            "email"
+          ],
+          "input" : "email",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "me",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "me",
+            "मे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "me"
+          ],
+          "input" : "me",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "at",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "at",
+            "अत"
+          ],
+          "correct" : true,
+          "expected" : [
+            "at"
+          ],
+          "input" : "at",
+          "role" : "english",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "`let ma = 1` राम्रो छ!",
+      "exact" : true,
+      "expected" : [
+        "`let ma = 1` राम्रो छ!"
+      ],
+      "id" : "D13",
+      "input" : "`let ma = 1` ramro cha!",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "राम्रो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "राम्रो",
+            "रम्रो",
+            "रामरो",
+            "ramro"
+          ],
+          "correct" : true,
+          "expected" : [
+            "राम्रो"
+          ],
+          "input" : "ramro",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "छ",
+            "च",
+            "छा",
+            "cha"
+          ],
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "म घरमा छु 👋 123",
+      "exact" : true,
+      "expected" : [
+        "म घरमा छु 👋 123"
+      ],
+      "id" : "D14",
+      "input" : "म घरमा छु 👋 123",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+
+      ]
+    },
+    {
+      "actual" : "आज र आज",
+      "exact" : true,
+      "expected" : [
+        "आज र आज"
+      ],
+      "id" : "D15",
+      "input" : "aja ra aaja",
+      "source" : "synthetic",
+      "split" : "dev",
+      "tokens" : [
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "आज",
+            "अज",
+            "आजा",
+            "aja"
+          ],
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aja",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "र",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "र",
+            "रा",
+            "ऱ",
+            "ra"
+          ],
+          "correct" : true,
+          "expected" : [
+            "र"
+          ],
+          "input" : "ra",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "आज",
+            "आजा",
+            "aaja"
+          ],
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aaja",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "मेरो laptop slow छ",
+      "exact" : true,
+      "expected" : [
+        "मेरो laptop slow छ"
+      ],
+      "id" : "H01",
+      "input" : "mero laptop slow cha",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "मेरो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मेरो",
+            "mero"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मेरो"
+          ],
+          "input" : "mero",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "laptop",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "laptop",
+            "लप्तोप",
+            "ल्यापटप",
+            "ल्यापटाप"
+          ],
+          "correct" : true,
+          "expected" : [
+            "laptop"
+          ],
+          "input" : "laptop",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "slow",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "slow",
+            "स्लोव"
+          ],
+          "correct" : true,
+          "expected" : [
+            "slow"
+          ],
+          "input" : "slow",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "छ",
+            "च",
+            "छा",
+            "cha"
+          ],
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "हामी movie हेर्न जन्चौ",
+      "exact" : false,
+      "expected" : [
+        "हामी movie हेर्न जान्छौँ"
+      ],
+      "id" : "H02",
+      "input" : "hami movie herna janchau",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "हामी",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "हामी",
+            "हमि",
+            "hami"
+          ],
+          "correct" : true,
+          "expected" : [
+            "हामी"
+          ],
+          "input" : "hami",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "movie",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "movie",
+            "मोविए"
+          ],
+          "correct" : true,
+          "expected" : [
+            "movie"
+          ],
+          "input" : "movie",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "हेर्न",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "हेर्न",
+            "हर्ना",
+            "हेर्ना",
+            "herna"
+          ],
+          "correct" : true,
+          "expected" : [
+            "हेर्न"
+          ],
+          "input" : "herna",
+          "role" : "nepali",
+          "uncertain" : true
+        },
+        {
+          "actual" : "जन्चौ",
+          "candidate_available" : false,
+          "candidates_shown" : [
+            "जन्चौ",
+            "जान्छौ",
+            "janchau"
+          ],
+          "correct" : false,
+          "expected" : [
+            "जान्छौँ",
+            "जान्छौं"
+          ],
+          "input" : "janchau",
+          "role" : "nepali",
+          "uncertain" : true
+        }
+      ]
+    },
+    {
+      "actual" : "please send the document",
+      "exact" : true,
+      "expected" : [
+        "please send the document"
+      ],
+      "id" : "H03",
+      "input" : "please send the document",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "please",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "please",
+            "प्लेअसे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "please"
+          ],
+          "input" : "please",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "send",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "send",
+            "सेन्द",
+            "सेन्ड"
+          ],
+          "correct" : true,
+          "expected" : [
+            "send"
+          ],
+          "input" : "send",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "the",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "the",
+            "थे"
+          ],
+          "correct" : true,
+          "expected" : [
+            "the"
+          ],
+          "input" : "the",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "document",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "document",
+            "दोचुमेन्त"
+          ],
+          "correct" : true,
+          "expected" : [
+            "document"
+          ],
+          "input" : "document",
+          "role" : "english",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "मलाई coffee र चिया मन पर्छ",
+      "exact" : true,
+      "expected" : [
+        "मलाई coffee र चिया मन पर्छ"
+      ],
+      "id" : "H04",
+      "input" : "malai coffee ra chiya man parcha",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "मलाई",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मलाई",
+            "मलै",
+            "malai"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मलाई"
+          ],
+          "input" : "malai",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "coffee",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "coffee",
+            "चोफ्फी"
+          ],
+          "correct" : true,
+          "expected" : [
+            "coffee"
+          ],
+          "input" : "coffee",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "र",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "र",
+            "रा",
+            "ऱ",
+            "ra"
+          ],
+          "correct" : true,
+          "expected" : [
+            "र"
+          ],
+          "input" : "ra",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "चिया",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "चिया",
+            "चिय",
+            "छिया",
+            "chiya"
+          ],
+          "correct" : true,
+          "expected" : [
+            "चिया"
+          ],
+          "input" : "chiya",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "मन",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मन",
+            "अमन",
+            "अमान",
+            "मान",
+            "man"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मन"
+          ],
+          "input" : "man",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "पर्छ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "पर्छ",
+            "पर्च",
+            "पर्चा",
+            "पार्छ",
+            "parcha"
+          ],
+          "correct" : true,
+          "expected" : [
+            "पर्छ"
+          ],
+          "input" : "parcha",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "सित र ram घरमा छन्",
+      "exact" : false,
+      "expected" : [
+        "सीता र राम घरमा छन्"
+      ],
+      "id" : "H05",
+      "input" : "sita ra ram gharma chan",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "सित",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "सित",
+            "सिता",
+            "सीता",
+            "sita"
+          ],
+          "correct" : false,
+          "expected" : [
+            "सीता",
+            "सिता"
+          ],
+          "input" : "sita",
+          "role" : "nepali",
+          "uncertain" : true
+        },
+        {
+          "actual" : "र",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "र",
+            "रा",
+            "ऱ",
+            "ra"
+          ],
+          "correct" : true,
+          "expected" : [
+            "र"
+          ],
+          "input" : "ra",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "ram",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "ram",
+            "रम",
+            "राम"
+          ],
+          "correct" : false,
+          "expected" : [
+            "राम"
+          ],
+          "input" : "ram",
+          "role" : "nepali",
+          "uncertain" : true
+        },
+        {
+          "actual" : "घरमा",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "घरमा",
+            "घर्म",
+            "gharma"
+          ],
+          "correct" : true,
+          "expected" : [
+            "घरमा"
+          ],
+          "input" : "gharma",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "छन्",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "छन्",
+            "चन",
+            "छान",
+            "chan"
+          ],
+          "correct" : true,
+          "expected" : [
+            "छन्"
+          ],
+          "input" : "chan",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "मेरो WiFi password बिर्सिये",
+      "exact" : false,
+      "expected" : [
+        "मेरो WiFi password बिर्सिएँ"
+      ],
+      "id" : "H06",
+      "input" : "mero WiFi password birsiye",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "मेरो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "मेरो",
+            "mero"
+          ],
+          "correct" : true,
+          "expected" : [
+            "मेरो"
+          ],
+          "input" : "mero",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "WiFi",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "WiFi",
+            "विफि"
+          ],
+          "correct" : true,
+          "expected" : [
+            "WiFi"
+          ],
+          "input" : "WiFi",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "password",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "password",
+            "पस्स्वोर्द",
+            "पासवर्ड",
+            "पास्वर्ड"
+          ],
+          "correct" : true,
+          "expected" : [
+            "password"
+          ],
+          "input" : "password",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "बिर्सिये",
+          "candidate_available" : false,
+          "candidates_shown" : [
+            "बिर्सिये",
+            "birsiye"
+          ],
+          "correct" : false,
+          "expected" : [
+            "बिर्सिएँ",
+            "बिर्सिए"
+          ],
+          "input" : "birsiye",
+          "role" : "nepali",
+          "uncertain" : true
+        }
+      ]
+    },
+    {
+      "actual" : "तपाईं कहाँ बस्नुहुन्च?",
+      "exact" : false,
+      "expected" : [
+        "तपाईं कहाँ बस्नुहुन्छ?"
+      ],
+      "id" : "H07",
+      "input" : "tapai kahaa basnuhuncha?",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "तपाईं",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "तपाईं",
+            "तपाई",
+            "तपै",
+            "तपाइ",
+            "tapai"
+          ],
+          "correct" : true,
+          "expected" : [
+            "तपाईं",
+            "तपाई"
+          ],
+          "input" : "tapai",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "कहाँ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "कहाँ",
+            "कहा",
+            "kahaa"
+          ],
+          "correct" : true,
+          "expected" : [
+            "कहाँ"
+          ],
+          "input" : "kahaa",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "बस्नुहुन्च",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "बस्नुहुन्च",
+            "बस्नुहुन्छ",
+            "basnuhuncha"
+          ],
+          "correct" : false,
+          "expected" : [
+            "बस्नुहुन्छ"
+          ],
+          "input" : "basnuhuncha",
+          "role" : "nepali",
+          "uncertain" : true
+        }
+      ]
+    },
+    {
+      "actual" : "NASA को rocket launch भयो 🚀",
+      "exact" : true,
+      "expected" : [
+        "NASA को rocket launch भयो 🚀"
+      ],
+      "id" : "H08",
+      "input" : "NASA ko rocket launch bhayo 🚀",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "NASA",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "NASA",
+            "नस",
+            "नशा",
+            "नसा"
+          ],
+          "correct" : true,
+          "expected" : [
+            "NASA"
+          ],
+          "input" : "NASA",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "को",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "को",
+            "ko"
+          ],
+          "correct" : true,
+          "expected" : [
+            "को"
+          ],
+          "input" : "ko",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "rocket",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "rocket",
+            "रोच्केत"
+          ],
+          "correct" : true,
+          "expected" : [
+            "rocket"
+          ],
+          "input" : "rocket",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "launch",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "launch",
+            "लौन्च",
+            "लाउँछ"
+          ],
+          "correct" : true,
+          "expected" : [
+            "launch"
+          ],
+          "input" : "launch",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "भयो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "भयो",
+            "bhayo"
+          ],
+          "correct" : true,
+          "expected" : [
+            "भयो"
+          ],
+          "input" : "bhayo",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    },
+    {
+      "actual" : "visit https://example.com/mero then घर जौ",
+      "exact" : false,
+      "expected" : [
+        "visit https://example.com/mero then घर जाऊ"
+      ],
+      "id" : "H09",
+      "input" : "visit https://example.com/mero then ghar jau",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "visit",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "visit",
+            "विसित"
+          ],
+          "correct" : true,
+          "expected" : [
+            "visit"
+          ],
+          "input" : "visit",
+          "role" : "english",
+          "uncertain" : false
+        },
+        {
+          "actual" : "then",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "then",
+            "थेन",
+            "थेँ"
+          ],
+          "correct" : true,
+          "expected" : [
+            "then"
+          ],
+          "input" : "then",
+          "role" : "english",
+          "uncertain" : true
+        },
+        {
+          "actual" : "घर",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "घर",
+            "घार",
+            "ghar"
+          ],
+          "correct" : true,
+          "expected" : [
+            "घर"
+          ],
+          "input" : "ghar",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "जौ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "जौ",
+            "जाऊ",
+            "jau"
+          ],
+          "correct" : false,
+          "expected" : [
+            "जाऊ",
+            "जाउ"
+          ],
+          "input" : "jau",
+          "role" : "nepali",
+          "uncertain" : true
+        }
+      ]
+    },
+    {
+      "actual" : "दसैँ र तिहार राम्रो",
+      "exact" : true,
+      "expected" : [
+        "दसैँ र तिहार राम्रो"
+      ],
+      "id" : "H10",
+      "input" : "dashain ra tihar ramro",
+      "source" : "synthetic",
+      "split" : "heldout",
+      "tokens" : [
+        {
+          "actual" : "दसैँ",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "दसैँ",
+            "दशैँ",
+            "दशैन",
+            "दशैं",
+            "dashain"
+          ],
+          "correct" : true,
+          "expected" : [
+            "दसैँ",
+            "दशैँ"
+          ],
+          "input" : "dashain",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "र",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "र",
+            "रा",
+            "ऱ",
+            "ra"
+          ],
+          "correct" : true,
+          "expected" : [
+            "र"
+          ],
+          "input" : "ra",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "तिहार",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "तिहार",
+            "तिहर",
+            "tihar"
+          ],
+          "correct" : true,
+          "expected" : [
+            "तिहार"
+          ],
+          "input" : "tihar",
+          "role" : "nepali",
+          "uncertain" : false
+        },
+        {
+          "actual" : "राम्रो",
+          "candidate_available" : true,
+          "candidates_shown" : [
+            "राम्रो",
+            "रम्रो",
+            "रामरो",
+            "ramro"
+          ],
+          "correct" : true,
+          "expected" : [
+            "राम्रो"
+          ],
+          "input" : "ramro",
+          "role" : "nepali",
+          "uncertain" : false
+        }
+      ]
+    }
+  ],
+  "corpus_version" : "phase0-v1",
+  "method" : "Nepali mode; context-ranked first choice and standalone pad candidates; canonical Unicode equality; no manual edits",
+  "summary" : {
+    "dev" : {
+      "english_candidate_available" : 19,
+      "english_correct" : 19,
+      "english_total" : 19,
+      "nepali_candidate_available" : 42,
+      "nepali_correct" : 40,
+      "nepali_total" : 42,
+      "sentences_exact" : 13,
+      "sentences_total" : 15
+    },
+    "heldout" : {
+      "english_candidate_available" : 15,
+      "english_correct" : 15,
+      "english_total" : 15,
+      "nepali_candidate_available" : 26,
+      "nepali_correct" : 22,
+      "nepali_total" : 28,
+      "sentences_exact" : 5,
+      "sentences_total" : 10
+    }
+  }
+}

@@ -1,0 +1,17 @@
+# Fresh synthetic mixed-language fixture
+
+`corpus.json` contains 50 synthetic sentences, 10 each in English, Nepali, mixed-language, ambiguity and literal categories. It was authored without running the current engine or inspecting its outputs. Do not tune against these cases if they are being used as a held-out probe; record the candidate implementation before evaluation.
+
+This is not an independently sampled user population: it was written by an AI agent with access to this project's conversation and examples, uses common vocabulary and overlaps with familiar ambiguity patterns. Romanization, spacing, spelling and intended use of English borrowings are inherently ambiguous. References have not been reviewed by Nepali speakers. Some forms accept alternatives at token level while the sentence-level `expected` array gives one proposed reference, so strict sentence exact-match can penalize acceptable differences. Results should not be presented as an independent or representative accuracy estimate.
+
+The JSON follows the existing phase-2 shape (`id`, `split`, `source`, `input`, `expected`, `annotations`) with an additional `category`. Token annotations are deliberately selective, not a full tokenization; their order is the intended input order, including repeated words such as `ma`. Each annotation has `token`, `role`, and an `acceptable` list. For source spans that should remain unchanged, role `literal` means compare the entire exact span, including emoji, URLs, paths or backtick-delimited text. The pre-existing phase-2 evaluator may only score `english` and `nepali`; extend it or report literal-span preservation separately rather than silently counting literals as either language. Punctuation is part of the full-sentence comparison and is not included in most token annotations.
+
+`generate.py` only writes the reference JSON. It does not invoke the engine or examine model output. The corpus has not yet been evaluated by its author.
+
+## Frozen evaluation
+
+The current Swift engine, fixture and evaluator were hashed before scoring; no rule was tuned after seeing these results. `results.json` contains the raw outputs, selective token scores and category counts. Full-sentence exact matches: English 10/10, Nepali 2/10, mixed 3/10, ambiguity 7/10, literal 9/10. Annotated top-choice spelling: English 84/86, Nepali 76/102; 11/11 annotated literal spans were preserved by the evaluator's token/containment checks. Some annotations are selective and the fixture was authored by an AI with conversation context; its intended spellings have not been reviewed by Nepali speakers. These scores are diagnostic, not independent or representative accuracy, and the literal containment checks do not verify host positions.
+
+`evaluator.swift` matches annotations in order to the engine's tokens, skipping unannotated tokens. Non-tokenized literal spans such as emoji are checked by containment in the output. Candidates are the first four contextual choices plus the original. Strict sentence scores compare against the listed full-sentence alternatives; unlisted acceptable spellings or spacing may be marked wrong. No actual input-method host is exercised.
+
+Run the evaluator by compiling it as `main.swift` alongside the four Swift core files, setting `LEKHA_ALIAS_INDEX` and `LEKHA_AKSHARANTAR_INDEX` to the project indexes, and passing `corpus.json`. `pre-evaluation-hashes.txt` records fixture, source and evaluator hashes captured before the run.

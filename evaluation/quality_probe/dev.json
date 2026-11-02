@@ -1,0 +1,22 @@
+[
+{"split":"dev","input":"ma aaja office janchu","expected":"म आज office जान्छु"},
+{"split":"dev","input":"bholi meeting cha","expected":"भोलि meeting छ"},
+{"split":"dev","input":"mero phone ko battery dead cha","expected":"मेरो phone को battery dead छ"},
+{"split":"dev","input":"please malai message pathau","expected":"please मलाई message पठाऊ"},
+{"split":"dev","input":"yo file download gara","expected":"यो file download गर"},
+{"split":"dev","input":"timro ghar kata cha","expected":"तिम्रो घर कहाँ छ"},
+{"split":"dev","input":"ma pani khanchu","expected":"म पानी खान्छु"},
+{"split":"dev","input":"malai pani man parcha","expected":"मलाई पनि मन पर्छ"},
+{"split":"dev","input":"hami beluka khana khanchau","expected":"हामी बेलुका खाना खान्छौँ"},
+{"split":"dev","input":"the man is here","expected":"the man is here"},
+{"split":"dev","input":"mero man ramro cha","expected":"मेरो मन राम्रो छ"},
+{"split":"dev","input":"yo link open gara","expected":"यो link open गर"},
+{"split":"dev","input":"malai coffee chaiyo","expected":"मलाई coffee चाहियो"},
+{"split":"dev","input":"hello timi sanchai chau","expected":"hello तिमी सन्चै छौ"},
+{"split":"dev","input":"yo ramro project ho","expected":"यो राम्रो project हो"},
+{"split":"dev","input":"bihana school gaye","expected":"बिहान school गएँ"},
+{"split":"dev","input":"maile email pathaye","expected":"मैले email पठाएँ"},
+{"split":"dev","input":"maile document save gare","expected":"मैले document save गरेँ"},
+{"split":"dev","input":"hijo cricket khele","expected":"हिजो cricket खेलेँ"},
+{"split":"dev","input":"mero naam anup ho","expected":"मेरो नाम anup हो"}
+]

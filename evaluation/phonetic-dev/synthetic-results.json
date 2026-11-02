@@ -1,0 +1,5620 @@
+{
+  "counts" : {
+    "synthetic_nepali" : {
+      "added_candidates" : 238,
+      "added_matching_reference" : 227,
+      "total" : 250,
+      "visible_after" : 230,
+      "visible_before" : 3
+    }
+  },
+  "details" : [
+    {
+      "added" : [
+        "संलग्नताअनुसारको"
+      ],
+      "after" : [
+        "सन्लग्नतनुसर्को",
+        "संलग्नताअनुसारको",
+        "sanlagnatanusarko"
+      ],
+      "before" : [
+        "सन्लग्नतनुसर्को",
+        "sanlagnatanusarko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "संलग्नताअनुसारको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanlagnatanusarko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "माँगियो"
+      ],
+      "after" : [
+        "मङियो",
+        "माँगियो",
+        "mangiyo"
+      ],
+      "before" : [
+        "मङियो",
+        "mangiyo"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "माँगियो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "mangiyo",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "भाँडादेखि"
+      ],
+      "after" : [
+        "भन्दादेखि",
+        "भाँडादेखि",
+        "bhandaadekhi"
+      ],
+      "before" : [
+        "भन्दादेखि",
+        "bhandaadekhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "भाँडादेखि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bhandaadekhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँसुरी"
+      ],
+      "after" : [
+        "अन्सुरि",
+        "आँसुरी",
+        "ansuri"
+      ],
+      "before" : [
+        "अन्सुरि",
+        "ansuri"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँसुरी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ansuri",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लामासँगै",
+        "लामासंगै"
+      ],
+      "after" : [
+        "लमासङै",
+        "लामासँगै",
+        "लामासंगै",
+        "lamaasangai"
+      ],
+      "before" : [
+        "लमासङै",
+        "lamaasangai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लामासँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lamaasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँपटा"
+      ],
+      "after" : [
+        "अन्पत",
+        "आँपटा",
+        "anpata"
+      ],
+      "before" : [
+        "अन्पत",
+        "anpata"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँपटा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "anpata",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "याफुगाउँ"
+      ],
+      "after" : [
+        "यफुगाउन",
+        "याफुगाउँ",
+        "yafugaaun"
+      ],
+      "before" : [
+        "यफुगाउन",
+        "yafugaaun"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "याफुगाउँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "yafugaaun",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "उहाँपक्षीय"
+      ],
+      "after" : [
+        "उहन्पक्षिय",
+        "उहाँपक्षीय",
+        "uhanpakshiya"
+      ],
+      "before" : [
+        "उहन्पक्षिय",
+        "uhanpakshiya"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "उहाँपक्षीय"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "uhanpakshiya",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "देखिइदा"
+      ],
+      "after" : [
+        "देखिदा",
+        "देखिद",
+        "देखिइदा",
+        "dekhida"
+      ],
+      "before" : [
+        "देखिदा",
+        "देखिद",
+        "dekhida"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "देखिइदा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dekhida",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सावाँसहितको"
+      ],
+      "after" : [
+        "सवान्सहित्को",
+        "सावाँसहितको",
+        "sawaansahitko"
+      ],
+      "before" : [
+        "सवान्सहित्को",
+        "sawaansahitko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "सावाँसहितको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sawaansahitko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "दिइसक्नुपर्छ",
+        "दिईसक्नुपर्छ"
+      ],
+      "after" : [
+        "दिसक्नुपर्छ",
+        "दिइसक्नुपर्छ",
+        "दिईसक्नुपर्छ",
+        "disaknuparchha"
+      ],
+      "before" : [
+        "दिसक्नुपर्छ",
+        "disaknuparchha"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "दिइसक्नुपर्छ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "disaknuparchha",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "औन्लदेखि",
+        "औंलदेखि",
+        "औंलादेखि",
+        "aunladekhi"
+      ],
+      "before" : [
+        "औन्लदेखि",
+        "औंलदेखि",
+        "औंलादेखि",
+        "aunladekhi"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "औँलादेखि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "aunladekhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "टाँसेई"
+      ],
+      "after" : [
+        "तन्सेइ",
+        "टाँसेई",
+        "tansei"
+      ],
+      "before" : [
+        "तन्सेइ",
+        "tansei"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "टाँसेई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tansei",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आश्विनसँग"
+      ],
+      "after" : [
+        "अश्विनसँग",
+        "अश्विन्सङ",
+        "आश्विनसँग",
+        "ashwinsanga"
+      ],
+      "before" : [
+        "अश्विनसँग",
+        "अश्विन्सङ",
+        "ashwinsanga"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "आश्विनसँग"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ashwinsanga",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाउँपालिकोको",
+        "गाउँपालीकोको"
+      ],
+      "after" : [
+        "गौन्पालिकोको",
+        "गाउँपालिकोको",
+        "गाउँपालीकोको",
+        "gaunpaalikoko"
+      ],
+      "before" : [
+        "गौन्पालिकोको",
+        "gaunpaalikoko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाउँपालिकोको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "gaunpaalikoko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फैलाउँनेमाथि"
+      ],
+      "after" : [
+        "फैलौन्नेमाथि",
+        "फैलाउँनेमाथि",
+        "failaunnemaathi"
+      ],
+      "before" : [
+        "फैलौन्नेमाथि",
+        "failaunnemaathi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फैलाउँनेमाथि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "failaunnemaathi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँझपखको"
+      ],
+      "after" : [
+        "सन्झपखको",
+        "साँझपखको",
+        "sanjhapakhako"
+      ],
+      "before" : [
+        "सन्झपखको",
+        "sanjhapakhako"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँझपखको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanjhapakhako",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाउँच"
+      ],
+      "after" : [
+        "गौन्च",
+        "गाउँछ",
+        "गाउँच",
+        "gaunch"
+      ],
+      "before" : [
+        "गौन्च",
+        "गाउँछ",
+        "gaunch"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाउँच"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "gaunch",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सुहाँउदैन"
+      ],
+      "after" : [
+        "सुहनुदैन",
+        "सुहाँउदैन",
+        "suhanudaina"
+      ],
+      "before" : [
+        "सुहनुदैन",
+        "suhanudaina"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "सुहाँउदैन"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "suhanudaina",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँडी",
+        "बाँदी"
+      ],
+      "after" : [
+        "बन्दि",
+        "बाँडी",
+        "बाँदी",
+        "bandi"
+      ],
+      "before" : [
+        "बन्दि",
+        "bandi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँडी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bandi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लघुउद्यमलाई"
+      ],
+      "after" : [
+        "लघुद्यम्लै",
+        "लघुउद्यमलाई",
+        "laghudyamlai"
+      ],
+      "before" : [
+        "लघुद्यम्लै",
+        "laghudyamlai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लघुउद्यमलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "laghudyamlai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "धुवाँधुलोदेखि"
+      ],
+      "after" : [
+        "धुवन्धुलोदेखि",
+        "धुवाँधुलोदेखि",
+        "dhuwandhulodekhi"
+      ],
+      "before" : [
+        "धुवन्धुलोदेखि",
+        "dhuwandhulodekhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "धुवाँधुलोदेखि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dhuwandhulodekhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साक्षरताअन्तरगत"
+      ],
+      "after" : [
+        "सक्षर्तन्तरगत",
+        "साक्षरताअन्तरगत",
+        "sakshartantaragat"
+      ],
+      "before" : [
+        "सक्षर्तन्तरगत",
+        "sakshartantaragat"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साक्षरताअन्तरगत"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sakshartantaragat",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "षड्यन्त्रअनुसार"
+      ],
+      "after" : [
+        "शद्यन्त्रनुसर",
+        "षड्यन्त्रअनुसार",
+        "shadyantranusar"
+      ],
+      "before" : [
+        "शद्यन्त्रनुसर",
+        "shadyantranusar"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "षड्यन्त्रअनुसार"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "shadyantranusar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फकाउँन"
+      ],
+      "after" : [
+        "फकौन्न",
+        "फकाउँन",
+        "fakaunna"
+      ],
+      "before" : [
+        "फकौन्न",
+        "fakaunna"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फकाउँन"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fakaunna",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँस्तोलादेखि"
+      ],
+      "after" : [
+        "बन्स्तोलादेखि",
+        "बाँस्तोलादेखि",
+        "banstolaadekhi"
+      ],
+      "before" : [
+        "बन्स्तोलादेखि",
+        "banstolaadekhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँस्तोलादेखि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banstolaadekhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "रित्तिइसकेको"
+      ],
+      "after" : [
+        "रित्तिस्केको",
+        "रित्तिइसकेको",
+        "rittiskeko"
+      ],
+      "before" : [
+        "रित्तिस्केको",
+        "rittiskeko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "रित्तिइसकेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "rittiskeko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "काँचोकचिलो"
+      ],
+      "after" : [
+        "कन्चोक्चिलो",
+        "काँचोकचिलो",
+        "kanchokchilo"
+      ],
+      "before" : [
+        "कन्चोक्चिलो",
+        "kanchokchilo"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "काँचोकचिलो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kanchokchilo",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँफुप्रति",
+        "आँफूप्रति"
+      ],
+      "after" : [
+        "अन्फुप्रति",
+        "आँफुप्रति",
+        "आँफूप्रति",
+        "anfuprati"
+      ],
+      "before" : [
+        "अन्फुप्रति",
+        "anfuprati"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँफुप्रति"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "anfuprati",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नहाँसोस्"
+      ],
+      "after" : [
+        "नहन्सोस",
+        "नहाँसोस्",
+        "nahansos"
+      ],
+      "before" : [
+        "नहन्सोस",
+        "nahansos"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नहाँसोस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nahansos",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँचेपछि"
+      ],
+      "after" : [
+        "बन्चेपछि",
+        "बाँचेपछि",
+        "banchepachhi"
+      ],
+      "before" : [
+        "बन्चेपछि",
+        "banchepachhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँचेपछि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banchepachhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "रपैयाँसम्म"
+      ],
+      "after" : [
+        "रपैयन्सम्म",
+        "रपैयाँसम्म",
+        "rapaiyansamma"
+      ],
+      "before" : [
+        "रपैयन्सम्म",
+        "rapaiyansamma"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "रपैयाँसम्म"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "rapaiyansamma",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "झाँकीकै"
+      ],
+      "after" : [
+        "झन्किकै",
+        "झाँकीकै",
+        "jhankikai"
+      ],
+      "before" : [
+        "झन्किकै",
+        "jhankikai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "झाँकीकै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jhankikai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँटिएको"
+      ],
+      "after" : [
+        "फन्तिएको",
+        "फाँटिएको",
+        "fantieko"
+      ],
+      "before" : [
+        "फन्तिएको",
+        "fantieko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँटिएको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fantieko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सम्झाउँथेँ"
+      ],
+      "after" : [
+        "सम्झाउँथें",
+        "सम्झौन्थेन",
+        "सम्झाउँथेँ",
+        "samjhaunthen"
+      ],
+      "before" : [
+        "सम्झाउँथें",
+        "सम्झौन्थेन",
+        "samjhaunthen"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "सम्झाउँथेँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "samjhaunthen",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँजानलाई"
+      ],
+      "after" : [
+        "फन्जान्लै",
+        "फाँजानलाई",
+        "fanjaanlai"
+      ],
+      "before" : [
+        "फन्जान्लै",
+        "fanjaanlai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँजानलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fanjaanlai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाउँआगनको"
+      ],
+      "after" : [
+        "गौनागन्को",
+        "गाउँआगनको",
+        "gaunaaganko"
+      ],
+      "before" : [
+        "गौनागन्को",
+        "gaunaaganko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाउँआगनको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "gaunaaganko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सपनाअनुसारको"
+      ],
+      "after" : [
+        "सपननुसर्को",
+        "सपनाअनुसारको",
+        "sapananusarko"
+      ],
+      "before" : [
+        "सपननुसर्को",
+        "sapananusarko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "सपनाअनुसारको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sapananusarko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बहुद्देश्यिय",
+        "बहुद्देश्यीय",
+        "bahuddeshyiya"
+      ],
+      "before" : [
+        "बहुद्देश्यिय",
+        "बहुद्देश्यीय",
+        "bahuddeshyiya"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "बहुउउद्देश्यीय"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bahuddeshyiya",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हजुराँ"
+      ],
+      "after" : [
+        "हजुरन",
+        "हजुराँ",
+        "hajuran"
+      ],
+      "before" : [
+        "हजुरन",
+        "hajuran"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हजुराँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hajuran",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हुँदाँहुँदै"
+      ],
+      "after" : [
+        "हुन्दन्हुन्दै",
+        "हुँदाँहुँदै",
+        "hundanhundai"
+      ],
+      "before" : [
+        "हुन्दन्हुन्दै",
+        "hundanhundai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हुँदाँहुँदै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hundanhundai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँठो"
+      ],
+      "after" : [
+        "सन्थो",
+        "साँठो",
+        "santho"
+      ],
+      "before" : [
+        "सन्थो",
+        "santho"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँठो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "santho",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बहुउपयोगिताका"
+      ],
+      "after" : [
+        "बहुपयोगितक",
+        "बहुउपयोगिताका",
+        "bahupayogitaka"
+      ],
+      "before" : [
+        "बहुपयोगितक",
+        "bahupayogitaka"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बहुउपयोगिताका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bahupayogitaka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँधको"
+      ],
+      "after" : [
+        "सन्धको",
+        "साँधको",
+        "sandhako"
+      ],
+      "before" : [
+        "सन्धको",
+        "sandhako"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँधको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sandhako",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँघिएर"
+      ],
+      "after" : [
+        "बङ्हिएर",
+        "बाँघिएर",
+        "banghiera"
+      ],
+      "before" : [
+        "बङ्हिएर",
+        "banghiera"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँघिएर"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banghiera",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँटवारीलाई"
+      ],
+      "after" : [
+        "फन्तवारिलै",
+        "फाँटवारीलाई",
+        "fantawaarilai"
+      ],
+      "before" : [
+        "फन्तवारिलै",
+        "fantawaarilai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँटवारीलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fantawaarilai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "जनदेश्लै",
+        "जनदेशलाई",
+        "जनादेशलाई",
+        "janadeshlai"
+      ],
+      "before" : [
+        "जनदेश्लै",
+        "जनदेशलाई",
+        "जनादेशलाई",
+        "janadeshlai"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "जनआदेशलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "janadeshlai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "कर्जाअन्तर्गतको"
+      ],
+      "after" : [
+        "कर्जन्तर्गत्को",
+        "कर्जाअन्तर्गतको",
+        "karjantargatko"
+      ],
+      "before" : [
+        "कर्जन्तर्गत्को",
+        "karjantargatko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कर्जाअन्तर्गतको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "karjantargatko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "मुछिइसकेका"
+      ],
+      "after" : [
+        "मुछिसकेका",
+        "मुछिसकेक",
+        "मुछिइसकेका",
+        "muchhisakeka"
+      ],
+      "before" : [
+        "मुछिसकेका",
+        "मुछिसकेक",
+        "muchhisakeka"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "मुछिइसकेका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "muchhisakeka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बताउँनुहुने"
+      ],
+      "after" : [
+        "बतौन्नुहुने",
+        "बताउँनुहुने",
+        "bataunnuhune"
+      ],
+      "before" : [
+        "बतौन्नुहुने",
+        "bataunnuhune"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बताउँनुहुने"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bataunnuhune",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "कराउँथिन्"
+      ],
+      "after" : [
+        "करौन्थिन",
+        "कराउँथिन्",
+        "karaunthin"
+      ],
+      "before" : [
+        "करौन्थिन",
+        "karaunthin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कराउँथिन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "karaunthin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "स्रोतहरूचाहिँ"
+      ],
+      "after" : [
+        "स्रोताहरूचाहिँ",
+        "स्रोतहरुचहिन",
+        "स्रोतहरूचाहिँ",
+        "srotaharuchahin"
+      ],
+      "before" : [
+        "स्रोताहरूचाहिँ",
+        "स्रोतहरुचहिन",
+        "srotaharuchahin"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "स्रोतहरूचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "srotaharuchahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "अवशानसँगै"
+      ],
+      "after" : [
+        "अवशनसङै",
+        "अवशानसँगै",
+        "awashanasangai"
+      ],
+      "before" : [
+        "अवशनसङै",
+        "awashanasangai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "अवशानसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "awashanasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बुझाउँछौः"
+      ],
+      "after" : [
+        "बुझौन्छौह",
+        "बुझाउँछौः",
+        "bujhaunchhauh"
+      ],
+      "before" : [
+        "बुझौन्छौह",
+        "bujhaunchhauh"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बुझाउँछौः"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bujhaunchhauh",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "संख्याँ",
+        "सङ्ख्याँ"
+      ],
+      "after" : [
+        "संख्यान",
+        "सन्ख्यन",
+        "संख्याँ",
+        "सङ्ख्याँ",
+        "sankhyan"
+      ],
+      "before" : [
+        "संख्यान",
+        "सन्ख्यन",
+        "sankhyan"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "संख्याँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sankhyan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सघाउँदैनथे"
+      ],
+      "after" : [
+        "सघौन्दैनथे",
+        "सघाउँदैनथे",
+        "saghaundainathe"
+      ],
+      "before" : [
+        "सघौन्दैनथे",
+        "saghaundainathe"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "सघाउँदैनथे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "saghaundainathe",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "देखाइदिइसेको"
+      ],
+      "after" : [
+        "देखैदिसेको",
+        "देखाइदिइसेको",
+        "dekhaidiseko"
+      ],
+      "before" : [
+        "देखैदिसेको",
+        "dekhaidiseko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "देखाइदिइसेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dekhaidiseko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँचिन्झैँ"
+      ],
+      "after" : [
+        "बन्चिन्झैन",
+        "बाँचिन्झैँ",
+        "banchinjhain"
+      ],
+      "before" : [
+        "बन्चिन्झैन",
+        "banchinjhain"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँचिन्झैँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banchinjhain",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "उहाँभित्रै"
+      ],
+      "after" : [
+        "उहन्भित्रै",
+        "उहाँभित्रै",
+        "uhanbhitrai"
+      ],
+      "before" : [
+        "उहन्भित्रै",
+        "uhanbhitrai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "उहाँभित्रै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "uhanbhitrai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पाउँथिस्"
+      ],
+      "after" : [
+        "पौन्थिस",
+        "पाउँथिस्",
+        "paunthis"
+      ],
+      "before" : [
+        "पौन्थिस",
+        "paunthis"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पाउँथिस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "paunthis",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नयाँजनबादी"
+      ],
+      "after" : [
+        "नयन्जन्बादि",
+        "नयाँजनबादी",
+        "nayanjanbaadi"
+      ],
+      "before" : [
+        "नयन्जन्बादि",
+        "nayanjanbaadi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नयाँजनबादी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nayanjanbaadi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "असत्यचाहिँ"
+      ],
+      "after" : [
+        "असत्यचहिन",
+        "असत्यचाहिँ",
+        "asatyachahin"
+      ],
+      "before" : [
+        "असत्यचहिन",
+        "asatyachahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "असत्यचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "asatyachahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "यहाँएकमहिने"
+      ],
+      "after" : [
+        "यहनेक्महिने",
+        "यहाँएकमहिने",
+        "yahanekmahine"
+      ],
+      "before" : [
+        "यहनेक्महिने",
+        "yahanekmahine"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "यहाँएकमहिने"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "yahanekmahine",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पाँचवटाले"
+      ],
+      "after" : [
+        "पन्चवतले",
+        "पाँचवटाले",
+        "panchawatale"
+      ],
+      "before" : [
+        "पन्चवतले",
+        "panchawatale"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पाँचवटाले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "panchawatale",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँबास्थित"
+      ],
+      "after" : [
+        "सन्बास्थित",
+        "साँबास्थित",
+        "sanbaasthit"
+      ],
+      "before" : [
+        "सन्बास्थित",
+        "sanbaasthit"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँबास्थित"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanbaasthit",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नयाँबाटोको"
+      ],
+      "after" : [
+        "नयन्बातोको",
+        "नयाँबाटोको",
+        "nayanbaatoko"
+      ],
+      "before" : [
+        "नयन्बातोको",
+        "nayanbaatoko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नयाँबाटोको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nayanbaatoko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "दिगो",
+        "डिगो",
+        "digo"
+      ],
+      "before" : [
+        "दिगो",
+        "डिगो",
+        "digo"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "डिइगो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "digo",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "तुवाँलोमय"
+      ],
+      "after" : [
+        "तुवन्लोमय",
+        "तुवाँलोमय",
+        "tuwanlomaya"
+      ],
+      "before" : [
+        "तुवन्लोमय",
+        "tuwanlomaya"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "तुवाँलोमय"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tuwanlomaya",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँध्यको"
+      ],
+      "after" : [
+        "बन्ध्याको",
+        "बन्ध्यको",
+        "बाँध्यको",
+        "bandhyako"
+      ],
+      "before" : [
+        "बन्ध्याको",
+        "बन्ध्यको",
+        "bandhyako"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँध्यको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bandhyako",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चाँदनीसहित"
+      ],
+      "after" : [
+        "चन्दनिसहित",
+        "चाँदनीसहित",
+        "chandanisahit"
+      ],
+      "before" : [
+        "चन्दनिसहित",
+        "chandanisahit"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चाँदनीसहित"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chandanisahit",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "योग्यताअनुरूपको"
+      ],
+      "after" : [
+        "योज्ञतनुरुप्को",
+        "योग्यताअनुरूपको",
+        "yogyatanurupko"
+      ],
+      "before" : [
+        "योज्ञतनुरुप्को",
+        "yogyatanurupko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "योग्यताअनुरूपको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "yogyatanurupko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "खाँबोमाथि"
+      ],
+      "after" : [
+        "खन्बोमाथि",
+        "खाँबोमाथि",
+        "khanbomaathi"
+      ],
+      "before" : [
+        "खन्बोमाथि",
+        "khanbomaathi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "खाँबोमाथि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "khanbomaathi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हाँतमा"
+      ],
+      "after" : [
+        "हाँटमा",
+        "हन्तम",
+        "हाँतमा",
+        "hantama"
+      ],
+      "before" : [
+        "हाँटमा",
+        "हन्तम",
+        "hantama"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँतमा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hantama",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँसनिगाला"
+      ],
+      "after" : [
+        "बन्सनिगल",
+        "बाँसनिगाला",
+        "bansanigala"
+      ],
+      "before" : [
+        "बन्सनिगल",
+        "bansanigala"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँसनिगाला"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bansanigala",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बगाउँदैछन्"
+      ],
+      "after" : [
+        "बगौन्दैचन",
+        "बगाउँदैछन्",
+        "bagaundaichan"
+      ],
+      "before" : [
+        "बगौन्दैचन",
+        "bagaundaichan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बगाउँदैछन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bagaundaichan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बसिदिनुचहिन",
+        "basidinuchahin"
+      ],
+      "before" : [
+        "बसिदिनुचहिन",
+        "basidinuchahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बसिदिनुचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "basidinuchahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हुँवाफ्रानको"
+      ],
+      "after" : [
+        "हुन्वफ्रान्को",
+        "हुँवाफ्रानको",
+        "hunwafraanko"
+      ],
+      "before" : [
+        "हुन्वफ्रान्को",
+        "hunwafraanko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हुँवाफ्रानको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hunwafraanko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "घेरिन्द",
+        "घेरिँदा",
+        "घेरिंदा",
+        "घेरिन्दा",
+        "gherinda"
+      ],
+      "before" : [
+        "घेरिन्द",
+        "घेरिँदा",
+        "घेरिंदा",
+        "घेरिन्दा",
+        "gherinda"
+      ],
+      "exactCount" : 3,
+      "knownEnglish" : false,
+      "reference" : [
+        "घेरिइँदा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "gherinda",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "सन्दै",
+        "सँदै",
+        "sandai"
+      ],
+      "before" : [
+        "सन्दै",
+        "सँदै",
+        "sandai"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँदै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sandai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "विरक्तिई"
+      ],
+      "after" : [
+        "विरक्ति",
+        "विरक्तिई",
+        "wirakti"
+      ],
+      "before" : [
+        "विरक्ति",
+        "wirakti"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "विरक्तिई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wirakti",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चाहिँदैनको"
+      ],
+      "after" : [
+        "चहिन्दैन्को",
+        "चाहिँदैनको",
+        "chahindainko"
+      ],
+      "before" : [
+        "चहिन्दैन्को",
+        "chahindainko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चाहिँदैनको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chahindainko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँसुबाहेक"
+      ],
+      "after" : [
+        "अन्सुबहेक",
+        "आँसुबाहेक",
+        "ansubahek"
+      ],
+      "before" : [
+        "अन्सुबहेक",
+        "ansubahek"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँसुबाहेक"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ansubahek",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "टाँसिदिनुहोस्"
+      ],
+      "after" : [
+        "तन्सिदिनुहोस",
+        "टाँसिदिनुहोस्",
+        "tansidinuhos"
+      ],
+      "before" : [
+        "तन्सिदिनुहोस",
+        "tansidinuhos"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "टाँसिदिनुहोस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tansidinuhos",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सबैमाअन्तर्ज्ञान"
+      ],
+      "after" : [
+        "सबैमन्तर्ज्ञन",
+        "सबैमाअन्तर्ज्ञान",
+        "sabaimantargyan"
+      ],
+      "before" : [
+        "सबैमन्तर्ज्ञन",
+        "sabaimantargyan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "सबैमाअन्तर्ज्ञान"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sabaimantargyan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आउँछुआउँछु"
+      ],
+      "after" : [
+        "औन्छुऔन्छु",
+        "आउँछुआउँछु",
+        "aunchhuaunchhu"
+      ],
+      "before" : [
+        "औन्छुऔन्छु",
+        "aunchhuaunchhu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आउँछुआउँछु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "aunchhuaunchhu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हताउँदै"
+      ],
+      "after" : [
+        "हतौन्दै",
+        "हटाउँदै",
+        "हताउँदै",
+        "hataundai"
+      ],
+      "before" : [
+        "हतौन्दै",
+        "हटाउँदै",
+        "hataundai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हटाउँदै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hataundai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आउँदछौ"
+      ],
+      "after" : [
+        "औन्दछौ",
+        "आउँदछौ",
+        "aundachhau"
+      ],
+      "before" : [
+        "औन्दछौ",
+        "aundachhau"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आउँदछौ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "aundachhau",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आफूचाँहि"
+      ],
+      "after" : [
+        "अफुचान्हि",
+        "आफूचाँहि",
+        "afuchaanhi"
+      ],
+      "before" : [
+        "अफुचान्हि",
+        "afuchaanhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आफूचाँहि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "afuchaanhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "मुइयाँ"
+      ],
+      "after" : [
+        "मुइयन",
+        "मुइयाँ",
+        "muiyan"
+      ],
+      "before" : [
+        "मुइयन",
+        "muiyan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "मुइयाँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "muiyan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाउँलेहरूबसोबस्"
+      ],
+      "after" : [
+        "गौन्लेहरुबसोबस",
+        "गाउँलेहरूबसोबस्",
+        "gaunleharubasobas"
+      ],
+      "before" : [
+        "गौन्लेहरुबसोबस",
+        "gaunleharubasobas"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाउँलेहरूबसोबस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "gaunleharubasobas",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हाँस्यव्यङ्गय"
+      ],
+      "after" : [
+        "हन्स्यव्यङय",
+        "हाँस्यव्यङ्गय",
+        "hansyawyangaya"
+      ],
+      "before" : [
+        "हन्स्यव्यङय",
+        "hansyawyangaya"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँस्यव्यङ्गय"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hansyawyangaya",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पराउँथिनन्"
+      ],
+      "after" : [
+        "परौन्थिनन",
+        "पराउँथिनन्",
+        "paraunthinan"
+      ],
+      "before" : [
+        "परौन्थिनन",
+        "paraunthinan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पराउँथिनन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "paraunthinan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बुद्धकहाँ"
+      ],
+      "after" : [
+        "बुद्धखन",
+        "बुद्धकहाँ",
+        "buddhakhan"
+      ],
+      "before" : [
+        "बुद्धखन",
+        "buddhakhan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बुद्धकहाँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "buddhakhan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "वाँधका"
+      ],
+      "after" : [
+        "वन्धक",
+        "वाँधका",
+        "wandhaka"
+      ],
+      "before" : [
+        "वन्धक",
+        "wandhaka"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "वाँधका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wandhaka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "विर्सिइन्छ"
+      ],
+      "after" : [
+        "विर्सिन्छ",
+        "विर्सिइन्छ",
+        "wirsinchha"
+      ],
+      "before" : [
+        "विर्सिन्छ",
+        "wirsinchha"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "विर्सिइन्छ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wirsinchha",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नयाँप्रतिको"
+      ],
+      "after" : [
+        "नयन्प्रतिको",
+        "नयाँप्रतिको",
+        "nayanpratiko"
+      ],
+      "before" : [
+        "नयन्प्रतिको",
+        "nayanpratiko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नयाँप्रतिको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nayanpratiko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बताउँछन्नु"
+      ],
+      "after" : [
+        "बतौन्छन्नु",
+        "बताउँछन्नु",
+        "bataunchhannu"
+      ],
+      "before" : [
+        "बतौन्छन्नु",
+        "bataunchhannu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बताउँछन्नु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bataunchhannu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँधिएपछिको"
+      ],
+      "after" : [
+        "बन्धिएपछिको",
+        "बाँधिएपछिको",
+        "bandhiepachhiko"
+      ],
+      "before" : [
+        "बन्धिएपछिको",
+        "bandhiepachhiko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँधिएपछिको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bandhiepachhiko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लिइछे"
+      ],
+      "after" : [
+        "लिछे",
+        "लिइछे",
+        "lichhe"
+      ],
+      "before" : [
+        "लिछे",
+        "lichhe"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लिइछे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lichhe",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पाँचसये"
+      ],
+      "after" : [
+        "पन्चसये",
+        "पाँचसये",
+        "panchasaye"
+      ],
+      "before" : [
+        "पन्चसये",
+        "panchasaye"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पाँचसये"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "panchasaye",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँझप्रहरीले"
+      ],
+      "after" : [
+        "सन्झप्रहरिले",
+        "साँझप्रहरीले",
+        "sanjhapraharile"
+      ],
+      "before" : [
+        "सन्झप्रहरिले",
+        "sanjhapraharile"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँझप्रहरीले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanjhapraharile",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "ताँतेको"
+      ],
+      "after" : [
+        "तन्तेको",
+        "ताँतेको",
+        "tanteko"
+      ],
+      "before" : [
+        "तन्तेको",
+        "tanteko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "ताँतेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tanteko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लाउँदैन्"
+      ],
+      "after" : [
+        "लाउँदैं",
+        "लौन्दैन",
+        "लाउँदैन",
+        "लाउँदैन्",
+        "laundain"
+      ],
+      "before" : [
+        "लाउँदैं",
+        "लौन्दैन",
+        "लाउँदैन",
+        "laundain"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "लाउँदैन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "laundain",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आफूलेचाँहि"
+      ],
+      "after" : [
+        "अफुलेचान्हि",
+        "आफूलेचाँहि",
+        "afulechaanhi"
+      ],
+      "before" : [
+        "अफुलेचान्हि",
+        "afulechaanhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आफूलेचाँहि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "afulechaanhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लाँचे"
+      ],
+      "after" : [
+        "लन्चे",
+        "लाँचे",
+        "lanche"
+      ],
+      "before" : [
+        "लन्चे",
+        "lanche"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लाँचे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lanche",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाँज्नेछः"
+      ],
+      "after" : [
+        "गन्ज्ञेछह",
+        "गाँज्नेछः",
+        "ganjnechhah"
+      ],
+      "before" : [
+        "गन्ज्ञेछह",
+        "ganjnechhah"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाँज्नेछः"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ganjnechhah",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "त्यसैलेचाहिँ"
+      ],
+      "after" : [
+        "त्यसैलेचहिन",
+        "त्यसैलेचाहिँ",
+        "tyasailechahin"
+      ],
+      "before" : [
+        "त्यसैलेचहिन",
+        "tyasailechahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "त्यसैलेचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tyasailechahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँड्नुभएको"
+      ],
+      "after" : [
+        "बन्द्नुभएको",
+        "बाँड्नुभएको",
+        "bandnubhaeko"
+      ],
+      "before" : [
+        "बन्द्नुभएको",
+        "bandnubhaeko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँड्नुभएको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bandnubhaeko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँझाले"
+      ],
+      "after" : [
+        "सन्झाले",
+        "साँझाले",
+        "sanjhaale"
+      ],
+      "before" : [
+        "सन्झाले",
+        "sanjhaale"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँझाले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanjhaale",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "वाँसुकी"
+      ],
+      "after" : [
+        "वन्सुकि",
+        "वाँसुकी",
+        "wansuki"
+      ],
+      "before" : [
+        "वन्सुकि",
+        "wansuki"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "वाँसुकी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wansuki",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "जिल्लाअन्तर्गतकालाई"
+      ],
+      "after" : [
+        "जिल्लन्तर्गत्कलै",
+        "जिल्लाअन्तर्गतकालाई",
+        "jillantargatkalai"
+      ],
+      "before" : [
+        "जिल्लन्तर्गत्कलै",
+        "jillantargatkalai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "जिल्लाअन्तर्गतकालाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jillantargatkalai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "उत्रिइसके"
+      ],
+      "after" : [
+        "उत्रिसके",
+        "उत्रिस्के",
+        "उत्रिइसके",
+        "utriske"
+      ],
+      "before" : [
+        "उत्रिसके",
+        "उत्रिस्के",
+        "utriske"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "उत्रिइसके"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "utriske",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "ranch",
+        "रन्च"
+      ],
+      "before" : [
+        "ranch",
+        "रन्च"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "राँच"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ranch",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "दिइसकिएकोले"
+      ],
+      "after" : [
+        "दिसकिएकोले",
+        "दिइसकिएकोले",
+        "disakiekole"
+      ],
+      "before" : [
+        "दिसकिएकोले",
+        "disakiekole"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "दिइसकिएकोले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "disakiekole",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हाँस्यलाई"
+      ],
+      "after" : [
+        "हन्स्यलै",
+        "हाँस्यलाई",
+        "hansyalai"
+      ],
+      "before" : [
+        "हन्स्यलै",
+        "hansyalai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँस्यलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hansyalai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "टाँसिए"
+      ],
+      "after" : [
+        "तन्सिए",
+        "टाँसिए",
+        "tansie"
+      ],
+      "before" : [
+        "तन्सिए",
+        "tansie"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "टाँसिए"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tansie",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँड्नेछन्"
+      ],
+      "after" : [
+        "बन्द्नेछन",
+        "बाँड्नेछन्",
+        "bandnechhan"
+      ],
+      "before" : [
+        "बन्द्नेछन",
+        "bandnechhan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँड्नेछन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bandnechhan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फुकालौँ"
+      ],
+      "after" : [
+        "फुकलौन",
+        "फुकालौँ",
+        "fukalaun"
+      ],
+      "before" : [
+        "फुकलौन",
+        "fukalaun"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फुकालौँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fukalaun",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "कहाँरको"
+      ],
+      "after" : [
+        "कहन्रको",
+        "कहाँरको",
+        "kahanrako"
+      ],
+      "before" : [
+        "कहन्रको",
+        "kahanrako"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कहाँरको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kahanrako",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "देखिन्द",
+        "देखिँदा",
+        "देखिंदा",
+        "dekhinda"
+      ],
+      "before" : [
+        "देखिन्द",
+        "देखिँदा",
+        "देखिंदा",
+        "dekhinda"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "देखिइँदा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dekhinda",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँटसम्मको"
+      ],
+      "after" : [
+        "फन्तसम्मको",
+        "फाँटसम्मको",
+        "fantasammako"
+      ],
+      "before" : [
+        "फन्तसम्मको",
+        "fantasammako"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँटसम्मको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fantasammako",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "अम्रेलाअन्तर्गत"
+      ],
+      "after" : [
+        "अम्रेलन्तर्गत",
+        "अम्रेलाअन्तर्गत",
+        "amrelantargat"
+      ],
+      "before" : [
+        "अम्रेलन्तर्गत",
+        "amrelantargat"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "अम्रेलाअन्तर्गत"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "amrelantargat",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "तोडिइराखेको"
+      ],
+      "after" : [
+        "तोदिरखेको",
+        "तोडिइराखेको",
+        "todirakheko"
+      ],
+      "before" : [
+        "तोदिरखेको",
+        "todirakheko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "तोडिइराखेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "todirakheko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "खिइ"
+      ],
+      "after" : [
+        "खि",
+        "खिइ",
+        "khi"
+      ],
+      "before" : [
+        "खि",
+        "khi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "खिइ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "khi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "मौलाउँने"
+      ],
+      "after" : [
+        "मौलौन्ने",
+        "मौलाउँने",
+        "maulaunne"
+      ],
+      "before" : [
+        "मौलौन्ने",
+        "maulaunne"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "मौलाउँने"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "maulaunne",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "जनदेश्म",
+        "जनदेशमा",
+        "जनादेशमा",
+        "janadeshma"
+      ],
+      "before" : [
+        "जनदेश्म",
+        "जनदेशमा",
+        "जनादेशमा",
+        "janadeshma"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "जनआदेशमा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "janadeshma",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "वर्षदेखिचाहिँ"
+      ],
+      "after" : [
+        "वर्शदेखिचहिन",
+        "वर्षदेखिचाहिँ",
+        "warshadekhichahin"
+      ],
+      "before" : [
+        "वर्शदेखिचहिन",
+        "warshadekhichahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "वर्षदेखिचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "warshadekhichahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "महिलाअधिकारवादी"
+      ],
+      "after" : [
+        "महिलधिकर्वदि",
+        "महिलाअधिकारवादी",
+        "mahiladhikarwadi"
+      ],
+      "before" : [
+        "महिलधिकर्वदि",
+        "mahiladhikarwadi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "महिलाअधिकारवादी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "mahiladhikarwadi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नफर्किइसकेको"
+      ],
+      "after" : [
+        "नफर्किसकेको",
+        "नफर्किइसकेको",
+        "nafarkisakeko"
+      ],
+      "before" : [
+        "नफर्किसकेको",
+        "nafarkisakeko"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "नफर्किइसकेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nafarkisakeko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आपोसँग"
+      ],
+      "after" : [
+        "अपोसङ",
+        "आपोसँग",
+        "aposanga"
+      ],
+      "before" : [
+        "अपोसङ",
+        "aposanga"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आपोसँग"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "aposanga",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नमुनाअन्तर्गत",
+        "नमूनाअन्तर्गत"
+      ],
+      "after" : [
+        "नमुनन्तर्गत",
+        "नमुनाअन्तर्गत",
+        "नमूनाअन्तर्गत",
+        "namunantargat"
+      ],
+      "before" : [
+        "नमुनन्तर्गत",
+        "namunantargat"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नमुनाअन्तर्गत"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "namunantargat",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "घाँरी"
+      ],
+      "after" : [
+        "घन्रि",
+        "घाँरी",
+        "ghanri"
+      ],
+      "before" : [
+        "घन्रि",
+        "ghanri"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "घाँरी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ghanri",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "अबधरननुसर",
+        "abadharananusar"
+      ],
+      "before" : [
+        "अबधरननुसर",
+        "abadharananusar"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "अबधारणाअनुसार"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "abadharananusar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "ढालिँदै"
+      ],
+      "after" : [
+        "ढालिंदै",
+        "धलिन्दै",
+        "ढालिँदै",
+        "dhalindai"
+      ],
+      "before" : [
+        "ढालिंदै",
+        "धलिन्दै",
+        "dhalindai"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "ढालिँदै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dhalindai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाल्थिनँ"
+      ],
+      "after" : [
+        "फल्थिनन",
+        "फाल्थिनँ",
+        "falthinan"
+      ],
+      "before" : [
+        "फल्थिनन",
+        "falthinan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाल्थिनँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "falthinan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "तर्पाँहरूले"
+      ],
+      "after" : [
+        "तर्पन्हरुले",
+        "तर्पाँहरूले",
+        "tarpanharule"
+      ],
+      "before" : [
+        "तर्पन्हरुले",
+        "tarpanharule"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "तर्पाँहरूले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tarpanharule",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "महाअधिवेसन"
+      ],
+      "after" : [
+        "महधिवेसन",
+        "महाअधिवेसन",
+        "mahadhiwesan"
+      ],
+      "before" : [
+        "महधिवेसन",
+        "mahadhiwesan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "महाअधिवेसन"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "mahadhiwesan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "समयावधिसँग"
+      ],
+      "after" : [
+        "समयवधिसङ",
+        "समयावधिसँग",
+        "samayawadhisanga"
+      ],
+      "before" : [
+        "समयवधिसङ",
+        "samayawadhisanga"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "समयावधिसँग"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "samayawadhisanga",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सम्झिइरहेका"
+      ],
+      "after" : [
+        "सम्झिरहेका",
+        "सम्झिरहेक",
+        "सम्झिइरहेका",
+        "samjhiraheka"
+      ],
+      "before" : [
+        "सम्झिरहेका",
+        "सम्झिरहेक",
+        "samjhiraheka"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "सम्झिइरहेका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "samjhiraheka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "फन्दक",
+        "फण्डका",
+        "फन्दका",
+        "fandaka"
+      ],
+      "before" : [
+        "फन्दक",
+        "फण्डका",
+        "फन्दका",
+        "fandaka"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँडका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fandaka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "रचिइनु"
+      ],
+      "after" : [
+        "रचिनु",
+        "रचिइनु",
+        "rachinu"
+      ],
+      "before" : [
+        "रचिनु",
+        "rachinu"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "रचिइनु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "rachinu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फुकाउँथिन्"
+      ],
+      "after" : [
+        "फुकौन्थिन",
+        "फुकाउँथिन्",
+        "fukaunthin"
+      ],
+      "before" : [
+        "फुकौन्थिन",
+        "fukaunthin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फुकाउँथिन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fukaunthin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लेखकहरुचाहिँ",
+        "लेखकहरूचाहिँ"
+      ],
+      "after" : [
+        "लेखखरुचहिन",
+        "लेखकहरुचाहिँ",
+        "लेखकहरूचाहिँ",
+        "lekhakharuchahin"
+      ],
+      "before" : [
+        "लेखखरुचहिन",
+        "lekhakharuchahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लेखकहरुचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lekhakharuchahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "जाएँगी"
+      ],
+      "after" : [
+        "जाएंगी",
+        "जएङि",
+        "जाएँगी",
+        "jaengi"
+      ],
+      "before" : [
+        "जाएंगी",
+        "जएङि",
+        "jaengi"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "जाएँगी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jaengi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "त्यहाँबाटपनि"
+      ],
+      "after" : [
+        "त्यहन्बातपनि",
+        "त्यहाँबाटपनि",
+        "tyahanbaatapani"
+      ],
+      "before" : [
+        "त्यहन्बातपनि",
+        "tyahanbaatapani"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "त्यहाँबाटपनि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tyahanbaatapani",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पाउँदीतर्फ"
+      ],
+      "after" : [
+        "पौन्दितर्फ",
+        "पाउँदीतर्फ",
+        "paunditarfa"
+      ],
+      "before" : [
+        "पौन्दितर्फ",
+        "paunditarfa"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पाउँदीतर्फ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "paunditarfa",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हाँकोस्"
+      ],
+      "after" : [
+        "हन्कोस",
+        "हाँकोस्",
+        "hankos"
+      ],
+      "before" : [
+        "हन्कोस",
+        "hankos"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँकोस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hankos",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँतलाई"
+      ],
+      "after" : [
+        "अन्त्लै",
+        "आँतलाई",
+        "antlai"
+      ],
+      "before" : [
+        "अन्त्लै",
+        "antlai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँतलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "antlai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "ल्वाँदे"
+      ],
+      "after" : [
+        "ल्वन्दे",
+        "ल्वाँदे",
+        "lwande"
+      ],
+      "before" : [
+        "ल्वन्दे",
+        "lwande"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "ल्वाँदे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lwande",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "काँरी"
+      ],
+      "after" : [
+        "कन्रि",
+        "काँरी",
+        "kanri"
+      ],
+      "before" : [
+        "कन्रि",
+        "kanri"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "काँरी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kanri",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "यानसँगै"
+      ],
+      "after" : [
+        "यनसङै",
+        "यानसँगै",
+        "yanasangai"
+      ],
+      "before" : [
+        "यनसङै",
+        "yanasangai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "यानसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "yanasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "काहुँखोलालाई"
+      ],
+      "after" : [
+        "कहुन्खोललै",
+        "काहुँखोलालाई",
+        "kahunkholalai"
+      ],
+      "before" : [
+        "कहुन्खोललै",
+        "kahunkholalai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "काहुँखोलालाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kahunkholalai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँफ्या"
+      ],
+      "after" : [
+        "सन्फ्या",
+        "साँफ्या",
+        "sanfyaa"
+      ],
+      "before" : [
+        "सन्फ्या",
+        "sanfyaa"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँफ्या"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanfyaa",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "तोफाँ"
+      ],
+      "after" : [
+        "तोफान",
+        "तोफन",
+        "तोफाँ",
+        "tofan"
+      ],
+      "before" : [
+        "तोफान",
+        "तोफन",
+        "tofan"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "तोफाँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tofan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "अमगैन्ले",
+        "अमगाइँले",
+        "अमगाईँले",
+        "अमगाईंले",
+        "amagainle"
+      ],
+      "before" : [
+        "अमगैन्ले",
+        "अमगाइँले",
+        "अमगाईँले",
+        "अमगाईंले",
+        "amagainle"
+      ],
+      "exactCount" : 3,
+      "knownEnglish" : false,
+      "reference" : [
+        "आमगाइँले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "amagainle",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँसुसँगसँगै"
+      ],
+      "after" : [
+        "अन्सुसङसङै",
+        "आँसुसँगसँगै",
+        "ansusangasangai"
+      ],
+      "before" : [
+        "अन्सुसङसङै",
+        "ansusangasangai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँसुसँगसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ansusangasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सिइसो"
+      ],
+      "after" : [
+        "सिसो",
+        "सिइसो",
+        "siso"
+      ],
+      "before" : [
+        "सिसो",
+        "siso"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "सिइसो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "siso",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पतिचाहिँले"
+      ],
+      "after" : [
+        "पतिचहिन्ले",
+        "पतिचाहिँले",
+        "patichahinle"
+      ],
+      "before" : [
+        "पतिचहिन्ले",
+        "patichahinle"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पतिचाहिँले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "patichahinle",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "कामसँगै",
+        "कमासँगै"
+      ],
+      "after" : [
+        "कामसंगै",
+        "कमसङै",
+        "कामसँगै",
+        "कमासँगै",
+        "kamasangai"
+      ],
+      "before" : [
+        "कामसंगै",
+        "कमसङै",
+        "kamasangai"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "कामसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kamasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "परम्पराअन्तर्गत"
+      ],
+      "after" : [
+        "परम्परन्तर्गत",
+        "परम्पराअन्तर्गत",
+        "paramparantargat"
+      ],
+      "before" : [
+        "परम्परन्तर्गत",
+        "paramparantargat"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "परम्पराअन्तर्गत"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "paramparantargat",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँगनम"
+      ],
+      "after" : [
+        "अङनम",
+        "आँगनम",
+        "anganam"
+      ],
+      "before" : [
+        "अङनम",
+        "anganam"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँगनम"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "anganam",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "काँचे"
+      ],
+      "after" : [
+        "कन्चे",
+        "काँचे",
+        "kanche"
+      ],
+      "before" : [
+        "कन्चे",
+        "kanche"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "काँचे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kanche",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लेलिनवादसँगै"
+      ],
+      "after" : [
+        "लेलिन्वद्सङै",
+        "लेलिनवादसँगै",
+        "lelinwadsangai"
+      ],
+      "before" : [
+        "लेलिन्वद्सङै",
+        "lelinwadsangai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लेलिनवादसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lelinwadsangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "टाँसीसक्नु"
+      ],
+      "after" : [
+        "तन्सिसक्नु",
+        "टाँसीसक्नु",
+        "tansisaknu"
+      ],
+      "before" : [
+        "तन्सिसक्नु",
+        "tansisaknu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "टाँसीसक्नु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tansisaknu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँटाँ"
+      ],
+      "after" : [
+        "फन्तान",
+        "फाँटाँ",
+        "fantaan"
+      ],
+      "before" : [
+        "फन्तान",
+        "fantaan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँटाँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fantaan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बहुउत्तरदायित्व"
+      ],
+      "after" : [
+        "बहुत्तर्दयित्व",
+        "बहुउत्तरदायित्व",
+        "bahuttardayitwa"
+      ],
+      "before" : [
+        "बहुत्तर्दयित्व",
+        "bahuttardayitwa"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बहुउत्तरदायित्व"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bahuttardayitwa",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "धुवाँधुलोमुक्त"
+      ],
+      "after" : [
+        "धुवन्धुलोमुक्त",
+        "धुवाँधुलोमुक्त",
+        "dhuwandhulomukta"
+      ],
+      "before" : [
+        "धुवन्धुलोमुक्त",
+        "dhuwandhulomukta"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "धुवाँधुलोमुक्त"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dhuwandhulomukta",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "झुक्कीइरहेको"
+      ],
+      "after" : [
+        "झुक्किरहेको",
+        "झुक्कीइरहेको",
+        "jhukkiraheko"
+      ],
+      "before" : [
+        "झुक्किरहेको",
+        "jhukkiraheko"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "झुक्कीइरहेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jhukkiraheko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हाँसिबस्नु"
+      ],
+      "after" : [
+        "हन्सिबस्नु",
+        "हाँसिबस्नु",
+        "hansibasnu"
+      ],
+      "before" : [
+        "हन्सिबस्नु",
+        "hansibasnu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँसिबस्नु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hansibasnu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँसुरीसँग"
+      ],
+      "after" : [
+        "बन्सुरिसङ",
+        "बाँसुरीसँग",
+        "bansurisanga"
+      ],
+      "before" : [
+        "बन्सुरिसङ",
+        "bansurisanga"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँसुरीसँग"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bansurisanga",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँसबारीबीच"
+      ],
+      "after" : [
+        "बन्स्बरिबिच",
+        "बाँसबारीबीच",
+        "bansbaribich"
+      ],
+      "before" : [
+        "बन्स्बरिबिच",
+        "bansbaribich"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँसबारीबीच"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bansbaribich",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "रफैयाँको"
+      ],
+      "after" : [
+        "रफैयन्को",
+        "रफैयाँको",
+        "rafaiyanko"
+      ],
+      "before" : [
+        "रफैयन्को",
+        "rafaiyanko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "रफैयाँको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "rafaiyanko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "मुवासँगै"
+      ],
+      "after" : [
+        "मुवासंगै",
+        "मुवसङै",
+        "मुवासँगै",
+        "muwasangai"
+      ],
+      "before" : [
+        "मुवासंगै",
+        "मुवसङै",
+        "muwasangai"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "मुवासँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "muwasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "दाँतमध्ये"
+      ],
+      "after" : [
+        "दन्त्मध्ये",
+        "दाँतमध्ये",
+        "dantmadhye"
+      ],
+      "before" : [
+        "दन्त्मध्ये",
+        "dantmadhye"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "दाँतमध्ये"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dantmadhye",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लामसँगै"
+      ],
+      "after" : [
+        "लामासंगै",
+        "लमसङै",
+        "लामसँगै",
+        "lamasangai"
+      ],
+      "before" : [
+        "लामासंगै",
+        "लमसङै",
+        "lamasangai"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "लामसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lamasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फ्याँकौं"
+      ],
+      "after" : [
+        "फ्यन्कौन",
+        "फ्याँकौं",
+        "fyankaun"
+      ],
+      "before" : [
+        "फ्यन्कौन",
+        "fyankaun"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फ्याँकौं"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fyankaun",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "विकाशसँगै"
+      ],
+      "after" : [
+        "विकाशसंगै",
+        "विकशसङै",
+        "विकाशसँगै",
+        "wikashasangai"
+      ],
+      "before" : [
+        "विकाशसंगै",
+        "विकशसङै",
+        "wikashasangai"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "विकाशसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wikashasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नगाउँस्थित"
+      ],
+      "after" : [
+        "नगौन्स्थित",
+        "नगाउँस्थित",
+        "nagaunsthit"
+      ],
+      "before" : [
+        "नगौन्स्थित",
+        "nagaunsthit"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नगाउँस्थित"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nagaunsthit",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हिँड्नुपरेमा"
+      ],
+      "after" : [
+        "हिन्द्नुपरेम",
+        "हिँड्नुपरेमा",
+        "hindnuparema"
+      ],
+      "before" : [
+        "हिन्द्नुपरेम",
+        "hindnuparema"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हिँड्नुपरेमा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hindnuparema",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "शास्त्रअनुकूल"
+      ],
+      "after" : [
+        "शास्त्रानुकूल",
+        "शस्त्रनुकुल",
+        "शास्त्रअनुकूल",
+        "shastranukul"
+      ],
+      "before" : [
+        "शास्त्रानुकूल",
+        "शस्त्रनुकुल",
+        "shastranukul"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "शास्त्रअनुकूल"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "shastranukul",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "महाअभियोगसहित"
+      ],
+      "after" : [
+        "महाभियोगसहित",
+        "महभियोग्सहित",
+        "महाअभियोगसहित",
+        "mahabhiyogsahit"
+      ],
+      "before" : [
+        "महाभियोगसहित",
+        "महभियोग्सहित",
+        "mahabhiyogsahit"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "महाअभियोगसहित"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "mahabhiyogsahit",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "दिइराखेका"
+      ],
+      "after" : [
+        "दिराखेका",
+        "दिरखेक",
+        "दिइराखेका",
+        "dirakheka"
+      ],
+      "before" : [
+        "दिराखेका",
+        "दिरखेक",
+        "dirakheka"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "दिइराखेका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dirakheka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साँघ्ने"
+      ],
+      "after" : [
+        "सङ्ह्ने",
+        "साँघ्ने",
+        "sanghne"
+      ],
+      "before" : [
+        "सङ्ह्ने",
+        "sanghne"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साँघ्ने"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sanghne",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "antes",
+        "अन्तेस"
+      ],
+      "before" : [
+        "antes",
+        "अन्तेस"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "आँटेस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "antes",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पोखिइनै"
+      ],
+      "after" : [
+        "पोखिनै",
+        "पोखिइनै",
+        "pokhinai"
+      ],
+      "before" : [
+        "पोखिनै",
+        "pokhinai"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "पोखिइनै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "pokhinai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नखाँदिएको"
+      ],
+      "after" : [
+        "नखन्दिएको",
+        "नखाँदिएको",
+        "nakhandieko"
+      ],
+      "before" : [
+        "नखन्दिएको",
+        "nakhandieko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नखाँदिएको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nakhandieko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "काँसघारीलाई"
+      ],
+      "after" : [
+        "कन्सघारिलै",
+        "काँसघारीलाई",
+        "kansaghaarilai"
+      ],
+      "before" : [
+        "कन्सघारिलै",
+        "kansaghaarilai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "काँसघारीलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kansaghaarilai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फ्याँकिरहेछ"
+      ],
+      "after" : [
+        "फ्यन्किरहेछ",
+        "फ्याँकिरहेछ",
+        "fyankirahechha"
+      ],
+      "before" : [
+        "फ्यन्किरहेछ",
+        "fyankirahechha"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फ्याँकिरहेछ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fyankirahechha",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "कवाबसँग"
+      ],
+      "after" : [
+        "कवब्सङ",
+        "कवाबसँग",
+        "kawabsanga"
+      ],
+      "before" : [
+        "कवब्सङ",
+        "kawabsanga"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कवाबसँग"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kawabsanga",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाहबुँदे"
+      ],
+      "after" : [
+        "बहबुन्दे",
+        "बाहबुँदे",
+        "bahabunde"
+      ],
+      "before" : [
+        "बहबुन्दे",
+        "bahabunde"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाहबुँदे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bahabunde",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फैलाउँनु"
+      ],
+      "after" : [
+        "फैलौन्नु",
+        "फैलाउँनु",
+        "failaunnu"
+      ],
+      "before" : [
+        "फैलौन्नु",
+        "failaunnu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फैलाउँनु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "failaunnu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँसगेडीका"
+      ],
+      "after" : [
+        "बन्सगेदिक",
+        "बाँसगेडीका",
+        "bansagedika"
+      ],
+      "before" : [
+        "बन्सगेदिक",
+        "bansagedika"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँसगेडीका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bansagedika",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "जनताअनुसारका"
+      ],
+      "after" : [
+        "जनतनुसर्क",
+        "जनताअनुसारका",
+        "janatanusarka"
+      ],
+      "before" : [
+        "जनतनुसर्क",
+        "janatanusarka"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "जनताअनुसारका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "janatanusarka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँचयो"
+      ],
+      "after" : [
+        "बन्चयो",
+        "बाँचयो",
+        "banchayo"
+      ],
+      "before" : [
+        "बन्चयो",
+        "banchayo"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँचयो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banchayo",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "banda",
+        "बन्द",
+        "बन्दा"
+      ],
+      "before" : [
+        "banda",
+        "बन्द",
+        "बन्दा"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "बाँदा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banda",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "वाँडेर"
+      ],
+      "after" : [
+        "वन्देर",
+        "वाँडेर",
+        "wandera"
+      ],
+      "before" : [
+        "वन्देर",
+        "wandera"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "वाँडेर"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wandera",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "भाँज्ने"
+      ],
+      "after" : [
+        "भन्ज्ञे",
+        "भाँज्ने",
+        "bhanjne"
+      ],
+      "before" : [
+        "भन्ज्ञे",
+        "bhanjne"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "भाँज्ने"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bhanjne",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चाहनाअनुसारले"
+      ],
+      "after" : [
+        "चहननुसर्ले",
+        "चाहनाअनुसारले",
+        "chahananusarle"
+      ],
+      "before" : [
+        "चहननुसर्ले",
+        "chahananusarle"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चाहनाअनुसारले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chahananusarle",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "डाँके"
+      ],
+      "after" : [
+        "दन्के",
+        "डाँके",
+        "danke"
+      ],
+      "before" : [
+        "दन्के",
+        "danke"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "डाँके"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "danke",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चलाउँछौंः"
+      ],
+      "after" : [
+        "चलौन्छौन्ह",
+        "चलाउँछौंः",
+        "chalaunchhaunh"
+      ],
+      "before" : [
+        "चलौन्छौन्ह",
+        "chalaunchhaunh"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चलाउँछौंः"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chalaunchhaunh",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँकीलाल"
+      ],
+      "after" : [
+        "बन्किलल",
+        "बाँकीलाल",
+        "bankilal"
+      ],
+      "before" : [
+        "बन्किलल",
+        "bankilal"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँकीलाल"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bankilal",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "प्रतिवादीसँगको"
+      ],
+      "after" : [
+        "प्रतिवदिसङ्को",
+        "प्रतिवादीसँगको",
+        "pratiwadisangko"
+      ],
+      "before" : [
+        "प्रतिवदिसङ्को",
+        "pratiwadisangko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "प्रतिवादीसँगको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "pratiwadisangko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "सभापतिइतरका"
+      ],
+      "after" : [
+        "सभपतितर्क",
+        "सभापतिइतरका",
+        "sabhapatitarka"
+      ],
+      "before" : [
+        "सभपतितर्क",
+        "sabhapatitarka"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "सभापतिइतरका"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "sabhapatitarka",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आँबुलगायत"
+      ],
+      "after" : [
+        "अन्बुल्गयत",
+        "आँबुलगायत",
+        "anbulgayat"
+      ],
+      "before" : [
+        "अन्बुल्गयत",
+        "anbulgayat"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आँबुलगायत"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "anbulgayat",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँसिष्ट"
+      ],
+      "after" : [
+        "फन्सिश्त",
+        "फाँसिष्ट",
+        "fansishta"
+      ],
+      "before" : [
+        "फन्सिश्त",
+        "fansishta"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँसिष्ट"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fansishta",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "थहरिउन्ल",
+        "thahariunla"
+      ],
+      "before" : [
+        "थहरिउन्ल",
+        "thahariunla"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "ठहरिउँला"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "thahariunla",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाँजलले"
+      ],
+      "after" : [
+        "गन्जल्ले",
+        "गाँजलले",
+        "ganjalle"
+      ],
+      "before" : [
+        "गन्जल्ले",
+        "ganjalle"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाँजलले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ganjalle",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बाँस्कोटाहरूले"
+      ],
+      "after" : [
+        "बन्स्कोतहरुले",
+        "बाँस्कोटाहरूले",
+        "banskotaharule"
+      ],
+      "before" : [
+        "बन्स्कोतहरुले",
+        "banskotaharule"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँस्कोटाहरूले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "banskotaharule",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "यहाँकैलाई"
+      ],
+      "after" : [
+        "यहन्कैलै",
+        "यहाँकैलाई",
+        "yahankailai"
+      ],
+      "before" : [
+        "यहन्कैलै",
+        "yahankailai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "यहाँकैलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "yahankailai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "उठाउँदिरैछेस्"
+      ],
+      "after" : [
+        "उथौन्दिरैछेस",
+        "उठाउँदिरैछेस्",
+        "uthaundiraichhes"
+      ],
+      "before" : [
+        "उथौन्दिरैछेस",
+        "uthaundiraichhes"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "उठाउँदिरैछेस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "uthaundiraichhes",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "दाँतपतन"
+      ],
+      "after" : [
+        "दन्तपतन",
+        "दाँतपतन",
+        "dantapatan"
+      ],
+      "before" : [
+        "दन्तपतन",
+        "dantapatan"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "दाँतपतन"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "dantapatan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चन्द्रअनुसार"
+      ],
+      "after" : [
+        "चन्द्रनुसर",
+        "चन्द्रअनुसार",
+        "chandranusar"
+      ],
+      "before" : [
+        "चन्द्रनुसर",
+        "chandranusar"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चन्द्रअनुसार"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chandranusar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पाँचथरसँगको"
+      ],
+      "after" : [
+        "पन्चथरसङ्को",
+        "पाँचथरसँगको",
+        "panchatharasangko"
+      ],
+      "before" : [
+        "पन्चथरसङ्को",
+        "panchatharasangko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पाँचथरसँगको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "panchatharasangko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "समन्वयचहिन",
+        "samanwayachahin"
+      ],
+      "before" : [
+        "समन्वयचहिन",
+        "samanwayachahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "समन्वयचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "samanwayachahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "पुवाँलाई"
+      ],
+      "after" : [
+        "पुवन्लै",
+        "पुवाँलाई",
+        "puwanlai"
+      ],
+      "before" : [
+        "पुवन्लै",
+        "puwanlai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पुवाँलाई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "puwanlai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "जितिसकेको",
+        "जीतिसकेको",
+        "jitisakeko"
+      ],
+      "before" : [
+        "जितिसकेको",
+        "जीतिसकेको",
+        "jitisakeko"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "जितिइसकेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jitisakeko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "खर्चिरहेकिथि",
+        "kharchirahekithi"
+      ],
+      "before" : [
+        "खर्चिरहेकिथि",
+        "kharchirahekithi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "खर्चिरहेकिथिई"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "kharchirahekithi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आइआइटीको",
+        "आईआईटीको"
+      ],
+      "after" : [
+        "ईटको",
+        "इत्को",
+        "आइआइटीको",
+        "आईआईटीको",
+        "itko"
+      ],
+      "before" : [
+        "ईटको",
+        "इत्को",
+        "itko"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "आइआइटीको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "itko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "यहाँजता"
+      ],
+      "after" : [
+        "यहन्जत",
+        "यहाँजता",
+        "yahanjata"
+      ],
+      "before" : [
+        "यहन्जत",
+        "yahanjata"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "यहाँजता"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "yahanjata",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "लगाउँच"
+      ],
+      "after" : [
+        "लगौन्च",
+        "लगाउँछ",
+        "लगाउँच",
+        "lagaunch"
+      ],
+      "before" : [
+        "लगौन्च",
+        "लगाउँछ",
+        "lagaunch"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "लगाउँच"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lagaunch",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "छाँट्छे"
+      ],
+      "after" : [
+        "छन्त्छे",
+        "छाँट्छे",
+        "chhantchhe"
+      ],
+      "before" : [
+        "छन्त्छे",
+        "chhantchhe"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "छाँट्छे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chhantchhe",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बियाँको"
+      ],
+      "after" : [
+        "बियन्को",
+        "बियाँको",
+        "biyanko"
+      ],
+      "before" : [
+        "बियन्को",
+        "biyanko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बियाँको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "biyanko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "लिनेहरुम",
+        "लाइनहरूमा",
+        "लाईनहरूमा",
+        "लिनेहरूमा",
+        "lineharuma"
+      ],
+      "before" : [
+        "लिनेहरुम",
+        "लाइनहरूमा",
+        "लाईनहरूमा",
+        "लिनेहरूमा",
+        "lineharuma"
+      ],
+      "exactCount" : 3,
+      "knownEnglish" : false,
+      "reference" : [
+        "लिइनेहरूमा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "lineharuma",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "हाँसोहरू"
+      ],
+      "after" : [
+        "हन्सोहरु",
+        "हाँसोहरू",
+        "hansoharu"
+      ],
+      "before" : [
+        "हन्सोहरु",
+        "hansoharu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँसोहरू"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hansoharu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नभाचेँको"
+      ],
+      "after" : [
+        "नभचेन्को",
+        "नभाचेँको",
+        "nabhachenko"
+      ],
+      "before" : [
+        "नभचेन्को",
+        "nabhachenko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नभाचेँको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nabhachenko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नयाँजलपाइगुढी"
+      ],
+      "after" : [
+        "नयन्जलपैगुधि",
+        "नयाँजलपाइगुढी",
+        "nayanjalapaigudhi"
+      ],
+      "before" : [
+        "नयन्जलपैगुधि",
+        "nayanjalapaigudhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नयाँजलपाइगुढी"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "nayanjalapaigudhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "खेलौनाअनुसार"
+      ],
+      "after" : [
+        "खेलौननुसर",
+        "खेलौनाअनुसार",
+        "khelaunanusar"
+      ],
+      "before" : [
+        "खेलौननुसर",
+        "khelaunanusar"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "खेलौनाअनुसार"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "khelaunanusar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "जाँकोभले"
+      ],
+      "after" : [
+        "जन्कोभ्ले",
+        "जाँकोभले",
+        "jankobhle"
+      ],
+      "before" : [
+        "जन्कोभ्ले",
+        "jankobhle"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "जाँकोभले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jankobhle",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "विर्सिइन्न"
+      ],
+      "after" : [
+        "विर्सिन्न",
+        "विर्सिइन्न",
+        "virsinna"
+      ],
+      "before" : [
+        "विर्सिन्न",
+        "virsinna"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "विर्सिइन्न"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "virsinna",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "व्यहाँको"
+      ],
+      "after" : [
+        "व्यहन्को",
+        "व्यहाँको",
+        "wyahanko"
+      ],
+      "before" : [
+        "व्यहन्को",
+        "wyahanko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "व्यहाँको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "wyahanko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "छुक्रिइसकेको"
+      ],
+      "after" : [
+        "छुक्रिसकेको",
+        "छुक्रिइसकेको",
+        "chhukrisakeko"
+      ],
+      "before" : [
+        "छुक्रिसकेको",
+        "chhukrisakeko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "छुक्रिइसकेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chhukrisakeko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बजारेँ"
+      ],
+      "after" : [
+        "बजारें",
+        "बजरेन",
+        "बजारेँ",
+        "bajaren"
+      ],
+      "before" : [
+        "बजारें",
+        "बजरेन",
+        "bajaren"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "बजारेँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bajaren",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "रमाउँदैथिस्"
+      ],
+      "after" : [
+        "रमौन्दैथिस",
+        "रमाउँदैथिस्",
+        "ramaundaithis"
+      ],
+      "before" : [
+        "रमौन्दैथिस",
+        "ramaundaithis"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "रमाउँदैथिस्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "ramaundaithis",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चाँहिएको"
+      ],
+      "after" : [
+        "चन्हिएको",
+        "चाँहिएको",
+        "chanhieko"
+      ],
+      "before" : [
+        "चन्हिएको",
+        "chanhieko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चाँहिएको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chanhieko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "जाँदैरहिछिन्"
+      ],
+      "after" : [
+        "जन्दैरहिछिन",
+        "जाँदैरहिछिन्",
+        "jandairahichhin"
+      ],
+      "before" : [
+        "जन्दैरहिछिन",
+        "jandairahichhin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "जाँदैरहिछिन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jandairahichhin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "टाँघेको"
+      ],
+      "after" : [
+        "तङ्हेको",
+        "टाँघेको",
+        "tangheko"
+      ],
+      "before" : [
+        "तङ्हेको",
+        "tangheko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "टाँघेको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "tangheko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "चाँदोट"
+      ],
+      "after" : [
+        "चन्दोत",
+        "चाँदोट",
+        "chandot"
+      ],
+      "before" : [
+        "चन्दोत",
+        "chandot"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "चाँदोट"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "chandot",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "हन्स्नुभयो",
+        "हाँस्नुभयो",
+        "hansnubhayo"
+      ],
+      "before" : [
+        "हन्स्नुभयो",
+        "हाँस्नुभयो",
+        "hansnubhayo"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "हाँस्नुभयो"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "hansnubhayo",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फ्याँक्नेछु"
+      ],
+      "after" : [
+        "फ्यन्क्नेछु",
+        "फ्याँक्नेछु",
+        "fyanknechhu"
+      ],
+      "before" : [
+        "फ्यन्क्नेछु",
+        "fyanknechhu"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फ्याँक्नेछु"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fyanknechhu",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "फाँदोको"
+      ],
+      "after" : [
+        "फन्दोको",
+        "फाँदोको",
+        "fandoko"
+      ],
+      "before" : [
+        "फन्दोको",
+        "fandoko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "फाँदोको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "fandoko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "भाँक्रीचोकदेखि"
+      ],
+      "after" : [
+        "भन्क्रिचोक्देखि",
+        "भाँक्रीचोकदेखि",
+        "bhankrichokdekhi"
+      ],
+      "before" : [
+        "भन्क्रिचोक्देखि",
+        "bhankrichokdekhi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "भाँक्रीचोकदेखि"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bhankrichokdekhi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "नजाँच"
+      ],
+      "after" : [
+        "नजन्च",
+        "नजाँच",
+        "najanch"
+      ],
+      "before" : [
+        "नजन्च",
+        "najanch"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "नजाँच"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "najanch",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "बेरुजुचाहिँ"
+      ],
+      "after" : [
+        "बेरुजुचहिन",
+        "बेरुजुचाहिँ",
+        "berujuchahin"
+      ],
+      "before" : [
+        "बेरुजुचहिन",
+        "berujuchahin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बेरुजुचाहिँ"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "berujuchahin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "साउँदसँगै"
+      ],
+      "after" : [
+        "सौन्दसङै",
+        "साउँदसँगै",
+        "saundasangai"
+      ],
+      "before" : [
+        "सौन्दसङै",
+        "saundasangai"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साउँदसँगै"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "saundasangai",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "गाँधीले"
+      ],
+      "after" : [
+        "गांधीले",
+        "गन्धिले",
+        "गाँधीले",
+        "gandhile"
+      ],
+      "before" : [
+        "गांधीले",
+        "गन्धिले",
+        "gandhile"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाँधीले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "gandhile",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "उहाँप्रतिको"
+      ],
+      "after" : [
+        "उहन्प्रतिको",
+        "उहाँप्रतिको",
+        "uhanpratiko"
+      ],
+      "before" : [
+        "उहन्प्रतिको",
+        "uhanpratiko"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "उहाँप्रतिको"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "uhanpratiko",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "झेल्दैथिइन्"
+      ],
+      "after" : [
+        "झेल्दैथिन",
+        "झेल्दैथिइन्",
+        "jheldaithin"
+      ],
+      "before" : [
+        "झेल्दैथिन",
+        "jheldaithin"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "झेल्दैथिइन्"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "jheldaithin",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "ठाउँकोले"
+      ],
+      "after" : [
+        "थौन्कोले",
+        "ठाउँकोले",
+        "thaunkole"
+      ],
+      "before" : [
+        "थौन्कोले",
+        "thaunkole"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "ठाउँकोले"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "thaunkole",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+        "आउँनेहुदा"
+      ],
+      "after" : [
+        "औन्नेहुद",
+        "आउँनेहुदा",
+        "aunnehuda"
+      ],
+      "before" : [
+        "औन्नेहुद",
+        "aunnehuda"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आउँनेहुदा"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "aunnehuda",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बन्धे",
+        "बाँधे",
+        "bandhe"
+      ],
+      "before" : [
+        "बन्धे",
+        "बाँधे",
+        "bandhe"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाँधे"
+      ],
+      "role" : "synthetic_nepali",
+      "roman" : "bandhe",
+      "top_unchanged" : true
+    }
+  ],
+  "note" : "unreviewed hand-authored development fixture; added-reference match is not linguistic precision"
+}

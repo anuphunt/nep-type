@@ -1,0 +1,28 @@
+{
+  "categories": {
+    "ambiguity": {
+      "expected_not_visible": 1,
+      "expected_visible_but_not_top": 5,
+      "top_match": 24,
+      "total": 30
+    },
+    "literal": {
+      "expected_visible_but_not_top": 1,
+      "top_match": 3,
+      "total": 4
+    },
+    "mixed": {
+      "expected_not_visible": 1,
+      "expected_visible_but_not_top": 13,
+      "top_match": 23,
+      "total": 37
+    },
+    "nepali": {
+      "expected_not_visible": 4,
+      "expected_visible_but_not_top": 11,
+      "top_match": 44,
+      "total": 59
+    }
+  },
+  "method": "Selective unreviewed annotations; visible means first four candidates plus original. These categories do not identify root cause."
+}

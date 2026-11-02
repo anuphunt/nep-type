@@ -1,0 +1,14 @@
+# Mixed-language diagnostic — English neighbor evidence
+
+This investigation created two 20-sentence synthetic sets and froze their input and proposed outputs before changing the rule. Only development outputs were inspected when choosing the rule; the probe outputs were run after the rule was fixed. Both sets were authored by the implementer, use closely related templates, and their references have not been reviewed by Nepali speakers. The probe is therefore not an independent population sample or reliable accuracy estimate, and it did not exercise the new rule. Some spelling, borrowed-word and proper-name preferences are inherently ambiguous. Per-sentence results and sources are preserved in the JSON files.
+
+The development run exposed an inconsistency: an authored Nepali word with **no English word evidence of its own** between two explicit English neighbors could fall back to its Roman form solely because of neighbor scores. A candidate rule chose the authored Nepali first for that narrow class, while retaining original input and other candidates. Words with English dictionary evidence, including `man`, continued through context ranking. This candidate was rejected and reverted: missing dictionary evidence does not prove a word cannot be an English word or name, and a one-token development improvement with no branch coverage on the probe was insufficient evidence for automatic conversion. The after files describe the rejected experiment, not current behavior.
+
+- Development: exact sentences 9/20 before and 9/20 after. One sentence gained a correct `मलाई` token, but still failed on a separate word; no exact-match gain.
+- Frozen probe: exact sentences 7/20 before and 7/20 after; no output changed. It does not validate a general benefit.
+- The previously used synthetic 20-sentence mixed corpus stayed 34/34 English tokens, 40/43 Nepali tokens and 17/20 exact sentences. This corpus has been inspected and is not independent evidence.
+- The previously inspected 24- and 30-sentence diagnostics stayed 11/24 and 13/30 exact respectively; no outputs changed.
+- All 29 Swift core tests passed under the experimental rule. After reverting that rule and its test, the current 28-test suite passed.
+- Twelve cold process samples per build for the 20-sentence dev fixture gave medians 51.65 ms before and 52.12 ms after (maxima 54.87 and 55.68 ms). These small sequential measurements include process startup and JSON output, are not per-keystroke timings, and do not establish a meaningful speed difference.
+
+Reproduce by compiling `main.swift` with the Swift core, setting the two local `LEKHA_*_INDEX` environment variables and running the binary against the JSON fixture. The `before` and `after` files contain inputs, proposed outputs and actual output. This experiment does not test a system keyboard, actual host interactions, realistic user distributions or post-commit behavior.

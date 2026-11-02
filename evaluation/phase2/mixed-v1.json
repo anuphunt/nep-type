@@ -1,0 +1,764 @@
+{
+  "version": "phase2-mixed-v1",
+  "cases": [
+    {
+      "id": "P201",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "the man called",
+      "expected": [
+        "the man called"
+      ],
+      "annotations": [
+        {
+          "token": "the",
+          "role": "english",
+          "acceptable": [
+            "the"
+          ]
+        },
+        {
+          "token": "man",
+          "role": "english",
+          "acceptable": [
+            "man"
+          ]
+        },
+        {
+          "token": "called",
+          "role": "english",
+          "acceptable": [
+            "called"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P202",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero man khusi cha",
+      "expected": [
+        "मेरो मन खुसी छ"
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "man",
+          "role": "nepali",
+          "acceptable": [
+            "मन"
+          ]
+        },
+        {
+          "token": "khusi",
+          "role": "nepali",
+          "acceptable": [
+            "खुसी"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P203",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "the football team won",
+      "expected": [
+        "the football team won"
+      ],
+      "annotations": [
+        {
+          "token": "the",
+          "role": "english",
+          "acceptable": [
+            "the"
+          ]
+        },
+        {
+          "token": "football",
+          "role": "english",
+          "acceptable": [
+            "football"
+          ]
+        },
+        {
+          "token": "team",
+          "role": "english",
+          "acceptable": [
+            "team"
+          ]
+        },
+        {
+          "token": "won",
+          "role": "english",
+          "acceptable": [
+            "won"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P204",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "ma football khelchu",
+      "expected": [
+        "म फुटबल खेल्छु"
+      ],
+      "annotations": [
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "football",
+          "role": "nepali",
+          "acceptable": [
+            "फुटबल"
+          ]
+        },
+        {
+          "token": "khelchu",
+          "role": "nepali",
+          "acceptable": [
+            "खेल्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P205",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aaja weather ramro cha",
+      "expected": [
+        "आज weather राम्रो छ"
+      ],
+      "annotations": [
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "weather",
+          "role": "english",
+          "acceptable": [
+            "weather"
+          ]
+        },
+        {
+          "token": "ramro",
+          "role": "nepali",
+          "acceptable": [
+            "राम्रो"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P206",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "hami school janchau",
+      "expected": [
+        "हामी school जान्छौँ"
+      ],
+      "annotations": [
+        {
+          "token": "hami",
+          "role": "nepali",
+          "acceptable": [
+            "हामी"
+          ]
+        },
+        {
+          "token": "school",
+          "role": "english",
+          "acceptable": [
+            "school"
+          ]
+        },
+        {
+          "token": "janchau",
+          "role": "nepali",
+          "acceptable": [
+            "जान्छौँ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P207",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "please send the photo",
+      "expected": [
+        "please send the photo"
+      ],
+      "annotations": [
+        {
+          "token": "please",
+          "role": "english",
+          "acceptable": [
+            "please"
+          ]
+        },
+        {
+          "token": "send",
+          "role": "english",
+          "acceptable": [
+            "send"
+          ]
+        },
+        {
+          "token": "the",
+          "role": "english",
+          "acceptable": [
+            "the"
+          ]
+        },
+        {
+          "token": "photo",
+          "role": "english",
+          "acceptable": [
+            "photo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P208",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "ma coffee khanchu",
+      "expected": [
+        "म coffee खान्छु"
+      ],
+      "annotations": [
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "coffee",
+          "role": "english",
+          "acceptable": [
+            "coffee"
+          ]
+        },
+        {
+          "token": "khanchu",
+          "role": "nepali",
+          "acceptable": [
+            "खान्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P209",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "bholi project meeting cha",
+      "expected": [
+        "भोलि project meeting छ"
+      ],
+      "annotations": [
+        {
+          "token": "bholi",
+          "role": "nepali",
+          "acceptable": [
+            "भोलि"
+          ]
+        },
+        {
+          "token": "project",
+          "role": "english",
+          "acceptable": [
+            "project"
+          ]
+        },
+        {
+          "token": "meeting",
+          "role": "english",
+          "acceptable": [
+            "meeting"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P210",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "timro laptop ramro cha",
+      "expected": [
+        "तिम्रो laptop राम्रो छ"
+      ],
+      "annotations": [
+        {
+          "token": "timro",
+          "role": "nepali",
+          "acceptable": [
+            "तिम्रो"
+          ]
+        },
+        {
+          "token": "laptop",
+          "role": "english",
+          "acceptable": [
+            "laptop"
+          ]
+        },
+        {
+          "token": "ramro",
+          "role": "nepali",
+          "acceptable": [
+            "राम्रो"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P211",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero train late cha",
+      "expected": [
+        "मेरो train late छ"
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "train",
+          "role": "english",
+          "acceptable": [
+            "train"
+          ]
+        },
+        {
+          "token": "late",
+          "role": "english",
+          "acceptable": [
+            "late"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P212",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "this is my computer",
+      "expected": [
+        "this is my computer"
+      ],
+      "annotations": [
+        {
+          "token": "this",
+          "role": "english",
+          "acceptable": [
+            "this"
+          ]
+        },
+        {
+          "token": "is",
+          "role": "english",
+          "acceptable": [
+            "is"
+          ]
+        },
+        {
+          "token": "my",
+          "role": "english",
+          "acceptable": [
+            "my"
+          ]
+        },
+        {
+          "token": "computer",
+          "role": "english",
+          "acceptable": [
+            "computer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P213",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aaja ma gharma baschu",
+      "expected": [
+        "आज म घरमा बस्छु"
+      ],
+      "annotations": [
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "gharma",
+          "role": "nepali",
+          "acceptable": [
+            "घरमा"
+          ]
+        },
+        {
+          "token": "baschu",
+          "role": "nepali",
+          "acceptable": [
+            "बस्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P214",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "usko ghar sundar cha",
+      "expected": [
+        "उसको घर सुन्दर छ"
+      ],
+      "annotations": [
+        {
+          "token": "usko",
+          "role": "nepali",
+          "acceptable": [
+            "उसको"
+          ]
+        },
+        {
+          "token": "ghar",
+          "role": "nepali",
+          "acceptable": [
+            "घर"
+          ]
+        },
+        {
+          "token": "sundar",
+          "role": "nepali",
+          "acceptable": [
+            "सुन्दर"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P215",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "can you send the link",
+      "expected": [
+        "can you send the link"
+      ],
+      "annotations": [
+        {
+          "token": "can",
+          "role": "english",
+          "acceptable": [
+            "can"
+          ]
+        },
+        {
+          "token": "you",
+          "role": "english",
+          "acceptable": [
+            "you"
+          ]
+        },
+        {
+          "token": "send",
+          "role": "english",
+          "acceptable": [
+            "send"
+          ]
+        },
+        {
+          "token": "the",
+          "role": "english",
+          "acceptable": [
+            "the"
+          ]
+        },
+        {
+          "token": "link",
+          "role": "english",
+          "acceptable": [
+            "link"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P216",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero sathi bholi aauchu",
+      "expected": [
+        "मेरो साथी भोलि आउँछु"
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "sathi",
+          "role": "nepali",
+          "acceptable": [
+            "साथी"
+          ]
+        },
+        {
+          "token": "bholi",
+          "role": "nepali",
+          "acceptable": [
+            "भोलि"
+          ]
+        },
+        {
+          "token": "aauchu",
+          "role": "nepali",
+          "acceptable": [
+            "आउँछु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P217",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "my phone battery is dead",
+      "expected": [
+        "my phone battery is dead"
+      ],
+      "annotations": [
+        {
+          "token": "my",
+          "role": "english",
+          "acceptable": [
+            "my"
+          ]
+        },
+        {
+          "token": "phone",
+          "role": "english",
+          "acceptable": [
+            "phone"
+          ]
+        },
+        {
+          "token": "battery",
+          "role": "english",
+          "acceptable": [
+            "battery"
+          ]
+        },
+        {
+          "token": "is",
+          "role": "english",
+          "acceptable": [
+            "is"
+          ]
+        },
+        {
+          "token": "dead",
+          "role": "english",
+          "acceptable": [
+            "dead"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P218",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "ma pani khanchu",
+      "expected": [
+        "म पानी खान्छु"
+      ],
+      "annotations": [
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "pani",
+          "role": "nepali",
+          "acceptable": [
+            "पानी"
+          ]
+        },
+        {
+          "token": "khanchu",
+          "role": "nepali",
+          "acceptable": [
+            "खान्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P219",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "ma pani janchu",
+      "expected": [
+        "म पनि जान्छु"
+      ],
+      "annotations": [
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "pani",
+          "role": "nepali",
+          "acceptable": [
+            "पनि"
+          ]
+        },
+        {
+          "token": "janchu",
+          "role": "nepali",
+          "acceptable": [
+            "जान्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P220",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "yo movie dherai ramro cha",
+      "expected": [
+        "यो movie धेरै राम्रो छ"
+      ],
+      "annotations": [
+        {
+          "token": "yo",
+          "role": "nepali",
+          "acceptable": [
+            "यो"
+          ]
+        },
+        {
+          "token": "movie",
+          "role": "english",
+          "acceptable": [
+            "movie"
+          ]
+        },
+        {
+          "token": "dherai",
+          "role": "nepali",
+          "acceptable": [
+            "धेरै"
+          ]
+        },
+        {
+          "token": "ramro",
+          "role": "nepali",
+          "acceptable": [
+            "राम्रो"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    }
+  ]
+}

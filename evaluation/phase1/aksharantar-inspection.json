@@ -1,0 +1,28 @@
+{
+  "partitions": {
+    "nep_train.json": {
+      "AK-Freq": 3539,
+      "Wikidata": 2648,
+      "IndicCorp": 2391227
+    },
+    "nep_valid.json": {
+      "AK-Uni": 279,
+      "AK-Freq": 525,
+      "Wikidata": 11,
+      "IndicCorp": 1989
+    },
+    "nep_test.json": {
+      "AK-Freq": 2108,
+      "AK-NEF": 817,
+      "AK-NEI": 1176
+    }
+  },
+  "indiccorp_train_flags": {},
+  "sample_keys": 2074,
+  "sample_ambiguous_keys": 176,
+  "sample_max_alternatives": 5,
+  "baseline_nepali_distinct_targets": 48,
+  "baseline_targets_with_at_least_one_matching_form": 9,
+  "baseline_targets_seen": 15,
+  "note": "Sample deterministic by roman-key SHA256; score never used as frequency. Pair matches measure candidate inclusion only; baseline was not independently held out."
+}

@@ -1,0 +1,5454 @@
+{
+  "summary": {
+    "authored_keys": 259,
+    "swift_authored_any": 259,
+    "android_authored_any": 259,
+    "swift_authored_all": 259,
+    "android_authored_all": 259,
+    "original_retained": 259,
+    "first_nepali_equal": 259
+  },
+  "caveat": "Implementation consistency on source-authored entries; circular by construction, not held-out accuracy or native-host behavior. Android original is a separate UI control and is not included in Android choices. Swift comparison is isolated word without neighboring context.",
+  "cases": [
+    {
+      "roman": "aaja",
+      "expected": [
+        "आज"
+      ],
+      "swift_choices": [
+        "आज",
+        "आजा",
+        "aaja"
+      ],
+      "android_choices": [
+        "आज",
+        "आजा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aama",
+      "expected": [
+        "आमा"
+      ],
+      "swift_choices": [
+        "आमा",
+        "आम",
+        "aama"
+      ],
+      "android_choices": [
+        "आमा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aau",
+      "expected": [
+        "आऊ",
+        "आउ"
+      ],
+      "swift_choices": [
+        "आऊ",
+        "आउ",
+        "aau"
+      ],
+      "android_choices": [
+        "आऊ",
+        "आउ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aauchhu",
+      "expected": [
+        "आउँछु"
+      ],
+      "swift_choices": [
+        "आउँछु",
+        "आउछु",
+        "aauchhu"
+      ],
+      "android_choices": [
+        "आउँछु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aauchu",
+      "expected": [
+        "आउँछु"
+      ],
+      "swift_choices": [
+        "आउँछु",
+        "आउचु",
+        "aauchu"
+      ],
+      "android_choices": [
+        "आउँछु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aaye",
+      "expected": [
+        "आएँ",
+        "आए"
+      ],
+      "swift_choices": [
+        "आएँ",
+        "आए",
+        "आये",
+        "aaye"
+      ],
+      "android_choices": [
+        "आएँ",
+        "आए"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aayo",
+      "expected": [
+        "आयो"
+      ],
+      "swift_choices": [
+        "आयो",
+        "aayo"
+      ],
+      "android_choices": [
+        "आयो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aba",
+      "expected": [
+        "अब"
+      ],
+      "swift_choices": [
+        "अब",
+        "aba"
+      ],
+      "android_choices": [
+        "अब"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ahile",
+      "expected": [
+        "अहिले"
+      ],
+      "swift_choices": [
+        "अहिले",
+        "अहीले",
+        "आहिले",
+        "आहीले",
+        "ahile"
+      ],
+      "android_choices": [
+        "अहिले",
+        "अहीले",
+        "आहिले",
+        "आहीले"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aile",
+      "expected": [
+        "अहिले"
+      ],
+      "swift_choices": [
+        "अहिले",
+        "ऐले",
+        "आइले",
+        "aile"
+      ],
+      "android_choices": [
+        "अहिले",
+        "आइले"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aja",
+      "expected": [
+        "आज"
+      ],
+      "swift_choices": [
+        "आज",
+        "अज",
+        "आजा",
+        "aja"
+      ],
+      "android_choices": [
+        "आज",
+        "आजा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ama",
+      "expected": [
+        "आमा"
+      ],
+      "swift_choices": [
+        "आमा",
+        "अम",
+        "ama"
+      ],
+      "android_choices": [
+        "आमा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ani",
+      "expected": [
+        "अनि"
+      ],
+      "swift_choices": [
+        "अनि",
+        "ani"
+      ],
+      "android_choices": [
+        "अनि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "anup",
+      "expected": [
+        "अनुप",
+        "अनूप"
+      ],
+      "swift_choices": [
+        "अनुप",
+        "अनूप",
+        "anup"
+      ],
+      "android_choices": [
+        "अनुप",
+        "अनूप"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "auchhu",
+      "expected": [
+        "आउँछु"
+      ],
+      "swift_choices": [
+        "आउँछु",
+        "औछु",
+        "आउछु",
+        "auchhu"
+      ],
+      "android_choices": [
+        "आउँछु",
+        "आउछु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "aunu",
+      "expected": [
+        "आउनु"
+      ],
+      "swift_choices": [
+        "आउनु",
+        "औनु",
+        "aunu"
+      ],
+      "android_choices": [
+        "आउनु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bahini",
+      "expected": [
+        "बहिनी"
+      ],
+      "swift_choices": [
+        "बहिनी",
+        "बहिनि",
+        "बाहिनी",
+        "bahini"
+      ],
+      "android_choices": [
+        "बहिनी",
+        "बाहिनी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "baschhu",
+      "expected": [
+        "बस्छु"
+      ],
+      "swift_choices": [
+        "बस्छु",
+        "baschhu"
+      ],
+      "android_choices": [
+        "बस्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "baschu",
+      "expected": [
+        "बस्छु"
+      ],
+      "swift_choices": [
+        "बस्छु",
+        "बस्चु",
+        "baschu"
+      ],
+      "android_choices": [
+        "बस्छु",
+        "बस्चु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "basketball",
+      "expected": [
+        "बास्केटबल"
+      ],
+      "swift_choices": [
+        "basketball",
+        "बास्केटबल",
+        "बस्केत्बल्ल",
+        "बास्केटबाल"
+      ],
+      "android_choices": [
+        "बास्केटबल",
+        "बास्केटबाल"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "basne",
+      "expected": [
+        "बस्ने"
+      ],
+      "swift_choices": [
+        "बस्ने",
+        "बास्ने",
+        "basne"
+      ],
+      "android_choices": [
+        "बस्ने",
+        "बास्ने"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bata",
+      "expected": [
+        "बाट"
+      ],
+      "swift_choices": [
+        "बाट",
+        "बत",
+        "बाटा",
+        "bata"
+      ],
+      "android_choices": [
+        "बाट",
+        "बाटा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "beluka",
+      "expected": [
+        "बेलुका"
+      ],
+      "swift_choices": [
+        "बेलुका",
+        "बेलुक",
+        "beluka"
+      ],
+      "android_choices": [
+        "बेलुका"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhai",
+      "expected": [
+        "भाइ"
+      ],
+      "swift_choices": [
+        "भाइ",
+        "भै",
+        "भई",
+        "bhai"
+      ],
+      "android_choices": [
+        "भाइ",
+        "भई",
+        "भै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhaktapur",
+      "expected": [
+        "भक्तपुर"
+      ],
+      "swift_choices": [
+        "भक्तपुर",
+        "bhaktapur"
+      ],
+      "android_choices": [
+        "भक्तपुर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhanda",
+      "expected": [
+        "भन्दा"
+      ],
+      "swift_choices": [
+        "भन्दा",
+        "भन्द",
+        "भाँडा",
+        "bhanda"
+      ],
+      "android_choices": [
+        "भन्दा",
+        "भन्द",
+        "भाँडा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhasa",
+      "expected": [
+        "भाषा"
+      ],
+      "swift_choices": [
+        "भाषा",
+        "भस",
+        "bhasa"
+      ],
+      "android_choices": [
+        "भाषा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhasha",
+      "expected": [
+        "भाषा"
+      ],
+      "swift_choices": [
+        "भाषा",
+        "भश",
+        "bhasha"
+      ],
+      "android_choices": [
+        "भाषा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhat",
+      "expected": [
+        "भात"
+      ],
+      "swift_choices": [
+        "भात",
+        "भत",
+        "भट",
+        "भाट",
+        "bhat"
+      ],
+      "android_choices": [
+        "भात",
+        "भट",
+        "भाट"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhaye",
+      "expected": [
+        "भए"
+      ],
+      "swift_choices": [
+        "भए",
+        "भये",
+        "bhaye"
+      ],
+      "android_choices": [
+        "भए"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhayeko",
+      "expected": [
+        "भएको"
+      ],
+      "swift_choices": [
+        "भएको",
+        "भयेको",
+        "bhayeko"
+      ],
+      "android_choices": [
+        "भएको",
+        "भयेको"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhayena",
+      "expected": [
+        "भएन"
+      ],
+      "swift_choices": [
+        "भएन",
+        "भयेन",
+        "bhayena"
+      ],
+      "android_choices": [
+        "भएन",
+        "भयेन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhayo",
+      "expected": [
+        "भयो"
+      ],
+      "swift_choices": [
+        "भयो",
+        "bhayo"
+      ],
+      "android_choices": [
+        "भयो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhetau",
+      "expected": [
+        "भेटौँ"
+      ],
+      "swift_choices": [
+        "भेटौँ",
+        "भेतौ",
+        "भेटौ",
+        "bhetau"
+      ],
+      "android_choices": [
+        "भेटौँ",
+        "भेटौ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhetaula",
+      "expected": [
+        "भेटौँला"
+      ],
+      "swift_choices": [
+        "भेटौँला",
+        "भेतौल",
+        "भेटौला",
+        "bhetaula"
+      ],
+      "android_choices": [
+        "भेटौँला",
+        "भेटौला"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bhetum",
+      "expected": [
+        "भेटौँ"
+      ],
+      "swift_choices": [
+        "भेटौँ",
+        "भेतुम",
+        "भेटुम",
+        "bhetum"
+      ],
+      "android_choices": [
+        "भेटौँ",
+        "भेटुम"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bholi",
+      "expected": [
+        "भोलि"
+      ],
+      "swift_choices": [
+        "भोलि",
+        "bholi"
+      ],
+      "android_choices": [
+        "भोलि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bihana",
+      "expected": [
+        "बिहान"
+      ],
+      "swift_choices": [
+        "बिहान",
+        "बिहन",
+        "बिहाना",
+        "bihana"
+      ],
+      "android_choices": [
+        "बिहान",
+        "बिहाना"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bolchhu",
+      "expected": [
+        "बोल्छु"
+      ],
+      "swift_choices": [
+        "बोल्छु",
+        "bolchhu"
+      ],
+      "android_choices": [
+        "बोल्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bolchu",
+      "expected": [
+        "बोल्छु"
+      ],
+      "swift_choices": [
+        "बोल्छु",
+        "बोल्चु",
+        "bolchu"
+      ],
+      "android_choices": [
+        "बोल्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "bolna",
+      "expected": [
+        "बोल्न"
+      ],
+      "swift_choices": [
+        "बोल्न",
+        "bolna"
+      ],
+      "android_choices": [
+        "बोल्न"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "buba",
+      "expected": [
+        "बुबा"
+      ],
+      "swift_choices": [
+        "बुबा",
+        "बुब",
+        "बूबा",
+        "बुवा",
+        "buba"
+      ],
+      "android_choices": [
+        "बुबा",
+        "बूबा",
+        "बुवा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "buwa",
+      "expected": [
+        "बुवा"
+      ],
+      "swift_choices": [
+        "बुवा",
+        "बुव",
+        "buwa"
+      ],
+      "android_choices": [
+        "बुवा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "cha",
+      "expected": [
+        "छ",
+        "च"
+      ],
+      "swift_choices": [
+        "छ",
+        "च",
+        "छा",
+        "cha"
+      ],
+      "android_choices": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chahanchhu",
+      "expected": [
+        "चाहन्छु"
+      ],
+      "swift_choices": [
+        "चाहन्छु",
+        "चहन्छु",
+        "chahanchhu"
+      ],
+      "android_choices": [
+        "चाहन्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chahanchu",
+      "expected": [
+        "चाहन्छु"
+      ],
+      "swift_choices": [
+        "चाहन्छु",
+        "चहन्चु",
+        "चाहन्चु",
+        "chahanchu"
+      ],
+      "android_choices": [
+        "चाहन्छु",
+        "चाहन्चु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chahi",
+      "expected": [
+        "चाहिँ"
+      ],
+      "swift_choices": [
+        "चाहिँ",
+        "चहि",
+        "chahi"
+      ],
+      "android_choices": [
+        "चाहिँ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chahidaina",
+      "expected": [
+        "चाहिँदैन"
+      ],
+      "swift_choices": [
+        "चाहिँदैन",
+        "चहिदैन",
+        "चाहिदैन",
+        "chahidaina"
+      ],
+      "android_choices": [
+        "चाहिँदैन",
+        "चहिदैन",
+        "चाहिदैन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chai",
+      "expected": [
+        "चाहिँ",
+        "चाई"
+      ],
+      "swift_choices": [
+        "चाहिँ",
+        "चाई",
+        "चै",
+        "छइ",
+        "छाई",
+        "chai"
+      ],
+      "android_choices": [
+        "चाहिँ",
+        "चाई",
+        "छइ",
+        "छाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chaina",
+      "expected": [
+        "छैन"
+      ],
+      "swift_choices": [
+        "छैन",
+        "चैन",
+        "चाइना",
+        "chaina"
+      ],
+      "android_choices": [
+        "छैन",
+        "चाइना"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chan",
+      "expected": [
+        "छन्"
+      ],
+      "swift_choices": [
+        "छन्",
+        "चन",
+        "छान",
+        "chan"
+      ],
+      "android_choices": [
+        "छन्",
+        "छान"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chau",
+      "expected": [
+        "छौ"
+      ],
+      "swift_choices": [
+        "छौ",
+        "चौ",
+        "चाउ",
+        "chau"
+      ],
+      "android_choices": [
+        "छौ",
+        "चाउ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chha",
+      "expected": [
+        "छ"
+      ],
+      "swift_choices": [
+        "छ",
+        "छा",
+        "chha"
+      ],
+      "android_choices": [
+        "छ",
+        "छा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chhaina",
+      "expected": [
+        "छैन"
+      ],
+      "swift_choices": [
+        "छैन",
+        "chhaina"
+      ],
+      "android_choices": [
+        "छैन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chhan",
+      "expected": [
+        "छन्"
+      ],
+      "swift_choices": [
+        "छन्",
+        "छन",
+        "छान",
+        "chhan"
+      ],
+      "android_choices": [
+        "छन्",
+        "छान"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chhau",
+      "expected": [
+        "छौ"
+      ],
+      "swift_choices": [
+        "छौ",
+        "छाउ",
+        "chhau"
+      ],
+      "android_choices": [
+        "छौ",
+        "छाउ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chhaun",
+      "expected": [
+        "छौँ"
+      ],
+      "swift_choices": [
+        "छौँ",
+        "छौन",
+        "छाउन",
+        "chhaun"
+      ],
+      "android_choices": [
+        "छौँ",
+        "छाउन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chhu",
+      "expected": [
+        "छु"
+      ],
+      "swift_choices": [
+        "छु",
+        "chhu"
+      ],
+      "android_choices": [
+        "छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chito",
+      "expected": [
+        "छिटो"
+      ],
+      "swift_choices": [
+        "छिटो",
+        "चितो",
+        "चिटो",
+        "chito"
+      ],
+      "android_choices": [
+        "छिटो",
+        "चिटो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chiya",
+      "expected": [
+        "चिया"
+      ],
+      "swift_choices": [
+        "चिया",
+        "चिय",
+        "छिया",
+        "chiya"
+      ],
+      "android_choices": [
+        "चिया",
+        "छिया"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "chu",
+      "expected": [
+        "छु"
+      ],
+      "swift_choices": [
+        "छु",
+        "चु",
+        "chu"
+      ],
+      "android_choices": [
+        "छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "cricket",
+      "expected": [
+        "क्रिकेट"
+      ],
+      "swift_choices": [
+        "cricket",
+        "क्रिकेट",
+        "च्रिच्केत"
+      ],
+      "android_choices": [
+        "क्रिकेट"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dai",
+      "expected": [
+        "दाइ"
+      ],
+      "swift_choices": [
+        "दाइ",
+        "दै",
+        "डाइ",
+        "डाई",
+        "दई",
+        "dai"
+      ],
+      "android_choices": [
+        "दाइ",
+        "डाइ",
+        "डाई",
+        "दई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dal",
+      "expected": [
+        "दाल"
+      ],
+      "swift_choices": [
+        "दाल",
+        "दल",
+        "डल",
+        "डाल",
+        "dal"
+      ],
+      "android_choices": [
+        "दाल",
+        "डल",
+        "डाल",
+        "दल"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dashain",
+      "expected": [
+        "दसैँ",
+        "दशैँ"
+      ],
+      "swift_choices": [
+        "दसैँ",
+        "दशैँ",
+        "दशैन",
+        "दशैं",
+        "dashain"
+      ],
+      "android_choices": [
+        "दसैँ",
+        "दशैँ",
+        "दशैं"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dekhi",
+      "expected": [
+        "देखि"
+      ],
+      "swift_choices": [
+        "देखि",
+        "dekhi"
+      ],
+      "android_choices": [
+        "देखि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "desh",
+      "expected": [
+        "देश"
+      ],
+      "swift_choices": [
+        "देश",
+        "desh"
+      ],
+      "android_choices": [
+        "देश"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dhanyabad",
+      "expected": [
+        "धन्यवाद"
+      ],
+      "swift_choices": [
+        "धन्यवाद",
+        "धञबद",
+        "धन्याबाद",
+        "dhanyabad"
+      ],
+      "android_choices": [
+        "धन्यवाद",
+        "धन्याबाद"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dhanyavaad",
+      "expected": [
+        "धन्यवाद"
+      ],
+      "swift_choices": [
+        "धन्यवाद",
+        "धञवाद",
+        "dhanyavaad"
+      ],
+      "android_choices": [
+        "धन्यवाद"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dhanyavad",
+      "expected": [
+        "धन्यवाद"
+      ],
+      "swift_choices": [
+        "धन्यवाद",
+        "धञवद",
+        "dhanyavad"
+      ],
+      "android_choices": [
+        "धन्यवाद"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dherai",
+      "expected": [
+        "धेरै"
+      ],
+      "swift_choices": [
+        "धेरै",
+        "ढेरै",
+        "dherai"
+      ],
+      "android_choices": [
+        "धेरै",
+        "ढेरै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dhilo",
+      "expected": [
+        "ढिलो"
+      ],
+      "swift_choices": [
+        "ढिलो",
+        "धिलो",
+        "dhilo"
+      ],
+      "android_choices": [
+        "ढिलो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "didi",
+      "expected": [
+        "दिदी"
+      ],
+      "swift_choices": [
+        "दिदी",
+        "दिदि",
+        "didi"
+      ],
+      "android_choices": [
+        "दिदी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "din",
+      "expected": [
+        "दिन"
+      ],
+      "swift_choices": [
+        "दिन",
+        "डिन",
+        "दीन",
+        "din"
+      ],
+      "android_choices": [
+        "दिन",
+        "डिन",
+        "दीन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dinuhos",
+      "expected": [
+        "दिनुहोस्"
+      ],
+      "swift_choices": [
+        "दिनुहोस्",
+        "दिनुहोस",
+        "dinuhos"
+      ],
+      "android_choices": [
+        "दिनुहोस्"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "doodh",
+      "expected": [
+        "दूध"
+      ],
+      "swift_choices": [
+        "दूध",
+        "doodh"
+      ],
+      "android_choices": [
+        "दूध"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "dudh",
+      "expected": [
+        "दूध"
+      ],
+      "swift_choices": [
+        "दूध",
+        "दुध",
+        "dudh"
+      ],
+      "android_choices": [
+        "दूध",
+        "दुध"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "feri",
+      "expected": [
+        "फेरि"
+      ],
+      "swift_choices": [
+        "फेरि",
+        "feri"
+      ],
+      "android_choices": [
+        "फेरि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "football",
+      "expected": [
+        "फुटबल"
+      ],
+      "swift_choices": [
+        "फुटबल",
+        "फूत्बल्ल",
+        "football"
+      ],
+      "android_choices": [
+        "फुटबल"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gahro",
+      "expected": [
+        "गाह्रो"
+      ],
+      "swift_choices": [
+        "गाह्रो",
+        "गह्रो",
+        "gahro"
+      ],
+      "android_choices": [
+        "गाह्रो",
+        "गह्रो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garam",
+      "expected": [
+        "गरौँ"
+      ],
+      "swift_choices": [
+        "गरौँ",
+        "गरम",
+        "garam"
+      ],
+      "android_choices": [
+        "गरौँ",
+        "गरम"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garau",
+      "expected": [
+        "गरौँ"
+      ],
+      "swift_choices": [
+        "गरौँ",
+        "गरौ",
+        "गराउ",
+        "गराऊ",
+        "garau"
+      ],
+      "android_choices": [
+        "गरौँ",
+        "गराउ",
+        "गरौ",
+        "गराऊ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garcha",
+      "expected": [
+        "गर्छ"
+      ],
+      "swift_choices": [
+        "गर्छ",
+        "गर्च",
+        "गर्चा",
+        "garcha"
+      ],
+      "android_choices": [
+        "गर्छ",
+        "गर्चा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garchha",
+      "expected": [
+        "गर्छ"
+      ],
+      "swift_choices": [
+        "गर्छ",
+        "garchha"
+      ],
+      "android_choices": [
+        "गर्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garchhu",
+      "expected": [
+        "गर्छु"
+      ],
+      "swift_choices": [
+        "गर्छु",
+        "garchhu"
+      ],
+      "android_choices": [
+        "गर्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garchu",
+      "expected": [
+        "गर्छु"
+      ],
+      "swift_choices": [
+        "गर्छु",
+        "गर्चु",
+        "garchu"
+      ],
+      "android_choices": [
+        "गर्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gareko",
+      "expected": [
+        "गरेको"
+      ],
+      "swift_choices": [
+        "गरेको",
+        "gareko"
+      ],
+      "android_choices": [
+        "गरेको"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garna",
+      "expected": [
+        "गर्न"
+      ],
+      "swift_choices": [
+        "गर्न",
+        "garna"
+      ],
+      "android_choices": [
+        "गर्न"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garnu",
+      "expected": [
+        "गर्नु"
+      ],
+      "swift_choices": [
+        "गर्नु",
+        "garnu"
+      ],
+      "android_choices": [
+        "गर्नु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garnuhos",
+      "expected": [
+        "गर्नुहोस्"
+      ],
+      "swift_choices": [
+        "गर्नुहोस्",
+        "गर्नुहोस",
+        "garnuhos"
+      ],
+      "android_choices": [
+        "गर्नुहोस्"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "garo",
+      "expected": [
+        "गाह्रो"
+      ],
+      "swift_choices": [
+        "गाह्रो",
+        "गरो",
+        "गारो",
+        "garo"
+      ],
+      "android_choices": [
+        "गाह्रो",
+        "गरो",
+        "गारो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gau",
+      "expected": [
+        "गाउँ"
+      ],
+      "swift_choices": [
+        "गाउँ",
+        "गौ",
+        "गाऊ",
+        "gau"
+      ],
+      "android_choices": [
+        "गाउँ",
+        "गाऊ",
+        "गौ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gaun",
+      "expected": [
+        "गाउँ"
+      ],
+      "swift_choices": [
+        "गाउँ",
+        "गौन",
+        "गाउन",
+        "गाऊँ",
+        "गौण",
+        "gaun"
+      ],
+      "android_choices": [
+        "गाउँ",
+        "गाउन",
+        "गाऊँ",
+        "गौण"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gaye",
+      "expected": [
+        "गएँ",
+        "गए"
+      ],
+      "swift_choices": [
+        "गएँ",
+        "गए",
+        "गये",
+        "gaye"
+      ],
+      "android_choices": [
+        "गएँ",
+        "गए"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gayo",
+      "expected": [
+        "गयो"
+      ],
+      "swift_choices": [
+        "गयो",
+        "गायो",
+        "gayo"
+      ],
+      "android_choices": [
+        "गयो",
+        "गायो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ghar",
+      "expected": [
+        "घर"
+      ],
+      "swift_choices": [
+        "घर",
+        "घार",
+        "ghar"
+      ],
+      "android_choices": [
+        "घर",
+        "घार"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ghara",
+      "expected": [
+        "घर"
+      ],
+      "swift_choices": [
+        "घर",
+        "ghara"
+      ],
+      "android_choices": [
+        "घर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "gharma",
+      "expected": [
+        "घरमा"
+      ],
+      "swift_choices": [
+        "घरमा",
+        "घर्म",
+        "gharma"
+      ],
+      "android_choices": [
+        "घरमा",
+        "घर्म"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "haina",
+      "expected": [
+        "हैन",
+        "होइन"
+      ],
+      "swift_choices": [
+        "हैन",
+        "होइन",
+        "haina"
+      ],
+      "android_choices": [
+        "हैन",
+        "होइन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hajur",
+      "expected": [
+        "हजुर"
+      ],
+      "swift_choices": [
+        "हजुर",
+        "hajur"
+      ],
+      "android_choices": [
+        "हजुर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hami",
+      "expected": [
+        "हामी"
+      ],
+      "swift_choices": [
+        "हामी",
+        "हमि",
+        "hami"
+      ],
+      "android_choices": [
+        "हामी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hamilai",
+      "expected": [
+        "हामीलाई"
+      ],
+      "swift_choices": [
+        "हामीलाई",
+        "हमिलै",
+        "hamilai"
+      ],
+      "android_choices": [
+        "हामीलाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hamro",
+      "expected": [
+        "हाम्रो"
+      ],
+      "swift_choices": [
+        "हाम्रो",
+        "हम्रो",
+        "hamro"
+      ],
+      "android_choices": [
+        "हाम्रो",
+        "हम्रो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hijo",
+      "expected": [
+        "हिजो"
+      ],
+      "swift_choices": [
+        "हिजो",
+        "hijo"
+      ],
+      "android_choices": [
+        "हिजो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ho",
+      "expected": [
+        "हो"
+      ],
+      "swift_choices": [
+        "हो",
+        "ho"
+      ],
+      "android_choices": [
+        "हो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hoina",
+      "expected": [
+        "होइन"
+      ],
+      "swift_choices": [
+        "होइन",
+        "होइना",
+        "hoina"
+      ],
+      "android_choices": [
+        "होइन",
+        "होइना"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hun",
+      "expected": [
+        "हुन्"
+      ],
+      "swift_choices": [
+        "हुन्",
+        "हुन",
+        "हुँ",
+        "hun"
+      ],
+      "android_choices": [
+        "हुन्",
+        "हुँ",
+        "हुन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "huncha",
+      "expected": [
+        "हुन्छ"
+      ],
+      "swift_choices": [
+        "हुन्छ",
+        "हुन्च",
+        "हुँचा",
+        "huncha"
+      ],
+      "android_choices": [
+        "हुन्छ",
+        "हुँचा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hunchha",
+      "expected": [
+        "हुन्छ"
+      ],
+      "swift_choices": [
+        "हुन्छ",
+        "hunchha"
+      ],
+      "android_choices": [
+        "हुन्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hune",
+      "expected": [
+        "हुने"
+      ],
+      "swift_choices": [
+        "हुने",
+        "हुऩे",
+        "hune"
+      ],
+      "android_choices": [
+        "हुने",
+        "हुऩे"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hunna",
+      "expected": [
+        "हुन्न"
+      ],
+      "swift_choices": [
+        "हुन्न",
+        "हुन्ना",
+        "hunna"
+      ],
+      "android_choices": [
+        "हुन्न",
+        "हुन्ना"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hunu",
+      "expected": [
+        "हुनु"
+      ],
+      "swift_choices": [
+        "हुनु",
+        "hunu"
+      ],
+      "android_choices": [
+        "हुनु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hunuhuncha",
+      "expected": [
+        "हुनुहुन्छ"
+      ],
+      "swift_choices": [
+        "हुनुहुन्छ",
+        "हुनुहुन्च",
+        "hunuhuncha"
+      ],
+      "android_choices": [
+        "हुनुहुन्छ",
+        "हुनुहुन्च"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "hunuhunchha",
+      "expected": [
+        "हुनुहुन्छ"
+      ],
+      "swift_choices": [
+        "हुनुहुन्छ",
+        "hunuhunchha"
+      ],
+      "android_choices": [
+        "हुनुहुन्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "jancha",
+      "expected": [
+        "जान्छ"
+      ],
+      "swift_choices": [
+        "जान्छ",
+        "जन्च",
+        "jancha"
+      ],
+      "android_choices": [
+        "जान्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "janchha",
+      "expected": [
+        "जान्छ"
+      ],
+      "swift_choices": [
+        "जान्छ",
+        "जन्छ",
+        "janchha"
+      ],
+      "android_choices": [
+        "जान्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "janchhu",
+      "expected": [
+        "जान्छु"
+      ],
+      "swift_choices": [
+        "जान्छु",
+        "जन्छु",
+        "janchhu"
+      ],
+      "android_choices": [
+        "जान्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "janchu",
+      "expected": [
+        "जान्छु"
+      ],
+      "swift_choices": [
+        "जान्छु",
+        "जन्चु",
+        "जान्चु",
+        "janchu"
+      ],
+      "android_choices": [
+        "जान्छु",
+        "जान्चु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "jane",
+      "expected": [
+        "जाने"
+      ],
+      "swift_choices": [
+        "जाने",
+        "जने",
+        "jane"
+      ],
+      "android_choices": [
+        "जाने",
+        "जने"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "janmadin",
+      "expected": [
+        "जन्मदिन"
+      ],
+      "swift_choices": [
+        "जन्मदिन",
+        "janmadin"
+      ],
+      "android_choices": [
+        "जन्मदिन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "janu",
+      "expected": [
+        "जानु"
+      ],
+      "swift_choices": [
+        "जानु",
+        "जनु",
+        "janu"
+      ],
+      "android_choices": [
+        "जानु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "k",
+      "expected": [
+        "के",
+        "क"
+      ],
+      "swift_choices": [
+        "के",
+        "क",
+        "k"
+      ],
+      "android_choices": [
+        "के",
+        "क"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kaam",
+      "expected": [
+        "काम"
+      ],
+      "swift_choices": [
+        "काम",
+        "kaam"
+      ],
+      "android_choices": [
+        "काम"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kagaj",
+      "expected": [
+        "कागज"
+      ],
+      "swift_choices": [
+        "कागज",
+        "कगज",
+        "kagaj"
+      ],
+      "android_choices": [
+        "कागज"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kaha",
+      "expected": [
+        "कहाँ"
+      ],
+      "swift_choices": [
+        "कहाँ",
+        "कह",
+        "kaha"
+      ],
+      "android_choices": [
+        "कहाँ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kahaa",
+      "expected": [
+        "कहाँ"
+      ],
+      "swift_choices": [
+        "कहाँ",
+        "कहा",
+        "kahaa"
+      ],
+      "android_choices": [
+        "कहाँ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kahile",
+      "expected": [
+        "कहिले"
+      ],
+      "swift_choices": [
+        "कहिले",
+        "kahile"
+      ],
+      "android_choices": [
+        "कहिले"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kalam",
+      "expected": [
+        "कलम"
+      ],
+      "swift_choices": [
+        "कलम",
+        "कलाम",
+        "kalam"
+      ],
+      "android_choices": [
+        "कलम",
+        "कलाम"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kam",
+      "expected": [
+        "काम",
+        "कम"
+      ],
+      "swift_choices": [
+        "काम",
+        "कम",
+        "कं",
+        "कम्",
+        "kam"
+      ],
+      "android_choices": [
+        "काम",
+        "कम",
+        "कं",
+        "कम्"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kasari",
+      "expected": [
+        "कसरी"
+      ],
+      "swift_choices": [
+        "कसरी",
+        "कसरि",
+        "kasari"
+      ],
+      "android_choices": [
+        "कसरी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kaslai",
+      "expected": [
+        "कसलाई"
+      ],
+      "swift_choices": [
+        "कसलाई",
+        "कस्लै",
+        "कस्लाई",
+        "कासलाई",
+        "kaslai"
+      ],
+      "android_choices": [
+        "कसलाई",
+        "कस्लाई",
+        "कासलाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kasle",
+      "expected": [
+        "कसले"
+      ],
+      "swift_choices": [
+        "कसले",
+        "कस्ले",
+        "कासले",
+        "kasle"
+      ],
+      "android_choices": [
+        "कसले",
+        "कासले"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kasta",
+      "expected": [
+        "कस्ता"
+      ],
+      "swift_choices": [
+        "कस्ता",
+        "कस्त",
+        "कास्ता",
+        "कष्ट",
+        "kasta"
+      ],
+      "android_choices": [
+        "कस्ता",
+        "कास्ता",
+        "कष्ट"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kasti",
+      "expected": [
+        "कस्ती"
+      ],
+      "swift_choices": [
+        "कस्ती",
+        "कस्ति",
+        "kasti"
+      ],
+      "android_choices": [
+        "कस्ती"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kasto",
+      "expected": [
+        "कस्तो"
+      ],
+      "swift_choices": [
+        "कस्तो",
+        "kasto"
+      ],
+      "android_choices": [
+        "कस्तो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kathmandu",
+      "expected": [
+        "काठमाडौं",
+        "काठमाडौँ"
+      ],
+      "swift_choices": [
+        "काठमाडौं",
+        "काठमाडौँ",
+        "कथ्मन्दु",
+        "काठमाण्डु",
+        "kathmandu"
+      ],
+      "android_choices": [
+        "काठमाडौं",
+        "काठमाडौँ",
+        "काठमाण्डु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kati",
+      "expected": [
+        "कति"
+      ],
+      "swift_choices": [
+        "कति",
+        "kati"
+      ],
+      "android_choices": [
+        "कति"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ke",
+      "expected": [
+        "के"
+      ],
+      "swift_choices": [
+        "के",
+        "ke"
+      ],
+      "android_choices": [
+        "के"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khaja",
+      "expected": [
+        "खाजा"
+      ],
+      "swift_choices": [
+        "खाजा",
+        "खज",
+        "khaja"
+      ],
+      "android_choices": [
+        "खाजा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khana",
+      "expected": [
+        "खाना"
+      ],
+      "swift_choices": [
+        "खाना",
+        "खन",
+        "कहन",
+        "खान",
+        "khana"
+      ],
+      "android_choices": [
+        "खाना",
+        "कहन",
+        "खन",
+        "खान"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khanchhu",
+      "expected": [
+        "खान्छु"
+      ],
+      "swift_choices": [
+        "खान्छु",
+        "खन्छु",
+        "khanchhu"
+      ],
+      "android_choices": [
+        "खान्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khanchu",
+      "expected": [
+        "खान्छु"
+      ],
+      "swift_choices": [
+        "खान्छु",
+        "खन्चु",
+        "खान्चु",
+        "khanchu"
+      ],
+      "android_choices": [
+        "खान्छु",
+        "खान्चु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khane",
+      "expected": [
+        "खाने"
+      ],
+      "swift_choices": [
+        "खाने",
+        "खने",
+        "कहने",
+        "khane"
+      ],
+      "android_choices": [
+        "खाने",
+        "कहने",
+        "खने"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khanu",
+      "expected": [
+        "खानु"
+      ],
+      "swift_choices": [
+        "खानु",
+        "खनु",
+        "khanu"
+      ],
+      "android_choices": [
+        "खानु",
+        "खनु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khaye",
+      "expected": [
+        "खाएँ",
+        "खाए"
+      ],
+      "swift_choices": [
+        "खाएँ",
+        "खाए",
+        "खये",
+        "khaye"
+      ],
+      "android_choices": [
+        "खाएँ",
+        "खाए"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khayo",
+      "expected": [
+        "खायो"
+      ],
+      "swift_choices": [
+        "खायो",
+        "खयो",
+        "khayo"
+      ],
+      "android_choices": [
+        "खायो",
+        "खयो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khelcha",
+      "expected": [
+        "खेल्छ"
+      ],
+      "swift_choices": [
+        "खेल्छ",
+        "खेल्च",
+        "khelcha"
+      ],
+      "android_choices": [
+        "खेल्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khelchha",
+      "expected": [
+        "खेल्छ"
+      ],
+      "swift_choices": [
+        "खेल्छ",
+        "khelchha"
+      ],
+      "android_choices": [
+        "खेल्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khelchhu",
+      "expected": [
+        "खेल्छु"
+      ],
+      "swift_choices": [
+        "खेल्छु",
+        "khelchhu"
+      ],
+      "android_choices": [
+        "खेल्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khelchu",
+      "expected": [
+        "खेल्छु"
+      ],
+      "swift_choices": [
+        "खेल्छु",
+        "खेल्चु",
+        "khelchu"
+      ],
+      "android_choices": [
+        "खेल्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khelna",
+      "expected": [
+        "खेल्न"
+      ],
+      "swift_choices": [
+        "खेल्न",
+        "khelna"
+      ],
+      "android_choices": [
+        "खेल्न"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khushi",
+      "expected": [
+        "खुसी",
+        "खुशी"
+      ],
+      "swift_choices": [
+        "खुसी",
+        "खुशी",
+        "खुशि",
+        "khushi"
+      ],
+      "android_choices": [
+        "खुसी",
+        "खुशी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "khusi",
+      "expected": [
+        "खुसी",
+        "खुशी"
+      ],
+      "swift_choices": [
+        "खुसी",
+        "खुशी",
+        "खुसि",
+        "khusi"
+      ],
+      "android_choices": [
+        "खुसी",
+        "खुशी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ki",
+      "expected": [
+        "कि",
+        "की"
+      ],
+      "swift_choices": [
+        "कि",
+        "की",
+        "ki"
+      ],
+      "android_choices": [
+        "कि",
+        "की"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kina",
+      "expected": [
+        "किन"
+      ],
+      "swift_choices": [
+        "किन",
+        "kina"
+      ],
+      "android_choices": [
+        "किन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kitab",
+      "expected": [
+        "किताब"
+      ],
+      "swift_choices": [
+        "किताब",
+        "कितब",
+        "kitab"
+      ],
+      "android_choices": [
+        "किताब"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ko",
+      "expected": [
+        "को"
+      ],
+      "swift_choices": [
+        "को",
+        "ko"
+      ],
+      "android_choices": [
+        "को"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kripaya",
+      "expected": [
+        "कृपया"
+      ],
+      "swift_choices": [
+        "कृपया",
+        "क्रिपय",
+        "kripaya"
+      ],
+      "android_choices": [
+        "कृपया"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "kura",
+      "expected": [
+        "कुरा"
+      ],
+      "swift_choices": [
+        "कुरा",
+        "कुर",
+        "kura"
+      ],
+      "android_choices": [
+        "कुरा",
+        "कुर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "la",
+      "expected": [
+        "ल",
+        "ला"
+      ],
+      "swift_choices": [
+        "ल",
+        "ला",
+        "la"
+      ],
+      "android_choices": [
+        "ल",
+        "ला"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "lagi",
+      "expected": [
+        "लागि"
+      ],
+      "swift_choices": [
+        "लागि",
+        "लगि",
+        "lagi"
+      ],
+      "android_choices": [
+        "लागि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "lai",
+      "expected": [
+        "लाई"
+      ],
+      "swift_choices": [
+        "लाई",
+        "लै",
+        "lai"
+      ],
+      "android_choices": [
+        "लाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "lalitpur",
+      "expected": [
+        "ललितपुर"
+      ],
+      "swift_choices": [
+        "ललितपुर",
+        "ललित्पुर",
+        "lalitpur"
+      ],
+      "android_choices": [
+        "ललितपुर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "le",
+      "expected": [
+        "ले"
+      ],
+      "swift_choices": [
+        "ले",
+        "le"
+      ],
+      "android_choices": [
+        "ले"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "lekhchhu",
+      "expected": [
+        "लेख्छु"
+      ],
+      "swift_choices": [
+        "लेख्छु",
+        "lekhchhu"
+      ],
+      "android_choices": [
+        "लेख्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "lekhchu",
+      "expected": [
+        "लेख्छु"
+      ],
+      "swift_choices": [
+        "लेख्छु",
+        "लेख्चु",
+        "lekhchu"
+      ],
+      "android_choices": [
+        "लेख्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "lekhna",
+      "expected": [
+        "लेख्न"
+      ],
+      "swift_choices": [
+        "लेख्न",
+        "lekhna"
+      ],
+      "android_choices": [
+        "लेख्न"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ma",
+      "expected": [
+        "म",
+        "मा"
+      ],
+      "swift_choices": [
+        "म",
+        "मा",
+        "ma"
+      ],
+      "android_choices": [
+        "म",
+        "मा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "maa",
+      "expected": [
+        "मा",
+        "म"
+      ],
+      "swift_choices": [
+        "मा",
+        "म",
+        "maa"
+      ],
+      "android_choices": [
+        "मा",
+        "म"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "maaf",
+      "expected": [
+        "माफ"
+      ],
+      "swift_choices": [
+        "माफ",
+        "maaf"
+      ],
+      "android_choices": [
+        "माफ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "malai",
+      "expected": [
+        "मलाई"
+      ],
+      "swift_choices": [
+        "मलाई",
+        "मलै",
+        "malai"
+      ],
+      "android_choices": [
+        "मलाई",
+        "मलै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "man",
+      "expected": [
+        "मन"
+      ],
+      "swift_choices": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान",
+        "मान्",
+        "man"
+      ],
+      "android_choices": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "manche",
+      "expected": [
+        "मान्छे"
+      ],
+      "swift_choices": [
+        "मान्छे",
+        "मन्चे",
+        "मान्चे",
+        "manche"
+      ],
+      "android_choices": [
+        "मान्छे",
+        "मान्चे"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "manchhe",
+      "expected": [
+        "मान्छे"
+      ],
+      "swift_choices": [
+        "मान्छे",
+        "मन्छे",
+        "manchhe"
+      ],
+      "android_choices": [
+        "मान्छे"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "matra",
+      "expected": [
+        "मात्र"
+      ],
+      "swift_choices": [
+        "मात्र",
+        "मत्र",
+        "matra"
+      ],
+      "android_choices": [
+        "मात्र"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "maya",
+      "expected": [
+        "माया"
+      ],
+      "swift_choices": [
+        "माया",
+        "मय",
+        "maya"
+      ],
+      "android_choices": [
+        "माया",
+        "मय"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "merai",
+      "expected": [
+        "मेरै"
+      ],
+      "swift_choices": [
+        "मेरै",
+        "merai"
+      ],
+      "android_choices": [
+        "मेरै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "meri",
+      "expected": [
+        "मेरी"
+      ],
+      "swift_choices": [
+        "मेरी",
+        "मेरि",
+        "meri"
+      ],
+      "android_choices": [
+        "मेरी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "mero",
+      "expected": [
+        "मेरो"
+      ],
+      "swift_choices": [
+        "मेरो",
+        "mero"
+      ],
+      "android_choices": [
+        "मेरो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "mitho",
+      "expected": [
+        "मिठो",
+        "मीठो"
+      ],
+      "swift_choices": [
+        "मिठो",
+        "मीठो",
+        "मिथो",
+        "mitho"
+      ],
+      "android_choices": [
+        "मिठो",
+        "मीठो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "naam",
+      "expected": [
+        "नाम"
+      ],
+      "swift_choices": [
+        "नाम",
+        "naam"
+      ],
+      "android_choices": [
+        "नाम"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "nai",
+      "expected": [
+        "नै"
+      ],
+      "swift_choices": [
+        "नै",
+        "नआइ",
+        "नआई",
+        "नाइ",
+        "nai"
+      ],
+      "android_choices": [
+        "नै",
+        "नआइ",
+        "नआई",
+        "नाइ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "nam",
+      "expected": [
+        "नाम"
+      ],
+      "swift_choices": [
+        "नाम",
+        "नम",
+        "नमः",
+        "nam"
+      ],
+      "android_choices": [
+        "नाम",
+        "नमः"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "namaskar",
+      "expected": [
+        "नमस्कार"
+      ],
+      "swift_choices": [
+        "नमस्कार",
+        "नमस्कर",
+        "namaskar"
+      ],
+      "android_choices": [
+        "नमस्कार"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "namaste",
+      "expected": [
+        "नमस्ते"
+      ],
+      "swift_choices": [
+        "नमस्ते",
+        "namaste"
+      ],
+      "android_choices": [
+        "नमस्ते"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "naramro",
+      "expected": [
+        "नराम्रो"
+      ],
+      "swift_choices": [
+        "नराम्रो",
+        "नरम्रो",
+        "नाराम्रो",
+        "naramro"
+      ],
+      "android_choices": [
+        "नराम्रो",
+        "नरम्रो",
+        "नाराम्रो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "naya",
+      "expected": [
+        "नयाँ"
+      ],
+      "swift_choices": [
+        "नयाँ",
+        "नय",
+        "naya"
+      ],
+      "android_choices": [
+        "नयाँ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "nepal",
+      "expected": [
+        "नेपाल"
+      ],
+      "swift_choices": [
+        "नेपाल",
+        "नेपल",
+        "nepal"
+      ],
+      "android_choices": [
+        "नेपाल"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "nepali",
+      "expected": [
+        "नेपाली"
+      ],
+      "swift_choices": [
+        "नेपाली",
+        "नेपलि",
+        "nepali"
+      ],
+      "android_choices": [
+        "नेपाली"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ni",
+      "expected": [
+        "नि",
+        "नी"
+      ],
+      "swift_choices": [
+        "नि",
+        "नी",
+        "ni"
+      ],
+      "android_choices": [
+        "नि",
+        "नी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "paani",
+      "expected": [
+        "पानी"
+      ],
+      "swift_choices": [
+        "पानी",
+        "पानि",
+        "paani"
+      ],
+      "android_choices": [
+        "पानी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "pachhi",
+      "expected": [
+        "पछि"
+      ],
+      "swift_choices": [
+        "पछि",
+        "pachhi"
+      ],
+      "android_choices": [
+        "पछि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "pachi",
+      "expected": [
+        "पछि"
+      ],
+      "swift_choices": [
+        "पछि",
+        "पचि",
+        "pachi"
+      ],
+      "android_choices": [
+        "पछि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "padhchhu",
+      "expected": [
+        "पढ्छु"
+      ],
+      "swift_choices": [
+        "पढ्छु",
+        "पध्छु",
+        "padhchhu"
+      ],
+      "android_choices": [
+        "पढ्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "padhchu",
+      "expected": [
+        "पढ्छु"
+      ],
+      "swift_choices": [
+        "पढ्छु",
+        "पध्चु",
+        "padhchu"
+      ],
+      "android_choices": [
+        "पढ्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "padhna",
+      "expected": [
+        "पढ्न"
+      ],
+      "swift_choices": [
+        "पढ्न",
+        "पध्न",
+        "padhna"
+      ],
+      "android_choices": [
+        "पढ्न"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "pahile",
+      "expected": [
+        "पहिले"
+      ],
+      "swift_choices": [
+        "पहिले",
+        "pahile"
+      ],
+      "android_choices": [
+        "पहिले"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "paisa",
+      "expected": [
+        "पैसा"
+      ],
+      "swift_choices": [
+        "पैसा",
+        "पैस",
+        "paisa"
+      ],
+      "android_choices": [
+        "पैसा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "pani",
+      "expected": [
+        "पनि",
+        "पानी"
+      ],
+      "swift_choices": [
+        "पनि",
+        "पानी",
+        "pani"
+      ],
+      "android_choices": [
+        "पनि",
+        "पानी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "parcha",
+      "expected": [
+        "पर्छ"
+      ],
+      "swift_choices": [
+        "पर्छ",
+        "पर्च",
+        "पर्चा",
+        "पार्छ",
+        "parcha"
+      ],
+      "android_choices": [
+        "पर्छ",
+        "पर्चा",
+        "पार्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "parchha",
+      "expected": [
+        "पर्छ"
+      ],
+      "swift_choices": [
+        "पर्छ",
+        "पार्छ",
+        "parchha"
+      ],
+      "android_choices": [
+        "पर्छ",
+        "पार्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "parivar",
+      "expected": [
+        "परिवार"
+      ],
+      "swift_choices": [
+        "परिवार",
+        "परिवर",
+        "parivar"
+      ],
+      "android_choices": [
+        "परिवार"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "pokhara",
+      "expected": [
+        "पोखरा"
+      ],
+      "swift_choices": [
+        "पोखरा",
+        "पोखर",
+        "pokhara"
+      ],
+      "android_choices": [
+        "पोखरा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "purano",
+      "expected": [
+        "पुरानो"
+      ],
+      "swift_choices": [
+        "पुरानो",
+        "पुरनो",
+        "पुराणो",
+        "purano"
+      ],
+      "android_choices": [
+        "पुरानो",
+        "पुराणो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ra",
+      "expected": [
+        "र"
+      ],
+      "swift_choices": [
+        "र",
+        "रा",
+        "ऱ",
+        "ra"
+      ],
+      "android_choices": [
+        "र",
+        "रा",
+        "ऱ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ramrai",
+      "expected": [
+        "राम्रै"
+      ],
+      "swift_choices": [
+        "राम्रै",
+        "रम्रै",
+        "ramrai"
+      ],
+      "android_choices": [
+        "राम्रै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ramri",
+      "expected": [
+        "राम्री"
+      ],
+      "swift_choices": [
+        "राम्री",
+        "रम्रि",
+        "राम्रि",
+        "ramri"
+      ],
+      "android_choices": [
+        "राम्री",
+        "राम्रि"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ramro",
+      "expected": [
+        "राम्रो"
+      ],
+      "swift_choices": [
+        "राम्रो",
+        "रम्रो",
+        "रामरो",
+        "ramro"
+      ],
+      "android_choices": [
+        "राम्रो",
+        "रामरो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "rati",
+      "expected": [
+        "राति"
+      ],
+      "swift_choices": [
+        "राति",
+        "रति",
+        "rati"
+      ],
+      "android_choices": [
+        "राति"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sabai",
+      "expected": [
+        "सबै"
+      ],
+      "swift_choices": [
+        "सबै",
+        "सबाई",
+        "sabai"
+      ],
+      "android_choices": [
+        "सबै",
+        "सबाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sadhai",
+      "expected": [
+        "सधैँ",
+        "सधै"
+      ],
+      "swift_choices": [
+        "सधैँ",
+        "सधै",
+        "साधै",
+        "sadhai"
+      ],
+      "android_choices": [
+        "सधैँ",
+        "सधै",
+        "साधै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sahar",
+      "expected": [
+        "सहर",
+        "शहर"
+      ],
+      "swift_choices": [
+        "सहर",
+        "शहर",
+        "sahar"
+      ],
+      "android_choices": [
+        "सहर",
+        "शहर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sajilo",
+      "expected": [
+        "सजिलो"
+      ],
+      "swift_choices": [
+        "सजिलो",
+        "साजिलो",
+        "असजिलो",
+        "sajilo"
+      ],
+      "android_choices": [
+        "सजिलो",
+        "साजिलो",
+        "असजिलो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sakchha",
+      "expected": [
+        "सक्छ"
+      ],
+      "swift_choices": [
+        "सक्छ",
+        "sakchha"
+      ],
+      "android_choices": [
+        "सक्छ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sakchhu",
+      "expected": [
+        "सक्छु"
+      ],
+      "swift_choices": [
+        "सक्छु",
+        "sakchhu"
+      ],
+      "android_choices": [
+        "सक्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sakchu",
+      "expected": [
+        "सक्छु"
+      ],
+      "swift_choices": [
+        "सक्छु",
+        "सक्चु",
+        "sakchu"
+      ],
+      "android_choices": [
+        "सक्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sakdina",
+      "expected": [
+        "सक्दिनँ"
+      ],
+      "swift_choices": [
+        "सक्दिनँ",
+        "सक्दिन",
+        "sakdina"
+      ],
+      "android_choices": [
+        "सक्दिनँ",
+        "सक्दिन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "samay",
+      "expected": [
+        "समय"
+      ],
+      "swift_choices": [
+        "समय",
+        "असमय",
+        "samay"
+      ],
+      "android_choices": [
+        "समय",
+        "असमय"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "samaya",
+      "expected": [
+        "समय"
+      ],
+      "swift_choices": [
+        "समय",
+        "असमय",
+        "samaya"
+      ],
+      "android_choices": [
+        "समय",
+        "असमय"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "samma",
+      "expected": [
+        "सम्म"
+      ],
+      "swift_choices": [
+        "सम्म",
+        "samma"
+      ],
+      "android_choices": [
+        "सम्म"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sanchai",
+      "expected": [
+        "सन्चै",
+        "सञ्चै"
+      ],
+      "swift_choices": [
+        "सन्चै",
+        "सञ्चै",
+        "साँचै",
+        "सान्चै",
+        "sanchai"
+      ],
+      "android_choices": [
+        "सन्चै",
+        "सञ्चै",
+        "साँचै",
+        "सान्चै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sanchha",
+      "expected": [
+        "सन्चै"
+      ],
+      "swift_choices": [
+        "सन्चै",
+        "सन्छ",
+        "sanchha"
+      ],
+      "android_choices": [
+        "सन्चै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sanga",
+      "expected": [
+        "सँग",
+        "सङ्ग"
+      ],
+      "swift_choices": [
+        "सँग",
+        "सङ्ग",
+        "सङ",
+        "साँगा",
+        "sanga"
+      ],
+      "android_choices": [
+        "सँग",
+        "सङ्ग",
+        "साँगा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sangai",
+      "expected": [
+        "सँगै"
+      ],
+      "swift_choices": [
+        "सँगै",
+        "सङै",
+        "sangai"
+      ],
+      "android_choices": [
+        "सँगै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sano",
+      "expected": [
+        "सानो"
+      ],
+      "swift_choices": [
+        "सानो",
+        "सनो",
+        "sano"
+      ],
+      "android_choices": [
+        "सानो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sathi",
+      "expected": [
+        "साथी"
+      ],
+      "swift_choices": [
+        "साथी",
+        "सथि",
+        "साठी",
+        "sathi"
+      ],
+      "android_choices": [
+        "साथी",
+        "साठी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sathiharu",
+      "expected": [
+        "साथीहरू"
+      ],
+      "swift_choices": [
+        "साथीहरू",
+        "सथिहरु",
+        "sathiharu"
+      ],
+      "android_choices": [
+        "साथीहरू"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "shubhakamana",
+      "expected": [
+        "शुभकामना"
+      ],
+      "swift_choices": [
+        "शुभकामना",
+        "शुभकमन",
+        "shubhakamana"
+      ],
+      "android_choices": [
+        "शुभकामना"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sikchhu",
+      "expected": [
+        "सिक्छु"
+      ],
+      "swift_choices": [
+        "सिक्छु",
+        "sikchhu"
+      ],
+      "android_choices": [
+        "सिक्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sikchu",
+      "expected": [
+        "सिक्छु"
+      ],
+      "swift_choices": [
+        "सिक्छु",
+        "सिक्चु",
+        "sikchu"
+      ],
+      "android_choices": [
+        "सिक्छु"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sikna",
+      "expected": [
+        "सिक्न"
+      ],
+      "swift_choices": [
+        "सिक्न",
+        "sikna"
+      ],
+      "android_choices": [
+        "सिक्न"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "soccer",
+      "expected": [
+        "सकर"
+      ],
+      "swift_choices": [
+        "soccer",
+        "सकर",
+        "सोच्चेर"
+      ],
+      "android_choices": [
+        "सकर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "subhakamana",
+      "expected": [
+        "शुभकामना"
+      ],
+      "swift_choices": [
+        "शुभकामना",
+        "सुभकमन",
+        "subhakamana"
+      ],
+      "android_choices": [
+        "शुभकामना"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "sundar",
+      "expected": [
+        "सुन्दर"
+      ],
+      "swift_choices": [
+        "सुन्दर",
+        "असुन्दर",
+        "sundar"
+      ],
+      "android_choices": [
+        "सुन्दर",
+        "असुन्दर"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "swagat",
+      "expected": [
+        "स्वागत"
+      ],
+      "swift_choices": [
+        "स्वागत",
+        "स्वगत",
+        "swagat"
+      ],
+      "android_choices": [
+        "स्वागत",
+        "स्वगत"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ta",
+      "expected": [
+        "त",
+        "ता"
+      ],
+      "swift_choices": [
+        "त",
+        "ता",
+        "ट",
+        "ta"
+      ],
+      "android_choices": [
+        "त",
+        "ता",
+        "ट"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tapai",
+      "expected": [
+        "तपाईं",
+        "तपाई"
+      ],
+      "swift_choices": [
+        "तपाईं",
+        "तपाई",
+        "तपै",
+        "तपाइ",
+        "tapai"
+      ],
+      "android_choices": [
+        "तपाईं",
+        "तपाई",
+        "तपाइ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tapaiharu",
+      "expected": [
+        "तपाईंहरू"
+      ],
+      "swift_choices": [
+        "तपाईंहरू",
+        "तपैहरु",
+        "tapaiharu"
+      ],
+      "android_choices": [
+        "तपाईंहरू"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tapaiko",
+      "expected": [
+        "तपाईंको"
+      ],
+      "swift_choices": [
+        "तपाईंको",
+        "तपैको",
+        "तपाइको",
+        "तपाईको",
+        "tapaiko"
+      ],
+      "android_choices": [
+        "तपाईंको",
+        "तपाइको",
+        "तपाईको"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tapailai",
+      "expected": [
+        "तपाईंलाई"
+      ],
+      "swift_choices": [
+        "तपाईंलाई",
+        "तपैलै",
+        "टपाईलाई",
+        "तपाइलाई",
+        "तपाईलाई",
+        "तपैलाई",
+        "tapailai"
+      ],
+      "android_choices": [
+        "तपाईंलाई",
+        "टपाईलाई",
+        "तपाइलाई",
+        "तपाईलाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tara",
+      "expected": [
+        "तर",
+        "तारा"
+      ],
+      "swift_choices": [
+        "तर",
+        "तारा",
+        "तरा",
+        "tara"
+      ],
+      "android_choices": [
+        "तर",
+        "तारा",
+        "तरा"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "thik",
+      "expected": [
+        "ठीक",
+        "ठिक"
+      ],
+      "swift_choices": [
+        "ठीक",
+        "ठिक",
+        "थिक",
+        "thik"
+      ],
+      "android_choices": [
+        "ठीक",
+        "ठिक"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "thiye",
+      "expected": [
+        "थिएँ",
+        "थिए"
+      ],
+      "swift_choices": [
+        "थिएँ",
+        "थिए",
+        "थिये",
+        "thiye"
+      ],
+      "android_choices": [
+        "थिएँ",
+        "थिए",
+        "थिये"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "thiyena",
+      "expected": [
+        "थिएन"
+      ],
+      "swift_choices": [
+        "थिएन",
+        "थियेन",
+        "thiyena"
+      ],
+      "android_choices": [
+        "थिएन"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "thiyo",
+      "expected": [
+        "थियो"
+      ],
+      "swift_choices": [
+        "थियो",
+        "thiyo"
+      ],
+      "android_choices": [
+        "थियो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "thorai",
+      "expected": [
+        "थोरै"
+      ],
+      "swift_choices": [
+        "थोरै",
+        "thorai"
+      ],
+      "android_choices": [
+        "थोरै"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "thulo",
+      "expected": [
+        "ठूलो"
+      ],
+      "swift_choices": [
+        "ठूलो",
+        "थुलो",
+        "ठुलो",
+        "thulo"
+      ],
+      "android_choices": [
+        "ठूलो",
+        "ठुलो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "ti",
+      "expected": [
+        "ती"
+      ],
+      "swift_choices": [
+        "ती",
+        "ति",
+        "टि",
+        "टी",
+        "ti"
+      ],
+      "android_choices": [
+        "ती",
+        "टि",
+        "टी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tihar",
+      "expected": [
+        "तिहार"
+      ],
+      "swift_choices": [
+        "तिहार",
+        "तिहर",
+        "tihar"
+      ],
+      "android_choices": [
+        "तिहार"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "timi",
+      "expected": [
+        "तिमी"
+      ],
+      "swift_choices": [
+        "तिमी",
+        "तिमि",
+        "timi"
+      ],
+      "android_choices": [
+        "तिमी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "timilai",
+      "expected": [
+        "तिमीलाई"
+      ],
+      "swift_choices": [
+        "तिमीलाई",
+        "तिमिलै",
+        "टिमीलाई",
+        "तिमिलाई",
+        "timilai"
+      ],
+      "android_choices": [
+        "तिमीलाई",
+        "टिमीलाई",
+        "तिमिलाई"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "timro",
+      "expected": [
+        "तिम्रो"
+      ],
+      "swift_choices": [
+        "तिम्रो",
+        "टिम्रो",
+        "timro"
+      ],
+      "android_choices": [
+        "तिम्रो",
+        "टिम्रो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "tyo",
+      "expected": [
+        "त्यो"
+      ],
+      "swift_choices": [
+        "त्यो",
+        "ट्यो",
+        "tyo"
+      ],
+      "android_choices": [
+        "त्यो",
+        "ट्यो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "u",
+      "expected": [
+        "ऊ",
+        "उ"
+      ],
+      "swift_choices": [
+        "ऊ",
+        "उ",
+        "u"
+      ],
+      "android_choices": [
+        "ऊ",
+        "उ"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "uni",
+      "expected": [
+        "उनी"
+      ],
+      "swift_choices": [
+        "उनी",
+        "उनि",
+        "uni"
+      ],
+      "android_choices": [
+        "उनी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "unko",
+      "expected": [
+        "उनको"
+      ],
+      "swift_choices": [
+        "उनको",
+        "उन्को",
+        "unko"
+      ],
+      "android_choices": [
+        "उनको"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "volleyball",
+      "expected": [
+        "भलिबल"
+      ],
+      "swift_choices": [
+        "volleyball",
+        "भलिबल",
+        "वोल्लेय्बल्ल"
+      ],
+      "android_choices": [
+        "भलिबल"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "yi",
+      "expected": [
+        "यी"
+      ],
+      "swift_choices": [
+        "यी",
+        "यि",
+        "yi"
+      ],
+      "android_choices": [
+        "यी"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    },
+    {
+      "roman": "yo",
+      "expected": [
+        "यो"
+      ],
+      "swift_choices": [
+        "यो",
+        "yo"
+      ],
+      "android_choices": [
+        "यो"
+      ],
+      "swift_authored_any": true,
+      "android_authored_any": true,
+      "swift_authored_all": true,
+      "android_authored_all": true,
+      "original_retained": true,
+      "first_nepali_equal": true
+    }
+  ]
+}

@@ -1,0 +1,2006 @@
+{
+  "description": "Synthetic pairs derived from Aksharantar index; first lexically listed candidate, not reviewed, neither independent nor frequency-based. Vowel shrink may not match intended spelling.",
+  "source_rows_seen": 18810,
+  "cases": [
+    {
+      "roman": "sanlagnatanusarko",
+      "expected": [
+        "संलग्नताअनुसारको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "sanlagnataanusarko"
+    },
+    {
+      "roman": "mangiyo",
+      "expected": [
+        "माँगियो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "maangiyo"
+    },
+    {
+      "roman": "bhandaadekhi",
+      "expected": [
+        "भाँडादेखि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bhaandaadekhi"
+    },
+    {
+      "roman": "ansuri",
+      "expected": [
+        "आँसुरी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aansuri"
+    },
+    {
+      "roman": "lamaasangai",
+      "expected": [
+        "लामासँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "laamaasangai"
+    },
+    {
+      "roman": "anpata",
+      "expected": [
+        "आँपटा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aanpata"
+    },
+    {
+      "roman": "yafugaaun",
+      "expected": [
+        "याफुगाउँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "yaafugaaun"
+    },
+    {
+      "roman": "uhanpakshiya",
+      "expected": [
+        "उहाँपक्षीय"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "uhaanpakshiya"
+    },
+    {
+      "roman": "dekhida",
+      "expected": [
+        "देखिइदा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "dekhiida"
+    },
+    {
+      "roman": "sawaansahitko",
+      "expected": [
+        "सावाँसहितको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saawaansahitko"
+    },
+    {
+      "roman": "disaknuparchha",
+      "expected": [
+        "दिइसक्नुपर्छ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "diisaknuparchha"
+    },
+    {
+      "roman": "aunladekhi",
+      "expected": [
+        "औँलादेखि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aunlaadekhi"
+    },
+    {
+      "roman": "tansei",
+      "expected": [
+        "टाँसेई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "taansei"
+    },
+    {
+      "roman": "ashwinsanga",
+      "expected": [
+        "आश्विनसँग"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aashwinsanga"
+    },
+    {
+      "roman": "gaunpaalikoko",
+      "expected": [
+        "गाउँपालिकोको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaaunpaalikoko"
+    },
+    {
+      "roman": "failaunnemaathi",
+      "expected": [
+        "फैलाउँनेमाथि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "failaaunnemaathi"
+    },
+    {
+      "roman": "sanjhapakhako",
+      "expected": [
+        "साँझपखको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saanjhapakhako"
+    },
+    {
+      "roman": "gaunch",
+      "expected": [
+        "गाउँच"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaaunch"
+    },
+    {
+      "roman": "suhanudaina",
+      "expected": [
+        "सुहाँउदैन"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "suhaanudaina"
+    },
+    {
+      "roman": "bandi",
+      "expected": [
+        "बाँडी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baandi"
+    },
+    {
+      "roman": "laghudyamlai",
+      "expected": [
+        "लघुउद्यमलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "laghuudyamlai"
+    },
+    {
+      "roman": "dhuwandhulodekhi",
+      "expected": [
+        "धुवाँधुलोदेखि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "dhuwaandhulodekhi"
+    },
+    {
+      "roman": "sakshartantaragat",
+      "expected": [
+        "साक्षरताअन्तरगत"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "sakshartaantaragat"
+    },
+    {
+      "roman": "shadyantranusar",
+      "expected": [
+        "षड्यन्त्रअनुसार"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "shadyantraanusar"
+    },
+    {
+      "roman": "fakaunna",
+      "expected": [
+        "फकाउँन"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "fakaaunna"
+    },
+    {
+      "roman": "banstolaadekhi",
+      "expected": [
+        "बाँस्तोलादेखि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanstolaadekhi"
+    },
+    {
+      "roman": "rittiskeko",
+      "expected": [
+        "रित्तिइसकेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "rittiiskeko"
+    },
+    {
+      "roman": "kanchokchilo",
+      "expected": [
+        "काँचोकचिलो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kaanchokchilo"
+    },
+    {
+      "roman": "anfuprati",
+      "expected": [
+        "आँफुप्रति"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aanfuprati"
+    },
+    {
+      "roman": "nahansos",
+      "expected": [
+        "नहाँसोस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nahaansos"
+    },
+    {
+      "roman": "banchepachhi",
+      "expected": [
+        "बाँचेपछि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanchepachhi"
+    },
+    {
+      "roman": "rapaiyansamma",
+      "expected": [
+        "रपैयाँसम्म"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "rapaiyaansamma"
+    },
+    {
+      "roman": "jhankikai",
+      "expected": [
+        "झाँकीकै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jhaankikai"
+    },
+    {
+      "roman": "fantieko",
+      "expected": [
+        "फाँटिएको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faantieko"
+    },
+    {
+      "roman": "samjhaunthen",
+      "expected": [
+        "सम्झाउँथेँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "samjhaaunthen"
+    },
+    {
+      "roman": "fanjaanlai",
+      "expected": [
+        "फाँजानलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faanjaanlai"
+    },
+    {
+      "roman": "gaunaaganko",
+      "expected": [
+        "गाउँआगनको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaaunaaganko"
+    },
+    {
+      "roman": "sapananusarko",
+      "expected": [
+        "सपनाअनुसारको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "sapanaanusarko"
+    },
+    {
+      "roman": "bahuddeshyiya",
+      "expected": [
+        "बहुउउद्देश्यीय"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bahuuddeshyiya"
+    },
+    {
+      "roman": "hajuran",
+      "expected": [
+        "हजुराँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "hajuraan"
+    },
+    {
+      "roman": "hundanhundai",
+      "expected": [
+        "हुँदाँहुँदै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "hundaanhundai"
+    },
+    {
+      "roman": "santho",
+      "expected": [
+        "साँठो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saantho"
+    },
+    {
+      "roman": "bahupayogitaka",
+      "expected": [
+        "बहुउपयोगिताका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bahuupayogitaka"
+    },
+    {
+      "roman": "sandhako",
+      "expected": [
+        "साँधको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saandhako"
+    },
+    {
+      "roman": "banghiera",
+      "expected": [
+        "बाँघिएर"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanghiera"
+    },
+    {
+      "roman": "fantawaarilai",
+      "expected": [
+        "फाँटवारीलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faantawaarilai"
+    },
+    {
+      "roman": "janadeshlai",
+      "expected": [
+        "जनआदेशलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "janaadeshlai"
+    },
+    {
+      "roman": "karjantargatko",
+      "expected": [
+        "कर्जाअन्तर्गतको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "karjaantargatko"
+    },
+    {
+      "roman": "muchhisakeka",
+      "expected": [
+        "मुछिइसकेका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "muchhiisakeka"
+    },
+    {
+      "roman": "bataunnuhune",
+      "expected": [
+        "बताउँनुहुने"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bataaunnuhune"
+    },
+    {
+      "roman": "karaunthin",
+      "expected": [
+        "कराउँथिन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "karaaunthin"
+    },
+    {
+      "roman": "srotaharuchahin",
+      "expected": [
+        "स्रोतहरूचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "srotaharuchaahin"
+    },
+    {
+      "roman": "awashanasangai",
+      "expected": [
+        "अवशानसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "awashaanasangai"
+    },
+    {
+      "roman": "bujhaunchhauh",
+      "expected": [
+        "बुझाउँछौः"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bujhaaunchhauh"
+    },
+    {
+      "roman": "sankhyan",
+      "expected": [
+        "संख्याँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "sankhyaan"
+    },
+    {
+      "roman": "saghaundainathe",
+      "expected": [
+        "सघाउँदैनथे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saghaaundainathe"
+    },
+    {
+      "roman": "dekhaidiseko",
+      "expected": [
+        "देखाइदिइसेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "dekhaidiiseko"
+    },
+    {
+      "roman": "banchinjhain",
+      "expected": [
+        "बाँचिन्झैँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanchinjhain"
+    },
+    {
+      "roman": "uhanbhitrai",
+      "expected": [
+        "उहाँभित्रै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "uhaanbhitrai"
+    },
+    {
+      "roman": "paunthis",
+      "expected": [
+        "पाउँथिस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paaunthis"
+    },
+    {
+      "roman": "nayanjanbaadi",
+      "expected": [
+        "नयाँजनबादी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nayaanjanbaadi"
+    },
+    {
+      "roman": "asatyachahin",
+      "expected": [
+        "असत्यचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "asatyachaahin"
+    },
+    {
+      "roman": "yahanekmahine",
+      "expected": [
+        "यहाँएकमहिने"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "yahaanekmahine"
+    },
+    {
+      "roman": "panchawatale",
+      "expected": [
+        "पाँचवटाले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paanchawatale"
+    },
+    {
+      "roman": "sanbaasthit",
+      "expected": [
+        "साँबास्थित"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saanbaasthit"
+    },
+    {
+      "roman": "nayanbaatoko",
+      "expected": [
+        "नयाँबाटोको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nayaanbaatoko"
+    },
+    {
+      "roman": "digo",
+      "expected": [
+        "डिइगो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "diigo"
+    },
+    {
+      "roman": "tuwanlomaya",
+      "expected": [
+        "तुवाँलोमय"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "tuwaanlomaya"
+    },
+    {
+      "roman": "bandhyako",
+      "expected": [
+        "बाँध्यको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baandhyako"
+    },
+    {
+      "roman": "chandanisahit",
+      "expected": [
+        "चाँदनीसहित"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chaandanisahit"
+    },
+    {
+      "roman": "yogyatanurupko",
+      "expected": [
+        "योग्यताअनुरूपको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "yogyataanurupko"
+    },
+    {
+      "roman": "khanbomaathi",
+      "expected": [
+        "खाँबोमाथि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "khaanbomaathi"
+    },
+    {
+      "roman": "hantama",
+      "expected": [
+        "हाँतमा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haantama"
+    },
+    {
+      "roman": "bansanigala",
+      "expected": [
+        "बाँसनिगाला"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baansanigala"
+    },
+    {
+      "roman": "bagaundaichan",
+      "expected": [
+        "बगाउँदैछन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bagaaundaichan"
+    },
+    {
+      "roman": "basidinuchahin",
+      "expected": [
+        "बसिदिनुचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "basidinuchaahin"
+    },
+    {
+      "roman": "hunwafraanko",
+      "expected": [
+        "हुँवाफ्रानको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "hunwaafraanko"
+    },
+    {
+      "roman": "gherinda",
+      "expected": [
+        "घेरिइँदा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gheriinda"
+    },
+    {
+      "roman": "sandai",
+      "expected": [
+        "साँदै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saandai"
+    },
+    {
+      "roman": "wirakti",
+      "expected": [
+        "विरक्तिई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "wiraktii"
+    },
+    {
+      "roman": "chahindainko",
+      "expected": [
+        "चाहिँदैनको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chaahindainko"
+    },
+    {
+      "roman": "ansubahek",
+      "expected": [
+        "आँसुबाहेक"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aansubahek"
+    },
+    {
+      "roman": "tansidinuhos",
+      "expected": [
+        "टाँसिदिनुहोस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "taansidinuhos"
+    },
+    {
+      "roman": "sabaimantargyan",
+      "expected": [
+        "सबैमाअन्तर्ज्ञान"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "sabaimaantargyan"
+    },
+    {
+      "roman": "aunchhuaunchhu",
+      "expected": [
+        "आउँछुआउँछु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aaunchhuaunchhu"
+    },
+    {
+      "roman": "hataundai",
+      "expected": [
+        "हटाउँदै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "hataaundai"
+    },
+    {
+      "roman": "aundachhau",
+      "expected": [
+        "आउँदछौ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aaundachhau"
+    },
+    {
+      "roman": "afuchaanhi",
+      "expected": [
+        "आफूचाँहि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aafuchaanhi"
+    },
+    {
+      "roman": "muiyan",
+      "expected": [
+        "मुइयाँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "muiyaan"
+    },
+    {
+      "roman": "gaunleharubasobas",
+      "expected": [
+        "गाउँलेहरूबसोबस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaaunleharubasobas"
+    },
+    {
+      "roman": "hansyawyangaya",
+      "expected": [
+        "हाँस्यव्यङ्गय"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haansyawyangaya"
+    },
+    {
+      "roman": "paraunthinan",
+      "expected": [
+        "पराउँथिनन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paraaunthinan"
+    },
+    {
+      "roman": "buddhakhan",
+      "expected": [
+        "बुद्धकहाँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "buddhakhaan"
+    },
+    {
+      "roman": "wandhaka",
+      "expected": [
+        "वाँधका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "waandhaka"
+    },
+    {
+      "roman": "wirsinchha",
+      "expected": [
+        "विर्सिइन्छ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "wirsiinchha"
+    },
+    {
+      "roman": "nayanpratiko",
+      "expected": [
+        "नयाँप्रतिको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nayaanpratiko"
+    },
+    {
+      "roman": "bataunchhannu",
+      "expected": [
+        "बताउँछन्नु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bataaunchhannu"
+    },
+    {
+      "roman": "bandhiepachhiko",
+      "expected": [
+        "बाँधिएपछिको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baandhiepachhiko"
+    },
+    {
+      "roman": "lichhe",
+      "expected": [
+        "लिइछे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "liichhe"
+    },
+    {
+      "roman": "panchasaye",
+      "expected": [
+        "पाँचसये"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paanchasaye"
+    },
+    {
+      "roman": "sanjhapraharile",
+      "expected": [
+        "साँझप्रहरीले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saanjhapraharile"
+    },
+    {
+      "roman": "tanteko",
+      "expected": [
+        "ताँतेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "taanteko"
+    },
+    {
+      "roman": "laundain",
+      "expected": [
+        "लाउँदैन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "laaundain"
+    },
+    {
+      "roman": "afulechaanhi",
+      "expected": [
+        "आफूलेचाँहि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aafulechaanhi"
+    },
+    {
+      "roman": "lanche",
+      "expected": [
+        "लाँचे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "laanche"
+    },
+    {
+      "roman": "ganjnechhah",
+      "expected": [
+        "गाँज्नेछः"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaanjnechhah"
+    },
+    {
+      "roman": "tyasailechahin",
+      "expected": [
+        "त्यसैलेचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "tyasailechaahin"
+    },
+    {
+      "roman": "bandnubhaeko",
+      "expected": [
+        "बाँड्नुभएको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baandnubhaeko"
+    },
+    {
+      "roman": "sanjhaale",
+      "expected": [
+        "साँझाले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saanjhaale"
+    },
+    {
+      "roman": "wansuki",
+      "expected": [
+        "वाँसुकी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "waansuki"
+    },
+    {
+      "roman": "jillantargatkalai",
+      "expected": [
+        "जिल्लाअन्तर्गतकालाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jillaantargatkalai"
+    },
+    {
+      "roman": "utriske",
+      "expected": [
+        "उत्रिइसके"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "utriiske"
+    },
+    {
+      "roman": "ranch",
+      "expected": [
+        "राँच"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "raanch"
+    },
+    {
+      "roman": "disakiekole",
+      "expected": [
+        "दिइसकिएकोले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "diisakiekole"
+    },
+    {
+      "roman": "hansyalai",
+      "expected": [
+        "हाँस्यलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haansyalai"
+    },
+    {
+      "roman": "tansie",
+      "expected": [
+        "टाँसिए"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "taansie"
+    },
+    {
+      "roman": "bandnechhan",
+      "expected": [
+        "बाँड्नेछन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baandnechhan"
+    },
+    {
+      "roman": "fukalaun",
+      "expected": [
+        "फुकालौँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "fukaalaun"
+    },
+    {
+      "roman": "kahanrako",
+      "expected": [
+        "कहाँरको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kahaanrako"
+    },
+    {
+      "roman": "dekhinda",
+      "expected": [
+        "देखिइँदा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "dekhiinda"
+    },
+    {
+      "roman": "fantasammako",
+      "expected": [
+        "फाँटसम्मको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faantasammako"
+    },
+    {
+      "roman": "amrelantargat",
+      "expected": [
+        "अम्रेलाअन्तर्गत"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "amrelaantargat"
+    },
+    {
+      "roman": "todirakheko",
+      "expected": [
+        "तोडिइराखेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "todiirakheko"
+    },
+    {
+      "roman": "khi",
+      "expected": [
+        "खिइ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "khii"
+    },
+    {
+      "roman": "maulaunne",
+      "expected": [
+        "मौलाउँने"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "maulaaunne"
+    },
+    {
+      "roman": "janadeshma",
+      "expected": [
+        "जनआदेशमा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "janaadeshma"
+    },
+    {
+      "roman": "warshadekhichahin",
+      "expected": [
+        "वर्षदेखिचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "warshadekhichaahin"
+    },
+    {
+      "roman": "mahiladhikarwadi",
+      "expected": [
+        "महिलाअधिकारवादी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "mahilaadhikarwadi"
+    },
+    {
+      "roman": "nafarkisakeko",
+      "expected": [
+        "नफर्किइसकेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nafarkiisakeko"
+    },
+    {
+      "roman": "aposanga",
+      "expected": [
+        "आपोसँग"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aaposanga"
+    },
+    {
+      "roman": "namunantargat",
+      "expected": [
+        "नमुनाअन्तर्गत"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "namunaantargat"
+    },
+    {
+      "roman": "ghanri",
+      "expected": [
+        "घाँरी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "ghaanri"
+    },
+    {
+      "roman": "abadharananusar",
+      "expected": [
+        "अबधारणाअनुसार"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "abadharanaanusar"
+    },
+    {
+      "roman": "dhalindai",
+      "expected": [
+        "ढालिँदै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "dhaalindai"
+    },
+    {
+      "roman": "falthinan",
+      "expected": [
+        "फाल्थिनँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faalthinan"
+    },
+    {
+      "roman": "tarpanharule",
+      "expected": [
+        "तर्पाँहरूले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "tarpaanharule"
+    },
+    {
+      "roman": "mahadhiwesan",
+      "expected": [
+        "महाअधिवेसन"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "mahaadhiwesan"
+    },
+    {
+      "roman": "samayawadhisanga",
+      "expected": [
+        "समयावधिसँग"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "samayaawadhisanga"
+    },
+    {
+      "roman": "samjhiraheka",
+      "expected": [
+        "सम्झिइरहेका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "samjhiiraheka"
+    },
+    {
+      "roman": "fandaka",
+      "expected": [
+        "फाँडका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faandaka"
+    },
+    {
+      "roman": "rachinu",
+      "expected": [
+        "रचिइनु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "rachiinu"
+    },
+    {
+      "roman": "fukaunthin",
+      "expected": [
+        "फुकाउँथिन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "fukaaunthin"
+    },
+    {
+      "roman": "lekhakharuchahin",
+      "expected": [
+        "लेखकहरुचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "lekhakharuchaahin"
+    },
+    {
+      "roman": "jaengi",
+      "expected": [
+        "जाएँगी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jaaengi"
+    },
+    {
+      "roman": "tyahanbaatapani",
+      "expected": [
+        "त्यहाँबाटपनि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "tyahaanbaatapani"
+    },
+    {
+      "roman": "paunditarfa",
+      "expected": [
+        "पाउँदीतर्फ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paaunditarfa"
+    },
+    {
+      "roman": "hankos",
+      "expected": [
+        "हाँकोस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haankos"
+    },
+    {
+      "roman": "antlai",
+      "expected": [
+        "आँतलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aantlai"
+    },
+    {
+      "roman": "lwande",
+      "expected": [
+        "ल्वाँदे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "lwaande"
+    },
+    {
+      "roman": "kanri",
+      "expected": [
+        "काँरी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kaanri"
+    },
+    {
+      "roman": "yanasangai",
+      "expected": [
+        "यानसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "yaanasangai"
+    },
+    {
+      "roman": "kahunkholalai",
+      "expected": [
+        "काहुँखोलालाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kaahunkholalai"
+    },
+    {
+      "roman": "sanfyaa",
+      "expected": [
+        "साँफ्या"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saanfyaa"
+    },
+    {
+      "roman": "tofan",
+      "expected": [
+        "तोफाँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "tofaan"
+    },
+    {
+      "roman": "amagainle",
+      "expected": [
+        "आमगाइँले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aamagainle"
+    },
+    {
+      "roman": "ansusangasangai",
+      "expected": [
+        "आँसुसँगसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aansusangasangai"
+    },
+    {
+      "roman": "siso",
+      "expected": [
+        "सिइसो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "siiso"
+    },
+    {
+      "roman": "patichahinle",
+      "expected": [
+        "पतिचाहिँले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "patichaahinle"
+    },
+    {
+      "roman": "kamasangai",
+      "expected": [
+        "कामसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kaamasangai"
+    },
+    {
+      "roman": "paramparantargat",
+      "expected": [
+        "परम्पराअन्तर्गत"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paramparaantargat"
+    },
+    {
+      "roman": "anganam",
+      "expected": [
+        "आँगनम"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aanganam"
+    },
+    {
+      "roman": "kanche",
+      "expected": [
+        "काँचे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kaanche"
+    },
+    {
+      "roman": "lelinwadsangai",
+      "expected": [
+        "लेलिनवादसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "lelinwaadsangai"
+    },
+    {
+      "roman": "tansisaknu",
+      "expected": [
+        "टाँसीसक्नु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "taansisaknu"
+    },
+    {
+      "roman": "fantaan",
+      "expected": [
+        "फाँटाँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faantaan"
+    },
+    {
+      "roman": "bahuttardayitwa",
+      "expected": [
+        "बहुउत्तरदायित्व"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bahuuttardayitwa"
+    },
+    {
+      "roman": "dhuwandhulomukta",
+      "expected": [
+        "धुवाँधुलोमुक्त"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "dhuwaandhulomukta"
+    },
+    {
+      "roman": "jhukkiraheko",
+      "expected": [
+        "झुक्कीइरहेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jhukkiiraheko"
+    },
+    {
+      "roman": "hansibasnu",
+      "expected": [
+        "हाँसिबस्नु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haansibasnu"
+    },
+    {
+      "roman": "bansurisanga",
+      "expected": [
+        "बाँसुरीसँग"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baansurisanga"
+    },
+    {
+      "roman": "bansbaribich",
+      "expected": [
+        "बाँसबारीबीच"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baansbaribich"
+    },
+    {
+      "roman": "rafaiyanko",
+      "expected": [
+        "रफैयाँको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "rafaiyaanko"
+    },
+    {
+      "roman": "muwasangai",
+      "expected": [
+        "मुवासँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "muwaasangai"
+    },
+    {
+      "roman": "dantmadhye",
+      "expected": [
+        "दाँतमध्ये"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "daantmadhye"
+    },
+    {
+      "roman": "lamasangai",
+      "expected": [
+        "लामसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "laamasangai"
+    },
+    {
+      "roman": "fyankaun",
+      "expected": [
+        "फ्याँकौं"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "fyaankaun"
+    },
+    {
+      "roman": "wikashasangai",
+      "expected": [
+        "विकाशसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "wikaashasangai"
+    },
+    {
+      "roman": "nagaunsthit",
+      "expected": [
+        "नगाउँस्थित"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nagaaunsthit"
+    },
+    {
+      "roman": "hindnuparema",
+      "expected": [
+        "हिँड्नुपरेमा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "hindnuparemaa"
+    },
+    {
+      "roman": "shastranukul",
+      "expected": [
+        "शास्त्रअनुकूल"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "shastraanukul"
+    },
+    {
+      "roman": "mahabhiyogsahit",
+      "expected": [
+        "महाअभियोगसहित"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "mahaabhiyogsahit"
+    },
+    {
+      "roman": "dirakheka",
+      "expected": [
+        "दिइराखेका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "diirakheka"
+    },
+    {
+      "roman": "sanghne",
+      "expected": [
+        "साँघ्ने"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saanghne"
+    },
+    {
+      "roman": "antes",
+      "expected": [
+        "आँटेस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aantes"
+    },
+    {
+      "roman": "pokhinai",
+      "expected": [
+        "पोखिइनै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "pokhiinai"
+    },
+    {
+      "roman": "nakhandieko",
+      "expected": [
+        "नखाँदिएको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nakhaandieko"
+    },
+    {
+      "roman": "kansaghaarilai",
+      "expected": [
+        "काँसघारीलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kaansaghaarilai"
+    },
+    {
+      "roman": "fyankirahechha",
+      "expected": [
+        "फ्याँकिरहेछ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "fyaankirahechha"
+    },
+    {
+      "roman": "kawabsanga",
+      "expected": [
+        "कवाबसँग"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kawaabsanga"
+    },
+    {
+      "roman": "bahabunde",
+      "expected": [
+        "बाहबुँदे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baahabunde"
+    },
+    {
+      "roman": "failaunnu",
+      "expected": [
+        "फैलाउँनु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "failaaunnu"
+    },
+    {
+      "roman": "bansagedika",
+      "expected": [
+        "बाँसगेडीका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baansagedika"
+    },
+    {
+      "roman": "janatanusarka",
+      "expected": [
+        "जनताअनुसारका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "janataanusarka"
+    },
+    {
+      "roman": "banchayo",
+      "expected": [
+        "बाँचयो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanchayo"
+    },
+    {
+      "roman": "banda",
+      "expected": [
+        "बाँदा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanda"
+    },
+    {
+      "roman": "wandera",
+      "expected": [
+        "वाँडेर"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "waandera"
+    },
+    {
+      "roman": "bhanjne",
+      "expected": [
+        "भाँज्ने"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bhaanjne"
+    },
+    {
+      "roman": "chahananusarle",
+      "expected": [
+        "चाहनाअनुसारले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chahanaanusarle"
+    },
+    {
+      "roman": "danke",
+      "expected": [
+        "डाँके"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "daanke"
+    },
+    {
+      "roman": "chalaunchhaunh",
+      "expected": [
+        "चलाउँछौंः"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chalaaunchhaunh"
+    },
+    {
+      "roman": "bankilal",
+      "expected": [
+        "बाँकीलाल"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baankilal"
+    },
+    {
+      "roman": "pratiwadisangko",
+      "expected": [
+        "प्रतिवादीसँगको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "pratiwaadisangko"
+    },
+    {
+      "roman": "sabhapatitarka",
+      "expected": [
+        "सभापतिइतरका"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "sabhapatiitarka"
+    },
+    {
+      "roman": "anbulgayat",
+      "expected": [
+        "आँबुलगायत"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aanbulgayat"
+    },
+    {
+      "roman": "fansishta",
+      "expected": [
+        "फाँसिष्ट"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faansishta"
+    },
+    {
+      "roman": "thahariunla",
+      "expected": [
+        "ठहरिउँला"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "thahariunlaa"
+    },
+    {
+      "roman": "ganjalle",
+      "expected": [
+        "गाँजलले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaanjalle"
+    },
+    {
+      "roman": "banskotaharule",
+      "expected": [
+        "बाँस्कोटाहरूले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baanskotaharule"
+    },
+    {
+      "roman": "yahankailai",
+      "expected": [
+        "यहाँकैलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "yahaankailai"
+    },
+    {
+      "roman": "uthaundiraichhes",
+      "expected": [
+        "उठाउँदिरैछेस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "uthaaundiraichhes"
+    },
+    {
+      "roman": "dantapatan",
+      "expected": [
+        "दाँतपतन"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "daantapatan"
+    },
+    {
+      "roman": "chandranusar",
+      "expected": [
+        "चन्द्रअनुसार"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chandraanusar"
+    },
+    {
+      "roman": "panchatharasangko",
+      "expected": [
+        "पाँचथरसँगको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "paanchatharasangko"
+    },
+    {
+      "roman": "samanwayachahin",
+      "expected": [
+        "समन्वयचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "samanwayachaahin"
+    },
+    {
+      "roman": "puwanlai",
+      "expected": [
+        "पुवाँलाई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "puwaanlai"
+    },
+    {
+      "roman": "jitisakeko",
+      "expected": [
+        "जितिइसकेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jitiisakeko"
+    },
+    {
+      "roman": "kharchirahekithi",
+      "expected": [
+        "खर्चिरहेकिथिई"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "kharchirahekithii"
+    },
+    {
+      "roman": "itko",
+      "expected": [
+        "आइआइटीको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "iitko"
+    },
+    {
+      "roman": "yahanjata",
+      "expected": [
+        "यहाँजता"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "yahaanjata"
+    },
+    {
+      "roman": "lagaunch",
+      "expected": [
+        "लगाउँच"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "lagaaunch"
+    },
+    {
+      "roman": "chhantchhe",
+      "expected": [
+        "छाँट्छे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chhaantchhe"
+    },
+    {
+      "roman": "biyanko",
+      "expected": [
+        "बियाँको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "biyaanko"
+    },
+    {
+      "roman": "lineharuma",
+      "expected": [
+        "लिइनेहरूमा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "liineharuma"
+    },
+    {
+      "roman": "hansoharu",
+      "expected": [
+        "हाँसोहरू"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haansoharu"
+    },
+    {
+      "roman": "nabhachenko",
+      "expected": [
+        "नभाचेँको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nabhaachenko"
+    },
+    {
+      "roman": "nayanjalapaigudhi",
+      "expected": [
+        "नयाँजलपाइगुढी"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "nayaanjalapaigudhi"
+    },
+    {
+      "roman": "khelaunanusar",
+      "expected": [
+        "खेलौनाअनुसार"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "khelaunaanusar"
+    },
+    {
+      "roman": "jankobhle",
+      "expected": [
+        "जाँकोभले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jaankobhle"
+    },
+    {
+      "roman": "virsinna",
+      "expected": [
+        "विर्सिइन्न"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "virsiinna"
+    },
+    {
+      "roman": "wyahanko",
+      "expected": [
+        "व्यहाँको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "wyahaanko"
+    },
+    {
+      "roman": "chhukrisakeko",
+      "expected": [
+        "छुक्रिइसकेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chhukriisakeko"
+    },
+    {
+      "roman": "bajaren",
+      "expected": [
+        "बजारेँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bajaaren"
+    },
+    {
+      "roman": "ramaundaithis",
+      "expected": [
+        "रमाउँदैथिस्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "ramaaundaithis"
+    },
+    {
+      "roman": "chanhieko",
+      "expected": [
+        "चाँहिएको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chaanhieko"
+    },
+    {
+      "roman": "jandairahichhin",
+      "expected": [
+        "जाँदैरहिछिन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jaandairahichhin"
+    },
+    {
+      "roman": "tangheko",
+      "expected": [
+        "टाँघेको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "taangheko"
+    },
+    {
+      "roman": "chandot",
+      "expected": [
+        "चाँदोट"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "chaandot"
+    },
+    {
+      "roman": "hansnubhayo",
+      "expected": [
+        "हाँस्नुभयो"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "haansnubhayo"
+    },
+    {
+      "roman": "fyanknechhu",
+      "expected": [
+        "फ्याँक्नेछु"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "fyaanknechhu"
+    },
+    {
+      "roman": "fandoko",
+      "expected": [
+        "फाँदोको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "faandoko"
+    },
+    {
+      "roman": "bhankrichokdekhi",
+      "expected": [
+        "भाँक्रीचोकदेखि"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "bhaankrichokdekhi"
+    },
+    {
+      "roman": "najanch",
+      "expected": [
+        "नजाँच"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "najaanch"
+    },
+    {
+      "roman": "berujuchahin",
+      "expected": [
+        "बेरुजुचाहिँ"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "berujuchaahin"
+    },
+    {
+      "roman": "saundasangai",
+      "expected": [
+        "साउँदसँगै"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "saaundasangai"
+    },
+    {
+      "roman": "gandhile",
+      "expected": [
+        "गाँधीले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "gaandhile"
+    },
+    {
+      "roman": "uhanpratiko",
+      "expected": [
+        "उहाँप्रतिको"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "uhaanpratiko"
+    },
+    {
+      "roman": "jheldaithin",
+      "expected": [
+        "झेल्दैथिइन्"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "jheldaithiin"
+    },
+    {
+      "roman": "thaunkole",
+      "expected": [
+        "ठाउँकोले"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "thaaunkole"
+    },
+    {
+      "roman": "aunnehuda",
+      "expected": [
+        "आउँनेहुदा"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "aaunnehuda"
+    },
+    {
+      "roman": "bandhe",
+      "expected": [
+        "बाँधे"
+      ],
+      "role": "synthetic_nepali",
+      "original_key": "baandhe"
+    }
+  ]
+}

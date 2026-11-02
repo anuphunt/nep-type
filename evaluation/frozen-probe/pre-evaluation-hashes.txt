@@ -1,0 +1,3 @@
+8be649e967f6252fe6a7b2ee443c50c2569f5e14f7a41c56e76360649d509211  /Users/anupdhakal/Documents/Codex/2026-10-29/task/holdout-new/corpus.json
+7c18905dabbe524c76a2908ca17231f277233adae0ad25f1de6c60badaed9540  Sources/NepaliCore/Transliterator.swift
+22a731061e14d3f7a5e037e3b6d50c4966a7ce7f7d221cf5fc6d892806a84218  /Users/anupdhakal/Documents/Codex/2026-10-29/task/verification/heldout-eval.swift

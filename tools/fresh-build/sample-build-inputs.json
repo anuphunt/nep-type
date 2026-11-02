@@ -1,0 +1,28 @@
+{
+  "configuration": "release",
+  "external_package_dependencies": 0,
+  "format": 1,
+  "inputs_sha256": {
+    "Package.swift": "5cdfa4e42f85043796fb4327b0b1ea2910774a71d4add502cfc8ccea86017431",
+    "Sources/LekhaInput/main.swift": "e20a2a0bd58b822ebc788907f31cd4c57fc839bfa98c3b30f44b24f7ff18e2d4",
+    "Sources/NepaliCore/Composer.swift": "c99d1f889b4480e0c45c5143d88efdb1fb3e96f3eb3a78458d8e4ff61ab44d9f",
+    "Sources/NepaliCore/GeneratedAliasIndex.swift": "0b41ac173a379c343d7be41359928cc4d7938968c57bb093064536360b1a96de",
+    "Sources/NepaliCore/GeneratedIndexes.swift": "6e9d6f6c30e413d17824f2e7300f66812eac0d31781537be6b3c8c8cb1b371f5",
+    "Sources/NepaliCore/InputSession.swift": "731c11b7e33157cadeaa077e93952c709540e828bb759e1e02c272fdd05a071b",
+    "Sources/NepaliCore/Transliterator.swift": "7c18905dabbe524c76a2908ca17231f277233adae0ad25f1de6c60badaed9540",
+    "Sources/NepaliKeyboard/main.swift": "74d575395b053e7af4440aa926903d314cf04949575fb596b675f864c23cb703",
+    "Tests/NepaliCoreTests/ComposerTests.swift": "8eed96026a335ea5e5e92661cb28a17b6c4856b55395bcaa954f2c59e2db12b0",
+    "Tests/NepaliCoreTests/InputSessionTests.swift": "fddb49dc65f8492991a1a990868793fa1c87c37510863fb7fc416f42b514f2b5",
+    "data/compiled/aksharantar-indiccorp-v1.manifest.json": "0e6b0fcab08cf02b819f73afb7833a3b8f0be70b006487c15966bbf9dca43f27",
+    "data/compiled/aksharantar-indiccorp-v1.tsv": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",
+    "data/compiled/google-ne-aliases.tsv": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159",
+    "data/sources/AKSHARANTAR-ATTRIBUTION.txt": "b66601a88998088f930d308b40e80e36dea69d42e9b83a7a517cb5b83b8eee77",
+    "data/sources/CMUDICT-LICENSE.txt": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a",
+    "data/sources/GOOGLE-NE-ATTRIBUTION.txt": "c1aaa8ac659befdf0eeb323ad032475980c9a163ce7bd0b2865963d282ae0038"
+  },
+  "machine": "arm64",
+  "macos_version": "26.6.2",
+  "note": "local development snapshot; ad-hoc signing; dataset rights unresolved; not a distribution release",
+  "swift_version": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx26.0",
+  "swiftpm_sandbox_disabled": true
+}

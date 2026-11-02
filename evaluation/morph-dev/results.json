@@ -1,0 +1,521 @@
+[
+  {
+    "roman": "gharko",
+    "acceptable": [
+      "घरको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "घरको"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "gharma",
+    "acceptable": [
+      "घरमा"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "घरमा",
+      "घर्म"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "gharbata",
+    "acceptable": [
+      "घरबाट"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "घरबाट"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "gharharu",
+    "acceptable": [
+      "घरहरू"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "घरहरू"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "kitabko",
+    "acceptable": [
+      "किताबको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "किताबको"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "kitablai",
+    "acceptable": [
+      "किताबलाई"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "किताबलाई"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "kitabharu",
+    "acceptable": [
+      "किताबहरू"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "किताबहरू"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "sathiko",
+    "acceptable": [
+      "साथीको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "साथीको"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "sathilai",
+    "acceptable": [
+      "साथीलाई"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "साथीलाई"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "sathiharu",
+    "acceptable": [
+      "साथीहरू"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "साथीहरू"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "manchele",
+    "acceptable": [
+      "मान्छेले"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "मान्चेले"
+    ],
+    "proposed": [
+      "मान्छेले"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "manchelai",
+    "acceptable": [
+      "मान्छेलाई"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "मान्छेलाई"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "gaunma",
+    "acceptable": [
+      "गाउँमा"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "गाउँमा"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "gaunbata",
+    "acceptable": [
+      "गाउँबाट"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "गाउँबाट"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "nepalko",
+    "acceptable": [
+      "नेपालको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "नेपालको"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "nepalma",
+    "acceptable": [
+      "नेपालमा"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "नेपालमा"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "kalambata",
+    "acceptable": [
+      "कलमबाट"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "कलमबाट",
+      "कलामबाट"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "kalamharu",
+    "acceptable": [
+      "कलमहरू"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "कलमहरू"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "paisaako",
+    "acceptable": [
+      "पैसाको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": false,
+    "proposed_available": false
+  },
+  {
+    "roman": "paisaale",
+    "acceptable": [
+      "पैसाले"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": false,
+    "proposed_available": false
+  },
+  {
+    "roman": "aamako",
+    "acceptable": [
+      "आमाको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "आमाको"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "aamalai",
+    "acceptable": [
+      "आमालाई"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "आमालाई"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "bhaiko",
+    "acceptable": [
+      "भाइको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "भइको",
+      "भाईको"
+    ],
+    "proposed": [
+      "भाइको"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "bhailai",
+    "acceptable": [
+      "भाइलाई"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "भाइलाई"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "daiko",
+    "acceptable": [
+      "दाइको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "दैको"
+    ],
+    "proposed": [
+      "दाइको"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "didilai",
+    "acceptable": [
+      "दिदीलाई"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "दिदिलाई",
+      "दीदीलाई"
+    ],
+    "proposed": [
+      "दिदीलाई"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "dudhko",
+    "acceptable": [
+      "दूधको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "दुधको",
+      "दूधको"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "dudhma",
+    "acceptable": [
+      "दूधमा"
+    ],
+    "kind": "nepali",
+    "existing_first4": [],
+    "proposed": [
+      "दूधमा"
+    ],
+    "existing_available": false,
+    "proposed_available": true
+  },
+  {
+    "roman": "paaniko",
+    "acceptable": [
+      "पानीको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "पानीको"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "naamko",
+    "acceptable": [
+      "नामको"
+    ],
+    "kind": "nepali",
+    "existing_first4": [
+      "नामको"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "karma",
+    "acceptable": [
+      "karma"
+    ],
+    "kind": "control",
+    "existing_first4": [
+      "करमा",
+      "कर्म",
+      "कर्मा"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "drama",
+    "acceptable": [
+      "drama"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "camera",
+    "acceptable": [
+      "camera"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "kalamazoo",
+    "acceptable": [
+      "kalamazoo"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "gharMa",
+    "acceptable": [
+      "gharMa"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "ghar_ma",
+    "acceptable": [
+      "ghar_ma"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "https://ghar.ma",
+    "acceptable": [
+      "https://ghar.ma"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "ma",
+    "acceptable": [
+      "ma"
+    ],
+    "kind": "control",
+    "existing_first4": [
+      "म",
+      "मा"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "alex",
+    "acceptable": [
+      "alex"
+    ],
+    "kind": "control",
+    "existing_first4": [],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  },
+  {
+    "roman": "ram",
+    "acceptable": [
+      "ram"
+    ],
+    "kind": "control",
+    "existing_first4": [
+      "रम",
+      "राम"
+    ],
+    "proposed": [],
+    "existing_available": true,
+    "proposed_available": true
+  }
+]

@@ -1,0 +1,2652 @@
+{
+  "cases" : [
+    {
+      "actual" : "Please close the window before dinner.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Please close the window before dinner."
+      ],
+      "id" : "H001",
+      "input" : "Please close the window before dinner.",
+      "tokens" : [
+        {
+          "actual" : "Please",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "Please"
+          ],
+          "input" : "Please",
+          "role" : "english"
+        },
+        {
+          "actual" : "window",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "window"
+          ],
+          "input" : "window",
+          "role" : "english"
+        },
+        {
+          "actual" : "dinner",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "dinner"
+          ],
+          "input" : "dinner",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "Our train arrives early on Friday.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Our train arrives early on Friday."
+      ],
+      "id" : "H002",
+      "input" : "Our train arrives early on Friday.",
+      "tokens" : [
+        {
+          "actual" : "train",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "train"
+          ],
+          "input" : "train",
+          "role" : "english"
+        },
+        {
+          "actual" : "arrives",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "arrives"
+          ],
+          "input" : "arrives",
+          "role" : "english"
+        },
+        {
+          "actual" : "Friday",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "Friday"
+          ],
+          "input" : "Friday",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "The small garden needs more water.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "The small garden needs more water."
+      ],
+      "id" : "H003",
+      "input" : "The small garden needs more water.",
+      "tokens" : [
+        {
+          "actual" : "garden",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "garden"
+          ],
+          "input" : "garden",
+          "role" : "english"
+        },
+        {
+          "actual" : "needs",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "needs"
+          ],
+          "input" : "needs",
+          "role" : "english"
+        },
+        {
+          "actual" : "water",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "water"
+          ],
+          "input" : "water",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "She will bring the red notebook.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "She will bring the red notebook."
+      ],
+      "id" : "H004",
+      "input" : "She will bring the red notebook.",
+      "tokens" : [
+        {
+          "actual" : "bring",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "bring"
+          ],
+          "input" : "bring",
+          "role" : "english"
+        },
+        {
+          "actual" : "red",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "red"
+          ],
+          "input" : "red",
+          "role" : "english"
+        },
+        {
+          "actual" : "notebook",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "notebook"
+          ],
+          "input" : "notebook",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "A quiet room helps me concentrate.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "A quiet room helps me concentrate."
+      ],
+      "id" : "H005",
+      "input" : "A quiet room helps me concentrate.",
+      "tokens" : [
+        {
+          "actual" : "quiet",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "quiet"
+          ],
+          "input" : "quiet",
+          "role" : "english"
+        },
+        {
+          "actual" : "room",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "room"
+          ],
+          "input" : "room",
+          "role" : "english"
+        },
+        {
+          "actual" : "concentrate",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "concentrate"
+          ],
+          "input" : "concentrate",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "We bought fresh bread this morning.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "We bought fresh bread this morning."
+      ],
+      "id" : "H006",
+      "input" : "We bought fresh bread this morning.",
+      "tokens" : [
+        {
+          "actual" : "bought",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "bought"
+          ],
+          "input" : "bought",
+          "role" : "english"
+        },
+        {
+          "actual" : "bread",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "bread"
+          ],
+          "input" : "bread",
+          "role" : "english"
+        },
+        {
+          "actual" : "morning",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "morning"
+          ],
+          "input" : "morning",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "Can your brother repair this bicycle?",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Can your brother repair this bicycle?"
+      ],
+      "id" : "H007",
+      "input" : "Can your brother repair this bicycle?",
+      "tokens" : [
+        {
+          "actual" : "brother",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "brother"
+          ],
+          "input" : "brother",
+          "role" : "english"
+        },
+        {
+          "actual" : "repair",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "repair"
+          ],
+          "input" : "repair",
+          "role" : "english"
+        },
+        {
+          "actual" : "bicycle",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "bicycle"
+          ],
+          "input" : "bicycle",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "They watched birds beside the river.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "They watched birds beside the river."
+      ],
+      "id" : "H008",
+      "input" : "They watched birds beside the river.",
+      "tokens" : [
+        {
+          "actual" : "watched",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "watched"
+          ],
+          "input" : "watched",
+          "role" : "english"
+        },
+        {
+          "actual" : "birds",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "birds"
+          ],
+          "input" : "birds",
+          "role" : "english"
+        },
+        {
+          "actual" : "river",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "river"
+          ],
+          "input" : "river",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "Please leave my shoes near the door.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Please leave my shoes near the door."
+      ],
+      "id" : "H009",
+      "input" : "Please leave my shoes near the door.",
+      "tokens" : [
+        {
+          "actual" : "leave",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "leave"
+          ],
+          "input" : "leave",
+          "role" : "english"
+        },
+        {
+          "actual" : "shoes",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "shoes"
+          ],
+          "input" : "shoes",
+          "role" : "english"
+        },
+        {
+          "actual" : "door",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "door"
+          ],
+          "input" : "door",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "The music was surprisingly loud tonight.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "The music was surprisingly loud tonight."
+      ],
+      "id" : "H010",
+      "input" : "The music was surprisingly loud tonight.",
+      "tokens" : [
+        {
+          "actual" : "music",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "music"
+          ],
+          "input" : "music",
+          "role" : "english"
+        },
+        {
+          "actual" : "surprisingly",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "surprisingly"
+          ],
+          "input" : "surprisingly",
+          "role" : "english"
+        },
+        {
+          "actual" : "loud",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "loud"
+          ],
+          "input" : "loud",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "आज घम लगेको छ.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "आज घाम लागेको छ."
+      ],
+      "id" : "H011",
+      "input" : "aaja gham lageko cha.",
+      "tokens" : [
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aaja",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "घम",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "घाम"
+          ],
+          "input" : "gham",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "लगेको",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "लागेको"
+          ],
+          "input" : "lageko",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "तिमी कहाँ बस्चौ?",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "तिमी कहाँ बस्छौ?"
+      ],
+      "id" : "H012",
+      "input" : "timi kaha baschau?",
+      "tokens" : [
+        {
+          "actual" : "तिमी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "तिमी"
+          ],
+          "input" : "timi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "कहाँ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "कहाँ"
+          ],
+          "input" : "kaha",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "बस्चौ",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "बस्छौ"
+          ],
+          "input" : "baschau",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "यो किताब धेरै राम्रो छ.",
+      "category" : "nepali",
+      "exact" : true,
+      "expected" : [
+        "यो किताब धेरै राम्रो छ."
+      ],
+      "id" : "H013",
+      "input" : "yo kitab dherai ramro cha.",
+      "tokens" : [
+        {
+          "actual" : "यो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "यो"
+          ],
+          "input" : "yo",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "किताब",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "किताब"
+          ],
+          "input" : "kitab",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "धेरै",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "धेरै"
+          ],
+          "input" : "dherai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "राम्रो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "राम्रो"
+          ],
+          "input" : "ramro",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "हामी भोलि घर जन्चौ.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "हामी भोलि घर जान्छौँ."
+      ],
+      "id" : "H014",
+      "input" : "hami bholi ghar janchau.",
+      "tokens" : [
+        {
+          "actual" : "हामी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "हामी"
+          ],
+          "input" : "hami",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "भोलि",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "भोलि"
+          ],
+          "input" : "bholi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "घर",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "घर"
+          ],
+          "input" : "ghar",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "जन्चौ",
+          "candidate_available" : false,
+          "correct" : false,
+          "expected" : [
+            "जान्छौँ",
+            "जान्छौं"
+          ],
+          "input" : "janchau",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "उस्ले मिठो खाना बनायो.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "उसले मिठो खाना बनायो."
+      ],
+      "id" : "H015",
+      "input" : "usle mitho khana banayo.",
+      "tokens" : [
+        {
+          "actual" : "उस्ले",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "उसले"
+          ],
+          "input" : "usle",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "मिठो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मिठो"
+          ],
+          "input" : "mitho",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "खाना",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "खाना"
+          ],
+          "input" : "khana",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "बनायो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "बनायो"
+          ],
+          "input" : "banayo",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "मलाई नयाँ लुगा चाहिन्छ.",
+      "category" : "nepali",
+      "exact" : true,
+      "expected" : [
+        "मलाई नयाँ लुगा चाहिन्छ."
+      ],
+      "id" : "H016",
+      "input" : "malai naya luga chahinchha.",
+      "tokens" : [
+        {
+          "actual" : "मलाई",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मलाई"
+          ],
+          "input" : "malai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "नयाँ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "नयाँ"
+          ],
+          "input" : "naya",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "लुगा",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "लुगा"
+          ],
+          "input" : "luga",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "चाहिन्छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "चाहिन्छ"
+          ],
+          "input" : "chahinchha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "आमा bazar जानु भयो.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "आमा बजार जानु भयो."
+      ],
+      "id" : "H017",
+      "input" : "aama bazar janu bhayo.",
+      "tokens" : [
+        {
+          "actual" : "आमा",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "आमा"
+          ],
+          "input" : "aama",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "bazar",
+          "candidate_available" : false,
+          "correct" : false,
+          "expected" : [
+            "बजार"
+          ],
+          "input" : "bazar",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "जानु",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "जानु"
+          ],
+          "input" : "janu",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "भयो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "भयो"
+          ],
+          "input" : "bhayo",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "साथी सँग कुरा gare.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "साथी संग कुरा गरे."
+      ],
+      "id" : "H018",
+      "input" : "sathi sanga kura gare.",
+      "tokens" : [
+        {
+          "actual" : "साथी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "साथी"
+          ],
+          "input" : "sathi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "सँग",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "संग",
+            "सँग"
+          ],
+          "input" : "sanga",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "कुरा",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "कुरा"
+          ],
+          "input" : "kura",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "gare",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "गरे"
+          ],
+          "input" : "gare",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "यो बतो कहाँ जान्छ?",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "यो बाटो कहाँ जान्छ?"
+      ],
+      "id" : "H019",
+      "input" : "yo bato kaha jancha?",
+      "tokens" : [
+        {
+          "actual" : "यो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "यो"
+          ],
+          "input" : "yo",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "बतो",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "बाटो"
+          ],
+          "input" : "bato",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "कहाँ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "कहाँ"
+          ],
+          "input" : "kaha",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "जान्छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "जान्छ"
+          ],
+          "input" : "jancha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "बच्च हरु बहिर खेल्दै छन्.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "बच्चा हरु बाहिर खेल्दै छन्."
+      ],
+      "id" : "H020",
+      "input" : "baccha haru bahira kheldai chan.",
+      "tokens" : [
+        {
+          "actual" : "बच्च",
+          "candidate_available" : false,
+          "correct" : false,
+          "expected" : [
+            "बच्चा"
+          ],
+          "input" : "baccha",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "हरु",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "हरु",
+            "हरू"
+          ],
+          "input" : "haru",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "बहिर",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "बाहिर"
+          ],
+          "input" : "bahira",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "खेल्दै",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "खेल्दै"
+          ],
+          "input" : "kheldai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छन्",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छन्"
+          ],
+          "input" : "chan",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "भोलि project सकेर घर जानु.",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "भोलि project सकेर घर जानु."
+      ],
+      "id" : "H021",
+      "input" : "bholi project sakera ghar janu.",
+      "tokens" : [
+        {
+          "actual" : "भोलि",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "भोलि"
+          ],
+          "input" : "bholi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "project",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "project"
+          ],
+          "input" : "project",
+          "role" : "english"
+        },
+        {
+          "actual" : "सकेर",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "सकेर"
+          ],
+          "input" : "sakera",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "घर",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "घर"
+          ],
+          "input" : "ghar",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "जानु",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "जानु"
+          ],
+          "input" : "janu",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "मेरो laptop आज धेरै slow छ.",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "मेरो laptop आज धेरै slow छ."
+      ],
+      "id" : "H022",
+      "input" : "mero laptop aja dherai slow cha.",
+      "tokens" : [
+        {
+          "actual" : "मेरो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मेरो"
+          ],
+          "input" : "mero",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "laptop",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "laptop"
+          ],
+          "input" : "laptop",
+          "role" : "english"
+        },
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aja",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "धेरै",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "धेरै"
+          ],
+          "input" : "dherai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "slow",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "slow"
+          ],
+          "input" : "slow",
+          "role" : "english"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "please malai file पथौनु.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "please मलाई file पठाउनु."
+      ],
+      "id" : "H023",
+      "input" : "please malai file pathaunu.",
+      "tokens" : [
+        {
+          "actual" : "please",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "please"
+          ],
+          "input" : "please",
+          "role" : "english"
+        },
+        {
+          "actual" : "malai",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "मलाई"
+          ],
+          "input" : "malai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "file",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "file"
+          ],
+          "input" : "file",
+          "role" : "english"
+        },
+        {
+          "actual" : "पथौनु",
+          "candidate_available" : false,
+          "correct" : false,
+          "expected" : [
+            "पठाउनु"
+          ],
+          "input" : "pathaunu",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "हामी वीकेन्ड म park जन्चौ.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "हामी weekend मा park जान्छौँ."
+      ],
+      "id" : "H024",
+      "input" : "hami weekend ma park janchau.",
+      "tokens" : [
+        {
+          "actual" : "हामी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "हामी"
+          ],
+          "input" : "hami",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "वीकेन्ड",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "weekend"
+          ],
+          "input" : "weekend",
+          "role" : "english"
+        },
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "मा"
+          ],
+          "input" : "ma",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "park",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "park"
+          ],
+          "input" : "park",
+          "role" : "english"
+        },
+        {
+          "actual" : "जन्चौ",
+          "candidate_available" : false,
+          "correct" : false,
+          "expected" : [
+            "जान्छौँ",
+            "जान्छौं"
+          ],
+          "input" : "janchau",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "आज office ko लन्च मिठो थियो.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "आज office को lunch मिठो थियो."
+      ],
+      "id" : "H025",
+      "input" : "aaja office ko lunch mitho thiyo.",
+      "tokens" : [
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aaja",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "office",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "office"
+          ],
+          "input" : "office",
+          "role" : "english"
+        },
+        {
+          "actual" : "ko",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "को"
+          ],
+          "input" : "ko",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "लन्च",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "lunch"
+          ],
+          "input" : "lunch",
+          "role" : "english"
+        },
+        {
+          "actual" : "मिठो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मिठो"
+          ],
+          "input" : "mitho",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "थियो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "थियो"
+          ],
+          "input" : "thiyo",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "तिम्रो meeting कति बजे छ?",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "तिम्रो meeting कति बजे छ?"
+      ],
+      "id" : "H026",
+      "input" : "timro meeting kati baje cha?",
+      "tokens" : [
+        {
+          "actual" : "तिम्रो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "तिम्रो"
+          ],
+          "input" : "timro",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "meeting",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "meeting"
+          ],
+          "input" : "meeting",
+          "role" : "english"
+        },
+        {
+          "actual" : "कति",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "कति"
+          ],
+          "input" : "kati",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "बजे",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "बजे"
+          ],
+          "input" : "baje",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "maile photos सबै download gare.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "मैले photos सबै download गरे."
+      ],
+      "id" : "H027",
+      "input" : "maile photos sabai download gare.",
+      "tokens" : [
+        {
+          "actual" : "maile",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "मैले"
+          ],
+          "input" : "maile",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "photos",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "photos"
+          ],
+          "input" : "photos",
+          "role" : "english"
+        },
+        {
+          "actual" : "सबै",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "सबै"
+          ],
+          "input" : "sabai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "download",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "download"
+          ],
+          "input" : "download",
+          "role" : "english"
+        },
+        {
+          "actual" : "gare",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "गरे"
+          ],
+          "input" : "gare",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "यो message pachi call गर्नु.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "यो message पछि call गर्नु."
+      ],
+      "id" : "H028",
+      "input" : "yo message pachi call garnu.",
+      "tokens" : [
+        {
+          "actual" : "यो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "यो"
+          ],
+          "input" : "yo",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "message",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "message"
+          ],
+          "input" : "message",
+          "role" : "english"
+        },
+        {
+          "actual" : "pachi",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "पछि"
+          ],
+          "input" : "pachi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "call",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "call"
+          ],
+          "input" : "call",
+          "role" : "english"
+        },
+        {
+          "actual" : "गर्नु",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "गर्नु"
+          ],
+          "input" : "garnu",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "हाम्रो team le game जित्यो.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "हाम्रो team ले game जित्यो."
+      ],
+      "id" : "H029",
+      "input" : "hamro team le game jityo.",
+      "tokens" : [
+        {
+          "actual" : "हाम्रो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "हाम्रो"
+          ],
+          "input" : "hamro",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "team",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "team"
+          ],
+          "input" : "team",
+          "role" : "english"
+        },
+        {
+          "actual" : "le",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "ले"
+          ],
+          "input" : "le",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "game",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "game"
+          ],
+          "input" : "game",
+          "role" : "english"
+        },
+        {
+          "actual" : "जित्यो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "जित्यो"
+          ],
+          "input" : "jityo",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "आज weather एक्दम cold छ.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "आज weather एकदम cold छ."
+      ],
+      "id" : "H030",
+      "input" : "aaja weather ekdam cold cha.",
+      "tokens" : [
+        {
+          "actual" : "आज",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "आज"
+          ],
+          "input" : "aaja",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "weather",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "weather"
+          ],
+          "input" : "weather",
+          "role" : "english"
+        },
+        {
+          "actual" : "एक्दम",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "एकदम"
+          ],
+          "input" : "ekdam",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "cold",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "cold"
+          ],
+          "input" : "cold",
+          "role" : "english"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "मलाई पनि चहियो.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "मलाई पानी चाहियो."
+      ],
+      "id" : "H031",
+      "input" : "malai pani chahiyo.",
+      "tokens" : [
+        {
+          "actual" : "मलाई",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मलाई"
+          ],
+          "input" : "malai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "पनि",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "पानी"
+          ],
+          "input" : "pani",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "चहियो",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "चाहियो"
+          ],
+          "input" : "chahiyo",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "म पनि आउँछु.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "म पनि आउँछु."
+      ],
+      "id" : "H032",
+      "input" : "ma pani aauchhu.",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "पनि",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "पनि"
+          ],
+          "input" : "pani",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "आउँछु",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "आउँछु"
+          ],
+          "input" : "aauchhu",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "म घर म छु.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "म घर मा छु."
+      ],
+      "id" : "H033",
+      "input" : "ma ghar ma chu.",
+      "tokens" : [
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "म"
+          ],
+          "input" : "ma",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "घर",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "घर"
+          ],
+          "input" : "ghar",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "मा"
+          ],
+          "input" : "ma",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छु",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छु"
+          ],
+          "input" : "chu",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "the man opened the door.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "the man opened the door."
+      ],
+      "id" : "H034",
+      "input" : "the man opened the door.",
+      "tokens" : [
+        {
+          "actual" : "the",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "the"
+          ],
+          "input" : "the",
+          "role" : "english"
+        },
+        {
+          "actual" : "man",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "man"
+          ],
+          "input" : "man",
+          "role" : "english"
+        },
+        {
+          "actual" : "opened",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "opened"
+          ],
+          "input" : "opened",
+          "role" : "english"
+        },
+        {
+          "actual" : "door",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "door"
+          ],
+          "input" : "door",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "मेरो मन खुसी छ.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "मेरो मन खुसी छ."
+      ],
+      "id" : "H035",
+      "input" : "mero man khusi cha.",
+      "tokens" : [
+        {
+          "actual" : "मेरो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मेरो"
+          ],
+          "input" : "mero",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "मन",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "मन"
+          ],
+          "input" : "man",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "खुसी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "खुसी",
+            "खुशी"
+          ],
+          "input" : "khusi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "please write your name here.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "please write your name here."
+      ],
+      "id" : "H036",
+      "input" : "please write your name here.",
+      "tokens" : [
+        {
+          "actual" : "please",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "please"
+          ],
+          "input" : "please",
+          "role" : "english"
+        },
+        {
+          "actual" : "write",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "write"
+          ],
+          "input" : "write",
+          "role" : "english"
+        },
+        {
+          "actual" : "name",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "name"
+          ],
+          "input" : "name",
+          "role" : "english"
+        },
+        {
+          "actual" : "here",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "here"
+          ],
+          "input" : "here",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "तिम्रो नाम के हो?",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "तिम्रो नाम के हो?"
+      ],
+      "id" : "H037",
+      "input" : "timro naam ke ho?",
+      "tokens" : [
+        {
+          "actual" : "तिम्रो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "तिम्रो"
+          ],
+          "input" : "timro",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "नाम",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "नाम"
+          ],
+          "input" : "naam",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "के",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "के"
+          ],
+          "input" : "ke",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "हो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "हो"
+          ],
+          "input" : "ho",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "the bus stops near my home.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "the bus stops near my home."
+      ],
+      "id" : "H038",
+      "input" : "the bus stops near my home.",
+      "tokens" : [
+        {
+          "actual" : "bus",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "bus"
+          ],
+          "input" : "bus",
+          "role" : "english"
+        },
+        {
+          "actual" : "stops",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "stops"
+          ],
+          "input" : "stops",
+          "role" : "english"
+        },
+        {
+          "actual" : "near",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "near"
+          ],
+          "input" : "near",
+          "role" : "english"
+        },
+        {
+          "actual" : "home",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "home"
+          ],
+          "input" : "home",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "हामी bus म जन्चौ.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "हामी bus मा जान्छौँ."
+      ],
+      "id" : "H039",
+      "input" : "hami bus ma janchau.",
+      "tokens" : [
+        {
+          "actual" : "हामी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "हामी"
+          ],
+          "input" : "hami",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "bus",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "bus"
+          ],
+          "input" : "bus",
+          "role" : "english"
+        },
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "मा"
+          ],
+          "input" : "ma",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "जन्चौ",
+          "candidate_available" : false,
+          "correct" : false,
+          "expected" : [
+            "जान्छौँ",
+            "जान्छौं"
+          ],
+          "input" : "janchau",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "this is a test.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "this is a test."
+      ],
+      "id" : "H040",
+      "input" : "this is a test.",
+      "tokens" : [
+        {
+          "actual" : "this",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "this"
+          ],
+          "input" : "this",
+          "role" : "english"
+        },
+        {
+          "actual" : "is",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "is"
+          ],
+          "input" : "is",
+          "role" : "english"
+        },
+        {
+          "actual" : "a",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "a"
+          ],
+          "input" : "a",
+          "role" : "english"
+        },
+        {
+          "actual" : "test",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "test"
+          ],
+          "input" : "test",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "visit https://example.com/path now",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "visit https://example.com/path now"
+      ],
+      "id" : "H041",
+      "input" : "visit https://example.com/path now",
+      "tokens" : [
+        {
+          "actual" : "visit",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "visit"
+          ],
+          "input" : "visit",
+          "role" : "english"
+        },
+        {
+          "actual" : "https://example.com/path",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "https://example.com/path"
+          ],
+          "input" : "https://example.com/path",
+          "role" : "literal"
+        },
+        {
+          "actual" : "now",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "now"
+          ],
+          "input" : "now",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "email test@example.org भोलि",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "email test@example.org भोलि"
+      ],
+      "id" : "H042",
+      "input" : "email test@example.org bholi",
+      "tokens" : [
+        {
+          "actual" : "email",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "email"
+          ],
+          "input" : "email",
+          "role" : "english"
+        },
+        {
+          "actual" : "test@example.org",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "test@example.org"
+          ],
+          "input" : "test@example.org",
+          "role" : "literal"
+        },
+        {
+          "actual" : "भोलि",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "भोलि"
+          ],
+          "input" : "bholi",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "यो file src/main.swift म छ",
+      "category" : "literal",
+      "exact" : false,
+      "expected" : [
+        "यो file src/main.swift मा छ"
+      ],
+      "id" : "H043",
+      "input" : "yo file src/main.swift ma cha",
+      "tokens" : [
+        {
+          "actual" : "यो",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "यो"
+          ],
+          "input" : "yo",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "file",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "file"
+          ],
+          "input" : "file",
+          "role" : "english"
+        },
+        {
+          "actual" : "src/main.swift",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "src/main.swift"
+          ],
+          "input" : "src/main.swift",
+          "role" : "literal"
+        },
+        {
+          "actual" : "म",
+          "candidate_available" : true,
+          "correct" : false,
+          "expected" : [
+            "मा"
+          ],
+          "input" : "ma",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छ"
+          ],
+          "input" : "cha",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "keep my_variable unchanged",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "keep my_variable unchanged"
+      ],
+      "id" : "H044",
+      "input" : "keep my_variable unchanged",
+      "tokens" : [
+        {
+          "actual" : "keep",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "keep"
+          ],
+          "input" : "keep",
+          "role" : "english"
+        },
+        {
+          "actual" : "my_variable",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "my_variable"
+          ],
+          "input" : "my_variable",
+          "role" : "literal"
+        },
+        {
+          "actual" : "unchanged",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "unchanged"
+          ],
+          "input" : "unchanged",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "run `git status` first",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "run `git status` first"
+      ],
+      "id" : "H045",
+      "input" : "run `git status` first",
+      "tokens" : [
+        {
+          "actual" : "run",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "run"
+          ],
+          "input" : "run",
+          "role" : "english"
+        },
+        {
+          "actual" : "`git status`",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "`git status`"
+          ],
+          "input" : "`git status`",
+          "role" : "literal"
+        },
+        {
+          "actual" : "first",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "first"
+          ],
+          "input" : "first",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "open config.json before lunch",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "open config.json before lunch"
+      ],
+      "id" : "H046",
+      "input" : "open config.json before lunch",
+      "tokens" : [
+        {
+          "actual" : "open",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "open"
+          ],
+          "input" : "open",
+          "role" : "english"
+        },
+        {
+          "actual" : "config.json",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "config.json"
+          ],
+          "input" : "config.json",
+          "role" : "literal"
+        },
+        {
+          "actual" : "before",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "before"
+          ],
+          "input" : "before",
+          "role" : "english"
+        },
+        {
+          "actual" : "lunch",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "lunch"
+          ],
+          "input" : "lunch",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "send https://nepal.gov.np to me",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "send https://nepal.gov.np to me"
+      ],
+      "id" : "H047",
+      "input" : "send https://nepal.gov.np to me",
+      "tokens" : [
+        {
+          "actual" : "send",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "send"
+          ],
+          "input" : "send",
+          "role" : "english"
+        },
+        {
+          "actual" : "https://nepal.gov.np",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "https://nepal.gov.np"
+          ],
+          "input" : "https://nepal.gov.np",
+          "role" : "literal"
+        },
+        {
+          "actual" : "to",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "to"
+          ],
+          "input" : "to",
+          "role" : "english"
+        },
+        {
+          "actual" : "me",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "me"
+          ],
+          "input" : "me",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "hello 👋 तिमी सन्चै छौ?",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "hello 👋 तिमी सन्चै छौ?"
+      ],
+      "id" : "H048",
+      "input" : "hello 👋 timi sanchai chau?",
+      "tokens" : [
+        {
+          "actual" : "hello",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "hello"
+          ],
+          "input" : "hello",
+          "role" : "english"
+        },
+        {
+          "actual" : "containment check",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "👋"
+          ],
+          "input" : "👋",
+          "role" : "literal"
+        },
+        {
+          "actual" : "तिमी",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "तिमी"
+          ],
+          "input" : "timi",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "सन्चै",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "सन्चै",
+            "सञ्चै"
+          ],
+          "input" : "sanchai",
+          "role" : "nepali"
+        },
+        {
+          "actual" : "छौ",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "छौ"
+          ],
+          "input" : "chau",
+          "role" : "nepali"
+        }
+      ]
+    },
+    {
+      "actual" : "the ID is AB123 now",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "the ID is AB123 now"
+      ],
+      "id" : "H049",
+      "input" : "the ID is AB123 now",
+      "tokens" : [
+        {
+          "actual" : "the",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "the"
+          ],
+          "input" : "the",
+          "role" : "english"
+        },
+        {
+          "actual" : "ID",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "ID"
+          ],
+          "input" : "ID",
+          "role" : "literal"
+        },
+        {
+          "actual" : "is",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "is"
+          ],
+          "input" : "is",
+          "role" : "english"
+        },
+        {
+          "actual" : "AB123",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "AB123"
+          ],
+          "input" : "AB123",
+          "role" : "literal"
+        },
+        {
+          "actual" : "now",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "now"
+          ],
+          "input" : "now",
+          "role" : "english"
+        }
+      ]
+    },
+    {
+      "actual" : "check camelCase before deploy",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "check camelCase before deploy"
+      ],
+      "id" : "H050",
+      "input" : "check camelCase before deploy",
+      "tokens" : [
+        {
+          "actual" : "check",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "check"
+          ],
+          "input" : "check",
+          "role" : "english"
+        },
+        {
+          "actual" : "camelCase",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "camelCase"
+          ],
+          "input" : "camelCase",
+          "role" : "literal"
+        },
+        {
+          "actual" : "before",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "before"
+          ],
+          "input" : "before",
+          "role" : "english"
+        },
+        {
+          "actual" : "deploy",
+          "candidate_available" : true,
+          "correct" : true,
+          "expected" : [
+            "deploy"
+          ],
+          "input" : "deploy",
+          "role" : "english"
+        }
+      ]
+    }
+  ],
+  "fixture_version" : "2026-10-30-fresh-v1",
+  "method" : "Context-ranked top choice, canonical Unicode equality, four candidates plus original; standalone engine only",
+  "summary" : {
+    "ambiguity" : {
+      "english_candidate_available" : 17,
+      "english_correct" : 17,
+      "english_total" : 17,
+      "nepali_candidate_available" : 20,
+      "nepali_correct" : 16,
+      "nepali_total" : 21,
+      "sentences_exact" : 7,
+      "sentences_total" : 10
+    },
+    "english" : {
+      "english_candidate_available" : 30,
+      "english_correct" : 30,
+      "english_total" : 30,
+      "sentences_exact" : 10,
+      "sentences_total" : 10
+    },
+    "literal" : {
+      "english_candidate_available" : 21,
+      "english_correct" : 21,
+      "english_total" : 21,
+      "literal_candidate_available" : 11,
+      "literal_correct" : 11,
+      "literal_total" : 11,
+      "nepali_candidate_available" : 7,
+      "nepali_correct" : 6,
+      "nepali_total" : 7,
+      "sentences_exact" : 9,
+      "sentences_total" : 10
+    },
+    "mixed" : {
+      "english_candidate_available" : 18,
+      "english_correct" : 16,
+      "english_total" : 18,
+      "nepali_candidate_available" : 31,
+      "nepali_correct" : 23,
+      "nepali_total" : 33,
+      "sentences_exact" : 3,
+      "sentences_total" : 10
+    },
+    "nepali" : {
+      "nepali_candidate_available" : 38,
+      "nepali_correct" : 31,
+      "nepali_total" : 41,
+      "sentences_exact" : 2,
+      "sentences_total" : 10
+    }
+  }
+}

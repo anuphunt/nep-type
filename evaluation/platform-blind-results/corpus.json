@@ -1,0 +1,2289 @@
+{
+  "version": "platform-blind-v1",
+  "description": "Author-separated synthetic references; unreviewed and nonrepresentative.",
+  "cases": [
+    {
+      "id": "B001",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Please bring the blue folder tomorrow.",
+      "expected": [
+        "Please bring the blue folder tomorrow."
+      ],
+      "annotations": [
+        {
+          "token": "Please",
+          "role": "english",
+          "acceptable": [
+            "Please"
+          ]
+        },
+        {
+          "token": "blue",
+          "role": "english",
+          "acceptable": [
+            "blue"
+          ]
+        },
+        {
+          "token": "folder",
+          "role": "english",
+          "acceptable": [
+            "folder"
+          ]
+        },
+        {
+          "token": "tomorrow",
+          "role": "english",
+          "acceptable": [
+            "tomorrow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B002",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "The bus arrived after lunch.",
+      "expected": [
+        "The bus arrived after lunch."
+      ],
+      "annotations": [
+        {
+          "token": "bus",
+          "role": "english",
+          "acceptable": [
+            "bus"
+          ]
+        },
+        {
+          "token": "arrived",
+          "role": "english",
+          "acceptable": [
+            "arrived"
+          ]
+        },
+        {
+          "token": "lunch",
+          "role": "english",
+          "acceptable": [
+            "lunch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B003",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "I left my umbrella near the door.",
+      "expected": [
+        "I left my umbrella near the door."
+      ],
+      "annotations": [
+        {
+          "token": "left",
+          "role": "english",
+          "acceptable": [
+            "left"
+          ]
+        },
+        {
+          "token": "umbrella",
+          "role": "english",
+          "acceptable": [
+            "umbrella"
+          ]
+        },
+        {
+          "token": "door",
+          "role": "english",
+          "acceptable": [
+            "door"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B004",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "The little bird is singing outside.",
+      "expected": [
+        "The little bird is singing outside."
+      ],
+      "annotations": [
+        {
+          "token": "little",
+          "role": "english",
+          "acceptable": [
+            "little"
+          ]
+        },
+        {
+          "token": "bird",
+          "role": "english",
+          "acceptable": [
+            "bird"
+          ]
+        },
+        {
+          "token": "singing",
+          "role": "english",
+          "acceptable": [
+            "singing"
+          ]
+        },
+        {
+          "token": "outside",
+          "role": "english",
+          "acceptable": [
+            "outside"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B005",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "We should check the weather first.",
+      "expected": [
+        "We should check the weather first."
+      ],
+      "annotations": [
+        {
+          "token": "check",
+          "role": "english",
+          "acceptable": [
+            "check"
+          ]
+        },
+        {
+          "token": "weather",
+          "role": "english",
+          "acceptable": [
+            "weather"
+          ]
+        },
+        {
+          "token": "first",
+          "role": "english",
+          "acceptable": [
+            "first"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B006",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Can you send the final report tonight?",
+      "expected": [
+        "Can you send the final report tonight?"
+      ],
+      "annotations": [
+        {
+          "token": "send",
+          "role": "english",
+          "acceptable": [
+            "send"
+          ]
+        },
+        {
+          "token": "final",
+          "role": "english",
+          "acceptable": [
+            "final"
+          ]
+        },
+        {
+          "token": "report",
+          "role": "english",
+          "acceptable": [
+            "report"
+          ]
+        },
+        {
+          "token": "tonight",
+          "role": "english",
+          "acceptable": [
+            "tonight"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B007",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "The children walked home together.",
+      "expected": [
+        "The children walked home together."
+      ],
+      "annotations": [
+        {
+          "token": "children",
+          "role": "english",
+          "acceptable": [
+            "children"
+          ]
+        },
+        {
+          "token": "walked",
+          "role": "english",
+          "acceptable": [
+            "walked"
+          ]
+        },
+        {
+          "token": "home",
+          "role": "english",
+          "acceptable": [
+            "home"
+          ]
+        },
+        {
+          "token": "together",
+          "role": "english",
+          "acceptable": [
+            "together"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B008",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "My sister likes fresh orange juice.",
+      "expected": [
+        "My sister likes fresh orange juice."
+      ],
+      "annotations": [
+        {
+          "token": "sister",
+          "role": "english",
+          "acceptable": [
+            "sister"
+          ]
+        },
+        {
+          "token": "fresh",
+          "role": "english",
+          "acceptable": [
+            "fresh"
+          ]
+        },
+        {
+          "token": "orange",
+          "role": "english",
+          "acceptable": [
+            "orange"
+          ]
+        },
+        {
+          "token": "juice",
+          "role": "english",
+          "acceptable": [
+            "juice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B009",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "This place feels quiet and warm.",
+      "expected": [
+        "This place feels quiet and warm."
+      ],
+      "annotations": [
+        {
+          "token": "place",
+          "role": "english",
+          "acceptable": [
+            "place"
+          ]
+        },
+        {
+          "token": "quiet",
+          "role": "english",
+          "acceptable": [
+            "quiet"
+          ]
+        },
+        {
+          "token": "warm",
+          "role": "english",
+          "acceptable": [
+            "warm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B010",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "The train was late because of rain.",
+      "expected": [
+        "The train was late because of rain."
+      ],
+      "annotations": [
+        {
+          "token": "train",
+          "role": "english",
+          "acceptable": [
+            "train"
+          ]
+        },
+        {
+          "token": "late",
+          "role": "english",
+          "acceptable": [
+            "late"
+          ]
+        },
+        {
+          "token": "rain",
+          "role": "english",
+          "acceptable": [
+            "rain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B011",
+      "category": "english",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "We can meet near the library.",
+      "expected": [
+        "We can meet near the library."
+      ],
+      "annotations": [
+        {
+          "token": "meet",
+          "role": "english",
+          "acceptable": [
+            "meet"
+          ]
+        },
+        {
+          "token": "near",
+          "role": "english",
+          "acceptable": [
+            "near"
+          ]
+        },
+        {
+          "token": "library",
+          "role": "english",
+          "acceptable": [
+            "library"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B012",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aaja gharma ko ko chan?",
+      "expected": [
+        "आज घरमा को को छन्?"
+      ],
+      "annotations": [
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "gharma",
+          "role": "nepali",
+          "acceptable": [
+            "घरमा"
+          ]
+        },
+        {
+          "token": "chan",
+          "role": "nepali",
+          "acceptable": [
+            "छन्"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B013",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "bholi bihana chadai uthnu parcha.",
+      "expected": [
+        "भोलि बिहान चाँडै उठ्नु पर्छ."
+      ],
+      "annotations": [
+        {
+          "token": "bholi",
+          "role": "nepali",
+          "acceptable": [
+            "भोलि"
+          ]
+        },
+        {
+          "token": "bihana",
+          "role": "nepali",
+          "acceptable": [
+            "बिहान"
+          ]
+        },
+        {
+          "token": "chadai",
+          "role": "nepali",
+          "acceptable": [
+            "चाँडै",
+            "चाँडो"
+          ]
+        },
+        {
+          "token": "uthnu",
+          "role": "nepali",
+          "acceptable": [
+            "उठ्नु"
+          ]
+        },
+        {
+          "token": "parcha",
+          "role": "nepali",
+          "acceptable": [
+            "पर्छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B014",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "yo kitab kasle lyayo?",
+      "expected": [
+        "यो किताब कसले ल्यायो?"
+      ],
+      "annotations": [
+        {
+          "token": "yo",
+          "role": "nepali",
+          "acceptable": [
+            "यो"
+          ]
+        },
+        {
+          "token": "kitab",
+          "role": "nepali",
+          "acceptable": [
+            "किताब"
+          ]
+        },
+        {
+          "token": "kasle",
+          "role": "nepali",
+          "acceptable": [
+            "कसले"
+          ]
+        },
+        {
+          "token": "lyayo",
+          "role": "nepali",
+          "acceptable": [
+            "ल्यायो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B015",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero sathi ahile gharma cha.",
+      "expected": [
+        "मेरो साथी अहिले घरमा छ."
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "sathi",
+          "role": "nepali",
+          "acceptable": [
+            "साथी"
+          ]
+        },
+        {
+          "token": "ahile",
+          "role": "nepali",
+          "acceptable": [
+            "अहिले"
+          ]
+        },
+        {
+          "token": "gharma",
+          "role": "nepali",
+          "acceptable": [
+            "घरमा"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B016",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "hami beluka sangai khana khanchau.",
+      "expected": [
+        "हामी बेलुका सँगै खाना खान्छौँ."
+      ],
+      "annotations": [
+        {
+          "token": "hami",
+          "role": "nepali",
+          "acceptable": [
+            "हामी"
+          ]
+        },
+        {
+          "token": "beluka",
+          "role": "nepali",
+          "acceptable": [
+            "बेलुका"
+          ]
+        },
+        {
+          "token": "sangai",
+          "role": "nepali",
+          "acceptable": [
+            "सँगै"
+          ]
+        },
+        {
+          "token": "khana",
+          "role": "nepali",
+          "acceptable": [
+            "खाना"
+          ]
+        },
+        {
+          "token": "khanchau",
+          "role": "nepali",
+          "acceptable": [
+            "खान्छौँ",
+            "खान्छौं"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B017",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "timilai kun rang man parcha?",
+      "expected": [
+        "तिमीलाई कुन रङ मन पर्छ?"
+      ],
+      "annotations": [
+        {
+          "token": "timilai",
+          "role": "nepali",
+          "acceptable": [
+            "तिमीलाई"
+          ]
+        },
+        {
+          "token": "kun",
+          "role": "nepali",
+          "acceptable": [
+            "कुन"
+          ]
+        },
+        {
+          "token": "rang",
+          "role": "nepali",
+          "acceptable": [
+            "रङ",
+            "रंग"
+          ]
+        },
+        {
+          "token": "man",
+          "role": "nepali",
+          "acceptable": [
+            "मन"
+          ]
+        },
+        {
+          "token": "parcha",
+          "role": "nepali",
+          "acceptable": [
+            "पर्छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B018",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aama le mitho chiya banaunu bhayo.",
+      "expected": [
+        "आमा ले मिठो चिया बनाउनु भयो."
+      ],
+      "annotations": [
+        {
+          "token": "aama",
+          "role": "nepali",
+          "acceptable": [
+            "आमा"
+          ]
+        },
+        {
+          "token": "le",
+          "role": "nepali",
+          "acceptable": [
+            "ले"
+          ]
+        },
+        {
+          "token": "mitho",
+          "role": "nepali",
+          "acceptable": [
+            "मिठो",
+            "मीठो"
+          ]
+        },
+        {
+          "token": "chiya",
+          "role": "nepali",
+          "acceptable": [
+            "चिया"
+          ]
+        },
+        {
+          "token": "banaunu",
+          "role": "nepali",
+          "acceptable": [
+            "बनाउनु"
+          ]
+        },
+        {
+          "token": "bhayo",
+          "role": "nepali",
+          "acceptable": [
+            "भयो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B019",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "pani parepachi bato chiplo huncha.",
+      "expected": [
+        "पानी परेपछि बाटो चिप्लो हुन्छ."
+      ],
+      "annotations": [
+        {
+          "token": "pani",
+          "role": "nepali",
+          "acceptable": [
+            "पानी"
+          ]
+        },
+        {
+          "token": "parepachi",
+          "role": "nepali",
+          "acceptable": [
+            "परेपछि"
+          ]
+        },
+        {
+          "token": "bato",
+          "role": "nepali",
+          "acceptable": [
+            "बाटो"
+          ]
+        },
+        {
+          "token": "chiplo",
+          "role": "nepali",
+          "acceptable": [
+            "चिप्लो"
+          ]
+        },
+        {
+          "token": "huncha",
+          "role": "nepali",
+          "acceptable": [
+            "हुन्छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B020",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "maile hijo tyo geet sune.",
+      "expected": [
+        "मैले हिजो त्यो गीत सुनेँ."
+      ],
+      "annotations": [
+        {
+          "token": "maile",
+          "role": "nepali",
+          "acceptable": [
+            "मैले"
+          ]
+        },
+        {
+          "token": "hijo",
+          "role": "nepali",
+          "acceptable": [
+            "हिजो"
+          ]
+        },
+        {
+          "token": "tyo",
+          "role": "nepali",
+          "acceptable": [
+            "त्यो"
+          ]
+        },
+        {
+          "token": "geet",
+          "role": "nepali",
+          "acceptable": [
+            "गीत"
+          ]
+        },
+        {
+          "token": "sune",
+          "role": "nepali",
+          "acceptable": [
+            "सुनेँ",
+            "सुने"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B021",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "dherai din pachi bhetda ramailo lagyo.",
+      "expected": [
+        "धेरै दिन पछि भेट्दा रमाइलो लाग्यो."
+      ],
+      "annotations": [
+        {
+          "token": "dherai",
+          "role": "nepali",
+          "acceptable": [
+            "धेरै"
+          ]
+        },
+        {
+          "token": "din",
+          "role": "nepali",
+          "acceptable": [
+            "दिन"
+          ]
+        },
+        {
+          "token": "pachi",
+          "role": "nepali",
+          "acceptable": [
+            "पछि"
+          ]
+        },
+        {
+          "token": "ramailo",
+          "role": "nepali",
+          "acceptable": [
+            "रमाइलो"
+          ]
+        },
+        {
+          "token": "lagyo",
+          "role": "nepali",
+          "acceptable": [
+            "लाग्यो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B022",
+      "category": "nepali",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "kripaya dhoka bistari banda garnus.",
+      "expected": [
+        "कृपया ढोका बिस्तारै बन्द गर्नुस्."
+      ],
+      "annotations": [
+        {
+          "token": "kripaya",
+          "role": "nepali",
+          "acceptable": [
+            "कृपया"
+          ]
+        },
+        {
+          "token": "dhoka",
+          "role": "nepali",
+          "acceptable": [
+            "ढोका"
+          ]
+        },
+        {
+          "token": "bistari",
+          "role": "nepali",
+          "acceptable": [
+            "बिस्तारै",
+            "बिस्तरी"
+          ]
+        },
+        {
+          "token": "banda",
+          "role": "nepali",
+          "acceptable": [
+            "बन्द"
+          ]
+        },
+        {
+          "token": "garnus",
+          "role": "nepali",
+          "acceptable": [
+            "गर्नुस्",
+            "गर्नुस"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B023",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aaja meeting sakiepachi call gara.",
+      "expected": [
+        "आज meeting सकिएपछि call गर."
+      ],
+      "annotations": [
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "meeting",
+          "role": "english",
+          "acceptable": [
+            "meeting"
+          ]
+        },
+        {
+          "token": "sakiepachi",
+          "role": "nepali",
+          "acceptable": [
+            "सकिएपछि"
+          ]
+        },
+        {
+          "token": "call",
+          "role": "english",
+          "acceptable": [
+            "call"
+          ]
+        },
+        {
+          "token": "gara",
+          "role": "nepali",
+          "acceptable": [
+            "गर"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B024",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero laptop ko charger kata cha?",
+      "expected": [
+        "मेरो laptop को charger कहाँ छ?"
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "laptop",
+          "role": "english",
+          "acceptable": [
+            "laptop"
+          ]
+        },
+        {
+          "token": "ko",
+          "role": "nepali",
+          "acceptable": [
+            "को"
+          ]
+        },
+        {
+          "token": "charger",
+          "role": "english",
+          "acceptable": [
+            "charger"
+          ]
+        },
+        {
+          "token": "kata",
+          "role": "nepali",
+          "acceptable": [
+            "कहाँ",
+            "कता"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B025",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "yo file email ma pathaideu.",
+      "expected": [
+        "यो file email मा पठाइदेऊ."
+      ],
+      "annotations": [
+        {
+          "token": "yo",
+          "role": "nepali",
+          "acceptable": [
+            "यो"
+          ]
+        },
+        {
+          "token": "file",
+          "role": "english",
+          "acceptable": [
+            "file"
+          ]
+        },
+        {
+          "token": "email",
+          "role": "english",
+          "acceptable": [
+            "email"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "मा"
+          ]
+        },
+        {
+          "token": "pathaideu",
+          "role": "nepali",
+          "acceptable": [
+            "पठाइदेऊ",
+            "पठाइदेउ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B026",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "hami Sunday park ma bhetau.",
+      "expected": [
+        "हामी Sunday park मा भेटौँ."
+      ],
+      "annotations": [
+        {
+          "token": "hami",
+          "role": "nepali",
+          "acceptable": [
+            "हामी"
+          ]
+        },
+        {
+          "token": "Sunday",
+          "role": "english",
+          "acceptable": [
+            "Sunday"
+          ]
+        },
+        {
+          "token": "park",
+          "role": "english",
+          "acceptable": [
+            "park"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "मा"
+          ]
+        },
+        {
+          "token": "bhetau",
+          "role": "nepali",
+          "acceptable": [
+            "भेटौँ",
+            "भेटौं"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B027",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "please mero photo download gara.",
+      "expected": [
+        "please मेरो photo download गर."
+      ],
+      "annotations": [
+        {
+          "token": "please",
+          "role": "english",
+          "acceptable": [
+            "please"
+          ]
+        },
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "photo",
+          "role": "english",
+          "acceptable": [
+            "photo"
+          ]
+        },
+        {
+          "token": "download",
+          "role": "english",
+          "acceptable": [
+            "download"
+          ]
+        },
+        {
+          "token": "gara",
+          "role": "nepali",
+          "acceptable": [
+            "गर"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B028",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aaja office bata late aauchu.",
+      "expected": [
+        "आज office बाट late आउँछु."
+      ],
+      "annotations": [
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "office",
+          "role": "english",
+          "acceptable": [
+            "office"
+          ]
+        },
+        {
+          "token": "bata",
+          "role": "nepali",
+          "acceptable": [
+            "बाट"
+          ]
+        },
+        {
+          "token": "late",
+          "role": "english",
+          "acceptable": [
+            "late"
+          ]
+        },
+        {
+          "token": "aauchu",
+          "role": "nepali",
+          "acceptable": [
+            "आउँछु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B029",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "timro phone ko screen futyo?",
+      "expected": [
+        "तिम्रो phone को screen फुट्यो?"
+      ],
+      "annotations": [
+        {
+          "token": "timro",
+          "role": "nepali",
+          "acceptable": [
+            "तिम्रो"
+          ]
+        },
+        {
+          "token": "phone",
+          "role": "english",
+          "acceptable": [
+            "phone"
+          ]
+        },
+        {
+          "token": "ko",
+          "role": "nepali",
+          "acceptable": [
+            "को"
+          ]
+        },
+        {
+          "token": "screen",
+          "role": "english",
+          "acceptable": [
+            "screen"
+          ]
+        },
+        {
+          "token": "futyo",
+          "role": "nepali",
+          "acceptable": [
+            "फुट्यो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B030",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "project ko deadline next week ho.",
+      "expected": [
+        "project को deadline next week हो."
+      ],
+      "annotations": [
+        {
+          "token": "project",
+          "role": "english",
+          "acceptable": [
+            "project"
+          ]
+        },
+        {
+          "token": "ko",
+          "role": "nepali",
+          "acceptable": [
+            "को"
+          ]
+        },
+        {
+          "token": "deadline",
+          "role": "english",
+          "acceptable": [
+            "deadline"
+          ]
+        },
+        {
+          "token": "next",
+          "role": "english",
+          "acceptable": [
+            "next"
+          ]
+        },
+        {
+          "token": "week",
+          "role": "english",
+          "acceptable": [
+            "week"
+          ]
+        },
+        {
+          "token": "ho",
+          "role": "nepali",
+          "acceptable": [
+            "हो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B031",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "maile coffee order gareko chu.",
+      "expected": [
+        "मैले coffee order गरेको छु."
+      ],
+      "annotations": [
+        {
+          "token": "maile",
+          "role": "nepali",
+          "acceptable": [
+            "मैले"
+          ]
+        },
+        {
+          "token": "coffee",
+          "role": "english",
+          "acceptable": [
+            "coffee"
+          ]
+        },
+        {
+          "token": "order",
+          "role": "english",
+          "acceptable": [
+            "order"
+          ]
+        },
+        {
+          "token": "gareko",
+          "role": "nepali",
+          "acceptable": [
+            "गरेको"
+          ]
+        },
+        {
+          "token": "chu",
+          "role": "nepali",
+          "acceptable": [
+            "छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B032",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "bholi dentist ko appointment cha.",
+      "expected": [
+        "भोलि dentist को appointment छ."
+      ],
+      "annotations": [
+        {
+          "token": "bholi",
+          "role": "nepali",
+          "acceptable": [
+            "भोलि"
+          ]
+        },
+        {
+          "token": "dentist",
+          "role": "english",
+          "acceptable": [
+            "dentist"
+          ]
+        },
+        {
+          "token": "ko",
+          "role": "nepali",
+          "acceptable": [
+            "को"
+          ]
+        },
+        {
+          "token": "appointment",
+          "role": "english",
+          "acceptable": [
+            "appointment"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B033",
+      "category": "mixed",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "yo link copy garera group ma halnu.",
+      "expected": [
+        "यो link copy गरेर group मा हाल्नु."
+      ],
+      "annotations": [
+        {
+          "token": "yo",
+          "role": "nepali",
+          "acceptable": [
+            "यो"
+          ]
+        },
+        {
+          "token": "link",
+          "role": "english",
+          "acceptable": [
+            "link"
+          ]
+        },
+        {
+          "token": "copy",
+          "role": "english",
+          "acceptable": [
+            "copy"
+          ]
+        },
+        {
+          "token": "garera",
+          "role": "nepali",
+          "acceptable": [
+            "गरेर"
+          ]
+        },
+        {
+          "token": "group",
+          "role": "english",
+          "acceptable": [
+            "group"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "मा"
+          ]
+        },
+        {
+          "token": "halnu",
+          "role": "nepali",
+          "acceptable": [
+            "हाल्नु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B034",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero man aaja khusi cha.",
+      "expected": [
+        "मेरो मन आज खुसी छ."
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "man",
+          "role": "nepali",
+          "acceptable": [
+            "मन"
+          ]
+        },
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "khusi",
+          "role": "nepali",
+          "acceptable": [
+            "खुसी",
+            "खुशी"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B035",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "The man found the key.",
+      "expected": [
+        "The man found the key."
+      ],
+      "annotations": [
+        {
+          "token": "The",
+          "role": "english",
+          "acceptable": [
+            "The"
+          ]
+        },
+        {
+          "token": "man",
+          "role": "english",
+          "acceptable": [
+            "man"
+          ]
+        },
+        {
+          "token": "found",
+          "role": "english",
+          "acceptable": [
+            "found"
+          ]
+        },
+        {
+          "token": "key",
+          "role": "english",
+          "acceptable": [
+            "key"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B036",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "ma ghar ma baschu.",
+      "expected": [
+        "म घर मा बस्छु."
+      ],
+      "annotations": [
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "ghar",
+          "role": "nepali",
+          "acceptable": [
+            "घर"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "मा"
+          ]
+        },
+        {
+          "token": "baschu",
+          "role": "nepali",
+          "acceptable": [
+            "बस्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B037",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Please give me some water.",
+      "expected": [
+        "Please give me some water."
+      ],
+      "annotations": [
+        {
+          "token": "Please",
+          "role": "english",
+          "acceptable": [
+            "Please"
+          ]
+        },
+        {
+          "token": "give",
+          "role": "english",
+          "acceptable": [
+            "give"
+          ]
+        },
+        {
+          "token": "water",
+          "role": "english",
+          "acceptable": [
+            "water"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B038",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "malai pani chahinchha.",
+      "expected": [
+        "मलाई पानी चाहिन्छ."
+      ],
+      "annotations": [
+        {
+          "token": "malai",
+          "role": "nepali",
+          "acceptable": [
+            "मलाई"
+          ]
+        },
+        {
+          "token": "pani",
+          "role": "nepali",
+          "acceptable": [
+            "पानी"
+          ]
+        },
+        {
+          "token": "chahinchha",
+          "role": "nepali",
+          "acceptable": [
+            "चाहिन्छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B039",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "ma pani janchu.",
+      "expected": [
+        "म पनि जान्छु."
+      ],
+      "annotations": [
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "म"
+          ]
+        },
+        {
+          "token": "pani",
+          "role": "nepali",
+          "acceptable": [
+            "पनि"
+          ]
+        },
+        {
+          "token": "janchu",
+          "role": "nepali",
+          "acceptable": [
+            "जान्छु"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B040",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "aaja kam samaya cha.",
+      "expected": [
+        "आज कम समय छ."
+      ],
+      "annotations": [
+        {
+          "token": "aaja",
+          "role": "nepali",
+          "acceptable": [
+            "आज"
+          ]
+        },
+        {
+          "token": "kam",
+          "role": "nepali",
+          "acceptable": [
+            "कम"
+          ]
+        },
+        {
+          "token": "samaya",
+          "role": "nepali",
+          "acceptable": [
+            "समय"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B041",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero kam sakiyo.",
+      "expected": [
+        "मेरो काम सकियो."
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "kam",
+          "role": "nepali",
+          "acceptable": [
+            "काम"
+          ]
+        },
+        {
+          "token": "sakiyo",
+          "role": "nepali",
+          "acceptable": [
+            "सकियो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B042",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "I will call my mom.",
+      "expected": [
+        "I will call my mom."
+      ],
+      "annotations": [
+        {
+          "token": "I",
+          "role": "english",
+          "acceptable": [
+            "I"
+          ]
+        },
+        {
+          "token": "will",
+          "role": "english",
+          "acceptable": [
+            "will"
+          ]
+        },
+        {
+          "token": "call",
+          "role": "english",
+          "acceptable": [
+            "call"
+          ]
+        },
+        {
+          "token": "mom",
+          "role": "english",
+          "acceptable": [
+            "mom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B043",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "usle ramro geet gayo.",
+      "expected": [
+        "उसले राम्रो गीत गायो."
+      ],
+      "annotations": [
+        {
+          "token": "usle",
+          "role": "nepali",
+          "acceptable": [
+            "उसले"
+          ]
+        },
+        {
+          "token": "ramro",
+          "role": "nepali",
+          "acceptable": [
+            "राम्रो"
+          ]
+        },
+        {
+          "token": "geet",
+          "role": "nepali",
+          "acceptable": [
+            "गीत"
+          ]
+        },
+        {
+          "token": "gayo",
+          "role": "nepali",
+          "acceptable": [
+            "गायो"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B044",
+      "category": "ambiguity",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "cricket khelna park janchau?",
+      "expected": [
+        "cricket खेल्न park जान्छौ?"
+      ],
+      "annotations": [
+        {
+          "token": "cricket",
+          "role": "english",
+          "acceptable": [
+            "cricket"
+          ]
+        },
+        {
+          "token": "khelna",
+          "role": "nepali",
+          "acceptable": [
+            "खेल्न"
+          ]
+        },
+        {
+          "token": "park",
+          "role": "english",
+          "acceptable": [
+            "park"
+          ]
+        },
+        {
+          "token": "janchau",
+          "role": "nepali",
+          "acceptable": [
+            "जान्छौ",
+            "जान्छौँ",
+            "जान्छौं"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B045",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Visit https://example.org/help tomorrow.",
+      "expected": [
+        "Visit https://example.org/help tomorrow."
+      ],
+      "annotations": [
+        {
+          "token": "Visit",
+          "role": "english",
+          "acceptable": [
+            "Visit"
+          ]
+        },
+        {
+          "token": "https://example.org/help",
+          "role": "literal",
+          "acceptable": [
+            "https://example.org/help"
+          ]
+        },
+        {
+          "token": "tomorrow",
+          "role": "english",
+          "acceptable": [
+            "tomorrow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B046",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Send an email to hello@example.org.",
+      "expected": [
+        "Send an email to hello@example.org."
+      ],
+      "annotations": [
+        {
+          "token": "Send",
+          "role": "english",
+          "acceptable": [
+            "Send"
+          ]
+        },
+        {
+          "token": "email",
+          "role": "english",
+          "acceptable": [
+            "email"
+          ]
+        },
+        {
+          "token": "hello@example.org",
+          "role": "literal",
+          "acceptable": [
+            "hello@example.org"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B047",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "mero file src/main.swift ma cha.",
+      "expected": [
+        "मेरो file src/main.swift मा छ."
+      ],
+      "annotations": [
+        {
+          "token": "mero",
+          "role": "nepali",
+          "acceptable": [
+            "मेरो"
+          ]
+        },
+        {
+          "token": "file",
+          "role": "english",
+          "acceptable": [
+            "file"
+          ]
+        },
+        {
+          "token": "src/main.swift",
+          "role": "literal",
+          "acceptable": [
+            "src/main.swift"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "मा"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B048",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Keep user_name as written.",
+      "expected": [
+        "Keep user_name as written."
+      ],
+      "annotations": [
+        {
+          "token": "Keep",
+          "role": "english",
+          "acceptable": [
+            "Keep"
+          ]
+        },
+        {
+          "token": "user_name",
+          "role": "literal",
+          "acceptable": [
+            "user_name"
+          ]
+        },
+        {
+          "token": "written",
+          "role": "english",
+          "acceptable": [
+            "written"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B049",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Use HTTPS://EXAMPLE.ORG/ABC for help.",
+      "expected": [
+        "Use HTTPS://EXAMPLE.ORG/ABC for help."
+      ],
+      "annotations": [
+        {
+          "token": "Use",
+          "role": "english",
+          "acceptable": [
+            "Use"
+          ]
+        },
+        {
+          "token": "HTTPS://EXAMPLE.ORG/ABC",
+          "role": "literal",
+          "acceptable": [
+            "HTTPS://EXAMPLE.ORG/ABC"
+          ]
+        },
+        {
+          "token": "help",
+          "role": "english",
+          "acceptable": [
+            "help"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B050",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "👋 namaste sathi!",
+      "expected": [
+        "👋 नमस्ते साथी!"
+      ],
+      "annotations": [
+        {
+          "token": "👋",
+          "role": "literal",
+          "acceptable": [
+            "👋"
+          ]
+        },
+        {
+          "token": "namaste",
+          "role": "nepali",
+          "acceptable": [
+            "नमस्ते"
+          ]
+        },
+        {
+          "token": "sathi",
+          "role": "nepali",
+          "acceptable": [
+            "साथी"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B051",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "The version2 file is ready.",
+      "expected": [
+        "The version2 file is ready."
+      ],
+      "annotations": [
+        {
+          "token": "The",
+          "role": "english",
+          "acceptable": [
+            "The"
+          ]
+        },
+        {
+          "token": "version2",
+          "role": "literal",
+          "acceptable": [
+            "version2"
+          ]
+        },
+        {
+          "token": "file",
+          "role": "english",
+          "acceptable": [
+            "file"
+          ]
+        },
+        {
+          "token": "ready",
+          "role": "english",
+          "acceptable": [
+            "ready"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B052",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Open settings.json and restart.",
+      "expected": [
+        "Open settings.json and restart."
+      ],
+      "annotations": [
+        {
+          "token": "Open",
+          "role": "english",
+          "acceptable": [
+            "Open"
+          ]
+        },
+        {
+          "token": "settings.json",
+          "role": "literal",
+          "acceptable": [
+            "settings.json"
+          ]
+        },
+        {
+          "token": "restart",
+          "role": "english",
+          "acceptable": [
+            "restart"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B053",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "hamro meeting room 2 ma cha.",
+      "expected": [
+        "हाम्रो meeting room 2 मा छ."
+      ],
+      "annotations": [
+        {
+          "token": "hamro",
+          "role": "nepali",
+          "acceptable": [
+            "हाम्रो"
+          ]
+        },
+        {
+          "token": "meeting",
+          "role": "english",
+          "acceptable": [
+            "meeting"
+          ]
+        },
+        {
+          "token": "room",
+          "role": "english",
+          "acceptable": [
+            "room"
+          ]
+        },
+        {
+          "token": "2",
+          "role": "literal",
+          "acceptable": [
+            "2"
+          ]
+        },
+        {
+          "token": "ma",
+          "role": "nepali",
+          "acceptable": [
+            "मा"
+          ]
+        },
+        {
+          "token": "cha",
+          "role": "nepali",
+          "acceptable": [
+            "छ"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B054",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Keep myVariable unchanged.",
+      "expected": [
+        "Keep myVariable unchanged."
+      ],
+      "annotations": [
+        {
+          "token": "Keep",
+          "role": "english",
+          "acceptable": [
+            "Keep"
+          ]
+        },
+        {
+          "token": "myVariable",
+          "role": "literal",
+          "acceptable": [
+            "myVariable"
+          ]
+        },
+        {
+          "token": "unchanged",
+          "role": "english",
+          "acceptable": [
+            "unchanged"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B055",
+      "category": "literal",
+      "split": "heldout",
+      "source": "synthetic",
+      "input": "Visit www.example.org/notes now.",
+      "expected": [
+        "Visit www.example.org/notes now."
+      ],
+      "annotations": [
+        {
+          "token": "Visit",
+          "role": "english",
+          "acceptable": [
+            "Visit"
+          ]
+        },
+        {
+          "token": "www.example.org/notes",
+          "role": "literal",
+          "acceptable": [
+            "www.example.org/notes"
+          ]
+        },
+        {
+          "token": "now",
+          "role": "english",
+          "acceptable": [
+            "now"
+          ]
+        }
+      ]
+    }
+  ]
+}

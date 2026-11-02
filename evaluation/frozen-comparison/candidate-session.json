@@ -1,0 +1,662 @@
+{
+  "cases" : [
+    {
+      "actual" : "We should reserve a table for Saturday.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "We should reserve a table for Saturday."
+      ],
+      "id" : "F001",
+      "input" : "We should reserve a table for Saturday."
+    },
+    {
+      "actual" : "The children are playing outside today.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "The children are playing outside today."
+      ],
+      "id" : "F002",
+      "input" : "The children are playing outside today."
+    },
+    {
+      "actual" : "She sent the revised document yesterday.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "She sent the revised document yesterday."
+      ],
+      "id" : "F003",
+      "input" : "She sent the revised document yesterday."
+    },
+    {
+      "actual" : "Can we move the appointment to Monday?",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Can we move the appointment to Monday?"
+      ],
+      "id" : "F004",
+      "input" : "Can we move the appointment to Monday?"
+    },
+    {
+      "actual" : "My sister bought a blue bicycle.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "My sister bought a blue bicycle."
+      ],
+      "id" : "F005",
+      "input" : "My sister bought a blue bicycle."
+    },
+    {
+      "actual" : "The bus leaves at seven in the morning.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "The bus leaves at seven in the morning."
+      ],
+      "id" : "F006",
+      "input" : "The bus leaves at seven in the morning."
+    },
+    {
+      "actual" : "Please remember to charge your laptop.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Please remember to charge your laptop."
+      ],
+      "id" : "F007",
+      "input" : "Please remember to charge your laptop."
+    },
+    {
+      "actual" : "These photos look much better now.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "These photos look much better now."
+      ],
+      "id" : "F008",
+      "input" : "These photos look much better now."
+    },
+    {
+      "actual" : "I will call you after the movie ends.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "I will call you after the movie ends."
+      ],
+      "id" : "F009",
+      "input" : "I will call you after the movie ends."
+    },
+    {
+      "actual" : "Their garden has beautiful yellow flowers.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Their garden has beautiful yellow flowers."
+      ],
+      "id" : "F010",
+      "input" : "Their garden has beautiful yellow flowers."
+    },
+    {
+      "actual" : "Could you check the address again?",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "Could you check the address again?"
+      ],
+      "id" : "F011",
+      "input" : "Could you check the address again?"
+    },
+    {
+      "actual" : "We have enough time to finish this.",
+      "category" : "english",
+      "exact" : true,
+      "expected" : [
+        "We have enough time to finish this."
+      ],
+      "id" : "F012",
+      "input" : "We have enough time to finish this."
+    },
+    {
+      "actual" : "आज बिहान धेरै चिसो थियो.",
+      "category" : "nepali",
+      "exact" : true,
+      "expected" : [
+        "आज बिहान धेरै चिसो थियो।",
+        "आज बिहान धेरै चिसो थियो."
+      ],
+      "id" : "F013",
+      "input" : "aaja bihana dherai chiso thiyo."
+    },
+    {
+      "actual" : "तिमीलाई यो गीत मन पर्छ?",
+      "category" : "nepali",
+      "exact" : true,
+      "expected" : [
+        "तिमीलाई यो गीत मन पर्छ?"
+      ],
+      "id" : "F014",
+      "input" : "timilai yo geet man parchha?"
+    },
+    {
+      "actual" : "भोलि बेलुका घर आउनु hola.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "भोलि बेलुका घर आउनु होला।",
+        "भोलि बेलुका घर आउनु होला."
+      ],
+      "id" : "F015",
+      "input" : "bholi beluka ghar aaunu hola."
+    },
+    {
+      "actual" : "हामी सँग समय काम छ.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "हामीसँग समय कम छ।",
+        "हामी सँग समय कम छ.",
+        "हामी सँग समय कम छ।"
+      ],
+      "id" : "F016",
+      "input" : "hami sanga samaya kam cha."
+    },
+    {
+      "actual" : "उस्ले नयाँ किताब किनेको छ.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "उसले नयाँ किताब किनेको छ।",
+        "उसले नयाँ किताब किनेको छ."
+      ],
+      "id" : "F017",
+      "input" : "usle naya kitab kineko cha."
+    },
+    {
+      "actual" : "यो बतो कत जान्छ?",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "यो बाटो कता जान्छ?"
+      ],
+      "id" : "F018",
+      "input" : "yo bato kata jancha?"
+    },
+    {
+      "actual" : "मलाई ek cup चिया दिनु na.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "मलाई एक cup चिया दिनु न।",
+        "मलाई एक cup चिया दिनु न.",
+        "मलाई एक कप चिया दिनु न।"
+      ],
+      "id" : "F019",
+      "input" : "malai ek cup chiya dinu na."
+    },
+    {
+      "actual" : "आमा ले मिठो खाना बनाउनु भयो.",
+      "category" : "nepali",
+      "exact" : true,
+      "expected" : [
+        "आमाले मिठो खाना बनाउनु भयो।",
+        "आमा ले मिठो खाना बनाउनु भयो.",
+        "आमा ले मिठो खाना बनाउनु भयो।"
+      ],
+      "id" : "F020",
+      "input" : "aama le mitho khana banaunu bhayo."
+    },
+    {
+      "actual" : "सबै jana बिस्तारै हिद्नु होस.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "सबै जना बिस्तारै हिँड्नुहोस्।",
+        "सबै जना बिस्तारै हिँड्नु होस्.",
+        "सबै जना बिस्तारै हिँड्नु होस्।"
+      ],
+      "id" : "F021",
+      "input" : "sabai jana bistaarai hidnu hos."
+    },
+    {
+      "actual" : "तिमी कहिले फर्किन्चौ?",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "तिमी कहिले फर्किन्छौ?"
+      ],
+      "id" : "F022",
+      "input" : "timi kahile farkinchau?"
+    },
+    {
+      "actual" : "maile चिथि हिजो पथएको थिएँ.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "मैले चिठी हिजो पठाएको थिएँ।",
+        "मैले चिठी हिजो पठाएको थिएँ."
+      ],
+      "id" : "F023",
+      "input" : "maile chithi hijo pathaeko thiye."
+    },
+    {
+      "actual" : "हाम्रो घर नजिकै इउटा पसल छ.",
+      "category" : "nepali",
+      "exact" : false,
+      "expected" : [
+        "हाम्रो घर नजिकै एउटा पसल छ।",
+        "हाम्रो घर नजिकै एउटा पसल छ."
+      ],
+      "id" : "F024",
+      "input" : "hamro ghar najikai euta pasal cha."
+    },
+    {
+      "actual" : "आज meeting पछि घर जान्छु.",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "आज meeting पछि घर जान्छु.",
+        "आज meeting पछि घर जान्छु।"
+      ],
+      "id" : "F025",
+      "input" : "aaja meeting pachi ghar janchu."
+    },
+    {
+      "actual" : "मेरो laptop को screen बिग्रियो.",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "मेरो laptop को screen बिग्रियो.",
+        "मेरो laptop को screen बिग्रियो।"
+      ],
+      "id" : "F026",
+      "input" : "mero laptop ko screen bigriyo."
+    },
+    {
+      "actual" : "please यो file मलाई पथैदेउ.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "please यो file मलाई पठाइदेऊ.",
+        "please यो file मलाई पठाइदेउ."
+      ],
+      "id" : "F027",
+      "input" : "please yo file malai pathaideu."
+    },
+    {
+      "actual" : "भोलि office म लन्च खाने हो?",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "भोलि office मा lunch खाने हो?"
+      ],
+      "id" : "F028",
+      "input" : "bholi office ma lunch khane ho?"
+    },
+    {
+      "actual" : "यो photo एक्दम clear छ.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "यो photo एकदम clear छ.",
+        "यो photo एकदम clear छ।"
+      ],
+      "id" : "F029",
+      "input" : "yo photo ekdam clear cha."
+    },
+    {
+      "actual" : "हाम्रो train 10 minute ढिलो छ.",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "हाम्रो train 10 minute ढिलो छ.",
+        "हाम्रो train 10 minute ढिलो छ।"
+      ],
+      "id" : "F030",
+      "input" : "hamro train 10 minute dhilo cha."
+    },
+    {
+      "actual" : "मलाई address message gara na.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "मलाई address message गर न.",
+        "मलाई address message गर न।"
+      ],
+      "id" : "F031",
+      "input" : "malai address message gara na."
+    },
+    {
+      "actual" : "website kholna internet चैन्च.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "website खोल्न internet चाहिन्छ.",
+        "website खोल्न internet चाहिन्छ।"
+      ],
+      "id" : "F032",
+      "input" : "website kholna internet chaincha."
+    },
+    {
+      "actual" : "maile ticket online book gare.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "मैले ticket online book गरेँ.",
+        "मैले ticket online book गरे.",
+        "मैले ticket online book गरेँ।"
+      ],
+      "id" : "F033",
+      "input" : "maile ticket online book gare."
+    },
+    {
+      "actual" : "तिम्रो idea धेरै राम्रो लाग्यो.",
+      "category" : "mixed",
+      "exact" : true,
+      "expected" : [
+        "तिम्रो idea धेरै राम्रो लाग्यो.",
+        "तिम्रो idea धेरै राम्रो लाग्यो।"
+      ],
+      "id" : "F034",
+      "input" : "timro idea dherai ramro lagyo."
+    },
+    {
+      "actual" : "Sunday म साथी सँग movie herne.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "Sunday मा साथी सँग movie हेर्ने.",
+        "Sunday मा साथीसँग movie हेर्ने।"
+      ],
+      "id" : "F035",
+      "input" : "Sunday ma sathi sanga movie herne."
+    },
+    {
+      "actual" : "phone silent म रख please.",
+      "category" : "mixed",
+      "exact" : false,
+      "expected" : [
+        "phone silent मा राख please.",
+        "phone silent मा राख please।"
+      ],
+      "id" : "F036",
+      "input" : "phone silent ma rakha please."
+    },
+    {
+      "actual" : "म पनि आउँछु.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "म पनि आउँछु.",
+        "म पनि आउँछु।"
+      ],
+      "id" : "F037",
+      "input" : "ma pani aauchhu."
+    },
+    {
+      "actual" : "पनि ek glass दिनु.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "पानी एक glass दिनु.",
+        "पानी एक glass दिनु।"
+      ],
+      "id" : "F038",
+      "input" : "pani ek glass dinu."
+    },
+    {
+      "actual" : "the man opened the door.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "the man opened the door."
+      ],
+      "id" : "F039",
+      "input" : "the man opened the door."
+    },
+    {
+      "actual" : "मेरो मन आज खुसी छ.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "मेरो मन आज खुसी छ.",
+        "मेरो मन आज खुशी छ."
+      ],
+      "id" : "F040",
+      "input" : "mero man aaja khusi cha."
+    },
+    {
+      "actual" : "म घर म बस्छु.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "म घर मा बस्छु.",
+        "म घरमा बस्छु।",
+        "म घर मा बस्छु।"
+      ],
+      "id" : "F041",
+      "input" : "ma ghar ma baschu."
+    },
+    {
+      "actual" : "he can open the can.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "he can open the can."
+      ],
+      "id" : "F042",
+      "input" : "he can open the can."
+    },
+    {
+      "actual" : "यो कुरा ठीक छ तर arko छैन.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "यो कुरा ठीक छ तर अर्को छैन.",
+        "यो कुरा ठिक छ तर अर्को छैन।"
+      ],
+      "id" : "F043",
+      "input" : "yo kura thik cha tara arko chaina."
+    },
+    {
+      "actual" : "तर is my friend.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "tara is my friend."
+      ],
+      "id" : "F044",
+      "input" : "tara is my friend."
+    },
+    {
+      "actual" : "म cricket हेर्न मन पर्छ.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "म cricket हेर्न मन पर्छ.",
+        "म क्रिकेट हेर्न मन पर्छ."
+      ],
+      "id" : "F045",
+      "input" : "ma cricket herna man parcha."
+    },
+    {
+      "actual" : "we will park near the park.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "we will park near the park."
+      ],
+      "id" : "F046",
+      "input" : "we will park near the park."
+    },
+    {
+      "actual" : "उस्को नाम ram हो.",
+      "category" : "ambiguity",
+      "exact" : false,
+      "expected" : [
+        "उसको नाम राम हो.",
+        "उसको नाम राम हो।"
+      ],
+      "id" : "F047",
+      "input" : "usko naam ram ho."
+    },
+    {
+      "actual" : "please call Ram tomorrow.",
+      "category" : "ambiguity",
+      "exact" : true,
+      "expected" : [
+        "please call Ram tomorrow."
+      ],
+      "id" : "F048",
+      "input" : "please call Ram tomorrow."
+    },
+    {
+      "actual" : "Open https://example.org/a?x=2 now.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Open https://example.org/a?x=2 now."
+      ],
+      "id" : "F049",
+      "input" : "Open https://example.org/a?x=2 now."
+    },
+    {
+      "actual" : "Email maya@example.org after lunch.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Email maya@example.org after lunch."
+      ],
+      "id" : "F050",
+      "input" : "Email maya@example.org after lunch."
+    },
+    {
+      "actual" : "Run `git status` before you commit.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Run `git status` before you commit."
+      ],
+      "id" : "F051",
+      "input" : "Run `git status` before you commit."
+    },
+    {
+      "actual" : "Save src/config.json before editing.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Save src/config.json before editing."
+      ],
+      "id" : "F052",
+      "input" : "Save src/config.json before editing."
+    },
+    {
+      "actual" : "Set user_name to the new value.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Set user_name to the new value."
+      ],
+      "id" : "F053",
+      "input" : "Set user_name to the new value."
+    },
+    {
+      "actual" : "Open the file README.md today.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Open the file README.md today."
+      ],
+      "id" : "F054",
+      "input" : "Open the file README.md today."
+    },
+    {
+      "actual" : "Use orderId42 in the request.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Use orderId42 in the request."
+      ],
+      "id" : "F055",
+      "input" : "Use orderId42 in the request."
+    },
+    {
+      "actual" : "🙂 आज घर म बस्छु.",
+      "category" : "literal",
+      "exact" : false,
+      "expected" : [
+        "🙂 आज घर मा बस्छु.",
+        "🙂 आज घरमा बस्छु।"
+      ],
+      "id" : "F056",
+      "input" : "🙂 aaja ghar ma baschu."
+    },
+    {
+      "actual" : "Visit www.example.org for details.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Visit www.example.org for details."
+      ],
+      "id" : "F057",
+      "input" : "Visit www.example.org for details."
+    },
+    {
+      "actual" : "Write `npm test` in the terminal.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Write `npm test` in the terminal."
+      ],
+      "id" : "F058",
+      "input" : "Write `npm test` in the terminal."
+    },
+    {
+      "actual" : "Set cost to 42 and retry.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Set cost to 42 and retry."
+      ],
+      "id" : "F059",
+      "input" : "Set cost to 42 and retry."
+    },
+    {
+      "actual" : "Send the path docs/setup.md please.",
+      "category" : "literal",
+      "exact" : true,
+      "expected" : [
+        "Send the path docs/setup.md please."
+      ],
+      "id" : "F060",
+      "input" : "Send the path docs/setup.md please."
+    }
+  ],
+  "fixture_version" : "2026-10-30-frozen-v2",
+  "method" : "InputSession per-character, boundaries commit; final implicit boundary; no native host, selection, focus or undo",
+  "summary" : {
+    "ambiguity" : {
+      "exact" : 7,
+      "total" : 12
+    },
+    "english" : {
+      "exact" : 12,
+      "total" : 12
+    },
+    "literal" : {
+      "exact" : 11,
+      "total" : 12
+    },
+    "mixed" : {
+      "exact" : 4,
+      "total" : 12
+    },
+    "nepali" : {
+      "exact" : 3,
+      "total" : 12
+    }
+  }
+}

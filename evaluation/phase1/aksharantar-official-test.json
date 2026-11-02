@@ -1,0 +1,14 @@
+{
+  "sources": {
+    "AK-Freq": {
+      "total": 2108
+    },
+    "AK-NEF": {
+      "total": 817
+    },
+    "AK-NEI": {
+      "total": 1176
+    }
+  },
+  "note": "AK-Freq, AK-NEF and AK-NEI test rows compared against IndicCorp-only train; overlap is reported, not removed. No scores or counts used as frequencies. Lexical order is not a learned ranking."
+}

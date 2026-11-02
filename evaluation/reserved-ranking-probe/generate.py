@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+"""Write a frozen, manually authored synthetic probe; does not import Lekha."""
+import json
+from pathlib import Path
+
+# Rows: category, source, full-sentence proposed outputs, selective annotations.
+# Annotations are ordered, but intentionally do not label every word.
+rows = [
+('english','Please share the document before lunch.',['Please share the document before lunch.'], [('share','english',['share']),('document','english',['document']),('lunch','english',['lunch'])]),
+('english','The train arrives after sunset.',['The train arrives after sunset.'], [('train','english',['train']),('arrives','english',['arrives']),('sunset','english',['sunset'])]),
+('english','I found my keys under the table.',['I found my keys under the table.'], [('found','english',['found']),('keys','english',['keys']),('table','english',['table'])]),
+('english','We should update the project tomorrow.',['We should update the project tomorrow.'], [('update','english',['update']),('project','english',['project']),('tomorrow','english',['tomorrow'])]),
+('english','Can you make the text larger?',['Can you make the text larger?'], [('make','english',['make']),('text','english',['text']),('larger','english',['larger'])]),
+('english','This bottle contains cold water.',['This bottle contains cold water.'], [('bottle','english',['bottle']),('cold','english',['cold']),('water','english',['water'])]),
+('english','Her brother works at the hospital.',['Her brother works at the hospital.'], [('brother','english',['brother']),('works','english',['works']),('hospital','english',['hospital'])]),
+('english','The team needs another player.',['The team needs another player.'], [('team','english',['team']),('needs','english',['needs']),('player','english',['player'])]),
+('english','Your phone battery is low.',['Your phone battery is low.'], [('phone','english',['phone']),('battery','english',['battery']),('low','english',['low'])]),
+('english','A child is reading a story.',['A child is reading a story.'], [('child','english',['child']),('reading','english',['reading']),('story','english',['story'])]),
+('nepali','aaja mausam ramro cha',['आज मौसम राम्रो छ'], [('aaja','nepali',['आज']),('mausam','nepali',['मौसम']),('ramro','nepali',['राम्रो']),('cha','nepali',['छ'])]),
+('nepali','mero ghar yaha cha',['मेरो घर यहाँ छ'], [('mero','nepali',['मेरो']),('ghar','nepali',['घर']),('yaha','nepali',['यहाँ']),('cha','nepali',['छ'])]),
+('nepali','hami bholi bhetau',['हामी भोलि भेटौँ','हामी भोलि भेटौं'], [('hami','nepali',['हामी']),('bholi','nepali',['भोलि']),('bhetau','nepali',['भेटौँ','भेटौं'])]),
+('nepali','timro naam k ho',['तिम्रो नाम के हो'], [('timro','nepali',['तिम्रो']),('naam','nepali',['नाम']),('k','nepali',['के']),('ho','nepali',['हो'])]),
+('nepali','malai kitab chahiyo',['मलाई किताब चाहियो'], [('malai','nepali',['मलाई']),('kitab','nepali',['किताब']),('chahiyo','nepali',['चाहियो'])]),
+('nepali','aama gharma hunuhuncha',['आमा घरमा हुनुहुन्छ'], [('aama','nepali',['आमा']),('gharma','nepali',['घरमा']),('hunuhuncha','nepali',['हुनुहुन्छ'])]),
+('nepali','timi kaha janchau',['तिमी कहाँ जान्छौ'], [('timi','nepali',['तिमी']),('kaha','nepali',['कहाँ']),('janchau','nepali',['जान्छौ'])]),
+('nepali','yo bato dherai lamo cha',['यो बाटो धेरै लामो छ'], [('yo','nepali',['यो']),('bato','nepali',['बाटो']),('dherai','nepali',['धेरै']),('lamo','nepali',['लामो'])]),
+('nepali','usle mitho khana banayo',['उसले मिठो खाना बनायो'], [('usle','nepali',['उसले']),('mitho','nepali',['मिठो','मीठो']),('khana','nepali',['खाना']),('banayo','nepali',['बनायो'])]),
+('nepali','aba hami ghar farkinchau',['अब हामी घर फर्किन्छौँ','अब हामी घर फर्किन्छौं'], [('aba','nepali',['अब']),('hami','nepali',['हामी']),('farkinchau','nepali',['फर्किन्छौँ','फर्किन्छौं'])]),
+('mixed','aaja office ma meeting cha',['आज office मा meeting छ'], [('aaja','nepali',['आज']),('office','english',['office']),('ma','nepali',['मा']),('meeting','english',['meeting']),('cha','nepali',['छ'])]),
+('mixed','mero phone gharma chhodyo',['मेरो phone घरमा छोड्यो'], [('mero','nepali',['मेरो']),('phone','english',['phone']),('gharma','nepali',['घरमा']),('chhodyo','nepali',['छोड्यो'])]),
+('mixed','bholi lunch pachi bhetau',['भोलि lunch पछि भेटौँ','भोलि lunch पछि भेटौं'], [('bholi','nepali',['भोलि']),('lunch','english',['lunch']),('pachi','nepali',['पछि']),('bhetau','nepali',['भेटौँ','भेटौं'])]),
+('mixed','malai email pathaunu please',['मलाई email पठाउनु please'], [('malai','nepali',['मलाई']),('email','english',['email']),('pathaunu','nepali',['पठाउनु']),('please','english',['please'])]),
+('mixed','yo document ramro cha',['यो document राम्रो छ'], [('yo','nepali',['यो']),('document','english',['document']),('ramro','nepali',['राम्रो']),('cha','nepali',['छ'])]),
+('mixed','ma project ma kaam garchu',['म project मा काम गर्छु'], [('ma','nepali',['म']),('project','english',['project']),('ma','nepali',['मा']),('kaam','nepali',['काम']),('garchu','nepali',['गर्छु'])]),
+('mixed','timro laptop ko battery low cha',['तिम्रो laptop को battery low छ'], [('timro','nepali',['तिम्रो']),('laptop','english',['laptop']),('ko','nepali',['को']),('battery','english',['battery']),('low','english',['low']),('cha','nepali',['छ'])]),
+('mixed','mero team le game jityo',['मेरो team ले game जित्यो'], [('mero','nepali',['मेरो']),('team','english',['team']),('le','nepali',['ले']),('game','english',['game']),('jityo','nepali',['जित्यो'])]),
+('mixed','please yo file hera',['please यो file हेर'], [('please','english',['please']),('yo','nepali',['यो']),('file','english',['file']),('hera','nepali',['हेर'])]),
+('mixed','hami online call garchau',['हामी online call गर्छौँ','हामी online call गर्छौं'], [('hami','nepali',['हामी']),('online','english',['online']),('call','english',['call']),('garchau','nepali',['गर्छौँ','गर्छौं'])]),
+('ambiguity','malai pani deu',['मलाई पानी देऊ','मलाई पानी देउ'], [('malai','nepali',['मलाई']),('pani','nepali',['पानी']),('deu','nepali',['देऊ','देउ'])]),
+('ambiguity','ma pani aauchhu',['म पनि आउँछु'], [('ma','nepali',['म']),('pani','nepali',['पनि']),('aauchhu','nepali',['आउँछु'])]),
+('ambiguity','ma ghar janchu',['म घर जान्छु'], [('ma','nepali',['म']),('ghar','nepali',['घर']),('janchu','nepali',['जान्छु'])]),
+('ambiguity','kitab bag ma cha',['किताब bag मा छ'], [('kitab','nepali',['किताब']),('bag','english',['bag']),('ma','nepali',['मा']),('cha','nepali',['छ'])]),
+('ambiguity','the man is waiting',['the man is waiting'], [('the','english',['the']),('man','english',['man']),('waiting','english',['waiting'])]),
+('ambiguity','mero man khusi cha',['मेरो मन खुसी छ','मेरो मन खुशी छ'], [('mero','nepali',['मेरो']),('man','nepali',['मन']),('khusi','nepali',['खुसी','खुशी']),('cha','nepali',['छ'])]),
+('ambiguity','the bus is late',['the bus is late'], [('bus','english',['bus']),('late','english',['late'])]),
+('ambiguity','ma bus ma janchu',['म bus मा जान्छु'], [('ma','nepali',['म']),('bus','english',['bus']),('ma','nepali',['मा']),('janchu','nepali',['जान्छु'])]),
+('ambiguity','I can play cricket',['I can play cricket'], [('can','english',['can']),('play','english',['play']),('cricket','english',['cricket'])]),
+('ambiguity','hami cricket khelchhau',['हामी क्रिकेट खेल्छौँ','हामी क्रिकेट खेल्छौं'], [('hami','nepali',['हामी']),('cricket','nepali',['क्रिकेट']),('khelchhau','nepali',['खेल्छौँ','खेल्छौं'])]),
+('names','Asha will join the call.',['Asha will join the call.'], [('Asha','english',['Asha']),('join','english',['join']),('call','english',['call'])]),
+('names','Bina sent the document.',['Bina sent the document.'], [('Bina','english',['Bina']),('sent','english',['sent']),('document','english',['document'])]),
+('names','Rajan is my friend.',['Rajan is my friend.'], [('Rajan','english',['Rajan']),('friend','english',['friend'])]),
+('names','Sita will arrive tomorrow.',['Sita will arrive tomorrow.'], [('Sita','english',['Sita']),('arrive','english',['arrive']),('tomorrow','english',['tomorrow'])]),
+('names','Nabin le email pathayo',['Nabin ले email पठायो'], [('Nabin','english',['Nabin']),('le','nepali',['ले']),('email','english',['email']),('pathayo','nepali',['पठायो'])]),
+('names','Maya ko laptop yaha cha',['Maya को laptop यहाँ छ'], [('Maya','english',['Maya']),('ko','nepali',['को']),('laptop','english',['laptop']),('yaha','nepali',['यहाँ'])]),
+('names','I met Kiran at lunch.',['I met Kiran at lunch.'], [('met','english',['met']),('Kiran','english',['Kiran']),('lunch','english',['lunch'])]),
+('names','Please ask Rupa tomorrow.',['Please ask Rupa tomorrow.'], [('ask','english',['ask']),('Rupa','english',['Rupa']),('tomorrow','english',['tomorrow'])]),
+('names','Hari and Mina play tennis.',['Hari and Mina play tennis.'], [('Hari','english',['Hari']),('Mina','english',['Mina']),('tennis','english',['tennis'])]),
+('names','The report belongs to Sanju.',['The report belongs to Sanju.'], [('report','english',['report']),('belongs','english',['belongs']),('Sanju','english',['Sanju'])]),
+('literal','please open https://example.org/docs now',['please open https://example.org/docs now'], [('please','english',['please']),('open','english',['open']),('https://example.org/docs','literal',['https://example.org/docs']),('now','english',['now'])]),
+('literal','email test@example.com today',['email test@example.com today'], [('email','english',['email']),('test@example.com','literal',['test@example.com']),('today','english',['today'])]),
+('literal','read src/main.swift before lunch',['read src/main.swift before lunch'], [('read','english',['read']),('src/main.swift','literal',['src/main.swift']),('lunch','english',['lunch'])]),
+('literal','the key is user_name',['the key is user_name'], [('key','english',['key']),('user_name','literal',['user_name'])]),
+('literal','check obj.value and return',['check obj.value and return'], [('check','english',['check']),('obj.value','literal',['obj.value']),('return','english',['return'])]),
+('literal','open www.example.org/hello please',['open www.example.org/hello please'], [('open','english',['open']),('www.example.org/hello','literal',['www.example.org/hello']),('please','english',['please'])]),
+('literal','status OK 👋',['status OK 👋'], [('status','english',['status']),('OK','english',['OK']),('👋','literal',['👋'])]),
+('literal','keep itemCount and file_name',['keep itemCount and file_name'], [('keep','english',['keep']),('itemCount','literal',['itemCount']),('file_name','literal',['file_name'])]),
+('literal','try HTTPS://EXAMPLE.COM/x today',['try HTTPS://EXAMPLE.COM/x today'], [('try','english',['try']),('HTTPS://EXAMPLE.COM/x','literal',['HTTPS://EXAMPLE.COM/x']),('today','english',['today'])]),
+('literal','the version2 build is ready',['the version2 build is ready'], [('version2','literal',['version2']),('build','english',['build']),('ready','english',['ready'])]),
+]
+assert len(rows) == 60
+cases = []
+for i, (category, source, expected, annotations) in enumerate(rows, 1):
+    cases.append({'id':f'R{i:03}', 'category':category, 'split':'heldout', 'source':'synthetic', 'input':source, 'expected':expected,
+                  'annotations':[{'token':token,'role':role,'acceptable':accepted} for token,role,accepted in annotations]})
+Path(__file__).with_name('corpus.json').write_text(json.dumps({'version':'rank-frozen-v1','cases':cases}, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')

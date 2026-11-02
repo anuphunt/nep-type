@@ -1,0 +1,4 @@
+7c18905dabbe524c76a2908ca17231f277233adae0ad25f1de6c60badaed9540  Transliterator.swift
+3bbceac5ae3e3e9814da1311e0798f59366767956af488d92802e9fc2dacbd42  GeneratedAliasIndex.swift
+a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/data/compiled/aksharantar-indiccorp-v1.tsv
+87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159  /Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/data/compiled/google-ne-aliases.tsv

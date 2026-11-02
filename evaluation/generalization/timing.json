@@ -1,0 +1,12 @@
+{
+  "before": {
+    "samples": 12,
+    "median_ms": 27.28,
+    "max_ms": 28.83
+  },
+  "after": {
+    "samples": 12,
+    "median_ms": 27.25,
+    "max_ms": 27.43
+  }
+}

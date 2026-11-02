@@ -1,0 +1,122 @@
+[
+  {
+    "actual" : "म आज office जान्छु",
+    "expected" : "म आज office जान्छु",
+    "input" : "ma aaja office janchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "भोलि meeting छ",
+    "expected" : "भोलि meeting छ",
+    "input" : "bholi meeting cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो phone को battery dead छ",
+    "expected" : "मेरो phone को battery dead छ",
+    "input" : "mero phone ko battery dead cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "please malai message pathau",
+    "expected" : "please मलाई message पठाऊ",
+    "input" : "please malai message pathau",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो file download gara",
+    "expected" : "यो file download गर",
+    "input" : "yo file download gara",
+    "split" : "dev"
+  },
+  {
+    "actual" : "तिम्रो घर कत छ",
+    "expected" : "तिम्रो घर कहाँ छ",
+    "input" : "timro ghar kata cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "म पनि खान्छु",
+    "expected" : "म पानी खान्छु",
+    "input" : "ma pani khanchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मलाई पनि मन पर्छ",
+    "expected" : "मलाई पनि मन पर्छ",
+    "input" : "malai pani man parcha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "हामी बेलुका खाना खान्चौ",
+    "expected" : "हामी बेलुका खाना खान्छौँ",
+    "input" : "hami beluka khana khanchau",
+    "split" : "dev"
+  },
+  {
+    "actual" : "the man is here",
+    "expected" : "the man is here",
+    "input" : "the man is here",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो मन राम्रो छ",
+    "expected" : "मेरो मन राम्रो छ",
+    "input" : "mero man ramro cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो link open gara",
+    "expected" : "यो link open गर",
+    "input" : "yo link open gara",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मलाई coffee chaiyo",
+    "expected" : "मलाई coffee चाहियो",
+    "input" : "malai coffee chaiyo",
+    "split" : "dev"
+  },
+  {
+    "actual" : "hello तिमी सन्चै छौ",
+    "expected" : "hello तिमी सन्चै छौ",
+    "input" : "hello timi sanchai chau",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो राम्रो project हो",
+    "expected" : "यो राम्रो project हो",
+    "input" : "yo ramro project ho",
+    "split" : "dev"
+  },
+  {
+    "actual" : "बिहान school गएँ",
+    "expected" : "बिहान school गएँ",
+    "input" : "bihana school gaye",
+    "split" : "dev"
+  },
+  {
+    "actual" : "maile email पथये",
+    "expected" : "मैले email पठाएँ",
+    "input" : "maile email pathaye",
+    "split" : "dev"
+  },
+  {
+    "actual" : "maile document save gare",
+    "expected" : "मैले document save गरेँ",
+    "input" : "maile document save gare",
+    "split" : "dev"
+  },
+  {
+    "actual" : "हिजो cricket खेले",
+    "expected" : "हिजो cricket खेलेँ",
+    "input" : "hijo cricket khele",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो नाम अनुप हो",
+    "expected" : "मेरो नाम anup हो",
+    "input" : "mero naam anup ho",
+    "split" : "dev"
+  }
+]

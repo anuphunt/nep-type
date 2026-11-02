@@ -1,0 +1,182 @@
+[
+  {
+    "actual" : "मेरो घर म पनि छ",
+    "expected" : "मेरो घरमा पानी छ",
+    "input" : "mero ghar ma pani cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "तिम्रो phone म message छ",
+    "expected" : "तिम्रो phone मा message छ",
+    "input" : "timro phone ma message cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "भोलि office ma meeting छ",
+    "expected" : "भोलि office मा meeting छ",
+    "input" : "bholi office ma meeting cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "म आज घर जान्छु",
+    "expected" : "म आज घर जान्छु",
+    "input" : "ma aaja ghar janchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "हामी भोलि फुटबल खेल्चौ",
+    "expected" : "हामी भोलि फुटबल खेल्छौँ",
+    "input" : "hami bholi football khelchau",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मलाई यो coffee मन पर्छ",
+    "expected" : "मलाई यो coffee मन पर्छ",
+    "input" : "malai yo coffee man parcha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "the meeting is tomorrow morning",
+    "expected" : "the meeting is tomorrow morning",
+    "input" : "the meeting is tomorrow morning",
+    "split" : "dev"
+  },
+  {
+    "actual" : "please send me the document",
+    "expected" : "please send me the document",
+    "input" : "please send me the document",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो नाम अनुप हो",
+    "expected" : "मेरो नाम अनूप हो",
+    "input" : "mero naam anup ho",
+    "split" : "dev"
+  },
+  {
+    "actual" : "त्यो photo राम्रो छ",
+    "expected" : "त्यो photo राम्रो छ",
+    "input" : "tyo photo ramro cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो file download gara",
+    "expected" : "यो file download गर",
+    "input" : "yo file download gara",
+    "split" : "dev"
+  },
+  {
+    "actual" : "he works at a hospital",
+    "expected" : "he works at a hospital",
+    "input" : "he works at a hospital",
+    "split" : "dev"
+  },
+  {
+    "actual" : "maile तिमीलाई email पथये",
+    "expected" : "मैले तिमीलाई email पठाएँ",
+    "input" : "maile timilai email pathaye",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मलाई पनि चाहिन्छ",
+    "expected" : "मलाई पानी चाहिन्छ",
+    "input" : "malai pani chahinchha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "हिजो उस्ले call garyo",
+    "expected" : "हिजो उसले call गर्यो",
+    "input" : "hijo usle call garyo",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो laptop धेरै राम्रो छ",
+    "expected" : "यो laptop धेरै राम्रो छ",
+    "input" : "yo laptop dherai ramro cha",
+    "split" : "probe"
+  },
+  {
+    "actual" : "म बेलुका घर म बस्छु",
+    "expected" : "म बेलुका घरमा बस्छु",
+    "input" : "ma beluka ghar ma baschu",
+    "split" : "probe"
+  },
+  {
+    "actual" : "तिमीलाई कस्तो लाग्यो",
+    "expected" : "तिमीलाई कस्तो लाग्यो",
+    "input" : "timilai kasto lagyo",
+    "split" : "probe"
+  },
+  {
+    "actual" : "हामी cricket हेर्न जन्चौ",
+    "expected" : "हामी cricket हेर्न जान्छौँ",
+    "input" : "hami cricket herna janchau",
+    "split" : "probe"
+  },
+  {
+    "actual" : "can we meet at the office",
+    "expected" : "can we meet at the office",
+    "input" : "can we meet at the office",
+    "split" : "probe"
+  },
+  {
+    "actual" : "आज पनि पर्छ कि",
+    "expected" : "आज पानी पर्छ कि",
+    "input" : "aaja pani parcha ki",
+    "split" : "probe"
+  },
+  {
+    "actual" : "मेरो साथी australia म छ",
+    "expected" : "मेरो साथी australia मा छ",
+    "input" : "mero sathi australia ma cha",
+    "split" : "probe"
+  },
+  {
+    "actual" : "यो message आज पठाउ",
+    "expected" : "यो message आज पठाऊ",
+    "input" : "yo message aja pathau",
+    "split" : "probe"
+  },
+  {
+    "actual" : "he sent a photo to me",
+    "expected" : "he sent a photo to me",
+    "input" : "he sent a photo to me",
+    "split" : "probe"
+  },
+  {
+    "actual" : "मलाई तिम्रो help चहियो",
+    "expected" : "मलाई तिम्रो help चाहियो",
+    "input" : "malai timro help chahiyo",
+    "split" : "probe"
+  },
+  {
+    "actual" : "उस्को घर कहाँ छ",
+    "expected" : "उसको घर कहाँ छ",
+    "input" : "usko ghar kaha cha",
+    "split" : "probe"
+  },
+  {
+    "actual" : "please check the invoice",
+    "expected" : "please check the invoice",
+    "input" : "please check the invoice",
+    "split" : "probe"
+  },
+  {
+    "actual" : "हिजो meeting कस्तो थियो",
+    "expected" : "हिजो meeting कस्तो थियो",
+    "input" : "hijo meeting kasto thiyo",
+    "split" : "probe"
+  },
+  {
+    "actual" : "म आज school जान्छु",
+    "expected" : "म आज school जान्छु",
+    "input" : "ma aaja school janchu",
+    "split" : "probe"
+  },
+  {
+    "actual" : "बिहान coffee पिये अनि काम gare",
+    "expected" : "बिहान coffee पिएँ अनि काम गरेँ",
+    "input" : "bihana coffee piye ani kaam gare",
+    "split" : "probe"
+  }
+]

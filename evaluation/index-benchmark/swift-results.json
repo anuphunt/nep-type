@@ -1,0 +1,33 @@
+{
+  "counts" : {
+    "invalid_control" : 21,
+    "sampled_existing" : 9000,
+    "verified_absent" : 600
+  },
+  "mismatch_examples" : [
+
+  ],
+  "stats" : {
+    "invalid_control" : {
+      "max_ms" : 0.000125,
+      "median_ms" : 8.2999999999999998e-05,
+      "n" : 21,
+      "p95_ms" : 8.3999999999999995e-05,
+      "p99_ms" : 0.000125
+    },
+    "sampled_existing" : {
+      "max_ms" : 0.5625,
+      "median_ms" : 0.0079159999999999994,
+      "n" : 9000,
+      "p95_ms" : 0.010541999999999999,
+      "p99_ms" : 0.012666999999999999
+    },
+    "verified_absent" : {
+      "max_ms" : 0.010958000000000001,
+      "median_ms" : 0.0055830000000000003,
+      "n" : 600,
+      "p95_ms" : 0.0064590000000000003,
+      "p99_ms" : 0.0076670000000000002
+    }
+  }
+}

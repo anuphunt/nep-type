@@ -1,0 +1,16 @@
+[
+  {
+    "path": "/Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/data/compiled/google-ne-aliases.tsv",
+    "rows": 278253,
+    "max_row_bytes_excluding_newline": 173,
+    "max_candidates": 9,
+    "max_candidate_scalars": 22
+  },
+  {
+    "path": "/Users/anupdhakal/Desktop/apps/nepali-keyboard-prototype/data/compiled/aksharantar-indiccorp-v1.tsv",
+    "rows": 2171523,
+    "max_row_bytes_excluding_newline": 764,
+    "max_candidates": 17,
+    "max_candidate_scalars": 19
+  }
+]

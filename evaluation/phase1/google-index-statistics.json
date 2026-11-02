@@ -1,0 +1,16 @@
+{
+  "keys": 278253,
+  "pairs": 294428,
+  "colliding_keys": 14555,
+  "max_candidates": 9,
+  "source_rows_processed": 48472,
+  "skipped": 109,
+  "file_bytes": 10618399,
+  "sha256": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159",
+  "heldout": {
+    "total": 59,
+    "found_any": 43,
+    "recall_all": 39,
+    "recall_first_3_lexicographic": 39
+  }
+}

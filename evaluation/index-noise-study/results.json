@@ -1,0 +1,40 @@
+{
+  "index_sha256": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",
+  "fixture_sha256": "176378d9496b7f7eea606abdb6f1a27267cddc61378215d7c6763efce65af520",
+  "fixture_rows": 59,
+  "counts": {
+    "keys": 2171523,
+    "pairs": 2391227,
+    "collision_keys": 188305,
+    "leading_combining_mark": 5,
+    "leading_combining_mark_first_lexical": 5
+  },
+  "fixture": {
+    "keys_seen": 18,
+    "keys_with_accepted_candidate": 10
+  },
+  "examples_lexical_not_random": {
+    "leading_combining_mark": [
+      [
+        "eniyantranma",
+        "ेनियन्त्रणमा"
+      ],
+      [
+        "mpratiyogitabata",
+        "ंप्रतियोगिताबाट"
+      ],
+      [
+        "nchunawako",
+        "ंचुनावको"
+      ],
+      [
+        "ngharbahir",
+        "ंघरबाहिर"
+      ],
+      [
+        "ngharshaka",
+        "ंघर्षका"
+      ]
+    ]
+  }
+}

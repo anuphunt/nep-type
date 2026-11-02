@@ -1,0 +1,329 @@
+{
+  "description": "Hand-authored development examples, unreviewed, for vowel-length candidate exploration; not a held-out accuracy benchmark.",
+  "cases": [
+    {
+      "roman": "bato",
+      "expected": [
+        "बाटो"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "kagaj",
+      "expected": [
+        "कागज"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "aakash",
+      "expected": [
+        "आकाश"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "gham",
+      "expected": [
+        "घाम"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "pani",
+      "expected": [
+        "पानी",
+        "पनि"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "sathi",
+      "expected": [
+        "साथी"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "ramro",
+      "expected": [
+        "राम्रो"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "kukur",
+      "expected": [
+        "कुकुर"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "biralo",
+      "expected": [
+        "बिरालो"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "bajar",
+      "expected": [
+        "बजार"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "sagar",
+      "expected": [
+        "सागर"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "manchhe",
+      "expected": [
+        "मान्छे"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "badal",
+      "expected": [
+        "बादल"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "kotha",
+      "expected": [
+        "कोठा"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "school",
+      "expected": [
+        "school"
+      ],
+      "role": "english"
+    },
+    {
+      "roman": "phone",
+      "expected": [
+        "phone"
+      ],
+      "role": "english"
+    },
+    {
+      "roman": "book",
+      "expected": [
+        "book"
+      ],
+      "role": "english"
+    },
+    {
+      "roman": "meeting",
+      "expected": [
+        "meeting"
+      ],
+      "role": "english"
+    },
+    {
+      "roman": "fruit",
+      "expected": [
+        "fruit"
+      ],
+      "role": "english"
+    },
+    {
+      "roman": "orange",
+      "expected": [
+        "orange"
+      ],
+      "role": "english"
+    },
+    {
+      "roman": "America",
+      "expected": [
+        "America"
+      ],
+      "role": "name"
+    },
+    {
+      "roman": "Nisha",
+      "expected": [
+        "Nisha"
+      ],
+      "role": "name"
+    },
+    {
+      "roman": "Rita",
+      "expected": [
+        "Rita"
+      ],
+      "role": "name"
+    },
+    {
+      "roman": "Anita",
+      "expected": [
+        "Anita"
+      ],
+      "role": "name"
+    },
+    {
+      "roman": "aaja",
+      "expected": [
+        "आज"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "bihana",
+      "expected": [
+        "बिहान"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "rati",
+      "expected": [
+        "राति"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "gadi",
+      "expected": [
+        "गाडी"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "kura",
+      "expected": [
+        "कुरा"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "dudh",
+      "expected": [
+        "दूध"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "mitho",
+      "expected": [
+        "मिठो",
+        "मीठो"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "jindagi",
+      "expected": [
+        "जिन्दगी"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "parivar",
+      "expected": [
+        "परिवार"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "bidesh",
+      "expected": [
+        "विदेश"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "patra",
+      "expected": [
+        "पत्र"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "khel",
+      "expected": [
+        "खेल"
+      ],
+      "role": "nepali"
+    },
+    {
+      "roman": "nisha",
+      "expected": [
+        "nisha"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "anita",
+      "expected": [
+        "anita"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "priya",
+      "expected": [
+        "priya"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "aarav",
+      "expected": [
+        "aarav"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "sujan",
+      "expected": [
+        "sujan"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "anup",
+      "expected": [
+        "anup"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "rita",
+      "expected": [
+        "rita"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "kiran",
+      "expected": [
+        "kiran"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "sagar",
+      "expected": [
+        "sagar"
+      ],
+      "role": "lowercase_name"
+    },
+    {
+      "roman": "hari",
+      "expected": [
+        "hari"
+      ],
+      "role": "lowercase_name"
+    }
+  ]
+}

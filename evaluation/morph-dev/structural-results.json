@@ -1,0 +1,9671 @@
+{
+  "count": 934,
+  "agrees": 711,
+  "disagrees": 223,
+  "rows": [
+    {
+      "roman": "ababata",
+      "indexed": [
+        "अबबाट",
+        "आबबाट",
+        "आबाबाट"
+      ],
+      "proposed": [
+        "अबबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "abaka",
+      "indexed": [
+        "अबाका",
+        "आबाका"
+      ],
+      "proposed": [
+        "अबका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "abaki",
+      "indexed": [
+        "अबकी"
+      ],
+      "proposed": [
+        "अबकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "abako",
+      "indexed": [
+        "अबाको",
+        "आबाको"
+      ],
+      "proposed": [
+        "अबको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "abalai",
+      "indexed": [
+        "अबलाई",
+        "अबालाई",
+        "आबालाई"
+      ],
+      "proposed": [
+        "अबलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "abale",
+      "indexed": [
+        "अबाले",
+        "आबाले"
+      ],
+      "proposed": [
+        "अबले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "abama",
+      "indexed": [
+        "अबामा",
+        "आबामा"
+      ],
+      "proposed": [
+        "अबमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ahilebata",
+      "indexed": [
+        "अहिलेबाट"
+      ],
+      "proposed": [
+        "अहिलेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ahileka",
+      "indexed": [
+        "अहिलेका"
+      ],
+      "proposed": [
+        "अहिलेका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ahileki",
+      "indexed": [
+        "अहिलेकी"
+      ],
+      "proposed": [
+        "अहिलेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ahileko",
+      "indexed": [
+        "अहिलेको"
+      ],
+      "proposed": [
+        "अहिलेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ahilelai",
+      "indexed": [
+        "अहीलेलाई"
+      ],
+      "proposed": [
+        "अहिलेलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ahilele",
+      "indexed": [
+        "अहिलेले"
+      ],
+      "proposed": [
+        "अहिलेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ahilema",
+      "indexed": [
+        "अहिलेमा"
+      ],
+      "proposed": [
+        "अहिलेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ahilesanga",
+      "indexed": [
+        "अहिलेसँग"
+      ],
+      "proposed": [
+        "अहिलेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ajabata",
+      "indexed": [
+        "आजबाट"
+      ],
+      "proposed": [
+        "आजबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ajaharu",
+      "indexed": [
+        "आजाहरू"
+      ],
+      "proposed": [
+        "आजहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ajaka",
+      "indexed": [
+        "आजाका"
+      ],
+      "proposed": [
+        "आजका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ajako",
+      "indexed": [
+        "आजाको"
+      ],
+      "proposed": [
+        "आजको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ajale",
+      "indexed": [
+        "अजाले",
+        "आजाले"
+      ],
+      "proposed": [
+        "आजले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ajasanga",
+      "indexed": [
+        "आजसँग"
+      ],
+      "proposed": [
+        "आजसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amabata",
+      "indexed": [
+        "अमाबाट",
+        "आमाबाट"
+      ],
+      "proposed": [
+        "आमाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amaharu",
+      "indexed": [
+        "आमाहरू"
+      ],
+      "proposed": [
+        "आमाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amaka",
+      "indexed": [
+        "अमाका",
+        "आमाका"
+      ],
+      "proposed": [
+        "आमाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amaki",
+      "indexed": [
+        "आमाकी"
+      ],
+      "proposed": [
+        "आमाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amako",
+      "indexed": [
+        "अमाको",
+        "आमाको"
+      ],
+      "proposed": [
+        "आमाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amalai",
+      "indexed": [
+        "अमलाई",
+        "अमालाई",
+        "आमलाई"
+      ],
+      "proposed": [
+        "आमालाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "amale",
+      "indexed": [
+        "अमाले",
+        "आमाले"
+      ],
+      "proposed": [
+        "आमाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "amama",
+      "indexed": [
+        "अमामा",
+        "आममा",
+        "आमामा"
+      ],
+      "proposed": [
+        "आमामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aniharu",
+      "indexed": [
+        "आनीहरू"
+      ],
+      "proposed": [
+        "अनिहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "anika",
+      "indexed": [
+        "अनिका"
+      ],
+      "proposed": [
+        "अनिका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aniko",
+      "indexed": [
+        "अनिको",
+        "आनीको",
+        "एनीको"
+      ],
+      "proposed": [
+        "अनिको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "anilai",
+      "indexed": [
+        "अनिलाई",
+        "आनीलाई",
+        "एनीलाई"
+      ],
+      "proposed": [
+        "अनिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "anile",
+      "indexed": [
+        "अनिले",
+        "अनीले"
+      ],
+      "proposed": [
+        "अनिले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunubata",
+      "indexed": [
+        "आउनुबाट"
+      ],
+      "proposed": [
+        "आउनुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunuharu",
+      "indexed": [
+        "आउनुहरू"
+      ],
+      "proposed": [
+        "आउनुहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunuka",
+      "indexed": [
+        "आउनुका"
+      ],
+      "proposed": [
+        "आउनुका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunuko",
+      "indexed": [
+        "आउनुको"
+      ],
+      "proposed": [
+        "आउनुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunulai",
+      "indexed": [
+        "आउनुलाई"
+      ],
+      "proposed": [
+        "आउनुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunule",
+      "indexed": [
+        "आउनुले"
+      ],
+      "proposed": [
+        "आउनुले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunuma",
+      "indexed": [
+        "अउनुमा",
+        "आउनुमा"
+      ],
+      "proposed": [
+        "आउनुमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "aunusanga",
+      "indexed": [
+        "आउनुसँग"
+      ],
+      "proposed": [
+        "आउनुसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bahinibata",
+      "indexed": [
+        "बहिनीबाट",
+        "बाहिनीबाट"
+      ],
+      "proposed": [
+        "बहिनीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bahiniharu",
+      "indexed": [
+        "बाहिनीहरू"
+      ],
+      "proposed": [
+        "बहिनीहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bahinika",
+      "indexed": [
+        "बहिनीका",
+        "बाहिनीका"
+      ],
+      "proposed": [
+        "बहिनीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bahiniki",
+      "indexed": [
+        "बहिनीकी",
+        "बाहिनीकी"
+      ],
+      "proposed": [
+        "बहिनीकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bahiniko",
+      "indexed": [
+        "बाहिनीको"
+      ],
+      "proposed": [
+        "बहिनीको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bahinilai",
+      "indexed": [
+        "बाहिनीलाई"
+      ],
+      "proposed": [
+        "बहिनीलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bahinile",
+      "indexed": [
+        "बाहिनीले"
+      ],
+      "proposed": [
+        "बहिनीले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bahinima",
+      "indexed": [
+        "बहिनीमा",
+        "बाहिनीमा"
+      ],
+      "proposed": [
+        "बहिनीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bahinisanga",
+      "indexed": [
+        "बहिनिसंग",
+        "बहिनीसँग",
+        "बाहिनीसँग"
+      ],
+      "proposed": [
+        "बहिनीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "baschhuma",
+      "indexed": [
+        "बस्छुमा"
+      ],
+      "proposed": [
+        "बस्छुमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basnebata",
+      "indexed": [
+        "बस्नेबाट"
+      ],
+      "proposed": [
+        "बस्नेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basneharu",
+      "indexed": [
+        "बस्नेहरू"
+      ],
+      "proposed": [
+        "बस्नेहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basneka",
+      "indexed": [
+        "बस्नेका"
+      ],
+      "proposed": [
+        "बस्नेका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basneki",
+      "indexed": [
+        "बस्नेकी"
+      ],
+      "proposed": [
+        "बस्नेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basneko",
+      "indexed": [
+        "बस्नेको"
+      ],
+      "proposed": [
+        "बस्नेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basnelai",
+      "indexed": [
+        "बस्नेलाई"
+      ],
+      "proposed": [
+        "बस्नेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basnele",
+      "indexed": [
+        "बस्नेले"
+      ],
+      "proposed": [
+        "बस्नेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basnema",
+      "indexed": [
+        "बस्नेमा"
+      ],
+      "proposed": [
+        "बस्नेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "basnesanga",
+      "indexed": [
+        "बस्नेसँग",
+        "बस्नेसङ्ग"
+      ],
+      "proposed": [
+        "बस्नेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "batabata",
+      "indexed": [
+        "बताबाट",
+        "बाटबाट",
+        "बाटाबाट"
+      ],
+      "proposed": [
+        "बाटबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bataharu",
+      "indexed": [
+        "बाटाहरू"
+      ],
+      "proposed": [
+        "बाटहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bataka",
+      "indexed": [
+        "बाटका",
+        "बाटाका"
+      ],
+      "proposed": [
+        "बाटका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bataki",
+      "indexed": [
+        "बटकी",
+        "बाटाकी"
+      ],
+      "proposed": [
+        "बाटकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "batako",
+      "indexed": [
+        "बाटको",
+        "बाटाको"
+      ],
+      "proposed": [
+        "बाटको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "batalai",
+      "indexed": [
+        "बाटलाई",
+        "बाटालाई"
+      ],
+      "proposed": [
+        "बाटलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "batale",
+      "indexed": [
+        "बताले",
+        "बाटाले",
+        "बाताले"
+      ],
+      "proposed": [
+        "बाटले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "batasanga",
+      "indexed": [
+        "बतासँग",
+        "बाटासँग"
+      ],
+      "proposed": [
+        "बाटसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "belukabata",
+      "indexed": [
+        "बेलुकाबाट"
+      ],
+      "proposed": [
+        "बेलुकाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "belukaka",
+      "indexed": [
+        "बेलुकका",
+        "बेलुकाका"
+      ],
+      "proposed": [
+        "बेलुकाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "belukako",
+      "indexed": [
+        "बेलुकाको"
+      ],
+      "proposed": [
+        "बेलुकाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "belukalai",
+      "indexed": [
+        "बेलुकालाई"
+      ],
+      "proposed": [
+        "बेलुकालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "belukale",
+      "indexed": [
+        "बेलुकाले"
+      ],
+      "proposed": [
+        "बेलुकाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "belukama",
+      "indexed": [
+        "बेलुकामा"
+      ],
+      "proposed": [
+        "बेलुकामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaibata",
+      "indexed": [
+        "भाइबाट",
+        "भाईबाट"
+      ],
+      "proposed": [
+        "भाइबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaika",
+      "indexed": [
+        "भइका",
+        "भाइका",
+        "भाईका"
+      ],
+      "proposed": [
+        "भाइका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaiki",
+      "indexed": [
+        "भइकी",
+        "भाइकी"
+      ],
+      "proposed": [
+        "भाइकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaiko",
+      "indexed": [
+        "भइको",
+        "भाईको"
+      ],
+      "proposed": [
+        "भाइको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhaile",
+      "indexed": [
+        "भइले",
+        "भाईले"
+      ],
+      "proposed": [
+        "भाइले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhaima",
+      "indexed": [
+        "भाइमा",
+        "भाईमा"
+      ],
+      "proposed": [
+        "भाइमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaisanga",
+      "indexed": [
+        "भइसँग"
+      ],
+      "proposed": [
+        "भाइसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhaktapurbata",
+      "indexed": [
+        "भक्तपुरबाट",
+        "भक्तपूरबाट"
+      ],
+      "proposed": [
+        "भक्तपुरबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapurka",
+      "indexed": [
+        "भक्तपुरका"
+      ],
+      "proposed": [
+        "भक्तपुरका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapurki",
+      "indexed": [
+        "भक्तपुरकी"
+      ],
+      "proposed": [
+        "भक्तपुरकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapurko",
+      "indexed": [
+        "भक्तपुरको"
+      ],
+      "proposed": [
+        "भक्तपुरको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapurlai",
+      "indexed": [
+        "भक्तपुरलाई"
+      ],
+      "proposed": [
+        "भक्तपुरलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapurle",
+      "indexed": [
+        "भक्तपुरले",
+        "भक्तपूरले"
+      ],
+      "proposed": [
+        "भक्तपुरले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapurma",
+      "indexed": [
+        "भक्तपुरमा"
+      ],
+      "proposed": [
+        "भक्तपुरमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhaktapursanga",
+      "indexed": [
+        "भक्तपुरसँग",
+        "भक्तपुरसंग"
+      ],
+      "proposed": [
+        "भक्तपुरसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhandabata",
+      "indexed": [
+        "भाँडाबाट"
+      ],
+      "proposed": [
+        "भन्दाबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhandaharu",
+      "indexed": [
+        "भाँडाहरू"
+      ],
+      "proposed": [
+        "भन्दाहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhandaka",
+      "indexed": [
+        "भन्दका",
+        "भन्दाका",
+        "भाँडाका"
+      ],
+      "proposed": [
+        "भन्दाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhandako",
+      "indexed": [
+        "भन्डाको",
+        "भन्दको",
+        "भन्दाको",
+        "भाँडाको"
+      ],
+      "proposed": [
+        "भन्दाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhandalai",
+      "indexed": [
+        "भाँडालाई"
+      ],
+      "proposed": [
+        "भन्दालाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhandale",
+      "indexed": [
+        "भन्दले",
+        "भन्दाले",
+        "भाँडाले"
+      ],
+      "proposed": [
+        "भन्दाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhandama",
+      "indexed": [
+        "भण्डामा",
+        "भन्डामा",
+        "भन्दमा",
+        "भाँडामा"
+      ],
+      "proposed": [
+        "भन्दामा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhandasanga",
+      "indexed": [
+        "भाँडासँग"
+      ],
+      "proposed": [
+        "भन्दासँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhashaki",
+      "indexed": [
+        "भाषाकि",
+        "भाषाकी"
+      ],
+      "proposed": [
+        "भाषाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhashako",
+      "indexed": [
+        "भाषाको"
+      ],
+      "proposed": [
+        "भाषाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhashama",
+      "indexed": [
+        "भाषामा"
+      ],
+      "proposed": [
+        "भाषामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhashasanga",
+      "indexed": [
+        "भाषासँग",
+        "भाषासंग",
+        "भाषासङ्ग"
+      ],
+      "proposed": [
+        "भाषासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatharu",
+      "indexed": [
+        "भातहरू"
+      ],
+      "proposed": [
+        "भातहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatka",
+      "indexed": [
+        "भाटका",
+        "भातका"
+      ],
+      "proposed": [
+        "भातका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatko",
+      "indexed": [
+        "भाटको",
+        "भातको"
+      ],
+      "proposed": [
+        "भातको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatlai",
+      "indexed": [
+        "भटलाई",
+        "भाटलाई",
+        "भातलाई"
+      ],
+      "proposed": [
+        "भातलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatle",
+      "indexed": [
+        "भाटले",
+        "भातले"
+      ],
+      "proposed": [
+        "भातले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatma",
+      "indexed": [
+        "भाटमा",
+        "भातमा"
+      ],
+      "proposed": [
+        "भातमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhatsanga",
+      "indexed": [
+        "भातसँग"
+      ],
+      "proposed": [
+        "भातसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhayeka",
+      "indexed": [
+        "भयेका"
+      ],
+      "proposed": [
+        "भएका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayeki",
+      "indexed": [
+        "भयेकी"
+      ],
+      "proposed": [
+        "भएकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayeko",
+      "indexed": [
+        "भयेको"
+      ],
+      "proposed": [
+        "भएको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayekole",
+      "indexed": [
+        "भयेकोले"
+      ],
+      "proposed": [
+        "भएकोले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayekoma",
+      "indexed": [
+        "भयेकोमा"
+      ],
+      "proposed": [
+        "भएकोमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayele",
+      "indexed": [
+        "भयेले"
+      ],
+      "proposed": [
+        "भएले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayema",
+      "indexed": [
+        "भयेमा"
+      ],
+      "proposed": [
+        "भएमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhayobata",
+      "indexed": [
+        "भयोबाट"
+      ],
+      "proposed": [
+        "भयोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhayoki",
+      "indexed": [
+        "भयोकि",
+        "भयोकी"
+      ],
+      "proposed": [
+        "भयोकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhayoko",
+      "indexed": [
+        "भयोको"
+      ],
+      "proposed": [
+        "भयोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhayolai",
+      "indexed": [
+        "भयोलाई"
+      ],
+      "proposed": [
+        "भयोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhayoma",
+      "indexed": [
+        "भयोमा"
+      ],
+      "proposed": [
+        "भयोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bhetauki",
+      "indexed": [
+        "भेटौकी"
+      ],
+      "proposed": [
+        "भेटौँकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhetaulabata",
+      "indexed": [
+        "भेटौलाबाट"
+      ],
+      "proposed": [
+        "भेटौँलाबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bhetaulama",
+      "indexed": [
+        "भेटौलामा"
+      ],
+      "proposed": [
+        "भेटौँलामा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bholibata",
+      "indexed": [
+        "भोलिबाट",
+        "भोलीबाट"
+      ],
+      "proposed": [
+        "भोलिबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bholiharu",
+      "indexed": [
+        "भोलिहरू"
+      ],
+      "proposed": [
+        "भोलिहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bholika",
+      "indexed": [
+        "भोलीका"
+      ],
+      "proposed": [
+        "भोलिका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bholiki",
+      "indexed": [
+        "भोलिकी"
+      ],
+      "proposed": [
+        "भोलिकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bholiko",
+      "indexed": [
+        "भोलीको"
+      ],
+      "proposed": [
+        "भोलिको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bholilai",
+      "indexed": [
+        "भोलिलाई",
+        "भोलीलाई"
+      ],
+      "proposed": [
+        "भोलिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bholile",
+      "indexed": [
+        "भोलिले",
+        "भोलीले"
+      ],
+      "proposed": [
+        "भोलिले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bholima",
+      "indexed": [
+        "भोलिमा",
+        "भोलीमा"
+      ],
+      "proposed": [
+        "भोलिमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bholisanga",
+      "indexed": [
+        "भोलिसँग"
+      ],
+      "proposed": [
+        "भोलिसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bihanabata",
+      "indexed": [
+        "बिहानाबाट"
+      ],
+      "proposed": [
+        "बिहानबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bihanako",
+      "indexed": [
+        "बिहानाको"
+      ],
+      "proposed": [
+        "बिहानको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bolnaka",
+      "indexed": [
+        "बोल्नका",
+        "बोल्नाका"
+      ],
+      "proposed": [
+        "बोल्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bolnaki",
+      "indexed": [
+        "बोलनाकी"
+      ],
+      "proposed": [
+        "बोल्नकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bolnako",
+      "indexed": [
+        "बोल्नको"
+      ],
+      "proposed": [
+        "बोल्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bolnalai",
+      "indexed": [
+        "बोल्नलाई"
+      ],
+      "proposed": [
+        "बोल्नलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bolnale",
+      "indexed": [
+        "बोल्नाले"
+      ],
+      "proposed": [
+        "बोल्नले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bolnama",
+      "indexed": [
+        "बोल्नमा"
+      ],
+      "proposed": [
+        "बोल्नमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubabata",
+      "indexed": [
+        "बुबाबाट"
+      ],
+      "proposed": [
+        "बुबाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubaharu",
+      "indexed": [
+        "बुबाहरू"
+      ],
+      "proposed": [
+        "बुबाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubaka",
+      "indexed": [
+        "बुबाका"
+      ],
+      "proposed": [
+        "बुबाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubaki",
+      "indexed": [
+        "बुबाकी"
+      ],
+      "proposed": [
+        "बुबाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubako",
+      "indexed": [
+        "बूबाको"
+      ],
+      "proposed": [
+        "बुबाको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "bubalai",
+      "indexed": [
+        "बुबालाई",
+        "बूबालाई"
+      ],
+      "proposed": [
+        "बुबालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubama",
+      "indexed": [
+        "बुबामा"
+      ],
+      "proposed": [
+        "बुबामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "bubasanga",
+      "indexed": [
+        "बुबासँग",
+        "बुबासंग",
+        "बुबासङ्ग"
+      ],
+      "proposed": [
+        "बुबासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwabata",
+      "indexed": [
+        "बुवाबाट"
+      ],
+      "proposed": [
+        "बुवाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwaharu",
+      "indexed": [
+        "बुवाहरू"
+      ],
+      "proposed": [
+        "बुवाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwaka",
+      "indexed": [
+        "बुवाका"
+      ],
+      "proposed": [
+        "बुवाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwaki",
+      "indexed": [
+        "बुवाकी"
+      ],
+      "proposed": [
+        "बुवाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwako",
+      "indexed": [
+        "बुवाको"
+      ],
+      "proposed": [
+        "बुवाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwalai",
+      "indexed": [
+        "बुवालाई"
+      ],
+      "proposed": [
+        "बुवालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwale",
+      "indexed": [
+        "बुवाले"
+      ],
+      "proposed": [
+        "बुवाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwama",
+      "indexed": [
+        "बुवामा"
+      ],
+      "proposed": [
+        "बुवामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "buwasanga",
+      "indexed": [
+        "बुवासंग"
+      ],
+      "proposed": [
+        "बुवासँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chahanchhuki",
+      "indexed": [
+        "चाहन्छुकि",
+        "चाहन्छुकी"
+      ],
+      "proposed": [
+        "चाहन्छुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chahanchhuko",
+      "indexed": [
+        "चाहन्छुको"
+      ],
+      "proposed": [
+        "चाहन्छुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chahanchhulai",
+      "indexed": [
+        "चाहन्छुलाई"
+      ],
+      "proposed": [
+        "चाहन्छुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chahanchhule",
+      "indexed": [
+        "चाहन्छुले"
+      ],
+      "proposed": [
+        "चाहन्छुले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chahika",
+      "indexed": [
+        "चाहिका"
+      ],
+      "proposed": [
+        "चाहिँका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chahiko",
+      "indexed": [
+        "चाहिको",
+        "चाहीको"
+      ],
+      "proposed": [
+        "चाहिँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chahilai",
+      "indexed": [
+        "चाहिलाई"
+      ],
+      "proposed": [
+        "चाहिँलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chahile",
+      "indexed": [
+        "चाहिले",
+        "चाहीले"
+      ],
+      "proposed": [
+        "चाहिँले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chahima",
+      "indexed": [
+        "चाहिमा"
+      ],
+      "proposed": [
+        "चाहिँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainabata",
+      "indexed": [
+        "चैनबाट"
+      ],
+      "proposed": [
+        "छैनबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainaka",
+      "indexed": [
+        "चाइनाका",
+        "चैनका"
+      ],
+      "proposed": [
+        "छैनका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainako",
+      "indexed": [
+        "चाइनाको",
+        "चैनको",
+        "चैनाको"
+      ],
+      "proposed": [
+        "छैनको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainalai",
+      "indexed": [
+        "चाइनालाई"
+      ],
+      "proposed": [
+        "छैनलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainale",
+      "indexed": [
+        "चाइनाले",
+        "चैनाले"
+      ],
+      "proposed": [
+        "छैनले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainama",
+      "indexed": [
+        "चाइनामा",
+        "चैनमा"
+      ],
+      "proposed": [
+        "छैनमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chainasanga",
+      "indexed": [
+        "चाइनासँग"
+      ],
+      "proposed": [
+        "छैनसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chanki",
+      "indexed": [
+        "चाँकी"
+      ],
+      "proposed": [
+        "छन्की"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chanko",
+      "indexed": [
+        "चानको"
+      ],
+      "proposed": [
+        "छन्को"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chanlai",
+      "indexed": [
+        "चनलाई",
+        "चानलाई"
+      ],
+      "proposed": [
+        "छन्लाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chanle",
+      "indexed": [
+        "चानले"
+      ],
+      "proposed": [
+        "छन्ले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chanma",
+      "indexed": [
+        "चनमा",
+        "चन्मा",
+        "चानमा"
+      ],
+      "proposed": [
+        "छन्मा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chaubata",
+      "indexed": [
+        "चौबाट"
+      ],
+      "proposed": [
+        "छौबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chauko",
+      "indexed": [
+        "चाउको",
+        "चौको"
+      ],
+      "proposed": [
+        "छौको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chaulai",
+      "indexed": [
+        "चाउलाई",
+        "चौलाई"
+      ],
+      "proposed": [
+        "छौलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chaule",
+      "indexed": [
+        "चाउले",
+        "चौले"
+      ],
+      "proposed": [
+        "छौले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chauma",
+      "indexed": [
+        "चौमा"
+      ],
+      "proposed": [
+        "छौमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chausanga",
+      "indexed": [
+        "चाउसँग"
+      ],
+      "proposed": [
+        "छौसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhabata",
+      "indexed": [
+        "छबाट"
+      ],
+      "proposed": [
+        "छबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhainaka",
+      "indexed": [
+        "छैनका"
+      ],
+      "proposed": [
+        "छैनका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhainaki",
+      "indexed": [
+        "छैनकी"
+      ],
+      "proposed": [
+        "छैनकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhainale",
+      "indexed": [
+        "छैनले"
+      ],
+      "proposed": [
+        "छैनले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhainama",
+      "indexed": [
+        "छैनमा"
+      ],
+      "proposed": [
+        "छैनमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhaka",
+      "indexed": [
+        "छका",
+        "छाका"
+      ],
+      "proposed": [
+        "छका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhaki",
+      "indexed": [
+        "छकी"
+      ],
+      "proposed": [
+        "छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhako",
+      "indexed": [
+        "छाको"
+      ],
+      "proposed": [
+        "छको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhalai",
+      "indexed": [
+        "छलाई"
+      ],
+      "proposed": [
+        "छलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhama",
+      "indexed": [
+        "छमा",
+        "छामा"
+      ],
+      "proposed": [
+        "छमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhanbata",
+      "indexed": [
+        "छनबाट"
+      ],
+      "proposed": [
+        "छन्बाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhanka",
+      "indexed": [
+        "छन्क",
+        "छन्का"
+      ],
+      "proposed": [
+        "छन्का"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhanki",
+      "indexed": [
+        "छाँकी"
+      ],
+      "proposed": [
+        "छन्की"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhanko",
+      "indexed": [
+        "छन्को"
+      ],
+      "proposed": [
+        "छन्को"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhanlai",
+      "indexed": [
+        "छनलाई",
+        "छन्लाई"
+      ],
+      "proposed": [
+        "छन्लाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhanle",
+      "indexed": [
+        "छनले",
+        "छन्ले"
+      ],
+      "proposed": [
+        "छन्ले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhanma",
+      "indexed": [
+        "छन्म"
+      ],
+      "proposed": [
+        "छन्मा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhaubata",
+      "indexed": [
+        "छाउबाट",
+        "छौबाट"
+      ],
+      "proposed": [
+        "छौबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhauka",
+      "indexed": [
+        "छाउका",
+        "छौका"
+      ],
+      "proposed": [
+        "छौका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhauki",
+      "indexed": [
+        "छाउकी",
+        "छौकी"
+      ],
+      "proposed": [
+        "छौकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhauko",
+      "indexed": [
+        "छाउको"
+      ],
+      "proposed": [
+        "छौको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhaulai",
+      "indexed": [
+        "छाउलाई"
+      ],
+      "proposed": [
+        "छौलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhauma",
+      "indexed": [
+        "छाउमा",
+        "छौमा"
+      ],
+      "proposed": [
+        "छौमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhaunka",
+      "indexed": [
+        "छौंका"
+      ],
+      "proposed": [
+        "छौँका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhaunki",
+      "indexed": [
+        "छौँकी",
+        "छौंकी"
+      ],
+      "proposed": [
+        "छौँकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhaunko",
+      "indexed": [
+        "छाउँको",
+        "छौंको"
+      ],
+      "proposed": [
+        "छौँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhaunlai",
+      "indexed": [
+        "छौंलाई"
+      ],
+      "proposed": [
+        "छौँलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhaunle",
+      "indexed": [
+        "छौंले"
+      ],
+      "proposed": [
+        "छौँले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhaunma",
+      "indexed": [
+        "छाउँमा"
+      ],
+      "proposed": [
+        "छौँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chhubata",
+      "indexed": [
+        "छुबाट"
+      ],
+      "proposed": [
+        "छुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhuka",
+      "indexed": [
+        "छुका"
+      ],
+      "proposed": [
+        "छुका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhuki",
+      "indexed": [
+        "छुकी"
+      ],
+      "proposed": [
+        "छुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhuko",
+      "indexed": [
+        "छुको"
+      ],
+      "proposed": [
+        "छुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhulai",
+      "indexed": [
+        "छुलाई"
+      ],
+      "proposed": [
+        "छुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chhuma",
+      "indexed": [
+        "छुमा"
+      ],
+      "proposed": [
+        "छुमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chitoka",
+      "indexed": [
+        "चिटोका"
+      ],
+      "proposed": [
+        "छिटोका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chiyabata",
+      "indexed": [
+        "चियाबाट"
+      ],
+      "proposed": [
+        "चियाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chiyaharu",
+      "indexed": [
+        "चियाहरू"
+      ],
+      "proposed": [
+        "चियाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chiyaki",
+      "indexed": [
+        "चियाकी"
+      ],
+      "proposed": [
+        "चियाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chiyalai",
+      "indexed": [
+        "चियालाई"
+      ],
+      "proposed": [
+        "चियालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chiyale",
+      "indexed": [
+        "चियाले"
+      ],
+      "proposed": [
+        "चियाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chiyama",
+      "indexed": [
+        "चियामा"
+      ],
+      "proposed": [
+        "चियामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chiyasanga",
+      "indexed": [
+        "चियासँग"
+      ],
+      "proposed": [
+        "चियासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "chulai",
+      "indexed": [
+        "चुलाई"
+      ],
+      "proposed": [
+        "छुलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "chusanga",
+      "indexed": [
+        "चूसँग"
+      ],
+      "proposed": [
+        "छुसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "cricketbata",
+      "indexed": [
+        "क्रिकेटबाट"
+      ],
+      "proposed": [
+        "क्रिकेटबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "cricketharu",
+      "indexed": [
+        "क्रिकेटहरू"
+      ],
+      "proposed": [
+        "क्रिकेटहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "cricketka",
+      "indexed": [
+        "क्रिकेटका"
+      ],
+      "proposed": [
+        "क्रिकेटका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "cricketlai",
+      "indexed": [
+        "क्रिकेटलाई"
+      ],
+      "proposed": [
+        "क्रिकेटलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "cricketle",
+      "indexed": [
+        "क्रिकेटले"
+      ],
+      "proposed": [
+        "क्रिकेटले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "cricketsanga",
+      "indexed": [
+        "क्रिकेटसँग"
+      ],
+      "proposed": [
+        "क्रिकेटसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "daika",
+      "indexed": [
+        "दाइका",
+        "दैका"
+      ],
+      "proposed": [
+        "दाइका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "daiko",
+      "indexed": [
+        "दैको"
+      ],
+      "proposed": [
+        "दाइको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "daima",
+      "indexed": [
+        "दाइमा",
+        "दैमा"
+      ],
+      "proposed": [
+        "दाइमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dalbata",
+      "indexed": [
+        "दलबाट",
+        "दालबाट"
+      ],
+      "proposed": [
+        "दालबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dalharu",
+      "indexed": [
+        "दलहरू"
+      ],
+      "proposed": [
+        "दालहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dalka",
+      "indexed": [
+        "दलका",
+        "दालका"
+      ],
+      "proposed": [
+        "दालका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dalki",
+      "indexed": [
+        "डालकी",
+        "डाल्की"
+      ],
+      "proposed": [
+        "दालकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dalko",
+      "indexed": [
+        "दलको",
+        "दालको"
+      ],
+      "proposed": [
+        "दालको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dalle",
+      "indexed": [
+        "डल्ले",
+        "दलले",
+        "दल्ले"
+      ],
+      "proposed": [
+        "दालले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dalsanga",
+      "indexed": [
+        "दलसँग"
+      ],
+      "proposed": [
+        "दालसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dekhibata",
+      "indexed": [
+        "देखिबाट"
+      ],
+      "proposed": [
+        "देखिबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dekhika",
+      "indexed": [
+        "देखिका"
+      ],
+      "proposed": [
+        "देखिका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dekhiki",
+      "indexed": [
+        "देखिकि",
+        "देखिकी"
+      ],
+      "proposed": [
+        "देखिकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dekhiko",
+      "indexed": [
+        "देखिको"
+      ],
+      "proposed": [
+        "देखिको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dekhilai",
+      "indexed": [
+        "देखिलाई"
+      ],
+      "proposed": [
+        "देखिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dekhima",
+      "indexed": [
+        "देखिमा"
+      ],
+      "proposed": [
+        "देखिमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshbata",
+      "indexed": [
+        "देशबाट"
+      ],
+      "proposed": [
+        "देशबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshka",
+      "indexed": [
+        "देशका"
+      ],
+      "proposed": [
+        "देशका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshki",
+      "indexed": [
+        "देशकी"
+      ],
+      "proposed": [
+        "देशकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshko",
+      "indexed": [
+        "देशको"
+      ],
+      "proposed": [
+        "देशको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshlai",
+      "indexed": [
+        "देशलाई"
+      ],
+      "proposed": [
+        "देशलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshle",
+      "indexed": [
+        "देशले"
+      ],
+      "proposed": [
+        "देशले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "deshsanga",
+      "indexed": [
+        "देशसँग",
+        "देशसङ्ग"
+      ],
+      "proposed": [
+        "देशसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhanyabadka",
+      "indexed": [
+        "धन्यबादका"
+      ],
+      "proposed": [
+        "धन्यवादका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dhanyabadko",
+      "indexed": [
+        "धन्यबादको",
+        "धन्याबादको"
+      ],
+      "proposed": [
+        "धन्यवादको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dhanyabadle",
+      "indexed": [
+        "धन्यबादले"
+      ],
+      "proposed": [
+        "धन्यवादले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dheraibata",
+      "indexed": [
+        "धेरैबाट"
+      ],
+      "proposed": [
+        "धेरैबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraiharu",
+      "indexed": [
+        "धेरैहरू"
+      ],
+      "proposed": [
+        "धेरैहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraika",
+      "indexed": [
+        "धेरैका"
+      ],
+      "proposed": [
+        "धेरैका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraiki",
+      "indexed": [
+        "धेरैकी"
+      ],
+      "proposed": [
+        "धेरैकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraiko",
+      "indexed": [
+        "धेरैको"
+      ],
+      "proposed": [
+        "धेरैको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dherailai",
+      "indexed": [
+        "धेरैलाई"
+      ],
+      "proposed": [
+        "धेरैलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraile",
+      "indexed": [
+        "धेरैले"
+      ],
+      "proposed": [
+        "धेरैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraima",
+      "indexed": [
+        "धेरैमा"
+      ],
+      "proposed": [
+        "धेरैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dheraisanga",
+      "indexed": [
+        "धेरैसँग"
+      ],
+      "proposed": [
+        "धेरैसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhilobata",
+      "indexed": [
+        "ढिलोबाट"
+      ],
+      "proposed": [
+        "ढिलोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhiloko",
+      "indexed": [
+        "ढिलोको"
+      ],
+      "proposed": [
+        "ढिलोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhilolai",
+      "indexed": [
+        "ढिलोलाई"
+      ],
+      "proposed": [
+        "ढिलोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhilole",
+      "indexed": [
+        "ढिलोले"
+      ],
+      "proposed": [
+        "ढिलोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhiloma",
+      "indexed": [
+        "ढिलोमा"
+      ],
+      "proposed": [
+        "ढिलोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dhilosanga",
+      "indexed": [
+        "ढिलोसँग"
+      ],
+      "proposed": [
+        "ढिलोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "didibata",
+      "indexed": [
+        "दिदिबाट",
+        "दिदीबाट"
+      ],
+      "proposed": [
+        "दिदीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "didiharu",
+      "indexed": [
+        "दिदिहरू",
+        "दिदीहरू"
+      ],
+      "proposed": [
+        "दिदीहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "didika",
+      "indexed": [
+        "दिदिका",
+        "दिदीका"
+      ],
+      "proposed": [
+        "दिदीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "didiki",
+      "indexed": [
+        "दिदिकी",
+        "दिदीकी"
+      ],
+      "proposed": [
+        "दिदीकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "didiko",
+      "indexed": [
+        "दिदिको"
+      ],
+      "proposed": [
+        "दिदीको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "didilai",
+      "indexed": [
+        "दिदिलाई",
+        "दीदीलाई"
+      ],
+      "proposed": [
+        "दिदीलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "didile",
+      "indexed": [
+        "दिदिले"
+      ],
+      "proposed": [
+        "दिदीले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "didima",
+      "indexed": [
+        "दिदिमा",
+        "दिदीमा"
+      ],
+      "proposed": [
+        "दिदीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "didisanga",
+      "indexed": [
+        "दिदिसँग",
+        "दिदिसंग",
+        "दिदीसँग"
+      ],
+      "proposed": [
+        "दिदीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dinbata",
+      "indexed": [
+        "दिनबाट"
+      ],
+      "proposed": [
+        "दिनबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dinki",
+      "indexed": [
+        "दिनकी"
+      ],
+      "proposed": [
+        "दिनकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dinko",
+      "indexed": [
+        "दिनको"
+      ],
+      "proposed": [
+        "दिनको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dinle",
+      "indexed": [
+        "दिनले"
+      ],
+      "proposed": [
+        "दिनले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dinma",
+      "indexed": [
+        "दिनमा"
+      ],
+      "proposed": [
+        "दिनमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dudhka",
+      "indexed": [
+        "दुधका",
+        "दूधका"
+      ],
+      "proposed": [
+        "दूधका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dudhko",
+      "indexed": [
+        "दुधको"
+      ],
+      "proposed": [
+        "दूधको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "dudhlai",
+      "indexed": [
+        "दुधलाई",
+        "दूधलाई"
+      ],
+      "proposed": [
+        "दूधलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dudhle",
+      "indexed": [
+        "दुधले",
+        "दूधले"
+      ],
+      "proposed": [
+        "दूधले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "dudhsanga",
+      "indexed": [
+        "दुधसँग",
+        "दुधसंग"
+      ],
+      "proposed": [
+        "दूधसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "feribata",
+      "indexed": [
+        "फेरीबाट"
+      ],
+      "proposed": [
+        "फेरिबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "feriharu",
+      "indexed": [
+        "फेरीहरू"
+      ],
+      "proposed": [
+        "फेरिहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ferika",
+      "indexed": [
+        "फेरीका"
+      ],
+      "proposed": [
+        "फेरिका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "feriko",
+      "indexed": [
+        "फेरीको"
+      ],
+      "proposed": [
+        "फेरिको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ferilai",
+      "indexed": [
+        "फेरीलाई"
+      ],
+      "proposed": [
+        "फेरिलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ferile",
+      "indexed": [
+        "फेरीले"
+      ],
+      "proposed": [
+        "फेरिले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ferima",
+      "indexed": [
+        "फेरीमा"
+      ],
+      "proposed": [
+        "फेरिमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ferisanga",
+      "indexed": [
+        "फेरीसँग"
+      ],
+      "proposed": [
+        "फेरिसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "footballbata",
+      "indexed": [
+        "फुटबालबाट"
+      ],
+      "proposed": [
+        "फुटबलबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "footballka",
+      "indexed": [
+        "फुटबलका",
+        "फुटबालका"
+      ],
+      "proposed": [
+        "फुटबलका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gahroko",
+      "indexed": [
+        "गह्रोको"
+      ],
+      "proposed": [
+        "गाह्रोको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gahrolai",
+      "indexed": [
+        "गह्रोलाई"
+      ],
+      "proposed": [
+        "गाह्रोलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gahroma",
+      "indexed": [
+        "गह्रोमा"
+      ],
+      "proposed": [
+        "गाह्रोमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garambata",
+      "indexed": [
+        "गरमबाट"
+      ],
+      "proposed": [
+        "गरौँबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garamko",
+      "indexed": [
+        "गरमको"
+      ],
+      "proposed": [
+        "गरौँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garamma",
+      "indexed": [
+        "गरममा",
+        "गरम्मा"
+      ],
+      "proposed": [
+        "गरौँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garauka",
+      "indexed": [
+        "गराउका",
+        "गरौका"
+      ],
+      "proposed": [
+        "गरौँका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garauki",
+      "indexed": [
+        "गराउकी"
+      ],
+      "proposed": [
+        "गरौँकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garauko",
+      "indexed": [
+        "गराउको"
+      ],
+      "proposed": [
+        "गरौँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garaule",
+      "indexed": [
+        "गराउले",
+        "गरौले"
+      ],
+      "proposed": [
+        "गरौँले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garauma",
+      "indexed": [
+        "गराउमा"
+      ],
+      "proposed": [
+        "गरौँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garchabata",
+      "indexed": [
+        "गर्चबाट"
+      ],
+      "proposed": [
+        "गर्छबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garchaka",
+      "indexed": [
+        "गर्चाका"
+      ],
+      "proposed": [
+        "गर्छका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garchaki",
+      "indexed": [
+        "गर्चाकी"
+      ],
+      "proposed": [
+        "गर्छकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garchama",
+      "indexed": [
+        "गर्चामा"
+      ],
+      "proposed": [
+        "गर्छमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garchhabata",
+      "indexed": [
+        "गर्छबाट"
+      ],
+      "proposed": [
+        "गर्छबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhaki",
+      "indexed": [
+        "गर्छकि",
+        "गर्छकी"
+      ],
+      "proposed": [
+        "गर्छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhako",
+      "indexed": [
+        "गर्छको"
+      ],
+      "proposed": [
+        "गर्छको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhale",
+      "indexed": [
+        "गर्छले"
+      ],
+      "proposed": [
+        "गर्छले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhama",
+      "indexed": [
+        "गर्छमा"
+      ],
+      "proposed": [
+        "गर्छमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhasanga",
+      "indexed": [
+        "गर्छसँग"
+      ],
+      "proposed": [
+        "गर्छसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhuki",
+      "indexed": [
+        "गर्छुकि",
+        "गर्छुकी"
+      ],
+      "proposed": [
+        "गर्छुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garchhuko",
+      "indexed": [
+        "गर्छुको"
+      ],
+      "proposed": [
+        "गर्छुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garekobata",
+      "indexed": [
+        "गरेकोबाट"
+      ],
+      "proposed": [
+        "गरेकोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garekoka",
+      "indexed": [
+        "गरेकोका"
+      ],
+      "proposed": [
+        "गरेकोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garekoko",
+      "indexed": [
+        "गरेकोको"
+      ],
+      "proposed": [
+        "गरेकोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garekolai",
+      "indexed": [
+        "गरेकोलाई"
+      ],
+      "proposed": [
+        "गरेकोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garekoma",
+      "indexed": [
+        "गरेकोमा"
+      ],
+      "proposed": [
+        "गरेकोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garekosanga",
+      "indexed": [
+        "गरेकोसँग"
+      ],
+      "proposed": [
+        "गरेकोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnaharu",
+      "indexed": [
+        "गर्नहरू"
+      ],
+      "proposed": [
+        "गर्नहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnaka",
+      "indexed": [
+        "गर्नका"
+      ],
+      "proposed": [
+        "गर्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnaki",
+      "indexed": [
+        "गर्नाकी"
+      ],
+      "proposed": [
+        "गर्नकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garnako",
+      "indexed": [
+        "गर्नको"
+      ],
+      "proposed": [
+        "गर्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnalai",
+      "indexed": [
+        "गर्नालाई"
+      ],
+      "proposed": [
+        "गर्नलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garnale",
+      "indexed": [
+        "गर्नले"
+      ],
+      "proposed": [
+        "गर्नले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnama",
+      "indexed": [
+        "गर्नामा"
+      ],
+      "proposed": [
+        "गर्नमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garnubata",
+      "indexed": [
+        "गर्नुबाट"
+      ],
+      "proposed": [
+        "गर्नुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnuhoslai",
+      "indexed": [
+        "गर्नुहोस्लाई"
+      ],
+      "proposed": [
+        "गर्नुहोस्लाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnuhosma",
+      "indexed": [
+        "गर्नुहोसमा",
+        "गर्नुहोस्मा"
+      ],
+      "proposed": [
+        "गर्नुहोस्मा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnuka",
+      "indexed": [
+        "गर्नुका",
+        "गर्नूका"
+      ],
+      "proposed": [
+        "गर्नुका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnuki",
+      "indexed": [
+        "गर्नुकी"
+      ],
+      "proposed": [
+        "गर्नुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnuko",
+      "indexed": [
+        "गर्नुको",
+        "गर्नूको"
+      ],
+      "proposed": [
+        "गर्नुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnulai",
+      "indexed": [
+        "गर्नुलाई",
+        "गर्नूलाई"
+      ],
+      "proposed": [
+        "गर्नुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnule",
+      "indexed": [
+        "गर्नुले",
+        "गर्नूले"
+      ],
+      "proposed": [
+        "गर्नुले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garnusanga",
+      "indexed": [
+        "गर्नुसँग",
+        "गर्नुसंग"
+      ],
+      "proposed": [
+        "गर्नुसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "garoharu",
+      "indexed": [
+        "गरोहरू"
+      ],
+      "proposed": [
+        "गाह्रोहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garoka",
+      "indexed": [
+        "गरोका"
+      ],
+      "proposed": [
+        "गाह्रोका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garoko",
+      "indexed": [
+        "गरोको"
+      ],
+      "proposed": [
+        "गाह्रोको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "garoma",
+      "indexed": [
+        "गरोमा"
+      ],
+      "proposed": [
+        "गाह्रोमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gaubata",
+      "indexed": [
+        "गाउबाट"
+      ],
+      "proposed": [
+        "गाउँबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gauka",
+      "indexed": [
+        "गाउका",
+        "गौका"
+      ],
+      "proposed": [
+        "गाउँका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gauki",
+      "indexed": [
+        "गाउकी"
+      ],
+      "proposed": [
+        "गाउँकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gauko",
+      "indexed": [
+        "गाउको"
+      ],
+      "proposed": [
+        "गाउँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gaulai",
+      "indexed": [
+        "गौलाई"
+      ],
+      "proposed": [
+        "गाउँलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gaule",
+      "indexed": [
+        "गाउले",
+        "गौले"
+      ],
+      "proposed": [
+        "गाउँले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gauma",
+      "indexed": [
+        "गाउमा",
+        "गौमा"
+      ],
+      "proposed": [
+        "गाउँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gaunka",
+      "indexed": [
+        "गाउँका"
+      ],
+      "proposed": [
+        "गाउँका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gaunki",
+      "indexed": [
+        "गाउँकी"
+      ],
+      "proposed": [
+        "गाउँकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gaunma",
+      "indexed": [
+        "गाउँमा"
+      ],
+      "proposed": [
+        "गाउँमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gaunsanga",
+      "indexed": [
+        "गाउँसँग",
+        "गाउँसंग"
+      ],
+      "proposed": [
+        "गाउँसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gausanga",
+      "indexed": [
+        "गाउसँग"
+      ],
+      "proposed": [
+        "गाउँसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gayoko",
+      "indexed": [
+        "गयोको",
+        "गायोको"
+      ],
+      "proposed": [
+        "गयोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gayoma",
+      "indexed": [
+        "गयोमा"
+      ],
+      "proposed": [
+        "गयोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gharako",
+      "indexed": [
+        "घराको"
+      ],
+      "proposed": [
+        "घरको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gharama",
+      "indexed": [
+        "घरामा"
+      ],
+      "proposed": [
+        "घरमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gharbata",
+      "indexed": [
+        "घरबाट"
+      ],
+      "proposed": [
+        "घरबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gharka",
+      "indexed": [
+        "घरका"
+      ],
+      "proposed": [
+        "घरका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gharko",
+      "indexed": [
+        "घरको"
+      ],
+      "proposed": [
+        "घरको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gharmaka",
+      "indexed": [
+        "घरमाका",
+        "घर्मका"
+      ],
+      "proposed": [
+        "घरमाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gharmaki",
+      "indexed": [
+        "घर्मकी"
+      ],
+      "proposed": [
+        "घरमाकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gharmako",
+      "indexed": [
+        "घर्मको"
+      ],
+      "proposed": [
+        "घरमाको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "gharmama",
+      "indexed": [
+        "घरमामा",
+        "घर्ममा"
+      ],
+      "proposed": [
+        "घरमामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "gharsanga",
+      "indexed": [
+        "घरसँग"
+      ],
+      "proposed": [
+        "घरसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hajurbata",
+      "indexed": [
+        "हजुरबाट",
+        "हजूरबाट"
+      ],
+      "proposed": [
+        "हजुरबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hajurharu",
+      "indexed": [
+        "हजुरहरू",
+        "हजूरहरू"
+      ],
+      "proposed": [
+        "हजुरहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hajurka",
+      "indexed": [
+        "हजुरका",
+        "हजूरका"
+      ],
+      "proposed": [
+        "हजुरका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hajurki",
+      "indexed": [
+        "हजुरकी"
+      ],
+      "proposed": [
+        "हजुरकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hajurko",
+      "indexed": [
+        "हजूरको"
+      ],
+      "proposed": [
+        "हजुरको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hajurlai",
+      "indexed": [
+        "हजूरलाई"
+      ],
+      "proposed": [
+        "हजुरलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hajurle",
+      "indexed": [
+        "हजूरले"
+      ],
+      "proposed": [
+        "हजुरले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hajurma",
+      "indexed": [
+        "हजुरमा",
+        "हजूरमा"
+      ],
+      "proposed": [
+        "हजुरमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hajursanga",
+      "indexed": [
+        "हजुरसँग",
+        "हजुरसङ्ग",
+        "हजूरसँग"
+      ],
+      "proposed": [
+        "हजुरसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamika",
+      "indexed": [
+        "हामीका"
+      ],
+      "proposed": [
+        "हामीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamiko",
+      "indexed": [
+        "हामीको"
+      ],
+      "proposed": [
+        "हामीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamilai",
+      "indexed": [
+        "हामीलाई"
+      ],
+      "proposed": [
+        "हामीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamilaiko",
+      "indexed": [
+        "हामीलाईको"
+      ],
+      "proposed": [
+        "हामीलाईको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamilailai",
+      "indexed": [
+        "हामीलाइलाई",
+        "हामीलाईलाई"
+      ],
+      "proposed": [
+        "हामीलाईलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamile",
+      "indexed": [
+        "हामीले"
+      ],
+      "proposed": [
+        "हामीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamisanga",
+      "indexed": [
+        "हामिसँग",
+        "हामीसँग",
+        "हामीसंग"
+      ],
+      "proposed": [
+        "हामीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamrobata",
+      "indexed": [
+        "हाम्रोबाट"
+      ],
+      "proposed": [
+        "हाम्रोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamroka",
+      "indexed": [
+        "हाम्रोका"
+      ],
+      "proposed": [
+        "हाम्रोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamroko",
+      "indexed": [
+        "हाम्रोको"
+      ],
+      "proposed": [
+        "हाम्रोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamrolai",
+      "indexed": [
+        "हाम्रोलाई"
+      ],
+      "proposed": [
+        "हाम्रोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamrole",
+      "indexed": [
+        "हाम्रोले"
+      ],
+      "proposed": [
+        "हाम्रोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamroma",
+      "indexed": [
+        "हम्रोमा",
+        "हाम्रोमा"
+      ],
+      "proposed": [
+        "हाम्रोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hamrosanga",
+      "indexed": [
+        "हाम्रोसँग"
+      ],
+      "proposed": [
+        "हाम्रोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hijobata",
+      "indexed": [
+        "हिजोबाट"
+      ],
+      "proposed": [
+        "हिजोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hijoka",
+      "indexed": [
+        "हिजोका"
+      ],
+      "proposed": [
+        "हिजोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hijolai",
+      "indexed": [
+        "हिजोलाई"
+      ],
+      "proposed": [
+        "हिजोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hijole",
+      "indexed": [
+        "हिजोले"
+      ],
+      "proposed": [
+        "हिजोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hijoma",
+      "indexed": [
+        "हिजोमा"
+      ],
+      "proposed": [
+        "हिजोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hijosanga",
+      "indexed": [
+        "हिजोसँग"
+      ],
+      "proposed": [
+        "हिजोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunbata",
+      "indexed": [
+        "हुनबाट"
+      ],
+      "proposed": [
+        "हुन्बाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hunchhabata",
+      "indexed": [
+        "हुन्छबाट"
+      ],
+      "proposed": [
+        "हुन्छबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunchhaki",
+      "indexed": [
+        "हुन्छकि",
+        "हुन्छकी"
+      ],
+      "proposed": [
+        "हुन्छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunchhako",
+      "indexed": [
+        "हुन्छको"
+      ],
+      "proposed": [
+        "हुन्छको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunchhalai",
+      "indexed": [
+        "हुन्छलाई"
+      ],
+      "proposed": [
+        "हुन्छलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunchhale",
+      "indexed": [
+        "हुन्छले"
+      ],
+      "proposed": [
+        "हुन्छले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunchhama",
+      "indexed": [
+        "हुन्छमा"
+      ],
+      "proposed": [
+        "हुन्छमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunebata",
+      "indexed": [
+        "हुनेबाट"
+      ],
+      "proposed": [
+        "हुनेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "huneharu",
+      "indexed": [
+        "हुनेहरू"
+      ],
+      "proposed": [
+        "हुनेहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "huneka",
+      "indexed": [
+        "हुनेका"
+      ],
+      "proposed": [
+        "हुनेका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "huneki",
+      "indexed": [
+        "हुनेकी"
+      ],
+      "proposed": [
+        "हुनेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "huneko",
+      "indexed": [
+        "हुनेको"
+      ],
+      "proposed": [
+        "हुनेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunelai",
+      "indexed": [
+        "हुनेलाई"
+      ],
+      "proposed": [
+        "हुनेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunele",
+      "indexed": [
+        "हुनेले"
+      ],
+      "proposed": [
+        "हुनेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunema",
+      "indexed": [
+        "हुनेमा"
+      ],
+      "proposed": [
+        "हुनेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunesanga",
+      "indexed": [
+        "हुनेसँग",
+        "हुनेसंग"
+      ],
+      "proposed": [
+        "हुनेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunki",
+      "indexed": [
+        "हुनकी",
+        "हुन्की"
+      ],
+      "proposed": [
+        "हुन्की"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunlai",
+      "indexed": [
+        "हुनलाई"
+      ],
+      "proposed": [
+        "हुन्लाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hunle",
+      "indexed": [
+        "हुनले"
+      ],
+      "proposed": [
+        "हुन्ले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hunma",
+      "indexed": [
+        "हुनमा"
+      ],
+      "proposed": [
+        "हुन्मा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hunnaka",
+      "indexed": [
+        "हुन्नका"
+      ],
+      "proposed": [
+        "हुन्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunnaki",
+      "indexed": [
+        "हुन्नकी"
+      ],
+      "proposed": [
+        "हुन्नकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunnako",
+      "indexed": [
+        "हुन्नको"
+      ],
+      "proposed": [
+        "हुन्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunnale",
+      "indexed": [
+        "हुन्नाले"
+      ],
+      "proposed": [
+        "हुन्नले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hunnama",
+      "indexed": [
+        "हुन्नमा"
+      ],
+      "proposed": [
+        "हुन्नमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunsanga",
+      "indexed": [
+        "हुनसँग"
+      ],
+      "proposed": [
+        "हुन्सँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "hunubata",
+      "indexed": [
+        "हुनुबाट"
+      ],
+      "proposed": [
+        "हुनुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunuhunchhaki",
+      "indexed": [
+        "हुनुहुन्छकी"
+      ],
+      "proposed": [
+        "हुनुहुन्छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunuka",
+      "indexed": [
+        "हुनुका"
+      ],
+      "proposed": [
+        "हुनुका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunuko",
+      "indexed": [
+        "हुनुको"
+      ],
+      "proposed": [
+        "हुनुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunulai",
+      "indexed": [
+        "हुनुलाई"
+      ],
+      "proposed": [
+        "हुनुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunule",
+      "indexed": [
+        "हुनुले"
+      ],
+      "proposed": [
+        "हुनुले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "hunusanga",
+      "indexed": [
+        "हुनुसँग"
+      ],
+      "proposed": [
+        "हुनुसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janchhaki",
+      "indexed": [
+        "जान्छकि",
+        "जान्छकी"
+      ],
+      "proposed": [
+        "जान्छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janchhako",
+      "indexed": [
+        "जान्छको"
+      ],
+      "proposed": [
+        "जान्छको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janchhasanga",
+      "indexed": [
+        "जान्छसँग"
+      ],
+      "proposed": [
+        "जान्छसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janchhuki",
+      "indexed": [
+        "जान्छुकी"
+      ],
+      "proposed": [
+        "जान्छुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janchhuko",
+      "indexed": [
+        "जान्छुको"
+      ],
+      "proposed": [
+        "जान्छुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janebata",
+      "indexed": [
+        "जानेबाट"
+      ],
+      "proposed": [
+        "जानेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janeharu",
+      "indexed": [
+        "जानेहरू"
+      ],
+      "proposed": [
+        "जानेहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janeka",
+      "indexed": [
+        "जनेका"
+      ],
+      "proposed": [
+        "जानेका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "janeki",
+      "indexed": [
+        "जनेकी",
+        "जानेकी"
+      ],
+      "proposed": [
+        "जानेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janeko",
+      "indexed": [
+        "जनेको"
+      ],
+      "proposed": [
+        "जानेको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "janelai",
+      "indexed": [
+        "जनेलाई",
+        "जानेलाई"
+      ],
+      "proposed": [
+        "जानेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janele",
+      "indexed": [
+        "जनेले",
+        "जानेले"
+      ],
+      "proposed": [
+        "जानेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janema",
+      "indexed": [
+        "जानेमा"
+      ],
+      "proposed": [
+        "जानेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janesanga",
+      "indexed": [
+        "जानेसँग"
+      ],
+      "proposed": [
+        "जानेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinbata",
+      "indexed": [
+        "जन्मदिनबाट"
+      ],
+      "proposed": [
+        "जन्मदिनबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinharu",
+      "indexed": [
+        "जन्मदिनहरू"
+      ],
+      "proposed": [
+        "जन्मदिनहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinka",
+      "indexed": [
+        "जन्मदिनका"
+      ],
+      "proposed": [
+        "जन्मदिनका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinko",
+      "indexed": [
+        "जन्मदिनको"
+      ],
+      "proposed": [
+        "जन्मदिनको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinlai",
+      "indexed": [
+        "जन्मदिनलाई"
+      ],
+      "proposed": [
+        "जन्मदिनलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinle",
+      "indexed": [
+        "जन्मदिनले"
+      ],
+      "proposed": [
+        "जन्मदिनले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinma",
+      "indexed": [
+        "जन्मदिनमा"
+      ],
+      "proposed": [
+        "जन्मदिनमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janmadinsanga",
+      "indexed": [
+        "जन्मदिनसँग"
+      ],
+      "proposed": [
+        "जन्मदिनसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janubata",
+      "indexed": [
+        "जानुबाट"
+      ],
+      "proposed": [
+        "जानुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "januka",
+      "indexed": [
+        "जानुका"
+      ],
+      "proposed": [
+        "जानुका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "januki",
+      "indexed": [
+        "जानुकी"
+      ],
+      "proposed": [
+        "जानुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "januko",
+      "indexed": [
+        "जानुको"
+      ],
+      "proposed": [
+        "जानुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janulai",
+      "indexed": [
+        "जानुलाई",
+        "जानूलाई"
+      ],
+      "proposed": [
+        "जानुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janule",
+      "indexed": [
+        "जानुले"
+      ],
+      "proposed": [
+        "जानुले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "januma",
+      "indexed": [
+        "जानुमा"
+      ],
+      "proposed": [
+        "जानुमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "janusanga",
+      "indexed": [
+        "जानुसँग",
+        "जानुसंग"
+      ],
+      "proposed": [
+        "जानुसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajbata",
+      "indexed": [
+        "कागजबाट"
+      ],
+      "proposed": [
+        "कागजबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajharu",
+      "indexed": [
+        "कागजहरू"
+      ],
+      "proposed": [
+        "कागजहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajka",
+      "indexed": [
+        "कागजका"
+      ],
+      "proposed": [
+        "कागजका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajki",
+      "indexed": [
+        "कागजकी"
+      ],
+      "proposed": [
+        "कागजकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajlai",
+      "indexed": [
+        "कागजलाई"
+      ],
+      "proposed": [
+        "कागजलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajle",
+      "indexed": [
+        "कागजले"
+      ],
+      "proposed": [
+        "कागजले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kagajsanga",
+      "indexed": [
+        "कागजसँग"
+      ],
+      "proposed": [
+        "कागजसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kahabata",
+      "indexed": [
+        "काहाबाट"
+      ],
+      "proposed": [
+        "कहाँबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kahaka",
+      "indexed": [
+        "कहाका"
+      ],
+      "proposed": [
+        "कहाँका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kahako",
+      "indexed": [
+        "कहाको"
+      ],
+      "proposed": [
+        "कहाँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kahalai",
+      "indexed": [
+        "कहलाई"
+      ],
+      "proposed": [
+        "कहाँलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kahale",
+      "indexed": [
+        "कहले",
+        "कहाले"
+      ],
+      "proposed": [
+        "कहाँले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kahama",
+      "indexed": [
+        "कहमा",
+        "कहामा"
+      ],
+      "proposed": [
+        "कहाँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kahilebata",
+      "indexed": [
+        "कहिलेबाट"
+      ],
+      "proposed": [
+        "कहिलेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kahileka",
+      "indexed": [
+        "कहिलेका"
+      ],
+      "proposed": [
+        "कहिलेका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kahileko",
+      "indexed": [
+        "कहिलेको"
+      ],
+      "proposed": [
+        "कहिलेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kahilelai",
+      "indexed": [
+        "कहिलेलाई"
+      ],
+      "proposed": [
+        "कहिलेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kahilele",
+      "indexed": [
+        "कहिलेले"
+      ],
+      "proposed": [
+        "कहिलेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kahilema",
+      "indexed": [
+        "कहिलेमा"
+      ],
+      "proposed": [
+        "कहिलेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kalambata",
+      "indexed": [
+        "कलमबाट",
+        "कलामबाट"
+      ],
+      "proposed": [
+        "कलमबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kalamharu",
+      "indexed": [
+        "कलमहरू"
+      ],
+      "proposed": [
+        "कलमहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kalamka",
+      "indexed": [
+        "कलमका",
+        "कलामका"
+      ],
+      "proposed": [
+        "कलमका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kalamki",
+      "indexed": [
+        "कलामकी"
+      ],
+      "proposed": [
+        "कलमकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kalamko",
+      "indexed": [
+        "कलामको"
+      ],
+      "proposed": [
+        "कलमको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kalamlai",
+      "indexed": [
+        "कलमलाई",
+        "कलामलाई",
+        "कालमलाई"
+      ],
+      "proposed": [
+        "कलमलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kalamle",
+      "indexed": [
+        "कलामले",
+        "कालमले"
+      ],
+      "proposed": [
+        "कलमले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kalamsanga",
+      "indexed": [
+        "कलमसँग"
+      ],
+      "proposed": [
+        "कलमसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kasarika",
+      "indexed": [
+        "कसरीका"
+      ],
+      "proposed": [
+        "कसरीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kasariko",
+      "indexed": [
+        "कसरीको"
+      ],
+      "proposed": [
+        "कसरीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kasarilai",
+      "indexed": [
+        "कसरीलाई"
+      ],
+      "proposed": [
+        "कसरीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kasarile",
+      "indexed": [
+        "कसरीले"
+      ],
+      "proposed": [
+        "कसरीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kasarima",
+      "indexed": [
+        "कसरीमा"
+      ],
+      "proposed": [
+        "कसरीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kaslaiko",
+      "indexed": [
+        "कस्लाईको"
+      ],
+      "proposed": [
+        "कसलाईको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kastabata",
+      "indexed": [
+        "कस्ताबाट"
+      ],
+      "proposed": [
+        "कस्ताबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastaka",
+      "indexed": [
+        "कस्ताका"
+      ],
+      "proposed": [
+        "कस्ताका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastako",
+      "indexed": [
+        "कस्ताको"
+      ],
+      "proposed": [
+        "कस्ताको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastalai",
+      "indexed": [
+        "कस्तालाई"
+      ],
+      "proposed": [
+        "कस्तालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastale",
+      "indexed": [
+        "कस्ताले"
+      ],
+      "proposed": [
+        "कस्ताले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastama",
+      "indexed": [
+        "कस्तामा"
+      ],
+      "proposed": [
+        "कस्तामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastasanga",
+      "indexed": [
+        "कस्तासँग"
+      ],
+      "proposed": [
+        "कस्तासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastiharu",
+      "indexed": [
+        "कस्तीहरू"
+      ],
+      "proposed": [
+        "कस्तीहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastilai",
+      "indexed": [
+        "कस्तीलाई"
+      ],
+      "proposed": [
+        "कस्तीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastile",
+      "indexed": [
+        "कस्तीले",
+        "कास्तिले"
+      ],
+      "proposed": [
+        "कस्तीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastisanga",
+      "indexed": [
+        "कस्तीसँग"
+      ],
+      "proposed": [
+        "कस्तीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastobata",
+      "indexed": [
+        "कस्तोबाट"
+      ],
+      "proposed": [
+        "कस्तोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastoka",
+      "indexed": [
+        "कस्तोका"
+      ],
+      "proposed": [
+        "कस्तोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastoko",
+      "indexed": [
+        "कस्तोको"
+      ],
+      "proposed": [
+        "कस्तोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastolai",
+      "indexed": [
+        "कस्तोलाई"
+      ],
+      "proposed": [
+        "कस्तोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastole",
+      "indexed": [
+        "कस्तोले"
+      ],
+      "proposed": [
+        "कस्तोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastoma",
+      "indexed": [
+        "कस्तोमा"
+      ],
+      "proposed": [
+        "कस्तोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kastosanga",
+      "indexed": [
+        "कस्तोसँग"
+      ],
+      "proposed": [
+        "कस्तोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "katibata",
+      "indexed": [
+        "कटिबाट",
+        "कतिबाट",
+        "काटिबाट",
+        "काटीबाट"
+      ],
+      "proposed": [
+        "कतिबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "katika",
+      "indexed": [
+        "कतिका"
+      ],
+      "proposed": [
+        "कतिका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "katiki",
+      "indexed": [
+        "कतिकी",
+        "कातिकी"
+      ],
+      "proposed": [
+        "कतिकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "katiko",
+      "indexed": [
+        "काटीको"
+      ],
+      "proposed": [
+        "कतिको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "katilai",
+      "indexed": [
+        "कतिलाई"
+      ],
+      "proposed": [
+        "कतिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "katile",
+      "indexed": [
+        "काटीले"
+      ],
+      "proposed": [
+        "कतिले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "katima",
+      "indexed": [
+        "कतिमा"
+      ],
+      "proposed": [
+        "कतिमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "katisanga",
+      "indexed": [
+        "कतिसँग",
+        "कतिसंग"
+      ],
+      "proposed": [
+        "कतिसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khajabata",
+      "indexed": [
+        "खाजाबाट"
+      ],
+      "proposed": [
+        "खाजाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khajaharu",
+      "indexed": [
+        "खाजाहरू"
+      ],
+      "proposed": [
+        "खाजाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khajaka",
+      "indexed": [
+        "खजाका"
+      ],
+      "proposed": [
+        "खाजाका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "khajako",
+      "indexed": [
+        "खाजाको"
+      ],
+      "proposed": [
+        "खाजाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khajale",
+      "indexed": [
+        "खाजाले"
+      ],
+      "proposed": [
+        "खाजाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khajama",
+      "indexed": [
+        "खाजामा"
+      ],
+      "proposed": [
+        "खाजामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanabata",
+      "indexed": [
+        "खानाबाट"
+      ],
+      "proposed": [
+        "खानाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanaharu",
+      "indexed": [
+        "खानाहरू"
+      ],
+      "proposed": [
+        "खानाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanaka",
+      "indexed": [
+        "खनाका",
+        "खानाका"
+      ],
+      "proposed": [
+        "खानाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanaki",
+      "indexed": [
+        "खानाकी"
+      ],
+      "proposed": [
+        "खानाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanako",
+      "indexed": [
+        "खनाको",
+        "खानाको"
+      ],
+      "proposed": [
+        "खानाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanalai",
+      "indexed": [
+        "खानालाई"
+      ],
+      "proposed": [
+        "खानालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanale",
+      "indexed": [
+        "खनाले",
+        "खानाले"
+      ],
+      "proposed": [
+        "खानाले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanama",
+      "indexed": [
+        "खनामा",
+        "खानामा"
+      ],
+      "proposed": [
+        "खानामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanasanga",
+      "indexed": [
+        "खानासँग"
+      ],
+      "proposed": [
+        "खानासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanebata",
+      "indexed": [
+        "खानेबाट"
+      ],
+      "proposed": [
+        "खानेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khaneharu",
+      "indexed": [
+        "खानेहरू"
+      ],
+      "proposed": [
+        "खानेहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khaneka",
+      "indexed": [
+        "खनेका",
+        "खानेका"
+      ],
+      "proposed": [
+        "खानेका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khaneki",
+      "indexed": [
+        "खनेकी",
+        "खानेकी"
+      ],
+      "proposed": [
+        "खानेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khaneko",
+      "indexed": [
+        "खनेको",
+        "खानेको"
+      ],
+      "proposed": [
+        "खानेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanelai",
+      "indexed": [
+        "खानेलाई"
+      ],
+      "proposed": [
+        "खानेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanele",
+      "indexed": [
+        "खानेले"
+      ],
+      "proposed": [
+        "खानेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanema",
+      "indexed": [
+        "खनेमा",
+        "खानेमा"
+      ],
+      "proposed": [
+        "खानेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanesanga",
+      "indexed": [
+        "खानेसँग"
+      ],
+      "proposed": [
+        "खानेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanubata",
+      "indexed": [
+        "खानुबाट"
+      ],
+      "proposed": [
+        "खानुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanuka",
+      "indexed": [
+        "खानुका"
+      ],
+      "proposed": [
+        "खानुका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanuki",
+      "indexed": [
+        "खानुकी"
+      ],
+      "proposed": [
+        "खानुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanuko",
+      "indexed": [
+        "खानुको"
+      ],
+      "proposed": [
+        "खानुको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanulai",
+      "indexed": [
+        "खानुलाई"
+      ],
+      "proposed": [
+        "खानुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanule",
+      "indexed": [
+        "खानुले"
+      ],
+      "proposed": [
+        "खानुले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanuma",
+      "indexed": [
+        "खानुमा"
+      ],
+      "proposed": [
+        "खानुमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khanusanga",
+      "indexed": [
+        "खानुसँग",
+        "खानुसंग"
+      ],
+      "proposed": [
+        "खानुसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khayoki",
+      "indexed": [
+        "खायोकी"
+      ],
+      "proposed": [
+        "खायोकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khayoko",
+      "indexed": [
+        "खायोको"
+      ],
+      "proposed": [
+        "खायोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khelchaka",
+      "indexed": [
+        "खेल्चाका"
+      ],
+      "proposed": [
+        "खेल्छका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "khelnabata",
+      "indexed": [
+        "खेल्नबाट",
+        "खेल्नाबाट"
+      ],
+      "proposed": [
+        "खेल्नबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khelnaka",
+      "indexed": [
+        "खेल्नका",
+        "खेल्नाका"
+      ],
+      "proposed": [
+        "खेल्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khelnaki",
+      "indexed": [
+        "खेल्नाकी"
+      ],
+      "proposed": [
+        "खेल्नकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "khelnako",
+      "indexed": [
+        "खेल्नको"
+      ],
+      "proposed": [
+        "खेल्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khelnalai",
+      "indexed": [
+        "खेल्नलाई"
+      ],
+      "proposed": [
+        "खेल्नलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "khelnale",
+      "indexed": [
+        "खेल्नाले"
+      ],
+      "proposed": [
+        "खेल्नले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "khelnama",
+      "indexed": [
+        "खेल्नमा"
+      ],
+      "proposed": [
+        "खेल्नमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kinabata",
+      "indexed": [
+        "किनाबाट"
+      ],
+      "proposed": [
+        "किनबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kinaka",
+      "indexed": [
+        "किनाका"
+      ],
+      "proposed": [
+        "किनका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kinaki",
+      "indexed": [
+        "किनाकी"
+      ],
+      "proposed": [
+        "किनकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kinako",
+      "indexed": [
+        "किनाको"
+      ],
+      "proposed": [
+        "किनको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kinalai",
+      "indexed": [
+        "किनालाई"
+      ],
+      "proposed": [
+        "किनलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kinama",
+      "indexed": [
+        "किनामा"
+      ],
+      "proposed": [
+        "किनमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "kitabbata",
+      "indexed": [
+        "किताबबाट"
+      ],
+      "proposed": [
+        "किताबबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kitabka",
+      "indexed": [
+        "किताबका"
+      ],
+      "proposed": [
+        "किताबका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kitabki",
+      "indexed": [
+        "किताबकि",
+        "किताबकी"
+      ],
+      "proposed": [
+        "किताबकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kitablai",
+      "indexed": [
+        "किताबलाई"
+      ],
+      "proposed": [
+        "किताबलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kitabma",
+      "indexed": [
+        "किताबमा",
+        "कितावमा"
+      ],
+      "proposed": [
+        "किताबमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kitabsanga",
+      "indexed": [
+        "किताबसँग"
+      ],
+      "proposed": [
+        "किताबसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kuraharu",
+      "indexed": [
+        "कुराहरू"
+      ],
+      "proposed": [
+        "कुराहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kuraki",
+      "indexed": [
+        "कुराकी"
+      ],
+      "proposed": [
+        "कुराकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kurako",
+      "indexed": [
+        "कुराको"
+      ],
+      "proposed": [
+        "कुराको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kuralai",
+      "indexed": [
+        "कुरालाई"
+      ],
+      "proposed": [
+        "कुरालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kurale",
+      "indexed": [
+        "कुराले"
+      ],
+      "proposed": [
+        "कुराले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kurama",
+      "indexed": [
+        "कुरामा"
+      ],
+      "proposed": [
+        "कुरामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "kurasanga",
+      "indexed": [
+        "कुरासँग",
+        "कुरासंग"
+      ],
+      "proposed": [
+        "कुरासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagibata",
+      "indexed": [
+        "लागिबाट",
+        "लागीबाट"
+      ],
+      "proposed": [
+        "लागिबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagika",
+      "indexed": [
+        "लागिका",
+        "लागीका"
+      ],
+      "proposed": [
+        "लागिका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagiki",
+      "indexed": [
+        "लागिकी"
+      ],
+      "proposed": [
+        "लागिकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagiko",
+      "indexed": [
+        "लागिको",
+        "लागीको"
+      ],
+      "proposed": [
+        "लागिको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagilai",
+      "indexed": [
+        "लागिलाई"
+      ],
+      "proposed": [
+        "लागिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagima",
+      "indexed": [
+        "लागिमा",
+        "लागीमा"
+      ],
+      "proposed": [
+        "लागिमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lagisanga",
+      "indexed": [
+        "लागिसँग"
+      ],
+      "proposed": [
+        "लागिसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "laiharu",
+      "indexed": [
+        "लाइहरू"
+      ],
+      "proposed": [
+        "लाईहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "laika",
+      "indexed": [
+        "लैका"
+      ],
+      "proposed": [
+        "लाईका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "laiki",
+      "indexed": [
+        "लैकी"
+      ],
+      "proposed": [
+        "लाईकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "laiko",
+      "indexed": [
+        "लाईको"
+      ],
+      "proposed": [
+        "लाईको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lailai",
+      "indexed": [
+        "लाइलाई",
+        "लाईलाई"
+      ],
+      "proposed": [
+        "लाईलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "laile",
+      "indexed": [
+        "लाइले",
+        "लाईले"
+      ],
+      "proposed": [
+        "लाईले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "laima",
+      "indexed": [
+        "लाइमा",
+        "लाईमा"
+      ],
+      "proposed": [
+        "लाईमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "laisanga",
+      "indexed": [
+        "लाइसँग",
+        "लाईसँग"
+      ],
+      "proposed": [
+        "लाईसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpurbata",
+      "indexed": [
+        "ललितपुरबाट",
+        "ललितपूरबाट"
+      ],
+      "proposed": [
+        "ललितपुरबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpurka",
+      "indexed": [
+        "ललितपुरका"
+      ],
+      "proposed": [
+        "ललितपुरका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpurki",
+      "indexed": [
+        "ललितपुरकी"
+      ],
+      "proposed": [
+        "ललितपुरकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpurlai",
+      "indexed": [
+        "ललितपुरलाई"
+      ],
+      "proposed": [
+        "ललितपुरलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpurle",
+      "indexed": [
+        "ललितपुरले"
+      ],
+      "proposed": [
+        "ललितपुरले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpurma",
+      "indexed": [
+        "ललितपुरमा"
+      ],
+      "proposed": [
+        "ललितपुरमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lalitpursanga",
+      "indexed": [
+        "ललितपुरसँग"
+      ],
+      "proposed": [
+        "ललितपुरसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lekhnabata",
+      "indexed": [
+        "लेख्नबाट"
+      ],
+      "proposed": [
+        "लेख्नबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lekhnaka",
+      "indexed": [
+        "लेख्नका",
+        "लेख्नाका"
+      ],
+      "proposed": [
+        "लेख्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lekhnako",
+      "indexed": [
+        "लेख्नको",
+        "लेख्नाको"
+      ],
+      "proposed": [
+        "लेख्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lekhnalai",
+      "indexed": [
+        "लेख्नलाई",
+        "लेख्नालाई"
+      ],
+      "proposed": [
+        "लेख्नलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "lekhnale",
+      "indexed": [
+        "लेख्नाले"
+      ],
+      "proposed": [
+        "लेख्नले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "lekhnama",
+      "indexed": [
+        "लेखनामा"
+      ],
+      "proposed": [
+        "लेख्नमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "malaibata",
+      "indexed": [
+        "मलाईबाट"
+      ],
+      "proposed": [
+        "मलाईबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "malaiko",
+      "indexed": [
+        "मलाइको",
+        "मलाईको",
+        "मलैको"
+      ],
+      "proposed": [
+        "मलाईको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "malailai",
+      "indexed": [
+        "मलाइलाई",
+        "मलाईलाई"
+      ],
+      "proposed": [
+        "मलाईलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "malaile",
+      "indexed": [
+        "मलाईले",
+        "मलैले"
+      ],
+      "proposed": [
+        "मलाईले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "malaima",
+      "indexed": [
+        "मलाईमा",
+        "मलैमा"
+      ],
+      "proposed": [
+        "मलाईमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "manbata",
+      "indexed": [
+        "मानबाट"
+      ],
+      "proposed": [
+        "मनबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "manchebata",
+      "indexed": [
+        "मान्छेबाट"
+      ],
+      "proposed": [
+        "मान्छेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "mancheharu",
+      "indexed": [
+        "मान्छेहरू"
+      ],
+      "proposed": [
+        "मान्छेहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "mancheko",
+      "indexed": [
+        "मान्चेको"
+      ],
+      "proposed": [
+        "मान्छेको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "manchele",
+      "indexed": [
+        "मान्चेले"
+      ],
+      "proposed": [
+        "मान्छेले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "manchheki",
+      "indexed": [
+        "मान्छेकी"
+      ],
+      "proposed": [
+        "मान्छेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "manchheko",
+      "indexed": [
+        "मान्छेको"
+      ],
+      "proposed": [
+        "मान्छेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "manchhesanga",
+      "indexed": [
+        "मान्छेसँग",
+        "मान्छेसंग"
+      ],
+      "proposed": [
+        "मान्छेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "manharu",
+      "indexed": [
+        "मनहरू",
+        "मानहरू",
+        "म्यानहरू"
+      ],
+      "proposed": [
+        "मनहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "manki",
+      "indexed": [
+        "मनकी"
+      ],
+      "proposed": [
+        "मनकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "manma",
+      "indexed": [
+        "मनमा",
+        "मानमा"
+      ],
+      "proposed": [
+        "मनमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matrabata",
+      "indexed": [
+        "मात्रबाट",
+        "मात्राबाट"
+      ],
+      "proposed": [
+        "मात्रबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matraharu",
+      "indexed": [
+        "मात्राहरू"
+      ],
+      "proposed": [
+        "मात्रहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "matraka",
+      "indexed": [
+        "मात्रका",
+        "मात्राका"
+      ],
+      "proposed": [
+        "मात्रका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matraki",
+      "indexed": [
+        "मात्रकी"
+      ],
+      "proposed": [
+        "मात्रकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matrako",
+      "indexed": [
+        "मात्राको"
+      ],
+      "proposed": [
+        "मात्रको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "matralai",
+      "indexed": [
+        "मात्रलाई",
+        "मात्रालाई"
+      ],
+      "proposed": [
+        "मात्रलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matrale",
+      "indexed": [
+        "मात्रले",
+        "मात्राले"
+      ],
+      "proposed": [
+        "मात्रले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matrama",
+      "indexed": [
+        "मात्रमा",
+        "मात्रामा"
+      ],
+      "proposed": [
+        "मात्रमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "matrasanga",
+      "indexed": [
+        "मात्रासँग",
+        "मात्रासंग"
+      ],
+      "proposed": [
+        "मात्रसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "mayabata",
+      "indexed": [
+        "मायाबाट"
+      ],
+      "proposed": [
+        "मायाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "mayaharu",
+      "indexed": [
+        "मायाहरू"
+      ],
+      "proposed": [
+        "मायाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "mayaka",
+      "indexed": [
+        "मायाका"
+      ],
+      "proposed": [
+        "मायाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "mayaki",
+      "indexed": [
+        "मायाकी"
+      ],
+      "proposed": [
+        "मायाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "mayasanga",
+      "indexed": [
+        "मायासँग"
+      ],
+      "proposed": [
+        "मायासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meraibata",
+      "indexed": [
+        "मेरैबाट"
+      ],
+      "proposed": [
+        "मेरैबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meraiko",
+      "indexed": [
+        "मेरैको"
+      ],
+      "proposed": [
+        "मेरैको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meraile",
+      "indexed": [
+        "मेरैले"
+      ],
+      "proposed": [
+        "मेरैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meraima",
+      "indexed": [
+        "मेरैमा"
+      ],
+      "proposed": [
+        "मेरैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meribata",
+      "indexed": [
+        "मेरीबाट"
+      ],
+      "proposed": [
+        "मेरीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meriki",
+      "indexed": [
+        "मेरिकी"
+      ],
+      "proposed": [
+        "मेरीकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "meriko",
+      "indexed": [
+        "मेरीको"
+      ],
+      "proposed": [
+        "मेरीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merilai",
+      "indexed": [
+        "मेरीलाई"
+      ],
+      "proposed": [
+        "मेरीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merile",
+      "indexed": [
+        "मेरीले"
+      ],
+      "proposed": [
+        "मेरीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merima",
+      "indexed": [
+        "मेरीमा"
+      ],
+      "proposed": [
+        "मेरीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merisanga",
+      "indexed": [
+        "मेरीसँग"
+      ],
+      "proposed": [
+        "मेरीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merobata",
+      "indexed": [
+        "मेरोबाट"
+      ],
+      "proposed": [
+        "मेरोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meroka",
+      "indexed": [
+        "मेरोका"
+      ],
+      "proposed": [
+        "मेरोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "meroko",
+      "indexed": [
+        "मेरोको"
+      ],
+      "proposed": [
+        "मेरोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merolai",
+      "indexed": [
+        "मेरोलाई"
+      ],
+      "proposed": [
+        "मेरोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merole",
+      "indexed": [
+        "मेरोले"
+      ],
+      "proposed": [
+        "मेरोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "merosanga",
+      "indexed": [
+        "मेरोसँग"
+      ],
+      "proposed": [
+        "मेरोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naibata",
+      "indexed": [
+        "नाइबाट",
+        "नैबाट"
+      ],
+      "proposed": [
+        "नैबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naiharu",
+      "indexed": [
+        "नाइहरू"
+      ],
+      "proposed": [
+        "नैहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "naiki",
+      "indexed": [
+        "नाइकी"
+      ],
+      "proposed": [
+        "नैकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "naiko",
+      "indexed": [
+        "नाइको",
+        "नाईको"
+      ],
+      "proposed": [
+        "नैको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "nailai",
+      "indexed": [
+        "नैलाई"
+      ],
+      "proposed": [
+        "नैलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naile",
+      "indexed": [
+        "नाइले",
+        "नैले"
+      ],
+      "proposed": [
+        "नैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naima",
+      "indexed": [
+        "नाइमा",
+        "नैमा"
+      ],
+      "proposed": [
+        "नैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naisanga",
+      "indexed": [
+        "नैसँग"
+      ],
+      "proposed": [
+        "नैसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namaskarbata",
+      "indexed": [
+        "नमस्कारबाट"
+      ],
+      "proposed": [
+        "नमस्कारबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namaskarka",
+      "indexed": [
+        "नमस्कारका"
+      ],
+      "proposed": [
+        "नमस्कारका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namaskarko",
+      "indexed": [
+        "नमस्कारको"
+      ],
+      "proposed": [
+        "नमस्कारको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namaskarlai",
+      "indexed": [
+        "नमस्कारलाई"
+      ],
+      "proposed": [
+        "नमस्कारलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namaskarle",
+      "indexed": [
+        "नमस्कारले"
+      ],
+      "proposed": [
+        "नमस्कारले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namaskarma",
+      "indexed": [
+        "नमस्कारमा"
+      ],
+      "proposed": [
+        "नमस्कारमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namastebata",
+      "indexed": [
+        "नमस्तेबाट"
+      ],
+      "proposed": [
+        "नमस्तेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namasteka",
+      "indexed": [
+        "नमस्तेका"
+      ],
+      "proposed": [
+        "नमस्तेका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namasteko",
+      "indexed": [
+        "नमस्तेको"
+      ],
+      "proposed": [
+        "नमस्तेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namastelai",
+      "indexed": [
+        "नमस्तेलाई"
+      ],
+      "proposed": [
+        "नमस्तेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namastele",
+      "indexed": [
+        "नमस्तेले"
+      ],
+      "proposed": [
+        "नमस्तेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namastema",
+      "indexed": [
+        "नमस्तेमा"
+      ],
+      "proposed": [
+        "नमस्तेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namastesanga",
+      "indexed": [
+        "नमस्तेसँग"
+      ],
+      "proposed": [
+        "नमस्तेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nambata",
+      "indexed": [
+        "नामबाट"
+      ],
+      "proposed": [
+        "नामबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namki",
+      "indexed": [
+        "नामकी"
+      ],
+      "proposed": [
+        "नामकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "namma",
+      "indexed": [
+        "नाममा"
+      ],
+      "proposed": [
+        "नाममा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramrobata",
+      "indexed": [
+        "नराम्रोबाट"
+      ],
+      "proposed": [
+        "नराम्रोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramroka",
+      "indexed": [
+        "नराम्रोका"
+      ],
+      "proposed": [
+        "नराम्रोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramroko",
+      "indexed": [
+        "नराम्रोको"
+      ],
+      "proposed": [
+        "नराम्रोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramrolai",
+      "indexed": [
+        "नराम्रोलाई"
+      ],
+      "proposed": [
+        "नराम्रोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramrole",
+      "indexed": [
+        "नराम्रोले"
+      ],
+      "proposed": [
+        "नराम्रोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramroma",
+      "indexed": [
+        "नराम्रोमा"
+      ],
+      "proposed": [
+        "नराम्रोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "naramrosanga",
+      "indexed": [
+        "नरम्रोसँग",
+        "नराम्रोसँग",
+        "नराम्रोसङ्ग",
+        "नाराम्रोसँग"
+      ],
+      "proposed": [
+        "नराम्रोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nayaka",
+      "indexed": [
+        "नयका",
+        "नायका"
+      ],
+      "proposed": [
+        "नयाँका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "nayako",
+      "indexed": [
+        "नायको"
+      ],
+      "proposed": [
+        "नयाँको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "nayama",
+      "indexed": [
+        "नयमा"
+      ],
+      "proposed": [
+        "नयाँमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "nepalbata",
+      "indexed": [
+        "नेपालबाट"
+      ],
+      "proposed": [
+        "नेपालबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalharu",
+      "indexed": [
+        "नेपालहरू"
+      ],
+      "proposed": [
+        "नेपालहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalibata",
+      "indexed": [
+        "नेपालीबाट"
+      ],
+      "proposed": [
+        "नेपालीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalika",
+      "indexed": [
+        "नेपालिका"
+      ],
+      "proposed": [
+        "नेपालीका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "nepaliki",
+      "indexed": [
+        "नेपालीकि",
+        "नेपालीकी"
+      ],
+      "proposed": [
+        "नेपालीकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepaliko",
+      "indexed": [
+        "नेपालीको"
+      ],
+      "proposed": [
+        "नेपालीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalilai",
+      "indexed": [
+        "नेपालीलाई"
+      ],
+      "proposed": [
+        "नेपालीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalile",
+      "indexed": [
+        "नेपालीले"
+      ],
+      "proposed": [
+        "नेपालीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalisanga",
+      "indexed": [
+        "नेपालिसंग",
+        "नेपालीसँग",
+        "नेपालीसंग",
+        "नेपालीसङ्ग"
+      ],
+      "proposed": [
+        "नेपालीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalka",
+      "indexed": [
+        "नेपालका"
+      ],
+      "proposed": [
+        "नेपालका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalko",
+      "indexed": [
+        "नेपालको"
+      ],
+      "proposed": [
+        "नेपालको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepallai",
+      "indexed": [
+        "नेपाललाई"
+      ],
+      "proposed": [
+        "नेपाललाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalle",
+      "indexed": [
+        "नेपालले",
+        "नेपाल्ले"
+      ],
+      "proposed": [
+        "नेपालले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalma",
+      "indexed": [
+        "नेपालमा"
+      ],
+      "proposed": [
+        "नेपालमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "nepalsanga",
+      "indexed": [
+        "नेपालसँग",
+        "नेपालसङ्ग"
+      ],
+      "proposed": [
+        "नेपालसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pachhiki",
+      "indexed": [
+        "पछिकी"
+      ],
+      "proposed": [
+        "पछिकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pachhilai",
+      "indexed": [
+        "पछिलाई"
+      ],
+      "proposed": [
+        "पछिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pachhile",
+      "indexed": [
+        "पछिले"
+      ],
+      "proposed": [
+        "पछिले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pachhima",
+      "indexed": [
+        "पछिमा"
+      ],
+      "proposed": [
+        "पछिमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pachiko",
+      "indexed": [
+        "पचिको"
+      ],
+      "proposed": [
+        "पछिको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "pachile",
+      "indexed": [
+        "पाचीले"
+      ],
+      "proposed": [
+        "पछिले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "pachima",
+      "indexed": [
+        "पचिमा"
+      ],
+      "proposed": [
+        "पछिमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "padhnaka",
+      "indexed": [
+        "पढ्नका",
+        "पढ्नाका"
+      ],
+      "proposed": [
+        "पढ्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "padhnako",
+      "indexed": [
+        "पढ्नको",
+        "पढ्नाको"
+      ],
+      "proposed": [
+        "पढ्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "padhnalai",
+      "indexed": [
+        "पढ्नलाई"
+      ],
+      "proposed": [
+        "पढ्नलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "padhnale",
+      "indexed": [
+        "पढ्नले",
+        "पढ्नाले"
+      ],
+      "proposed": [
+        "पढ्नले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "padhnama",
+      "indexed": [
+        "पढ्नमा",
+        "पढ्नामा"
+      ],
+      "proposed": [
+        "पढ्नमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahilebata",
+      "indexed": [
+        "पहिलेबाट"
+      ],
+      "proposed": [
+        "पहिलेबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahileki",
+      "indexed": [
+        "पहिलेकी"
+      ],
+      "proposed": [
+        "पहिलेकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahileko",
+      "indexed": [
+        "पहिलेको"
+      ],
+      "proposed": [
+        "पहिलेको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahilelai",
+      "indexed": [
+        "पहिलेलाई"
+      ],
+      "proposed": [
+        "पहिलेलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahilele",
+      "indexed": [
+        "पहिलेले"
+      ],
+      "proposed": [
+        "पहिलेले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahilema",
+      "indexed": [
+        "पहिलेमा"
+      ],
+      "proposed": [
+        "पहिलेमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pahilesanga",
+      "indexed": [
+        "पहिलेसँग"
+      ],
+      "proposed": [
+        "पहिलेसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "paisabata",
+      "indexed": [
+        "पैसाबाट"
+      ],
+      "proposed": [
+        "पैसाबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "paisaharu",
+      "indexed": [
+        "पैसाहरू"
+      ],
+      "proposed": [
+        "पैसाहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "paisaka",
+      "indexed": [
+        "पैसका",
+        "पैसाका"
+      ],
+      "proposed": [
+        "पैसाका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "paisaki",
+      "indexed": [
+        "पैसाकी"
+      ],
+      "proposed": [
+        "पैसाकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "paisako",
+      "indexed": [
+        "पैसको",
+        "पैसाको"
+      ],
+      "proposed": [
+        "पैसाको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "paisalai",
+      "indexed": [
+        "पैसलाई",
+        "पैसालाई"
+      ],
+      "proposed": [
+        "पैसालाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "parchabata",
+      "indexed": [
+        "पर्चाबाट"
+      ],
+      "proposed": [
+        "पर्छबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchaharu",
+      "indexed": [
+        "पर्चाहरू"
+      ],
+      "proposed": [
+        "पर्छहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchaka",
+      "indexed": [
+        "पर्चका",
+        "पर्चाका"
+      ],
+      "proposed": [
+        "पर्छका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchako",
+      "indexed": [
+        "पर्चको",
+        "पर्चाको"
+      ],
+      "proposed": [
+        "पर्छको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchalai",
+      "indexed": [
+        "पर्चालाई"
+      ],
+      "proposed": [
+        "पर्छलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchale",
+      "indexed": [
+        "पर्चाले"
+      ],
+      "proposed": [
+        "पर्छले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchama",
+      "indexed": [
+        "पर्चामा"
+      ],
+      "proposed": [
+        "पर्छमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchasanga",
+      "indexed": [
+        "पर्चासँग"
+      ],
+      "proposed": [
+        "पर्छसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "parchhaka",
+      "indexed": [
+        "पर्छका"
+      ],
+      "proposed": [
+        "पर्छका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "parchhaki",
+      "indexed": [
+        "पर्छकी",
+        "पार्छकी"
+      ],
+      "proposed": [
+        "पर्छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "parchhako",
+      "indexed": [
+        "पर्छको"
+      ],
+      "proposed": [
+        "पर्छको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "parchhale",
+      "indexed": [
+        "पर्छाले"
+      ],
+      "proposed": [
+        "पर्छले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "pokharabata",
+      "indexed": [
+        "पोखराबाट"
+      ],
+      "proposed": [
+        "पोखराबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pokharaka",
+      "indexed": [
+        "पोखराका"
+      ],
+      "proposed": [
+        "पोखराका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pokharaki",
+      "indexed": [
+        "पोखराकी"
+      ],
+      "proposed": [
+        "पोखराकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pokharako",
+      "indexed": [
+        "पोखराको"
+      ],
+      "proposed": [
+        "पोखराको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pokharama",
+      "indexed": [
+        "पोखरामा"
+      ],
+      "proposed": [
+        "पोखरामा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "pokharasanga",
+      "indexed": [
+        "पोखरासँग"
+      ],
+      "proposed": [
+        "पोखरासँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramraibata",
+      "indexed": [
+        "राम्रैबाट"
+      ],
+      "proposed": [
+        "राम्रैबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramraika",
+      "indexed": [
+        "राम्रैका"
+      ],
+      "proposed": [
+        "राम्रैका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramraiko",
+      "indexed": [
+        "राम्रैको"
+      ],
+      "proposed": [
+        "राम्रैको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramraile",
+      "indexed": [
+        "राम्रैले"
+      ],
+      "proposed": [
+        "राम्रैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramraima",
+      "indexed": [
+        "राम्रैमा"
+      ],
+      "proposed": [
+        "राम्रैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramraisanga",
+      "indexed": [
+        "राम्रैसँग"
+      ],
+      "proposed": [
+        "राम्रैसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramribata",
+      "indexed": [
+        "राम्रीबाट"
+      ],
+      "proposed": [
+        "राम्रीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramriharu",
+      "indexed": [
+        "राम्रीहरू"
+      ],
+      "proposed": [
+        "राम्रीहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramriko",
+      "indexed": [
+        "राम्रीको"
+      ],
+      "proposed": [
+        "राम्रीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramrilai",
+      "indexed": [
+        "राम्रीलाई"
+      ],
+      "proposed": [
+        "राम्रीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramrima",
+      "indexed": [
+        "राम्रीमा"
+      ],
+      "proposed": [
+        "राम्रीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramrobata",
+      "indexed": [
+        "राम्रोबाट"
+      ],
+      "proposed": [
+        "राम्रोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramroka",
+      "indexed": [
+        "राम्रोका"
+      ],
+      "proposed": [
+        "राम्रोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramroko",
+      "indexed": [
+        "राम्रोको"
+      ],
+      "proposed": [
+        "राम्रोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramrolai",
+      "indexed": [
+        "राम्रोलाई"
+      ],
+      "proposed": [
+        "राम्रोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramrole",
+      "indexed": [
+        "राम्रोले"
+      ],
+      "proposed": [
+        "राम्रोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramroma",
+      "indexed": [
+        "राम्रोमा"
+      ],
+      "proposed": [
+        "राम्रोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ramrosanga",
+      "indexed": [
+        "राम्रोसँग"
+      ],
+      "proposed": [
+        "राम्रोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ratibata",
+      "indexed": [
+        "रातिबाट",
+        "रातीबाट"
+      ],
+      "proposed": [
+        "रातिबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ratiharu",
+      "indexed": [
+        "रतिहरू"
+      ],
+      "proposed": [
+        "रातिहरू"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ratiko",
+      "indexed": [
+        "रतिको",
+        "रातीको"
+      ],
+      "proposed": [
+        "रातिको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ratilai",
+      "indexed": [
+        "रतिलाई",
+        "रातिलाई",
+        "रातीलाई"
+      ],
+      "proposed": [
+        "रातिलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ratile",
+      "indexed": [
+        "रतिले",
+        "रातीले"
+      ],
+      "proposed": [
+        "रातिले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "ratima",
+      "indexed": [
+        "रतिमा",
+        "रातिमा",
+        "रातीमा"
+      ],
+      "proposed": [
+        "रातिमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "ratisanga",
+      "indexed": [
+        "रतिसँग"
+      ],
+      "proposed": [
+        "रातिसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "sabaiharu",
+      "indexed": [
+        "सबैहरू"
+      ],
+      "proposed": [
+        "सबैहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabaika",
+      "indexed": [
+        "सबाईका",
+        "सबैका"
+      ],
+      "proposed": [
+        "सबैका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabaiki",
+      "indexed": [
+        "सबैकी"
+      ],
+      "proposed": [
+        "सबैकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabaiko",
+      "indexed": [
+        "सबाईको",
+        "सबैको"
+      ],
+      "proposed": [
+        "सबैको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabailai",
+      "indexed": [
+        "सबैलाई"
+      ],
+      "proposed": [
+        "सबैलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabaile",
+      "indexed": [
+        "सबाइले",
+        "सबैले"
+      ],
+      "proposed": [
+        "सबैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabaima",
+      "indexed": [
+        "सबैमा"
+      ],
+      "proposed": [
+        "सबैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sabaisanga",
+      "indexed": [
+        "सबैसँग",
+        "सबैसङ्ग"
+      ],
+      "proposed": [
+        "सबैसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajilobata",
+      "indexed": [
+        "सजिलोबाट"
+      ],
+      "proposed": [
+        "सजिलोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajiloka",
+      "indexed": [
+        "सजिलोका"
+      ],
+      "proposed": [
+        "सजिलोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajiloko",
+      "indexed": [
+        "सजिलोको",
+        "सजीलोको",
+        "साजिलोको"
+      ],
+      "proposed": [
+        "सजिलोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajilolai",
+      "indexed": [
+        "सजिलोलाई"
+      ],
+      "proposed": [
+        "सजिलोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajilole",
+      "indexed": [
+        "सजिलोले"
+      ],
+      "proposed": [
+        "सजिलोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajiloma",
+      "indexed": [
+        "सजिलोमा"
+      ],
+      "proposed": [
+        "सजिलोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sajilosanga",
+      "indexed": [
+        "सजिलोसँग",
+        "सजीलोसँग"
+      ],
+      "proposed": [
+        "सजिलोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sakchhaki",
+      "indexed": [
+        "सक्छकि",
+        "सक्छकी"
+      ],
+      "proposed": [
+        "सक्छकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sakchhalai",
+      "indexed": [
+        "सक्छलाई"
+      ],
+      "proposed": [
+        "सक्छलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sakchhubata",
+      "indexed": [
+        "सक्छुबाट"
+      ],
+      "proposed": [
+        "सक्छुबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sakchhuki",
+      "indexed": [
+        "सक्छुकि",
+        "सक्छुकी"
+      ],
+      "proposed": [
+        "सक्छुकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sakchhulai",
+      "indexed": [
+        "सक्छुलाई"
+      ],
+      "proposed": [
+        "सक्छुलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "samayabata",
+      "indexed": [
+        "समयबाट"
+      ],
+      "proposed": [
+        "समयबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "samayaharu",
+      "indexed": [
+        "समयहरू"
+      ],
+      "proposed": [
+        "समयहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "samayaka",
+      "indexed": [
+        "समयका"
+      ],
+      "proposed": [
+        "समयका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "samayako",
+      "indexed": [
+        "समयको"
+      ],
+      "proposed": [
+        "समयको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "samayama",
+      "indexed": [
+        "समयमा"
+      ],
+      "proposed": [
+        "समयमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "samaysanga",
+      "indexed": [
+        "समयसँग"
+      ],
+      "proposed": [
+        "समयसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammabata",
+      "indexed": [
+        "सम्मबाट"
+      ],
+      "proposed": [
+        "सम्मबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammaharu",
+      "indexed": [
+        "सम्महरू"
+      ],
+      "proposed": [
+        "सम्महरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammaka",
+      "indexed": [
+        "सम्मका",
+        "सम्माका"
+      ],
+      "proposed": [
+        "सम्मका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammaki",
+      "indexed": [
+        "सम्मकि",
+        "सम्मकी"
+      ],
+      "proposed": [
+        "सम्मकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammako",
+      "indexed": [
+        "सम्मको",
+        "सम्माको"
+      ],
+      "proposed": [
+        "सम्मको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammalai",
+      "indexed": [
+        "सम्मलाई",
+        "सम्मालाई"
+      ],
+      "proposed": [
+        "सम्मलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammale",
+      "indexed": [
+        "सम्मले",
+        "सम्माले"
+      ],
+      "proposed": [
+        "सम्मले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammama",
+      "indexed": [
+        "सम्ममा"
+      ],
+      "proposed": [
+        "सम्ममा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sammasanga",
+      "indexed": [
+        "सम्मसंग"
+      ],
+      "proposed": [
+        "सम्मसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "sangaika",
+      "indexed": [
+        "सँगैका",
+        "संगैका",
+        "सङ्गैका"
+      ],
+      "proposed": [
+        "सँगैका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sangaiki",
+      "indexed": [
+        "संगैकी"
+      ],
+      "proposed": [
+        "सँगैकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "sangaiko",
+      "indexed": [
+        "सँगैको",
+        "संगैको",
+        "सङ्गैको"
+      ],
+      "proposed": [
+        "सँगैको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sangaile",
+      "indexed": [
+        "सँगैले"
+      ],
+      "proposed": [
+        "सँगैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sangaima",
+      "indexed": [
+        "सँगैमा",
+        "संगैमा"
+      ],
+      "proposed": [
+        "सँगैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanobata",
+      "indexed": [
+        "सानोबाट"
+      ],
+      "proposed": [
+        "सानोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanoka",
+      "indexed": [
+        "सानोका"
+      ],
+      "proposed": [
+        "सानोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanoki",
+      "indexed": [
+        "सानोकी"
+      ],
+      "proposed": [
+        "सानोकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanoko",
+      "indexed": [
+        "सनोको",
+        "सानोको"
+      ],
+      "proposed": [
+        "सानोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanolai",
+      "indexed": [
+        "सनोलाई",
+        "सानोलाई"
+      ],
+      "proposed": [
+        "सानोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanole",
+      "indexed": [
+        "सनोले",
+        "सानोले"
+      ],
+      "proposed": [
+        "सानोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanoma",
+      "indexed": [
+        "सनोमा",
+        "सानोमा"
+      ],
+      "proposed": [
+        "सानोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sanosanga",
+      "indexed": [
+        "सानोसँग"
+      ],
+      "proposed": [
+        "सानोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathibata",
+      "indexed": [
+        "साथिबाट",
+        "साथीबाट"
+      ],
+      "proposed": [
+        "साथीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathiharubata",
+      "indexed": [
+        "साथीहरूबाट"
+      ],
+      "proposed": [
+        "साथीहरूबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathiharuka",
+      "indexed": [
+        "साथीहरूका"
+      ],
+      "proposed": [
+        "साथीहरूका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathiharuko",
+      "indexed": [
+        "साथिहरूको"
+      ],
+      "proposed": [
+        "साथीहरूको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "sathiharuma",
+      "indexed": [
+        "साथीहरूमा"
+      ],
+      "proposed": [
+        "साथीहरूमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathiharusanga",
+      "indexed": [
+        "साथिहरूसँग",
+        "साथीहरूसँग",
+        "साथीहरूसंग",
+        "साथीहरूसङ्ग"
+      ],
+      "proposed": [
+        "साथीहरूसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathika",
+      "indexed": [
+        "साथिका",
+        "साथीका"
+      ],
+      "proposed": [
+        "साथीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathiki",
+      "indexed": [
+        "साथिकी",
+        "साथीकि",
+        "साथीकी"
+      ],
+      "proposed": [
+        "साथीकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sathisanga",
+      "indexed": [
+        "साथिसँग",
+        "साथीसँग",
+        "साथीसंग",
+        "साथीसङ्ग"
+      ],
+      "proposed": [
+        "साथीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "siknabata",
+      "indexed": [
+        "सिक्नबाट"
+      ],
+      "proposed": [
+        "सिक्नबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "siknaka",
+      "indexed": [
+        "सिक्नका",
+        "सिक्नाका"
+      ],
+      "proposed": [
+        "सिक्नका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "siknako",
+      "indexed": [
+        "सिक्नको",
+        "सिक्नाको"
+      ],
+      "proposed": [
+        "सिक्नको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "siknalai",
+      "indexed": [
+        "सिक्नलाई"
+      ],
+      "proposed": [
+        "सिक्नलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "siknale",
+      "indexed": [
+        "सिक्नले",
+        "सिक्नाले"
+      ],
+      "proposed": [
+        "सिक्नले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "siknama",
+      "indexed": [
+        "सिक्नमा"
+      ],
+      "proposed": [
+        "सिक्नमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarharu",
+      "indexed": [
+        "सुन्दरहरू"
+      ],
+      "proposed": [
+        "सुन्दरहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarka",
+      "indexed": [
+        "सुन्दरका"
+      ],
+      "proposed": [
+        "सुन्दरका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarki",
+      "indexed": [
+        "सुन्दरकी"
+      ],
+      "proposed": [
+        "सुन्दरकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarko",
+      "indexed": [
+        "सुन्दरको"
+      ],
+      "proposed": [
+        "सुन्दरको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarlai",
+      "indexed": [
+        "सुन्दरलाई"
+      ],
+      "proposed": [
+        "सुन्दरलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarle",
+      "indexed": [
+        "सुन्दरले"
+      ],
+      "proposed": [
+        "सुन्दरले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarma",
+      "indexed": [
+        "सुन्दरमा"
+      ],
+      "proposed": [
+        "सुन्दरमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "sundarsanga",
+      "indexed": [
+        "सुन्दरसँग"
+      ],
+      "proposed": [
+        "सुन्दरसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatbata",
+      "indexed": [
+        "स्वागतबाट"
+      ],
+      "proposed": [
+        "स्वागतबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatka",
+      "indexed": [
+        "स्वगतका",
+        "स्वागतका"
+      ],
+      "proposed": [
+        "स्वागतका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatki",
+      "indexed": [
+        "स्वागतकी"
+      ],
+      "proposed": [
+        "स्वागतकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatko",
+      "indexed": [
+        "स्वगतको",
+        "स्वागतको"
+      ],
+      "proposed": [
+        "स्वागतको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatlai",
+      "indexed": [
+        "स्वागतलाई"
+      ],
+      "proposed": [
+        "स्वागतलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatle",
+      "indexed": [
+        "स्वगतले",
+        "स्वागतले"
+      ],
+      "proposed": [
+        "स्वागतले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatma",
+      "indexed": [
+        "स्वगतमा",
+        "स्वागतमा"
+      ],
+      "proposed": [
+        "स्वागतमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "swagatsanga",
+      "indexed": [
+        "स्वागतसँग"
+      ],
+      "proposed": [
+        "स्वागतसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tapaiharubata",
+      "indexed": [
+        "तपाइहरूबाट",
+        "तपाईहरूबाट"
+      ],
+      "proposed": [
+        "तपाईंहरूबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaiharuka",
+      "indexed": [
+        "तपाईहरूका"
+      ],
+      "proposed": [
+        "तपाईंहरूका"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaiharuko",
+      "indexed": [
+        "तपाईहरूको"
+      ],
+      "proposed": [
+        "तपाईंहरूको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaiharulai",
+      "indexed": [
+        "तपाईहरूलाई",
+        "तापाईहरूलाई"
+      ],
+      "proposed": [
+        "तपाईंहरूलाई"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaiharule",
+      "indexed": [
+        "तपाईहरूले"
+      ],
+      "proposed": [
+        "तपाईंहरूले"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaiharuma",
+      "indexed": [
+        "तपाईहरूमा"
+      ],
+      "proposed": [
+        "तपाईंहरूमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaiharusanga",
+      "indexed": [
+        "तपाईहरूसँग",
+        "तपाईहरूसंग"
+      ],
+      "proposed": [
+        "तपाईंहरूसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaikobata",
+      "indexed": [
+        "तपाईकोबाट"
+      ],
+      "proposed": [
+        "तपाईंकोबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaikoko",
+      "indexed": [
+        "तपाईकोको"
+      ],
+      "proposed": [
+        "तपाईंकोको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tapaikoma",
+      "indexed": [
+        "तपाइकोमा",
+        "तपाईकोमा"
+      ],
+      "proposed": [
+        "तपाईंकोमा"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "thiyoki",
+      "indexed": [
+        "थियोकि"
+      ],
+      "proposed": [
+        "थियोकी"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "thiyoko",
+      "indexed": [
+        "थियोको"
+      ],
+      "proposed": [
+        "थियोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thiyolai",
+      "indexed": [
+        "थियोलाई"
+      ],
+      "proposed": [
+        "थियोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraibata",
+      "indexed": [
+        "थोरैबाट"
+      ],
+      "proposed": [
+        "थोरैबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraiharu",
+      "indexed": [
+        "थोरैहरू"
+      ],
+      "proposed": [
+        "थोरैहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraika",
+      "indexed": [
+        "थोरैका"
+      ],
+      "proposed": [
+        "थोरैका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraiko",
+      "indexed": [
+        "थोरैको"
+      ],
+      "proposed": [
+        "थोरैको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thorailai",
+      "indexed": [
+        "थोरैलाई"
+      ],
+      "proposed": [
+        "थोरैलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraile",
+      "indexed": [
+        "थोरैले"
+      ],
+      "proposed": [
+        "थोरैले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraima",
+      "indexed": [
+        "थोरैमा"
+      ],
+      "proposed": [
+        "थोरैमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thoraisanga",
+      "indexed": [
+        "थोरैसँग"
+      ],
+      "proposed": [
+        "थोरैसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thulobata",
+      "indexed": [
+        "ठूलोबाट"
+      ],
+      "proposed": [
+        "ठूलोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thuloka",
+      "indexed": [
+        "ठूलोका"
+      ],
+      "proposed": [
+        "ठूलोका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thuloki",
+      "indexed": [
+        "ठुलोकी",
+        "ठूलोकी"
+      ],
+      "proposed": [
+        "ठूलोकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thuloko",
+      "indexed": [
+        "ठुलोको",
+        "ठूलोको"
+      ],
+      "proposed": [
+        "ठूलोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thulolai",
+      "indexed": [
+        "ठुलोलाई",
+        "ठूलोलाई"
+      ],
+      "proposed": [
+        "ठूलोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thulole",
+      "indexed": [
+        "ठुलोले",
+        "ठूलोले"
+      ],
+      "proposed": [
+        "ठूलोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thuloma",
+      "indexed": [
+        "ठुलोमा",
+        "ठूलोमा"
+      ],
+      "proposed": [
+        "ठूलोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "thulosanga",
+      "indexed": [
+        "ठुलोसँग",
+        "ठूलोसँग"
+      ],
+      "proposed": [
+        "ठूलोसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharbata",
+      "indexed": [
+        "तिहारबाट",
+        "तीहारबाट"
+      ],
+      "proposed": [
+        "तिहारबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharharu",
+      "indexed": [
+        "तिहारहरू"
+      ],
+      "proposed": [
+        "तिहारहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharka",
+      "indexed": [
+        "तिहारका",
+        "तीहारका"
+      ],
+      "proposed": [
+        "तिहारका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharko",
+      "indexed": [
+        "तीहारको"
+      ],
+      "proposed": [
+        "तिहारको"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "tiharlai",
+      "indexed": [
+        "तिहारलाई",
+        "तीहारलाई"
+      ],
+      "proposed": [
+        "तिहारलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharle",
+      "indexed": [
+        "तिहारले",
+        "तीहारले"
+      ],
+      "proposed": [
+        "तिहारले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharma",
+      "indexed": [
+        "तिहारमा",
+        "तीहारमा"
+      ],
+      "proposed": [
+        "तिहारमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tiharsanga",
+      "indexed": [
+        "तिहारसँग",
+        "तिहारसंग"
+      ],
+      "proposed": [
+        "तिहारसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timibata",
+      "indexed": [
+        "टिमीबाट",
+        "तिमिबाट",
+        "तिमीबाट"
+      ],
+      "proposed": [
+        "तिमीबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timika",
+      "indexed": [
+        "टिमिका",
+        "टिमीका",
+        "तिमीका"
+      ],
+      "proposed": [
+        "तिमीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timiko",
+      "indexed": [
+        "तिमिको",
+        "तिमीको"
+      ],
+      "proposed": [
+        "तिमीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timilai",
+      "indexed": [
+        "टिमीलाई",
+        "तिमिलाई",
+        "तिमीलाई"
+      ],
+      "proposed": [
+        "तिमीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timilaibata",
+      "indexed": [
+        "तिमिलाईबाट",
+        "तिमीलाईबाट"
+      ],
+      "proposed": [
+        "तिमीलाईबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timilaika",
+      "indexed": [
+        "तिमीलाईका"
+      ],
+      "proposed": [
+        "तिमीलाईका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timilaiko",
+      "indexed": [
+        "तिमिलाईको",
+        "तिमीलाईको"
+      ],
+      "proposed": [
+        "तिमीलाईको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timilaima",
+      "indexed": [
+        "तिमीलाईमा"
+      ],
+      "proposed": [
+        "तिमीलाईमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timile",
+      "indexed": [
+        "टिमीले",
+        "तिमिले",
+        "तिमीले"
+      ],
+      "proposed": [
+        "तिमीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timima",
+      "indexed": [
+        "तिमिमा",
+        "तिमीमा"
+      ],
+      "proposed": [
+        "तिमीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timisanga",
+      "indexed": [
+        "तिमिसँग",
+        "तिमीसंग",
+        "तिमीसङ्ग"
+      ],
+      "proposed": [
+        "तिमीसँग"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "timrobata",
+      "indexed": [
+        "तिम्रोबाट"
+      ],
+      "proposed": [
+        "तिम्रोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timroko",
+      "indexed": [
+        "तिम्रोको"
+      ],
+      "proposed": [
+        "तिम्रोको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timrolai",
+      "indexed": [
+        "तिम्रोलाई"
+      ],
+      "proposed": [
+        "तिम्रोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timrole",
+      "indexed": [
+        "तिम्रोले"
+      ],
+      "proposed": [
+        "तिम्रोले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "timroma",
+      "indexed": [
+        "तिम्रोमा"
+      ],
+      "proposed": [
+        "तिम्रोमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyobata",
+      "indexed": [
+        "त्योबाट"
+      ],
+      "proposed": [
+        "त्योबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyoka",
+      "indexed": [
+        "त्योका"
+      ],
+      "proposed": [
+        "त्योका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyoko",
+      "indexed": [
+        "त्योको"
+      ],
+      "proposed": [
+        "त्योको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyolai",
+      "indexed": [
+        "त्योलाई"
+      ],
+      "proposed": [
+        "त्योलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyole",
+      "indexed": [
+        "त्योले"
+      ],
+      "proposed": [
+        "त्योले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyoma",
+      "indexed": [
+        "त्योमा"
+      ],
+      "proposed": [
+        "त्योमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "tyosanga",
+      "indexed": [
+        "त्योसँग"
+      ],
+      "proposed": [
+        "त्योसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unibata",
+      "indexed": [
+        "युनिबाट"
+      ],
+      "proposed": [
+        "उनीबाट"
+      ],
+      "agrees": false
+    },
+    {
+      "roman": "uniharu",
+      "indexed": [
+        "उनीहरू"
+      ],
+      "proposed": [
+        "उनीहरू"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unika",
+      "indexed": [
+        "उनीका"
+      ],
+      "proposed": [
+        "उनीका"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "uniki",
+      "indexed": [
+        "उनिकी",
+        "उनीकी"
+      ],
+      "proposed": [
+        "उनीकी"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "uniko",
+      "indexed": [
+        "उनीको"
+      ],
+      "proposed": [
+        "उनीको"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unilai",
+      "indexed": [
+        "उनीलाई"
+      ],
+      "proposed": [
+        "उनीलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unile",
+      "indexed": [
+        "उनिले",
+        "उनीले"
+      ],
+      "proposed": [
+        "उनीले"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unima",
+      "indexed": [
+        "उनीमा"
+      ],
+      "proposed": [
+        "उनीमा"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unisanga",
+      "indexed": [
+        "उनिसँग",
+        "उनीसँग"
+      ],
+      "proposed": [
+        "उनीसँग"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unkobata",
+      "indexed": [
+        "उनकोबाट"
+      ],
+      "proposed": [
+        "उनकोबाट"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unkolai",
+      "indexed": [
+        "उनकोलाई"
+      ],
+      "proposed": [
+        "उनकोलाई"
+      ],
+      "agrees": true
+    },
+    {
+      "roman": "unkoma",
+      "indexed": [
+        "उनकोमा",
+        "उन्कोमा"
+      ],
+      "proposed": [
+        "उनकोमा"
+      ],
+      "agrees": true
+    }
+  ],
+  "caveat": "Mined spelling may be wrong or represent different sense; disagreement is not a labeled error rate."
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "actual" : "म भोलि bazar जान्छु",
+    "expected" : "म भोलि बजार जान्छु",
+    "input" : "ma bholi bazar janchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "तिमिले किताब पढेउ",
+    "expected" : "तिमीले किताब पढ्यौ",
+    "input" : "timile kitaab padheu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "हाम्रो घर नजिक school छ",
+    "expected" : "हाम्रो घर नजिक school छ",
+    "input" : "hamro ghar najik school cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मलाई मिठो चिया दिनु",
+    "expected" : "मलाई मिठो चिया दिनु",
+    "input" : "malai mitho chiya dinu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "उनी हरु park जदै छन्",
+    "expected" : "उनी हरु park जाँदै छन्",
+    "input" : "uni haru park jadai chan",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो काम म सहयोग gara",
+    "expected" : "यो काम मा सहयोग गर",
+    "input" : "yo kaam ma sahayog gara",
+    "split" : "dev"
+  },
+  {
+    "actual" : "maile हिजो photo पथये",
+    "expected" : "मैले हिजो photo पठाएँ",
+    "input" : "maile hijo photo pathaye",
+    "split" : "dev"
+  },
+  {
+    "actual" : "तपाईं आज कति बजे आउनु हुन्छ",
+    "expected" : "तपाईं आज कति बजे आउनु हुन्छ",
+    "input" : "tapai aaja kati baje aaunu huncha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "the file is ready for review",
+    "expected" : "the file is ready for review",
+    "input" : "the file is ready for review",
+    "split" : "dev"
+  },
+  {
+    "actual" : "please check the meeting schedule",
+    "expected" : "please check the meeting schedule",
+    "input" : "please check the meeting schedule",
+    "split" : "dev"
+  },
+  {
+    "actual" : "we can share the document tomorrow",
+    "expected" : "we can share the document tomorrow",
+    "input" : "we can share the document tomorrow",
+    "split" : "dev"
+  },
+  {
+    "actual" : "the man called from the station",
+    "expected" : "the man called from the station",
+    "input" : "the man called from the station",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो train ticket रेडी छ",
+    "expected" : "मेरो train ticket ready छ",
+    "input" : "mero train ticket ready cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "आज office बाट छिटो फर्किन्चु",
+    "expected" : "आज office बाट छिटो फर्किन्छु",
+    "input" : "aaja office bata chito farkinchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "यो laptop राम्रो सँग चाल्दैन",
+    "expected" : "यो laptop राम्रो संग चल्दैन",
+    "input" : "yo laptop ramro sanga chaldaina",
+    "split" : "dev"
+  },
+  {
+    "actual" : "please malai link पथौनु",
+    "expected" : "please मलाई link पठाउनु",
+    "input" : "please malai link pathaunu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "बिहन को meeting cancel भयो",
+    "expected" : "बिहान को meeting cancel भयो",
+    "input" : "bihan ko meeting cancel bhayo",
+    "split" : "dev"
+  },
+  {
+    "actual" : "म घर पुगेर call गर्छु",
+    "expected" : "म घर पुगेर call गर्छु",
+    "input" : "ma ghar pugera call garchu",
+    "split" : "dev"
+  },
+  {
+    "actual" : "read https://example.com/a then reply",
+    "expected" : "read https://example.com/a then reply",
+    "input" : "read https://example.com/a then reply",
+    "split" : "dev"
+  },
+  {
+    "actual" : "use user_id and config.json",
+    "expected" : "use user_id and config.json",
+    "input" : "use user_id and config.json",
+    "split" : "dev"
+  },
+  {
+    "actual" : "मेरो मन खुसी छ",
+    "expected" : "मेरो मन खुसी छ",
+    "input" : "mero man khusi cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "the man has a plan",
+    "expected" : "the man has a plan",
+    "input" : "the man has a plan",
+    "split" : "dev"
+  },
+  {
+    "actual" : "पनि त एक्दम चिसो छ",
+    "expected" : "पानी त एकदम चिसो छ",
+    "input" : "pani ta ekdam chiso cha",
+    "split" : "dev"
+  },
+  {
+    "actual" : "उनी पनि भोलि आउन्चन",
+    "expected" : "उनी पनि भोलि आउँछन्",
+    "input" : "uni pani bholi aaunchan",
+    "split" : "dev"
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "method": "Fresh local process per run; OS file cache not cleared. /usr/bin/time -l wraps a JSON-lines engine; latency includes pipes, JSON and controller state serialization. Later lookups repeat ten words. No UI or actual keyboard host.",
+  "build_type": "release",
+  "runs_per_scenario": 10,
+  "rounds_per_run": 20,
+  "words": [
+    "namaste",
+    "mero",
+    "pani",
+    "bhaisakeko",
+    "office",
+    "football",
+    "janchu",
+    "bato",
+    "malai",
+    "ghar"
+  ],
+  "index_bytes": {
+    "google": 10618399,
+    "aksharantar": 98652429
+  },
+  "scenarios": {
+    "indexes_present": {
+      "fresh_process_to_empty_session_ms": {
+        "n": 10,
+        "median": 5.280875,
+        "p95": 256.88225,
+        "min": 5.130125,
+        "max": 256.88225
+      },
+      "first_lookup_ipc_ms": {
+        "n": 10,
+        "median": 17.8585,
+        "p95": 31.368208,
+        "min": 17.584333,
+        "max": 31.368208
+      },
+      "later_lookup_ipc_ms": {
+        "n": 2000,
+        "median": 0.191271,
+        "p95": 0.2675,
+        "min": 0.15425,
+        "max": 0.380959
+      },
+      "max_rss_bytes": {
+        "n": 10,
+        "median": 41811968.0,
+        "p95": 41910272,
+        "min": 39895040,
+        "max": 41910272
+      },
+      "peak_footprint_bytes": {
+        "n": 10,
+        "median": 23912976.0,
+        "p95": 25952808,
+        "min": 23806456,
+        "max": 25952808
+      },
+      "first_word_includes_mined_suggestion": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "explicit_missing_paths": {
+      "fresh_process_to_empty_session_ms": {
+        "n": 10,
+        "median": 5.3419375,
+        "p95": 5.971125,
+        "min": 5.097625,
+        "max": 5.971125
+      },
+      "first_lookup_ipc_ms": {
+        "n": 10,
+        "median": 17.166249999999998,
+        "p95": 19.495,
+        "min": 16.79425,
+        "max": 19.495
+      },
+      "later_lookup_ipc_ms": {
+        "n": 2000,
+        "median": 0.148375,
+        "p95": 0.18175,
+        "min": 0.118833,
+        "max": 0.328625
+      },
+      "max_rss_bytes": {
+        "n": 10,
+        "median": 39337984.0,
+        "p95": 39518208,
+        "min": 39157760,
+        "max": 39518208
+      },
+      "peak_footprint_bytes": {
+        "n": 10,
+        "median": 23945720.0,
+        "p95": 25870816,
+        "min": 23675336,
+        "max": 25870816
+      },
+      "first_word_includes_mined_suggestion": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  }
+}

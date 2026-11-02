@@ -1,0 +1,4 @@
+invalid_control n=21 median_ms=0.000792 p95_ms=0.067875 p99_ms=0.089417 max_ms=0.089417
+sampled_existing n=9000 median_ms=0.015292 p95_ms=0.023125 p99_ms=0.053333 max_ms=2.027333
+verified_absent n=600 median_ms=0.012708 p95_ms=0.018250 p99_ms=0.041083 max_ms=0.059916
+PASS: all results match index-derived expected lists

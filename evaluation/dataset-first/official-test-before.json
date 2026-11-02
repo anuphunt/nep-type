@@ -1,0 +1,14 @@
+{
+  "AK-Freq" : {
+    "top1_correct" : 289,
+    "total" : 2108
+  },
+  "AK-NEF" : {
+    "top1_correct" : 32,
+    "total" : 817
+  },
+  "AK-NEI" : {
+    "top1_correct" : 109,
+    "total" : 1176
+  }
+}

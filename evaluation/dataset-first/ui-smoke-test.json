@@ -1,0 +1,32 @@
+{
+  "checks" : {
+    "aksharantar_candidate_marked" : true,
+    "aksharantar_candidate_selection" : true,
+    "aksharantar_candidate_undo" : true,
+    "candidate_button" : true,
+    "clear" : true,
+    "copy_output" : true,
+    "dataset_auto_and_english" : true,
+    "dataset_auto_marked" : true,
+    "dataset_original_choice" : true,
+    "dataset_original_undo" : true,
+    "english_switch" : true,
+    "generated_candidate_marked" : true,
+    "generated_candidate_selection" : true,
+    "generated_candidate_undo" : true,
+    "input_wrap_narrow" : true,
+    "input_wrap_resize" : true,
+    "multiline_mixed_text" : true,
+    "output_wrap_narrow" : true,
+    "output_wrap_resize" : true,
+    "redo_candidate" : true,
+    "redo_language_switch" : true,
+    "typing_updates_preview" : true,
+    "undo_candidate" : true,
+    "undo_clear" : true,
+    "undo_language_switch" : true
+  },
+  "output" : "नमस्ते! म office जान्छु.\nभोलि meeting पछि भेटौँ.",
+  "passed" : true,
+  "source" : "namaste! ma office janchu.\nbholi meeting pachi bhetau."
+}

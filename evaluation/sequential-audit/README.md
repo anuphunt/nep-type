@@ -1,0 +1,7 @@
+# Sequential session diagnostic
+
+This separate audit compares full-text `Transliterator.render` with a typed, character-at-a-time `InputSession` simulation on the previously inspected 20-case synthetic phase-2 mixed corpus. The simulation commits at whitespace, retains limited preceding Roman context for spaces, preserves backtick state across whitespace, and handles the final pending token. It does not send real key events, operate an IMK host, select candidates, test focus/secure fields or test recovery; no input source is installed.
+
+Both paths produced the same outputs for all 20 cases and matched 17 of the 20 proposed sentence references. This does not show that they are generally equivalent: the full-text path may use following-word evidence and the session path cannot revise committed words. This small, already inspected corpus does not exercise a demonstrated future-context discrepancy and is not an independent accuracy estimate. `results.json` records each output.
+
+Reproduce from the project root by compiling this `main.swift` with `Sources/NepaliCore/{Transliterator,Composer,InputSession,GeneratedIndexes,GeneratedAliasIndex}.swift`, setting `LEKHA_ALIAS_INDEX` and `LEKHA_AKSHARANTAR_INDEX` to the project's compiled indexes, then passing `evaluation/phase2/mixed-v1.json` as the command-line argument. The results describe the project baseline at the time of this audit and should not be treated as current after core changes without rerunning.

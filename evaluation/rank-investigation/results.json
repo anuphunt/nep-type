@@ -1,0 +1,448 @@
+{
+  "summary": {
+    "cases": 30,
+    "swift_preferred_matches_label": 29,
+    "swift_label_in_candidates": 30,
+    "android_label_in_suggestions_or_original": 29,
+    "first_nepali_order_agrees": 17,
+    "swift_original_available": 30
+  },
+  "cases": [
+    {
+      "context": "mero",
+      "word": "man",
+      "intended": "मन",
+      "swift": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान",
+        "मान्",
+        "man"
+      ],
+      "android": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "swift_preferred": "मन",
+      "android_original": "man"
+    },
+    {
+      "context": "the",
+      "word": "man",
+      "intended": "man",
+      "swift": [
+        "man",
+        "मन",
+        "अमन",
+        "अमान",
+        "मान",
+        "मान्"
+      ],
+      "android": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "swift_preferred": "man",
+      "android_original": "man"
+    },
+    {
+      "context": "mero",
+      "word": "ghar",
+      "intended": "घर",
+      "swift": [
+        "घर",
+        "घार",
+        "ghar"
+      ],
+      "android": [
+        "घर",
+        "घार"
+      ],
+      "swift_preferred": "घर",
+      "android_original": "ghar"
+    },
+    {
+      "context": "the",
+      "word": "home",
+      "intended": "home",
+      "swift": [
+        "home",
+        "होमे"
+      ],
+      "android": [],
+      "swift_preferred": "home",
+      "android_original": "home"
+    },
+    {
+      "context": "yo",
+      "word": "pani",
+      "intended": "पानी",
+      "swift": [
+        "पनि",
+        "पानी",
+        "pani"
+      ],
+      "android": [
+        "पनि",
+        "पानी"
+      ],
+      "swift_preferred": "पनि",
+      "android_original": "pani"
+    },
+    {
+      "context": "ma",
+      "word": "pani",
+      "intended": "पनि",
+      "swift": [
+        "पनि",
+        "पानी",
+        "pani"
+      ],
+      "android": [
+        "पनि",
+        "पानी"
+      ],
+      "swift_preferred": "पनि",
+      "android_original": "pani"
+    },
+    {
+      "context": "the",
+      "word": "book",
+      "intended": "book",
+      "swift": [
+        "book",
+        "बूक"
+      ],
+      "android": [],
+      "swift_preferred": "book",
+      "android_original": "book"
+    },
+    {
+      "context": "mero",
+      "word": "kitab",
+      "intended": "किताब",
+      "swift": [
+        "किताब",
+        "कितब",
+        "kitab"
+      ],
+      "android": [
+        "किताब"
+      ],
+      "swift_preferred": "किताब",
+      "android_original": "kitab"
+    },
+    {
+      "context": "ramro",
+      "word": "cha",
+      "intended": "छ",
+      "swift": [
+        "छ",
+        "च",
+        "छा",
+        "cha"
+      ],
+      "android": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "swift_preferred": "छ",
+      "android_original": "cha"
+    },
+    {
+      "context": "a",
+      "word": "car",
+      "intended": "car",
+      "swift": [
+        "car",
+        "चर"
+      ],
+      "android": [],
+      "swift_preferred": "car",
+      "android_original": "car"
+    },
+    {
+      "context": "mero",
+      "word": "phone",
+      "intended": "phone",
+      "swift": [
+        "phone",
+        "फोने"
+      ],
+      "android": [],
+      "swift_preferred": "phone",
+      "android_original": "phone"
+    },
+    {
+      "context": "the",
+      "word": "phone",
+      "intended": "phone",
+      "swift": [
+        "phone",
+        "फोने"
+      ],
+      "android": [],
+      "swift_preferred": "phone",
+      "android_original": "phone"
+    },
+    {
+      "context": "tapai",
+      "word": "le",
+      "intended": "ले",
+      "swift": [
+        "ले",
+        "le"
+      ],
+      "android": [
+        "ले"
+      ],
+      "swift_preferred": "ले",
+      "android_original": "le"
+    },
+    {
+      "context": "yo",
+      "word": "kalam",
+      "intended": "कलम",
+      "swift": [
+        "कलम",
+        "कलाम",
+        "kalam"
+      ],
+      "android": [
+        "कलम",
+        "कलाम"
+      ],
+      "swift_preferred": "कलम",
+      "android_original": "kalam"
+    },
+    {
+      "context": "ma",
+      "word": "bholi",
+      "intended": "भोलि",
+      "swift": [
+        "भोलि",
+        "bholi"
+      ],
+      "android": [
+        "भोलि"
+      ],
+      "swift_preferred": "भोलि",
+      "android_original": "bholi"
+    },
+    {
+      "context": "the",
+      "word": "bank",
+      "intended": "bank",
+      "swift": [
+        "bank",
+        "बन्क"
+      ],
+      "android": [],
+      "swift_preferred": "bank",
+      "android_original": "bank"
+    },
+    {
+      "context": "ma",
+      "word": "bank",
+      "intended": "bank",
+      "swift": [
+        "bank",
+        "बन्क"
+      ],
+      "android": [],
+      "swift_preferred": "bank",
+      "android_original": "bank"
+    },
+    {
+      "context": "aaja",
+      "word": "office",
+      "intended": "office",
+      "swift": [
+        "office",
+        "ओफ्फिचे"
+      ],
+      "android": [],
+      "swift_preferred": "office",
+      "android_original": "office"
+    },
+    {
+      "context": "the",
+      "word": "school",
+      "intended": "school",
+      "swift": [
+        "school",
+        "स्चूल"
+      ],
+      "android": [],
+      "swift_preferred": "school",
+      "android_original": "school"
+    },
+    {
+      "context": "mero",
+      "word": "sathi",
+      "intended": "साथी",
+      "swift": [
+        "साथी",
+        "सथि",
+        "साठी",
+        "sathi"
+      ],
+      "android": [
+        "साथी",
+        "साठी"
+      ],
+      "swift_preferred": "साथी",
+      "android_original": "sathi"
+    },
+    {
+      "context": "yo",
+      "word": "kukur",
+      "intended": "कुकुर",
+      "swift": [
+        "कुकुर",
+        "kukur"
+      ],
+      "android": [
+        "कुकुर"
+      ],
+      "swift_preferred": "कुकुर",
+      "android_original": "kukur"
+    },
+    {
+      "context": "the",
+      "word": "cat",
+      "intended": "cat",
+      "swift": [
+        "cat",
+        "चत"
+      ],
+      "android": [],
+      "swift_preferred": "cat",
+      "android_original": "cat"
+    },
+    {
+      "context": "ma",
+      "word": "khana",
+      "intended": "खाना",
+      "swift": [
+        "खाना",
+        "खन",
+        "कहन",
+        "खान",
+        "khana"
+      ],
+      "android": [
+        "खाना",
+        "कहन",
+        "खन",
+        "खान"
+      ],
+      "swift_preferred": "खाना",
+      "android_original": "khana"
+    },
+    {
+      "context": "aaja",
+      "word": "padhchu",
+      "intended": "पढ्छु",
+      "swift": [
+        "पढ्छु",
+        "पध्चु",
+        "padhchu"
+      ],
+      "android": [
+        "पढ्छु"
+      ],
+      "swift_preferred": "पढ्छु",
+      "android_original": "padhchu"
+    },
+    {
+      "context": "mero",
+      "word": "naam",
+      "intended": "नाम",
+      "swift": [
+        "नाम",
+        "naam"
+      ],
+      "android": [
+        "नाम"
+      ],
+      "swift_preferred": "नाम",
+      "android_original": "naam"
+    },
+    {
+      "context": "the",
+      "word": "name",
+      "intended": "name",
+      "swift": [
+        "name",
+        "नमे"
+      ],
+      "android": [],
+      "swift_preferred": "name",
+      "android_original": "name"
+    },
+    {
+      "context": "mero",
+      "word": "football",
+      "intended": "फुटबल",
+      "swift": [
+        "फुटबल",
+        "फूत्बल्ल",
+        "football"
+      ],
+      "android": [
+        "फुटबल"
+      ],
+      "swift_preferred": "फुटबल",
+      "android_original": "football"
+    },
+    {
+      "context": "the",
+      "word": "football",
+      "intended": "football",
+      "swift": [
+        "football",
+        "फुटबल",
+        "फूत्बल्ल"
+      ],
+      "android": [
+        "फुटबल"
+      ],
+      "swift_preferred": "football",
+      "android_original": "football"
+    },
+    {
+      "context": "this",
+      "word": "is",
+      "intended": "is",
+      "swift": [
+        "is",
+        "इस",
+        "ईश"
+      ],
+      "android": [
+        "ईश"
+      ],
+      "swift_preferred": "is",
+      "android_original": "is"
+    },
+    {
+      "context": "malai",
+      "word": "geet",
+      "intended": "गीत",
+      "swift": [
+        "गीत",
+        "geet"
+      ],
+      "android": [],
+      "swift_preferred": "गीत",
+      "android_original": "geet"
+    }
+  ]
+}

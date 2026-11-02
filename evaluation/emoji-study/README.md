@@ -1,0 +1,17 @@
+# Offline emoji search diagnostic
+
+This is a local research fixture, not a shipped emoji catalog or a representative user-study. `run.py` extracts the picker's actual `emojiCatalog` and `systemEmojiCatalog` builder from the Mac source, verifies that the current search expression matches the mirrored whitespace/substrings predicate, compiles an isolated Swift program and evaluates `cases.json`. It records fixture and source SHA-256 hashes. It does not modify the app, contact a network, copy system fonts or enable an input method.
+
+On this Mac the runtime-generated catalog contained 1,174 entries. In 40 manually authored query-to-emoji pairs, the expected emoji appeared for 21 queries: authored aliases 6/6; Unicode-name queries 8/10; colloquial English 2/8; Roman Nepali 0/5; multi-scalar sequences 1/6; and symbol queries 4/5. These are subjective, AI-authored examples without Nepali-speaker review, not population coverage or search precision. They highlight concrete gaps, not a reliable ranking benchmark. `results.json` records the exact candidates and method.
+
+## Findings
+
+- The current picker uses all whitespace-separated query terms as case-insensitive substrings of a Unicode name or authored alias. Unicode names do not cover everyday synonyms: `thank you` does not match the authored `thanks` alias, and `lol` produces the unrelated `lollipop`. Names are not a curated annotation or thesaurus.
+- `isEmojiPresentation` deliberately excludes text-default emoji such as snowflake, airplane and warning in these examples. Most flags, skin tones and ZWJ family/profession sequences are absent; a simple scalar-name search cannot create or correctly name all valid emoji sequences. The few explicit authored sequences, such as Nepal's flag, do work.
+- A research-only word-prefix variant produced the same 21/40 expected matches and still returned lollipop for `lol`. A general alias/normalization change is not justified by this small fixture. Stronger search requires a reviewed, versioned multilingual keyword and sequence source, correct rendering/variation information, safe provenance and explicit license/attribution; do not invent broad Nepali synonyms or claim language coverage.
+- The current runtime queries public Swift Unicode scalar properties and names on-device; it does not bundle a separately copied names dataset or font artwork. The exact Unicode property version and available glyphs depend on the runtime and OS. This observation is not a legal conclusion about distributing a generated derivative dataset; verify the applicable upstream terms before bundling one.
+- The only related local package found in the checked locations was Homebrew `eas-cli`'s `emoji-regex` (version 8.0.0; MIT license included in its package). It is a regular-expression matcher and does not provide search names/keywords, so it is not a suitable standalone answer to the search-coverage gap. Its Unicode coverage is also version-specific. No package content was copied to the product.
+
+## Repeat
+
+From the project root, run `python3 evaluation/emoji-study/run.py` or pass an explicit path to the Mac source as the first argument. The command needs the already-installed Xcode Swift compiler and uses a temporary directory. It prints JSON; redirect to a new file if desired. The script fails if the app's search predicate changes, requiring a review of the mirrored comparison. `results.json` is tied to its recorded source and fixture hashes; it does not test insertion, keyboard focus, VoiceOver or performance.

@@ -1,0 +1,732 @@
+{
+  "version": "suggestion-probe-v1",
+  "description": "Synthetic unreviewed candidate recall and original-preservation fixture, frozen without running Lekha.",
+  "cases": [
+    {
+      "id": "C001",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "pyaas",
+      "acceptable": [
+        "प्यास"
+      ]
+    },
+    {
+      "id": "C002",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "chiso",
+      "acceptable": [
+        "चिसो"
+      ]
+    },
+    {
+      "id": "C003",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "tato",
+      "acceptable": [
+        "तातो"
+      ]
+    },
+    {
+      "id": "C004",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "bhok",
+      "acceptable": [
+        "भोक"
+      ]
+    },
+    {
+      "id": "C005",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "bistarai",
+      "acceptable": [
+        "बिस्तारै"
+      ]
+    },
+    {
+      "id": "C006",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "chhito",
+      "acceptable": [
+        "छिटो"
+      ]
+    },
+    {
+      "id": "C007",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "dherai",
+      "acceptable": [
+        "धेरै"
+      ]
+    },
+    {
+      "id": "C008",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "thorai",
+      "acceptable": [
+        "थोरै"
+      ]
+    },
+    {
+      "id": "C009",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "saafa",
+      "acceptable": [
+        "सफा"
+      ]
+    },
+    {
+      "id": "C010",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "mitho",
+      "acceptable": [
+        "मिठो",
+        "मीठो"
+      ]
+    },
+    {
+      "id": "C011",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "sasto",
+      "acceptable": [
+        "सस्तो"
+      ]
+    },
+    {
+      "id": "C012",
+      "category": "daily",
+      "role": "nepali",
+      "roman": "mahango",
+      "acceptable": [
+        "महँगो",
+        "महंगो"
+      ]
+    },
+    {
+      "id": "C013",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "sathi",
+      "acceptable": [
+        "साथी"
+      ]
+    },
+    {
+      "id": "C014",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "chimeki",
+      "acceptable": [
+        "छिमेकी"
+      ]
+    },
+    {
+      "id": "C015",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "pariwaar",
+      "acceptable": [
+        "परिवार"
+      ]
+    },
+    {
+      "id": "C016",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "bhai",
+      "acceptable": [
+        "भाइ"
+      ]
+    },
+    {
+      "id": "C017",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "didi",
+      "acceptable": [
+        "दिदी"
+      ]
+    },
+    {
+      "id": "C018",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "baje",
+      "acceptable": [
+        "बाजे"
+      ]
+    },
+    {
+      "id": "C019",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "gaon",
+      "acceptable": [
+        "गाउँ"
+      ]
+    },
+    {
+      "id": "C020",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "sahar",
+      "acceptable": [
+        "सहर",
+        "शहर"
+      ]
+    },
+    {
+      "id": "C021",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "pasal",
+      "acceptable": [
+        "पसल"
+      ]
+    },
+    {
+      "id": "C022",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "jungle",
+      "acceptable": [
+        "जंगल",
+        "जङ्गल"
+      ]
+    },
+    {
+      "id": "C023",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "kotha",
+      "acceptable": [
+        "कोठा"
+      ]
+    },
+    {
+      "id": "C024",
+      "category": "people_places",
+      "role": "nepali",
+      "roman": "chautara",
+      "acceptable": [
+        "चौतारा"
+      ]
+    },
+    {
+      "id": "C025",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "khanu",
+      "acceptable": [
+        "खानु"
+      ]
+    },
+    {
+      "id": "C026",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "padhnu",
+      "acceptable": [
+        "पढ्नु"
+      ]
+    },
+    {
+      "id": "C027",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "siknu",
+      "acceptable": [
+        "सिक्नु"
+      ]
+    },
+    {
+      "id": "C028",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "lekhnus",
+      "acceptable": [
+        "लेख्नुस्"
+      ]
+    },
+    {
+      "id": "C029",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "hidnu",
+      "acceptable": [
+        "हिँड्नु",
+        "हिंड्नु"
+      ]
+    },
+    {
+      "id": "C030",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "basnu",
+      "acceptable": [
+        "बस्नु"
+      ]
+    },
+    {
+      "id": "C031",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "sodhnus",
+      "acceptable": [
+        "सोध्नुस्"
+      ]
+    },
+    {
+      "id": "C032",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "kholnu",
+      "acceptable": [
+        "खोल्नु"
+      ]
+    },
+    {
+      "id": "C033",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "sunnu",
+      "acceptable": [
+        "सुन्नु"
+      ]
+    },
+    {
+      "id": "C034",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "pakaaunu",
+      "acceptable": [
+        "पकाउनु"
+      ]
+    },
+    {
+      "id": "C035",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "lyaaunu",
+      "acceptable": [
+        "ल्याउनु"
+      ]
+    },
+    {
+      "id": "C036",
+      "category": "actions",
+      "role": "nepali",
+      "roman": "sutnu",
+      "acceptable": [
+        "सुत्नु"
+      ]
+    },
+    {
+      "id": "C037",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "namaskaar",
+      "acceptable": [
+        "नमस्कार"
+      ]
+    },
+    {
+      "id": "C038",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "dhanyabaad",
+      "acceptable": [
+        "धन्यवाद"
+      ]
+    },
+    {
+      "id": "C039",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "shubhakamana",
+      "acceptable": [
+        "शुभकामना"
+      ]
+    },
+    {
+      "id": "C040",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "aawaj",
+      "acceptable": [
+        "आवाज"
+      ]
+    },
+    {
+      "id": "C041",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "jindagi",
+      "acceptable": [
+        "जिन्दगी",
+        "जिंदगी"
+      ]
+    },
+    {
+      "id": "C042",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "samasya",
+      "acceptable": [
+        "समस्या"
+      ]
+    },
+    {
+      "id": "C043",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "awashyak",
+      "acceptable": [
+        "आवश्यक"
+      ]
+    },
+    {
+      "id": "C044",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "kaam",
+      "acceptable": [
+        "काम"
+      ]
+    },
+    {
+      "id": "C045",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "sapana",
+      "acceptable": [
+        "सपना"
+      ]
+    },
+    {
+      "id": "C046",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "bujhai",
+      "acceptable": [
+        "बुझाइ"
+      ]
+    },
+    {
+      "id": "C047",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "bhetghat",
+      "acceptable": [
+        "भेटघाट"
+      ]
+    },
+    {
+      "id": "C048",
+      "category": "variant_spellings",
+      "role": "nepali",
+      "roman": "samachar",
+      "acceptable": [
+        "समाचार"
+      ]
+    },
+    {
+      "id": "C049",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "khayeko",
+      "acceptable": [
+        "खाएको"
+      ]
+    },
+    {
+      "id": "C050",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "padheko",
+      "acceptable": [
+        "पढेको"
+      ]
+    },
+    {
+      "id": "C051",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "aayeko",
+      "acceptable": [
+        "आएको"
+      ]
+    },
+    {
+      "id": "C052",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "gayera",
+      "acceptable": [
+        "गएर"
+      ]
+    },
+    {
+      "id": "C053",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "bhayera",
+      "acceptable": [
+        "भएर"
+      ]
+    },
+    {
+      "id": "C054",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "gareko",
+      "acceptable": [
+        "गरेको"
+      ]
+    },
+    {
+      "id": "C055",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "bhandai",
+      "acceptable": [
+        "भन्दै"
+      ]
+    },
+    {
+      "id": "C056",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "bujhchhu",
+      "acceptable": [
+        "बुझ्छु"
+      ]
+    },
+    {
+      "id": "C057",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "sunchhu",
+      "acceptable": [
+        "सुन्छु"
+      ]
+    },
+    {
+      "id": "C058",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "lekheko",
+      "acceptable": [
+        "लेखेको"
+      ]
+    },
+    {
+      "id": "C059",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "kholera",
+      "acceptable": [
+        "खोलेर"
+      ]
+    },
+    {
+      "id": "C060",
+      "category": "inflections",
+      "role": "nepali",
+      "roman": "sodheko",
+      "acceptable": [
+        "सोधेको"
+      ]
+    },
+    {
+      "id": "C061",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "schedule",
+      "acceptable": [
+        "schedule"
+      ]
+    },
+    {
+      "id": "C062",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "printer",
+      "acceptable": [
+        "printer"
+      ]
+    },
+    {
+      "id": "C063",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "weekend",
+      "acceptable": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "C064",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "review",
+      "acceptable": [
+        "review"
+      ]
+    },
+    {
+      "id": "C065",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "folder",
+      "acceptable": [
+        "folder"
+      ]
+    },
+    {
+      "id": "C066",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "charger",
+      "acceptable": [
+        "charger"
+      ]
+    },
+    {
+      "id": "C067",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "flight",
+      "acceptable": [
+        "flight"
+      ]
+    },
+    {
+      "id": "C068",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "garden",
+      "acceptable": [
+        "garden"
+      ]
+    },
+    {
+      "id": "C069",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "library",
+      "acceptable": [
+        "library"
+      ]
+    },
+    {
+      "id": "C070",
+      "category": "english_control",
+      "role": "preserve",
+      "roman": "receipt",
+      "acceptable": [
+        "receipt"
+      ]
+    },
+    {
+      "id": "C071",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Elena",
+      "acceptable": [
+        "Elena"
+      ]
+    },
+    {
+      "id": "C072",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Sophie",
+      "acceptable": [
+        "Sophie"
+      ]
+    },
+    {
+      "id": "C073",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Mason",
+      "acceptable": [
+        "Mason"
+      ]
+    },
+    {
+      "id": "C074",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Nora",
+      "acceptable": [
+        "Nora"
+      ]
+    },
+    {
+      "id": "C075",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Avery",
+      "acceptable": [
+        "Avery"
+      ]
+    },
+    {
+      "id": "C076",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Daniel",
+      "acceptable": [
+        "Daniel"
+      ]
+    },
+    {
+      "id": "C077",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Rohan",
+      "acceptable": [
+        "Rohan"
+      ]
+    },
+    {
+      "id": "C078",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Sanjay",
+      "acceptable": [
+        "Sanjay"
+      ]
+    },
+    {
+      "id": "C079",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Maya",
+      "acceptable": [
+        "Maya"
+      ]
+    },
+    {
+      "id": "C080",
+      "category": "name_control",
+      "role": "preserve",
+      "roman": "Kiran",
+      "acceptable": [
+        "Kiran"
+      ]
+    }
+  ]
+}

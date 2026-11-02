@@ -1,0 +1,1083 @@
+{
+  "counts" : {
+    "english" : {
+      "added_candidates" : 0,
+      "added_matching_reference" : 0,
+      "total" : 6,
+      "visible_after" : 6,
+      "visible_before" : 6
+    },
+    "lowercase_name" : {
+      "added_candidates" : 0,
+      "added_matching_reference" : 0,
+      "total" : 10,
+      "visible_after" : 10,
+      "visible_before" : 10
+    },
+    "name" : {
+      "added_candidates" : 0,
+      "added_matching_reference" : 0,
+      "total" : 4,
+      "visible_after" : 4,
+      "visible_before" : 4
+    },
+    "nepali" : {
+      "added_candidates" : 0,
+      "added_matching_reference" : 0,
+      "total" : 26,
+      "visible_after" : 23,
+      "visible_before" : 23
+    }
+  },
+  "details" : [
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बतो",
+        "बाटो",
+        "बातो",
+        "bato"
+      ],
+      "before" : [
+        "बतो",
+        "बाटो",
+        "बातो",
+        "bato"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बाटो"
+      ],
+      "role" : "nepali",
+      "roman" : "bato",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "कागज",
+        "कगज",
+        "kagaj"
+      ],
+      "before" : [
+        "कागज",
+        "कगज",
+        "kagaj"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कागज"
+      ],
+      "role" : "nepali",
+      "roman" : "kagaj",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "आकश",
+        "aakash"
+      ],
+      "before" : [
+        "आकश",
+        "aakash"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आकाश"
+      ],
+      "role" : "nepali",
+      "roman" : "aakash",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "घम",
+        "घाम",
+        "gham"
+      ],
+      "before" : [
+        "घम",
+        "घाम",
+        "gham"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "घाम"
+      ],
+      "role" : "nepali",
+      "roman" : "gham",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "पनि",
+        "पानी",
+        "pani"
+      ],
+      "before" : [
+        "पनि",
+        "पानी",
+        "pani"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पानी",
+        "पनि"
+      ],
+      "role" : "nepali",
+      "roman" : "pani",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "साथी",
+        "सथि",
+        "साठी",
+        "sathi"
+      ],
+      "before" : [
+        "साथी",
+        "सथि",
+        "साठी",
+        "sathi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "साथी"
+      ],
+      "role" : "nepali",
+      "roman" : "sathi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "राम्रो",
+        "रम्रो",
+        "रामरो",
+        "ramro"
+      ],
+      "before" : [
+        "राम्रो",
+        "रम्रो",
+        "रामरो",
+        "ramro"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : false,
+      "reference" : [
+        "राम्रो"
+      ],
+      "role" : "nepali",
+      "roman" : "ramro",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "कुकुर",
+        "kukur"
+      ],
+      "before" : [
+        "कुकुर",
+        "kukur"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कुकुर"
+      ],
+      "role" : "nepali",
+      "roman" : "kukur",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बिरलो",
+        "बिरालो",
+        "biralo"
+      ],
+      "before" : [
+        "बिरलो",
+        "बिरालो",
+        "biralo"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बिरालो"
+      ],
+      "role" : "nepali",
+      "roman" : "biralo",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बजर",
+        "बजार",
+        "bajar"
+      ],
+      "before" : [
+        "बजर",
+        "बजार",
+        "bajar"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "बजार"
+      ],
+      "role" : "nepali",
+      "roman" : "bajar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "sagar",
+        "सगर",
+        "सागर"
+      ],
+      "before" : [
+        "sagar",
+        "सगर",
+        "सागर"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "सागर"
+      ],
+      "role" : "nepali",
+      "roman" : "sagar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "मान्छे",
+        "मन्छे",
+        "manchhe"
+      ],
+      "before" : [
+        "मान्छे",
+        "मन्छे",
+        "manchhe"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "मान्छे"
+      ],
+      "role" : "nepali",
+      "roman" : "manchhe",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "badal",
+        "बदल",
+        "बडाल",
+        "बादल"
+      ],
+      "before" : [
+        "badal",
+        "बदल",
+        "बडाल",
+        "बादल"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "बादल"
+      ],
+      "role" : "nepali",
+      "roman" : "badal",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "कोथ",
+        "कोठा",
+        "kotha"
+      ],
+      "before" : [
+        "कोथ",
+        "कोठा",
+        "kotha"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कोठा"
+      ],
+      "role" : "nepali",
+      "roman" : "kotha",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "school",
+        "स्चूल"
+      ],
+      "before" : [
+        "school",
+        "स्चूल"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "school"
+      ],
+      "role" : "english",
+      "roman" : "school",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "phone",
+        "फोने"
+      ],
+      "before" : [
+        "phone",
+        "फोने"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "phone"
+      ],
+      "role" : "english",
+      "roman" : "phone",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "book",
+        "बूक"
+      ],
+      "before" : [
+        "book",
+        "बूक"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "book"
+      ],
+      "role" : "english",
+      "roman" : "book",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "meeting",
+        "मीतिङ"
+      ],
+      "before" : [
+        "meeting",
+        "मीतिङ"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "meeting"
+      ],
+      "role" : "english",
+      "roman" : "meeting",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "fruit",
+        "फ्रुइत",
+        "फ्रुट",
+        "फ्रूट"
+      ],
+      "before" : [
+        "fruit",
+        "फ्रुइत",
+        "फ्रुट",
+        "फ्रूट"
+      ],
+      "exactCount" : 2,
+      "knownEnglish" : true,
+      "reference" : [
+        "fruit"
+      ],
+      "role" : "english",
+      "roman" : "fruit",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "orange",
+        "ओरङे"
+      ],
+      "before" : [
+        "orange",
+        "ओरङे"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "orange"
+      ],
+      "role" : "english",
+      "roman" : "orange",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "America",
+        "अमेरिच"
+      ],
+      "before" : [
+        "America",
+        "अमेरिच"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "America"
+      ],
+      "role" : "name",
+      "roman" : "America",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "निश",
+        "Nisha"
+      ],
+      "before" : [
+        "निश",
+        "Nisha"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "Nisha"
+      ],
+      "role" : "name",
+      "roman" : "Nisha",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "Rita",
+        "रित",
+        "रिता",
+        "रीता"
+      ],
+      "before" : [
+        "Rita",
+        "रित",
+        "रिता",
+        "रीता"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "Rita"
+      ],
+      "role" : "name",
+      "roman" : "Rita",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "Anita",
+        "अनित",
+        "अनिता"
+      ],
+      "before" : [
+        "Anita",
+        "अनित",
+        "अनिता"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "Anita"
+      ],
+      "role" : "name",
+      "roman" : "Anita",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "आज",
+        "आजा",
+        "aaja"
+      ],
+      "before" : [
+        "आज",
+        "आजा",
+        "aaja"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "आज"
+      ],
+      "role" : "nepali",
+      "roman" : "aaja",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बिहान",
+        "बिहन",
+        "बिहाना",
+        "bihana"
+      ],
+      "before" : [
+        "बिहान",
+        "बिहन",
+        "बिहाना",
+        "bihana"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "बिहान"
+      ],
+      "role" : "nepali",
+      "roman" : "bihana",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "राति",
+        "रति",
+        "rati"
+      ],
+      "before" : [
+        "राति",
+        "रति",
+        "rati"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "राति"
+      ],
+      "role" : "nepali",
+      "roman" : "rati",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "गदि",
+        "अगाडि",
+        "अगाडी",
+        "gadi"
+      ],
+      "before" : [
+        "गदि",
+        "अगाडि",
+        "अगाडी",
+        "gadi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "गाडी"
+      ],
+      "role" : "nepali",
+      "roman" : "gadi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "कुरा",
+        "कुर",
+        "kura"
+      ],
+      "before" : [
+        "कुरा",
+        "कुर",
+        "kura"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "कुरा"
+      ],
+      "role" : "nepali",
+      "roman" : "kura",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "दूध",
+        "दुध",
+        "dudh"
+      ],
+      "before" : [
+        "दूध",
+        "दुध",
+        "dudh"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "दूध"
+      ],
+      "role" : "nepali",
+      "roman" : "dudh",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "मिठो",
+        "मीठो",
+        "मिथो",
+        "mitho"
+      ],
+      "before" : [
+        "मिठो",
+        "मीठो",
+        "मिथो",
+        "mitho"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "मिठो",
+        "मीठो"
+      ],
+      "role" : "nepali",
+      "roman" : "mitho",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "जिन्दगि",
+        "जिन्दगी",
+        "jindagi"
+      ],
+      "before" : [
+        "जिन्दगि",
+        "जिन्दगी",
+        "jindagi"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "जिन्दगी"
+      ],
+      "role" : "nepali",
+      "roman" : "jindagi",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "परिवार",
+        "परिवर",
+        "parivar"
+      ],
+      "before" : [
+        "परिवार",
+        "परिवर",
+        "parivar"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "परिवार"
+      ],
+      "role" : "nepali",
+      "roman" : "parivar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "बिदेश",
+        "bidesh"
+      ],
+      "before" : [
+        "बिदेश",
+        "bidesh"
+      ],
+      "exactCount" : 1,
+      "knownEnglish" : false,
+      "reference" : [
+        "विदेश"
+      ],
+      "role" : "nepali",
+      "roman" : "bidesh",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "पत्र",
+        "patra"
+      ],
+      "before" : [
+        "पत्र",
+        "patra"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "पत्र"
+      ],
+      "role" : "nepali",
+      "roman" : "patra",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "खेल",
+        "khel"
+      ],
+      "before" : [
+        "खेल",
+        "khel"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "खेल"
+      ],
+      "role" : "nepali",
+      "roman" : "khel",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "निश",
+        "nisha"
+      ],
+      "before" : [
+        "निश",
+        "nisha"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "nisha"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "nisha",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "anita",
+        "अनित",
+        "अनिता"
+      ],
+      "before" : [
+        "anita",
+        "अनित",
+        "अनिता"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "anita"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "anita",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "प्रिय",
+        "प्रिया",
+        "priya"
+      ],
+      "before" : [
+        "प्रिय",
+        "प्रिया",
+        "priya"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "priya"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "priya",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "आरव",
+        "aarav"
+      ],
+      "before" : [
+        "आरव",
+        "aarav"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "aarav"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "aarav",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "सुजन",
+        "sujan"
+      ],
+      "before" : [
+        "सुजन",
+        "sujan"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "sujan"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "sujan",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "अनुप",
+        "अनूप",
+        "anup"
+      ],
+      "before" : [
+        "अनुप",
+        "अनूप",
+        "anup"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "anup"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "anup",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "rita",
+        "रित",
+        "रिता",
+        "रीता"
+      ],
+      "before" : [
+        "rita",
+        "रित",
+        "रिता",
+        "रीता"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "rita"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "rita",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "किरन",
+        "किरण",
+        "kiran"
+      ],
+      "before" : [
+        "किरन",
+        "किरण",
+        "kiran"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : false,
+      "reference" : [
+        "kiran"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "kiran",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "sagar",
+        "सगर",
+        "सागर"
+      ],
+      "before" : [
+        "sagar",
+        "सगर",
+        "सागर"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "sagar"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "sagar",
+      "top_unchanged" : true
+    },
+    {
+      "added" : [
+
+      ],
+      "after" : [
+        "hari",
+        "हरि"
+      ],
+      "before" : [
+        "hari",
+        "हरि"
+      ],
+      "exactCount" : 0,
+      "knownEnglish" : true,
+      "reference" : [
+        "hari"
+      ],
+      "role" : "lowercase_name",
+      "roman" : "hari",
+      "top_unchanged" : true
+    }
+  ],
+  "note" : "unreviewed hand-authored development fixture; added-reference match is not linguistic precision"
+}

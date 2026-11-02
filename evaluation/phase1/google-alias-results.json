@@ -1,0 +1,18 @@
+{
+  "dataset_sha256": "a9f616db4ecc35ecde4e519e1438c5501d8574b3623d43370fb0089a31ea8a83",
+  "native_rows_processed": 48472,
+  "skipped": 109,
+  "max_aliases_per_row": 64,
+  "generated_alias_count_including_duplicates": 298844,
+  "sampled_aliases": 78,
+  "sampled_ambiguous_aliases": 4,
+  "baseline_distinct_nepali_tokens": 48,
+  "baseline_tokens_with_any_alias": 39,
+  "baseline_tokens_with_intended_form_in_aliases": 36,
+  "warnings": [
+    "Exploratory hand-designed phonemic approximations; not speaker reviewed",
+    "Baseline set is not independent or representative",
+    "Ambiguous aliases need rankings and cannot be committed automatically",
+    "No data or model score is used as frequency"
+  ]
+}

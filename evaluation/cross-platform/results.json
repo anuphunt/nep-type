@@ -1,0 +1,126 @@
+{
+  "note": "Illustrative, hand-picked examples, not a held-out accuracy evaluation; Android does not use Swift ranking.",
+  "results": [
+    {
+      "roman": "namaste",
+      "example": "नमस्ते",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "नमस्ते",
+        "namaste"
+      ],
+      "android_candidates": [
+        "नमस्ते"
+      ]
+    },
+    {
+      "roman": "mero",
+      "example": "मेरो",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "मेरो",
+        "mero"
+      ],
+      "android_candidates": [
+        "मेरो"
+      ]
+    },
+    {
+      "roman": "pani",
+      "example": "पानी",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "पनि",
+        "पानी",
+        "pani"
+      ],
+      "android_candidates": [
+        "पनि",
+        "पानी"
+      ]
+    },
+    {
+      "roman": "ma",
+      "example": "म",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "म",
+        "मा",
+        "ma"
+      ],
+      "android_candidates": [
+        "म",
+        "मा"
+      ]
+    },
+    {
+      "roman": "man",
+      "example": "मन",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान",
+        "मान्",
+        "man"
+      ],
+      "android_candidates": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ]
+    },
+    {
+      "roman": "bhaisakeko",
+      "example": "भइसकेको",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "भैसकेको",
+        "भइसकेको",
+        "bhaisakeko"
+      ],
+      "android_candidates": [
+        "भइसकेको",
+        "भैसकेको"
+      ]
+    },
+    {
+      "roman": "football",
+      "example": "फुटबल",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "फुटबल",
+        "फूत्बल्ल",
+        "football"
+      ],
+      "android_candidates": [
+        "फुटबल"
+      ]
+    },
+    {
+      "roman": "ramro",
+      "example": "राम्रो",
+      "swift_has": true,
+      "android_has": true,
+      "swift_candidates": [
+        "राम्रो",
+        "रम्रो",
+        "रामरो",
+        "ramro"
+      ],
+      "android_candidates": [
+        "राम्रो",
+        "रामरो"
+      ]
+    }
+  ]
+}

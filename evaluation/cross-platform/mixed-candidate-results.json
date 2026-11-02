@@ -1,0 +1,788 @@
+{
+  "case_count": 20,
+  "summary": {
+    "english": {
+      "tokens": 34,
+      "swift_any": 34,
+      "android_any": 34
+    },
+    "nepali": {
+      "tokens": 43,
+      "swift_any": 41,
+      "android_any": 41
+    }
+  },
+  "details": [
+    {
+      "case": "P201",
+      "token": "the",
+      "role": "english",
+      "expected": [
+        "the"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P201",
+      "token": "man",
+      "role": "english",
+      "expected": [
+        "man"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P201",
+      "token": "called",
+      "role": "english",
+      "expected": [
+        "called"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P202",
+      "token": "mero",
+      "role": "nepali",
+      "expected": [
+        "मेरो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P202",
+      "token": "man",
+      "role": "nepali",
+      "expected": [
+        "मन"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P202",
+      "token": "khusi",
+      "role": "nepali",
+      "expected": [
+        "खुसी"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P202",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P203",
+      "token": "the",
+      "role": "english",
+      "expected": [
+        "the"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P203",
+      "token": "football",
+      "role": "english",
+      "expected": [
+        "football"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P203",
+      "token": "team",
+      "role": "english",
+      "expected": [
+        "team"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P203",
+      "token": "won",
+      "role": "english",
+      "expected": [
+        "won"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P204",
+      "token": "ma",
+      "role": "nepali",
+      "expected": [
+        "म"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P204",
+      "token": "football",
+      "role": "nepali",
+      "expected": [
+        "फुटबल"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P204",
+      "token": "khelchu",
+      "role": "nepali",
+      "expected": [
+        "खेल्छु"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P205",
+      "token": "aaja",
+      "role": "nepali",
+      "expected": [
+        "आज"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P205",
+      "token": "weather",
+      "role": "english",
+      "expected": [
+        "weather"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P205",
+      "token": "ramro",
+      "role": "nepali",
+      "expected": [
+        "राम्रो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P205",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P206",
+      "token": "hami",
+      "role": "nepali",
+      "expected": [
+        "हामी"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P206",
+      "token": "school",
+      "role": "english",
+      "expected": [
+        "school"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P206",
+      "token": "janchau",
+      "role": "nepali",
+      "expected": [
+        "जान्छौँ"
+      ],
+      "swift_match": false,
+      "android_match": false
+    },
+    {
+      "case": "P207",
+      "token": "please",
+      "role": "english",
+      "expected": [
+        "please"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P207",
+      "token": "send",
+      "role": "english",
+      "expected": [
+        "send"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P207",
+      "token": "the",
+      "role": "english",
+      "expected": [
+        "the"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P207",
+      "token": "photo",
+      "role": "english",
+      "expected": [
+        "photo"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P208",
+      "token": "ma",
+      "role": "nepali",
+      "expected": [
+        "म"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P208",
+      "token": "coffee",
+      "role": "english",
+      "expected": [
+        "coffee"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P208",
+      "token": "khanchu",
+      "role": "nepali",
+      "expected": [
+        "खान्छु"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P209",
+      "token": "bholi",
+      "role": "nepali",
+      "expected": [
+        "भोलि"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P209",
+      "token": "project",
+      "role": "english",
+      "expected": [
+        "project"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P209",
+      "token": "meeting",
+      "role": "english",
+      "expected": [
+        "meeting"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P209",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P210",
+      "token": "timro",
+      "role": "nepali",
+      "expected": [
+        "तिम्रो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P210",
+      "token": "laptop",
+      "role": "english",
+      "expected": [
+        "laptop"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P210",
+      "token": "ramro",
+      "role": "nepali",
+      "expected": [
+        "राम्रो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P210",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P211",
+      "token": "mero",
+      "role": "nepali",
+      "expected": [
+        "मेरो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P211",
+      "token": "train",
+      "role": "english",
+      "expected": [
+        "train"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P211",
+      "token": "late",
+      "role": "english",
+      "expected": [
+        "late"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P211",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P212",
+      "token": "this",
+      "role": "english",
+      "expected": [
+        "this"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P212",
+      "token": "is",
+      "role": "english",
+      "expected": [
+        "is"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P212",
+      "token": "my",
+      "role": "english",
+      "expected": [
+        "my"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P212",
+      "token": "computer",
+      "role": "english",
+      "expected": [
+        "computer"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P213",
+      "token": "aaja",
+      "role": "nepali",
+      "expected": [
+        "आज"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P213",
+      "token": "ma",
+      "role": "nepali",
+      "expected": [
+        "म"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P213",
+      "token": "gharma",
+      "role": "nepali",
+      "expected": [
+        "घरमा"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P213",
+      "token": "baschu",
+      "role": "nepali",
+      "expected": [
+        "बस्छु"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P214",
+      "token": "usko",
+      "role": "nepali",
+      "expected": [
+        "उसको"
+      ],
+      "swift_match": false,
+      "android_match": false
+    },
+    {
+      "case": "P214",
+      "token": "ghar",
+      "role": "nepali",
+      "expected": [
+        "घर"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P214",
+      "token": "sundar",
+      "role": "nepali",
+      "expected": [
+        "सुन्दर"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P214",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P215",
+      "token": "can",
+      "role": "english",
+      "expected": [
+        "can"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P215",
+      "token": "you",
+      "role": "english",
+      "expected": [
+        "you"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P215",
+      "token": "send",
+      "role": "english",
+      "expected": [
+        "send"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P215",
+      "token": "the",
+      "role": "english",
+      "expected": [
+        "the"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P215",
+      "token": "link",
+      "role": "english",
+      "expected": [
+        "link"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P216",
+      "token": "mero",
+      "role": "nepali",
+      "expected": [
+        "मेरो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P216",
+      "token": "sathi",
+      "role": "nepali",
+      "expected": [
+        "साथी"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P216",
+      "token": "bholi",
+      "role": "nepali",
+      "expected": [
+        "भोलि"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P216",
+      "token": "aauchu",
+      "role": "nepali",
+      "expected": [
+        "आउँछु"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P217",
+      "token": "my",
+      "role": "english",
+      "expected": [
+        "my"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P217",
+      "token": "phone",
+      "role": "english",
+      "expected": [
+        "phone"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P217",
+      "token": "battery",
+      "role": "english",
+      "expected": [
+        "battery"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P217",
+      "token": "is",
+      "role": "english",
+      "expected": [
+        "is"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P217",
+      "token": "dead",
+      "role": "english",
+      "expected": [
+        "dead"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P218",
+      "token": "ma",
+      "role": "nepali",
+      "expected": [
+        "म"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P218",
+      "token": "pani",
+      "role": "nepali",
+      "expected": [
+        "पानी"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P218",
+      "token": "khanchu",
+      "role": "nepali",
+      "expected": [
+        "खान्छु"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P219",
+      "token": "ma",
+      "role": "nepali",
+      "expected": [
+        "म"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P219",
+      "token": "pani",
+      "role": "nepali",
+      "expected": [
+        "पनि"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P219",
+      "token": "janchu",
+      "role": "nepali",
+      "expected": [
+        "जान्छु"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P220",
+      "token": "yo",
+      "role": "nepali",
+      "expected": [
+        "यो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P220",
+      "token": "movie",
+      "role": "english",
+      "expected": [
+        "movie"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P220",
+      "token": "dherai",
+      "role": "nepali",
+      "expected": [
+        "धेरै"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P220",
+      "token": "ramro",
+      "role": "nepali",
+      "expected": [
+        "राम्रो"
+      ],
+      "swift_match": true,
+      "android_match": true
+    },
+    {
+      "case": "P220",
+      "token": "cha",
+      "role": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "swift_match": true,
+      "android_match": true
+    }
+  ],
+  "caveat": "Previously inspected synthetic fixture; isolated tokens, no context or real typing. Android original is included as an option, not automatic language identification."
+}

@@ -1,0 +1,9 @@
+{
+  "blocks": 163,
+  "packed_bytes": 1211576,
+  "packed_sha256": "8fe2918b4dc45d1ee450268cbce6ec68223297625d5a83dff8e29a995e8bd1ee",
+  "raw_bytes": 10618399,
+  "rows": 278253,
+  "source": "google-ne-aliases.tsv",
+  "source_sha256": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159"
+}

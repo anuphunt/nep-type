@@ -1,0 +1,31 @@
+{
+  "design": "Graphite: Roman input, horizontal suggestions, Nepali output, icon-only copy",
+  "iphone": {
+    "simulator_build": "passed",
+    "pad_checks": 83,
+    "layout": "Centered panels capped at 360 points; aligned 44-point copy and clear controls; suggestions above keyboard",
+    "system_software_keyboard_check": "passed",
+    "keyboard_host_checks": 88,
+    "passed": true,
+    "keyboard_enabled": false,
+    "signed_device_archive": "passed",
+    "app_store_export": "passed",
+    "app_store_upload": "succeeded",
+    "testflight_access": "Ready to Test; account holder invited"
+  },
+  "windows": {
+    "frontend": "Win32 Graphite source updated",
+    "model_test_suites": 5,
+    "model_tests": "passed",
+    "native_sdk_build": "not available on this Mac",
+    "document_conversion": "not connected"
+  },
+  "linux": {
+    "frontend": "GTK4 Graphite source added",
+    "adapter_packaging_tests": 43,
+    "skipped_tests": 1,
+    "tests": "passed",
+    "native_gtk_run": "not available on this Mac",
+    "document_conversion": "not connected"
+  }
+}

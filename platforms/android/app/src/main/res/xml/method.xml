@@ -1,0 +1,3 @@
+<input-method xmlns:android="http://schemas.android.com/apk/res/android" android:settingsActivity="app.lekha.keyboard.SettingsActivity">
+    <subtype android:imeSubtypeLocale="ne_NP" android:imeSubtypeMode="keyboard" android:label="@string/ime_subtype_label" />
+</input-method>

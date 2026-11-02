@@ -1,0 +1,651 @@
+{
+  "note": "Previously inspected, unreviewed development cases; not held out or representative. Original is separately available.",
+  "sha256": {
+    "evaluation/phonetic-dev/dev.json": "5c500a03124600a271f4ce17e3e4ec87f15ed2d2868a577a8d26410756ee085d",
+    "platforms/android/app/src/main/java/app/lekha/keyboard/core/CandidateMerger.java": "b72be8c795e1568b4b0797dc7f20e70d2295de1116b46e6ca934577cf7f9125f",
+    "platforms/android/app/src/main/java/app/lekha/keyboard/core/SortedCandidateIndex.java": "cd859c604ae0418cd751e6ca6cc363419a82582c5614b61d953f8705e9e0d623",
+    "platforms/android/app/src/main/java/app/lekha/keyboard/core/PhoneticCandidates.java": "8ce02f9d9dd2ba0aa07cf036b55886237437c25744f6e0d98dbbac640d154c8a",
+    "evaluation/platform-compare/ServiceLookup.java": "41df6b75b3b8e17f55ae1257549c2cce8f58044b6d54b7a4ed9af81bda7b63b1",
+    "platforms/android/app/src/main/assets/nepali-authored-v1.tsv": "802eeda5c144d8f2bbac16be01db86dc6ba67e1741950a68a9bfdcb87e780c80",
+    "data/compiled/aksharantar-indiccorp-v1.tsv": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",
+    "data/compiled/google-ne-aliases.tsv": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159"
+  },
+  "stats": {
+    "nepali": {
+      "total": 26,
+      "expected_in_index": 22,
+      "expected_in_all": 23,
+      "added_approx": 2
+    },
+    "english": {
+      "total": 6,
+      "expected_in_index": 0,
+      "expected_in_all": 0,
+      "added_approx": 5
+    },
+    "name": {
+      "total": 4,
+      "expected_in_index": 0,
+      "expected_in_all": 0,
+      "added_approx": 0
+    },
+    "lowercase_name": {
+      "total": 10,
+      "expected_in_index": 0,
+      "expected_in_all": 0,
+      "added_approx": 3
+    }
+  },
+  "cases": [
+    {
+      "input": "bato",
+      "role": "nepali",
+      "expected": [
+        "बाटो"
+      ],
+      "index": [
+        "बाटो",
+        "बातो"
+      ],
+      "all": [
+        "बाटो",
+        "बातो"
+      ]
+    },
+    {
+      "input": "kagaj",
+      "role": "nepali",
+      "expected": [
+        "कागज"
+      ],
+      "index": [
+        "कागज"
+      ],
+      "all": [
+        "कागज"
+      ]
+    },
+    {
+      "input": "aakash",
+      "role": "nepali",
+      "expected": [
+        "आकाश"
+      ],
+      "index": [],
+      "all": [
+        "आकश"
+      ]
+    },
+    {
+      "input": "gham",
+      "role": "nepali",
+      "expected": [
+        "घाम"
+      ],
+      "index": [
+        "घाम"
+      ],
+      "all": [
+        "घाम"
+      ]
+    },
+    {
+      "input": "pani",
+      "role": "nepali",
+      "expected": [
+        "पानी",
+        "पनि"
+      ],
+      "index": [
+        "पनि",
+        "पानी"
+      ],
+      "all": [
+        "पनि",
+        "पानी"
+      ]
+    },
+    {
+      "input": "sathi",
+      "role": "nepali",
+      "expected": [
+        "साथी"
+      ],
+      "index": [
+        "साथी",
+        "साठी"
+      ],
+      "all": [
+        "साथी",
+        "साठी"
+      ]
+    },
+    {
+      "input": "ramro",
+      "role": "nepali",
+      "expected": [
+        "राम्रो"
+      ],
+      "index": [
+        "राम्रो",
+        "रामरो"
+      ],
+      "all": [
+        "राम्रो",
+        "रामरो"
+      ]
+    },
+    {
+      "input": "kukur",
+      "role": "nepali",
+      "expected": [
+        "कुकुर"
+      ],
+      "index": [
+        "कुकुर"
+      ],
+      "all": [
+        "कुकुर"
+      ]
+    },
+    {
+      "input": "biralo",
+      "role": "nepali",
+      "expected": [
+        "बिरालो"
+      ],
+      "index": [
+        "बिरालो"
+      ],
+      "all": [
+        "बिरालो"
+      ]
+    },
+    {
+      "input": "bajar",
+      "role": "nepali",
+      "expected": [
+        "बजार"
+      ],
+      "index": [
+        "बजार"
+      ],
+      "all": [
+        "बजार"
+      ]
+    },
+    {
+      "input": "sagar",
+      "role": "nepali",
+      "expected": [
+        "सागर"
+      ],
+      "index": [
+        "सगर",
+        "सागर"
+      ],
+      "all": [
+        "सगर",
+        "सागर"
+      ]
+    },
+    {
+      "input": "manchhe",
+      "role": "nepali",
+      "expected": [
+        "मान्छे"
+      ],
+      "index": [
+        "मान्छे"
+      ],
+      "all": [
+        "मान्छे"
+      ]
+    },
+    {
+      "input": "badal",
+      "role": "nepali",
+      "expected": [
+        "बादल"
+      ],
+      "index": [
+        "बडाल",
+        "बदल",
+        "बादल"
+      ],
+      "all": [
+        "बडाल",
+        "बदल",
+        "बादल"
+      ]
+    },
+    {
+      "input": "kotha",
+      "role": "nepali",
+      "expected": [
+        "कोठा"
+      ],
+      "index": [
+        "कोठा"
+      ],
+      "all": [
+        "कोठा"
+      ]
+    },
+    {
+      "input": "school",
+      "role": "english",
+      "expected": [
+        "school"
+      ],
+      "index": [],
+      "all": [
+        "स्चूल"
+      ]
+    },
+    {
+      "input": "phone",
+      "role": "english",
+      "expected": [
+        "phone"
+      ],
+      "index": [],
+      "all": [
+        "फोने"
+      ]
+    },
+    {
+      "input": "book",
+      "role": "english",
+      "expected": [
+        "book"
+      ],
+      "index": [],
+      "all": [
+        "बूक"
+      ]
+    },
+    {
+      "input": "meeting",
+      "role": "english",
+      "expected": [
+        "meeting"
+      ],
+      "index": [],
+      "all": [
+        "मीतिङ"
+      ]
+    },
+    {
+      "input": "fruit",
+      "role": "english",
+      "expected": [
+        "fruit"
+      ],
+      "index": [
+        "फ्रुट",
+        "फ्रूट"
+      ],
+      "all": [
+        "फ्रुट",
+        "फ्रूट"
+      ]
+    },
+    {
+      "input": "orange",
+      "role": "english",
+      "expected": [
+        "orange"
+      ],
+      "index": [],
+      "all": [
+        "ओरङे"
+      ]
+    },
+    {
+      "input": "America",
+      "role": "name",
+      "expected": [
+        "America"
+      ],
+      "index": [],
+      "all": []
+    },
+    {
+      "input": "Nisha",
+      "role": "name",
+      "expected": [
+        "Nisha"
+      ],
+      "index": [],
+      "all": []
+    },
+    {
+      "input": "Rita",
+      "role": "name",
+      "expected": [
+        "Rita"
+      ],
+      "index": [
+        "रिता",
+        "रीता"
+      ],
+      "all": [
+        "रिता",
+        "रीता"
+      ]
+    },
+    {
+      "input": "Anita",
+      "role": "name",
+      "expected": [
+        "Anita"
+      ],
+      "index": [
+        "अनिता"
+      ],
+      "all": [
+        "अनिता"
+      ]
+    },
+    {
+      "input": "aaja",
+      "role": "nepali",
+      "expected": [
+        "आज"
+      ],
+      "index": [
+        "आज",
+        "आजा"
+      ],
+      "all": [
+        "आज",
+        "आजा"
+      ]
+    },
+    {
+      "input": "bihana",
+      "role": "nepali",
+      "expected": [
+        "बिहान"
+      ],
+      "index": [
+        "बिहान",
+        "बिहाना"
+      ],
+      "all": [
+        "बिहान",
+        "बिहाना"
+      ]
+    },
+    {
+      "input": "rati",
+      "role": "nepali",
+      "expected": [
+        "राति"
+      ],
+      "index": [
+        "राति"
+      ],
+      "all": [
+        "राति"
+      ]
+    },
+    {
+      "input": "gadi",
+      "role": "nepali",
+      "expected": [
+        "गाडी"
+      ],
+      "index": [
+        "अगाडि",
+        "अगाडी"
+      ],
+      "all": [
+        "अगाडि",
+        "अगाडी"
+      ]
+    },
+    {
+      "input": "kura",
+      "role": "nepali",
+      "expected": [
+        "कुरा"
+      ],
+      "index": [
+        "कुरा",
+        "कुर"
+      ],
+      "all": [
+        "कुरा",
+        "कुर"
+      ]
+    },
+    {
+      "input": "dudh",
+      "role": "nepali",
+      "expected": [
+        "दूध"
+      ],
+      "index": [
+        "दूध",
+        "दुध"
+      ],
+      "all": [
+        "दूध",
+        "दुध"
+      ]
+    },
+    {
+      "input": "mitho",
+      "role": "nepali",
+      "expected": [
+        "मिठो",
+        "मीठो"
+      ],
+      "index": [
+        "मिठो",
+        "मीठो"
+      ],
+      "all": [
+        "मिठो",
+        "मीठो"
+      ]
+    },
+    {
+      "input": "jindagi",
+      "role": "nepali",
+      "expected": [
+        "जिन्दगी"
+      ],
+      "index": [
+        "जिन्दगी"
+      ],
+      "all": [
+        "जिन्दगी"
+      ]
+    },
+    {
+      "input": "parivar",
+      "role": "nepali",
+      "expected": [
+        "परिवार"
+      ],
+      "index": [
+        "परिवार"
+      ],
+      "all": [
+        "परिवार"
+      ]
+    },
+    {
+      "input": "bidesh",
+      "role": "nepali",
+      "expected": [
+        "विदेश"
+      ],
+      "index": [
+        "बिदेश"
+      ],
+      "all": [
+        "बिदेश"
+      ]
+    },
+    {
+      "input": "patra",
+      "role": "nepali",
+      "expected": [
+        "पत्र"
+      ],
+      "index": [],
+      "all": [
+        "पत्र"
+      ]
+    },
+    {
+      "input": "khel",
+      "role": "nepali",
+      "expected": [
+        "खेल"
+      ],
+      "index": [
+        "खेल"
+      ],
+      "all": [
+        "खेल"
+      ]
+    },
+    {
+      "input": "nisha",
+      "role": "lowercase_name",
+      "expected": [
+        "nisha"
+      ],
+      "index": [],
+      "all": [
+        "निश"
+      ]
+    },
+    {
+      "input": "anita",
+      "role": "lowercase_name",
+      "expected": [
+        "anita"
+      ],
+      "index": [
+        "अनिता"
+      ],
+      "all": [
+        "अनिता"
+      ]
+    },
+    {
+      "input": "priya",
+      "role": "lowercase_name",
+      "expected": [
+        "priya"
+      ],
+      "index": [
+        "प्रिय",
+        "प्रिया"
+      ],
+      "all": [
+        "प्रिय",
+        "प्रिया"
+      ]
+    },
+    {
+      "input": "aarav",
+      "role": "lowercase_name",
+      "expected": [
+        "aarav"
+      ],
+      "index": [],
+      "all": [
+        "आरव"
+      ]
+    },
+    {
+      "input": "sujan",
+      "role": "lowercase_name",
+      "expected": [
+        "sujan"
+      ],
+      "index": [
+        "सुजन"
+      ],
+      "all": [
+        "सुजन"
+      ]
+    },
+    {
+      "input": "anup",
+      "role": "lowercase_name",
+      "expected": [
+        "anup"
+      ],
+      "index": [
+        "अनुप",
+        "अनूप"
+      ],
+      "all": [
+        "अनुप",
+        "अनूप"
+      ]
+    },
+    {
+      "input": "rita",
+      "role": "lowercase_name",
+      "expected": [
+        "rita"
+      ],
+      "index": [
+        "रिता",
+        "रीता"
+      ],
+      "all": [
+        "रिता",
+        "रीता"
+      ]
+    },
+    {
+      "input": "kiran",
+      "role": "lowercase_name",
+      "expected": [
+        "kiran"
+      ],
+      "index": [
+        "किरण"
+      ],
+      "all": [
+        "किरण"
+      ]
+    },
+    {
+      "input": "sagar",
+      "role": "lowercase_name",
+      "expected": [
+        "sagar"
+      ],
+      "index": [
+        "सगर",
+        "सागर"
+      ],
+      "all": [
+        "सगर",
+        "सागर"
+      ]
+    },
+    {
+      "input": "hari",
+      "role": "lowercase_name",
+      "expected": [
+        "hari"
+      ],
+      "index": [],
+      "all": [
+        "हरि"
+      ]
+    }
+  ]
+}

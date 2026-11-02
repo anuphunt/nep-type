@@ -1,0 +1,22 @@
+[
+{"split":"probe","input":"aaja beluka meeting cha","expected":"आज बेलुका meeting छ"},
+{"split":"probe","input":"timi office janchau","expected":"तिमी office जान्छौ"},
+{"split":"probe","input":"mero laptop ko screen ramro cha","expected":"मेरो laptop को screen राम्रो छ"},
+{"split":"probe","input":"please yo document send gara","expected":"please यो document send गर"},
+{"split":"probe","input":"yo photo save gara","expected":"यो photo save गर"},
+{"split":"probe","input":"usko ghar kata cha","expected":"उसको घर कहाँ छ"},
+{"split":"probe","input":"hami pani khanchau","expected":"हामी पानी खान्छौँ"},
+{"split":"probe","input":"timi pani aau","expected":"तिमी पनि आऊ"},
+{"split":"probe","input":"ma bholi ghar janchu","expected":"म भोलि घर जान्छु"},
+{"split":"probe","input":"the man works here","expected":"the man works here"},
+{"split":"probe","input":"usko man ramro cha","expected":"उसको मन राम्रो छ"},
+{"split":"probe","input":"yo website open gara","expected":"यो website open गर"},
+{"split":"probe","input":"malai tea chaiyo","expected":"मलाई tea चाहियो"},
+{"split":"probe","input":"hello tapai sanchai hunuhuncha","expected":"hello तपाईँ सन्चै हुनुहुन्छ"},
+{"split":"probe","input":"yo naya project ho","expected":"यो नयाँ project हो"},
+{"split":"probe","input":"bihana office gaye","expected":"बिहान office गएँ"},
+{"split":"probe","input":"maile message pathaye","expected":"मैले message पठाएँ"},
+{"split":"probe","input":"maile file save gare","expected":"मैले file save गरेँ"},
+{"split":"probe","input":"hijo basketball khele","expected":"हिजो basketball खेलेँ"},
+{"split":"probe","input":"mero naam sita ho","expected":"मेरो नाम sita हो"}
+]

@@ -1,0 +1,4738 @@
+{
+  "annotated_tokens": {
+    "ambiguity": {
+      "english_android_baseline_available": 13,
+      "english_android_candidate_available": 13,
+      "english_android_raw_default": 13,
+      "english_candidate_list_changed": 5,
+      "english_swift_available": 13,
+      "english_swift_top": 13,
+      "english_total": 13,
+      "nepali_android_baseline_available": 27,
+      "nepali_android_candidate_available": 28,
+      "nepali_android_raw_default": 0,
+      "nepali_candidate_list_changed": 1,
+      "nepali_swift_available": 28,
+      "nepali_swift_top": 22,
+      "nepali_total": 28
+    },
+    "english": {
+      "english_android_baseline_available": 38,
+      "english_android_candidate_available": 38,
+      "english_android_raw_default": 38,
+      "english_candidate_list_changed": 28,
+      "english_swift_available": 38,
+      "english_swift_top": 38,
+      "english_total": 38
+    },
+    "literal": {
+      "english_android_baseline_available": 20,
+      "english_android_candidate_available": 20,
+      "english_android_raw_default": 20,
+      "english_candidate_list_changed": 9,
+      "english_swift_available": 20,
+      "english_swift_top": 20,
+      "english_total": 20,
+      "literal_android_raw_preserved": 11,
+      "literal_swift_preserved": 11,
+      "literal_total": 11,
+      "nepali_android_baseline_available": 8,
+      "nepali_android_candidate_available": 8,
+      "nepali_android_raw_default": 0,
+      "nepali_candidate_list_changed": 0,
+      "nepali_swift_available": 8,
+      "nepali_swift_top": 6,
+      "nepali_total": 8
+    },
+    "mixed": {
+      "english_android_baseline_available": 26,
+      "english_android_candidate_available": 26,
+      "english_android_raw_default": 26,
+      "english_candidate_list_changed": 19,
+      "english_swift_available": 26,
+      "english_swift_top": 25,
+      "english_total": 26,
+      "nepali_android_baseline_available": 31,
+      "nepali_android_candidate_available": 31,
+      "nepali_android_raw_default": 0,
+      "nepali_candidate_list_changed": 2,
+      "nepali_swift_available": 31,
+      "nepali_swift_top": 22,
+      "nepali_total": 33
+    },
+    "nepali": {
+      "nepali_android_baseline_available": 45,
+      "nepali_android_candidate_available": 48,
+      "nepali_android_raw_default": 0,
+      "nepali_candidate_list_changed": 6,
+      "nepali_swift_available": 48,
+      "nepali_swift_top": 39,
+      "nepali_total": 53
+    }
+  },
+  "cases": [
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B001",
+      "category": "english",
+      "expected": [
+        "Please"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Please",
+      "swift_top_correct": true,
+      "token": "Please"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ब्लुए"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B001",
+      "category": "english",
+      "expected": [
+        "blue"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "blue",
+      "swift_top_correct": true,
+      "token": "blue"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "फोल्डर"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फोल्डर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B001",
+      "category": "english",
+      "expected": [
+        "folder"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "folder",
+      "swift_top_correct": true,
+      "token": "folder"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "तोमोर्रोव"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B001",
+      "category": "english",
+      "expected": [
+        "tomorrow"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "tomorrow",
+      "swift_top_correct": true,
+      "token": "tomorrow"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बुस"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बुस"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B002",
+      "category": "english",
+      "expected": [
+        "bus"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "bus",
+      "swift_top_correct": true,
+      "token": "bus"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "अर्रिवेद"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B002",
+      "category": "english",
+      "expected": [
+        "arrived"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "arrived",
+      "swift_top_correct": true,
+      "token": "arrived"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "लन्च"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लन्च"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B002",
+      "category": "english",
+      "expected": [
+        "lunch"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "lunch",
+      "swift_top_correct": true,
+      "token": "lunch"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लेफ्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B003",
+      "category": "english",
+      "expected": [
+        "left"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "left",
+      "swift_top_correct": true,
+      "token": "left"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "अम्ब्रेला"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "अम्ब्रेला"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B003",
+      "category": "english",
+      "expected": [
+        "umbrella"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "umbrella",
+      "swift_top_correct": true,
+      "token": "umbrella"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "दूर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B003",
+      "category": "english",
+      "expected": [
+        "door"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "door",
+      "swift_top_correct": true,
+      "token": "door"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लित्त्ले"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B004",
+      "category": "english",
+      "expected": [
+        "little"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "little",
+      "swift_top_correct": true,
+      "token": "little"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बिर्द"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B004",
+      "category": "english",
+      "expected": [
+        "bird"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "bird",
+      "swift_top_correct": true,
+      "token": "bird"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सिङिङ"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B004",
+      "category": "english",
+      "expected": [
+        "singing"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "singing",
+      "swift_top_correct": true,
+      "token": "singing"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आउटसाइड"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आउटसाइड"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B004",
+      "category": "english",
+      "expected": [
+        "outside"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "outside",
+      "swift_top_correct": true,
+      "token": "outside"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चेच्क"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B005",
+      "category": "english",
+      "expected": [
+        "check"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "check",
+      "swift_top_correct": true,
+      "token": "check"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "वेअथेर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B005",
+      "category": "english",
+      "expected": [
+        "weather"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "weather",
+      "swift_top_correct": true,
+      "token": "weather"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फिर्स्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B005",
+      "category": "english",
+      "expected": [
+        "first"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "first",
+      "swift_top_correct": true,
+      "token": "first"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "सेन्ड"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सेन्ड"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B006",
+      "category": "english",
+      "expected": [
+        "send"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "send",
+      "swift_top_correct": true,
+      "token": "send"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फिनल"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B006",
+      "category": "english",
+      "expected": [
+        "final"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "final",
+      "swift_top_correct": true,
+      "token": "final"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "रेपोर्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B006",
+      "category": "english",
+      "expected": [
+        "report"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "report",
+      "swift_top_correct": true,
+      "token": "report"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "तोनिघ्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B006",
+      "category": "english",
+      "expected": [
+        "tonight"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "tonight",
+      "swift_top_correct": true,
+      "token": "tonight"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "चिल्ड्रेन"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चिल्ड्रेन"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B007",
+      "category": "english",
+      "expected": [
+        "children"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "children",
+      "swift_top_correct": true,
+      "token": "children"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "वल्केद"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B007",
+      "category": "english",
+      "expected": [
+        "walked"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "walked",
+      "swift_top_correct": true,
+      "token": "walked"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "होमे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B007",
+      "category": "english",
+      "expected": [
+        "home"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "home",
+      "swift_top_correct": true,
+      "token": "home"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "तोगेथेर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B007",
+      "category": "english",
+      "expected": [
+        "together"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "together",
+      "swift_top_correct": true,
+      "token": "together"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सिस्तेर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B008",
+      "category": "english",
+      "expected": [
+        "sister"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "sister",
+      "swift_top_correct": true,
+      "token": "sister"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फ्रेश"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B008",
+      "category": "english",
+      "expected": [
+        "fresh"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "fresh",
+      "swift_top_correct": true,
+      "token": "fresh"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ओरङे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B008",
+      "category": "english",
+      "expected": [
+        "orange"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "orange",
+      "swift_top_correct": true,
+      "token": "orange"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "जुइचे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B008",
+      "category": "english",
+      "expected": [
+        "juice"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "juice",
+      "swift_top_correct": true,
+      "token": "juice"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "प्लचे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B009",
+      "category": "english",
+      "expected": [
+        "place"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "place",
+      "swift_top_correct": true,
+      "token": "place"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "कुइएत"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B009",
+      "category": "english",
+      "expected": [
+        "quiet"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "quiet",
+      "swift_top_correct": true,
+      "token": "quiet"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "वार्म"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "वार्म"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B009",
+      "category": "english",
+      "expected": [
+        "warm"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "warm",
+      "swift_top_correct": true,
+      "token": "warm"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "त्रैन"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B010",
+      "category": "english",
+      "expected": [
+        "train"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "train",
+      "swift_top_correct": true,
+      "token": "train"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लते"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B010",
+      "category": "english",
+      "expected": [
+        "late"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "late",
+      "swift_top_correct": true,
+      "token": "late"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "राइन",
+        "रैन"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "राइन",
+        "रैन"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B010",
+      "category": "english",
+      "expected": [
+        "rain"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "rain",
+      "swift_top_correct": true,
+      "token": "rain"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मीत"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B011",
+      "category": "english",
+      "expected": [
+        "meet"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "meet",
+      "swift_top_correct": true,
+      "token": "meet"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "नेअर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B011",
+      "category": "english",
+      "expected": [
+        "near"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "near",
+      "swift_top_correct": true,
+      "token": "near"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लिब्रर्य"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B011",
+      "category": "english",
+      "expected": [
+        "library"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "library",
+      "swift_top_correct": true,
+      "token": "library"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B012",
+      "category": "nepali",
+      "expected": [
+        "आज"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आज",
+      "swift_top_correct": true,
+      "token": "aaja"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "घरमा",
+        "घर्म"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "घरमा",
+        "घर्म"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B012",
+      "category": "nepali",
+      "expected": [
+        "घरमा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "घरमा",
+      "swift_top_correct": true,
+      "token": "gharma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छन्",
+        "छान"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छन्",
+        "छान"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B012",
+      "category": "nepali",
+      "expected": [
+        "छन्"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छन्",
+      "swift_top_correct": true,
+      "token": "chan"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "भोलि"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "भोलि"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B013",
+      "category": "nepali",
+      "expected": [
+        "भोलि"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "भोलि",
+      "swift_top_correct": true,
+      "token": "bholi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बिहान",
+        "बिहाना"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बिहान",
+        "बिहाना"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B013",
+      "category": "nepali",
+      "expected": [
+        "बिहान"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "बिहान",
+      "swift_top_correct": true,
+      "token": "bihana"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "चदै"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B013",
+      "category": "nepali",
+      "expected": [
+        "चाँडै",
+        "चाँडो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "चदै",
+      "swift_top_correct": false,
+      "token": "chadai"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "उथ्नु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B013",
+      "category": "nepali",
+      "expected": [
+        "उठ्नु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "उथ्नु",
+      "swift_top_correct": false,
+      "token": "uthnu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पर्छ",
+        "पर्चा",
+        "पार्छ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पर्छ",
+        "पर्चा",
+        "पार्छ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B013",
+      "category": "nepali",
+      "expected": [
+        "पर्छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पर्छ",
+      "swift_top_correct": true,
+      "token": "parcha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "यो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "यो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B014",
+      "category": "nepali",
+      "expected": [
+        "यो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "यो",
+      "swift_top_correct": true,
+      "token": "yo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "किताब"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "किताब"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B014",
+      "category": "nepali",
+      "expected": [
+        "किताब"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "किताब",
+      "swift_top_correct": true,
+      "token": "kitab"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "कसले",
+        "कासले"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "कसले",
+        "कासले"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B014",
+      "category": "nepali",
+      "expected": [
+        "कसले"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "कसले",
+      "swift_top_correct": true,
+      "token": "kasle"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "ल्यायो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ल्यायो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B014",
+      "category": "nepali",
+      "expected": [
+        "ल्यायो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "ल्ययो",
+      "swift_top_correct": false,
+      "token": "lyayo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मेरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मेरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B015",
+      "category": "nepali",
+      "expected": [
+        "मेरो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मेरो",
+      "swift_top_correct": true,
+      "token": "mero"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "साथी",
+        "साठी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "साथी",
+        "साठी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B015",
+      "category": "nepali",
+      "expected": [
+        "साथी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "साथी",
+      "swift_top_correct": true,
+      "token": "sathi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "अहिले",
+        "अहीले",
+        "आहिले",
+        "आहीले"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "अहिले",
+        "अहीले",
+        "आहिले",
+        "आहीले"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B015",
+      "category": "nepali",
+      "expected": [
+        "अहिले"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "अहिले",
+      "swift_top_correct": true,
+      "token": "ahile"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "घरमा",
+        "घर्म"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "घरमा",
+        "घर्म"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B015",
+      "category": "nepali",
+      "expected": [
+        "घरमा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "घरमा",
+      "swift_top_correct": true,
+      "token": "gharma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B015",
+      "category": "nepali",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हामी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हामी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B016",
+      "category": "nepali",
+      "expected": [
+        "हामी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "हामी",
+      "swift_top_correct": true,
+      "token": "hami"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बेलुका"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बेलुका"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B016",
+      "category": "nepali",
+      "expected": [
+        "बेलुका"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "बेलुका",
+      "swift_top_correct": true,
+      "token": "beluka"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "सँगै"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सँगै"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B016",
+      "category": "nepali",
+      "expected": [
+        "सँगै"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "सँगै",
+      "swift_top_correct": true,
+      "token": "sangai"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "खाना",
+        "कहन",
+        "खन",
+        "खान"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "खाना",
+        "कहन",
+        "खन",
+        "खान"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B016",
+      "category": "nepali",
+      "expected": [
+        "खाना"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "खाना",
+      "swift_top_correct": true,
+      "token": "khana"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [
+        "खान्चौ",
+        "खान्छौ"
+      ],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "खान्चौ",
+        "खान्छौ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B016",
+      "category": "nepali",
+      "expected": [
+        "खान्छौँ",
+        "खान्छौं"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "खान्चौ",
+      "swift_top_correct": false,
+      "token": "khanchau"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "तिमीलाई",
+        "टिमीलाई",
+        "तिमिलाई"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "तिमीलाई",
+        "टिमीलाई",
+        "तिमिलाई"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B017",
+      "category": "nepali",
+      "expected": [
+        "तिमीलाई"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "तिमीलाई",
+      "swift_top_correct": true,
+      "token": "timilai"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "कुन"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "कुन"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B017",
+      "category": "nepali",
+      "expected": [
+        "कुन"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "kun",
+      "swift_top_correct": false,
+      "token": "kun"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "रङ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "रङ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B017",
+      "category": "nepali",
+      "expected": [
+        "रङ",
+        "रंग"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "rang",
+      "swift_top_correct": false,
+      "token": "rang"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B017",
+      "category": "nepali",
+      "expected": [
+        "मन"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मन",
+      "swift_top_correct": true,
+      "token": "man"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पर्छ",
+        "पर्चा",
+        "पार्छ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पर्छ",
+        "पर्चा",
+        "पार्छ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B017",
+      "category": "nepali",
+      "expected": [
+        "पर्छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पर्छ",
+      "swift_top_correct": true,
+      "token": "parcha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आमा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आमा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B018",
+      "category": "nepali",
+      "expected": [
+        "आमा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आमा",
+      "swift_top_correct": true,
+      "token": "aama"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "ले"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ले"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B018",
+      "category": "nepali",
+      "expected": [
+        "ले"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "ले",
+      "swift_top_correct": true,
+      "token": "le"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मिठो",
+        "मीठो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मिठो",
+        "मीठो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B018",
+      "category": "nepali",
+      "expected": [
+        "मिठो",
+        "मीठो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मिठो",
+      "swift_top_correct": true,
+      "token": "mitho"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "चिया",
+        "छिया"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चिया",
+        "छिया"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B018",
+      "category": "nepali",
+      "expected": [
+        "चिया"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "चिया",
+      "swift_top_correct": true,
+      "token": "chiya"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बनाउनु"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बनाउनु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B018",
+      "category": "nepali",
+      "expected": [
+        "बनाउनु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "बनाउनु",
+      "swift_top_correct": true,
+      "token": "banaunu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "भयो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "भयो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B018",
+      "category": "nepali",
+      "expected": [
+        "भयो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "भयो",
+      "swift_top_correct": true,
+      "token": "bhayo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पनि",
+        "पानी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पनि",
+        "पानी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B019",
+      "category": "nepali",
+      "expected": [
+        "पानी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पनि",
+      "swift_top_correct": false,
+      "token": "pani"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "परेपचि"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B019",
+      "category": "nepali",
+      "expected": [
+        "परेपछि"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "परेपचि",
+      "swift_top_correct": false,
+      "token": "parepachi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बाटो",
+        "बातो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बाटो",
+        "बातो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B019",
+      "category": "nepali",
+      "expected": [
+        "बाटो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "बतो",
+      "swift_top_correct": false,
+      "token": "bato"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चिप्लो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B019",
+      "category": "nepali",
+      "expected": [
+        "चिप्लो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "चिप्लो",
+      "swift_top_correct": true,
+      "token": "chiplo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हुन्छ",
+        "हुँचा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हुन्छ",
+        "हुँचा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B019",
+      "category": "nepali",
+      "expected": [
+        "हुन्छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "हुन्छ",
+      "swift_top_correct": true,
+      "token": "huncha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मैले"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मैले"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B020",
+      "category": "nepali",
+      "expected": [
+        "मैले"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "maile",
+      "swift_top_correct": false,
+      "token": "maile"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हिजो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हिजो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B020",
+      "category": "nepali",
+      "expected": [
+        "हिजो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "हिजो",
+      "swift_top_correct": true,
+      "token": "hijo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "त्यो",
+        "ट्यो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "त्यो",
+        "ट्यो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B020",
+      "category": "nepali",
+      "expected": [
+        "त्यो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "त्यो",
+      "swift_top_correct": true,
+      "token": "tyo"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गीत"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B020",
+      "category": "nepali",
+      "expected": [
+        "गीत"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "गीत",
+      "swift_top_correct": true,
+      "token": "geet"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "सुने"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सुने"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B020",
+      "category": "nepali",
+      "expected": [
+        "सुनेँ",
+        "सुने"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "सुने",
+      "swift_top_correct": true,
+      "token": "sune"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "धेरै",
+        "ढेरै"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "धेरै",
+        "ढेरै"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B021",
+      "category": "nepali",
+      "expected": [
+        "धेरै"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "धेरै",
+      "swift_top_correct": true,
+      "token": "dherai"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "दिन",
+        "डिन",
+        "दीन"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "दिन",
+        "डिन",
+        "दीन"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B021",
+      "category": "nepali",
+      "expected": [
+        "दिन"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "दिन",
+      "swift_top_correct": true,
+      "token": "din"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पछि"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पछि"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B021",
+      "category": "nepali",
+      "expected": [
+        "पछि"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पछि",
+      "swift_top_correct": true,
+      "token": "pachi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "रमाइलो",
+        "रमाईलो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "रमाइलो",
+        "रमाईलो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B021",
+      "category": "nepali",
+      "expected": [
+        "रमाइलो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "रमैलो",
+      "swift_top_correct": false,
+      "token": "ramailo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "लाग्यो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लाग्यो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B021",
+      "category": "nepali",
+      "expected": [
+        "लाग्यो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "लाग्यो",
+      "swift_top_correct": true,
+      "token": "lagyo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "कृपया"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "कृपया"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B022",
+      "category": "nepali",
+      "expected": [
+        "कृपया"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "कृपया",
+      "swift_top_correct": true,
+      "token": "kripaya"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "ढोका",
+        "धोका"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ढोका",
+        "धोका"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B022",
+      "category": "nepali",
+      "expected": [
+        "ढोका"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "धोक",
+      "swift_top_correct": false,
+      "token": "dhoka"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [
+        "बिस्तारी"
+      ],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "बिस्तारी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B022",
+      "category": "nepali",
+      "expected": [
+        "बिस्तारै",
+        "बिस्तरी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "बिस्तारी",
+      "swift_top_correct": false,
+      "token": "bistari"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बन्द",
+        "बन्दा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बन्द",
+        "बन्दा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B022",
+      "category": "nepali",
+      "expected": [
+        "बन्द"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "banda",
+      "swift_top_correct": false,
+      "token": "banda"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गर्नुस"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B022",
+      "category": "nepali",
+      "expected": [
+        "गर्नुस्",
+        "गर्नुस"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "गर्नुस",
+      "swift_top_correct": true,
+      "token": "garnus"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B023",
+      "category": "mixed",
+      "expected": [
+        "आज"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आज",
+      "swift_top_correct": true,
+      "token": "aaja"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मीतिङ"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B023",
+      "category": "mixed",
+      "expected": [
+        "meeting"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "meeting",
+      "swift_top_correct": true,
+      "token": "meeting"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "सकिएपचि"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B023",
+      "category": "mixed",
+      "expected": [
+        "सकिएपछि"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "सकिएपचि",
+      "swift_top_correct": false,
+      "token": "sakiepachi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चल्ल"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B023",
+      "category": "mixed",
+      "expected": [
+        "call"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "call",
+      "swift_top_correct": true,
+      "token": "call"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "गर",
+        "गरा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गर",
+        "गरा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B023",
+      "category": "mixed",
+      "expected": [
+        "गर"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "gara",
+      "swift_top_correct": false,
+      "token": "gara"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मेरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मेरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B024",
+      "category": "mixed",
+      "expected": [
+        "मेरो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मेरो",
+      "swift_top_correct": true,
+      "token": "mero"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "ल्यापटप",
+        "ल्यापटाप",
+        "ल्याप्टप"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ल्यापटप",
+        "ल्यापटाप",
+        "ल्याप्टप"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B024",
+      "category": "mixed",
+      "expected": [
+        "laptop"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "laptop",
+      "swift_top_correct": true,
+      "token": "laptop"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "को"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "को"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B024",
+      "category": "mixed",
+      "expected": [
+        "को"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "को",
+      "swift_top_correct": true,
+      "token": "ko"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चर्गेर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B024",
+      "category": "mixed",
+      "expected": [
+        "charger"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "charger",
+      "swift_top_correct": true,
+      "token": "charger"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "कता",
+        "काता"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "कता",
+        "काता"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B024",
+      "category": "mixed",
+      "expected": [
+        "कहाँ",
+        "कता"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "कत",
+      "swift_top_correct": false,
+      "token": "kata"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B024",
+      "category": "mixed",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "यो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "यो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B025",
+      "category": "mixed",
+      "expected": [
+        "यो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "यो",
+      "swift_top_correct": true,
+      "token": "yo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फिले"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B025",
+      "category": "mixed",
+      "expected": [
+        "file"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "file",
+      "swift_top_correct": true,
+      "token": "file"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "एमैल"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B025",
+      "category": "mixed",
+      "expected": [
+        "email"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "email",
+      "swift_top_correct": true,
+      "token": "email"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B025",
+      "category": "mixed",
+      "expected": [
+        "मा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": false,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पठाइदेउ",
+        "पठाइदेऊ",
+        "पठाईदेउ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पठाइदेउ",
+        "पठाइदेऊ",
+        "पठाईदेउ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B025",
+      "category": "mixed",
+      "expected": [
+        "पठाइदेऊ",
+        "पठाइदेउ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पथैदेउ",
+      "swift_top_correct": false,
+      "token": "pathaideu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हामी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हामी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B026",
+      "category": "mixed",
+      "expected": [
+        "हामी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "हामी",
+      "swift_top_correct": true,
+      "token": "hami"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B026",
+      "category": "mixed",
+      "expected": [
+        "Sunday"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Sunday",
+      "swift_top_correct": true,
+      "token": "Sunday"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "परक",
+        "पार्क"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "परक",
+        "पार्क"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B026",
+      "category": "mixed",
+      "expected": [
+        "park"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "park",
+      "swift_top_correct": true,
+      "token": "park"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B026",
+      "category": "mixed",
+      "expected": [
+        "मा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": false,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "भेटौँ",
+        "भेटौ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "भेटौँ",
+        "भेटौ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B026",
+      "category": "mixed",
+      "expected": [
+        "भेटौँ",
+        "भेटौं"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "भेटौँ",
+      "swift_top_correct": true,
+      "token": "bhetau"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "प्लेअसे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B027",
+      "category": "mixed",
+      "expected": [
+        "please"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "please",
+      "swift_top_correct": true,
+      "token": "please"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मेरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मेरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B027",
+      "category": "mixed",
+      "expected": [
+        "मेरो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मेरो",
+      "swift_top_correct": true,
+      "token": "mero"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "फोटो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फोटो"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B027",
+      "category": "mixed",
+      "expected": [
+        "photo"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "photo",
+      "swift_top_correct": true,
+      "token": "photo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "दोव्न्लोअद"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B027",
+      "category": "mixed",
+      "expected": [
+        "download"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "download",
+      "swift_top_correct": true,
+      "token": "download"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "गर",
+        "गरा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गर",
+        "गरा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B027",
+      "category": "mixed",
+      "expected": [
+        "गर"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "gara",
+      "swift_top_correct": false,
+      "token": "gara"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B028",
+      "category": "mixed",
+      "expected": [
+        "आज"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आज",
+      "swift_top_correct": true,
+      "token": "aaja"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ओफ्फिचे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B028",
+      "category": "mixed",
+      "expected": [
+        "office"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "office",
+      "swift_top_correct": true,
+      "token": "office"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बाट",
+        "बाटा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बाट",
+        "बाटा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B028",
+      "category": "mixed",
+      "expected": [
+        "बाट"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "बाट",
+      "swift_top_correct": true,
+      "token": "bata"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लते"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B028",
+      "category": "mixed",
+      "expected": [
+        "late"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "late",
+      "swift_top_correct": true,
+      "token": "late"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आउँछु"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आउँछु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B028",
+      "category": "mixed",
+      "expected": [
+        "आउँछु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आउँछु",
+      "swift_top_correct": true,
+      "token": "aauchu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "तिम्रो",
+        "टिम्रो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "तिम्रो",
+        "टिम्रो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B029",
+      "category": "mixed",
+      "expected": [
+        "तिम्रो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "तिम्रो",
+      "swift_top_correct": true,
+      "token": "timro"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फोने"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B029",
+      "category": "mixed",
+      "expected": [
+        "phone"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "phone",
+      "swift_top_correct": true,
+      "token": "phone"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "को"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "को"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B029",
+      "category": "mixed",
+      "expected": [
+        "को"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "को",
+      "swift_top_correct": true,
+      "token": "ko"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "स्च्रीन"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B029",
+      "category": "mixed",
+      "expected": [
+        "screen"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "screen",
+      "swift_top_correct": true,
+      "token": "screen"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "फुट्यो",
+        "फूट्यो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फुट्यो",
+        "फूट्यो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B029",
+      "category": "mixed",
+      "expected": [
+        "फुट्यो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "फुत्यो",
+      "swift_top_correct": false,
+      "token": "futyo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "प्रोजेच्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B030",
+      "category": "mixed",
+      "expected": [
+        "project"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "project",
+      "swift_top_correct": true,
+      "token": "project"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "को"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "को"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B030",
+      "category": "mixed",
+      "expected": [
+        "को"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "को",
+      "swift_top_correct": true,
+      "token": "ko"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "डेडलाइन",
+        "डेडलाईन"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "डेडलाइन",
+        "डेडलाईन"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B030",
+      "category": "mixed",
+      "expected": [
+        "deadline"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "deadline",
+      "swift_top_correct": true,
+      "token": "deadline"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "नेक्स्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B030",
+      "category": "mixed",
+      "expected": [
+        "next"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "next",
+      "swift_top_correct": true,
+      "token": "next"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "वीक"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B030",
+      "category": "mixed",
+      "expected": [
+        "week"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "week",
+      "swift_top_correct": true,
+      "token": "week"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B030",
+      "category": "mixed",
+      "expected": [
+        "हो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "हो",
+      "swift_top_correct": true,
+      "token": "ho"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मैले"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मैले"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B031",
+      "category": "mixed",
+      "expected": [
+        "मैले"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "maile",
+      "swift_top_correct": false,
+      "token": "maile"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चोफ्फी"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B031",
+      "category": "mixed",
+      "expected": [
+        "coffee"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "coffee",
+      "swift_top_correct": true,
+      "token": "coffee"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ओर्देर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B031",
+      "category": "mixed",
+      "expected": [
+        "order"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "order",
+      "swift_top_correct": true,
+      "token": "order"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "गरेको"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गरेको"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B031",
+      "category": "mixed",
+      "expected": [
+        "गरेको"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "गरेको",
+      "swift_top_correct": true,
+      "token": "gareko"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छु"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B031",
+      "category": "mixed",
+      "expected": [
+        "छु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छु",
+      "swift_top_correct": true,
+      "token": "chu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "भोलि"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "भोलि"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B032",
+      "category": "mixed",
+      "expected": [
+        "भोलि"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "भोलि",
+      "swift_top_correct": true,
+      "token": "bholi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "डेन्टिस्ट"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "डेन्टिस्ट"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B032",
+      "category": "mixed",
+      "expected": [
+        "dentist"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "डेन्टिस्ट",
+      "swift_top_correct": false,
+      "token": "dentist"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "को"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "को"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B032",
+      "category": "mixed",
+      "expected": [
+        "को"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "को",
+      "swift_top_correct": true,
+      "token": "ko"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "अपोइन्टमेन्ट",
+        "अप्वाइण्टमेन्ट",
+        "अप्वाइन्टमेन्ट",
+        "एपोइन्टमेन्ट"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "अपोइन्टमेन्ट",
+        "अप्वाइण्टमेन्ट",
+        "अप्वाइन्टमेन्ट",
+        "एपोइन्टमेन्ट"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B032",
+      "category": "mixed",
+      "expected": [
+        "appointment"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "appointment",
+      "swift_top_correct": true,
+      "token": "appointment"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B032",
+      "category": "mixed",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "यो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "यो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "यो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "यो",
+      "swift_top_correct": true,
+      "token": "yo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "लिन्क"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "link"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "link",
+      "swift_top_correct": true,
+      "token": "link"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चोप्य"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "copy"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "copy",
+      "swift_top_correct": true,
+      "token": "copy"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "गरेर"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गरेर"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "गरेर"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "गरेर",
+      "swift_top_correct": true,
+      "token": "garera"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "ग्रोउप"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "group"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "group",
+      "swift_top_correct": true,
+      "token": "group"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "मा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": false,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": false,
+      "android_candidate_options": [
+        "हल्नु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B033",
+      "category": "mixed",
+      "expected": [
+        "हाल्नु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": false,
+      "swift_top": "हल्नु",
+      "swift_top_correct": false,
+      "token": "halnu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मेरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मेरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B034",
+      "category": "ambiguity",
+      "expected": [
+        "मेरो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मेरो",
+      "swift_top_correct": true,
+      "token": "mero"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B034",
+      "category": "ambiguity",
+      "expected": [
+        "मन"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मन",
+      "swift_top_correct": true,
+      "token": "man"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B034",
+      "category": "ambiguity",
+      "expected": [
+        "आज"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आज",
+      "swift_top_correct": true,
+      "token": "aaja"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "खुसी",
+        "खुशी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "खुसी",
+        "खुशी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B034",
+      "category": "ambiguity",
+      "expected": [
+        "खुसी",
+        "खुशी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "खुसी",
+      "swift_top_correct": true,
+      "token": "khusi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B034",
+      "category": "ambiguity",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B035",
+      "category": "ambiguity",
+      "expected": [
+        "The"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "The",
+      "swift_top_correct": true,
+      "token": "The"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मन",
+        "अमन",
+        "अमान",
+        "मान"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B035",
+      "category": "ambiguity",
+      "expected": [
+        "man"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "man",
+      "swift_top_correct": true,
+      "token": "man"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "फाउण्ड",
+        "फाउन्ड"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फाउण्ड",
+        "फाउन्ड"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B035",
+      "category": "ambiguity",
+      "expected": [
+        "found"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "found",
+      "swift_top_correct": true,
+      "token": "found"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "केय"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B035",
+      "category": "ambiguity",
+      "expected": [
+        "key"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "key",
+      "swift_top_correct": true,
+      "token": "key"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B036",
+      "category": "ambiguity",
+      "expected": [
+        "म"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": true,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "घर",
+        "घार"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "घर",
+        "घार"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B036",
+      "category": "ambiguity",
+      "expected": [
+        "घर"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "घर",
+      "swift_top_correct": true,
+      "token": "ghar"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B036",
+      "category": "ambiguity",
+      "expected": [
+        "मा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": false,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "बस्छु",
+        "बस्चु"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "बस्छु",
+        "बस्चु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B036",
+      "category": "ambiguity",
+      "expected": [
+        "बस्छु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "बस्छु",
+      "swift_top_correct": true,
+      "token": "baschu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B037",
+      "category": "ambiguity",
+      "expected": [
+        "Please"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Please",
+      "swift_top_correct": true,
+      "token": "Please"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गिवे"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B037",
+      "category": "ambiguity",
+      "expected": [
+        "give"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "give",
+      "swift_top_correct": true,
+      "token": "give"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "वतेर"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B037",
+      "category": "ambiguity",
+      "expected": [
+        "water"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "water",
+      "swift_top_correct": true,
+      "token": "water"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मलाई",
+        "मलै"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मलाई",
+        "मलै"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B038",
+      "category": "ambiguity",
+      "expected": [
+        "मलाई"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मलाई",
+      "swift_top_correct": true,
+      "token": "malai"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पनि",
+        "पानी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पनि",
+        "पानी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B038",
+      "category": "ambiguity",
+      "expected": [
+        "पानी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पनि",
+      "swift_top_correct": false,
+      "token": "pani"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "चाहिन्छ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चाहिन्छ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B038",
+      "category": "ambiguity",
+      "expected": [
+        "चाहिन्छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "चाहिन्छ",
+      "swift_top_correct": true,
+      "token": "chahinchha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B039",
+      "category": "ambiguity",
+      "expected": [
+        "म"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": true,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "पनि",
+        "पानी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "पनि",
+        "पानी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B039",
+      "category": "ambiguity",
+      "expected": [
+        "पनि"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "पनि",
+      "swift_top_correct": true,
+      "token": "pani"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "जान्छु",
+        "जान्चु"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "जान्छु",
+        "जान्चु"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B039",
+      "category": "ambiguity",
+      "expected": [
+        "जान्छु"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "जान्छु",
+      "swift_top_correct": true,
+      "token": "janchu"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "आज",
+        "आजा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B040",
+      "category": "ambiguity",
+      "expected": [
+        "आज"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "आज",
+      "swift_top_correct": true,
+      "token": "aaja"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "काम",
+        "कम",
+        "कं",
+        "कम्"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "काम",
+        "कम",
+        "कं",
+        "कम्"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B040",
+      "category": "ambiguity",
+      "expected": [
+        "कम"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "काम",
+      "swift_top_correct": false,
+      "token": "kam"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "समय",
+        "असमय"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "समय",
+        "असमय"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B040",
+      "category": "ambiguity",
+      "expected": [
+        "समय"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "समय",
+      "swift_top_correct": true,
+      "token": "samaya"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B040",
+      "category": "ambiguity",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मेरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मेरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B041",
+      "category": "ambiguity",
+      "expected": [
+        "मेरो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मेरो",
+      "swift_top_correct": true,
+      "token": "mero"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "काम",
+        "कम",
+        "कं",
+        "कम्"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "काम",
+        "कम",
+        "कं",
+        "कम्"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B041",
+      "category": "ambiguity",
+      "expected": [
+        "काम"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "काम",
+      "swift_top_correct": true,
+      "token": "kam"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "सकियो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सकियो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B041",
+      "category": "ambiguity",
+      "expected": [
+        "सकियो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "सकियो",
+      "swift_top_correct": true,
+      "token": "sakiyo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B042",
+      "category": "ambiguity",
+      "expected": [
+        "I"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "I",
+      "swift_top_correct": true,
+      "token": "I"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "विल्ल"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B042",
+      "category": "ambiguity",
+      "expected": [
+        "will"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "will",
+      "swift_top_correct": true,
+      "token": "will"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "चल्ल"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B042",
+      "category": "ambiguity",
+      "expected": [
+        "call"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "call",
+      "swift_top_correct": true,
+      "token": "call"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मोम"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मोम"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B042",
+      "category": "ambiguity",
+      "expected": [
+        "mom"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "mom",
+      "swift_top_correct": true,
+      "token": "mom"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "उसले",
+        "उस्ले"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "उसले",
+        "उस्ले"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B043",
+      "category": "ambiguity",
+      "expected": [
+        "उसले"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "उस्ले",
+      "swift_top_correct": false,
+      "token": "usle"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "राम्रो",
+        "रामरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "राम्रो",
+        "रामरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B043",
+      "category": "ambiguity",
+      "expected": [
+        "राम्रो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "राम्रो",
+      "swift_top_correct": true,
+      "token": "ramro"
+    },
+    {
+      "android_baseline_available": false,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गीत"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B043",
+      "category": "ambiguity",
+      "expected": [
+        "गीत"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "गीत",
+      "swift_top_correct": true,
+      "token": "geet"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "गयो",
+        "गायो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "गयो",
+        "गायो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B043",
+      "category": "ambiguity",
+      "expected": [
+        "गायो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "गयो",
+      "swift_top_correct": false,
+      "token": "gayo"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "क्रिकेट"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "क्रिकेट"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B044",
+      "category": "ambiguity",
+      "expected": [
+        "cricket"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "cricket",
+      "swift_top_correct": true,
+      "token": "cricket"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "खेल्न"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "खेल्न"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B044",
+      "category": "ambiguity",
+      "expected": [
+        "खेल्न"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "खेल्न",
+      "swift_top_correct": true,
+      "token": "khelna"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "परक",
+        "पार्क"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "परक",
+        "पार्क"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B044",
+      "category": "ambiguity",
+      "expected": [
+        "park"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "park",
+      "swift_top_correct": true,
+      "token": "park"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "जान्छौ"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "जान्छौ"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B044",
+      "category": "ambiguity",
+      "expected": [
+        "जान्छौ",
+        "जान्छौँ",
+        "जान्छौं"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "जन्चौ",
+      "swift_top_correct": false,
+      "token": "janchau"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B045",
+      "category": "literal",
+      "expected": [
+        "Visit"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Visit",
+      "swift_top_correct": true,
+      "token": "Visit"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "तोमोर्रोव"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B045",
+      "category": "literal",
+      "expected": [
+        "tomorrow"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "tomorrow",
+      "swift_top_correct": true,
+      "token": "tomorrow"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "सेन्ड"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "सेन्ड"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B046",
+      "category": "literal",
+      "expected": [
+        "Send"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Send",
+      "swift_top_correct": true,
+      "token": "Send"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "एमैल"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B046",
+      "category": "literal",
+      "expected": [
+        "email"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "email",
+      "swift_top_correct": true,
+      "token": "email"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "मेरो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मेरो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B047",
+      "category": "literal",
+      "expected": [
+        "मेरो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "मेरो",
+      "swift_top_correct": true,
+      "token": "mero"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फिले"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B047",
+      "category": "literal",
+      "expected": [
+        "file"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "file",
+      "swift_top_correct": true,
+      "token": "file"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B047",
+      "category": "literal",
+      "expected": [
+        "मा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": false,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B047",
+      "category": "literal",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B048",
+      "category": "literal",
+      "expected": [
+        "Keep"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Keep",
+      "swift_top_correct": true,
+      "token": "Keep"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "व्रित्तेन"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B048",
+      "category": "literal",
+      "expected": [
+        "written"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "written",
+      "swift_top_correct": true,
+      "token": "written"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B049",
+      "category": "literal",
+      "expected": [
+        "Use"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Use",
+      "swift_top_correct": true,
+      "token": "Use"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हेल्प"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हेल्प"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B049",
+      "category": "literal",
+      "expected": [
+        "help"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "help",
+      "swift_top_correct": true,
+      "token": "help"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "नमस्ते"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "नमस्ते"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B050",
+      "category": "literal",
+      "expected": [
+        "नमस्ते"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "नमस्ते",
+      "swift_top_correct": true,
+      "token": "namaste"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "साथी",
+        "साठी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "साथी",
+        "साठी"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B050",
+      "category": "literal",
+      "expected": [
+        "साथी"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "साथी",
+      "swift_top_correct": true,
+      "token": "sathi"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B051",
+      "category": "literal",
+      "expected": [
+        "The"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "The",
+      "swift_top_correct": true,
+      "token": "The"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "फिले"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B051",
+      "category": "literal",
+      "expected": [
+        "file"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "file",
+      "swift_top_correct": true,
+      "token": "file"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "रेडी"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "रेडी"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B051",
+      "category": "literal",
+      "expected": [
+        "ready"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "ready",
+      "swift_top_correct": true,
+      "token": "ready"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B052",
+      "category": "literal",
+      "expected": [
+        "Open"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Open",
+      "swift_top_correct": true,
+      "token": "Open"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "रेस्तर्त"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B052",
+      "category": "literal",
+      "expected": [
+        "restart"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "restart",
+      "swift_top_correct": true,
+      "token": "restart"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "हाम्रो",
+        "हम्रो"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "हाम्रो",
+        "हम्रो"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B053",
+      "category": "literal",
+      "expected": [
+        "हाम्रो"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "हाम्रो",
+      "swift_top_correct": true,
+      "token": "hamro"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "मीतिङ"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B053",
+      "category": "literal",
+      "expected": [
+        "meeting"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "meeting",
+      "swift_top_correct": true,
+      "token": "meeting"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "रूम"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B053",
+      "category": "literal",
+      "expected": [
+        "room"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "room",
+      "swift_top_correct": true,
+      "token": "room"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "म",
+        "मा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "म",
+        "मा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B053",
+      "category": "literal",
+      "expected": [
+        "मा"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "म",
+      "swift_top_correct": false,
+      "token": "ma"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "छ",
+        "च",
+        "छा"
+      ],
+      "android_raw_default_correct": false,
+      "case": "B053",
+      "category": "literal",
+      "expected": [
+        "छ"
+      ],
+      "role": "nepali",
+      "swift_candidate_available": true,
+      "swift_top": "छ",
+      "swift_top_correct": true,
+      "token": "cha"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B054",
+      "category": "literal",
+      "expected": [
+        "Keep"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Keep",
+      "swift_top_correct": true,
+      "token": "Keep"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [
+        "अनचेन्ज्ड"
+      ],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "अनचेन्ज्ड"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B054",
+      "category": "literal",
+      "expected": [
+        "unchanged"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "unchanged",
+      "swift_top_correct": true,
+      "token": "unchanged"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [],
+      "android_raw_default_correct": true,
+      "case": "B055",
+      "category": "literal",
+      "expected": [
+        "Visit"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "Visit",
+      "swift_top_correct": true,
+      "token": "Visit"
+    },
+    {
+      "android_baseline_available": true,
+      "android_baseline_options": [],
+      "android_candidate_available": true,
+      "android_candidate_options": [
+        "नोव"
+      ],
+      "android_raw_default_correct": true,
+      "case": "B055",
+      "category": "literal",
+      "expected": [
+        "now"
+      ],
+      "role": "english",
+      "swift_candidate_available": true,
+      "swift_top": "now",
+      "swift_top_correct": true,
+      "token": "now"
+    }
+  ],
+  "fixture_version": "platform-blind-v1",
+  "method": "Swift contextual pad top/four choices; Android raw default and isolated-token service-style four index options plus original, with optional phonetic fallback; no selection or native host. Swift literal checks may use output containment; Android literal preservation assumes raw default. Selective annotations, unreviewed synthetic references.",
+  "sentences": {
+    "ambiguity": {
+      "android_raw_exact": 3,
+      "swift_exact": 6,
+      "total": 11
+    },
+    "english": {
+      "android_raw_exact": 11,
+      "swift_exact": 11,
+      "total": 11
+    },
+    "literal": {
+      "android_raw_exact": 8,
+      "swift_exact": 9,
+      "total": 11
+    },
+    "mixed": {
+      "android_raw_exact": 0,
+      "swift_exact": 2,
+      "total": 11
+    },
+    "nepali": {
+      "android_raw_exact": 0,
+      "swift_exact": 3,
+      "total": 11
+    }
+  }
+}

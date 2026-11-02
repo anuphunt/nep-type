@@ -1,0 +1,229 @@
+{
+  "cases" : 20,
+  "caveat" : "Previously inspected synthetic corpus, not independent accuracy. Sequential state simulation does not exercise a real host, focus, key events, or candidate UI.",
+  "details" : [
+    {
+      "expected" : [
+        "the man called"
+      ],
+      "id" : "P201",
+      "input" : "the man called",
+      "pad" : "the man called",
+      "pad_exact" : true,
+      "sequential" : "the man called",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "मेरो मन खुसी छ"
+      ],
+      "id" : "P202",
+      "input" : "mero man khusi cha",
+      "pad" : "मेरो मन खुसी छ",
+      "pad_exact" : true,
+      "sequential" : "मेरो मन खुसी छ",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "the football team won"
+      ],
+      "id" : "P203",
+      "input" : "the football team won",
+      "pad" : "the football team won",
+      "pad_exact" : true,
+      "sequential" : "the football team won",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "म फुटबल खेल्छु"
+      ],
+      "id" : "P204",
+      "input" : "ma football khelchu",
+      "pad" : "म फुटबल खेल्छु",
+      "pad_exact" : true,
+      "sequential" : "म फुटबल खेल्छु",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "आज weather राम्रो छ"
+      ],
+      "id" : "P205",
+      "input" : "aaja weather ramro cha",
+      "pad" : "आज weather राम्रो छ",
+      "pad_exact" : true,
+      "sequential" : "आज weather राम्रो छ",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "हामी school जान्छौँ"
+      ],
+      "id" : "P206",
+      "input" : "hami school janchau",
+      "pad" : "हामी school जन्चौ",
+      "pad_exact" : false,
+      "sequential" : "हामी school जन्चौ",
+      "sequential_exact" : false
+    },
+    {
+      "expected" : [
+        "please send the photo"
+      ],
+      "id" : "P207",
+      "input" : "please send the photo",
+      "pad" : "please send the photo",
+      "pad_exact" : true,
+      "sequential" : "please send the photo",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "म coffee खान्छु"
+      ],
+      "id" : "P208",
+      "input" : "ma coffee khanchu",
+      "pad" : "म coffee खान्छु",
+      "pad_exact" : true,
+      "sequential" : "म coffee खान्छु",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "भोलि project meeting छ"
+      ],
+      "id" : "P209",
+      "input" : "bholi project meeting cha",
+      "pad" : "भोलि project meeting छ",
+      "pad_exact" : true,
+      "sequential" : "भोलि project meeting छ",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "तिम्रो laptop राम्रो छ"
+      ],
+      "id" : "P210",
+      "input" : "timro laptop ramro cha",
+      "pad" : "तिम्रो laptop राम्रो छ",
+      "pad_exact" : true,
+      "sequential" : "तिम्रो laptop राम्रो छ",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "मेरो train late छ"
+      ],
+      "id" : "P211",
+      "input" : "mero train late cha",
+      "pad" : "मेरो train late छ",
+      "pad_exact" : true,
+      "sequential" : "मेरो train late छ",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "this is my computer"
+      ],
+      "id" : "P212",
+      "input" : "this is my computer",
+      "pad" : "this is my computer",
+      "pad_exact" : true,
+      "sequential" : "this is my computer",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "आज म घरमा बस्छु"
+      ],
+      "id" : "P213",
+      "input" : "aaja ma gharma baschu",
+      "pad" : "आज म घरमा बस्छु",
+      "pad_exact" : true,
+      "sequential" : "आज म घरमा बस्छु",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "उसको घर सुन्दर छ"
+      ],
+      "id" : "P214",
+      "input" : "usko ghar sundar cha",
+      "pad" : "उस्को घर सुन्दर छ",
+      "pad_exact" : false,
+      "sequential" : "उस्को घर सुन्दर छ",
+      "sequential_exact" : false
+    },
+    {
+      "expected" : [
+        "can you send the link"
+      ],
+      "id" : "P215",
+      "input" : "can you send the link",
+      "pad" : "can you send the link",
+      "pad_exact" : true,
+      "sequential" : "can you send the link",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "मेरो साथी भोलि आउँछु"
+      ],
+      "id" : "P216",
+      "input" : "mero sathi bholi aauchu",
+      "pad" : "मेरो साथी भोलि आउँछु",
+      "pad_exact" : true,
+      "sequential" : "मेरो साथी भोलि आउँछु",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "my phone battery is dead"
+      ],
+      "id" : "P217",
+      "input" : "my phone battery is dead",
+      "pad" : "my phone battery is dead",
+      "pad_exact" : true,
+      "sequential" : "my phone battery is dead",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "म पानी खान्छु"
+      ],
+      "id" : "P218",
+      "input" : "ma pani khanchu",
+      "pad" : "म पनि खान्छु",
+      "pad_exact" : false,
+      "sequential" : "म पनि खान्छु",
+      "sequential_exact" : false
+    },
+    {
+      "expected" : [
+        "म पनि जान्छु"
+      ],
+      "id" : "P219",
+      "input" : "ma pani janchu",
+      "pad" : "म पनि जान्छु",
+      "pad_exact" : true,
+      "sequential" : "म पनि जान्छु",
+      "sequential_exact" : true
+    },
+    {
+      "expected" : [
+        "यो movie धेरै राम्रो छ"
+      ],
+      "id" : "P220",
+      "input" : "yo movie dherai ramro cha",
+      "pad" : "यो movie धेरै राम्रो छ",
+      "pad_exact" : true,
+      "sequential" : "यो movie धेरै राम्रो छ",
+      "sequential_exact" : true
+    }
+  ],
+  "different_outputs" : 0,
+  "pad_exact" : 17,
+  "sequential_exact" : 17
+}
