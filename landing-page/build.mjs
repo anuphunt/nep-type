@@ -22,7 +22,8 @@ const posthogKey = process.env.PUBLIC_POSTHOG_KEY || '';
 const posthogHost = process.env.PUBLIC_POSTHOG_HOST || '';
 if (Boolean(posthogKey) !== Boolean(posthogHost)) throw Error('Set PUBLIC_POSTHOG_KEY and PUBLIC_POSTHOG_HOST together.');
 if (posthogHost && new URL(posthogHost).protocol !== 'https:') throw Error('PUBLIC_POSTHOG_HOST must use HTTPS.');
-const downloadUrl = process.env.APP_DOWNLOAD_URL || '';
+const macRelease = JSON.parse(await readFile(path.join(root, 'mac-release.json'), 'utf8'));
+const downloadUrl = process.env.APP_DOWNLOAD_URL || macRelease.url;
 if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const route = (locale, slug = '') => `${locale === 'ne' ? '/ne' : ''}/${slug ? slug + '/' : ''}`;
@@ -78,7 +79,7 @@ function metadata(locale, slug, title, description) {
       ...(content?.kind === 'article' ? {headline: content.heading, datePublished: content.published, ...(content.modified ? {dateModified:content.modified} : {}), author: {'@type': 'Organization', name: 'NepType', url: origin + '/about/'}} : {})}
   ];
   if (!slug) graph.push({'@type': 'WebApplication', '@id': webappId, name: 'NepType Online Typing Pad', url: canonical(locale, '') + '#try', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript and an initial network connection', isAccessibleForFree: true, description: homeDescriptions[locale], inLanguage: ['en', 'ne'], sameAs: repository});
-  if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository});
+  if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository, ...(downloadUrl ? {downloadUrl, softwareVersion:macRelease.version, softwareRequirements:'macOS 13 or later; Apple silicon or Intel'} : {})});
   if (slug) graph.push({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: [
     {'@type': 'ListItem', position: 1, name: 'NepType', item: canonical(locale, '')},
     ...(slug.startsWith('articles/') ? [{'@type':'ListItem',position:2,name:locale === 'ne' ? 'लेखहरू' : 'Articles',item:canonical(locale,'articles')}] : []),
@@ -136,6 +137,7 @@ function renderArticleList(content, locale) {
 }
 
 function finish(html, locale, slug, title, description) {
+  if (downloadUrl) html = html.replace(/<a\b[^>]*data-mac-download[^>]*>/g, tag => tag.replace(/href="[^"]*"/, `href="${escape(downloadUrl)}"`).replace('neptype_app_cta_clicked','neptype_download_clicked'));
   html = html.replace(/<title>[\s\S]*?<\/title>/, '').replace(/\s*<meta name="description"[^>]*>/, '');
   html = html.replace('<html lang="en"', `<html lang="${locale}"`);
   return html.replace('</head>', metadata(locale, slug, title, description) + '\n</head>');
@@ -184,10 +186,11 @@ for (const locale of ['en', 'ne']) {
     const byline = content.kind === 'article' ? `<p class="article-byline">${locale === 'ne' ? 'लेखन: ' : 'By '}<a href="${route(locale, 'about')}">${locale === 'ne' ? 'NepType परियोजना' : 'NepType project'}</a> · <time datetime="${content.published}">${escape(displayDate(content.published,locale))}</time></p>` : '';
     const related = `<p class="page-tool-link"><a href="${route(locale)}#try">${locale === 'ne' ? 'अनलाइन नेपाली टाइपिङ प्याड खोल्नुहोस्' : 'Open the online Nepali typing pad'} →</a></p>`;
     const linkUrl = slug === 'mac' && downloadUrl ? downloadUrl : repository;
-    const linkText = slug === 'mac' && downloadUrl ? (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस्' : 'Download for Mac') : content.link;
+    const linkText = slug === 'mac' && downloadUrl ? (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस् (.dmg)' : 'Download for Mac (.dmg)') : content.link;
     const linkEvent = slug === 'mac' && downloadUrl ? 'neptype_download_clicked' : 'neptype_source_opened';
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
-    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${sections}${renderArticleList(content,locale)}${related}${linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}" target="_blank" rel="noopener noreferrer">${escape(linkText)}</a></p>` : ''}${privacyControl}</main>`;
+    const pageAction = linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'mac' && downloadUrl ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '';
+    const body = `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${slug === 'mac' ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${slug === 'mac' ? '' : pageAction}${privacyControl}</main>`;
     let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script src="/site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);

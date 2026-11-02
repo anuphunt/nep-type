@@ -45,13 +45,19 @@ Set `PUBLIC_POSTHOG_KEY` and `PUBLIC_POSTHOG_HOST` in Netlify's build environmen
 
 The [NepType website dashboard](https://us.posthog.com/project/329288/dashboard/2290502) uses dedicated `neptype_` events in the existing PostHog project. Automatic pageviews, autocapture, session recording, surveys, and feature-flag requests are disabled. Events include `neptype_pageview`, `neptype_tool_used`, `neptype_tool_output_copied`, `neptype_app_cta_clicked`, and `neptype_source_opened`. Only fixed mode, placement, platform, and entry-method values are attached; typing and output are never captured. Browser identity is stored locally for anonymous unique visitor counts. URL queries and fragments are stripped.
 
-Add `?analytics_test=1` when checking the deployed site; these events are excluded from the dashboard. Counts represent browsers and clicks, not verified installations. Set `APP_DOWNLOAD_URL` to an actual HTTPS installer URL when one is published; only that link emits `neptype_download_clicked`.
+Add `?analytics_test=1` when checking the deployed site; these events are excluded from the dashboard. Counts represent browsers and clicks, not verified installations. `mac-release.json` selects the verified Mac DMG. `APP_DOWNLOAD_URL` can override its HTTPS URL. The homepage download and Mac page button emit `neptype_download_clicked`.
 
 ## SEO and content
 
 The build includes unique titles and descriptions, self-referencing canonical URLs, reciprocal English/Nepali `hreflang` links, social cards, page-specific JSON-LD, and `sitemap.xml`. Homepage markup describes the browser `WebApplication`; the Mac page describes the native `SoftwareApplication`. Supporting pages have breadcrumbs and the bilingual guide has `TechArticle` markup matching its visible project byline and publication date. App markup uses actual product details without invented offers, reviews, or ratings. Search Console verification and sitemap submission require the production site and an authorized Google account.
 
-The Mac page links to source build instructions; there is no public installer linked here. Other platform controls show development status.
+The Mac page offers the signed, notarized universal DMG and drag-to-Applications instructions, with source builds as an alternative. Other platform controls retain development status until a downloadable release is available.
+
+### Mac download releases
+
+Run `bash scripts/package-mac.sh` from the repository root with `NEPTYPE_MAC_SIGNING_IDENTITY` set to an existing Developer ID Application identity and `NEPTYPE_MAC_NOTARY_PROFILE` set to an existing notarytool Keychain profile. `NEPTYPE_MAC_VERSION` and `NEPTYPE_MAC_BUILD` default to 0.1.0 and 1. The script builds both macOS 13 architectures, signs and notarizes the app, creates a DMG with an Applications shortcut, then signs, notarizes, staples and verifies the DMG. It does not create credentials or change Keychain permissions.
+
+Keep signed app staging in the temporary directory, outside synced folders. The release folder under `build/releases/` includes the DMG, checksum, notarization results and release manifest. Check the mounted app and drag/copy installation before publishing the immutable DMG and checksum as GitHub release assets. Re-download and compare the published SHA-256 before changing `mac-release.json`. Installer binaries stay out of Git.
 
 ### Search intent and follow-up measurement
 
