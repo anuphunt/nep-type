@@ -9,6 +9,8 @@ if (pad) {
   const copy = pad.querySelector('#web-copy');
   const mode = pad.querySelector('#web-mode');
   const ne = document.documentElement.lang === 'ne';
+  const mac = /Mac|iPhone|iPad/i.test(navigator.userAgentData?.platform || navigator.platform);
+  const shortcut = number => mac ? `⌥${number}` : `Alt+${number}`;
   const words = {
     ready: ne ? 'तपाईंको लेखाइ यही ब्राउजरमा रहन्छ।' : 'Your text stays in this browser.',
     loading: ne ? 'टाइपिङ तयार हुँदैछ…' : 'Getting the pad ready…',
@@ -40,6 +42,13 @@ if (pad) {
   function activeWord() {
     return rendered.words.find(word => word.start === activeStart && !word.literal);
   }
+  function choose(word, value) {
+    const editor = document.activeElement === output ? output : input;
+    const start = editor.selectionStart, end = editor.selectionEnd;
+    overrides.set(word.start, {word: word.text, value});
+    render(); track('neptype_tool_word_selected');
+    editor.focus({preventScroll: true}); editor.setSelectionRange(start, end);
+  }
   function drawSuggestions() {
     suggestions.replaceChildren();
     const word = activeWord();
@@ -49,15 +58,21 @@ if (pad) {
     }
     const label = document.createElement('span'); label.textContent = word.text;
     label.className = 'suggestion-source'; suggestions.append(label);
-    for (const value of engine.candidates(word.text)) {
+    for (const [index, value] of engine.candidates(word.text).entries()) {
       const button = document.createElement('button');
       button.type = 'button'; button.textContent = value;
       button.setAttribute('aria-pressed', String(value === word.value));
+      if (index < 9) {
+        const hint = document.createElement('kbd'); hint.textContent = shortcut(index + 1);
+        hint.setAttribute('aria-hidden', 'true'); button.append(hint);
+        button.title = `${value} · ${mac ? 'Option' : 'Alt'} + ${index + 1}`;
+        button.setAttribute('aria-label', button.title);
+        button.setAttribute('aria-keyshortcuts', `Alt+${index + 1}`);
+      }
       if (/[\u0900-\u097f]/u.test(value)) button.lang = 'ne';
-      button.addEventListener('click', () => {
-        overrides.set(word.start, {word: word.text, value});
-        render(); track('neptype_tool_word_selected');
-      });
+      // Mouse selection keeps the source caret ready for continued typing.
+      button.addEventListener('mousedown', event => event.preventDefault());
+      button.addEventListener('click', () => choose(word, value));
       suggestions.append(button);
     }
   }
@@ -81,13 +96,24 @@ if (pad) {
   input.addEventListener('focus', () => { load().catch(() => {}); });
   input.addEventListener('input', event => { if (!event.isComposing) update(); });
   input.addEventListener('compositionend', () => update());
+  for (const editor of [input, output]) editor.addEventListener('keydown', event => {
+    // Physical digit codes work on macOS, where Option+2 produces “™”.
+    // Leave IME composition, AltGr, and browser/system combinations untouched.
+    if (event.isComposing || !event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.getModifierState('AltGraph')) return;
+    const match = /^Digit([1-9])$/.exec(event.code);
+    const word = activeWord();
+    if (!match || !word) return;
+    const value = engine.candidates(word.text)[Number(match[1]) - 1];
+    if (value === undefined) return;
+    event.preventDefault(); choose(word, value);
+  });
   for (const event of ['click', 'keyup', 'select']) input.addEventListener(event, () => {
     if (!engine) return;
     const caret = input.selectionStart;
     activeStart = rendered.words.find(word => !word.literal && caret >= word.start && caret <= word.end)?.start ?? null;
     drawSuggestions();
   });
-  output.addEventListener('click', () => {
+  for (const event of ['click', 'keyup', 'select']) output.addEventListener(event, () => {
     activeStart = rendered.words.find(word => !word.literal && output.selectionStart >= word.outputStart && output.selectionStart <= word.outputEnd)?.start ?? null;
     drawSuggestions();
   });

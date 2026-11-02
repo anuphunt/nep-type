@@ -35,7 +35,7 @@ Only production pages, styles, scripts, product images, and the browser dictiona
 
 ## Browser typing pad
 
-The homepages include a working local transliterator with mixed Nepali/English and All Nepali modes, spelling choices, and clipboard copy. Input is held in memory and is never sent to a server. The dictionary is loaded as the pad approaches the viewport; typing then runs locally. Reloading requires a connection.
+The homepages include a working local transliterator with mixed Nepali/English and All Nepali modes, spelling choices, and clipboard copy. Use Option/Alt + the displayed number to choose a spelling while either editor has focus. Input is held in memory and is never sent to a server. The dictionary is loaded as the pad approaches the viewport; typing then runs locally. Reloading requires a connection.
 
 `web-engine.mjs` implements deterministic phonetic/context rules with the authored Nepali lexicon and CMU English membership data. It uses a smaller dictionary than the desktop app, so spelling suggestions can differ. The CMU license is published alongside that data. `web-tool.mjs` handles the editors and word choices. Run `npm --prefix landing-page test` for engine checks.
 
