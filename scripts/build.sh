@@ -29,13 +29,16 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <key>CFBundleDisplayName</key><string>NepType</string>
 <key>CFBundleIconFile</key><string>NepType.icns</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>0.1.0</string>
-<key>CFBundleVersion</key><string>1</string>
+<key>CFBundleShortVersionString</key><string>0.1.1</string>
+<key>CFBundleVersion</key><string>2</string>
 <key>LSMinimumSystemVersion</key><string>13.0</string>
 <key>NSHighResolutionCapable</key><true/>
 <key>NSPrincipalClass</key><string>NSApplication</string>
 </dict></plist>
 PLIST
+bash scripts/build-input-source.sh "$@"
+mkdir -p "$APP/Contents/Resources/Input Methods"
+ditto --noextattr --norsrc "build/NepType Input.app" "$APP/Contents/Resources/Input Methods/NepType Input.app"
 # Copied source assets can carry Finder metadata that invalidates code signing.
 # Remove only that metadata from the generated bundle, not quarantine attributes.
 python3 - "$APP" <<'PY'
@@ -49,6 +52,7 @@ for root,dirs,files in os.walk(sys.argv[1]):
                 subprocess.run(['xattr','-d',name,item],check=True)
 PY
 codesign --force --sign - "$APP"
+codesign --verify --deep --strict "$APP"
 mkdir -p build
 ditto --noextattr --norsrc "$APP" build/NepType.app
 printf '\nBuilt %s\n' "$(pwd)/build/NepType.app"

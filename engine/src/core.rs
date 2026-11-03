@@ -485,8 +485,39 @@ pub struct Composer {
     pub current: Snapshot,
     pub past: Vec<Snapshot>,
     pub future: Vec<Snapshot>,
+    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
+    pub preferred_spellings: HashMap<String, String>,
 }
 impl Composer {
+    pub fn set_preferences(&mut self, values: HashMap<String, String>) {
+        self.preferred_spellings = values
+            .into_iter()
+            .filter(|(roman, value)| {
+                !roman.is_empty()
+                    && roman.len() <= 64
+                    && roman.bytes().all(|c| c.is_ascii_alphabetic())
+                    && value.len() <= 1024
+                    && candidates(roman).contains(value)
+            })
+            .take(256)
+            .map(|(key, value)| (key.to_ascii_lowercase(), value))
+            .collect();
+    }
+    pub fn rendered(&self) -> Rendered {
+        render(
+            &self.current.source,
+            self.current.mode,
+            &self.current.overrides,
+        )
+    }
+    pub fn order_preferences(&self, roman: &str, values: &mut Vec<String>) {
+        if let Some(preferred) = self.preferred_spellings.get(&roman.to_ascii_lowercase()) {
+            if let Some(index) = values.iter().position(|value| value == preferred) {
+                let saved = values.remove(index);
+                values.insert(0, saved);
+            }
+        }
+    }
     fn checkpoint(&mut self) {
         self.past.push(self.current.clone());
         if self.past.len() > 200 {

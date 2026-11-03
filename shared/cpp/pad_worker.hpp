@@ -11,7 +11,7 @@
 namespace neptype {
 /* Serial, coalescing document worker; callbacks must dispatch onto the native UI. */
 class PadWorker {
-    struct Request { uint64_t generation; std::string source, choice; int32_t mode, caret; bool selecting; };
+    struct Request { uint64_t generation; std::string source, choice; int32_t mode, caret; bool selecting; std::string preferences; };
     std::mutex mutex_;
     std::condition_variable ready_;
     std::optional<Request> pending_;
@@ -22,6 +22,7 @@ public:
     PadWorker(std::string library, std::string dictionaries, Deliver deliver) {
         thread_ = std::thread([this, library=std::move(library), dictionaries=std::move(dictionaries), deliver=std::move(deliver)] {
             std::unique_ptr<Engine> engine;
+            std::string previousPreferences;
             try { engine = std::make_unique<Engine>(library, dictionaries); } catch (...) {}
             for (;;) {
                 Request request;
@@ -35,6 +36,10 @@ public:
                 Document result; bool success = false;
                 try {
                     if (engine) {
+                        if (request.preferences != previousPreferences) {
+                            engine->set_preferences(request.preferences);
+                            previousPreferences = request.preferences;
+                        }
                         result = engine->document(request.source, request.mode, request.caret,
                                                   request.selecting ? request.choice.c_str() : nullptr);
                         success = true;
@@ -49,11 +54,11 @@ public:
         ready_.notify_one();
         if (thread_.joinable()) thread_.join();
     }
-    void submit(uint64_t generation, std::string source, int32_t mode, int32_t caret, const char* choice=nullptr) {
+    void submit(uint64_t generation, std::string source, int32_t mode, int32_t caret, const char* choice=nullptr, std::string preferences="{}") {
         {
             std::lock_guard<std::mutex> lock(mutex_);
             if (stopping_) return;
-            pending_ = Request{generation, std::move(source), choice ? choice : "", mode, caret, choice != nullptr};
+            pending_ = Request{generation, std::move(source), choice ? choice : "", mode, caret, choice != nullptr, std::move(preferences)};
         }
         ready_.notify_one();
     }

@@ -15,7 +15,7 @@ final class CandidateChoiceButton: NSButton {
     }
 }
 /// Selectable output with a transient, non-editing hover highlight.
-final class InteractiveOutputTextView: NSTextView {
+final class InteractiveOutputTextView: CandidateShortcutTextView {
     var mappedWords: [RenderedWord] = [] { didSet { updateHover(nil) } }
     var onWordClick: ((RenderedWord) -> Void)?
     private var hoverTracking: NSTrackingArea?
@@ -129,7 +129,7 @@ final class CopyIconButton: NSButton {
 }
 
 @MainActor
-final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NSWindowDelegate, NSSearchFieldDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NSWindowDelegate, NSSearchFieldDelegate, NSMenuItemValidation {
     var window: NSWindow!
     var settingsMode: NSSegmentedControl?
     var modeInfo: NSButton?
@@ -155,7 +155,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     var candidateGeneration = 0
     var status: NSTextField!
     var copyButton: CopyIconButton!
+    var shareButton: NSButton?
     var composer = Composer()
+    var experience = LocalExperience()
+    var draftSave: DispatchWorkItem?
     var active: WordToken?
     var choices: [String] = []
     var refreshing = false
@@ -185,15 +188,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         makeWindow()
         makeStatusMenu()
         // Preview/test runs stay deterministic and do not alter preferences.
-        if CommandLine.arguments.contains("--smoke-test") || CommandLine.arguments.contains("--benchmark-startup") { modePersistence = nil }
+        if CommandLine.arguments.contains("--smoke-test") || CommandLine.arguments.contains("--shortcut-test") || CommandLine.arguments.contains("--benchmark-startup") { modePersistence = nil }
+        if modePersistence == nil { experience = LocalExperience(persistent: false) }
         let startupMode = modePersistence.map { preferredStartupLanguage($0) } ?? .nepali
         composer.setLanguage(startupMode)
-        composer.setSource("namaste! ma office janchu.")
+        composer.setSource("")
+        let restoredDraft = modePersistence != nil && experience.restore(into: &composer)
         refresh(syncInput: true)
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
         window.makeFirstResponder(input)
-        input.setSelectedRange(NSRange(location: 0, length: (input.string as NSString).length))
+        let sourceLength = (input.string as NSString).length
+        input.setSelectedRange(NSRange(location: restoredDraft ? sourceLength : 0, length: restoredDraft ? 0 : sourceLength))
         if CommandLine.arguments.contains("--benchmark-startup") {
             let elapsed = Double(DispatchTime.now().uptimeNanoseconds - appMainStarted) / 1_000_000
             print(String(format: "App main to first window ready: %.3f ms", elapsed))
@@ -203,6 +209,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         if let index = CommandLine.arguments.firstIndex(of: "--smoke-test"), CommandLine.arguments.count > index + 1 {
             let destination = CommandLine.arguments[index + 1]
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { self.smokeTest(destination: destination) }
+        }
+        if let index = CommandLine.arguments.firstIndex(of: "--shortcut-test"), CommandLine.arguments.count > index + 1 {
+            let destination = CommandLine.arguments[index + 1]
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { self.runShortcutTests(destination: destination) }
+        }
+        if modePersistence != nil, !UserDefaults.standard.bool(forKey: "neptypePadGuideSeen") {
+            UserDefaults.standard.set(true, forKey: "neptypePadGuideSeen")
+            DispatchQueue.main.async { self.guideAction(nil) }
         }
     }
 
@@ -283,7 +297,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         // autoresizing document view. Starting at a fixed 650 points adds that
         // width again when Auto Layout sizes the initially empty scroll view.
         let frame = NSRect(x: 0, y: 0, width: scroll.contentSize.width, height: 140)
-        let text: NSTextView = editable ? NSTextView(frame: frame) : InteractiveOutputTextView(frame: frame)
+        let text: CandidateShortcutTextView = editable ? CandidateShortcutTextView(frame: frame) : InteractiveOutputTextView(frame: frame)
+        text.onCandidateShortcut = { [weak self] index in self?.chooseCandidate(at: index) }
         text.isEditable = editable
         text.isSelectable = true
         text.isRichText = false
@@ -402,7 +417,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         info.widthAnchor.constraint(equalToConstant: 24).isActive = true
         info.heightAnchor.constraint(equalToConstant: 28).isActive = true
         modeInfo = info
-        let toolbar = stack([glyph, name, flexible(), mode!, info], vertical: false, spacing: 10)
+        let share = NSButton(image: NSImage(systemSymbolName: "square.and.arrow.up", accessibilityDescription: "Share output") ?? NSImage(), target: self, action: #selector(shareAction(_:)))
+        share.isBordered = false
+        share.contentTintColor = muted
+        share.setAccessibilityLabel("Share output")
+        share.setAccessibilityIdentifier("share-output")
+        share.widthAnchor.constraint(equalToConstant: 28).isActive = true
+        shareButton = share
+        let toolbar = stack([glyph, name, flexible(), mode!, share, info], vertical: false, spacing: 10)
         toolbar.heightAnchor.constraint(equalToConstant: 32).isActive = true
 
         // Settings live behind the help control instead of occupying the pad.
@@ -464,11 +486,28 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         status.lineBreakMode = .byTruncatingTail
         status.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         status.setAccessibilityIdentifier("status")
-        let footer = stack([shield, status!], vertical: false, spacing: 6)
-        footer.heightAnchor.constraint(equalToConstant: 18).isActive = true
-        let main = stack([toolbar, sourcePanel, suggestions, resultPanel, footer], spacing: 11)
+        let setup = button("Keyboard setup", action: #selector(keyboardSetupAction(_:)), id: "keyboard-setup")
+        let more = NSPopUpButton(frame: .zero, pullsDown: true)
+        more.addItem(withTitle: "More")
+        for (title, action) in [("Report a typing problem", #selector(feedbackAction(_:)))] {
+            more.menu?.addItem(withTitle: title, action: action, keyEquivalent: "").target = self
+        }
+        more.setAccessibilityLabel("More")
+        let footer = stack([shield, status!, flexible(), setup, more], vertical: false, spacing: 6)
+        more.widthAnchor.constraint(equalTo: setup.widthAnchor).isActive = true
+        footer.heightAnchor.constraint(greaterThanOrEqualToConstant: 24).isActive = true
+        let setupLink = button("Add NepType to your Mac keyboard", action: #selector(keyboardSetupAction(_:)), id: "keyboard-setup-link")
+        setupLink.isBordered = false
+        setupLink.contentTintColor = muted
+        let setupInfo = NSButton(image: NSImage(systemSymbolName: "info.circle", accessibilityDescription: "How to add NepType to your Mac keyboard") ?? NSImage(), target: self, action: #selector(keyboardSetupAction(_:)))
+        setupInfo.isBordered = false
+        setupInfo.contentTintColor = muted
+        setupInfo.setAccessibilityIdentifier("keyboard-setup-info")
+        let setupBanner = stack([flexible(), setupLink, setupInfo], vertical: false, spacing: 6)
+        setupBanner.heightAnchor.constraint(equalToConstant: 28).isActive = true
+        let main = stack([toolbar, setupBanner, sourcePanel, suggestions, resultPanel, footer], spacing: 11)
         pin(main, inside: root, inset: 16)
-        for view in [toolbar, sourcePanel, suggestions, resultPanel, footer] { view.widthAnchor.constraint(equalTo: main.widthAnchor).isActive = true }
+        for view in [toolbar, setupBanner, sourcePanel, suggestions, resultPanel, footer] { view.widthAnchor.constraint(equalTo: main.widthAnchor).isActive = true }
     }
 
     func makeMenu() {
@@ -511,14 +550,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         nextPage.target = self; nextPage.keyEquivalentModifierMask = [.command, .option]
         for index in 0..<5 {
             let item = typing.addItem(withTitle: "Choose Suggestion \(index + 1)", action: #selector(candidateAction(_:)), keyEquivalent: "\(index + 1)")
-            item.target = self; item.tag = index; item.keyEquivalentModifierMask = [.option]
+            item.target = self; item.tag = index; item.keyEquivalentModifierMask = [.command]
         }
         NSApp.mainMenu = menu
     }
 
     func makeStatusMenu() {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        item.button?.title = "ले"
+        if let url = Bundle.main.url(forResource: "NepTypeMark", withExtension: "png"),
+           let image = NSImage(contentsOf: url) {
+            image.size = NSSize(width: 18, height: 18)
+            image.isTemplate = false
+            item.button?.image = image
+        } else {
+            item.button?.title = "NT"
+        }
         item.button?.setAccessibilityLabel("NepType typing pad")
         let menu = NSMenu()
         let open = menu.addItem(withTitle: "Open typing pad", action: #selector(showPad(_:)), keyEquivalent: "")
@@ -608,10 +654,61 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     @objc func guideAction(_ sender: Any?) {
         let guide = NSAlert()
         guide.messageText = "Get started with NepType"
-        guide.informativeText = "1. Type Romanized Nepali in the typing pad.\n2. Place the cursor in a word and choose a suggestion, or use ⌘⇧O to keep its original spelling.\n3. Copy the result into any app.\n\nChoose Nepali + EN to preserve English words, or All Nepali to write them in Nepali letters. NepType works offline. The system-wide keyboard is not enabled."
+        guide.informativeText = "1. Type Roman Nepali, such as ma office janchu.\n2. Press ⌘1–5 to choose a visible spelling, or ⌘⇧O to keep the Roman word.\n3. Copy or share your Nepali message.\n\nYour draft is saved locally; Clear deletes it. NepType works offline. Keyboard setup offers the experimental Mac input source; host-app compatibility still needs testing."
         guide.addButton(withTitle: "Start typing")
         guide.runModal()
         showPad(nil)
+    }
+
+    @objc func keyboardSetupAction(_ sender: Any?) {
+        let guide = NSAlert()
+        guide.messageText = "Add NepType to your Mac keyboard"
+        guide.informativeText = "1. Click Install Keyboard.\n2. Open Keyboard Settings → Text Input → Edit → +. Select Nepali, then NepType Nepali. If you do not see it, sign out and back in first.\n3. Choose NepType Nepali from the input menu in the menu bar.\n\nTo switch back, choose your usual keyboard from the same menu."
+        guide.addButton(withTitle: "Install Keyboard")
+        guide.addButton(withTitle: "Open Keyboard Settings")
+        guide.addButton(withTitle: "Done")
+        switch guide.runModal() {
+        case .alertFirstButtonReturn:
+            do {
+                guard let resources = Bundle.main.resourceURL else { throw InputMethodInstaller.Failure.invalidBundle }
+                let source = resources.appendingPathComponent("Input Methods/NepType Input.app")
+                let directory = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Input Methods")
+                _ = try InputMethodInstaller.install(source: source, directory: directory)
+                let installed = NSAlert()
+                installed.messageText = "NepType keyboard installed"
+                installed.informativeText = "Now add NepType Nepali in Keyboard Settings → Text Input → Edit → +. If it is not listed, sign out and sign back in first.\n\nTo uninstall later, switch to another input source, remove NepType in Keyboard Settings, then remove NepType Input.app from your Library/Input Methods folder."
+                installed.addButton(withTitle: "Open Keyboard Settings")
+                installed.addButton(withTitle: "Later")
+                if installed.runModal() == .alertFirstButtonReturn { openKeyboardSettings() }
+            } catch {
+                let failure = NSAlert()
+                failure.messageText = "Keyboard installation"
+                failure.informativeText = error.localizedDescription
+                failure.addButton(withTitle: "OK")
+                failure.runModal()
+            }
+        case .alertSecondButtonReturn: openKeyboardSettings()
+        default: break
+        }
+    }
+    private func openKeyboardSettings() {
+        if let url = URL(string: "x-apple.systempreferences:com.apple.Keyboard-Settings.extension") { NSWorkspace.shared.open(url) }
+    }
+    @objc func practiceAction(_ sender: Any?) {
+        showPad(nil)
+        status.stringValue = "Try: ma office janchu · Your draft stays here"
+        window.makeFirstResponder(input)
+    }
+    @objc func shareAction(_ sender: Any?) {
+        guard !composer.output.isEmpty else { return }
+        NSSharingServicePicker(items: [composer.output]).show(relativeTo: copyButton.bounds, of: copyButton, preferredEdge: .minY)
+    }
+    @objc func feedbackAction(_ sender: Any?) {
+        if let url = URL(string: "https://github.com/anuphunt/nep-type/issues/new?template=typing-problem.yml") { NSWorkspace.shared.open(url) }
+    }
+    func applicationWillTerminate(_ notification: Notification) {
+        draftSave?.cancel()
+        if modePersistence != nil { _ = experience.saveDraft(composer.state) }
     }
 
     // NSTextView may retain an emoji fallback font as the typing font after
@@ -704,7 +801,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
             input.string = composer.state.source
             input.setSelectedRange(NSRange(location: min(oldCaret, (input.string as NSString).length), length: 0))
         }
-        let rendered = composer.engine.renderWithMapping(composer.state.source, language: composer.state.language, overrides: composer.state.overrides)
+        let rendered = composer.renderedText
+        if modePersistence != nil {
+            draftSave?.cancel()
+            let snapshot = composer.state, store = experience
+            let task = DispatchWorkItem { _ = store.saveDraft(snapshot) }
+            draftSave = task
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: task)
+        }
         if output.string != rendered.text { copyButton?.resetFeedback() }
         output.string = rendered.text
         output.mappedWords = rendered.words
@@ -723,6 +827,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         statusItem?.button?.toolTip = "NepType typing pad · " + languageName
         statusLanguageItem?.title = "Pad language: " + languageName + " (switch)"
         copyButton.isEnabled = !rendered.text.isEmpty
+        shareButton?.isEnabled = !rendered.text.isEmpty
         refreshing = false
         refreshCandidates()
     }
@@ -748,7 +853,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         candidateTitle.stringValue = (uncertain ? "UNSURE — CHOOSE FOR “" : "SUGGESTIONS FOR “") + word.text.uppercased() + "”"
         candidateRow.setAccessibilityHelp(candidateTitle.stringValue)
         candidateRow.toolTip = candidateTitle.stringValue
-        let all = context.map { composer.engine.contextualCandidates(for: $0) } ?? composer.engine.candidates(for: word.text)
+        let all = composer.orderedCandidates(context.map { composer.engine.contextualCandidates(for: $0) } ?? composer.engine.candidates(for: word.text), for: word.text)
         let alternatives = all.filter { $0 != word.text }
         let pageCount = max(1, (alternatives.count + 3) / 4)
         candidatePage = min(candidatePage, pageCount - 1)
@@ -768,7 +873,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         let automaticAksharantar = composer.engine.usesAksharantarAsDefault(for: word.text) && context?.preferred == composer.engine.candidates(for: word.text).first
         for (index, choice) in choices.enumerated() {
             let marker = aksharantar.contains(choice) || (candidatePage == 0 && index == 0 && automaticAksharantar) ? " †" : (experimental.contains(choice) && choice != word.text ? " ·" : "")
-            let item = CandidateChoiceButton(title: "\(choice)\(marker)  ⌥\(index + 1)", target: self, action: #selector(candidateAction(_:)))
+            let item = CandidateChoiceButton(title: "\(choice)\(marker)  ⌘\(index + 1)", target: self, action: #selector(candidateAction(_:)))
             item.bezelStyle = .rounded; item.controlSize = .large
             item.isBordered = false
             item.wantsLayer = true
@@ -786,10 +891,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
             item.tag = index
             item.contentTintColor = choice == selected ? accent : ink
             let source = marker == " †" ? " · Aksharantar suggestion" : (marker == " ·" ? " · Google suggestion" : "")
-            item.toolTip = (choice == word.text ? "Keep original · Option \(index + 1)" : "Choose \(choice) · Option \(index + 1)") + source
+            item.toolTip = (choice == word.text ? "Keep original · Command \(index + 1)" : "Choose \(choice) · Command \(index + 1)") + source
             item.setAccessibilityLabel(choice == word.text ? "Keep original word \(choice)" : "Choose suggestion \(choice)")
             item.setAccessibilityValue(choice == selected ? "Selected" : "Not selected")
-            item.setAccessibilityHelp((uncertain ? "Spelling uncertain. " : "") + "Option \(index + 1). The choice can be undone.")
+            item.setAccessibilityHelp((uncertain ? "Spelling uncertain. " : "") + "Command \(index + 1). The choice can be undone.")
             candidateRow.addArrangedSubview(item)
             item.widthAnchor.constraint(lessThanOrEqualTo: candidateRow.widthAnchor, multiplier: 0.18).isActive = true
         }
@@ -806,14 +911,41 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
 
     @objc func candidateAction(_ sender: Any) {
         let index = (sender as? NSButton)?.tag ?? (sender as? NSMenuItem)?.tag ?? -1
-        guard !suppressCandidateSuggestions, let word = active, choices.indices.contains(index),
-              composer.engine.activeToken(in: input.string, caret: input.selectedRange().location) == word else { return }
+        guard canChooseCandidate(at: index), let word = active else { return }
         if let button = sender as? CandidateChoiceButton {
             guard button.candidateGeneration == candidateGeneration, button.candidateWord == word,
                   button.candidateValue == choices[index] else { return }
-        } else if !(sender is NSMenuItem) { return }
+        } else if sender is NSMenuItem {
+            guard window.isKeyWindow, NSApp.modalWindow == nil,
+                  window.firstResponder === input || window.firstResponder === output else { return }
+        } else { return }
+        chooseCandidate(at: index)
+    }
+
+    func canChooseCandidate(at index: Int) -> Bool {
+        guard !suppressCandidateSuggestions, composer.state.language != .english,
+              !input.hasMarkedText(), !output.hasMarkedText(), let word = active,
+              choices.indices.contains(index), composer.state.source == input.string,
+              composer.engine.activeToken(in: input.string, caret: input.selectedRange().location) == word,
+              NSMaxRange(input.selectedRange()) <= NSMaxRange(word.range) else { return false }
+        return true
+    }
+
+    func validateMenuItem(_ item: NSMenuItem) -> Bool {
+        guard item.action == #selector(candidateAction(_:)) else { return true }
+        return window.isKeyWindow && NSApp.modalWindow == nil
+            && (window.firstResponder === input || window.firstResponder === output)
+            && canChooseCandidate(at: item.tag)
+    }
+
+    func chooseCandidate(at index: Int) {
+        guard canChooseCandidate(at: index), let word = active else { return }
         let chosen = choices[index]
         composer.choose(chosen, for: word)
+        if modePersistence != nil {
+            experience.remember(word.text, value: chosen, candidates: composer.engine.candidates(for: word.text))
+            composer.setPreferredSpellings(experience.spellings)
+        }
         refresh(syncInput: false)
         status.stringValue = "Chosen: \(chosen) · ⌘Z to undo"
         window.makeFirstResponder(selectedOutputSource == nil ? input : output)
@@ -870,7 +1002,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     @objc func aboutAction(_ sender: Any?) {
         let alert = NSAlert()
         alert.messageText = "NepType"
-        alert.informativeText = "A local Nepali typing prototype. Version 0.1.\n\nUses local word indexes, simple context rules and phonetic fallback. No network requests, accounts, analytics, or global keyboard monitoring.\n\nCompose here and copy into other apps. System-wide input-method integration is not included."
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
+        alert.informativeText = "A local Nepali typing pad. Version \(version).\n\nUses local word indexes, simple context rules and phonetic fallback. No network requests, accounts, analytics, or global keyboard monitoring.\n\nCompose here and copy into other apps. System-wide input-method integration is not included."
         alert.runModal()
     }
 
@@ -888,6 +1021,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         input.setSelectedRange(NSRange(location: (input.string as NSString).length, length: 0))
         textDidChange(Notification(name: NSText.didChangeNotification, object: input))
         check("typing_updates_preview", output.string == "म office जान्छु")
+        shortcutSmokeChecks(check: check)
         check("copy_enabled_for_output", copyButton.isEnabled)
         check("guide_available", NSApp.mainMenu?.items.first?.submenu?.items.contains { $0.action == #selector(guideAction(_:)) } == true)
         toggleLanguage(nil)

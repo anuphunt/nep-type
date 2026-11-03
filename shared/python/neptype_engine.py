@@ -3,6 +3,7 @@ import ctypes as C
 import os
 import sys
 import threading
+import json
 from pathlib import Path
 
 class EngineError(RuntimeError):
@@ -23,6 +24,7 @@ class Engine:
                 "create": (C.c_void_p, [C.c_char_p]), "destroy": (None, [C.c_void_p]),
                 "candidates": (C.c_void_p, [C.c_void_p, C.c_char_p, C.c_int32]),
                 "document": (C.c_void_p, [C.c_void_p, C.c_char_p, C.c_int32, C.c_int32, C.c_char_p]),
+                "set_preferences": (C.c_bool, [C.c_void_p, C.c_char_p]),
             }
             for name, (returns, args) in api.items():
                 function = getattr(self._lib, "neptype_engine_" + name)
@@ -73,6 +75,12 @@ class Engine:
         with self._lock:
             if not self._handle: raise EngineError("Engine is closed")
             return self._read(self._lib.neptype_engine_candidates(self._handle, self._bytes(roman), mode))["candidates"]
+
+    def set_preferences(self, preferences):
+        with self._lock:
+            if not self._handle: raise EngineError("Engine is closed")
+            if not self._lib.neptype_engine_set_preferences(self._handle, self._bytes(json.dumps(preferences))):
+                raise EngineError("Invalid preferences")
 
     def document(self, source, mode=0, caret=None, choice=None):
         if caret is None: caret = len(source.encode("utf-16-le")) // 2

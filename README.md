@@ -45,7 +45,7 @@ The Mac typing pad uses a Graphite palette: Roman input, a horizontal suggestion
 - Use **Copy text** to paste the output into Messages, Notes, a browser, or any other app. **Edit → Copy Original** copies Roman text.
 - Undo and redo cover text edits, candidate choices, clear, and output-mode changes. History lives only in memory, up to 200 changes.
 
-Shortcuts: **⌘⇧Space** switches languages, **⌥1–5** chooses a suggestion, **⌘Z/⌘⇧Z** undo/redo, and **⌘⇧C** copies the output. Native cut/copy/paste/select-all work in the editor.
+Mac pad shortcuts: **⌘⇧Space** switches languages, **⌘1–5** chooses a visible suggestion, **⌘Z/⌘⇧Z** undo/redo, and **⌘⇧C** copies the output. The Windows pad uses **Ctrl+1–3** for its three visible suggestions. Native cut/copy/paste/select-all work in the editor. Website shortcuts remain Option/Alt+number because Command/Ctrl+number switches browser tabs.
 
 ## Scope and limits
 

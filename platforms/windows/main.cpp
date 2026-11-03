@@ -13,6 +13,9 @@
 #include <windows.h>
 #include <commctrl.h>
 #include <richedit.h>
+#include <commdlg.h>
+#include <shellapi.h>
+#include "../../shared/cpp/local_experience.hpp"
 #include <algorithm>
 #include <cstring>
 #include <initializer_list>
@@ -20,6 +23,7 @@
 #include <atomic>
 #include <memory>
 #include "../../shared/cpp/pad_worker.hpp"
+#include "include/pad_candidate_view.hpp"
 
 // Standalone Graphite UI. The dormant TSF service is deliberately not activated.
 namespace {
@@ -41,8 +45,17 @@ std::shared_ptr<std::atomic<bool>> windowAlive;
 uint64_t generation = 0;
 int32_t outputMode = 0;
 HWND suggestions[3]{};
+HWND tools[6]{};
+HWND keyboardSetupLink{}, keyboardSetupInfo{};
+std::unique_ptr<neptype::LocalExperience> local;
+std::string shownToken;
 std::vector<std::string> shownCandidates;
-std::wstring shownSource;
+neptype::PadCandidateView candidateView;
+std::wstring requestedSource;
+DWORD requestedStart = 0, requestedEnd = 0;
+bool sourceComposing = false, resultComposing = false;
+constexpr const wchar_t* suggestionHints[]={L"Choose visible suggestion · Ctrl+1",
+    L"Choose visible suggestion · Ctrl+2",L"Choose visible suggestion · Ctrl+3"};
 std::string utf8(const std::wstring& value) {
     if(value.empty()) return {};
     int n=WideCharToMultiByte(CP_UTF8,WC_ERR_INVALID_CHARS,value.data(),static_cast<int>(value.size()),nullptr,0,nullptr,nullptr);
@@ -74,10 +87,49 @@ void updateDocument(const char* choice=nullptr) {
         auto text=editorText(source);
         DWORD start=0, end=0; SendMessageW(source,EM_GETSEL,reinterpret_cast<WPARAM>(&start),reinterpret_cast<LPARAM>(&end));
         ++generation; copied=false;
+        candidateView.ready=false; shownCandidates.clear();
+        requestedSource=text; requestedStart=start; requestedEnd=end;
         for(auto button:suggestions) EnableWindow(button,FALSE);
         EnableWindow(copyButton,FALSE);
-        worker->submit(generation,utf8(text),outputMode,static_cast<int32_t>(end),choice);
+        worker->submit(generation,utf8(text),outputMode,static_cast<int32_t>(end),choice,local?local->preferences():"{}");
+        SetTimer(GetParent(source),2,400,nullptr);
     } catch(...) { SetWindowTextW(statusLabel,L"Shared engine rejected text"); }
+}
+void chooseCandidate(size_t index) {
+    DWORD start=0, end=0;
+    SendMessageW(source,EM_GETSEL,reinterpret_cast<WPARAM>(&start),reinterpret_cast<LPARAM>(&end));
+    if(sourceComposing || resultComposing || index>=3 || index>=shownCandidates.size()
+        || !IsWindowEnabled(suggestions[index])
+        || !candidateView.matches(generation,editorText(source),start,end)) return;
+    const auto choice=shownCandidates[index]; // updateDocument invalidates the displayed row.
+    if(local) local->save_word(shownToken,choice,shownCandidates);
+    updateDocument(choice.c_str());
+}
+LRESULT CALLBACK EditorProc(HWND editor, UINT message, WPARAM wParam, LPARAM lParam,
+                            UINT_PTR, DWORD_PTR) {
+    bool& composing=editor==source ? sourceComposing : resultComposing;
+    if(message==WM_IME_STARTCOMPOSITION) composing=true;
+    if(message==WM_IME_ENDCOMPOSITION) composing=false;
+    return DefSubclassProc(editor,message,wParam,lParam);
+}
+bool consumeCandidateShortcut(const MSG& message) {
+    if(message.message!=WM_KEYDOWN || (message.hwnd!=source && message.hwnd!=result)
+        || GetFocus()!=message.hwnd || !(GetKeyState(VK_CONTROL)&0x8000)
+        || (GetKeyState(VK_MENU)&0x8000) || (GetKeyState(VK_SHIFT)&0x8000)
+        || (GetKeyState(VK_LWIN)&0x8000) || (GetKeyState(VK_RWIN)&0x8000)) return false;
+    const auto key=message.wParam;
+    const int index=key>='1' && key<='3' ? static_cast<int>(key-'1')
+        : key>=VK_NUMPAD1 && key<=VK_NUMPAD3 ? static_cast<int>(key-VK_NUMPAD1) : -1;
+    if(index<0) return false;
+    // Reserve these pad commands even when unavailable. Do not let Rich Edit
+    // interpret Ctrl+1/2 as paragraph formatting, or repeat a held selection.
+    if(!(message.lParam&(1LL<<30))) chooseCandidate(static_cast<size_t>(index));
+    return true;
+}
+void dispatchPadMessage(HWND window, MSG& message) {
+    if(!consumeCandidateShortcut(message) && !IsDialogMessageW(window,&message)) {
+        TranslateMessage(&message); DispatchMessageW(&message);
+    }
 }
 int px(int value) { return MulDiv(value, dpi, 96); }
 HFONT font(int size, const wchar_t* family) {
@@ -91,20 +143,27 @@ void place(HWND control, int x, int y, int width, int height) {
 void layout(HWND window) {
     RECT client{}; GetClientRect(window,&client);
     const int width = MulDiv(client.right,96,dpi), height = MulDiv(client.bottom,96,dpi);
-    sourceRect = {px(16),px(60),px(width-16),px(168)};
-    resultRect = {px(16),px(226),px(width-16),px(height-46)};
-    place(sourceLabel,28,60,width-110,36);
-    place(resultLabel,28,226,width-110,36);
+    sourceRect = {px(16),px(136),px(width-16),px(244)};
+    resultRect = {px(16),px(302),px(width-16),px(height-46)};
+    place(sourceLabel,28,136,width-110,36);
+    place(resultLabel,28,302,width-110,36);
     place(statusLabel,18,height-34,width-34,22);
-    place(source,28,102,width-56,54);
-    place(result,28,268,width-56,std::max(52,height-326));
-    place(clearButton,width-70,62,44,32);
-    place(copyButton,width-66,228,36,32);
-    place(mixedButton,width-215,16,86,28);
-    place(nepaliButton,width-129,16,76,28);
+    place(source,28,178,width-56,54);
+    place(result,28,344,width-56,std::max(52,height-402));
+    place(clearButton,width-70,138,44,32);
+    place(copyButton,width-66,304,36,32);
+    place(mixedButton,width-253,16,86,28);
+    place(nepaliButton,width-167,16,76,28);
+    place(tools[2],width-84,12,30,36);
     place(helpButton,width-46,12,30,36);
     const int suggestionWidth=(width-44)/3;
-    for(int i=0;i<3;++i) place(suggestions[i],16+i*(suggestionWidth+6),180,suggestionWidth,34);
+    for(int i=0;i<3;++i) place(suggestions[i],16+i*(suggestionWidth+6),256,suggestionWidth,34);
+    const int actionWidth=(width-32)/3;
+    place(tools[0],16,54,actionWidth-3,28);
+    place(tools[1],16+actionWidth,54,actionWidth-3,28);
+    place(tools[3],16+2*actionWidth,54,actionWidth-3,28);
+    place(keyboardSetupLink,16,88,width-76,30);
+    place(keyboardSetupInfo,width-50,88,34,30);
     InvalidateRect(window,nullptr,FALSE);
 }
 void text(HDC dc, const wchar_t* value, RECT rect, HFONT type, COLORREF color, UINT align=DT_LEFT) {
@@ -167,6 +226,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         resultLabel=control(window,L"STATIC",L"नेपाली",SS_CENTERIMAGE,109);
         result=control(window,MSFTEDIT_CLASS,L"",WS_TABSTOP|ES_MULTILINE|ES_READONLY|ES_AUTOVSCROLL|WS_VSCROLL,outputID);
         if(!source || !result) return -1;
+        if(!SetWindowSubclass(source,EditorProc,1,0) || !SetWindowSubclass(result,EditorProc,1,0)) return -1;
         configureEditor(source,inputFont); configureEditor(result,outputFont);
         statusLabel=control(window,L"STATIC",L"Loading shared offline engine…",SS_CENTERIMAGE,110);
         for(auto label:{sourceLabel,resultLabel,statusLabel}) SendMessageW(label,WM_SETFONT,reinterpret_cast<WPARAM>(smallFont),TRUE);
@@ -179,7 +239,14 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         for(int i=0;i<3;++i) {
             suggestions[i]=control(window,L"BUTTON",L"",WS_TABSTOP|BS_OWNERDRAW,201+i);
             EnableWindow(suggestions[i],FALSE);
+            addTip(window,suggestions[i],suggestionHints[i]);
         }
+        const wchar_t* titles[]={L"Keyboard setup",L"Try typing",L"↗",L"More",L"",L""};
+        for(int i=0;i<4;++i){tools[i]=control(window,L"BUTTON",titles[i],WS_TABSTOP|BS_PUSHBUTTON,301+i);SendMessageW(tools[i],WM_SETFONT,reinterpret_cast<WPARAM>(smallFont),TRUE);}
+        keyboardSetupLink=control(window,L"BUTTON",L"NepType for your Windows keyboard - setup",WS_TABSTOP|BS_PUSHBUTTON,307);
+        keyboardSetupInfo=control(window,L"BUTTON",L"ⓘ",WS_TABSTOP|BS_PUSHBUTTON,308);
+        SendMessageW(keyboardSetupLink,WM_SETFONT,reinterpret_cast<WPARAM>(smallFont),TRUE);
+        addTip(window,keyboardSetupInfo,L"How to add a keyboard on Windows");
         SendMessageW(source,EM_SETEVENTMASK,0,ENM_CHANGE|ENM_SELCHANGE);
         wchar_t executable[32768]{}; GetModuleFileNameW(nullptr,executable,32768);
         auto directory=std::filesystem::path(executable).parent_path();
@@ -192,13 +259,21 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
                 auto message=new PadMessage{id,std::move(doc),success};
                 if(!PostMessageW(window,engineMessage,0,reinterpret_cast<LPARAM>(message))) delete message;
             });
-        addTip(window,copyButton,L"Copy text"); addTip(window,helpButton,L"About this typing pad");
-        layout(window); SetFocus(source); updateDocument(); return 0;
+        addTip(window,copyButton,L"Copy text"); addTip(window,helpButton,L"About this typing pad"); addTip(window,tools[2],L"Save output to share");
+        wchar_t appData[32768]{};
+        DWORD length=GetEnvironmentVariableW(L"LOCALAPPDATA",appData,32768);
+        local=std::make_unique<neptype::LocalExperience>(length>0&&length<32768?std::filesystem::path(appData)/L"NepType":std::filesystem::path{});
+        outputMode=local->mode;try{SetWindowTextW(source,wide(local->source).c_str());}catch(...){local->source.clear();SetWindowTextW(source,L"");}
+        SendMessageW(source,EM_SETSEL,static_cast<WPARAM>(-1),static_cast<LPARAM>(-1));
+
+        layout(window); SetFocus(source); updateDocument();
+        if(!local->guide_seen)PostMessageW(window,WM_COMMAND,301,0);
+        return 0;
     }
     case WM_SIZE: layout(window); return 0;
     case WM_GETMINMAXINFO: {
         auto info=reinterpret_cast<MINMAXINFO*>(lParam);
-        RECT minimum{0,0,px(520),px(398)};
+        RECT minimum{0,0,px(560),px(490)};
         AdjustWindowRectEx(&minimum,WS_OVERLAPPEDWINDOW,FALSE,0);
         info->ptMinTrackSize={minimum.right-minimum.left,minimum.bottom-minimum.top}; return 0;
     }
@@ -244,11 +319,14 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         if(!reply || reply->generation!=generation) return 0;
         SetWindowTextW(result,reply->success ? wide(reply->document.output).c_str() : L"");
         SetWindowTextW(statusLabel,reply->success ? L"Local · Shared offline engine" : L"Shared engine unavailable · Check library and dictionaries");
-        shownSource=editorText(source);
+        shownToken=reply->document.token;
+        candidateView={reply->generation,requestedSource,requestedStart,requestedEnd,
+            reply->document.start,reply->document.length,reply->success};
         shownCandidates=reply->document.candidates;
         for(int i=0;i<3;++i) {
             bool present=reply->success && i<static_cast<int>(shownCandidates.size());
-            SetWindowTextW(suggestions[i],present ? wide(shownCandidates[i]).c_str() : L"");
+            const auto title=present ? wide(shownCandidates[i])+L"  Ctrl+"+std::to_wstring(i+1) : L"";
+            SetWindowTextW(suggestions[i],title.c_str());
             EnableWindow(suggestions[i],present);
         }
         EnableWindow(copyButton,reply->success && !reply->document.output.empty());
@@ -261,16 +339,36 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         if(LOWORD(wParam)==inputID && HIWORD(wParam)==EN_CHANGE) updateDocument();
         if(LOWORD(wParam)==mixedID) { outputMode=0; InvalidateRect(mixedButton,nullptr,TRUE); InvalidateRect(nepaliButton,nullptr,TRUE); updateDocument(); }
         if(LOWORD(wParam)==nepaliID) { outputMode=2; InvalidateRect(mixedButton,nullptr,TRUE); InvalidateRect(nepaliButton,nullptr,TRUE); updateDocument(); }
-        if(LOWORD(wParam)>=201 && LOWORD(wParam)<=203 && shownSource==editorText(source)) {
-            size_t i=LOWORD(wParam)-201;
-            if(i<shownCandidates.size()) updateDocument(shownCandidates[i].c_str());
-        }
+        if(LOWORD(wParam)>=201 && LOWORD(wParam)<=203) chooseCandidate(LOWORD(wParam)-201);
         if(LOWORD(wParam)==clearID) { SetWindowTextW(source,L""); SetWindowTextW(result,L""); copied=false; EnableWindow(copyButton,FALSE); SetFocus(source); }
         if(LOWORD(wParam)==copyID) copyOutput(window);
-        if(LOWORD(wParam)==helpID) MessageBoxW(window,L"Write Roman letters, choose a Nepali spelling, and copy the result into another app.\n\nThis standalone typing-pad preview uses the shared offline Rust engine. It does not install a system keyboard. Copy any text you want to keep before closing.",L"NepType",MB_OK|MB_ICONINFORMATION);
+        if(LOWORD(wParam)==301 || LOWORD(wParam)==307 || LOWORD(wParam)==308 || LOWORD(wParam)==helpID) {
+            if(local){local->guide_seen=true;local->save();}
+            const int answer=MessageBoxW(window,L"NepType’s Windows system keyboard is still in development. This version can type and copy Nepali in the pad, but cannot yet install NepType for typing in other apps.\n\nIn this pad, Ctrl+1–3 chooses a visible suggestion.\n\nFor installed keyboards:\n1. Open Settings > Time & language > Language & region.\n2. Open Language options for the language, then Keyboards > Add a keyboard.\n3. Press Windows+Space to choose an installed keyboard.\n\nNepType will appear only after a working NepType keyboard installer is released. Adding a built-in Nepali layout does not add NepType’s Roman-to-Nepali conversion.\n\nOpen Windows language settings now?",L"NepType keyboard setup",MB_YESNO|MB_ICONINFORMATION|MB_DEFBUTTON2);
+            if(answer==IDYES) {
+                const auto opened=reinterpret_cast<INT_PTR>(ShellExecuteW(window,L"open",L"ms-settings:regionlanguage",nullptr,nullptr,SW_SHOWNORMAL));
+                if(opened<=32)MessageBoxW(window,L"Open Windows Settings manually, then Time & language > Language & region.",L"Open keyboard settings",MB_OK|MB_ICONINFORMATION);
+            }
+        }
+        if(LOWORD(wParam)==302){SetWindowTextW(statusLabel,L"Try: ma office janchu - Your draft stays here");SetFocus(source);}
+        if(LOWORD(wParam)==304){
+            HMENU menu=CreatePopupMenu();AppendMenuW(menu,MF_STRING,305,L"Report a typing problem");
+            RECT rect{};GetWindowRect(tools[3],&rect);
+            const UINT choice=TrackPopupMenu(menu,TPM_RETURNCMD|TPM_RIGHTALIGN,rect.right,rect.bottom,0,window,nullptr);
+            DestroyMenu(menu);if(choice==305)PostMessageW(window,WM_COMMAND,305,0);
+        }
+        if(LOWORD(wParam)==305)ShellExecuteW(window,L"open",L"https://github.com/anuphunt/nep-type/issues/new?template=typing-problem.yml",nullptr,nullptr,SW_SHOWNORMAL);
+        if(LOWORD(wParam)==303){
+            wchar_t path[32768]=L"NepType.txt";
+            OPENFILENAMEW file{};file.lStructSize=sizeof(file);file.hwndOwner=window;file.lpstrFile=path;file.nMaxFile=32768;file.lpstrFilter=L"Text files\0*.txt\0\0";file.lpstrDefExt=L"txt";file.Flags=OFN_OVERWRITEPROMPT|OFN_PATHMUSTEXIST;
+            if(GetSaveFileNameW(&file)){std::ofstream out(std::filesystem::path(path),std::ios::binary);auto value=utf8(editorText(result));out.write(value.data(),value.size());SetWindowTextW(statusLabel,out?L"Output saved - Share the file from Explorer":L"Output could not be saved");}
+        }
         return 0;
-    case WM_TIMER: copied=false; KillTimer(window,1); InvalidateRect(copyButton,nullptr,TRUE); return 0;
+    case WM_TIMER:
+        if(wParam==2){KillTimer(window,2);if(local){local->source=utf8(editorText(source));local->mode=outputMode;if(!local->save())SetWindowTextW(statusLabel,L"Draft could not be saved - Copy text you need");}return 0;}
+        copied=false; KillTimer(window,1); InvalidateRect(copyButton,nullptr,TRUE); return 0;
     case WM_DESTROY: {
+        if(local){local->source=utf8(editorText(source));local->mode=outputMode;local->save();}
         if(windowAlive) windowAlive->store(false);
         worker.reset();
         MSG pending{};
@@ -282,6 +380,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
     }
 }
 }
+#ifndef NEPTYPE_PAD_SHORTCUT_TEST
 int WINAPI wWinMain(HINSTANCE instance,HINSTANCE,PWSTR,int show) {
     SetProcessDPIAware();
     const auto dc=GetDC(nullptr); dpi=GetDeviceCaps(dc,LOGPIXELSX); ReleaseDC(nullptr,dc);
@@ -295,7 +394,7 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE,PWSTR,int show) {
     type.hbrBackground=backgroundBrush;
     type.hIcon=LoadIconW(instance,MAKEINTRESOURCEW(101));
     if(!RegisterClassW(&type)) return 1;
-    RECT size{0,0,px(620),px(430)}; AdjustWindowRectEx(&size,WS_OVERLAPPEDWINDOW,FALSE,0);
+    RECT size{0,0,px(680),px(500)}; AdjustWindowRectEx(&size,WS_OVERLAPPEDWINDOW,FALSE,0);
     HWND window=CreateWindowExW(0,type.lpszClassName,L"NepType · Typing pad",WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT,CW_USEDEFAULT,size.right-size.left,size.bottom-size.top,nullptr,nullptr,instance,nullptr);
     if(!window) return 1;
@@ -308,8 +407,9 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE,PWSTR,int show) {
     }
     ShowWindow(window,show); UpdateWindow(window);
     MSG message{}; int code=0;
-    while((code=GetMessageW(&message,nullptr,0,0))>0) { if(!IsDialogMessageW(window,&message)) { TranslateMessage(&message); DispatchMessageW(&message); } }
+    while((code=GetMessageW(&message,nullptr,0,0))>0) dispatchPadMessage(window,message);
     for(auto handle:{bodyFont,inputFont,outputFont,smallFont,brandFont}) DeleteObject(handle);
     DeleteObject(backgroundBrush); DeleteObject(surfaceBrush); FreeLibrary(richEdit);
     return code<0?1:static_cast<int>(message.wParam);
 }
+#endif

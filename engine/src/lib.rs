@@ -100,6 +100,9 @@ pub fn dispatch(request: &Value) -> Result<Value, String> {
 }
 // Stateful adapters keep history in Rust. Only the current view crosses the ABI.
 pub fn composer_update(c: &mut Composer, request: &Value) -> Result<Value, String> {
+    if let Some(values) = request.get("preferences") {
+        c.set_preferences(serde_json::from_value(values.clone()).map_err(|e| e.to_string())?);
+    }
     if text(request, "op") == "pad" {
         let source = text(request, "source");
         if source.len() > 1_048_576 {
@@ -131,6 +134,10 @@ pub fn composer_update(c: &mut Composer, request: &Value) -> Result<Value, Strin
                     }
                     "undo" => c.undo(),
                     "redo" => c.redo(),
+                    "preferences" => c.set_preferences(
+                        serde_json::from_value(action["values"].clone())
+                            .map_err(|e| e.to_string())?,
+                    ),
                     _ => return Err("Unknown composer operation".into()),
                 }
             }
@@ -138,8 +145,18 @@ pub fn composer_update(c: &mut Composer, request: &Value) -> Result<Value, Strin
     } else {
         return Err("Unknown composer request".into());
     }
-    let rendered = render(&c.current.source, c.current.mode, &c.current.overrides);
-    let mut value = json!({"state":{"current":c.current},"canUndo":!c.past.is_empty(),"canRedo":!c.future.is_empty(),"rendered":rendered});
+    if let Some(values) = request.get("restoreChoices").and_then(Value::as_object) {
+        let source = c.current.source.clone();
+        for token in tokens(&source).into_iter().filter(|t| !t.literal) {
+            if let Some(value) = values.get(&token.start.to_string()).and_then(Value::as_str) {
+                c.choose(&token, value.into());
+            }
+        }
+    }
+    let mut value = json!({"state":{"current":c.current},"canUndo":!c.past.is_empty(),"canRedo":!c.future.is_empty()});
+    if request["deferRender"].as_bool() != Some(true) {
+        value["rendered"] = json!(c.rendered());
+    }
     if text(request, "op") == "pad" {
         let caret = request["caret"].as_u64().unwrap_or(0) as usize;
         let token = if c.current.mode == 1 {
@@ -147,7 +164,7 @@ pub fn composer_update(c: &mut Composer, request: &Value) -> Result<Value, Strin
         } else {
             active(&c.current.source, caret)
         };
-        let candidates = token
+        let mut candidates = token
             .as_ref()
             .and_then(|token| {
                 context(&c.current.source, c.current.mode)
@@ -156,6 +173,9 @@ pub fn composer_update(c: &mut Composer, request: &Value) -> Result<Value, Strin
             })
             .map(|v| contextual_candidates(&v))
             .unwrap_or_default();
+        if let Some(ref token) = token {
+            c.order_preferences(&token.text, &mut candidates);
+        }
         value["source"] = json!(c.current.source);
         value["mode"] = json!(c.current.mode);
         value["active"] = json!(token);

@@ -1,0 +1,29 @@
+name: Typing problem
+description: Report a spelling, keyboard setup, or typing problem.
+title: "Typing problem: "
+body:
+  - type: markdown
+    attributes:
+      value: "Nothing from your editor is attached automatically. Share only an example you choose; remove names, addresses, and private messages."
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options: [iPhone or iPad, Mac, Android, Windows, Linux, Browser]
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes: {label: App and operating-system version, placeholder: "e.g. NepType 0.1.0, iOS 26"}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What happened?
+      options: [Unexpected spelling, Keyboard setup, Slow or frozen typing, Text changed or missing, Layout or accessibility, Something else]
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes: {label: Steps and expected result, description: "What did you do, and what did you expect?"}
+    validations: {required: true}
+  - type: textarea
+    id: example
+    attributes: {label: Optional example you choose to share, description: "Include Roman input, the result, and your preferred spelling if useful. This issue will be public."}

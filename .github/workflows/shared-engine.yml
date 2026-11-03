@@ -40,6 +40,10 @@ jobs:
       - run: cargo test --locked --release --manifest-path engine/Cargo.toml
       - run: cargo build --locked --release --manifest-path engine/Cargo.toml
       - run: python shared/tests/abi_smoke.py '${{ matrix.library }}'
+      - run: python shared/tests/product_experience.py
+        env:
+          NEPTYPE_ENGINE_LIBRARY: '${{ github.workspace }}/${{ matrix.library }}'
+          NEPTYPE_DICTIONARY_DIR: '${{ github.workspace }}/engine/data'
       - run: python portable-core/tests/conformance.py engine/target/release/neptype-conformance${{ runner.os == 'Windows' && '.exe' || '' }}
       - run: python portable-core/tests/safety_corpus.py engine/target/release/neptype-conformance${{ runner.os == 'Windows' && '.exe' || '' }}
       - if: runner.os == 'macOS'
@@ -47,6 +51,11 @@ jobs:
           JDK_BIN="$JAVA_HOME/bin" bash shared/tests/run.sh
           swift test --disable-sandbox
           bash scripts/build.sh
+          build/NepType.app/Contents/MacOS/NepType --smoke-test "$RUNNER_TEMP/neptype-mac-smoke"
+          python3 -c 'import json,os; p=json.load(open(os.environ["RUNNER_TEMP"]+"/neptype-mac-smoke/ui-smoke-test.json")); assert p["passed"],p'
+          bash scripts/test-mac-shortcuts.sh "$GITHUB_WORKSPACE/build/NepType.app/Contents/MacOS/NepType" "$RUNNER_TEMP/neptype-mac-shortcuts.json"
+          swiftc Sources/NepaliKeyboard/InputMethodInstaller.swift tools/keyboard-setup-tests/main.swift -o "$RUNNER_TEMP/neptype-installer-test"
+          "$RUNNER_TEMP/neptype-installer-test" "$GITHUB_WORKSPACE/build/NepType.app/Contents/Resources/Input Methods/NepType Input.app"
       - if: runner.os == 'Linux'
         run: |
           NEPTYPE_TEST_CORE="$GITHUB_WORKSPACE/engine/target/release/neptype-conformance" bash platforms/windows/tests/run.sh

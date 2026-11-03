@@ -2,6 +2,8 @@
 set -eu
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 output="${TMPDIR:-/tmp}/neptype-windows-composition-test"
+clang++ -std=c++17 -Wall -Wextra -Werror -I"$root/include" "$root/tests/pad_candidate_view_test.cpp" -o "${TMPDIR:-/tmp}/neptype-windows-pad-candidate-view-test"
+"${TMPDIR:-/tmp}/neptype-windows-pad-candidate-view-test"
 clang++ -std=c++17 -Wall -Wextra -Werror -I"$root/include" "$root/composition.cpp" "$root/tests/composition_test.cpp" -o "$output"
 "$output"
 clang++ -std=c++17 -Wall -Wextra -Werror -I"$root/include" "$root/composition.cpp" "$root/candidate_adapter.cpp" "$root/tests/candidate_adapter_test.cpp" -o "${TMPDIR:-/tmp}/neptype-windows-candidate-test"
