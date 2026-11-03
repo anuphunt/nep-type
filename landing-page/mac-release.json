@@ -1,13 +1,13 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minimumMacOS": "13.0",
   "architectures": [
     "arm64",
     "x86_64"
   ],
-  "url": "https://github.com/anuphunt/nep-type/releases/download/mac-v0.1.0/NepType-0.1.0-macos-universal.dmg",
-  "sha256": "481afb0f20c941fe36c762e6fe1ddecbe2acb68910e3337c0b775955a30b306f",
-  "bytes": 46305109,
-  "sourceCommit": "1ca6d25a78745764aeebe91058b590ce72424a2b",
-  "checksumUrl": "https://github.com/anuphunt/nep-type/releases/download/mac-v0.1.0/NepType-0.1.0-macos-universal.dmg.sha256"
+  "url": "https://github.com/anuphunt/nep-type/releases/download/mac-v0.1.1/NepType-0.1.1-macos-universal.dmg",
+  "sha256": "46f83af9c42d231b826f316f63f7d8f4d6d3a00408b55c099b822ef3775d8e6f",
+  "bytes": 91562540,
+  "sourceCommit": "1c783150a041f4054bda55dff0ebff543195a2ec",
+  "checksumUrl": "https://github.com/anuphunt/nep-type/releases/download/mac-v0.1.1/NepType-0.1.1-macos-universal.dmg.sha256"
 }

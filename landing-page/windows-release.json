@@ -1,11 +1,11 @@
 {
-  "version": "0.1.0-preview.1",
+  "version": "0.1.1-preview.1",
   "verified": true,
-  "url": "https://github.com/anuphunt/nep-type/releases/download/windows-v0.1.0-preview.1/NepType-0.1.0-preview.1-windows-x64-setup.exe",
-  "sha256": "738ddb170a0db676f2f4f3a2f61c9d43eb32c12aed5e2ab87b3e85205b88cd68",
-  "bytes": 18402724,
-  "sourceCommit": "2d4eb1be5f5f7cf0d8529266df7d3e242e9ba14b",
-  "verificationUrl": "https://github.com/anuphunt/nep-type/actions/runs/41527376340",
+  "url": "https://github.com/anuphunt/nep-type/releases/download/windows-v0.1.1-preview.1/NepType-0.1.1-preview.1-windows-x64-setup.exe",
+  "sha256": "a71156a812109bdb0499bdc33f66e24354150c12ad642c8d89764be1856277c9",
+  "bytes": 18452849,
+  "sourceCommit": "1c783150a041f4054bda55dff0ebff543195a2ec",
+  "verificationUrl": "https://github.com/anuphunt/nep-type/actions/runs/41712600387",
   "signing": "unsigned",
   "systemKeyboard": false
 }

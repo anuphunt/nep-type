@@ -157,6 +157,9 @@ try {
   await page.locator('#web-copy').click();
   assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'नमस्ते');
   checks.push('Online destination: shared engine typing and Unicode clipboard');
+  await page.locator('#web-input').fill('gaadi gadi gayera');
+  await page.waitForFunction(()=>document.querySelector('#web-output').value==='गाडी गाडी गएर');
+  checks.push('Published dictionary: vehicle and gayera spelling regressions');
   if(process.argv.includes('--verify-downloads')) {
     for(const [platform,release] of [['macOS',mac],['Windows',windows]]) {
       if(!release)continue;

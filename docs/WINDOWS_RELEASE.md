@@ -1,8 +1,12 @@
 # Windows typing-pad preview release
 
-## Version 0.1.1-preview.1 integration
+## Version 0.1.1-preview.1 release
 
-The new release integrates Ctrl+1–3 selection, request/selection staleness guards, local draft and mode saving, automatic spelling memory, desktop tools and truthful keyboard-setup guidance. The experimental TSF service remains excluded. The guide, saved draft, vocabulary corrections and installed payload must pass the existing Windows CI/installation gates. Prior releases and their verification records below remain recoverable; new binaries require new versioned assets.
+The new release integrates Ctrl+1–3 selection, request/selection staleness guards, local draft and mode saving, automatic spelling memory, desktop tools and truthful keyboard-setup guidance. The experimental TSF service remains excluded. Prior releases and their verification records below remain recoverable; new binaries require new versioned assets.
+
+[Published release](https://github.com/anuphunt/nep-type/releases/tag/windows-v0.1.1-preview.1), source `1c783150a041f4054bda55dff0ebff543195a2ec`. Installer: `18,452,849` bytes; SHA-256 `a71156a812109bdb0499bdc33f66e24354150c12ad642c8d89764be1856277c9`.
+
+[Exact-source Windows CI](https://github.com/anuphunt/nep-type/actions/runs/41712600387) passed native SDK/Rich Edit tests and 61 installed-app checks, including first-launch setup guidance, offline render/copy, gaadi/gadi/gayera corrections, local draft/mode restoration, reinstall and uninstall. Verification ran on Windows Server 2022; consumer Windows 10/11, ARM64, high-DPI/accessibility and browser/SmartScreen acceptance remain unverified. The installer remains unsigned. Evidence and installed-app screenshots are release assets.
 
 The Mac release is separately signed and notarized at version 0.1.1. The desktop integration does not change iOS source or TestFlight distribution.
 

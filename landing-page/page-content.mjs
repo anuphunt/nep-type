@@ -83,8 +83,8 @@ export const pages = {
       sections: [
         ['Install NepType', 'The download supports Apple silicon and Intel Macs running macOS 13 or later. Open the .dmg file, drag NepType onto the Applications shortcut, then open NepType from your Applications folder.', {steps: ['Download and open the NepType .dmg file.', 'Drag NepType to Applications.', 'Open NepType from Applications, then eject the disk image.']}],
         ['Write in Nepali', 'Type namaste in the Roman input field to get नमस्ते. Use Nepali + EN to keep recognized English words, or choose All Nepali.'],
-        ['Use your text', 'Choose a spelling from the suggestions, then copy the output into your app. The pad works offline. Copy text before quitting; documents are not saved between launches.'],
-        ['Typing pad or system keyboard?', 'The standalone Mac pad uses copy and paste. The separate system input source is experimental and is not installed by this download.'],
+        ['Use your text', 'Choose a visible spelling with Command+1–5, then copy or share the output. The pad works offline and restores your last draft when opened. Clear removes the draft text. Selected spellings are remembered locally. Keep a separate copy of text you want to retain.'],
+        ['Typing pad or system keyboard?', 'The Mac pad uses copy and paste. An optional experimental system input source is bundled: open Keyboard setup in the app to install it, then add it in macOS Keyboard settings. Installing the pad does not enable it. Compatibility with other apps is still being tested.'],
         ['Build from source', 'Developers can also build the app from its open-source repository. Building requires Apple’s Xcode command-line tools.', {links: [['Source and build instructions', 'https://github.com/anuphunt/nep-type']]}]
       ], link: 'Get NepType on GitHub'
     },
@@ -94,8 +94,8 @@ export const pages = {
       sections: [
         ['NepType इन्स्टल गर्नुहोस्', 'यो डाउनलोड macOS 13 वा पछिल्लो संस्करण चल्ने Apple silicon र Intel Mac का लागि हो। .dmg फाइल खोल्नुहोस्, NepType लाई Applications सर्टकटमा तानेर सार्नुहोस् र Applications फोल्डरबाट एप खोल्नुहोस्।', {steps: ['NepType को .dmg फाइल डाउनलोड गरेर खोल्नुहोस्।', 'NepType लाई Applications मा तानेर सार्नुहोस्।', 'Applications बाट NepType खोल्नुहोस् र डिस्क इमेज इजेक्ट गर्नुहोस्।']}],
         ['नेपालीमा लेख्नुहोस्', 'रोमन इनपुटमा namaste लेख्दा नमस्ते आउँछ। चिनेका अंग्रेजी शब्द राख्न Nepali + EN वा नेपाली अक्षरका लागि All Nepali रोज्नुहोस्।'],
-        ['पाठ प्रयोग गर्नुहोस्', 'सुझावबाट हिज्जे रोजेर तयार पाठ आफ्नो एपमा कपी गर्नुहोस्। प्याड अफलाइन चल्छ। बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्। एपले कागजात सुरक्षित राख्दैन।'],
-        ['प्याड वा सिस्टम किबोर्ड?', 'Mac प्याडबाट पाठ कपी गरेर अन्य एपमा पेस्ट गर्नुपर्छ। छुट्टै सिस्टम इनपुट स्रोत परीक्षणको चरणमा छ। यो डाउनलोडले त्यसलाई इन्स्टल गर्दैन।'],
+        ['पाठ प्रयोग गर्नुहोस्', 'Command+1–5 बाट देखिएको हिज्जे रोजेर तयार पाठ कपी वा सेयर गर्नुहोस्। प्याड अफलाइन चल्छ। फेरि खोल्दा अघिल्लो मस्यौदा पुनः खुल्छ। Clear ले मस्यौदाको पाठ हटाउँछ। रोजेका हिज्जे स्थानीय रूपमा सम्झिन्छ। राख्नुपर्ने पाठको छुट्टै प्रतिलिपि राख्नुहोस्।'],
+        ['प्याड वा सिस्टम किबोर्ड?', 'Mac प्याडबाट पाठ कपी गरेर अन्य एपमा पेस्ट गर्न मिल्छ। वैकल्पिक सिस्टम इनपुट स्रोत पनि समावेश छ र परीक्षणको चरणमा छ। एपको Keyboard setup बाट इन्स्टल गरेपछि macOS Keyboard settings मा थप्नुपर्छ। प्याड इन्स्टल गर्दा यो आफैँ सक्रिय हुँदैन। अन्य एपसँगको अनुकूलता परीक्षण हुँदैछ।'],
         ['स्रोतबाट बिल्ड गर्ने तरिका', 'डेभलपरले खुला स्रोत रिपोजिटरीबाट पनि एप बिल्ड गर्न सक्छन्। त्यसका लागि Apple का Xcode command-line tools चाहिन्छ।', {links: [['स्रोत र बिल्ड गर्ने निर्देशन', 'https://github.com/anuphunt/nep-type']]}]
       ], link: 'GitHub मा NepType लिनुहोस्'
     }

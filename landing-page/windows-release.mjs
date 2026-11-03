@@ -28,7 +28,7 @@ export function windowsPage(release, locale) {
         note: 'इन्स्टलरमा डिजिटल हस्ताक्षर छैन। Windows वा ब्राउजरले SmartScreen वा अपरिचित प्रकाशकको चेतावनी देखाउन सक्छ।'
       } : {links: [['ब्राउजरमा नेपाली लेख्नुहोस्', '/#try']]}],
       ['नेपालीमा लेख्नुहोस्', 'Roman input मा namaste लेख्दा नमस्ते आउँछ। चिनेका अंग्रेजी शब्द राख्न Nepali + EN वा नेपाली अक्षरका लागि All Nepali रोज्नुहोस्।'],
-      ['पाठ प्रयोग गर्नुहोस्', 'हिज्जे रोजेर तयार पाठ आफ्नो एपमा कपी गर्नुहोस्। प्याड अफलाइन चल्छ। यसले सिस्टम किबोर्ड इन्स्टल गर्दैन। बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्; एपले कागजात सुरक्षित राख्दैन।'],
+      ['पाठ प्रयोग गर्नुहोस्', 'Ctrl+1–3 बाट देखिएको हिज्जे रोजेर तयार पाठ कपी वा सेभ गर्नुहोस्। प्याड अफलाइन चल्छ। हालको मस्यौदा र मोड यही कम्प्युटरमा रहन्छन्। Clear ले मस्यौदाको पाठ हटाउँछ। रोजेका हिज्जे स्थानीय रूपमा सम्झिन्छ। यो संस्करणले सिस्टम किबोर्ड इन्स्टल गर्दैन।'],
       ['NepType हटाउनुहोस्', 'Windows Settings > Apps > Installed apps > NepType > Uninstall रोज्नुहोस्।'],
       ['स्रोतबाट बिल्ड गर्ने तरिका', 'डेभलपरले खुला स्रोत रिपोजिटरीबाट पनि एप बिल्ड गर्न सक्छन्।', {links: [['स्रोत र बिल्ड गर्ने निर्देशन', source], ...(ready ? [['चेकसम फाइल', release.url + '.sha256']] : [])]}]
     ], link: 'Windows को स्रोत हेर्नुहोस्'
@@ -43,7 +43,7 @@ export function windowsPage(release, locale) {
         note: 'The installer is not digitally signed. Windows or your browser may show a SmartScreen or unknown-publisher warning.'
       } : {links: [['Type Nepali in your browser', '/#try']]}],
       ['Write in Nepali', 'Type namaste in the Roman input field to get नमस्ते. Use Nepali + EN to keep recognized English words, or choose All Nepali.'],
-      ['Use your text', 'Choose a spelling and copy the output into your app. The pad works offline and does not install a system keyboard. Copy text before closing; documents are not saved between launches.'],
+      ['Use your text', 'Choose a visible spelling with Ctrl+1–3, then copy or save the output. The pad works offline and restores your current draft and mode on this computer. Clear removes the draft text. Selected spellings are remembered locally. This preview does not install a system keyboard.'],
       ['Remove NepType', 'Use Windows Settings > Apps > Installed apps > NepType > Uninstall.'],
       ['Build from source', 'Developers can also build the app from its open-source repository.', {links: [['Source and build instructions', source], ...(ready ? [['Checksum file', release.url + '.sha256']] : [])]}]
     ], link: 'View Windows source'
