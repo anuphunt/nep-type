@@ -27,6 +27,20 @@ extension AppDelegate {
             input.setSelectedRange(savedSelection)
             window.makeFirstResponder(input)
         }
+        // A hosted runner can still have activation/window events queued when
+        // the launch timer fires. Establish the same focused key window a real
+        // user types into before replacing the document or posting a key.
+        window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        window.makeFirstResponder(input)
+        let readyDeadline = Date().addingTimeInterval(5)
+        repeat {
+            let turn = min(readyDeadline, Date().addingTimeInterval(0.02))
+            while let event = NSApp.nextEvent(matching: .any, until: turn, inMode: .default, dequeue: true) {
+                NSApp.sendEvent(event)
+            }
+        } while !(NSApp.isActive && window.isKeyWindow && window.firstResponder === input) && Date() < readyDeadline
+        check("shortcut_focused_window_ready", NSApp.isActive && window.isKeyWindow && window.firstResponder === input)
         func prepare(_ source: String) {
             input.unmarkText()
             composer = Composer()
@@ -56,6 +70,9 @@ extension AppDelegate {
 
         prepare("pani")
         command(2)
+        if output.string != "पानी" {
+            print("Shortcut diagnostic: active=\(NSApp.isActive) keyWindow=\(window.isKeyWindow) responder=\(String(describing: window.firstResponder)) source=\(input.string) output=\(output.string) choices=\(choices)")
+        }
         check("shortcut_command_2_at_caret", input.string == "pani" && output.string == "पानी")
         key("z", flags: .command, code: 6)
         check("shortcut_selection_undo", input.string == "pani" && output.string == "पनि")
