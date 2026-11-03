@@ -21,14 +21,14 @@ export function downloadAction(platform, locale, releases) {
   if (platform === 'Windows' && releases.windows) return {
     href: releases.windows, label: ne ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows',
     event: 'neptype_download_clicked', platform,
-    note: ne ? 'x64 · डिजिटल हस्ताक्षर छैन; SmartScreen चेतावनी आउन सक्छ।' : 'x64 · Unsigned preview; SmartScreen may show a warning.'
+    note: ne ? 'Windows 10 वा 11 · Intel वा AMD x64' : 'Windows 10 or 11 · Intel or AMD x64'
   };
   if (['iOS', 'Android', 'Linux'].includes(platform)) return {
     href: prefix + '/#try', label: ne ? 'अनलाइन नेपाली लेख्नुहोस्' : 'Type Nepali online',
     event: 'neptype_tool_cta_clicked', platform,
     note: ne ? 'यो उपकरणको एप आउँदैछ। अहिले ब्राउजरमा लेख्नुहोस्।' : 'The app for your device is coming soon. Try it in your browser.'
   };
-  return {href: prefix + '/download/', label: ne ? 'NepType लिनुहोस्' : 'Get NepType', event: 'neptype_app_cta_clicked', platform: 'unknown', note: ne ? 'Mac एप र Windows प्रिभ्यु उपलब्ध छन्।' : 'Available for Mac and as a Windows preview.'};
+  return {href: prefix + '/download/', label: ne ? 'NepType लिनुहोस्' : 'Get NepType', event: 'neptype_app_cta_clicked', platform: 'unknown', note: ne ? 'Mac र Windows एप उपलब्ध छन्।' : 'Available for Mac and Windows.'};
 }
 
 export function configureDownloads(document, device) {

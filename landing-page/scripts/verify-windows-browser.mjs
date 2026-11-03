@@ -62,7 +62,7 @@ try {
       if(release) {
         assert.equal(await downloads.getAttribute('href'),release.url);
         assert.equal(await downloads.getAttribute('data-platform'),'Windows');
-        assert.ok((await page.locator('main').innerText()).includes(release.sha256));
+        assert.ok((await page.locator('.setup-note').innerText()).includes('SmartScreen'));
         assert.equal(await page.locator('a[href="'+release.url+'.sha256"]').count(),1);
       } else {
         assert.equal(await downloads.count(),0);
@@ -78,7 +78,7 @@ try {
   for(const route of ['/windows/','/ne/windows/']) {
     await plainPage.goto(base+route);
     assert.ok((await plainPage.locator('main').innerText()).length>500);
-    assert.equal(await plainPage.locator('main a[href="'+(route.startsWith('/ne/')?'/ne/':'/')+'#try"]').count(),2);
+    assert.equal(await plainPage.locator('main a[href="'+(route.startsWith('/ne/')?'/ne/':'/')+'#try"]').count(),release?1:2);
     checks.push(`No JavaScript: ${route}`);
   }
   assert.deepEqual(errors,[]);

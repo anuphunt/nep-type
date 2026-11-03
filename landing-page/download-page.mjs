@@ -1,6 +1,6 @@
 export const downloadPage = {
-  en: {title:'Download NepType for Mac & Windows | All Platforms', heading:'Make yourself at home.', description:'Download the NepType Mac app or unsigned Windows typing-pad preview. Compare platform requirements, get setup instructions, and see what is coming next.', sections:[]},
-  ne: {title:'Mac र Windows का लागि NepType डाउनलोड | सबै प्लेटफर्म', heading:'आफ्नै उपकरणमा नेपाली लेख्नुहोस्।', description:'Mac एप वा डिजिटल हस्ताक्षर नभएको Windows टाइपिङ प्याड प्रिभ्यु डाउनलोड गर्नुहोस्। आवश्यक संस्करण, इन्स्टल गर्ने तरिका र आगामी एपहरू हेर्नुहोस्।', sections:[]}
+  en: {title:'Download NepType for Mac & Windows | All Platforms', heading:'Download NepType.', description:'Download NepType for Mac or Windows. Find system requirements and setup instructions, with iPhone and Linux apps coming soon.', sections:[]},
+  ne: {title:'Mac र Windows का लागि NepType डाउनलोड | सबै प्लेटफर्म', heading:'NepType डाउनलोड गर्नुहोस्।', description:'Mac वा Windows का लागि NepType डाउनलोड गर्नुहोस्। आवश्यक संस्करण र इन्स्टल गर्ने तरिका हेर्नुहोस्। iPhone र Linux एप आउँदैछन्।', sections:[]}
 };
 
 const icons = {
@@ -12,26 +12,25 @@ const icons = {
 const icon = platform => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[platform]}</svg>`;
 const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-export function renderDownloadPage(locale, {mac, windows, macVersion, windowsVersion}, escape) {
+export function renderDownloadPage(locale, {mac, windows}, escape) {
   const ne = locale === 'ne';
   const prefix = ne ? '/ne' : '';
   const platforms = [
-    {id:'macOS', name:'Mac', subtitle:ne ? 'तपाईंको Mac का लागि।' : 'Right at home on macOS.', description:ne ? 'रोमन अक्षरमा लेख्नुहोस्, नेपाली हिज्जे रोज्नुहोस् र जहाँ चाहिन्छ कपी गर्नुहोस्।' : 'Write in Roman letters, choose the Nepali spelling, and copy it wherever you need.', requirement:ne ? 'macOS 13 वा पछिल्लो' : 'macOS 13 or later', architecture:'Apple silicon · Intel', version:macVersion, url:mac, slug:'mac', label:ne ? 'Mac का लागि डाउनलोड' : 'Download for Mac', file:'.dmg'},
-    {id:'Windows', name:'Windows', subtitle:ne ? 'अफलाइन लेख्ने प्रिभ्यु।' : 'An offline pad. In preview.', description:ne ? 'नेपाली टाइप गरेर अरू एपमा कपी गर्नुहोस्। यो छुट्टै टाइपिङ प्याड हो; सिस्टम किबोर्ड होइन।' : 'Type Nepali and copy into your apps. A standalone typing pad, with no system keyboard installed.', requirement:'Windows 10 / 11', architecture:ne ? 'Intel वा AMD · x64' : 'Intel or AMD · x64', version:windowsVersion, url:windows, slug:'windows', label:ne ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows', file:'.exe'},
-    {id:'iOS', name:'iPhone', subtitle:ne ? 'नेपाली सधैँ साथमा।' : 'Nepali, on the go.', description:ne ? 'iPhone एपको काम हुँदैछ। तयार नभएसम्म फोनको ब्राउजरमा नेपाली लेख्न सक्नुहुन्छ।' : 'We’re working on the iPhone app. Until it’s ready, write Nepali in your phone’s browser.', requirement:ne ? 'iPhone का लागि' : 'For iPhone', architecture:ne ? 'सार्वजनिक डाउनलोड आउन बाँकी छ' : 'Public release on the way'},
-    {id:'Linux', name:'Linux', subtitle:ne ? 'तपाईंको डेस्कटपका लागि।' : 'For your kind of desktop.', description:ne ? 'Linux प्याकेजको काम हुँदैछ। अहिले ब्राउजरको टाइपिङ प्याड प्रयोग गर्न सक्नुहुन्छ।' : 'A public Linux package is in the works. The browser typing pad is ready to use today.', requirement:ne ? 'Linux का लागि' : 'For Linux', architecture:ne ? 'प्याकेजको विवरण आउन बाँकी छ' : 'Package details to come'}
+    {id:'macOS', name:'Mac', requirement:ne ? 'macOS 13 वा पछिल्लो' : 'macOS 13 or later', architecture:'Apple silicon · Intel', url:mac, slug:'mac', label:ne ? 'Mac का लागि डाउनलोड' : 'Download for Mac', file:'.dmg'},
+    {id:'Windows', name:'Windows', requirement:'Windows 10 / 11', architecture:ne ? 'Intel वा AMD · x64' : 'Intel or AMD · x64', url:windows, slug:'windows', label:ne ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows', file:'.exe'},
+    {id:'iOS', name:'iPhone', requirement:ne ? 'iPhone का लागि' : 'For iPhone', architecture:ne ? 'सार्वजनिक डाउनलोड आउन बाँकी छ' : 'Public release on the way'},
+    {id:'Linux', name:'Linux', requirement:ne ? 'Linux का लागि' : 'For Linux', architecture:ne ? 'प्याकेजको विवरण आउन बाँकी छ' : 'Package details to come'}
   ];
   const cards = platforms.map(p => `<article class="download-card${p.url ? '' : ' download-card-pending'}" data-platform-card="${p.id}" aria-labelledby="platform-${p.id}">
     <div class="download-card-top"><div class="platform-logo logo-${p.id}">${icon(p.id)}</div><span class="device-badge" data-current-device hidden>${ne ? 'तपाईंको उपकरण' : 'Your device'}</span></div>
-    <span class="release-status">${p.id === 'Windows' && p.url ? (ne ? 'हस्ताक्षर नभएको प्रिभ्यु' : 'Unsigned preview') : p.url ? (ne ? 'उपलब्ध छ' : 'Available now') : (ne ? 'छिट्टै आउँदैछ' : 'Coming soon')}</span>
-    <h2 id="platform-${p.id}">${p.name}</h2><p class="platform-subtitle">${p.subtitle}</p><p class="platform-description">${p.description}</p>
-    <div class="platform-requirements"><p>${p.requirement}</p><p>${p.architecture}</p>${p.url ? `<p class="release-version">v${escape(p.version)} · ${p.file}</p>` : ''}</div>
+    <span class="release-status">${p.url ? (ne ? 'उपलब्ध छ' : 'Available now') : (ne ? 'छिट्टै आउँदैछ' : 'Coming soon')}</span>
+    <h2 id="platform-${p.id}">${p.name}</h2>
+    <div class="platform-requirements"><p>${p.requirement}</p><p>${p.architecture}</p>${p.url ? `<p class="installer-format">${p.file}</p>` : ''}</div>
     <div class="download-card-action">${p.url ? `<a class="button platform-download" href="${escape(p.url)}" data-platform="${p.id}" data-analytics-event="neptype_download_clicked" data-placement="download-card">${arrow}<span>${p.label}</span></a><a class="setup-link" href="${prefix}/${p.slug}/">${ne ? 'इन्स्टल गर्ने तरिका र विवरण' : 'Setup guide & details'} <span aria-hidden="true">↗</span></a>` : `<span class="coming-soon">${ne ? 'छिट्टै आउँदैछ' : 'Coming soon'}</span><a class="setup-link" href="${prefix}/#try">${ne ? 'अहिले ब्राउजरमा लेख्नुहोस्' : 'Use the browser pad'} <span aria-hidden="true">↗</span></a>`}</div>
   </article>`).join('');
   return `<main id="main" class="downloads-page container">
-    <div class="download-intro"><p class="download-eyebrow">${ne ? 'NEPTYPE डाउनलोड' : 'DOWNLOAD NEPTYPE'}</p><h1>${downloadPage[locale].heading}</h1><p>${ne ? 'आफ्नो उपकरण रोज्नुहोस्। रोमन अक्षरमा लेख्नुहोस्। बाँकी NepType ले गर्छ।' : 'Pick your platform. Write with Roman letters. Let NepType take it from there.'}</p><div class="download-intro-meta"><span>${ne ? 'खुला स्रोत' : 'Open source'}</span><span>${ne ? 'अफलाइन टाइपिङ' : 'Offline typing'}</span><span>${ne ? 'खाता चाहिँदैन' : 'No account needed'}</span></div></div>
+    <div class="download-intro"><h1>${downloadPage[locale].heading}</h1></div>
     <section class="download-grid" aria-label="${ne ? 'प्लेटफर्मअनुसार डाउनलोड' : 'Downloads by platform'}">${cards}</section>
-    ${windows ? `<aside class="windows-preview-note" aria-labelledby="windows-preview-title"><span class="preview-note-icon" aria-hidden="true">i</span><div><h2 id="windows-preview-title">${ne ? 'Windows प्रिभ्युबारे' : 'A note on the Windows preview'}</h2><p>${ne ? 'यो प्रिभ्युमा डिजिटल हस्ताक्षर छैन। Windows वा ब्राउजरले SmartScreen वा अपरिचित प्रकाशकको चेतावनी देखाउन सक्छ। ARM64 मा परीक्षण गरिएको छैन।' : 'This preview is unsigned. Windows or your browser may show a SmartScreen or unknown-publisher warning. ARM64 has not been tested.'} <a href="${prefix}/windows/">${ne ? 'इन्स्टल गर्ने तरिका र परीक्षणको सीमा हेर्नुहोस्' : 'Read the setup guide and testing limits'} →</a></p></div></aside>` : ''}
-    <div class="download-browser"><div><h2>${ne ? 'डाउनलोडबिना लेख्न चाहनुहुन्छ?' : 'Just want to start typing?'}</h2><p>${ne ? 'निःशुल्क अनलाइन प्याड फोन र कम्प्युटरको ब्राउजरमा चल्छ।' : 'The free online pad works in your browser, on your phone or computer.'}</p></div><a href="${prefix}/#try" data-analytics-event="neptype_tool_cta_clicked" data-placement="download-browser" data-platform="web">${ne ? 'अनलाइन नेपाली लेख्नुहोस्' : 'Type Nepali online'} <span aria-hidden="true">→</span></a></div>
+    <a class="download-browser-link" href="${prefix}/#try" data-analytics-event="neptype_tool_cta_clicked" data-placement="download-browser" data-platform="web">${ne ? 'अनलाइन नेपाली लेख्नुहोस्' : 'Type Nepali online'} <span aria-hidden="true">→</span></a>
   </main>`;
 }

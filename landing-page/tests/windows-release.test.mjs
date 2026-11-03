@@ -19,7 +19,7 @@ test('a Windows preview requires an immutable installer, checksum, source and CI
   for (const [key,value] of Object.entries({sha256:null,sourceCommit:null,bytes:0,signing:'signed',systemKeyboard:true,verificationUrl:null,url:'https://example.com/setup.exe'})) {
     assert.throws(()=>windowsDownload({...verifiedFixture,[key]:value}), undefined, key);
   }
-  for (const locale of ['en','ne']) assert.equal(windowsPage(verifiedFixture,locale).sections.length,6);
-  assert.match(JSON.stringify(windowsPage(verifiedFixture,'en')), /Unsigned preview/);
+  for (const locale of ['en','ne']) assert.equal(windowsPage(verifiedFixture,locale).sections.length,5);
+  assert.match(JSON.stringify(windowsPage(verifiedFixture,'en')), /not digitally signed/);
   assert.match(JSON.stringify(windowsPage(verifiedFixture,'en')), /does not install a system keyboard/);
 });

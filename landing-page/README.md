@@ -51,7 +51,7 @@ Add `?analytics_test=1` when checking the deployed site; these events are exclud
 
 The build includes unique titles and descriptions, self-referencing canonical URLs, reciprocal English/Nepali `hreflang` links, social cards, page-specific JSON-LD, and `sitemap.xml`. Homepage markup describes the browser `WebApplication`; the Mac page describes the native `SoftwareApplication`. Supporting pages have breadcrumbs and the bilingual guide has `TechArticle` markup matching its visible project byline and publication date. App markup uses actual product details without invented offers, reviews, or ratings. Search Console verification and sitemap submission require the production site and an authorized Google account.
 
-The Mac page offers the signed, notarized universal DMG and drag-to-Applications instructions, with source builds as an alternative. The all-platform page also lists the unsigned Windows preview and marks iPhone and Linux as coming soon.
+The Mac page offers the signed, notarized universal DMG and drag-to-Applications instructions, with source builds as an alternative. The all-platform page lists Mac and Windows with matching availability labels and marks iPhone and Linux as coming soon. It keeps the platform cards and requirements without slogans or marketing paragraphs.
 
 ### Download page and device detection
 
@@ -59,7 +59,7 @@ The Mac page offers the signed, notarized universal DMG and drag-to-Applications
 
 `platform.mjs` selects the Mac or Windows installer when available, checking iPad desktop mode before Mac. iPhone, iPad, Android, Linux, and ChromeOS visitors get the browser pad. Unknown devices and browsers without JavaScript get the all-platform page. Detection is a convenience; the all-platform link and footer remain available.
 
-`windows-release.mjs` exposes the Windows installer only when `windows-release.json` has verified preview metadata. The homepage, platform card, and setup page disclose that the Windows preview is unsigned. No installer link or download schema is emitted for a pending release. Follow [the Windows release runbook](../docs/WINDOWS_RELEASE.md).
+`windows-release.mjs` exposes the Windows installer only when `windows-release.json` has verified preview metadata. Public product copy uses NepType for Windows. The Windows setup instructions explain that the existing installer is not digitally signed and can trigger a SmartScreen warning. Release metadata, the original version string, verification gate, and installer URLs remain unchanged. No installer link or download schema is emitted for a pending release. Follow [the Windows release runbook](../docs/WINDOWS_RELEASE.md).
 
 After building, verify the download experience with installed Google Chrome:
 

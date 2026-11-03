@@ -41,7 +41,7 @@ test('primary actions keep verified release URLs, honest Windows copy and locali
       assert.equal(action.event, 'neptype_app_cta_clicked');
     }
   }
-  assert.match(downloadAction('Windows','en',releases).note, /Unsigned preview; SmartScreen/);
+  assert.match(downloadAction('Windows','en',releases).note, /Windows 10 or 11/);
 });
 
 test('all-platform cards expose only available installers; pending Windows remains gated', () => {

@@ -17,30 +17,35 @@ export function windowsDownload(release) {
 
 export function windowsPage(release, locale) {
   const ready = Boolean(release);
+  const source = 'https://github.com/anuphunt/nep-type/tree/main/platforms/windows';
   if (locale === 'ne') return {
-    title: 'Windows का लागि नेपाली टाइपिङ प्याड | NepType',
-    heading: 'Windows मा अफलाइन नेपाली लेख्नुहोस्।',
-    description: 'Windows का लागि NepType टाइपिङ प्याडको प्रिभ्यु। रोमन अक्षरबाट नेपाली लेख्नुहोस् र तयार पाठ अन्य एपमा कपी गर्नुहोस्।',
+    title: 'Windows मा नेपाली टाइपिङ | NepType लिनुहोस्',
+    heading: 'Windows का लागि NepType।',
+    description: 'Windows 10 वा 11 चल्ने Intel वा AMD x64 कम्प्युटरमा अफलाइन नेपाली लेख्न NepType डाउनलोड गर्नुहोस्।',
     sections: [
-      [ready ? 'Windows प्रिभ्यु डाउनलोड गर्नुहोस्' : 'Windows प्रिभ्युको तयारी हुँदैछ', ready ? 'Windows 10 वा 11 चल्ने Intel वा AMD 64-bit (x64) कम्प्युटरका लागि .exe इन्स्टलर। ARM64 मा परीक्षण गरिएको छैन।' : 'इन्स्टलरको बिल्ड र इन्स्टल, टाइपिङ तथा अनइन्स्टल जाँच पूरा भएपछि यहाँ डाउनलोड राखिनेछ। अहिले ब्राउजर प्याड प्रयोग गर्न सक्नुहुन्छ।', {links: [['ब्राउजरमा नेपाली लेख्नुहोस्', '/#try']]}],
-      ['टाइपिङ प्याड', 'Roman input मा namaste लेख्दा नमस्ते आउँछ। हिज्जे रोजेर Copy text थिच्नुहोस् र आफ्नो एपमा पेस्ट गर्नुहोस्। यसले सिस्टम किबोर्ड इन्स्टल गर्दैन र अरू एपमा सिधै टाइप गर्दैन।'],
-      ['हस्ताक्षर नभएको प्रिभ्यु', 'यो प्रिभ्युमा डिजिटल हस्ताक्षर छैन। Windows वा ब्राउजरले अपरिचित प्रकाशक वा SmartScreen चेतावनी देखाउन सक्छ।'],
-      ['इन्स्टल र हटाउने तरिका', 'इन्स्टलर खोल्नुहोस्। एप तपाईंको प्रयोगकर्ता खातामा इन्स्टल हुन्छ। त्यसपछि Start बाट NepType खोल्नुहोस्। हटाउन Windows Settings > Apps > Installed apps > NepType > Uninstall रोज्नुहोस्।'],
-      ['आफ्नो पाठ राख्नुहोस्', 'टाइपिङ अफलाइन हुन्छ। प्याडले कागजात सुरक्षित राख्दैन। बन्द गर्नुअघि राख्नुपर्ने पाठ कपी गर्नुहोस्।'],
-      ['परीक्षणको सीमा', ready ? 'Windows Server 2022 x64 मा इन्स्टल, टाइपिङ, हिज्जे चयन, युनिकोड कपी, पुनः इन्स्टल र अनइन्स्टलका स्वचालित जाँच पास भएका छन्। प्रयोगकर्ताको Windows 10/11 कम्प्युटर, उच्च DPI र पहुँचयोग्यताको म्यानुअल परीक्षण बाँकी छ।' : 'स्वचालित जाँचका लागि Windows Server 2022 को रनर प्रयोग गर्ने व्यवस्था छ। प्रयोगकर्ताको Windows 10/11 कम्प्युटर, उच्च DPI र पहुँचयोग्यताको म्यानुअल परीक्षण बाँकी छ।']
+      [ready ? 'NepType इन्स्टल गर्नुहोस्' : 'Windows डाउनलोडको तयारी हुँदैछ', ready ? 'Windows 10 वा 11 चल्ने Intel वा AMD 64-bit (x64) कम्प्युटरका लागि। ARM64 मा परीक्षण गरिएको छैन।' : 'इन्स्टलरको जाँच पूरा भएपछि डाउनलोड उपलब्ध हुनेछ। अहिले ब्राउजर प्याड प्रयोग गर्न सक्नुहुन्छ।', ready ? {
+        steps: ['NepType को .exe इन्स्टलर डाउनलोड गरेर खोल्नुहोस्।', 'इन्स्टल गर्ने निर्देशन पालना गर्नुहोस्। एप तपाईंको प्रयोगकर्ता खातामा इन्स्टल हुन्छ।', 'Start बाट NepType खोल्नुहोस्।'],
+        note: 'इन्स्टलरमा डिजिटल हस्ताक्षर छैन। Windows वा ब्राउजरले SmartScreen वा अपरिचित प्रकाशकको चेतावनी देखाउन सक्छ।'
+      } : {links: [['ब्राउजरमा नेपाली लेख्नुहोस्', '/#try']]}],
+      ['नेपालीमा लेख्नुहोस्', 'Roman input मा namaste लेख्दा नमस्ते आउँछ। चिनेका अंग्रेजी शब्द राख्न Nepali + EN वा नेपाली अक्षरका लागि All Nepali रोज्नुहोस्।'],
+      ['पाठ प्रयोग गर्नुहोस्', 'हिज्जे रोजेर तयार पाठ आफ्नो एपमा कपी गर्नुहोस्। प्याड अफलाइन चल्छ। यसले सिस्टम किबोर्ड इन्स्टल गर्दैन। बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्; एपले कागजात सुरक्षित राख्दैन।'],
+      ['NepType हटाउनुहोस्', 'Windows Settings > Apps > Installed apps > NepType > Uninstall रोज्नुहोस्।'],
+      ['स्रोतबाट बिल्ड गर्ने तरिका', 'डेभलपरले खुला स्रोत रिपोजिटरीबाट पनि एप बिल्ड गर्न सक्छन्।', {links: [['स्रोत र बिल्ड गर्ने निर्देशन', source], ...(ready ? [['चेकसम फाइल', release.url + '.sha256']] : [])]}]
     ], link: 'Windows को स्रोत हेर्नुहोस्'
   };
   return {
-    title: 'Nepali Typing for Windows — Offline Pad Preview | NepType',
+    title: 'Nepali Typing for Windows — Offline Typing Pad | NepType',
     heading: 'Type Nepali offline on Windows.',
-    description: 'NepType Windows typing-pad preview. Write Roman letters, choose a Nepali spelling, and copy your text into another app.',
+    description: 'Download NepType for Windows. Type Nepali offline on Windows 10 or 11, on Intel or AMD x64 computers.',
     sections: [
-      [ready ? 'Download the Windows preview' : 'Windows preview in preparation', ready ? 'An .exe installer for Windows 10 or 11 on Intel or AMD 64-bit (x64) computers. ARM64 has not been tested.' : 'The download will appear here after the installer passes build, installation, typing, and removal checks. You can use the browser pad now.', {links: [['Type Nepali in your browser', '/#try']]}],
-      ['A standalone typing pad', 'Type namaste in Roman input to get नमस्ते. Choose a spelling, click Copy text, and paste into your app. This package does not install a system keyboard or type directly in other apps.'],
-      ['Unsigned preview', 'This preview has no digital signature. Windows or your browser may display an unknown-publisher or SmartScreen warning.'],
-      ['Install and remove', 'Open the installer to install for your user account, then open NepType from Start. To remove it, use Windows Settings > Apps > Installed apps > NepType > Uninstall.'],
-      ['Keep your text', 'Typing works offline. The pad does not save documents. Copy any text you want to keep before closing it.'],
-      ['Testing limits', ready ? 'Automated installation, typing, candidate selection, Unicode copy, reinstall, and uninstall checks passed on Windows Server 2022 x64. Manual testing on consumer Windows 10/11 computers, high-DPI displays, and assistive technology is still needed.' : 'Automated verification is configured for a Windows Server 2022 runner. Manual testing on consumer Windows 10/11 computers, high-DPI displays, and assistive technology is still needed.']
+      [ready ? 'Install NepType' : 'Windows download in preparation', ready ? 'For Windows 10 or 11 on Intel or AMD 64-bit (x64) computers. ARM64 has not been tested.' : 'The download will appear after installer checks pass. You can use the browser pad now.', ready ? {
+        steps: ['Download and open the NepType .exe installer.', 'Follow the installer steps to install for your user account.', 'Open NepType from Start.'],
+        note: 'The installer is not digitally signed. Windows or your browser may show a SmartScreen or unknown-publisher warning.'
+      } : {links: [['Type Nepali in your browser', '/#try']]}],
+      ['Write in Nepali', 'Type namaste in the Roman input field to get नमस्ते. Use Nepali + EN to keep recognized English words, or choose All Nepali.'],
+      ['Use your text', 'Choose a spelling and copy the output into your app. The pad works offline and does not install a system keyboard. Copy text before closing; documents are not saved between launches.'],
+      ['Remove NepType', 'Use Windows Settings > Apps > Installed apps > NepType > Uninstall.'],
+      ['Build from source', 'Developers can also build the app from its open-source repository.', {links: [['Source and build instructions', source], ...(ready ? [['Checksum file', release.url + '.sha256']] : [])]}]
     ], link: 'View Windows source'
   };
 }

@@ -54,7 +54,7 @@ try {
           assert.equal(await page.locator('main .platform-download[data-platform="macOS"]').getAttribute('href'),mac.url);
           if(windows) {
             assert.equal(await page.locator('main .platform-download[data-platform="Windows"]').getAttribute('href'),windows.url);
-            assert.ok(await page.locator('.windows-preview-note').isVisible());
+            assert.equal((await page.locator('[data-platform-card="Windows"] .release-status').innerText()).trim(),locale==='ne'?'उपलब्ध छ':'Available now');
           }
           for (const platform of ['iOS','Linux']) {
             assert.equal(await page.locator(`[data-platform-card="${platform}"] .platform-download`).count(),0);
@@ -64,6 +64,7 @@ try {
             await page.locator(`main .setup-link[href="${prefix}${slug}/"]`).click();
             await page.waitForLoadState('networkidle');
             assert.equal(new URL(page.url()).pathname,prefix+slug+'/');
+            if(slug==='windows') assert.ok((await page.locator('main').innerText()).includes('SmartScreen'));
             await page.goBack({waitUntil:'networkidle'});
           }
           if (process.env.AXE_CORE_PATH) {
