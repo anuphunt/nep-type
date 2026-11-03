@@ -1,6 +1,7 @@
 import AppKit
 import NepaliCore
 
+@MainActor
 extension AppDelegate {
     func runShortcutTests(destination: String) {
         var checks: [String: Bool] = [:]
@@ -88,9 +89,16 @@ extension AppDelegate {
             var drained = false
             while !drained && Date() < deadline {
                 if let next = NSApp.nextEvent(matching: .any, until: min(deadline, Date().addingTimeInterval(0.02)), inMode: .default, dequeue: true) {
-                    if next.type == .applicationDefined && next.subtype == marker.subtype && next.data1 == eventSequence {
-                        drained = true
-                        continue
+                    // Read AppKit values on this actor before the lazy Boolean
+                    // operators; older Swift SDKs otherwise capture NSEvent
+                    // across the operators' actor-inferred autoclosures.
+                    if next.type == .applicationDefined {
+                        let subtype = next.subtype.rawValue
+                        let sequence = next.data1
+                        if subtype == 231 && sequence == eventSequence {
+                            drained = true
+                            continue
+                        }
                     }
                     NSApp.sendEvent(next)
                 }
