@@ -58,6 +58,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('href="/faq/"', 'href="/ne/faq/"')
     .replaceAll('href="/about/"', 'href="/ne/about/"')
     .replaceAll('href="/privacy/"', 'href="/ne/privacy/"')
+    .replaceAll('href="/terms/"', 'href="/ne/terms/"')
     .replaceAll('href="/changelog/"', 'href="/ne/changelog/"')
     .replaceAll('href="/"', 'href="/ne/"')
     .replaceAll('alt="NepType Mac app showing Roman input, Nepali spelling suggestions, and mixed Nepali and English output."', 'alt="NepType Mac एपमा रोमन इनपुट, नेपाली हिज्जे सुझाव र नेपाली तथा अंग्रेजी मिसिएको पाठ।"')

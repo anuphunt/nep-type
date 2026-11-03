@@ -1,3 +1,5 @@
+import {legalPages} from './legal-pages.mjs';
+
 export const repository = 'https://github.com/anuphunt/nep-type';
 export const homeDescription = 'Free Nepali typing online: turn Roman letters into Nepali Unicode, choose spellings, and copy your text. No account needed. Offline Mac and Windows apps available.';
 export const homeTitle = {en: 'Nepali Typing Online — Roman to Nepali | NepType', ne: 'अनलाइन नेपाली टाइपिङ — रोमनबाट नेपाली | NepType'};
@@ -34,7 +36,7 @@ export const nepaliCopy = {
 export const labels = {
   Downloads: 'डाउनलोड', Articles: 'लेखहरू', 'Typing guide': 'टाइपिङ सिक्नुहोस्', Features: 'सुविधाहरू', FAQ: 'प्रश्नहरू', Changelog: 'परिवर्तनहरू',
   'Get NepType': 'NepType लिनुहोस्', Home: 'गृहपृष्ठ', Platforms: 'प्लेटफर्महरू',
-  Support: 'सहयोग', Feedback: 'प्रतिक्रिया', Privacy: 'गोपनीयता', Project: 'परियोजना',
+  Support: 'सहयोग', Feedback: 'प्रतिक्रिया', 'Privacy Policy': 'गोपनीयता नीति', 'Terms of Service': 'सेवाका सर्तहरू', Project: 'परियोजना',
   'About NepType': 'NepType बारे', 'Open source': 'खुला स्रोत', 'In progress': 'काम हुँदैछ',
   'Try it': 'प्रयोग गर्नुहोस्',
   'Works offline': 'अफलाइन चल्छ', 'YOU TYPE': 'तपाईंको लेखाइ', NEPTYPE: 'NEPTYPE',
@@ -104,12 +106,10 @@ export const pages = {
     en: {title: 'About NepType | Open-Source Nepali Typing', heading: 'About NepType.', description: 'NepType is an open-source Roman-to-Nepali browser tool and offline Mac typing pad, built by Anup Dhakal and contributors.', sections: [['', 'NepType is an open-source browser typing tool and offline Mac typing pad, built by Anup Dhakal and contributors. It uses local dictionaries and phonetic rules to turn Roman letters into Nepali.'], ['', 'The project’s original code is available under the MIT license. Third-party data has separate terms documented in the repository.']], link: 'View the project'},
     ne: {title: 'NepType बारे | खुला स्रोत नेपाली टाइपिङ', heading: 'NepType बारे।', description: 'अनुप ढकाल र योगदानकर्ताहरूले बनाएको खुला स्रोत नेपाली टाइपिङ उपकरण। ब्राउजर र अफलाइन Mac प्याड उपलब्ध छन्।', sections: [['', 'NepType अनुप ढकाल र योगदानकर्ताहरूले बनाएको खुला स्रोत नेपाली टाइपिङ उपकरण हो। ब्राउजर प्याड र अफलाइन Mac प्याड उपलब्ध छन्। यसले स्थानीय शब्दकोश र ध्वनिसम्बन्धी नियमबाट रोमन अक्षरलाई नेपालीमा बदल्छ।'], ['', 'परियोजनाको मूल कोड MIT लाइसेन्समा उपलब्ध छ। बाह्य डेटाका छुट्टै सर्तहरू रिपोजिटरीमा छन्।']], link: 'परियोजना हेर्नुहोस्'}
   },
-  privacy: {
-    en: {title: 'Privacy | NepType', heading: 'Your typing stays on your device.', description: 'How NepType handles typing and website analytics. Typed text is processed locally and is not sent to PostHog.', sections: [['Your text', 'The browser pad processes text on your device. We do not send what you type, the output, or spelling choices to analytics. Copy text you want to keep before closing the page.'], ['Website analytics', 'We use PostHog to count visits, app-button and download clicks, and use of the browser pad. A browser identifier is stored in local storage. Session recording and automatic input capture are off. We respect Do Not Track and Global Privacy Control signals.'], ['The Mac app', 'The native typing pad works offline without accounts or telemetry.'], ['Hosting', 'Netlify processes requests to serve this website. Fonts are served with the website through Netlify.']]},
-    ne: {title: 'गोपनीयता | NepType', heading: 'तपाईंको लेखाइ उपकरणमै रहन्छ।', description: 'NepType को लेखाइ र वेबसाइट एनालिटिक्सबारे जानकारी। लेखेका कुरा स्थानीय रूपमा प्रशोधन हुन्छन् र PostHog मा पठाइँदैनन्।', sections: [['तपाईंको पाठ', 'ब्राउजर प्याडले पाठ उपकरणमै प्रशोधन गर्छ। तपाईंले लेखेको पाठ, तयार पाठ वा रोजेको हिज्जे एनालिटिक्समा पठाइँदैन। पृष्ठ बन्द गर्नुअघि आवश्यक पाठ कपी गर्नुहोस्।'], ['वेबसाइट एनालिटिक्स', 'भ्रमण, एप र डाउनलोड बटनका क्लिक तथा प्याडको प्रयोग गन्न PostHog प्रयोग गर्छौँ। ब्राउजरको पहिचान स्थानीय स्टोरेजमा रहन्छ। सेसन रेकर्डिङ र स्वचालित इनपुट सङ्कलन बन्द छन्। Do Not Track र Global Privacy Control संकेत पालना गर्छौँ।'], ['Mac एप', 'नेटिभ टाइपिङ प्याड खाता र टेलिमेट्रीबिना अफलाइन चल्छ।'], ['होस्टिङ', 'Netlify ले वेबसाइट उपलब्ध गराउन अनुरोध प्रशोधन गर्छ। फन्टहरू पनि वेबसाइटसँगै Netlify बाट उपलब्ध हुन्छन्।']]}
-  },
   changelog: {
     en: {title: 'What’s New | NepType', heading: 'What’s new.', description: 'Current NepType features and development updates for the open-source Nepali typing app.', sections: [['Mac typing pad', 'Nepali + EN and All Nepali modes, spelling suggestions, and copy controls.'], ['Other platforms', 'Work is underway on iPhone, Android, Windows, and Linux integrations.']], link: 'Follow development on GitHub'},
     ne: {title: 'नयाँ परिवर्तनहरू | NepType', heading: 'नयाँ परिवर्तनहरू।', description: 'खुला स्रोत नेपाली टाइपिङ एप NepType का वर्तमान सुविधा र विकाससम्बन्धी जानकारी।', sections: [['Mac टाइपिङ प्याड', 'Nepali + EN र All Nepali मोड, हिज्जे सुझाव र कपी सुविधा।'], ['अन्य प्लेटफर्महरू', 'iPhone, Android, Windows र Linux का लागि काम हुँदैछ।']], link: 'GitHub मा प्रगति हेर्नुहोस्'}
   }
 };
+
+Object.assign(pages, legalPages);
