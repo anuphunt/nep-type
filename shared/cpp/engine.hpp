@@ -36,6 +36,7 @@ class Engine {
     NEPTYPE_FUNCTION(engine_destroy)
     NEPTYPE_FUNCTION(engine_candidates)
     NEPTYPE_FUNCTION(engine_document)
+    NEPTYPE_FUNCTION(engine_set_preferences)
     NEPTYPE_FUNCTION(result_output)
     NEPTYPE_FUNCTION(result_token)
     NEPTYPE_FUNCTION(result_token_start)
@@ -97,6 +98,7 @@ public:
             NEPTYPE_BIND(engine_destroy)
             NEPTYPE_BIND(engine_candidates)
             NEPTYPE_BIND(engine_document)
+            NEPTYPE_BIND(engine_set_preferences)
             NEPTYPE_BIND(result_output)
             NEPTYPE_BIND(result_token)
             NEPTYPE_BIND(result_token_start)
@@ -111,6 +113,11 @@ public:
         } catch (...) { unload(); throw; }
     }
     std::string dictionary_id() const { return dictionary_id_(); }
+    void set_preferences(const std::string& json) {
+        validate(json);
+        if (!engine_set_preferences_(handle_, json.c_str()) && !engine_set_preferences_(handle_, "{}"))
+            throw std::runtime_error("Spelling preferences are unavailable");
+    }
     ~Engine() { unload(); }
     Engine(const Engine&) = delete;
     Engine& operator=(const Engine&) = delete;

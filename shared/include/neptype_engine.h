@@ -1,6 +1,7 @@
 #ifndef NEPTYPE_ENGINE_H
 #define NEPTYPE_ENGINE_H
 #include <stdint.h>
+#include <stdbool.h>
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -14,6 +15,7 @@ extern "C" {
  * No function reads/writes the host editor, clipboard, network, or preferences.
  */
 uint32_t neptype_engine_abi_version(void);
+bool neptype_engine_set_preferences(void *engine, const char *json);
 void *neptype_engine_create(const char *dictionary_directory);
 void neptype_engine_destroy(void *engine);
 void *neptype_engine_candidates(void *engine, const char *roman, int32_t mode);

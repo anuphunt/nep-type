@@ -87,13 +87,18 @@ pub unsafe extern "C" fn neptype_engine_candidates(
         mode: mode as u8,
         ..Default::default()
     };
-    let values = if text.is_empty() {
+    let mut values = if text.is_empty() {
         vec![]
     } else if session.append(text) {
         session.candidates()
     } else {
         vec![text.into()]
     };
+    if mode != 1 {
+        if let Ok(composer) = (&*raw.cast::<Handle>()).composer.lock() {
+            composer.order_preferences(text, &mut values);
+        }
+    }
     result(String::new(), text.into(), -1, 0, values)
 }
 #[no_mangle]
@@ -139,6 +144,7 @@ pub unsafe extern "C" fn neptype_engine_document(
             .find(|c| c.token == *token)
         {
             values = contextual_candidates(&c);
+            composer.order_preferences(&token.text, &mut values);
         }
         if let Some(value) = selected {
             if !values.iter().any(|v| v == value) {
@@ -150,12 +156,33 @@ pub unsafe extern "C" fn neptype_engine_document(
         return std::ptr::null_mut();
     }
     result(
-        render(text, mode as u8, &composer.current.overrides).text,
+        composer.rendered().text,
         token.as_ref().map(|t| t.text.clone()).unwrap_or_default(),
         token.as_ref().map(|t| t.start as i32).unwrap_or(-1),
         token.map(|t| (t.end - t.start) as i32).unwrap_or(0),
         values,
     )
+}
+/// Replaces a handle's local pad preferences. No globals, disk access or networking.
+#[no_mangle]
+pub unsafe extern "C" fn neptype_engine_set_preferences(
+    raw: *mut c_void,
+    json: *const c_char,
+) -> bool {
+    if raw.is_null() {
+        return false;
+    }
+    let Some(value) = input(json, 524_288) else {
+        return false;
+    };
+    let Ok(values) = serde_json::from_str(value) else {
+        return false;
+    };
+    let Ok(mut composer) = (&*raw.cast::<Handle>()).composer.lock() else {
+        return false;
+    };
+    composer.set_preferences(values);
+    true
 }
 #[no_mangle]
 pub unsafe extern "C" fn neptype_result_output(raw: *mut c_void) -> *const c_char {

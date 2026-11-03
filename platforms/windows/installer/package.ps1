@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path "$PSScriptRoot/../../..").Path
-$version = '0.1.0-preview.1'
+$version = '0.1.1-preview.1'
 $output = Join-Path $root 'build/windows-installer'
 $payload = Join-Path $root 'build/windows-payload'
 if (Test-Path $payload) { Remove-Item $payload -Recurse -Force }

@@ -1,12 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-SCRATCH="${TMPDIR:-/tmp}/neptype-input-build-${UID}"
+SCRATCH="${NEPTYPE_INPUT_BUILD_SCRATCH_PATH:-${TMPDIR:-/tmp}/neptype-input-build-${UID}}"
 export CLANG_MODULE_CACHE_PATH="$SCRATCH/ModuleCache"
 export SWIFTPM_MODULECACHE_OVERRIDE="$SCRATCH/ModuleCache"
 bash scripts/build-apple-engine.sh macosx
 export NEPTYPE_RUST_LIBRARY="$PWD/build/rust-apple/macosx/libneptype_engine.a"
-swift build --product NepTypeInput --scratch-path "$SCRATCH" --cache-path "$SCRATCH/cache" --config-path "$SCRATCH/config" --security-path "$SCRATCH/security" "$@"
+swift build -c release --product NepTypeInput --scratch-path "$SCRATCH" --cache-path "$SCRATCH/cache" --config-path "$SCRATCH/config" --security-path "$SCRATCH/security" "$@"
 APP="$SCRATCH/NepType Input.app"
 mkdir -p "$APP/Contents/MacOS"
 mkdir -p "$APP/Contents/Resources/Licenses"
@@ -16,7 +16,8 @@ cp data/sources/CMUDICT-LICENSE.txt "$APP/Contents/Resources/Licenses/CMUDICT-LI
 cp data/compiled/aksharantar-indiccorp-v1.manifest.json "$APP/Contents/Resources/Licenses/AKSHARANTAR-PROVENANCE.json"
 cp data/sources/AKSHARANTAR-ATTRIBUTION.txt "$APP/Contents/Resources/Licenses/AKSHARANTAR-ATTRIBUTION.txt"
 cp data/sources/GOOGLE-NE-ATTRIBUTION.txt "$APP/Contents/Resources/Licenses/GOOGLE-NE-ATTRIBUTION.txt"
-cp "$SCRATCH/debug/NepTypeInput" "$APP/Contents/MacOS/NepTypeInput"
+NEPTYPE_INPUT_BIN_PATH=$(swift build -c release --product NepTypeInput --scratch-path "$SCRATCH" --cache-path "$SCRATCH/cache" --config-path "$SCRATCH/config" --security-path "$SCRATCH/security" "$@" --show-bin-path)
+cp "$NEPTYPE_INPUT_BIN_PATH/NepTypeInput" "$APP/Contents/MacOS/NepTypeInput"
 cat > "$APP/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -27,8 +28,8 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <key>CFBundleDisplayName</key><string>NepType Nepali</string>
 <key>CFBundleIconFile</key><string>NepType.icns</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleVersion</key><string>1</string>
-<key>CFBundleShortVersionString</key><string>0.1</string>
+<key>CFBundleVersion</key><string>2</string>
+<key>CFBundleShortVersionString</key><string>0.1.1</string>
 <key>LSMinimumSystemVersion</key><string>13.0</string>
 <key>LSUIElement</key><true/>
 <key>NSPrincipalClass</key><string>NSApplication</string>
@@ -38,7 +39,15 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <key>tsInputMethodCharacterRepertoireKey</key><array><string>Devanagari</string></array>
 </dict></plist>
 PLIST
+# Remove Finder decoration from generated bundles before signature verification.
+for attribute in com.apple.FinderInfo com.apple.ResourceFork; do
+  xattr -dr "$attribute" "$APP" 2>/dev/null || true
+done
 codesign --force --sign - "$APP"
+codesign --verify --deep --strict "$APP"
 mkdir -p build
 ditto --noextattr --norsrc "$APP" "build/NepType Input.app"
+for attribute in com.apple.FinderInfo com.apple.ResourceFork; do
+  xattr -dr "$attribute" "build/NepType Input.app" 2>/dev/null || true
+done
 printf '\nBuilt %s\n' "$(pwd)/build/NepType Input.app"

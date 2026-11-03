@@ -20,6 +20,15 @@ Each intent requires an explicit host acknowledgement. State is advanced only wh
 
 ## Build and test
 
+In the standalone pad, **Ctrl+1–3** chooses the corresponding visible suggestion
+for the current Roman word. The button labels show the shortcuts. The command
+does nothing while a lookup or IME composition is pending, the row is stale, or
+the slot is unavailable. Plain numbers and ordinary editing shortcuts remain
+text-control input. These bindings apply to the pad; browser shortcuts remain
+unchanged. On Windows, `NepTypePadShortcutTests` uses real Rich Edit controls,
+Win32 key messages and the staged Rust DLL to exercise the production dispatcher.
+The portable `PadCandidateView` tests also run on the development Mac.
+
 The portable transaction model was built and its assertions passed on this Mac using Apple clang:
 
 ```sh

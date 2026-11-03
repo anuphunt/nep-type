@@ -1,18 +1,18 @@
 {
   "aksharantar_rows": 2171523,
   "alias_rows": 278253,
-  "authored_words": 260,
-  "bytes": 37244967,
+  "authored_words": 263,
+  "bytes": 37245039,
   "english_words": 117493,
-  "id": "ca41a4464720ff25c7733c841a6453411e56e797b761c58a659d95b4d3b49825",
+  "id": "0bbc9d1e4c176e0f7f7a3c4ff4b2a3489733f640dc1b4dbb69afd4dbd87fd8ac",
   "schema": 2,
-  "sha256": "313a97705e6d8461669eeb3218795c040bdafc269be7b88da9ce874c7ab1d417",
+  "sha256": "655184cbdb90d1c1c811aff55f5de5fc637657a3a225021ddcf0a887447fb39a",
   "sources": {
     "data/compiled/aksharantar-indiccorp-v1.tsv": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",
     "data/compiled/google-ne-aliases.tsv": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159",
     "data/sources/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
     "data/sources/english-common-v1.json": "d09e37e5141de0973b6b6ad99481102cfeedb3ba6bb96957a2aa53a752f65c1d",
-    "data/sources/nepali-authored-v1.json": "2cf7f7c3f3a10ea58cdd73bef11a066ae78bf7628e54b80bbe2663639237c43d"
+    "data/sources/nepali-authored-v1.json": "93c2196569ddc6fb832c57b660d7462886e10b82e2d2ccfa47022761222671ab"
   },
   "unique_spellings": 2408836
 }

@@ -1,5 +1,13 @@
 # Windows typing-pad preview release
 
+## Version 0.1.1-preview.1 integration
+
+The new release integrates Ctrl+1–3 selection, request/selection staleness guards, local draft and mode saving, automatic spelling memory, desktop tools and truthful keyboard-setup guidance. The experimental TSF service remains excluded. The guide, saved draft, vocabulary corrections and installed payload must pass the existing Windows CI/installation gates. Prior releases and their verification records below remain recoverable; new binaries require new versioned assets.
+
+The Mac release is separately signed and notarized at version 0.1.1. The desktop integration does not change iOS source or TestFlight distribution.
+
+## Previous published release record
+
 ## Scope and current state
 
 This release is the native Win32 **typing pad**, backed by the same offline Rust

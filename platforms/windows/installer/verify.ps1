@@ -8,6 +8,8 @@ $installer = Join-Path $output $package.filename
 $installed = Join-Path $env:LOCALAPPDATA 'Programs/NepType preview परीक्षण'
 $shortcut = Join-Path ([Environment]::GetFolderPath('Programs')) 'NepType.lnk'
 $uninstallKey = 'HKCU:/Software/Microsoft/Windows/CurrentVersion/Uninstall/{5E4BC5AE-0272-4601-9D59-3018815A456C}_is1'
+$stateDirectory = Join-Path $output 'isolated-user-state'
+New-Item -ItemType Directory $stateDirectory -Force | Out-Null
 $checks = [System.Collections.Generic.List[string]]::new()
 $observations = [System.Collections.Generic.List[object]]::new()
 function Record-PadState([string]$label) {
@@ -48,12 +50,33 @@ public static class PadUI {
     public static extern IntPtr SetText(IntPtr window, uint msg, IntPtr w, string text);
     [DllImport("user32.dll", CharSet=CharSet.Unicode, EntryPoint="SendMessageW")]
     public static extern IntPtr GetText(IntPtr window, uint msg, IntPtr length, StringBuilder text);
+    public delegate bool WindowCallback(IntPtr window, IntPtr data);
+    [DllImport("user32.dll")] public static extern bool EnumWindows(WindowCallback callback, IntPtr data);
+    [DllImport("user32.dll")] public static extern bool EnumChildWindows(IntPtr window, WindowCallback callback, IntPtr data);
+    [DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(IntPtr window, out uint process);
+    public static IntPtr SetupDialog(int process) {
+        IntPtr found = IntPtr.Zero;
+        EnumWindows((window, data) => {
+            uint owner; GetWindowThreadProcessId(window, out owner);
+            if (owner == process && Text(window) == "NepType keyboard setup") { found = window; return false; }
+            return true;
+        }, IntPtr.Zero);
+        return found;
+    }
+    public static string ChildText(IntPtr window) {
+        var result = new StringBuilder();
+        EnumChildWindows(window, (child, data) => { result.AppendLine(Text(child)); return true; }, IntPtr.Zero);
+        return result.ToString();
+    }
     [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr window, out Rect rect);
     [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left,Top,Right,Bottom; }
     public static string Text(IntPtr window) {
         var text = new StringBuilder(32768);
         GetText(window, 13, (IntPtr)text.Capacity, text);
         return text.ToString();
+    }
+    public static string CandidateText(IntPtr window) {
+        return System.Text.RegularExpressions.Regex.Replace(Text(window), @"  Ctrl\+[1-3]$", "");
     }
 }
 '@
@@ -63,10 +86,20 @@ function Type-Text([IntPtr]$inputBox, [string]$text) {
     [void][PadUI]::Message($inputBox, 177, [IntPtr]$text.Length, [IntPtr]$text.Length)
 }
 function Launch-Pad {
-    # No build-tree paths or environment overrides: exercise the installed files.
+    # Exercise installed files with no engine path overrides. Only LOCALAPPDATA
+    # is isolated so tests never read or change a real user draft or spellings.
     Remove-Item Env:NEPTYPE_ENGINE_LIBRARY, Env:NEPTYPE_DICTIONARY_DIR -ErrorAction SilentlyContinue
-    $app = Start-Process (Join-Path $installed 'NepType.exe') -WorkingDirectory $env:TEMP -PassThru
+    $expectGuide = !(Test-Path (Join-Path $stateDirectory 'NepType/guide'))
+    $app = Start-Process (Join-Path $installed 'NepType.exe') -WorkingDirectory $env:TEMP -Environment @{ LOCALAPPDATA = $stateDirectory } -PassThru
     Wait-For { $app.Refresh(); $app.MainWindowHandle -ne [IntPtr]::Zero } 'Installed app launches from unrelated working directory'
+    $dialog = [IntPtr]::Zero
+    if ($expectGuide) {
+        Wait-For { $script:dialog = [PadUI]::SetupDialog($app.Id); $script:dialog -ne [IntPtr]::Zero } 'First-launch setup guide appears'
+        Check ([PadUI]::ChildText($script:dialog).Contains('system keyboard is still in development')) 'Setup guide accurately describes Windows keyboard availability'
+        Check ([PadUI]::ChildText($script:dialog).Contains('Ctrl+1')) 'Setup guide explains native suggestion shortcuts'
+        Click ([PadUI]::GetDlgItem($script:dialog, 7)) # No: do not open OS settings.
+    }
+    $app.Refresh()
     return $app
 }
 $app = $null
@@ -108,6 +141,8 @@ try {
     Wait-For { [PadUI]::Text($result) -eq 'नमस्ते' } 'Roman input renders Devanagari'
     Click ([PadUI]::GetDlgItem($window, 104))
     Wait-For { (Get-Clipboard -Raw) -eq 'नमस्ते' } 'Copy button writes Unicode clipboard'
+    Type-Text $inputBox 'gaadi gadi gayera'
+    Wait-For { [PadUI]::Text($result) -eq 'गाडी गाडी गएर' } 'Vehicle and gayera spelling regressions fixed in installed engine'
     Type-Text $inputBox 'pani'
     # The frozen shared-engine contract defaults to पनि. Select पानी so this
     # assertion exercises an actual output change rather than selecting default.
@@ -117,7 +152,7 @@ try {
     Wait-For {
         foreach ($id in 201..203) {
             $button = [PadUI]::GetDlgItem($window, $id)
-            if ([PadUI]::Text($button) -eq 'पानी') { $script:candidate = $button; return $true }
+            if ([PadUI]::CandidateText($button) -eq 'पानी') { $script:candidate = $button; return $true }
         }
         return $false
     } 'Alternative spelling appears'
@@ -129,7 +164,7 @@ try {
     Wait-For {
         foreach ($id in 201..203) {
             $button = [PadUI]::GetDlgItem($window, $id)
-            if ([PadUI]::Text($button) -eq 'pani') { $script:candidate = $button; return $true }
+            if ([PadUI]::CandidateText($button) -eq 'pani') { $script:candidate = $button; return $true }
         }
         return $false
     } 'Original Roman spelling remains offered'
@@ -151,6 +186,17 @@ try {
     $graphics.CopyFromScreen($rect.Left,$rect.Top,0,0,$bitmap.Size)
     $bitmap.Save((Join-Path $output 'installed-pad.png'))
     $graphics.Dispose(); $bitmap.Dispose()
+    Type-Text $inputBox 'gaadi gayera'
+    Click ([PadUI]::GetDlgItem($window, 106))
+    Wait-For { [PadUI]::Text($result) -eq 'गाडी गएर' } 'Draft prepared for relaunch'
+    [void]$app.CloseMainWindow()
+    Check ($app.WaitForExit(30000)) 'Draft saves on clean exit'
+    $app = Launch-Pad
+    $window = $app.MainWindowHandle
+    $inputBox = [PadUI]::GetDlgItem($window, 101)
+    $result = [PadUI]::GetDlgItem($window, 102)
+    Wait-For { [PadUI]::Text($inputBox) -eq 'gaadi gayera' -and [PadUI]::Text($result) -eq 'गाडी गएर' } 'Installed draft restores after relaunch'
+    Check ((Get-Content (Join-Path $stateDirectory 'NepType/mode') -Raw).Trim() -eq '2') 'Output mode persists locally'
     Click ([PadUI]::GetDlgItem($window, 103))
     Wait-For { [PadUI]::Text($inputBox) -eq '' -and [PadUI]::Text($result) -eq '' } 'Clear empties local pad'
     [void]$app.CloseMainWindow()

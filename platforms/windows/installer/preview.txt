@@ -6,7 +6,7 @@ Write Roman letters in NepType, choose a spelling, and copy the Nepali output in
 
 This preview is unsigned. Windows or your browser may show an unknown-publisher or SmartScreen warning. No code-signing or SmartScreen reputation is claimed.
 
-The pad does not save documents. Copy any text you want to keep before closing it.
+The pad saves your current Roman draft and output mode locally. Clear removes the saved draft text. Choosing a non-default spelling remembers it locally and puts it first in future suggestions. Ctrl+1–3 chooses a visible suggestion. Use Copy or Save output to keep a separate document.
 
 Installs for your user account without administrator access. Remove it through Windows Settings > Apps > Installed apps > NepType > Uninstall.
 
