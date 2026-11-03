@@ -50,19 +50,52 @@ extension AppDelegate {
             window.makeFirstResponder(input)
             textDidChange(Notification(name: NSText.didChangeNotification, object: input))
         }
+        var eventSequence = 0
+        var drainedEveryPress = true
         func key(_ characters: String, flags: NSEvent.ModifierFlags, code: UInt16,
                  ignoring: String? = nil, repeated: Bool = false) {
+            // Activation is asynchronous and can change between cases on a
+            // desktop runner. Preserve the tested responder while establishing
+            // the active window a physical key press requires.
+            window.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            let activationDeadline = Date().addingTimeInterval(5)
+            while !(NSApp.isActive && window.isKeyWindow) && Date() < activationDeadline {
+                if let pending = NSApp.nextEvent(matching: .any, until: min(activationDeadline, Date().addingTimeInterval(0.02)), inMode: .default, dequeue: true) {
+                    NSApp.sendEvent(pending)
+                }
+            }
             let event = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: flags,
                 timestamp: ProcessInfo.processInfo.systemUptime, windowNumber: window.windowNumber,
                 context: nil, characters: characters, charactersIgnoringModifiers: ignoring ?? characters,
                 isARepeat: repeated, keyCode: code)!
             NSApp.postEvent(event, atStart: false)
+            // A complete press includes release. Without it AppKit can retain
+            // key-equivalent tracking across independently prepared cases.
+            let release = NSEvent.keyEvent(with: .keyUp, location: .zero, modifierFlags: flags,
+                timestamp: ProcessInfo.processInfo.systemUptime, windowNumber: window.windowNumber,
+                context: nil, characters: characters, charactersIgnoringModifiers: ignoring ?? characters,
+                isARepeat: false, keyCode: code)!
+            NSApp.postEvent(release, atStart: false)
+            eventSequence += 1
+            let marker = NSEvent.otherEvent(with: .applicationDefined, location: .zero, modifierFlags: [],
+                timestamp: ProcessInfo.processInfo.systemUptime, windowNumber: window.windowNumber,
+                context: nil, subtype: 231, data1: eventSequence, data2: 0)!
+            NSApp.postEvent(marker, atStart: false)
             // Use the application queue, as physical key presses do. Sending
             // events inline skips AppKit's current-event and menu bookkeeping.
-            let deadline = Date().addingTimeInterval(0.01)
-            while let next = NSApp.nextEvent(matching: .any, until: deadline, inMode: .default, dequeue: true) {
-                NSApp.sendEvent(next)
+            let deadline = Date().addingTimeInterval(2)
+            var drained = false
+            while !drained && Date() < deadline {
+                if let next = NSApp.nextEvent(matching: .any, until: min(deadline, Date().addingTimeInterval(0.02)), inMode: .default, dequeue: true) {
+                    if next.type == .applicationDefined && next.subtype == marker.subtype && next.data1 == eventSequence {
+                        drained = true
+                        continue
+                    }
+                    NSApp.sendEvent(next)
+                }
             }
+            drainedEveryPress = drainedEveryPress && drained && NSApp.isActive && window.isKeyWindow
         }
         func command(_ number: Int, repeated: Bool = false) {
             key(String(number), flags: .command, code: [18, 19, 20, 21, 23][number - 1], repeated: repeated)
@@ -81,7 +114,11 @@ extension AppDelegate {
 
         prepare("pani")
         input.setSelectedRange(NSRange(location: 0, length: 4))
+        check("shortcut_selected_word_ready", canChooseCandidate(at: 1) && input.selectedRange() == NSRange(location: 0, length: 4))
         command(2)
+        if output.string != "पानी" {
+            print("Selected-word shortcut diagnostic: active=\(NSApp.isActive) keyWindow=\(window.isKeyWindow) responder=\(String(describing: window.firstResponder)) source=\(input.string) output=\(output.string) range=\(input.selectedRange()) canChoose=\(canChooseCandidate(at: 1)) choices=\(choices)")
+        }
         check("shortcut_command_2_selected_word", input.string == "pani" && output.string == "पानी")
 
         for number in 1...5 {
@@ -142,5 +179,6 @@ extension AppDelegate {
         prepare("pani")
         key("™", flags: .option, code: 19, ignoring: "2")
         check("shortcut_option_number_keeps_normal_text_input", input.string == "pani™")
+        check("shortcut_event_queue_drained", drainedEveryPress)
     }
 }
