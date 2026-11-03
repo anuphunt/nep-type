@@ -42,7 +42,7 @@
     },
     {
       "id": "nepali-word-workflow",
-      "status": "eligible",
+      "status": "research_needed",
       "query": "english to nepali typing in ms word",
       "title": "How to type Nepali in Microsoft Word using English letters",
       "intent": "Create Nepali Unicode text for a Word document",
@@ -66,7 +66,8 @@
           "period": "2025-10-01/2026-09-30",
           "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
         }
-      ]
+      ],
+      "evidenceNote": "November 3 verification hold: desktop Word is unavailable and the official web editor launch remained blank. Retain keyword evidence; require actual Unicode paste, font selection, save and reopen evidence before drafting. No installation, account rescue or generic copy/paste substitute."
     },
     {
       "id": "nepali-google-docs",
@@ -193,7 +194,7 @@
     },
     {
       "id": "everyday-typing-practice",
-      "status": "eligible",
+      "status": "published",
       "query": "nepali typing practice app",
       "title": "Practice Nepali typing with everyday sentences",
       "intent": "Practice composing useful messages and reviewing spellings",
@@ -208,7 +209,8 @@
           "period": "2025-10-01/2026-09-30",
           "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
         }
-      ]
+      ],
+      "articleSlug": "nepali-typing-practice-everyday-sentences"
     },
     {
       "id": "ambiguous-pani-spelling",

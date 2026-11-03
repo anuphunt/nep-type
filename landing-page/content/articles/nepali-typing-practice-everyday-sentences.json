@@ -1,0 +1,318 @@
+{
+  "slug": "nepali-typing-practice-everyday-sentences",
+  "topicId": "everyday-typing-practice",
+  "status": "published",
+  "published": "2026-11-03",
+  "primaryQuery": "nepali typing practice app",
+  "queryVariants": [
+    "Nepali sentence typing practice",
+    "practice Roman to Nepali typing",
+    "नेपाली वाक्य लेख्ने अभ्यास"
+  ],
+  "searchIntent": "Practise composing short Nepali messages with Roman input, check an answer key and correct a spelling before copying.",
+  "originalValue": "Four fresh everyday writing prompts with executable answer examples, an observed missed-vowel error and verified repair, and a repeat-and-record routine for proofreading. No speed-test, exam or learning-outcome claim.",
+  "overlapReview": "The homepage owns general tool intent; the typing guide explains controls. The mixed-language article covers preserving English words and the Romanized comparison explains input-method choice. This article supplies a task sequence: compose requests, a question, a greeting and a reminder without copying the Roman answer; compare an answer key; diagnose a real missing-vowel output; retry and record corrections. It does not duplicate the controls walkthrough or promise a scored typing test. None of the six example sentences occurs in the existing articles or example bank.",
+  "keywordEvidence": {
+    "provider": "Google Ads Keyword Planner",
+    "researchFile": "research/2026-11-01-keywords.json",
+    "keyword": "nepali typing practice app",
+    "averageMonthlySearches": "10–100",
+    "location": "Nepal",
+    "language": "English",
+    "network": "Google",
+    "period": "2025-10-01/2026-09-30",
+    "note": "Exact related measured term from November 1 report. Not an exact count, long-tail estimate or traffic forecast. No summed ranges, organic-difficulty inference or Search Console data."
+  },
+  "research": [
+    {
+      "url": "https://ads.google.com/aw/keywordplanner/home",
+      "checked": "2026-11-03",
+      "note": "Reviewed November 1 repository report: 395 ideas, Nepal, English, Google, October 2025 through September 2026. nepali typing practice app has a displayed 10–100 monthly range. No fresh lookup needed for two-day-old research."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/093c4d7f3a9c2eb98d5346d785e9a8a8eb410c35/landing-page/web-tool.mjs",
+      "checked": "2026-11-03",
+      "note": "Current controls and implementation confirm mixed mode, Roman-source editing, read-only output, clipboard copy, clear action and in-memory state. Practice steps checked in the actual browser; there is no timer or score."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/093c4d7f3a9c2eb98d5346d785e9a8a8eb410c35/landing-page/tests/web-engine.test.mjs",
+      "checked": "2026-11-03",
+      "note": "Current Rust/Wasm shared engine is the execution source. Six fresh displayed sentence pairs were executed and retained as checks, including bihan producing बिहन and bihana producing बिहान. Engine results are examples, not a spelling authority or evidence of learning gains."
+    },
+    {
+      "url": "https://neptype.com/typing-guide/",
+      "checked": "2026-11-03",
+      "note": "Inspected current local source and production browser guide for overlap and product limits. This article adds original practice tasks and a documented proofreading error instead of repeating setup. Browser checks opt out of analytics."
+    }
+  ],
+  "exampleContexts": [
+    "tea request",
+    "finding a book",
+    "birthday greeting",
+    "school book reminder",
+    "morning meeting with a friend, vowel proofreading"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "malai chiya chahinchha.",
+        "mode": 0
+      },
+      "expectedText": "मलाई चिया चाहिन्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "mero kitab kaha cha?",
+        "mode": 0
+      },
+      "expectedText": "मेरो किताब कहाँ छ?"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "janmadinko shubhakamana!",
+        "mode": 0
+      },
+      "expectedText": "जन्मदिनको शुभकामना!"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bholi kitab lyaunu.",
+        "mode": 0
+      },
+      "expectedText": "भोलि किताब ल्याउनु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bholi bihan bhetau.",
+        "mode": 0
+      },
+      "expectedText": "भोलि बिहन भेटौँ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bholi bihana bhetau.",
+        "mode": 0
+      },
+      "expectedText": "भोलि बिहान भेटौँ।"
+    }
+  ],
+  "en": {
+    "title": "Nepali typing practice with everyday sentences | NepType",
+    "heading": "Practice Nepali typing with everyday sentences",
+    "description": "Try four Nepali writing tasks, compare tested Roman-input answers and repair a missed vowel. Practise composing and proofreading in the browser pad.",
+    "sections": [
+      [
+        "Start with a short message",
+        "Open NepType, choose Nepali + EN and practise one sentence at a time. Start with a tea request or a book question, then compare your output with the examples. Pay attention to the spellings you need to correct. NepType has no timer or accuracy score.",
+        {
+          "links": [
+            [
+              "Open the typing pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Try these four writing tasks",
+        "Ask for tea, ask where your book is, wish someone a happy birthday, then ask them to bring a book tomorrow. Write each message in Roman letters before looking at the Roman input column. The examples give one working input for each message; other spellings can produce the same Nepali. Use Nepali + EN for every example here.",
+        {
+          "examples": [
+            [
+              "malai chiya chahinchha.",
+              "मलाई चिया चाहिन्छ।"
+            ],
+            [
+              "mero kitab kaha cha?",
+              "मेरो किताब कहाँ छ?"
+            ],
+            [
+              "janmadinko shubhakamana!",
+              "जन्मदिनको शुभकामना!"
+            ],
+            [
+              "bholi kitab lyaunu.",
+              "भोलि किताब ल्याउनु।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Find and repair a missed vowel",
+        "For a morning arrangement, you want to write “भोलि बिहान भेटौँ।” With bihan, the current engine produces बिहन, missing the ा in बिहान. The first row deliberately shows that incorrect spelling. Change the Roman input to bihana, as in the second row, then read the entire output again. A readable suggestion can still contain a mistake.",
+        {
+          "examples": [
+            [
+              "bholi bihan bhetau.",
+              "भोलि बिहन भेटौँ।"
+            ],
+            [
+              "bholi bihana bhetau.",
+              "भोलि बिहान भेटौँ।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Repeat without copying the Roman answer",
+        "Choose one sentence from the first table. Clear the pad and write the Roman input again while looking only at the Nepali sentence. Compare your finished output word by word. When you write a new sentence of your own, check its meaning as well as its spelling.",
+        {
+          "steps": [
+            "Choose a sentence and read its Nepali spelling.",
+            "Clear the pad and write the sentence from memory in Roman letters.",
+            "Compare the result, correct any difference and try it once more."
+          ]
+        }
+      ],
+      [
+        "Check the small marks before copying",
+        "In the book question, check the mark above कहाँ. In the tea request, read चाहिन्छ as a complete word. In the birthday greeting, check जन्मदिनको and the punctuation. Review your final output before using Copy text. Edit the Roman input to change a phrase; the Nepali output box is read-only.",
+        {
+          "links": [
+            [
+              "Spelling choices and editing controls",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Keep a note of your corrections",
+        "Save the Roman input, final Nepali sentence and the word you corrected in your own notes. For the morning example, record bihan as the input that needed repair and bihana as the tested replacement. Revisit the correction in your next practice session. Copy anything you want to keep before closing or reloading the browser; the pad does not save drafts."
+      ],
+      [
+        "Match this practice to your goal",
+        "These exercises practise Roman-word composition and proofreading. A course that names a fixed Nepali Romanized keyboard layout needs that layout’s own key chart. An exam may also specify its software and scoring rules; check those requirements separately.",
+        {
+          "links": [
+            [
+              "Compare Romanized layouts and word transliteration",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ],
+            [
+              "Write your own practice sentence",
+              "/#try"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "दैनिक वाक्यबाट नेपाली टाइपिङ अभ्यास | NepType",
+    "heading": "दैनिक वाक्य लेखेर नेपाली टाइपिङ अभ्यास गर्नुहोस्",
+    "description": "चारवटा नेपाली सन्देश लेख्नुहोस्, जाँचिएका रोमन उदाहरणसँग तुलना गर्नुहोस् र छुटेको मात्रा सच्याउनुहोस्। ब्राउजर प्याडमा लेखाइ र हिज्जेको अभ्यास।",
+    "sections": [
+      [
+        "छोटो सन्देशबाट सुरु गर्नुहोस्",
+        "NepType खोलेर Nepali + EN रोज्नुहोस् र एकपटकमा एउटा वाक्य लेख्नुहोस्। सुरुमा चिया माग्ने वा किताब कहाँ छ भनेर सोध्ने वाक्य लेखेर उदाहरणसँग दाँज्नुहोस्। सच्याउनुपरेका हिज्जेमा ध्यान दिनुहोस्। NepType मा समय नाप्ने वा शुद्धताको अङ्क दिने सुविधा छैन।",
+        {
+          "links": [
+            [
+              "टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "यी चार सन्देश लेखेर हेर्नुहोस्",
+        "चिया माग्नुहोस्, आफ्नो किताब कहाँ छ भनेर सोध्नुहोस्, जन्मदिनको शुभकामना दिनुहोस् र भोलि किताब ल्याउन भन्नुहोस्। रोमन लेखाइको स्तम्भ हेर्नुअघि आफैँ रोमनमा लेखेर हेर्नुहोस्। हरेक सन्देशका लागि एउटा काम गर्ने रोमन हिज्जे दिइएको छ। अर्को रोमन हिज्जेबाट पनि उही नेपाली आउन सक्छ। यहाँका सबै उदाहरणमा Nepali + EN प्रयोग गर्नुहोस्।",
+        {
+          "examples": [
+            [
+              "malai chiya chahinchha.",
+              "मलाई चिया चाहिन्छ।"
+            ],
+            [
+              "mero kitab kaha cha?",
+              "मेरो किताब कहाँ छ?"
+            ],
+            [
+              "janmadinko shubhakamana!",
+              "जन्मदिनको शुभकामना!"
+            ],
+            [
+              "bholi kitab lyaunu.",
+              "भोलि किताब ल्याउनु।"
+            ]
+          ]
+        }
+      ],
+      [
+        "छुटेको मात्रा भेटेर सच्याउनुहोस्",
+        "बिहान भेट्ने कुरा भन्न खोज्दा “भोलि बिहान भेटौँ।” लेख्नुपर्छ। हालको इन्जिनमा bihan लेख्दा बिहानको ा छुटेर बिहन आउँछ। तलको पहिलो पङ्क्तिमा यही गलत हिज्जे देखाइएको छ। दोस्रो पङ्क्तिमा जस्तै रोमन बाकसमा bihana लेख्नुहोस् र पूरै नतिजा फेरि पढ्नुहोस्। सजिलै पढ्न मिल्ने नतिजामा पनि हिज्जे बिग्रिएको हुन सक्छ।",
+        {
+          "examples": [
+            [
+              "bholi bihan bhetau.",
+              "भोलि बिहन भेटौँ।"
+            ],
+            [
+              "bholi bihana bhetau.",
+              "भोलि बिहान भेटौँ।"
+            ]
+          ]
+        }
+      ],
+      [
+        "रोमन उत्तर नहेरी फेरि लेख्नुहोस्",
+        "पहिलो तालिकाबाट एउटा वाक्य छान्नुहोस्। प्याड खाली गरेर नेपाली वाक्य मात्र हेर्दै फेरि रोमनमा लेख्नुहोस्। तयार नतिजा शब्दशब्द दाँज्नुहोस्। आफ्नै नयाँ वाक्य लेख्दा हिज्जेसँगै अर्थ पनि जाँच्नुहोस्।",
+        {
+          "steps": [
+            "एउटा वाक्य छानेर त्यसको नेपाली हिज्जे पढ्नुहोस्।",
+            "प्याड खाली गरेर सम्झनाका भरमा रोमनमा लेख्नुहोस्।",
+            "नतिजा दाँज्नुहोस्, फरक परेको हिज्जे सच्याउनुहोस् र फेरि लेखेर हेर्नुहोस्।"
+          ]
+        }
+      ],
+      [
+        "कपी गर्नुअघि साना चिह्न जाँच्नुहोस्",
+        "किताबबारेको प्रश्नमा कहाँ माथिको चिह्न छुटेको छ कि हेर्नुहोस्। चिया माग्ने वाक्यमा चाहिन्छ पूरै पढ्नुहोस्। शुभकामनामा जन्मदिनको र विराम चिह्न जाँच्नुहोस्। तयार नतिजा पढेपछि पाठ कपी गर्नुहोस् बटन प्रयोग गर्नुहोस्। वाक्यांश बदल्न रोमन बाकसमा सच्याउनुहोस्। नेपाली नतिजाको बाकस सिधै सम्पादन हुँदैन।",
+        {
+          "links": [
+            [
+              "हिज्जे रोज्ने र लेखाइ सच्याउने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "सच्याएका हिज्जेको टिपोट राख्नुहोस्",
+        "रोमन लेखाइ, अन्तिम नेपाली वाक्य र सच्याएको शब्द आफ्नो नोटमा राख्नुहोस्। बिहानको उदाहरणमा bihan बाट सच्याउनुपरेको र bihana लेख्दा चाहिएको नतिजा आएको टिप्नुहोस्। अर्को पटक अभ्यास गर्दा त्यो शब्द फेरि लेख्नुहोस्। राख्नुपर्ने पाठ ब्राउजर बन्द गर्नुअघि वा फेरि लोड गर्नुअघि कपी गर्नुहोस्। प्याडले मस्यौदा सुरक्षित राख्दैन।"
+      ],
+      [
+        "आफ्नो उद्देश्यअनुसार अभ्यास रोज्नुहोस्",
+        "यी अभ्यास रोमन शब्दबाट नेपाली वाक्य बनाउने र हिज्जे जाँच्ने कामका लागि हुन्। पाठ्यक्रमले निश्चित रोमनाइज्ड नेपाली किबोर्ड मागेको छ भने त्यसैको कुञ्जी नक्सा चाहिन्छ। परीक्षामा लेख्ने सफ्टवेयर र अङ्क दिने नियम पनि तोकिएका हुन सक्छन्। ती सर्त छुट्टै जाँच्नुहोस्।",
+        {
+          "links": [
+            [
+              "रोमनाइज्ड लेआउट र रोमनबाट शब्द लेख्ने तरिका तुलना गर्नुहोस्",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ],
+            [
+              "आफ्नो अभ्यास वाक्य लेख्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-03",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both complete drafts, including titles, descriptions, headings, instructions and link labels. Replaced the not-just/but goal sentence and its Nepali equivalent with direct attention to corrected spellings. Removed a repetitive defensive sentence about the scope of the examples, keeping the practical instruction to check meaning and spelling. Repaired awkward full-stop adjacency around the quoted morning target in both versions. Reread for natural Nepali, equivalent instructions, repetition, staged openers, inflation, dashes and unsupported learning claims. Executable examples/checks, source URLs, structured evidence, dates and identifiers were compared unchanged. Automated editorial review, not a claim of human authorship or expert review."
+  }
+}
