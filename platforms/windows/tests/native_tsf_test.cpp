@@ -85,17 +85,21 @@ struct RegisteredProfile {
     }
     ~RegisteredProfile() { if(FAILED(finish())) std::cerr<<"Native TSF profile cleanup failed"<<std::endl; }
 };
-struct Store final : ITextStoreACP {
+struct Store final : ITextStoreACP, ITfInputScope {
     ULONG refs = 1;
     ComPtr<ITextStoreACPSink> sink;
     std::wstring text;
     LONG start = 0, end = 0;
     bool locked = false, deny = false, readonly = false;
+    bool scope_requested = false;
+    InputScope scope = IS_DEFAULT;
     HWND window = nullptr;
     HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, void** out) override {
         if (!out) return E_POINTER; *out = nullptr;
-        if (iid != IID_IUnknown && iid != IID_ITextStoreACP) return E_NOINTERFACE;
-        *out = static_cast<ITextStoreACP*>(this); AddRef(); return S_OK;
+        if (iid == IID_IUnknown || iid == IID_ITextStoreACP) *out = static_cast<ITextStoreACP*>(this);
+        else if (iid == IID_ITfInputScope) *out = static_cast<ITfInputScope*>(this);
+        else return E_NOINTERFACE;
+        AddRef(); return S_OK;
     }
     ULONG STDMETHODCALLTYPE AddRef() override { return ++refs; }
     ULONG STDMETHODCALLTYPE Release() override { return --refs; }
@@ -151,11 +155,33 @@ struct Store final : ITextStoreACP {
         return SetText(0,start,end,value,size,change);
     }
     HRESULT STDMETHODCALLTYPE InsertEmbeddedAtSelection(DWORD,IDataObject*,LONG*,LONG*,TS_TEXTCHANGE*) override { return E_NOTIMPL; }
-    HRESULT STDMETHODCALLTYPE RequestSupportedAttrs(DWORD,ULONG,const TS_ATTRID*) override { return S_OK; }
-    HRESULT STDMETHODCALLTYPE RequestAttrsAtPosition(LONG,ULONG,const TS_ATTRID*,DWORD) override { return S_OK; }
-    HRESULT STDMETHODCALLTYPE RequestAttrsTransitioningAtPosition(LONG,ULONG,const TS_ATTRID*,DWORD) override { return S_OK; }
+    HRESULT request_scope(ULONG count,const TS_ATTRID* attributes) {
+        scope_requested=count==0;
+        for(ULONG i=0;i<count;++i) if(attributes[i]==GUID_PROP_INPUTSCOPE) scope_requested=true;
+        return scope_requested ? S_OK : S_FALSE;
+    }
+    HRESULT STDMETHODCALLTYPE RequestSupportedAttrs(DWORD,ULONG count,const TS_ATTRID* attributes) override { return request_scope(count,attributes); }
+    HRESULT STDMETHODCALLTYPE RequestAttrsAtPosition(LONG,ULONG count,const TS_ATTRID* attributes,DWORD) override { return request_scope(count,attributes); }
+    HRESULT STDMETHODCALLTYPE RequestAttrsTransitioningAtPosition(LONG,ULONG,const TS_ATTRID*,DWORD) override { scope_requested=false; return S_FALSE; }
     HRESULT STDMETHODCALLTYPE FindNextAttrTransition(LONG,LONG halt,ULONG,const TS_ATTRID*,DWORD,LONG* next,BOOL* found,LONG* offset) override { *next=halt; *found=FALSE; *offset=0; return S_OK; }
-    HRESULT STDMETHODCALLTYPE RetrieveRequestedAttrs(ULONG,TS_ATTRVAL*,ULONG* count) override { *count=0; return S_OK; }
+    HRESULT STDMETHODCALLTYPE RetrieveRequestedAttrs(ULONG capacity,TS_ATTRVAL* values,ULONG* count) override {
+        *count=0;
+        if(capacity && scope_requested) {
+            values[0].idAttr=GUID_PROP_INPUTSCOPE; values[0].dwOverlapId=1;
+            VariantInit(&values[0].varValue); values[0].varValue.vt=VT_UNKNOWN;
+            values[0].varValue.punkVal=static_cast<ITfInputScope*>(this); AddRef(); *count=1;
+        }
+        scope_requested=false; return S_OK;
+    }
+    HRESULT STDMETHODCALLTYPE GetInputScopes(InputScope** values,UINT* count) override {
+        *values=static_cast<InputScope*>(CoTaskMemAlloc(sizeof(InputScope)));
+        if(!*values) { *count=0; return E_OUTOFMEMORY; }
+        **values=scope; *count=1; return S_OK;
+    }
+    HRESULT STDMETHODCALLTYPE GetPhrase(BSTR** values,UINT* count) override { *values=nullptr; *count=0; return S_OK; }
+    HRESULT STDMETHODCALLTYPE GetRegularExpression(BSTR* value) override { *value=nullptr; return S_FALSE; }
+    HRESULT STDMETHODCALLTYPE GetSRGS(BSTR* value) override { *value=nullptr; return S_FALSE; }
+    HRESULT STDMETHODCALLTYPE GetXML(BSTR* value) override { *value=nullptr; return S_FALSE; }
     HRESULT STDMETHODCALLTYPE GetEndACP(LONG* length) override { *length=static_cast<LONG>(text.size()); return S_OK; }
     HRESULT STDMETHODCALLTYPE GetActiveView(TsViewCookie* view) override { *view=1; return S_OK; }
     HRESULT STDMETHODCALLTYPE GetACPFromPoint(TsViewCookie,const POINT*,DWORD,LONG*) override { return E_NOTIMPL; }
@@ -164,6 +190,7 @@ struct Store final : ITextStoreACP {
     HRESULT STDMETHODCALLTYPE GetWnd(TsViewCookie,HWND* out) override { *out=window; return S_OK; }
     void select(LONG a, LONG b) { start=a; end=b; if(sink) sink->OnSelectionChange(); }
     void set_readonly(bool value) { readonly=value; if(sink) sink->OnStatusChange(TS_SD_READONLY); }
+    void set_scope(InputScope value) { scope=value; if(sink) sink->OnAttrsChange(0,static_cast<LONG>(text.size()),1,&GUID_PROP_INPUTSCOPE); }
 };
 static void pump() { MSG message; while (PeekMessageW(&message,nullptr,0,0,PM_REMOVE)) { TranslateMessage(&message); DispatchMessageW(&message); } }
 struct Probe final : ITfEditSession {
@@ -216,7 +243,7 @@ static int run(int argc,char** argv) {
     TfClientId client=TF_CLIENTID_NULL; CHECK(SUCCEEDED(thread->Activate(&client)));
     ComPtr<ITfDocumentMgr> document; CHECK(SUCCEEDED(thread->CreateDocumentMgr(document.put())));
     ComPtr<ITfContext> context; TfEditCookie cookie=0;
-    CHECK(SUCCEEDED(document->CreateContext(client,0,&store,context.put(),&cookie)));
+    CHECK(SUCCEEDED(document->CreateContext(client,0,static_cast<ITextStoreACP*>(&store),context.put(),&cookie)));
     CHECK(SUCCEEDED(document->Push(context.get()))); CHECK(SUCCEEDED(thread->SetFocus(document.get())));
     ComPtr<ITfDocumentMgr> previous_document;
     require_hr("Associate host window",thread->AssociateFocus(store.window,document.get(),previous_document.put()));
@@ -273,6 +300,10 @@ static int run(int argc,char** argv) {
     CHECK(!key(VK_LEFT)); CHECK(store.text==unchanged);
     store.set_readonly(true); CHECK(!key('X')); CHECK(store.text==unchanged); store.set_readonly(false);
     store.deny=true; CHECK(!key('X')); CHECK(store.text==unchanged); store.deny=false;
+    for(const auto scope : {IS_PASSWORD,IS_URL,IS_EMAIL_SMTPEMAILADDRESS,IS_NUMBER,IS_PRIVATE}) {
+        store.set_scope(scope); CHECK(!key('X')); CHECK(store.text==unchanged);
+    }
+    store.set_scope(IS_DEFAULT);
     CHECK(key(VK_SPACE,true,true)); // Mixed -> Nepali
     CHECK(key(VK_SPACE,true,true)); // Nepali -> English
     CHECK(!key('X') && store.text==unchanged);
