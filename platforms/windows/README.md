@@ -1,6 +1,6 @@
 # NepType Windows keyboard and typing pad
 
-This branch adds a live, in-process Microsoft Text Services Framework (TSF) keyboard alongside the existing Win32 typing pad. It uses the shared offline Rust engine and embedded dictionary; it does not use a global keyboard hook, clipboard injection, network service or subprocess per key. It is a development build pending the Windows host acceptance checks below. It has not been merged or released.
+The source includes a live, in-process Microsoft Text Services Framework (TSF) keyboard alongside the existing Win32 typing pad. It uses the shared offline Rust engine and embedded dictionary; it does not use a global keyboard hook, clipboard injection, network service or subprocess per key. It is a development build on main pending the Windows host acceptance checks below. A keyboard installer has not been released.
 
 ## Typing
 

@@ -89,6 +89,26 @@ struct Store final : ITextStoreACP {
     void select(LONG a, LONG b) { start=a; end=b; if(sink) sink->OnSelectionChange(); }
 };
 static void pump() { MSG message; while (PeekMessageW(&message,nullptr,0,0,PM_REMOVE)) { TranslateMessage(&message); DispatchMessageW(&message); } }
+struct Probe final : ITfEditSession {
+    ITfContext* context; ULONG refs=1;
+    explicit Probe(ITfContext* value):context(value) {}
+    HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid,void** out) override {
+        if (!out) return E_POINTER; *out=nullptr;
+        if (iid!=IID_IUnknown && iid!=IID_ITfEditSession) return E_NOINTERFACE;
+        *out=static_cast<ITfEditSession*>(this); AddRef(); return S_OK;
+    }
+    ULONG STDMETHODCALLTYPE AddRef() override { return ++refs; }
+    ULONG STDMETHODCALLTYPE Release() override { return --refs; }
+    HRESULT STDMETHODCALLTYPE DoEditSession(TfEditCookie cookie) override {
+        TF_STATUS status{}; const auto hr=context->GetStatus(&status);
+        std::cerr << "TSF probe: status=" << std::hex << static_cast<unsigned long>(hr)
+            << " dynamic=" << status.dwDynamicFlags << std::dec
+            << " disabled=" << disabled_compartment(context,GUID_COMPARTMENT_KEYBOARD_DISABLED)
+            << " empty=" << disabled_compartment(context,GUID_COMPARTMENT_EMPTYCONTEXT)
+            << " prose-allowed=" << allows_conversion(context,cookie) << std::endl;
+        return S_OK;
+    }
+};
 int main(int argc, char** argv) {
     assert(argc == 2);
     assert(SUCCEEDED(CoInitializeEx(nullptr,COINIT_APARTMENTTHREADED)));
@@ -107,7 +127,15 @@ int main(int argc, char** argv) {
     ComPtr<IClassFactory> factory; assert(SUCCEEDED(get(service_id,IID_IClassFactory,reinterpret_cast<void**>(factory.put()))));
     ComPtr<ITfTextInputProcessor> service;
     assert(SUCCEEDED(factory->CreateInstance(nullptr,IID_ITfTextInputProcessor,reinterpret_cast<void**>(service.put()))));
-    assert(SUCCEEDED(service->Activate(thread.get(),client)));
+    // The document owner and text service are separate TSF clients. Reusing
+    // the application's Activate() ID is not a service activation contract.
+    ComPtr<ITfClientId> client_ids;
+    assert(SUCCEEDED(thread->QueryInterface(IID_ITfClientId,reinterpret_cast<void**>(client_ids.put()))));
+    TfClientId service_client=TF_CLIENTID_NULL;
+    assert(SUCCEEDED(client_ids->GetClientId(service_id,&service_client)));
+    const auto activation=service->Activate(thread.get(),service_client);
+    if (FAILED(activation)) std::cerr << "Production TSF Activate HRESULT: 0x" << std::hex << static_cast<unsigned long>(activation) << std::dec << std::endl;
+    assert(SUCCEEDED(activation));
     ComPtr<ITfKeyEventSink> keys;
     assert(SUCCEEDED(service->QueryInterface(IID_ITfKeyEventSink,reinterpret_cast<void**>(keys.put()))));
     assert(prose_scope(IS_DEFAULT) && prose_scope(IS_TEXT));
@@ -122,6 +150,13 @@ int main(int argc, char** argv) {
         assert(SUCCEEDED(keys->OnTestKeyDown(context.get(),vk,flags,&tested)));
         assert(store.text==before); // test callbacks are read-only
         assert(SUCCEEDED(keys->OnKeyDown(context.get(),vk,flags,&eaten)));
+        if (!eaten && tested) {
+            std::cerr << "Synthetic key passed through: vk=" << vk << " text-length=" << store.text.size() << std::endl;
+            Probe probe(context.get()); HRESULT result=E_FAIL;
+            const auto request=context->RequestEditSession(service_client,&probe,TF_ES_SYNC|TF_ES_READ,&result);
+            std::cerr << "Probe request=" << std::hex << static_cast<unsigned long>(request)
+                << " result=" << static_cast<unsigned long>(result) << std::dec << std::endl;
+        }
         BOOL up=FALSE; assert(SUCCEEDED(keys->OnKeyUp(context.get(),vk,flags,&up))); assert(up==eaten);
         SetKeyboardState(saved);
         return eaten != FALSE;
@@ -147,7 +182,7 @@ int main(int argc, char** argv) {
     assert(key(VK_SPACE,true,true)); // English -> Mixed
     assert(SUCCEEDED(service->Deactivate())); pump();
     keys.reset(); service.reset(); factory.reset();
-    document->Pop(TF_POPF_ALL); context.reset(); document.reset(); thread->Deactivate(); thread.reset();
+    document->Pop(TF_POPF_ALL); context.reset(); document.reset(); client_ids.reset(); thread->Deactivate(); thread.reset();
     pump(); DestroyWindow(store.window);
     auto unload=reinterpret_cast<HRESULT (__stdcall*)()>(GetProcAddress(library,"DllCanUnloadNow"));
     assert(unload && unload()==S_OK); FreeLibrary(library); CoUninitialize();

@@ -53,7 +53,7 @@ The standalone pad and Mac system keyboard work today. The product owner confirm
 
 Open **Keyboard setup** in the Mac app to install the bundled source into `~/Library/Input Methods/`. Then open System Settings → Keyboard → Text Input → Edit → Add Input Source and search for NepType under Nepali; a logout/login may be needed. Use the macOS input menu to switch keyboards. Type a Roman word, press Tab to cycle alternatives, Space to commit, or Escape to keep the original. Backspace edits the Roman word.
 
-The released Windows download remains the typing pad. This development branch adds a system-wide TSF keyboard and explicit installer; Windows host acceptance is still required before release. See [Windows keyboard build, setup and validation](platforms/windows/README.md).
+The released Windows download remains the typing pad. The source now includes a system-wide TSF keyboard and explicit installer; Windows host acceptance is still required before release. See [Windows keyboard build, setup and validation](platforms/windows/README.md).
 
 Rebuild the input source with `bash scripts/build-input-source.sh`. It does not request Accessibility or Input Monitoring permission.
 
