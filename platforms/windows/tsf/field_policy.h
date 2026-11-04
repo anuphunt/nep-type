@@ -39,8 +39,9 @@ inline bool allows_conversion(ITfContext* context, TfEditCookie cookie) {
     TF_SELECTION selected{}; ULONG count = 0;
     if (FAILED(context->GetSelection(cookie, TF_DEFAULT_SELECTION, 1, &selected, &count)) || count != 1 || !selected.range) return false;
     ComPtr<ITfRange> range(selected.range); selected.range->Release();
-    ComPtr<ITfProperty> property;
-    if (FAILED(context->GetProperty(GUID_PROP_INPUTSCOPE, property.put())) || !property) return false;
+    // Input scope belongs to the application, not to this text service.
+    ComPtr<ITfReadOnlyProperty> property;
+    if (FAILED(context->GetAppProperty(GUID_PROP_INPUTSCOPE, property.put())) || !property) return false;
     VARIANT value; VariantInit(&value);
     const auto hr = property->GetValue(cookie, range.get(), &value);
     bool allowed = !FAILED(hr);

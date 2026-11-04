@@ -163,6 +163,7 @@ struct Store final : ITextStoreACP {
     HRESULT STDMETHODCALLTYPE GetScreenExt(TsViewCookie,RECT* rect) override { *rect={0,0,800,600}; return S_OK; }
     HRESULT STDMETHODCALLTYPE GetWnd(TsViewCookie,HWND* out) override { *out=window; return S_OK; }
     void select(LONG a, LONG b) { start=a; end=b; if(sink) sink->OnSelectionChange(); }
+    void set_readonly(bool value) { readonly=value; if(sink) sink->OnStatusChange(TS_SD_READONLY); }
 };
 static void pump() { MSG message; while (PeekMessageW(&message,nullptr,0,0,PM_REMOVE)) { TranslateMessage(&message); DispatchMessageW(&message); } }
 struct Probe final : ITfEditSession {
@@ -182,6 +183,18 @@ struct Probe final : ITfEditSession {
             << " disabled=" << disabled_compartment(context,GUID_COMPARTMENT_KEYBOARD_DISABLED)
             << " empty=" << disabled_compartment(context,GUID_COMPARTMENT_EMPTYCONTEXT)
             << " prose-allowed=" << allows_conversion(context,cookie) << std::endl;
+        TF_SELECTION selected{}; ULONG count=0;
+        const auto selection=context->GetSelection(cookie,TF_DEFAULT_SELECTION,1,&selected,&count);
+        std::cerr<<"Scope probe selection="<<std::hex<<static_cast<unsigned long>(selection)<<std::dec<<" count="<<count;
+        if(selected.range) {
+            ComPtr<ITfReadOnlyProperty> property;
+            const auto get=context->GetAppProperty(GUID_PROP_INPUTSCOPE,property.put());
+            std::cerr<<" property="<<std::hex<<static_cast<unsigned long>(get)<<std::dec;
+            if(property) { VARIANT value; VariantInit(&value); const auto read=property->GetValue(cookie,selected.range,&value);
+                std::cerr<<" value-result="<<std::hex<<static_cast<unsigned long>(read)<<std::dec<<" type="<<value.vt; VariantClear(&value); }
+            selected.range->Release();
+        }
+        std::cerr<<std::endl;
         return S_OK;
     }
 };
@@ -258,7 +271,7 @@ static int run(int argc,char** argv) {
     CHECK(store.text==L"an mm");
     CHECK(key('M')); const auto unchanged=store.text;
     CHECK(!key(VK_LEFT)); CHECK(store.text==unchanged);
-    store.readonly=true; CHECK(!key('X')); CHECK(store.text==unchanged); store.readonly=false;
+    store.set_readonly(true); CHECK(!key('X')); CHECK(store.text==unchanged); store.set_readonly(false);
     store.deny=true; CHECK(!key('X')); CHECK(store.text==unchanged); store.deny=false;
     CHECK(key(VK_SPACE,true,true)); // Mixed -> Nepali
     CHECK(key(VK_SPACE,true,true)); // Nepali -> English
