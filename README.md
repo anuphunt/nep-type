@@ -49,9 +49,11 @@ Mac pad shortcuts: **⌘⇧Space** switches languages, **⌘1–5** chooses a vi
 
 ## Scope and limits
 
-The standalone pad works today. Mac 0.1.1 bundles an optional experimental InputMethodKit input source. Builds also place it in `build/NepType Input.app`. Compilation, signing and installation into an isolated temporary folder are verified; registration and typing in other apps remain unverified. Installing the pad does not enable the input source.
+The standalone pad and Mac system keyboard work today. The product owner confirmed testing the Mac keyboard on 2026-11-04. Mac builds bundle the optional InputMethodKit input source and also place it in `build/NepType Input.app`. Installing the pad does not automatically enable the input source.
 
-To try the experimental input source, open **Keyboard setup** in the Mac app. Its helper installs the bundled source into `~/Library/Input Methods/` and refuses to overwrite an existing installation. Then open System Settings → Keyboard → Text Input → Edit → Add Input Source and search for NepType under Nepali; a logout and login may be needed. Use the macOS input menu to switch between it and your normal English keyboard. Type a Roman word, press Tab to cycle alternatives (including the original), Space to commit, or Escape to keep the original. Backspace edits the current Roman word. These registration and host-app steps remain experimental. Windows currently ships the typing pad and setup guidance; it excludes the unfinished system keyboard.
+Open **Keyboard setup** in the Mac app to install the bundled source into `~/Library/Input Methods/`. Then open System Settings → Keyboard → Text Input → Edit → Add Input Source and search for NepType under Nepali; a logout/login may be needed. Use the macOS input menu to switch keyboards. Type a Roman word, press Tab to cycle alternatives, Space to commit, or Escape to keep the original. Backspace edits the Roman word.
+
+The released Windows download remains the typing pad. This development branch adds a system-wide TSF keyboard and explicit installer; Windows host acceptance is still required before release. See [Windows keyboard build, setup and validation](platforms/windows/README.md).
 
 Rebuild the input source with `bash scripts/build-input-source.sh`. It does not request Accessibility or Input Monitoring permission.
 

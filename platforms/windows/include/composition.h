@@ -23,7 +23,8 @@ public:
     Intent backspace();
     Intent boundary(char16_t c);
     Intent interrupt();
-    Intent choose(std::u16string candidate, std::uint64_t candidate_generation);
+    Intent choose(std::u16string candidate, std::uint64_t candidate_generation,
+                  std::u16string suffix = {}, bool forward = false);
     bool acknowledge(std::uint64_t generation, bool applied);
     const std::u16string& original() const { return original_; }
     bool has_pending() const { return pending_.has_value(); }

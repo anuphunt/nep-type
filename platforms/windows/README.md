@@ -1,87 +1,58 @@
-# NepType Windows prototype
+# NepType Windows keyboard and typing pad
 
-## Installer preview preparation
+This branch adds a live, in-process Microsoft Text Services Framework (TSF) keyboard alongside the existing Win32 typing pad. It uses the shared offline Rust engine and embedded dictionary; it does not use a global keyboard hook, clipboard injection, network service or subprocess per key. It is a development build pending the Windows host acceptance checks below. It has not been merged or released.
 
-The standalone pad now has an Inno Setup 6 per-user x64 installer definition in
-`installer/`. It distributes only the pad, shared Rust DLL, license notices and
-dictionary identity. The experimental TSF DLL is excluded. No keyboard, service,
-hook, COM registration or machine-wide setting is installed. The C++ and Rust
-release builds use the static MSVC runtime to avoid a separate runtime installer.
+## Typing
 
-The `Windows installer` workflow builds and tests on `windows-2022`, packages an
-**unsigned** preview, and runs `installer/verify.ps1` against the installed app.
-Until that workflow succeeds, this is unverified packaging source, not a working
-download. See [the release runbook](../../docs/WINDOWS_RELEASE.md) for exact gates
-and remaining consumer-Windows and manual testing limitations.
+Choose **NepType Nepali Keyboard** using Win+Space. Type a Roman word and press Space to accept the highlighted conversion. Roman text stays visible in the composition while you type; the candidate window previews Nepali. The original spelling is always Ctrl+1. Ctrl+2–4 select the other visible choices; Up/Down cycle choices, Escape commits the original, and Backspace edits the Roman spelling. Enter and Tab commit the highlighted choice and then retain their normal application action.
 
-The native Win32 window now uses the compact Graphite typing-pad layout: Roman input, space for horizontal suggestions, read-only Nepali output, and a small copy icon. Clear edits only this local pad. Document conversion and three suggestion slots now call the shared Rust engine through the C++ DLL client on a serial, coalescing worker. Mode and copy controls enable when usable output is available. See [shared-engine architecture and build instructions](../../shared/README.md); Windows native SDK compilation and runtime validation remain required. The UI does **not** install or register a TSF text service or capture typing in other apps. `composition.cpp` is a host-independent transactional composition state machine intended to inform a future Windows TSF adapter. It can buffer a printable ASCII token, produce marked-text and commit intents, keep literal punctuation together, restore original text on an interrupt, and explicitly select a candidate carrying the current generation. It uses `std::u16string` for text so Devanagari candidate contents can pass unchanged; only the original Roman token is edited character by character. Independent instances isolate document sessions. It contains no embedded Nepali engine, no TSF integration, and does not itself edit an application.
+Ctrl+Shift+Space cycles **Mixed → Nepali → English → Mixed**. Mixed preserves English according to the shared engine. English passes ordinary keys directly to Windows. Navigation and shortcuts end the current composition with the exact Roman text before Windows handles the key; Ctrl+Z is delegated to the host's undo system. Focus changes retain the Roman spelling and end only the owned composition, without moving selection or rewriting text. Each context has its own transaction generation; stale choices cannot be applied to another word.
 
-Each intent requires an explicit host acknowledgement. State is advanced only when an edit is reported successful; a failed edit keeps the previous original and invalidates candidate generations. No subsequent key should be consumed while an edit is pending. The optional candidate adapter matches responses to an explicit session, generation and original token, bounds response sizes, rejects malformed UTF-16 and unsafe control/format characters, and only permits choosing from the accepted list. The transport must still authenticate or otherwise validate the source; matching a request alone does not establish engine provenance. `forward_after_commit` is an instruction to the future adapter, not evidence that Windows can replay or safely defer a key. In particular, async edit sessions, host rejection, interrupted compositions, engine hangs and focus loss require platform testing and must not cause replay, duplicate characters, stale results or lost text. The implementation presently includes no networking, subprocess launch, keyboard hook or background service.
+Password/disabled/read-only contexts and non-prose input scopes (URL, email, numeric, PIN, telephone and private fields) pass through before text reaches the engine. Hosts must correctly expose their field semantics to TSF. Windows secure desktop activation is rejected. Terminals, elevated apps, Store apps, remote sessions and apps without a usable TSF text store are outside the validated support matrix until tested.
 
-## Build and test
+## Build
 
-In the standalone pad, **Ctrl+1–3** chooses the corresponding visible suggestion
-for the current Roman word. The button labels show the shortcuts. The command
-does nothing while a lookup or IME composition is pending, the row is stale, or
-the slot is unavailable. Plain numbers and ordinary editing shortcuts remain
-text-control input. These bindings apply to the pad; browser shortcuts remain
-unchanged. On Windows, `NepTypePadShortcutTests` uses real Rich Edit controls,
-Win32 key messages and the staged Rust DLL to exercise the production dispatcher.
-The portable `PadCandidateView` tests also run on the development Mac.
+Use native Windows 10 1607+ or Windows 11, Visual Studio Desktop C++ workload, Windows SDK, CMake, Rust and Python. From the repository root:
 
-The portable transaction model was built and its assertions passed on this Mac using Apple clang:
-
-```sh
-clang++ -std=c++17 -Wall -Wextra -Werror -Iinclude composition.cpp tests/composition_test.cpp -o /tmp/neptype-windows-composition-test
-/tmp/neptype-windows-composition-test
+```powershell
+python scripts/engine-data.py check
+cargo build --locked --release --manifest-path engine/Cargo.toml
+New-Item -ItemType Directory -Force build/rust-windows
+Copy-Item engine/target/release/neptype_engine.dll build/rust-windows/NepTypeEngine.dll
+cmake -S platforms/windows -B build/windows -A x64 -DNEPTYPE_ENGINE_BINARY_DIR="$PWD/build/rust-windows"
+cmake --build build/windows --config Release
+ctest --test-dir build/windows -C Release --output-on-failure
+cmake --install build/windows --config Release --prefix build/windows-package
 ```
 
-On Windows 10/11, install an appropriately authorized Visual Studio Desktop C++ workload, Windows SDK and CMake, then stage the Rust engine DLL as documented above and run `cmake -S . -B build -DNEPTYPE_ENGINE_BINARY_DIR=C:/absolute/staging`, `cmake --build build --config Debug`, and `ctest --test-dir build -C Debug --output-on-failure`. This builds the Graphite frontend and state tests; it does not register an input service. None of these Windows build or execution steps has been verified. CMake was unavailable in the checked Mac environment, so the CMake configuration is also untested.
+The package contains the pad, `NepTypeTsf.dll`, `NepTypeEngine.dll`, the install script and this guide. Build native ARM64 separately with a matching Rust DLL and `-A ARM64`; ARM64 and 32-bit applications are not yet validated. Do not mix architectures or promise x86 coverage from an x64 build.
 
-## Candidate adapter and real-engine probe
+## Install and remove on a Windows test desktop
 
-`candidate_adapter.cpp` adds a host-independent, transport-neutral request/response boundary. After a host acknowledges a marked edit, a caller may request candidates for the current session, generation and original text. Responses are accepted only while those values match; the original is always retained as the first choice. Stale, cross-session, malformed or oversized lists are rejected, and selecting a candidate creates an edit intent requiring host acknowledgement. Rejected host edits invalidate the list and preserve the original. Calls must be serialized on the owning thread; session IDs must be unique across concurrent sessions. A future TSF adapter must not bypass this validation by directly calling the lower-level `Composition::choose` method. This layer does not perform I/O, schedule workers, authenticate a worker, or link the Swift core.
+From a **native PowerShell as Administrator**, explicitly install the development build:
 
-The optional `NEPTYPE_TEST_CORE=/path/to/neptype-conformance ./tests/run.sh` probe obtains the candidate `नमस्ते` from the actual Rust portable-engine executable and passes its UTF-16 code units to the C++ adapter test. It verifies the result passes through candidate selection and host acknowledgement. The Python probe is a test harness with blocking subprocesses, **not** a runtime bridge and not Windows execution. Tests also cover candidate staleness, session isolation, malformed list bounds, host rejection and original preservation. This is a first integration contract; a production implementation still needs an asynchronous, bounded native engine interface, trustworthy response association, cancellation and full Unicode validation, not a subprocess per key.
+```powershell
+./build/windows-package/install-keyboard.ps1 -Action Install
+```
 
-## TSF integration to implement
+The script copies only the two DLLs into `Program Files/NepType Keyboard`, then runs native regsvr32. The DLL registers its COM class, Nepali language profile and keyboard category. It does not change the default language or input method. Sign out/back in, add Nepali in Settings → Time & language → Language & region, and add **NepType Nepali Keyboard** in its keyboard options. Select it with Win+Space. The pad's Keyboard setup button also offers this explicit installation when its packaged script is present.
 
-Microsoft describes [TSF edit sessions](https://learn.microsoft.com/en-us/windows/win32/api/_tsf/) and [compositions](https://learn.microsoft.com/en-us/windows/win32/tsf/compositions). A real service still needs COM text-service lifecycle, TSF registration/profile, per-context focus and key-event sink, edit-session operations on owned composition ranges, rendering candidates with accessible selection, and explicit termination and cleanup. Design `OnTestKeyDown` without side effects, and apply changes only when the host grants the appropriate edit session. The event handling and transaction model must be reconciled with actual TSF synchronous/asynchronous behavior before activation. The Swift portable-core test harness has **not** been built on Windows, has not been used by TSF. The Win32 pad now uses the shared production C ABI in process; TSF integration remains separate unfinished work.
+Switch to another keyboard before removal:
 
-Before claiming a working keyboard, validate original preservation, selection and undo, failed/asynchronous edits, candidate staleness, crash recovery, Unicode and focus in Notepad, Office, browsers, terminals, secure fields and coexistence with other IMEs. Test Windows x64 and ARM64 independently. Signing, installation, registration and removal need separate design and authorization. Never present the status window or model as a functioning Nepali keyboard.
+```powershell
+./build/windows-package/install-keyboard.ps1 -Action Uninstall
+```
 
-## Experimental TSF COM lifecycle (fail-closed)
+This unregisters the service. Sign out before deleting the two DLLs from `Program Files/NepType Keyboard`; open apps may still hold them. The installer refuses to overwrite an existing install. Keep builds unsigned/development-only until signing and clean-install, upgrade and uninstall checks are complete. UAC approval is a normal part of machine-wide TSF registration.
 
-`tsf/service.cpp` adds a Windows-only in-process COM class factory and `ITfTextInputProcessor`/`ITfKeyEventSink` implementation. It obtains `ITfKeystrokeMgr` from the supplied thread manager, advises/unadvises a foreground key sink, tracks COM object/server locks and returns `FALSE` for every tested and actual key event. It requests no edit session, does not inspect text, never invokes the model, and contains **no keyboard conversion**. This is deliberate until the engine, ownership and edit-session failure paths are verified. The code creates no registry entry or TSF profile and provides no registration function, installer or automatic activation. The `NepTypeTsf` CMake target is Windows-only; it has **not** been compiled with Microsoft headers or run on Windows.
+## Verification and limitations
 
-`tests/tsf_lifecycle_test.cpp` compiles the same service code against a deliberately minimal fake COM/TSF interface on the Mac. It tests class factory and interface lifetimes, bad inputs, advise/unadvise failure and retry, unload locks and key pass-through; this does **not** verify Microsoft SDK signatures, ABI, TSF behavior, threading or client lifecycle. Run it alongside the other native tests using `tests/run.sh`. The local test succeeded with Apple clang++ `-Wall -Wextra -Werror`; no Windows environment or SDK was available.
+`tests/run.sh` runs the existing portable composition, candidate, mocked lifecycle/edit and owned-range tests, plus the production keyboard transaction policy. Set `NEPTYPE_TEST_ENGINE=/absolute/path/to/libneptype_engine.dylib` (or `.so`) to test the same production candidate conversion bridge with the real engine. This covers default/explicit/original choice, repeated identical words, stale generations, conversion failure and literal URLs/email/numbers. These portable tests do not prove Windows host behavior.
 
-A working input method still requires, and this service intentionally does not yet provide: real SDK build and ABI checks; a validated core bridge and candidate UI; secure field and keyboard-layout handling; TSF edit sessions and `ITfComposition` ranges scoped to the owning context; safe selection/focus and asynchronous edit rejection; threading and DLL lifetime tests; and explicit consent for any later registration. Do not enable the key sink to consume input or install it as an IME on the strength of the fake test. Microsoft documents [key-event sink registration](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfkeystrokemgr-advisekeyeventsink), [key handling](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfkeyeventsink-onkeydown) and [edit session rules](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontext-requesteditsession).
+On Windows, CTest also builds and loads the **production DLL** in `NepTypeNativeTsfTests` using a real Microsoft TSF thread manager, document, context and an application-owned `ITextStoreACP`. It exercises SDK ABI, real owned-range/composition semantics, typing, conversion, backspace, Escape, selected-text replacement, moved caret, denied locks, read-only behavior and teardown. The text store is a test host; this is not evidence of Notepad, Office or browser integration, OS profile routing or host undo.
 
-## Experimental synchronous edit-session bridge
+The old `tsf/service.cpp` is retained only as a fake-interface lifecycle fixture. The production target builds `tsf/live_service.cpp` and `registration.cpp`. Key edits are synchronous: denied/unrun requests pass through and are never queued/replayed; late callbacks cannot use a previous stack. Focus cleanup uses separate asynchronous sessions that only end composition. A failure after a mutation attempt disables conversion for that context and avoids replaying an uncertain key; a hostile/partially failing host can still leave an incomplete edit. Switch to another keyboard and inspect text if that happens. Registration rollback and installer failure paths also require real-desktop verification.
 
-`tsf/edit_bridge.cpp` provides an intermediate TSF `ITfEditSession` object connecting the existing `CandidateAdapter`/`Composition` transaction state to a `HostEdit` abstraction. It requests a synchronous read/write edit session and applies an intent only in `DoEditSession` using the provided cookie; the model advances only after the host reports success. Session/generation mismatches are rejected. An uncertain failure, exception, request denial or missing callback permanently disables the bridge so it cannot retry or consume more input. A fake context and fake host test marked input, candidate commit, denied/missing callbacks, failure and no-retry behavior. The COM service owns a dormant per-instance bridge, but **its key sink still always passes keys through**. A separate experimental `OwnedRange` HostEdit implements an ownership-checked range path, but is not wired to the sink; there is no real integration with the engine, focus, protected fields or UI. Thus this is not a working keyboard or actual host text-edit implementation.
+Before release, execute and record every row in [WINDOWS_KEYBOARD_ACCEPTANCE.md](../../docs/WINDOWS_KEYBOARD_ACCEPTANCE.md). No desktop acceptance row is assumed to pass from unit tests or CI.
 
-This bridge has not been compiled against Microsoft SDK headers or run on Windows. Before connecting it to key handling, implement a safe TSF range/composition owner, check selection and input scope, support external composition termination, verify callback and exception behavior, threading and object lifetime. Retained `ITfEditSession` objects now pin DLL unload; mock tests verify retained and late calls. All bridge callers still must be serialized on the owning COM thread, and real Windows lifetime behavior is unverified. A rejected host edit might have partially changed text; the current bridge poisons itself and cannot guarantee recovery. Do not activate this path until real Windows hosts and SDK builds verify the implementation. The temporary key sink remains fail-closed and does not install or register the service. See Microsoft's [`RequestEditSession`](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontext-requesteditsession), [`StartComposition`](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontextcomposition-startcomposition), and [`ITfRange::SetText`](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfrange-settext) documentation.
-
-## Experimental owned-range adapter
-
-`tsf/owned_range.cpp` is a dormant TSF-specific `HostEdit`. It is bound to one context, requires an empty selection, starts a composition for the initial mark, and only replaces the composition range when the caret is at its end and the range contents still match the text it previously wrote. It validates UTF-16, uses the edit cookie supplied by the bridge, moves the caret to the end and ends the composition on commit. It fails closed after an ambiguous TSF operation; it does not retry. A second context cannot use that owner. Mock TSF range tests cover insert/replace/commit, caret movement, changed text, externally terminated composition, selected text, rejected creation, malformed UTF-16 and a post-edit failure.
-
-This is **not wired to the live key sink** and is not a usable TSF keyboard. The code has only been compiled against local mock interfaces on the Mac, not the Windows SDK or real TSF. TSF range-anchor and composition behavior, callbacks, focus changes, host text changes, secure fields, undo, IME coexistence and the effect of failures after `SetText` require actual Windows validation. A failure after a mutation can leave changed host text or an active composition: poisoning avoids further edits but does not undo host changes. The owner cannot safely end an active composition in its destructor without an edit session. Explicit ownership termination, service teardown, context identity and edit-session/DLL lifetime must be completed before enabling the sink. Real input and candidate engine integration also remain unfinished. No install or registration has occurred.
-
-API references: [GetSelection](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontext-getselection), [StartComposition](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontextcomposition-startcomposition), [GetRange](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcomposition-getrange), [SetText](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfrange-settext), [SetSelection](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontext-setselection), and [EndComposition](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcomposition-endcomposition).
-
-## Mock-only key sink path
-
-Under `NEPTYPE_TSF_TEST` only, a fake context and fake host can opt into a mock key path through `OnTestKeyDown` and `OnKeyDown`. It exercises side-effect-free test handling, marked ASCII tokens, a candidate transaction through the shared adapter, boundary commit, context mismatch and no replay after an uncertain edit failure. The injected values are already text-like ASCII, **not** real Windows virtual-key translation; the fake host is not an application. The production build excludes the opt-in API and still passes every key through. In particular it does not yet solve keyboard layouts, secure contexts, real focus transitions, key-up handling, candidate presentation, safe composition teardown, or DLL lifetime for retained edit sessions. A failed mock edit can consume the triggering key because its host result is ambiguous; this is not acceptable production behavior. The mock path must not be enabled for real users without a design and real Windows-host validation for those cases.
-
-The mock path now abandons its bridge and releases its context reference on focus loss or successful deactivation; it cannot rebind the same stale transaction on reactivation. This avoids additional mock edits but does not terminate or recover a real host composition. The bridge also verifies the full pending intent, including text and forwarding behavior, before requesting a host edit and again in its callback. Tests cover substituted intents and lifecycle transitions; these are safety checks, not proof of native focus or recovery behavior.
-
-## Review safety changes
-
-The edit-session object contributes to DLL lifetime accounting until its final COM release. Its synchronous callback rejects calls after `RequestEditSession` returns and calls from a thread other than the requesting thread before touching transaction state. Mock tests cover retained sessions, late callbacks, cross-thread callbacks and DLL unload. The bridge itself still requires serialized owning-thread callers, and the production key sink remains pass-through. A real Windows build and TSF host test are required before relying on these protections.
-
-## Graphite UI verification
-
-The source uses Win32 rich-edit controls, DPI-scaled geometry, keyboard focus traversal, neutral owner-drawn controls, and an optional dark title bar. The CMake target links User32, GDI32 and Comctl32, enables UTF-8 source decoding with MSVC, and selects the Unicode entry point with MinGW. Composition/TSF mock tests pass on the development Mac. The frontend itself has not been compiled with a Windows SDK or visually tested on Windows; that native build and accessibility review remain required.
+References: [TSF edit sessions](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontext-requesteditsession), [composition ownership](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nf-msctf-itfcontextcomposition-startcomposition), [language profiles](https://learn.microsoft.com/en-us/windows/win32/api/msctf/nn-msctf-itfinputprocessorprofiles), [input scopes](https://learn.microsoft.com/en-us/windows/win32/api/inputscope/nf-inputscope-itfinputscope-getinputscopes).

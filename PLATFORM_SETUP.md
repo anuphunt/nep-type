@@ -41,7 +41,7 @@ The script uses local temporary build/cache locations and runs Swift core tests,
 
 ## macOS input-method prototype
 
-The separate InputMethodKit bundle is experimental. To build only, without installing or activating it:
+The product owner has tested the separate Mac InputMethodKit keyboard and confirmed it works (2026-11-04). To build only, without installing or activating it:
 
 ```sh
 bash scripts/build-input-source.sh --disable-sandbox
@@ -92,14 +92,14 @@ The diagnostic does not connect to IBus, and descriptor generation prints XML wi
 
 ## Windows
 
-`platforms/windows` contains C++ transaction/range/TSF experiments. The local test script uses Apple clang and mocked Windows interfaces:
+`platforms/windows` contains the Win32 pad, live TSF keyboard, registration and explicit installer. The local script runs portable policy and mock host tests:
 
 ```sh
 cd platforms/windows
 ./tests/run.sh
 ```
 
-The real Windows SDK and runtime were not available here. The production TSF key sink deliberately passes all keys through; it is **not a working keyboard**. Windows development requires an authorized Visual Studio C++ workload, Windows SDK and CMake; the proposed build commands and unverified TSF integration work are in `platforms/windows/README.md`. No COM registration, installer or real Windows host test has been performed. Do not register or activate this prototype on the strength of the mock tests.
+The production keyboard target now connects TSF key events to the shared offline engine and owned composition ranges. Windows CTest includes the production DLL in a real Microsoft TSF test context. OS routing, installation and real application acceptance must be verified on Windows; see [the Windows README](platforms/windows/README.md) and [acceptance checklist](docs/WINDOWS_KEYBOARD_ACCEPTANCE.md).
 
 ## Data and release gates
 

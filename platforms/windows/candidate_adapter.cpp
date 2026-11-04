@@ -45,8 +45,8 @@ bool CandidateAdapter::accept(const CandidateQuery& q, const std::vector<std::u1
 std::vector<std::u16string> CandidateAdapter::candidates() const {
     return current() ? candidates_ : std::vector<std::u16string>{};
 }
-Intent CandidateAdapter::choose(std::size_t index) {
+Intent CandidateAdapter::choose(std::size_t index, std::u16string suffix, bool forward) {
     if (!current() || index >= candidates_.size()) return {Kind::Block, 0, {}, false};
-    return composition_.choose(candidates_[index], accepted_->generation);
+    return composition_.choose(candidates_[index], accepted_->generation, std::move(suffix), forward);
 }
 }

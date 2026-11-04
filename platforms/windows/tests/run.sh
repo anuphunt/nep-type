@@ -1,6 +1,12 @@
 #!/bin/sh
 set -eu
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+clang++ -std=c++17 -Wall -Wextra -Werror -I"$root/include" "$root/composition.cpp" "$root/candidate_adapter.cpp" "$root/tests/keyboard_session_test.cpp" -o "${TMPDIR:-/tmp}/neptype-keyboard-session-test" ${NEPTYPE_TEST_DL_FLAGS:-}
+if [ -n "${NEPTYPE_TEST_ENGINE:-}" ]; then
+  "${TMPDIR:-/tmp}/neptype-keyboard-session-test" "$NEPTYPE_TEST_ENGINE"
+else
+  "${TMPDIR:-/tmp}/neptype-keyboard-session-test"
+fi
 output="${TMPDIR:-/tmp}/neptype-windows-composition-test"
 clang++ -std=c++17 -Wall -Wextra -Werror -I"$root/include" "$root/tests/pad_candidate_view_test.cpp" -o "${TMPDIR:-/tmp}/neptype-windows-pad-candidate-view-test"
 "${TMPDIR:-/tmp}/neptype-windows-pad-candidate-view-test"

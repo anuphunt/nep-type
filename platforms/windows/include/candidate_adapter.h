@@ -20,7 +20,7 @@ public:
     std::optional<CandidateQuery> query() const;
     bool accept(const CandidateQuery& query, const std::vector<std::u16string>& candidates);
     // No edit occurs until the host applies and acknowledges the returned intent.
-    Intent choose(std::size_t index);
+    Intent choose(std::size_t index, std::u16string suffix = {}, bool forward = false);
     std::vector<std::u16string> candidates() const;
 private:
     bool current() const;

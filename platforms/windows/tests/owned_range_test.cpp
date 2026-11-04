@@ -43,7 +43,7 @@ struct Manager final : ITfContextComposition {
     ULONG AddRef() override { return ++refs; }
     ULONG Release() override { return --refs; }
     HRESULT StartComposition(TfEditCookie,ITfRange*,void*,ITfComposition** out) override {
-        if(reject) { *out=nullptr; return S_OK; } d->start=d->end=d->caret; *out=new CompositionMock(d); return S_OK;
+        if(reject) { *out=nullptr; return S_OK; } d->start=d->caret; d->end=d->caret+(d->selected?1:0); d->ended=false; *out=new CompositionMock(d); return S_OK;
     }
 };
 struct Context final : ITfContext {
@@ -65,9 +65,9 @@ int main() {
       assert(host.apply(1,{Kind::Commit,3,u"म",false}));
       assert(c.d.ended && c.d.text==u"prefix मsuffix"); }
     Context selected; selected.d.text=u"protected"; selected.d.selected=true;
-    { OwnedRange host(&selected); assert(!host.apply(1,{Kind::Mark,1,u"x",false})); assert(selected.d.text==u"protected"); assert(!host.usable()); }
+    { OwnedRange host(&selected); assert(host.apply(1,{Kind::Mark,1,u"x",false})); assert(selected.d.text==u"xrotected"); assert(host.usable()); }
     Context moved; { OwnedRange host(&moved); assert(host.apply(1,{Kind::Mark,1,u"ma",false})); moved.d.caret=0;
-      assert(!host.apply(1,{Kind::Commit,2,u"म",false})); assert(moved.d.text==u"ma"); }
+      assert(!host.apply(1,{Kind::Commit,2,u"म",false})); assert(moved.d.text==u"ma"); assert(!host.mutation_attempted()); assert(host.finish(1)); }
     Context altered; { OwnedRange host(&altered); assert(host.apply(1,{Kind::Mark,1,u"ma",false})); altered.d.text=u"xx";
       assert(!host.apply(1,{Kind::Commit,2,u"म",false})); assert(altered.d.text==u"xx"); }
     Context terminated; { OwnedRange host(&terminated); assert(host.apply(1,{Kind::Mark,1,u"ma",false})); terminated.d.ended=true;

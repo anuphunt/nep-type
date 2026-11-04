@@ -25,7 +25,7 @@
 #include "../../shared/cpp/pad_worker.hpp"
 #include "include/pad_candidate_view.hpp"
 
-// Standalone Graphite UI. The dormant TSF service is deliberately not activated.
+// Standalone Graphite UI. The separate TSF keyboard is installed explicitly.
 namespace {
 constexpr COLORREF background = RGB(30,30,30), surface = RGB(39,39,39);
 constexpr COLORREF ink = RGB(232,232,232), muted = RGB(170,170,170);
@@ -344,8 +344,18 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         if(LOWORD(wParam)==copyID) copyOutput(window);
         if(LOWORD(wParam)==301 || LOWORD(wParam)==307 || LOWORD(wParam)==308 || LOWORD(wParam)==helpID) {
             if(local){local->guide_seen=true;local->save();}
-            const int answer=MessageBoxW(window,L"NepType’s Windows system keyboard is still in development. This version can type and copy Nepali in the pad, but cannot yet install NepType for typing in other apps.\n\nIn this pad, Ctrl+1–3 chooses a visible suggestion.\n\nFor installed keyboards:\n1. Open Settings > Time & language > Language & region.\n2. Open Language options for the language, then Keyboards > Add a keyboard.\n3. Press Windows+Space to choose an installed keyboard.\n\nNepType will appear only after a working NepType keyboard installer is released. Adding a built-in Nepali layout does not add NepType’s Roman-to-Nepali conversion.\n\nOpen Windows language settings now?",L"NepType keyboard setup",MB_YESNO|MB_ICONINFORMATION|MB_DEFBUTTON2);
+            wchar_t executable[32768]{}; GetModuleFileNameW(nullptr,executable,32768);
+            const auto script=std::filesystem::path(executable).parent_path()/L"install-keyboard.ps1";
+            const int answer=MessageBoxW(window,L"The Windows keyboard types Nepali in other apps using the same offline engine. Install it once, then add NepType Nepali Keyboard under Nepali in Windows language settings and select it with Win+Space. A sign-out may be needed.\n\nKeyboard: Space accepts a conversion, Esc keeps Roman, Ctrl+1–4 chooses a candidate, and Ctrl+Shift+Space cycles Mixed, Nepali and English.\n\nYes: install the development keyboard (administrator approval).\nNo: open Windows language settings.\nCancel: keep typing in the pad.\n\nThis build still needs Windows application acceptance testing before release.",L"NepType keyboard setup",MB_YESNOCANCEL|MB_ICONINFORMATION|MB_DEFBUTTON3);
             if(answer==IDYES) {
+                if(!std::filesystem::exists(script)) {
+                    MessageBoxW(window,L"The keyboard installer is missing. Build or extract the complete Windows keyboard package before installing.",L"Keyboard installer unavailable",MB_OK|MB_ICONINFORMATION);
+                } else {
+                    const std::wstring arguments=L"-NoProfile -File \""+script.wstring()+L"\" -Action Install";
+                    const auto opened=reinterpret_cast<INT_PTR>(ShellExecuteW(window,L"runas",L"powershell.exe",arguments.c_str(),script.parent_path().c_str(),SW_SHOWNORMAL));
+                    if(opened<=32) MessageBoxW(window,L"Installation did not start. You can run install-keyboard.ps1 from a native PowerShell as Administrator.",L"Keyboard installation",MB_OK|MB_ICONINFORMATION);
+                }
+            } else if(answer==IDNO) {
                 const auto opened=reinterpret_cast<INT_PTR>(ShellExecuteW(window,L"open",L"ms-settings:regionlanguage",nullptr,nullptr,SW_SHOWNORMAL));
                 if(opened<=32)MessageBoxW(window,L"Open Windows Settings manually, then Time & language > Language & region.",L"Open keyboard settings",MB_OK|MB_ICONINFORMATION);
             }

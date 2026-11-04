@@ -51,11 +51,14 @@ Intent Composition::interrupt() {
     if (original_.empty()) return {Kind::Pass, 0, {}, false};
     return commit(original_, true);
 }
-Intent Composition::choose(std::u16string candidate, std::uint64_t candidate_generation) {
+Intent Composition::choose(std::u16string candidate, std::uint64_t candidate_generation,
+                           std::u16string suffix, bool forward) {
     if (pending_) return {Kind::Block, 0, {}, false};
     if (original_.empty() || candidate.empty() || candidate_generation != generation_) return {Kind::Block, 0, {}, false};
     // Explicit choice only. Candidate origin must be verified by future bridge.
-    return commit(std::move(candidate), false);
+    if (!suffix.empty() && suffix != u" ") return {Kind::Block, 0, {}, false};
+    candidate += suffix;
+    return commit(std::move(candidate), forward);
 }
 bool Composition::acknowledge(std::uint64_t generation, bool applied) {
     if (!pending_ || pending_->intent.generation != generation) return false;
