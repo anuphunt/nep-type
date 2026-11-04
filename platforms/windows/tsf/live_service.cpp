@@ -9,11 +9,24 @@
 #include <map>
 #include <memory>
 #include <thread>
+#ifdef NEPTYPE_TSF_DIAGNOSTICS
+#include <cstdio>
+#endif
 
 namespace neptype::tsf {
 namespace {
 std::atomic<long> server_locks{0};
 std::atomic<std::uint64_t> next_session{1};
+void activation_trace(const char* stage, HRESULT result, TfClientId client) {
+#ifdef NEPTYPE_TSF_DIAGNOSTICS
+    // CI-only API diagnostics. Never includes host text or engine input.
+    std::fprintf(stderr,"NepType activation %s: hr=0x%08lx client=%lu\n",stage,
+        static_cast<unsigned long>(result),static_cast<unsigned long>(client));
+    std::fflush(stderr);
+#else
+    (void)stage; (void)result; (void)client;
+#endif
+}
 
 // Only synchronous key edits can consume events. Cleanup is asynchronous and
 // only ends an owned composition, never rewrites text or moves the caret.
@@ -127,6 +140,7 @@ public:
     ULONG STDMETHODCALLTYPE Release() override { auto n = --refs_; if (!n) delete this; return n; }
     HRESULT STDMETHODCALLTYPE Activate(ITfThreadMgr* thread, TfClientId client) override { return ActivateEx(thread, client, 0); }
     HRESULT STDMETHODCALLTYPE ActivateEx(ITfThreadMgr* thread, TfClientId client, DWORD flags) override {
+        activation_trace("begin",S_OK,client);
         if (!thread || client == TF_CLIENTID_NULL) return E_INVALIDARG;
         if (thread_) return E_UNEXPECTED;
         // Never instantiate the engine or sink on the Windows secure desktop.
@@ -134,15 +148,22 @@ public:
         try {
             auto path = std::filesystem::path(module_path()).parent_path() / L"NepTypeEngine.dll";
             engine_ = std::make_shared<Engine>(path.u8string(), "");
-            if (FAILED(thread->QueryInterface(IID_ITfKeystrokeMgr, reinterpret_cast<void**>(keys_.put()))) ||
-                FAILED(thread->QueryInterface(IID_ITfSource, reinterpret_cast<void**>(source_.put())))) return E_NOINTERFACE;
-            auto hr = source_->AdviseSink(IID_ITfThreadMgrEventSink, static_cast<ITfThreadMgrEventSink*>(this), &sink_cookie_);
+            activation_trace("engine",S_OK,client);
+            auto hr = thread->QueryInterface(IID_ITfKeystrokeMgr, reinterpret_cast<void**>(keys_.put()));
+            activation_trace("query-keys",hr,client);
+            if (FAILED(hr)) return hr;
+            hr = thread->QueryInterface(IID_ITfSource, reinterpret_cast<void**>(source_.put()));
+            activation_trace("query-source",hr,client);
+            if (FAILED(hr)) return hr;
+            hr = source_->AdviseSink(IID_ITfThreadMgrEventSink, static_cast<ITfThreadMgrEventSink*>(this), &sink_cookie_);
+            activation_trace("advise-thread-events",hr,client);
             if (FAILED(hr)) { source_.reset(); keys_.reset(); engine_.reset(); return hr; }
             hr = keys_->AdviseKeyEventSink(client, static_cast<ITfKeyEventSink*>(this), TRUE);
+            activation_trace("advise-keys",hr,client);
             if (FAILED(hr)) { source_->UnadviseSink(sink_cookie_); sink_cookie_ = TF_INVALID_COOKIE; source_.reset(); keys_.reset(); engine_.reset(); return hr; }
             thread_ = ComPtr<ITfThreadMgr>(thread); client_ = client; active_ = true;
             return S_OK;
-        } catch (...) { engine_.reset(); return E_FAIL; }
+        } catch (...) { activation_trace("exception",E_FAIL,client); engine_.reset(); return E_FAIL; }
     }
     HRESULT STDMETHODCALLTYPE Deactivate() override {
         active_ = false; window_.hide();
