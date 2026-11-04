@@ -26,7 +26,9 @@ inline std::u16string keyboard_utf16(const std::string& input) {
 }
 inline std::vector<std::u16string> keyboard_candidates(Engine& engine, const std::u16string& token, int mode) {
     if (token.size() > 128 || std::any_of(token.begin(), token.end(), [](char16_t ch) { return ch < 33 || ch > 126; })) throw std::runtime_error("Invalid keyboard token");
-    const std::string source(token.begin(), token.end());
+    std::string source;
+    source.reserve(token.size());
+    for (auto ch : token) source.push_back(static_cast<char>(ch)); // validated ASCII above
     // The ABI's document handle intentionally remembers pad choices. Keyboard
     // candidate enumeration must not make the last enumerated choice become
     // the next word's default, even for identical consecutive words.
