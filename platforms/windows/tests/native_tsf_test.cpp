@@ -205,12 +205,19 @@ static int run(int argc,char** argv) {
     ComPtr<ITfContext> context; TfEditCookie cookie=0;
     CHECK(SUCCEEDED(document->CreateContext(client,0,&store,context.put(),&cookie)));
     CHECK(SUCCEEDED(document->Push(context.get()))); CHECK(SUCCEEDED(thread->SetFocus(document.get())));
+    ComPtr<ITfDocumentMgr> previous_document;
+    require_hr("Associate host window",thread->AssociateFocus(store.window,document.get(),previous_document.put()));
+    ShowWindow(store.window,SW_SHOW); SetForegroundWindow(store.window); SetFocus(store.window); pump();
     Library library(argv[1]);
     RegisteredProfile profile;
     profile.begin(library.value); pump();
+    require_hr("Focus test document",thread->SetFocus(document.get()));
     ComPtr<ITfKeystrokeMgr> keys;
     CHECK(SUCCEEDED(thread->QueryInterface(IID_ITfKeystrokeMgr,reinterpret_cast<void**>(keys.put()))));
-    CLSID foreground{}; require_hr("Get foreground keyboard",keys->GetForeground(&foreground)); CHECK(foreground==service_id);
+    CLSID foreground{};
+    const auto deadline=GetTickCount64()+5000;
+    do { pump(); keys->GetForeground(&foreground); if(foreground==service_id) break; Sleep(10); } while(GetTickCount64()<deadline);
+    CHECK(foreground==service_id);
     ComPtr<ITfClientId> client_ids;
     CHECK(SUCCEEDED(thread->QueryInterface(IID_ITfClientId,reinterpret_cast<void**>(client_ids.put()))));
     TfClientId service_client=TF_CLIENTID_NULL;
@@ -259,6 +266,9 @@ static int run(int argc,char** argv) {
     CHECK(key(VK_SPACE,true,true)); // English -> Mixed
     keys.reset(); client_ids.reset();
     require_hr("Deactivate/unregister test profile",profile.finish()); pump();
+    ComPtr<ITfDocumentMgr> detached;
+    require_hr("Restore host association",thread->AssociateFocus(store.window,previous_document.get(),detached.put()));
+    detached.reset(); previous_document.reset();
     document->Pop(TF_POPF_ALL); context.reset(); document.reset(); thread->Deactivate(); thread.reset();
     pump(); DestroyWindow(store.window); store.window=nullptr; store.sink.reset();
     CoFreeUnusedLibraries(); runtime.close();
