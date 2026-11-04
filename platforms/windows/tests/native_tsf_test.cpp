@@ -1,14 +1,90 @@
 // Windows SDK + real Microsoft TSF context and text store. This exercises the
-// production DLL/engine, not fake_tsf.h. It does not claim testing in Office or
-// browsers, installation, OS profile routing, or app-specific undo behavior.
+// production DLL/engine, not fake_tsf.h. On a disposable CI VM (or explicit
+// clean-desktop opt-in), it registers a process-scoped profile, routes keys
+// through TSF, restores the previous profile and unregisters. It does not claim
+// testing the product installer, Office, browsers or app-specific undo.
 #include "windows_support.h"
 #include "field_policy.h"
 #include <textstor.h>
-#include <cassert>
+#include <cstdlib>
+#include <cstring>
+#include <sstream>
 #include <algorithm>
 #include <iostream>
 
 using namespace neptype::tsf;
+static void require(bool value,const char* expression,int line) {
+    if (!value) throw std::runtime_error(std::string("Native TSF check at line ")+std::to_string(line)+": "+expression);
+}
+#define CHECK(expression) require(!!(expression),#expression,__LINE__)
+static void require_hr(const char* name,HRESULT value) {
+    if (FAILED(value)) { std::ostringstream message; message<<name<<": HRESULT 0x"<<std::hex<<static_cast<unsigned long>(value); throw std::runtime_error(message.str()); }
+}
+struct ComRuntime {
+    bool initialized=false;
+    ComRuntime() { require_hr("CoInitializeEx",CoInitializeEx(nullptr,COINIT_APARTMENTTHREADED)); initialized=true; }
+    void close() { if(initialized) CoUninitialize(); initialized=false; }
+    ~ComRuntime() { close(); }
+};
+struct Library {
+    HMODULE value=nullptr;
+    explicit Library(const char* path):value(LoadLibraryA(path)) { CHECK(value); }
+    ~Library() { if(value) FreeLibrary(value); }
+};
+#ifndef TF_IPPMF_FORPROCESS
+#define TF_IPPMF_FORPROCESS 0x10000000
+#define TF_IPPMF_ENABLEPROFILE 0x00000001
+#endif
+struct RegisteredProfile {
+    using Entry=HRESULT (__stdcall*)();
+    inline static constexpr GUID test_profile{0xb6a68f96,0x5819,0x4b7f,{0x85,0x69,0xa1,0x15,0x90,0xd1,0x20,0x03}};
+    Entry unregister=nullptr;
+    ComPtr<ITfInputProcessorProfiles> profiles;
+    ComPtr<ITfInputProcessorProfileMgr> manager;
+    TF_INPUTPROCESSORPROFILE previous{};
+    LANGID test_language=0;
+    bool registered=false,active=false,restore=false;
+    void begin(HMODULE library) {
+        // Refuse to overwrite a real user installation, even with explicit opt-in.
+        HKEY existing=nullptr;
+        auto error=RegOpenKeyExW(HKEY_LOCAL_MACHINE,L"SOFTWARE\\Classes\\CLSID\\{B6A68F96-5819-4B7F-8569-A11590D12001}",0,KEY_READ,&existing);
+        if(error==ERROR_SUCCESS) { RegCloseKey(existing); throw std::runtime_error("A NepType keyboard is already registered; use a clean test machine."); }
+        CHECK(error==ERROR_FILE_NOT_FOUND);
+        auto registration=reinterpret_cast<Entry>(GetProcAddress(library,"DllRegisterServer"));
+        unregister=reinterpret_cast<Entry>(GetProcAddress(library,"DllUnregisterServer")); CHECK(registration && unregister);
+        require_hr("DllRegisterServer",registration()); registered=true;
+        require_hr("Create profiles",CoCreateInstance(CLSID_TF_InputProcessorProfiles,nullptr,CLSCTX_INPROC_SERVER,IID_ITfInputProcessorProfiles,reinterpret_cast<void**>(profiles.put())));
+        require_hr("Query profile manager",profiles->QueryInterface(IID_ITfInputProcessorProfileMgr,reinterpret_cast<void**>(manager.put())));
+        restore=manager->GetActiveProfile(GUID_TFCAT_TIP_KEYBOARD,&previous)==S_OK;
+        require_hr("Get current language",profiles->GetCurrentLanguage(&test_language));
+        // Exercise real profile activation in the current input language. The
+        // production Nepali profile is also registered, without installing a
+        // language pack or changing the runner's default input language.
+        constexpr wchar_t name[]=L"NepType CI native input test";
+        wchar_t path[32768]{}; const auto length=GetModuleFileNameW(library,path,32768); CHECK(length && length<32768);
+        require_hr("Add test profile",profiles->AddLanguageProfile(service_id,test_language,test_profile,name,static_cast<ULONG>(std::size(name)-1),path,length,0));
+        require_hr("Enable test profile",profiles->EnableLanguageProfile(service_id,test_language,test_profile,TRUE));
+        const auto result=manager->ActivateProfile(TF_PROFILETYPE_INPUTPROCESSOR,test_language,service_id,test_profile,nullptr,TF_IPPMF_FORPROCESS|TF_IPPMF_ENABLEPROFILE);
+        require_hr("Activate test profile",result); CHECK(result==S_OK); active=true;
+    }
+    HRESULT finish() {
+        HRESULT result=S_OK;
+        if(active && manager) {
+            result=manager->DeactivateProfile(TF_PROFILETYPE_INPUTPROCESSOR,test_language,service_id,test_profile,nullptr,TF_IPPMF_FORPROCESS);
+            active=false;
+        }
+        if(restore && manager) {
+            const auto hr=manager->ActivateProfile(previous.dwProfileType,previous.langid,previous.clsid,previous.guidProfile,
+                previous.dwProfileType==TF_PROFILETYPE_KEYBOARDLAYOUT ? previous.hkl : nullptr,TF_IPPMF_FORPROCESS);
+            if(FAILED(hr)) result=hr;
+            restore=false;
+        }
+        manager.reset(); profiles.reset();
+        if(registered && unregister) { const auto hr=unregister(); if(FAILED(hr)) result=hr; registered=false; }
+        return result;
+    }
+    ~RegisteredProfile() { if(FAILED(finish())) std::cerr<<"Native TSF profile cleanup failed"<<std::endl; }
+};
 struct Store final : ITextStoreACP {
     ULONG refs = 1;
     ComPtr<ITextStoreACPSink> sink;
@@ -109,37 +185,38 @@ struct Probe final : ITfEditSession {
         return S_OK;
     }
 };
-int main(int argc, char** argv) {
-    assert(argc == 2);
-    assert(SUCCEEDED(CoInitializeEx(nullptr,COINIT_APARTMENTTHREADED)));
+static int run(int argc,char** argv) {
+    CHECK(argc==2 || argc==3);
+    const auto actions=std::getenv("GITHUB_ACTIONS"), environment=std::getenv("RUNNER_ENVIRONMENT");
+    const bool hosted=actions && std::strcmp(actions,"true")==0 && environment && std::strcmp(environment,"github-hosted")==0;
+    const bool opted_in=argc==3 && std::strcmp(argv[2],"--register-profile")==0;
+    if(!hosted && !opted_in) {
+        std::cerr<<"Native profile test requires a clean elevated test desktop and explicit --register-profile, or an ephemeral GitHub-hosted runner."<<std::endl;
+        return actions ? 1 : 77;
+    }
+    ComRuntime runtime;
     Store store;
     store.window = CreateWindowExW(0,L"STATIC",L"NepType native TSF integration",WS_OVERLAPPEDWINDOW,0,0,800,600,nullptr,nullptr,GetModuleHandleW(nullptr),nullptr);
-    assert(store.window);
+    CHECK(store.window);
     ComPtr<ITfThreadMgr> thread;
-    assert(SUCCEEDED(CoCreateInstance(CLSID_TF_ThreadMgr,nullptr,CLSCTX_INPROC_SERVER,IID_ITfThreadMgr,reinterpret_cast<void**>(thread.put()))));
-    TfClientId client=TF_CLIENTID_NULL; assert(SUCCEEDED(thread->Activate(&client)));
-    ComPtr<ITfDocumentMgr> document; assert(SUCCEEDED(thread->CreateDocumentMgr(document.put())));
+    CHECK(SUCCEEDED(CoCreateInstance(CLSID_TF_ThreadMgr,nullptr,CLSCTX_INPROC_SERVER,IID_ITfThreadMgr,reinterpret_cast<void**>(thread.put()))));
+    TfClientId client=TF_CLIENTID_NULL; CHECK(SUCCEEDED(thread->Activate(&client)));
+    ComPtr<ITfDocumentMgr> document; CHECK(SUCCEEDED(thread->CreateDocumentMgr(document.put())));
     ComPtr<ITfContext> context; TfEditCookie cookie=0;
-    assert(SUCCEEDED(document->CreateContext(client,0,&store,context.put(),&cookie)));
-    assert(SUCCEEDED(document->Push(context.get()))); assert(SUCCEEDED(thread->SetFocus(document.get())));
-    auto library=LoadLibraryA(argv[1]); assert(library);
-    auto get=reinterpret_cast<HRESULT (__stdcall*)(REFCLSID,REFIID,void**)>(GetProcAddress(library,"DllGetClassObject")); assert(get);
-    ComPtr<IClassFactory> factory; assert(SUCCEEDED(get(service_id,IID_IClassFactory,reinterpret_cast<void**>(factory.put()))));
-    ComPtr<ITfTextInputProcessor> service;
-    assert(SUCCEEDED(factory->CreateInstance(nullptr,IID_ITfTextInputProcessor,reinterpret_cast<void**>(service.put()))));
-    // The document owner and text service are separate TSF clients. Reusing
-    // the application's Activate() ID is not a service activation contract.
+    CHECK(SUCCEEDED(document->CreateContext(client,0,&store,context.put(),&cookie)));
+    CHECK(SUCCEEDED(document->Push(context.get()))); CHECK(SUCCEEDED(thread->SetFocus(document.get())));
+    Library library(argv[1]);
+    RegisteredProfile profile;
+    profile.begin(library.value); pump();
+    ComPtr<ITfKeystrokeMgr> keys;
+    CHECK(SUCCEEDED(thread->QueryInterface(IID_ITfKeystrokeMgr,reinterpret_cast<void**>(keys.put()))));
+    CLSID foreground{}; require_hr("Get foreground keyboard",keys->GetForeground(&foreground)); CHECK(foreground==service_id);
     ComPtr<ITfClientId> client_ids;
-    assert(SUCCEEDED(thread->QueryInterface(IID_ITfClientId,reinterpret_cast<void**>(client_ids.put()))));
+    CHECK(SUCCEEDED(thread->QueryInterface(IID_ITfClientId,reinterpret_cast<void**>(client_ids.put()))));
     TfClientId service_client=TF_CLIENTID_NULL;
-    assert(SUCCEEDED(client_ids->GetClientId(service_id,&service_client)));
-    const auto activation=service->Activate(thread.get(),service_client);
-    if (FAILED(activation)) std::cerr << "Production TSF Activate HRESULT: 0x" << std::hex << static_cast<unsigned long>(activation) << std::dec << std::endl;
-    assert(SUCCEEDED(activation));
-    ComPtr<ITfKeyEventSink> keys;
-    assert(SUCCEEDED(service->QueryInterface(IID_ITfKeyEventSink,reinterpret_cast<void**>(keys.put()))));
-    assert(prose_scope(IS_DEFAULT) && prose_scope(IS_TEXT));
-    for (const auto scope : {IS_PASSWORD,IS_URL,IS_EMAIL_SMTPEMAILADDRESS,IS_NUMBER,IS_TELEPHONE_FULLTELEPHONENUMBER,IS_PRIVATE}) assert(!prose_scope(scope));
+    CHECK(SUCCEEDED(client_ids->GetClientId(service_id,&service_client))); CHECK(service_client!=TF_CLIENTID_NULL);
+    CHECK(prose_scope(IS_DEFAULT) && prose_scope(IS_TEXT));
+    for (const auto scope : {IS_PASSWORD,IS_URL,IS_EMAIL_SMTPEMAILADDRESS,IS_NUMBER,IS_TELEPHONE_FULLTELEPHONENUMBER,IS_PRIVATE}) CHECK(!prose_scope(scope));
     auto key=[&](UINT vk, bool control=false, bool shift=false) {
         BYTE saved[256]{}, state[256]{}; GetKeyboardState(saved);
         state[VK_CONTROL] = control ? 0x80 : 0; state[VK_SHIFT] = shift ? 0x80 : 0;
@@ -147,9 +224,9 @@ int main(int argc, char** argv) {
         LPARAM flags=static_cast<LPARAM>(MapVirtualKeyW(vk,MAPVK_VK_TO_VSC))<<16;
         BOOL eaten=FALSE, tested=FALSE;
         auto before=store.text;
-        assert(SUCCEEDED(keys->OnTestKeyDown(context.get(),vk,flags,&tested)));
-        assert(store.text==before); // test callbacks are read-only
-        assert(SUCCEEDED(keys->OnKeyDown(context.get(),vk,flags,&eaten)));
+        CHECK(SUCCEEDED(keys->TestKeyDown(vk,flags,&tested)));
+        CHECK(store.text==before); // test callbacks are read-only
+        if(tested) CHECK(SUCCEEDED(keys->KeyDown(vk,flags,&eaten)));
         if (!eaten && tested) {
             std::cerr << "Synthetic key passed through: vk=" << vk << " text-length=" << store.text.size() << std::endl;
             Probe probe(context.get()); HRESULT result=E_FAIL;
@@ -157,34 +234,40 @@ int main(int argc, char** argv) {
             std::cerr << "Probe request=" << std::hex << static_cast<unsigned long>(request)
                 << " result=" << static_cast<unsigned long>(result) << std::dec << std::endl;
         }
-        BOOL up=FALSE; assert(SUCCEEDED(keys->OnKeyUp(context.get(),vk,flags,&up))); assert(up==eaten);
+        BOOL up=FALSE,up_tested=FALSE; CHECK(SUCCEEDED(keys->TestKeyUp(vk,flags,&up_tested))); if(up_tested) CHECK(SUCCEEDED(keys->KeyUp(vk,flags,&up))); CHECK(up==eaten);
         SetKeyboardState(saved);
         return eaten != FALSE;
     };
-    for (auto vk : {'N','A','M','A','S','T','E'}) assert(key(vk));
-    assert(store.text==L"namaste"); assert(key(VK_SPACE));
-    assert(store.text==L"नमस्ते ");
-    for (auto vk : {'M','A'}) assert(key(vk)); assert(key(VK_BACK)); assert(store.text==L"नमस्ते m");
-    assert(key(VK_ESCAPE)); assert(store.text==L"नमस्ते m");
+    for (auto vk : {'N','A','M','A','S','T','E'}) CHECK(key(vk));
+    CHECK(store.text==L"namaste"); CHECK(key(VK_SPACE));
+    CHECK(store.text==L"नमस्ते ");
+    for (auto vk : {'M','A'}) CHECK(key(vk)); CHECK(key(VK_BACK)); CHECK(store.text==L"नमस्ते m");
+    CHECK(key(VK_ESCAPE)); CHECK(store.text==L"नमस्ते m");
     // Selection replacement follows the real TSF range/composition semantics.
-    store.select(0,6); assert(key('N')); assert(store.text==L"n m"); assert(key(VK_ESCAPE));
+    store.select(0,6); CHECK(key('N')); CHECK(store.text==L"n m"); CHECK(key(VK_ESCAPE));
     // Mouse/caret relocation cannot redirect an old token's conversion.
     store.select(static_cast<LONG>(store.text.size()),static_cast<LONG>(store.text.size()));
-    assert(key('M')); store.select(0,0); assert(key('A')); assert(key(VK_ESCAPE));
-    assert(store.text==L"an mm");
-    assert(key('M')); const auto unchanged=store.text;
-    assert(!key(VK_LEFT)); assert(store.text==unchanged);
-    store.readonly=true; assert(!key('X')); assert(store.text==unchanged); store.readonly=false;
-    store.deny=true; assert(!key('X')); assert(store.text==unchanged); store.deny=false;
-    assert(key(VK_SPACE,true,true)); // Mixed -> Nepali
-    assert(key(VK_SPACE,true,true)); // Nepali -> English
-    assert(!key('X') && store.text==unchanged);
-    assert(key(VK_SPACE,true,true)); // English -> Mixed
-    assert(SUCCEEDED(service->Deactivate())); pump();
-    keys.reset(); service.reset(); factory.reset();
-    document->Pop(TF_POPF_ALL); context.reset(); document.reset(); client_ids.reset(); thread->Deactivate(); thread.reset();
-    pump(); DestroyWindow(store.window);
-    auto unload=reinterpret_cast<HRESULT (__stdcall*)()>(GetProcAddress(library,"DllCanUnloadNow"));
-    assert(unload && unload()==S_OK); FreeLibrary(library); CoUninitialize();
-    std::cout << "PASS: production DLL/shared engine in native TSF store: typing, commit, escape, backspace, selected text, moved caret, read-only, denied locks, teardown\n";
+    CHECK(key('M')); store.select(0,0); CHECK(key('A')); CHECK(key(VK_ESCAPE));
+    CHECK(store.text==L"an mm");
+    CHECK(key('M')); const auto unchanged=store.text;
+    CHECK(!key(VK_LEFT)); CHECK(store.text==unchanged);
+    store.readonly=true; CHECK(!key('X')); CHECK(store.text==unchanged); store.readonly=false;
+    store.deny=true; CHECK(!key('X')); CHECK(store.text==unchanged); store.deny=false;
+    CHECK(key(VK_SPACE,true,true)); // Mixed -> Nepali
+    CHECK(key(VK_SPACE,true,true)); // Nepali -> English
+    CHECK(!key('X') && store.text==unchanged);
+    CHECK(key(VK_SPACE,true,true)); // English -> Mixed
+    keys.reset(); client_ids.reset();
+    require_hr("Deactivate/unregister test profile",profile.finish()); pump();
+    document->Pop(TF_POPF_ALL); context.reset(); document.reset(); thread->Deactivate(); thread.reset();
+    pump(); DestroyWindow(store.window); store.window=nullptr; store.sink.reset();
+    CoFreeUnusedLibraries(); runtime.close();
+    auto unload=reinterpret_cast<HRESULT (__stdcall*)()>(GetProcAddress(library.value,"DllCanUnloadNow"));
+    CHECK(unload && unload()==S_OK);
+    std::cout << "PASS: registered production DLL/shared engine through native TSF key routing: typing, commit, escape, backspace, selected text, moved caret, read-only, denied locks, profile cleanup and teardown\n";
+    return 0;
+}
+int main(int argc,char** argv) {
+    try { return run(argc,argv); }
+    catch(const std::exception& error) { std::cerr<<error.what()<<std::endl; return 1; }
 }
