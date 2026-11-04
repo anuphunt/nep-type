@@ -1,0 +1,298 @@
+{
+  "slug": "nepali-font-google-docs-unicode",
+  "topicId": "nepali-google-docs",
+  "status": "published",
+  "published": "2026-11-04",
+  "primaryQuery": "nepali font in google docs",
+  "queryVariants": [
+    "type Nepali in Google Docs",
+    "Google Docs Devanagari font",
+    "Google Docs मा नेपाली फन्ट"
+  ],
+  "searchIntent": "Choose and apply a Devanagari font in Google Docs, paste Nepali Unicode with intentional line breaks, and check that the saved document reopens correctly.",
+  "originalValue": "A verified Google Docs font-menu search and application of Noto Sans Devanagari, actual paste-without-formatting from NepType, a fresh two-line outing note, and save/reopen confirmation with exact Unicode, newline, font and size readback. Separates display problems from wrong text and explains where Docs saves the pasted document.",
+  "overlapReview": "The homepage owns general online typing and the guide introduces Unicode copying. Published articles cover mixed-script composition, fixed-layout choice and practice exercises. None walks through Google Docs More fonts search, named Devanagari font application, destination-format paste and a saved two-paragraph note that survives reopening. The Word candidate remains held and is not substituted with imaginary editor evidence. The future font-troubleshooting/Preeti candidates must add their own distinct diagnosis beyond this scoped Docs workflow.",
+  "keywordEvidence": {
+    "provider": "Google Ads Keyword Planner",
+    "researchFile": "research/2026-11-01-keywords.json",
+    "keyword": "nepali font in google docs",
+    "averageMonthlySearches": "10–100",
+    "location": "Nepal",
+    "language": "English",
+    "network": "Google",
+    "period": "2025-10-01/2026-09-30",
+    "note": "Displayed range for this exact reported term; no exact count, summed variants, organic-difficulty or traffic prediction. November 4 GSC evidence has no usable query/page prioritization signal. Keyword report is three days old and needs no refresh."
+  },
+  "research": [
+    {
+      "url": "https://support.google.com/docs/answer/1663349?co=GENIE.Platform%3DDesktop&hl=en",
+      "checked": "2026-11-04",
+      "note": "Official Docs font and paragraph help. Supports selected-text font changes and adding/searching fonts. Actual Chrome/Mac font dialog showed Noto Sans Devanagari and a Done button; no universal availability, OS font installation or add-in claim."
+    },
+    {
+      "url": "https://support.google.com/docs/answer/179738?co=GENIE.Platform%3DDesktop&hl=en",
+      "checked": "2026-11-04",
+      "note": "Official Docs keyboard help documents Mac Command+Shift+V, Windows/ChromeOS Control+Shift+V paste without formatting, and automatic Drive saving. Actual Mac shortcut paste and Saved to Drive/reopen workflow checked."
+    },
+    {
+      "url": "https://fonts.google.com/noto/specimen/Noto%2BSans%2BDevanagari",
+      "checked": "2026-11-04",
+      "note": "Official font specimen identifies the Devanagari design. Actual Google Docs availability, legibility and saved font attributes verified independently; no need to install fonts or grant access."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/8f5b96f7cd2a3574b87e3576b0b60eb31ab0aee3/landing-page/web-tool.mjs",
+      "checked": "2026-11-04",
+      "note": "Current implementation confirms Unicode output, navigator.clipboard.writeText and in-memory pad state. Actual browser Copy text output was pasted into a private test Doc; this uploads the pasted document text to Docs, separate from local pad processing."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/8f5b96f7cd2a3574b87e3576b0b60eb31ab0aee3/landing-page/tests/web-engine.test.mjs",
+      "checked": "2026-11-04",
+      "note": "Fresh sentence and combined-newline requests executed against current shared Rust/Wasm engine. All displayed pairs are checks. Candidate exploration that produced unintended spellings was rejected, without engine edits."
+    },
+    {
+      "url": "https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Aneptype.com&start_date=20261006&end_date=20261102&compare_start_date=20260908&compare_end_date=20261005",
+      "checked": "2026-11-04",
+      "note": "Reviewed authorized same-day evidence file search-console-2026-11-04.md: both explicit 28-day periods show zero clicks/impressions, Queries/Pages No data; indexing processing. These data do not establish absent demand or indexing/ranking outcomes. No GSC settings or submission changed."
+    }
+  ],
+  "exampleContexts": [
+    "outing plans",
+    "packing food and water",
+    "two-paragraph document formatting"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "bholi ghumna jaane.",
+        "mode": 0
+      },
+      "expectedText": "भोलि घुम्न जाने।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "khana ra paani lyaunu.",
+        "mode": 0
+      },
+      "expectedText": "खाना र पानी ल्याउनु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bholi ghumna jaane.\nkhana ra paani lyaunu.",
+        "mode": 0
+      },
+      "expectedText": "भोलि घुम्न जाने।\nखाना र पानी ल्याउनु।"
+    }
+  ],
+  "workflowVerification": {
+    "checkedOn": "2026-11-04",
+    "environment": "Google Chrome on Mac, signed-in Google Docs",
+    "evidence": "Ignored reports/articles/2026-11-04/google-docs-workflow-evidence.json",
+    "result": "Actual NepType Copy text, Command+Shift+V paste, Noto Sans Devanagari font, 14 pt formatting, Saved to Drive status and reopening verified. Connector readback exactly matches both Unicode paragraphs including the line break and font/size. Private test document only; sharing unchanged."
+  },
+  "en": {
+    "title": "Nepali font in Google Docs: Unicode paste and saving | NepType",
+    "heading": "Type Nepali in Google Docs with a Devanagari font",
+    "description": "Use Noto Sans Devanagari in Google Docs, paste a two-line Nepali note from NepType, and check the letters, line breaks and saved document.",
+    "sections": [
+      [
+        "Use a font that covers Devanagari",
+        "Noto Sans Devanagari can display the Unicode Nepali text you copy from NepType into Google Docs. Add it through Docs’ font menu, apply it to your text and check the letters. A font changes how the text looks. NepType supplies the Nepali characters; selecting a font will not convert Roman words into Nepali.",
+        {
+          "links": [
+            [
+              "Open the Nepali typing pad",
+              "/#try"
+            ],
+            [
+              "See Noto Sans Devanagari on Google Fonts",
+              "https://fonts.google.com/noto/specimen/Noto%2BSans%2BDevanagari"
+            ]
+          ]
+        }
+      ],
+      [
+        "Prepare a two-line outing note",
+        "In NepType, choose Nepali + EN. Type the first sentence, press Return, then type the second. Check the output before copying. Keep the two lines separate for this exercise; the note says you plan to go out tomorrow and asks the reader to bring food and water.",
+        {
+          "examples": [
+            [
+              "bholi ghumna jaane.",
+              "भोलि घुम्न जाने।"
+            ],
+            [
+              "khana ra paani lyaunu.",
+              "खाना र पानी ल्याउनु।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Find the font in Google Docs",
+        "Open a document you can edit. For an existing paragraph, select only the text you want to format. In a blank document you can choose the font before pasting. You do not need to install an add-on for this workflow.",
+        {
+          "steps": [
+            "Open the Font menu and choose More fonts.",
+            "Search for Noto Sans Devanagari and select it.",
+            "Confirm the dialog with Done or OK, according to the label shown.",
+            "Back in the document, confirm that Font shows Noto Sans Devanagari. Set a comfortable size such as 14 pt."
+          ],
+          "links": [
+            [
+              "Google Docs font instructions",
+              "https://support.google.com/docs/answer/1663349?co=GENIE.Platform%3DDesktop&hl=en"
+            ]
+          ]
+        }
+      ],
+      [
+        "Paste using the document’s formatting",
+        "Use Copy text in NepType, then place the cursor in Google Docs. Paste without formatting with Command+Shift+V on Mac or Ctrl+Shift+V on Windows/ChromeOS. This keeps the destination formatting. NepType’s copy button already copies plain text, so you can apply the font in Docs before or after the paste.",
+        {
+          "links": [
+            [
+              "Google Docs keyboard shortcuts",
+              "https://support.google.com/docs/answer/179738?co=GENIE.Platform%3DDesktop&hl=en"
+            ]
+          ]
+        }
+      ],
+      [
+        "Inspect the letters and the paragraph break",
+        "Check the joined letters in घुम्न and ल्याउनु and the vowel signs in पानी. Confirm that the second sentence begins on its own line. A line that wraps automatically at the page edge is different from the Return you entered. If letters are missing or show as boxes, select the affected text and recheck the applied Devanagari font. If the word itself is wrong, correct the text; changing its appearance will not repair the spelling.",
+        {
+          "links": [
+            [
+              "NepType spelling choices and editing controls",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Wait for saving, then reopen",
+        "Give the document a name and wait for its status to show Saved to Drive before leaving. Reopen it and compare both sentences, the line break and the font. Google Docs saves the pasted text in Drive. NepType’s local processing applies to the typing pad, not to a document you put into another service. Save your text before closing the pad because it does not keep drafts."
+      ],
+      [
+        "Keep older font-encoded text separate",
+        "These steps use the Unicode text produced by NepType. An older Preeti-encoded document needs a different conversion workflow; selecting Noto Sans Devanagari does not perform that conversion.",
+        {
+          "links": [
+            [
+              "Write your next note",
+              "/#try"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "Google Docs मा नेपाली फन्ट र युनिकोड पाठ | NepType",
+    "heading": "Google Docs मा नेपाली फन्ट छानेर लेख्ने तरिका",
+    "description": "Google Docs मा Noto Sans Devanagari छान्नुहोस् र NepType को दुई हरफको नेपाली टिपोट पेस्ट गर्नुहोस्। अक्षर र हरफ जाँचेर कागजात फेरि खोल्नुहोस्।",
+    "sections": [
+      [
+        "देवनागरी देखाउने फन्ट रोज्नुहोस्",
+        "NepType बाट आएको युनिकोड पाठका लागि Google Docs मा Noto Sans Devanagari प्रयोग गर्न सक्नुहुन्छ। Docs को फन्ट मेनुबाट थपेर पाठमा लगाउनुहोस् र अक्षर जाँच्नुहोस्। फन्टले पाठको रूप बदल्छ। नेपाली अक्षर NepType ले बनाउँछ; फन्ट छान्दैमा रोमन शब्द नेपाली हुँदैनन्।",
+        {
+          "links": [
+            [
+              "नेपाली टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ],
+            [
+              "Google Fonts मा Noto Sans Devanagari हेर्नुहोस्",
+              "https://fonts.google.com/noto/specimen/Noto%2BSans%2BDevanagari"
+            ]
+          ]
+        }
+      ],
+      [
+        "घुम्न जाने दुई हरफको टिपोट तयार गर्नुहोस्",
+        "NepType मा Nepali + EN रोज्नुहोस्। पहिलो वाक्य लेखेर Return थिच्नुहोस्, अनि दोस्रो वाक्य लेख्नुहोस्। कपी गर्नुअघि नतिजा पढ्नुहोस्। यो अभ्यासमा दुई वाक्य छुट्टाछुट्टै हरफमा राख्नुहोस्। टिपोटमा भोलि घुम्न जाने कुरा र खाना तथा पानी ल्याउन अनुरोध छ।",
+        {
+          "examples": [
+            [
+              "bholi ghumna jaane.",
+              "भोलि घुम्न जाने।"
+            ],
+            [
+              "khana ra paani lyaunu.",
+              "खाना र पानी ल्याउनु।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Google Docs मा फन्ट खोज्नुहोस्",
+        "सम्पादन गर्न मिल्ने कागजात खोल्नुहोस्। पहिले लेखिएको अनुच्छेदमा फन्ट लगाउँदा बदल्न चाहिएको पाठ मात्र छान्नुहोस्। खाली कागजातमा पेस्ट गर्नुअघि पनि फन्ट रोज्न मिल्छ। यो कामका लागि छुट्टै add-on इन्स्टल गर्नु पर्दैन।",
+        {
+          "steps": [
+            "Font मेनु खोलेर More fonts रोज्नुहोस्।",
+            "Noto Sans Devanagari खोजेर छान्नुहोस्।",
+            "देखिएको लेबलअनुसार Done वा OK थिच्नुहोस्।",
+            "कागजातमा फर्केर Font मा Noto Sans Devanagari देखिएको छ कि हेर्नुहोस्। पढ्न सहज हुने आकार, जस्तै 14 pt, रोज्नुहोस्।"
+          ],
+          "links": [
+            [
+              "Google Docs को फन्टसम्बन्धी निर्देशन",
+              "https://support.google.com/docs/answer/1663349?co=GENIE.Platform%3DDesktop&hl=en"
+            ]
+          ]
+        }
+      ],
+      [
+        "कागजातको ढाँचामा पेस्ट गर्नुहोस्",
+        "NepType मा पाठ कपी गर्नुहोस् थिचेर Google Docs मा कर्सर राख्नुहोस्। पुरानो ढाँचा नल्याई पेस्ट गर्न Mac मा Command+Shift+V वा Windows/ChromeOS मा Ctrl+Shift+V थिच्नुहोस्। यसरी कागजातमा रोजिएको ढाँचा कायम रहन्छ। NepType को कपी बटनले सादा पाठ कपी गर्छ, त्यसैले Docs मा फन्ट पेस्ट गर्नुअघि वा पछि लगाउन सक्नुहुन्छ।",
+        {
+          "links": [
+            [
+              "Google Docs का किबोर्ड सर्टकट",
+              "https://support.google.com/docs/answer/179738?co=GENIE.Platform%3DDesktop&hl=en"
+            ]
+          ]
+        }
+      ],
+      [
+        "अक्षर र हरफ छुट्टिएको जाँच्नुहोस्",
+        "घुम्न र ल्याउनुमा जोडिएका अक्षर तथा पानीका मात्रा जाँच्नुहोस्। दोस्रो वाक्य छुट्टै हरफमा सुरु भएको छ कि हेर्नुहोस्। पृष्ठको छेउ पुगेपछि आफैँ अर्को हरफमा जाने र Return थिचेर हरफ छुट्याउने कुरा फरक हुन्। अक्षर हराए वा बाकस देखिए, त्यो पाठ छानेर देवनागरी फन्ट लागेको छ कि फेरि हेर्नुहोस्। शब्दकै हिज्जे गलत छ भने पाठ सच्याउनुहोस्। अक्षरको रूप फेर्दैमा हिज्जे सुध्रिँदैन।",
+        {
+          "links": [
+            [
+              "NepType मा हिज्जे रोज्ने र सच्याउने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "सुरक्षित भएपछि फेरि खोलेर हेर्नुहोस्",
+        "कागजातको नाम राख्नुहोस् र बाहिरिनुअघि Saved to Drive देखिएसम्म पर्खनुहोस्। फेरि खोलेर दुवै वाक्य, हरफ छुट्टिएको ठाउँ र फन्ट दाँज्नुहोस्। Google Docs ले पेस्ट गरेको पाठ Drive मा सुरक्षित राख्छ। NepType को स्थानीय रूपान्तरण टाइपिङ प्याडमा लागू हुन्छ; अर्को सेवामा राखेको कागजातमा हुँदैन। प्याडले मस्यौदा राख्दैन, त्यसैले बन्द गर्नुअघि आफ्नो पाठ सुरक्षित गर्नुहोस्।"
+      ],
+      [
+        "पुरानो फन्टमा बनेको पाठको तरिका छुट्टै हुन्छ",
+        "यी चरण NepType ले बनाएको युनिकोड पाठका लागि हुन्। पुरानो प्रीति एन्कोडिङमा बनेको कागजातलाई रूपान्तरण गर्ने तरिका फरक हुन्छ। Noto Sans Devanagari छान्दैमा त्यो रूपान्तरण हुँदैन।",
+        {
+          "links": [
+            [
+              "अर्को टिपोट लेख्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-04",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both complete drafts, titles/descriptions/headings, steps and link labels. Replaced the indirect English working-font introduction with the specific Unicode display behavior. Removed the repeated copy-and-proofread closer from the Preeti limitation in both versions. Simplified the Nepali description, replacing stiff सुरक्षित कागजात wording with the actual reopen action. Tightened the last font-dialog step in both languages to avoid repeating font application and to reflect the observed dialog-to-editor transition. Reread for natural Nepali, equivalent instructions, unnecessary contrasts, decorative rhythm, inflated claims and unsupported platform/learning claims. All literal input/output pairs, executable requests/results, source URLs, dates and structured research evidence were compared unchanged. Automated editorial review, not human authorship or expert review."
+  }
+}

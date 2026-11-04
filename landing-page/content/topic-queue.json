@@ -71,7 +71,7 @@
     },
     {
       "id": "nepali-google-docs",
-      "status": "eligible",
+      "status": "published",
       "query": "nepali font in google docs",
       "title": "Type Nepali in Google Docs: copy, fonts and common display problems",
       "intent": "Write and correctly display Nepali Unicode in a Google document",
@@ -86,7 +86,8 @@
           "period": "2025-10-01/2026-09-30",
           "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
         }
-      ]
+      ],
+      "articleSlug": "nepali-font-google-docs-unicode"
     },
     {
       "id": "nepali-phone-browser",
