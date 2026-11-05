@@ -69,7 +69,7 @@ void protected_acl(const fs::path& path) {
         // Unrecognized granting ACEs cannot establish a protected executable path.
         if(header->AceType!=ACCESS_ALLOWED_ACE_TYPE) { safe=false; break; }
         const auto* ace=static_cast<ACCESS_ALLOWED_ACE*>(raw); const auto sid=reinterpret_cast<PSID>(const_cast<DWORD*>(&ace->SidStart));
-        const DWORD writes=GENERIC_ALL|GENERIC_WRITE|FILE_WRITE_DATA|FILE_APPEND_DATA|FILE_WRITE_EA|FILE_WRITE_ATTRIBUTES|DELETE|WRITE_DAC|WRITE_OWNER;
+        const DWORD writes=GENERIC_ALL|GENERIC_WRITE|FILE_WRITE_DATA|FILE_APPEND_DATA|FILE_DELETE_CHILD|FILE_WRITE_EA|FILE_WRITE_ATTRIBUTES|DELETE|WRITE_DAC|WRITE_OWNER;
         const bool creator_template=IsWellKnownSid(sid,WinCreatorOwnerSid) && (header->AceFlags&INHERIT_ONLY_ACE);
         if((ace->Mask&writes) && !trusted_system_sid(sid) && !creator_template) safe=false;
     }

@@ -33,8 +33,10 @@ foreach ($item in Get-ChildItem "$payload/keyboard") {
 }
 $iscc = "${env:ProgramFiles(x86)}/Inno Setup 6/ISCC.exe"
 if (!(Test-Path $iscc)) { throw 'Inno Setup 6 is required. No dependency will be installed automatically.' }
-$fixtureDefines = if ($TestRollback) { @('/DTestRollback') } else { @() }
-& $iscc @fixtureDefines "/DAppVersion=$Version" "/DAppNumericVersion=$numericVersion" "/DPayloadDir=$payload" "/DOutputDir=$output" "$PSScriptRoot/neptype.iss"
+[string[]]$compilerArguments = @("/DAppVersion=$Version", "/DAppNumericVersion=$numericVersion", "/DPayloadDir=$payload", "/DOutputDir=$output")
+if ($TestRollback) { $compilerArguments += '/DTestRollback=1' }
+$compilerArguments += "$PSScriptRoot/neptype.iss"
+& $iscc @compilerArguments
 if ($LASTEXITCODE) { throw "Inno Setup failed: $LASTEXITCODE" }
 $installer = Get-Item "$output/NepType-$Version-windows-x64-setup.exe"
 $hash = (Get-FileHash $installer.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
