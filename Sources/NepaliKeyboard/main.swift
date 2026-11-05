@@ -156,6 +156,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     var status: NSTextField!
     var copyButton: CopyIconButton!
     var shareButton: NSButton?
+    var moreButton: NSButton?
+    var keyboardSetupButton: NSButton?
     var composer = Composer()
     var experience = LocalExperience()
     var draftSave: DispatchWorkItem?
@@ -487,14 +489,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         status.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         status.setAccessibilityIdentifier("status")
         let setup = button("Keyboard setup", action: #selector(keyboardSetupAction(_:)), id: "keyboard-setup")
-        let more = NSPopUpButton(frame: .zero, pullsDown: true)
-        more.addItem(withTitle: "More")
-        for (title, action) in [("Report a typing problem", #selector(feedbackAction(_:)))] {
-            more.menu?.addItem(withTitle: title, action: action, keyEquivalent: "").target = self
-        }
+        keyboardSetupButton = setup
+        let more = button("More", action: #selector(moreAction(_:)), id: "more-tools")
+        moreButton = more
+        more.controlSize = .small
         more.setAccessibilityLabel("More")
+        more.toolTip = "More tools"
         let footer = stack([shield, status!, flexible(), setup, more], vertical: false, spacing: 6)
-        more.widthAnchor.constraint(equalTo: setup.widthAnchor).isActive = true
+        more.setContentHuggingPriority(.required, for: .horizontal)
         footer.heightAnchor.constraint(greaterThanOrEqualToConstant: 24).isActive = true
         let setupLink = button("Add NepType to your Mac keyboard", action: #selector(keyboardSetupAction(_:)), id: "keyboard-setup-link")
         setupLink.isBordered = false
@@ -660,13 +662,55 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         showPad(nil)
     }
 
-    @objc func keyboardSetupAction(_ sender: Any?) {
+    /// Separate wrapping rows give every step room at the alert's actual width.
+    func instructionList(_ steps: [String], note: String) -> NSView {
+        let rows = steps.enumerated().map { index, step -> NSView in
+            let bullet = label("•", size: 14)
+            bullet.setAccessibilityElement(false)
+            bullet.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            let text = label(step, size: 13)
+            text.maximumNumberOfLines = 0
+            text.preferredMaxLayoutWidth = 342
+            text.setAccessibilityIdentifier("setup-step-\(index + 1)")
+            let row = stack([bullet, text], vertical: false, spacing: 8)
+            row.alignment = .top
+            return row
+        }
+        let hint = label(note, size: 12, color: muted)
+        hint.maximumNumberOfLines = 0
+        hint.preferredMaxLayoutWidth = 360
+        let content = stack(rows + [hint], spacing: 14)
+        content.setAccessibilityIdentifier("keyboard-instructions")
+        content.widthAnchor.constraint(equalToConstant: 360).isActive = true
+        for row in rows { row.widthAnchor.constraint(equalTo: content.widthAnchor).isActive = true }
+        content.layoutSubtreeIfNeeded()
+        content.setFrameSize(content.fittingSize)
+        return content
+    }
+
+    func keyboardSetupAlert(installed: Bool = false) -> NSAlert {
         let guide = NSAlert()
-        guide.messageText = "Add NepType to your Mac keyboard"
-        guide.informativeText = "1. Click Install Keyboard.\n2. Open Keyboard Settings → Text Input → Edit → +. Select Nepali, then NepType Nepali. If you do not see it, sign out and back in first.\n3. Choose NepType Nepali from the input menu in the menu bar.\n\nTo switch back, choose your usual keyboard from the same menu."
+        guide.window.appearance = NSAppearance(named: .darkAqua)
+        guide.messageText = installed ? "NepType keyboard installed" : "Add NepType to your Mac keyboard"
+        var steps = installed ? [] : ["Click Install Keyboard below."]
+        steps += ["Open Keyboard Settings. Under Text Input, click Edit, then +.",
+                  "Select Nepali, choose NepType Nepali, then click Add.",
+                  "Choose NepType Nepali from the input menu in the menu bar."]
+        let uninstall = installed ? "\n\nTo uninstall, switch keyboards, remove NepType in Keyboard Settings, then delete NepType Input.app from Library/Input Methods in your home folder." : ""
+        guide.accessoryView = instructionList(steps, note: "Can't find NepType? Sign out of your Mac, then sign back in.\n\nTo switch back, choose your usual keyboard from the input menu." + uninstall)
+        if installed {
+            guide.addButton(withTitle: "Open Keyboard Settings")
+            guide.addButton(withTitle: "Later")
+            return guide
+        }
         guide.addButton(withTitle: "Install Keyboard")
         guide.addButton(withTitle: "Open Keyboard Settings")
         guide.addButton(withTitle: "Done")
+        return guide
+    }
+
+    @objc func keyboardSetupAction(_ sender: Any?) {
+        let guide = keyboardSetupAlert()
         switch guide.runModal() {
         case .alertFirstButtonReturn:
             do {
@@ -674,11 +718,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
                 let source = resources.appendingPathComponent("Input Methods/NepType Input.app")
                 let directory = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Input Methods")
                 _ = try InputMethodInstaller.install(source: source, directory: directory)
-                let installed = NSAlert()
-                installed.messageText = "NepType keyboard installed"
-                installed.informativeText = "Now add NepType Nepali in Keyboard Settings → Text Input → Edit → +. If it is not listed, sign out and sign back in first.\n\nTo uninstall later, switch to another input source, remove NepType in Keyboard Settings, then remove NepType Input.app from your Library/Input Methods folder."
-                installed.addButton(withTitle: "Open Keyboard Settings")
-                installed.addButton(withTitle: "Later")
+                let installed = keyboardSetupAlert(installed: true)
                 if installed.runModal() == .alertFirstButtonReturn { openKeyboardSettings() }
             } catch {
                 let failure = NSAlert()
@@ -705,6 +745,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
     }
     @objc func feedbackAction(_ sender: Any?) {
         if let url = URL(string: "https://github.com/anuphunt/nep-type/issues/new?template=typing-problem.yml") { NSWorkspace.shared.open(url) }
+    }
+    @objc func moreAction(_ sender: Any?) {
+        guard window.attachedSheet == nil else { return }
+        modeInfoPopover?.performClose(nil)
+        let tools = NSAlert()
+        tools.messageText = "More tools"
+        tools.informativeText = "Found a spelling that needs fixing? Send us the Roman word and the Nepali spelling you expected."
+        tools.addButton(withTitle: "Report a typing problem")
+        tools.addButton(withTitle: "Done")
+        tools.beginSheetModal(for: window) { [weak self] response in
+            if response == .alertFirstButtonReturn { self?.feedbackAction(nil) }
+        }
     }
     func applicationWillTerminate(_ notification: Notification) {
         draftSave?.cancel()
@@ -1416,6 +1468,60 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
                 if let png = rep.representation(using: .png, properties: [:]) {
                     try png.write(to: URL(fileURLWithPath: destination).appendingPathComponent("prototype.png"))
                 }
+            }
+            func capture(_ view: NSView, _ name: String) {
+                view.layoutSubtreeIfNeeded()
+                if CommandLine.arguments.contains("--capture-native-alerts"), let nativeWindow = view.window {
+                    nativeWindow.displayIfNeeded()
+                    RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
+                    let task = Process()
+                    task.executableURL = URL(fileURLWithPath: "/usr/sbin/screencapture")
+                    task.arguments = ["-x", "-l", String(nativeWindow.windowNumber), URL(fileURLWithPath: destination).appendingPathComponent(name).path]
+                    try? task.run()
+                    task.waitUntilExit()
+                    return
+                }
+                if let rep = view.bitmapImageRepForCachingDisplay(in: view.bounds) {
+                    view.cacheDisplay(in: view.bounds, to: rep)
+                    if let png = rep.representation(using: .png, properties: [:]) {
+                        try? png.write(to: URL(fileURLWithPath: destination).appendingPathComponent(name))
+                    }
+                }
+            }
+            if let more = moreButton, let setup = keyboardSetupButton {
+                let moreFrame = more.convert(more.bounds, to: view)
+                let setupFrame = setup.convert(setup.bounds, to: view)
+                check("more_compact_button", more.frame.width < setup.frame.width && more.menu == nil)
+                check("more_bottom_right", moreFrame.maxX >= view.bounds.maxX - 24 && moreFrame.midY < 50)
+                check("more_clear_of_setup", setup.convert(setup.alignmentRect(forFrame: setup.bounds), to: view).maxX <= more.convert(more.alignmentRect(forFrame: more.bounds), to: view).minX)
+                for attempt in 1...2 {
+                    more.performClick(nil)
+                    let sheet = window.attachedSheet
+                    check("more_opens_sheet_\(attempt)", sheet != nil)
+                    moreAction(nil)
+                    check("more_repeated_click_keeps_one_sheet_\(attempt)", window.attachedSheet === sheet)
+                    if let sheet {
+                        capture(sheet.contentView!, "more-tools.png")
+                        window.endSheet(sheet, returnCode: .alertSecondButtonReturn)
+                        sheet.orderOut(nil)
+                    }
+                    check("more_dismisses_\(attempt)", window.attachedSheet == nil)
+                }
+            }
+            for installed in [false, true] {
+                let guide = keyboardSetupAlert(installed: installed)
+                guide.layout()
+                guide.window.makeKeyAndOrderFront(nil)
+                guide.window.contentView?.layoutSubtreeIfNeeded()
+                if let instructions = guide.accessoryView as? NSStackView {
+                    let rows = instructions.arrangedSubviews
+                    check(installed ? "installed_instructions_fit" : "setup_instructions_fit",
+                          rows.allSatisfy { instructions.bounds.insetBy(dx: -1, dy: -1).contains($0.alignmentRect(forFrame: $0.frame)) && $0.frame.height > 10 })
+                    check(installed ? "installed_steps_spaced" : "setup_steps_spaced", instructions.spacing >= 14)
+                    check(installed ? "installed_bullet_count" : "setup_bullet_count", rows.count == (installed ? 4 : 5))
+                }
+                capture(guide.window.contentView!, installed ? "keyboard-installed.png" : "keyboard-setup.png")
+                guide.window.close()
             }
             let payload: [String: Any] = ["checks": checks, "passed": checks.values.allSatisfy { $0 }, "output": output.string, "source": input.string, "edit_timing": editPerformance]
             let data = try JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys])
