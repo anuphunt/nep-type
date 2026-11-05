@@ -51,8 +51,7 @@ Source: "{#PayloadDir}\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PayloadDir}\THIRD_PARTY_NOTICES.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PayloadDir}\README.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PayloadDir}\dictionaries\*"; DestDir: "{app}\dictionaries"; Flags: ignoreversion recursesubdirs createallsubdirs
-; Run registration inside file installation so an exception rolls back app files.
-Source: "{#PayloadDir}\NepTypeKeyboardSetup.exe"; DestDir: "{app}"; Flags: ignoreversion uninsrestartdelete; AfterInstall: BeginKeyboard
+Source: "{#PayloadDir}\NepTypeKeyboardSetup.exe"; DestDir: "{app}"; Flags: ignoreversion uninsrestartdelete
 
 [Icons]
 Name: "{autoprograms}\NepType"; Filename: "{app}\NepType.exe"; WorkingDir: "{app}"
@@ -68,7 +67,7 @@ const
   LegacyUninstallKey = 'Software\Microsoft\Windows\CurrentVersion\Uninstall\{5E4BC5AE-0272-4601-9D59-3018815A456C}_is1';
   KeyboardRegistry = 'Software\Classes\CLSID\{B6A68F96-5819-4B7F-8569-A11590D12001}\InprocServer32';
 var
-  KeyboardPending, KeyboardWasRegistered, KeyboardRestart, SetupFailed: Boolean;
+  KeyboardPending, KeyboardPrepared, KeyboardWasRegistered, KeyboardRestart, SetupFailed: Boolean;
   KeyboardToken, TemporaryHelper, RollbackHelper: String;
 
 function IsFreshKeyboard: Boolean;
@@ -108,22 +107,29 @@ procedure BeginKeyboard;
 var Code: Integer; Target: String;
 begin
   SetupFailed := True;
+  KeyboardPrepared := False;
+  ExtractTemporaryFile('NepTypeTsf.dll');
+  ExtractTemporaryFile('NepTypeEngine.dll');
   KeyboardToken := GetSHA256OfUnicodeString(ExpandConstant('{tmp}') + GetDateTimeString('yyyymmddhhnnsszzz', '-', ':'));
   KeyboardPending := True;
-  if not RunHelper(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'),
-    'begin ' + AddQuotes(ExpandConstant('{app}\keyboard-payload')) + ' "{#AppVersion}" ' + KeyboardToken, Code) or (Code <> 0) then
+  if not RunHelper(TemporaryHelper,
+    'begin ' + AddQuotes(ExpandConstant('{tmp}')) + ' "{#AppVersion}" ' + KeyboardToken, Code) or (Code <> 0) then
     RaiseException('Keyboard setup failed. The previous registration will be restored where possible; existing keyboard DLL folders are retained.');
   Target := GetIniString('setup', 'Target', '', ExpandConstant('{autopf}\NepType Keyboard\setup.ini'));
   RollbackHelper := AddBackslash(ExtractFileDir(Target)) + 'NepTypeKeyboardSetup.exe';
 #ifdef TestRollback
   RaiseException('CI fixture: fail after keyboard registration to verify app and keyboard rollback.');
 #endif
+  KeyboardPrepared := True;
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
 var Code: Integer;
 begin
-  if (CurStep = ssDone) and KeyboardPending then begin
+  { ssInstall propagates exceptions fatally, before app files change. Inno
+    deliberately suppresses callback exceptions during/after file installation. }
+  if CurStep = ssInstall then BeginKeyboard;
+  if (CurStep = ssDone) and KeyboardPending and KeyboardPrepared then begin
     if not RunHelper(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'), 'commit ' + KeyboardToken, Code) or (Code <> 0) then
       RaiseException('Keyboard setup could not commit. The previous registration will be restored where possible.');
     KeyboardPending := False;
