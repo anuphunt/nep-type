@@ -21,6 +21,7 @@ $hold = $null
 $holdReady = Join-Path $output 'held-old-dlls.json'
 $holdStop = Join-Path $output 'release-held-dlls'
 $legacyCreated = $false
+$aclFixture = Join-Path $env:ProgramFiles ('NepType-CI-ACL-' + [Guid]::NewGuid().ToString('N'))
 $stateDirectory = Join-Path $output 'isolated-user-state'
 New-Item -ItemType Directory $stateDirectory -Force | Out-Null
 $checks = [System.Collections.Generic.List[string]]::new()
@@ -160,6 +161,29 @@ try {
     Check ($fixture.testFixture -and !$package.testFixture) 'Upgrade fixture is separate from the distributable package'
     Check (((Get-FileHash $installer -Algorithm SHA256).Hash.ToLowerInvariant()) -eq $package.sha256) 'Installer SHA-256 matches manifest'
     Check ((Get-AuthenticodeSignature $installer).Status -eq 'NotSigned') 'Unsigned status recorded accurately'
+    # Reject explicit account permissions, ownership and writable ancestry,
+    # rather than relying only on a Program Files path prefix.
+    New-Item -ItemType Directory $aclFixture -Force | Out-Null
+    $null = Run-KeyboardHelper $buildHelper @('probe', $aclFixture)
+    $account = [Security.Principal.WindowsIdentity]::GetCurrent().User
+    $originalAcl = Get-Acl $aclFixture
+    $writableAcl = Get-Acl $aclFixture
+    $writableAcl.AddAccessRule([Security.AccessControl.FileSystemAccessRule]::new($account, 'Modify', 'ContainerInherit,ObjectInherit', 'None', 'Allow'))
+    Set-Acl $aclFixture $writableAcl
+    $null = Run-KeyboardHelper $buildHelper @('probe', $aclFixture) $true
+    $child = Join-Path $aclFixture 'protected-child'
+    New-Item -ItemType Directory $child -Force | Out-Null
+    $childAcl = Get-Acl $child
+    $childAcl.SetAccessRuleProtection($true, $false)
+    foreach ($sid in @('S-1-5-18','S-1-5-32-544')) {
+        $childAcl.AddAccessRule([Security.AccessControl.FileSystemAccessRule]::new([Security.Principal.SecurityIdentifier]::new($sid), 'FullControl', 'ContainerInherit,ObjectInherit', 'None', 'Allow'))
+    }
+    Set-Acl $child $childAcl
+    $null = Run-KeyboardHelper $buildHelper @('probe', $child) $true
+    Set-Acl $aclFixture $originalAcl
+    $ownerAcl = Get-Acl $aclFixture; $ownerAcl.SetOwner($account); Set-Acl $aclFixture $ownerAcl
+    $null = Run-KeyboardHelper $buildHelper @('probe', $aclFixture) $true
+    Remove-Item $aclFixture -Recurse -Force
     # A per-user uninstaller is never launched with the elevated setup token.
     New-Item $legacyKey -Force | Out-Null; $legacyCreated = $true
     New-ItemProperty $legacyKey -Name DisplayName -Value 'NepType legacy CI fixture' -Force | Out-Null
@@ -332,6 +356,7 @@ try {
 } finally {
     $observations | ConvertTo-Json -Depth 5 -AsArray | Set-Content "$output/observations.json" -Encoding utf8
     if ($legacyCreated) { Remove-Item $legacyKey -Force -ErrorAction SilentlyContinue }
+    if (Test-Path $aclFixture) { Remove-Item $aclFixture -Recurse -Force -ErrorAction SilentlyContinue }
     if ($hold -and !$hold.HasExited) { New-Item -ItemType File $holdStop -Force | Out-Null; if (!$hold.WaitForExit(10000)) { $hold.Kill(); $hold.WaitForExit() } }
     if ($app -and !$app.HasExited) { $app.Kill(); $app.WaitForExit() }
     $package | ConvertTo-Json | Set-Content $packagePath -Encoding utf8

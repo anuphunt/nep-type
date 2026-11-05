@@ -4,6 +4,7 @@
 #include <shlobj.h>
 #include <bcrypt.h>
 #include <aclapi.h>
+#include <sddl.h>
 #include <algorithm>
 #include <array>
 #include <filesystem>
@@ -51,23 +52,44 @@ void administrator() {
     BOOL member=FALSE; const bool ok=CheckTokenMembership(nullptr,group,&member)!=FALSE; FreeSid(group);
     require(ok && member,"Run the installer or keyboard setup as Administrator");
 }
-void protected_directory(const fs::path& path) {
-    require(below(setup_path(path),setup_path(program_files())),"Keyboard files must be in a protected Program Files folder");
-    auto inspect=path;
-    while(!fs::exists(inspect) && inspect.has_parent_path() && inspect!=inspect.parent_path()) inspect=inspect.parent_path();
-    PACL acl=nullptr; PSECURITY_DESCRIPTOR descriptor=nullptr;
-    require(GetNamedSecurityInfoW(inspect.c_str(),SE_FILE_OBJECT,DACL_SECURITY_INFORMATION,nullptr,nullptr,&acl,nullptr,&descriptor)==ERROR_SUCCESS,"Keyboard folder permissions could not be checked");
-    bool safe=acl!=nullptr;
+bool trusted_system_sid(PSID sid) {
+    if(IsWellKnownSid(sid,WinLocalSystemSid) || IsWellKnownSid(sid,WinBuiltinAdministratorsSid)) return true;
+    PSID installer=nullptr;
+    require(ConvertStringSidToSidW(L"S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464",&installer)!=FALSE,"Installer identity check failed");
+    const bool trusted=EqualSid(sid,installer)!=FALSE; LocalFree(installer); return trusted;
+}
+void protected_acl(const fs::path& path) {
+    PACL acl=nullptr; PSID owner=nullptr; PSECURITY_DESCRIPTOR descriptor=nullptr;
+    require(GetNamedSecurityInfoW(path.c_str(),SE_FILE_OBJECT,DACL_SECURITY_INFORMATION|OWNER_SECURITY_INFORMATION,&owner,nullptr,&acl,nullptr,&descriptor)==ERROR_SUCCESS,"Keyboard folder permissions could not be checked");
+    bool safe=acl && owner && trusted_system_sid(owner);
     for(DWORD i=0;safe && i<acl->AceCount;++i) {
         void* raw=nullptr; if(!GetAce(acl,i,&raw)) { safe=false; break; }
         const auto* header=static_cast<ACE_HEADER*>(raw);
-        if(header->AceType!=ACCESS_ALLOWED_ACE_TYPE) continue;
+        if(header->AceType==ACCESS_DENIED_ACE_TYPE || header->AceType==ACCESS_DENIED_OBJECT_ACE_TYPE || header->AceType==ACCESS_DENIED_CALLBACK_ACE_TYPE || header->AceType==ACCESS_DENIED_CALLBACK_OBJECT_ACE_TYPE) continue;
+        // Unrecognized granting ACEs cannot establish a protected executable path.
+        if(header->AceType!=ACCESS_ALLOWED_ACE_TYPE) { safe=false; break; }
         const auto* ace=static_cast<ACCESS_ALLOWED_ACE*>(raw); const auto sid=reinterpret_cast<PSID>(const_cast<DWORD*>(&ace->SidStart));
         const DWORD writes=GENERIC_ALL|GENERIC_WRITE|FILE_WRITE_DATA|FILE_APPEND_DATA|FILE_WRITE_EA|FILE_WRITE_ATTRIBUTES|DELETE|WRITE_DAC|WRITE_OWNER;
-        if((ace->Mask&writes) && (IsWellKnownSid(sid,WinWorldSid)||IsWellKnownSid(sid,WinAuthenticatedUserSid)||IsWellKnownSid(sid,WinBuiltinUsersSid))) safe=false;
+        const bool creator_template=IsWellKnownSid(sid,WinCreatorOwnerSid) && (header->AceFlags&INHERIT_ONLY_ACE);
+        if((ace->Mask&writes) && !trusted_system_sid(sid) && !creator_template) safe=false;
     }
-    LocalFree(descriptor); require(safe,"Keyboard folder allows ordinary users to modify executable files");
+    LocalFree(descriptor); require(safe,"Keyboard folder allows non-administrative modification of executable files");
 }
+void protected_directory(const fs::path& path) {
+    const auto base=setup_path(program_files());
+    const auto resolved=setup_path(path);
+    require(below(resolved,base),"Keyboard files must be in a protected Program Files folder");
+    auto inspect=fs::path(resolved);
+    while(!fs::exists(inspect) && inspect.has_parent_path() && inspect!=inspect.parent_path()) inspect=inspect.parent_path();
+    // A writable parent could rename/replace even a protected child directory.
+    for(;;) {
+        protected_acl(inspect);
+        if(setup_path(inspect)==base) break;
+        require(inspect.has_parent_path() && below(setup_path(inspect),base),"Keyboard folder ancestry is invalid");
+        inspect=inspect.parent_path();
+    }
+}
+
 std::wstring digest(const fs::path& path) {
     BCRYPT_ALG_HANDLE algorithm=nullptr; BCRYPT_HASH_HANDLE hash=nullptr;
     require(BCryptOpenAlgorithmProvider(&algorithm,BCRYPT_SHA256_ALGORITHM,nullptr,0)>=0,"SHA-256 provider unavailable");
