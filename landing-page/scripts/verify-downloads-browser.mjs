@@ -46,19 +46,21 @@ try {
           assert.equal(await page.locator('link[hreflang="en"]').getAttribute('href'),'https://neptype.com/download/');
           assert.equal(await page.locator('link[hreflang="ne"]').getAttribute('href'),'https://neptype.com/ne/download/');
           const cards = page.locator('[data-platform-card]');
-          assert.equal(await cards.count(),4);
+          assert.equal(await cards.count(),5);
           const columns = await page.locator('.download-grid').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
-          assert.equal(columns,width>1100 ? 4 : width>600 ? 2 : 1);
+          assert.equal(columns,width>1100 ? 5 : width>600 ? 2 : 1);
           const boxes = await cards.evaluateAll(cards=>cards.map(card=>{const r=card.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width};}));
-          if (width>1100) assert.equal(new Set(boxes.map(box=>box.y)).size,1,'All four cards share one row');
+          if (width>1100) assert.equal(new Set(boxes.map(box=>box.y)).size,1,'All five cards share one row');
           assert.equal(await page.locator('main .platform-download[data-platform="macOS"]').getAttribute('href'),mac.url);
           if(windows) {
             assert.equal(await page.locator('main .platform-download[data-platform="Windows"]').getAttribute('href'),windows.url);
             assert.equal((await page.locator('[data-platform-card="Windows"] .release-status').innerText()).trim(),locale==='ne'?'उपलब्ध छ':'Available now');
           }
-          for (const platform of ['iOS','Linux']) {
+          for (const platform of ['iOS','Android','Linux']) {
             assert.equal(await page.locator(`[data-platform-card="${platform}"] .platform-download`).count(),0);
             assert.ok(await page.locator(`[data-platform-card="${platform}"] .coming-soon`).isVisible());
+            assert.equal(await page.locator(`[data-platform-card="${platform}"] .coming-soon`).innerText(),locale==='ne'?'छिट्टै आउँदैछ':'Coming soon');
+            assert.equal(await page.locator(`[data-platform-card="${platform}"] .setup-link`).getAttribute('href'),prefix+'#try');
           }
           for (const slug of ['mac','windows']) {
             await page.locator(`main .setup-link[href="${prefix}${slug}/"]`).click();
@@ -127,7 +129,7 @@ try {
       }
       await devicePage.waitForLoadState('networkidle');
       assert.equal(new URL(devicePage.url()).pathname,prefix+'/download/');
-      assert.equal(await devicePage.locator('[data-current-device]:visible').count(),['macOS','Windows','iOS','Linux'].includes(platform)?1:0);
+      assert.equal(await devicePage.locator('[data-current-device]:visible').count(),['macOS','Windows','iOS','Android','Linux'].includes(platform)?1:0);
       checks.push(`${device.name} ${locale}: primary action, fallback, other platforms, device badge`);
     }
     await ctx.close();
