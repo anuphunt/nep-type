@@ -45,13 +45,14 @@ SetupMutex=Global\NepType.Installer
 [Files]
 Source: "{#PayloadDir}\NepType.exe"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete
 Source: "{#PayloadDir}\NepTypeEngine.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete
-Source: "{#PayloadDir}\NepTypeKeyboardSetup.exe"; DestDir: "{app}"; Flags: ignoreversion uninsrestartdelete
 Source: "{#PayloadDir}\keyboard\NepTypeTsf.dll"; DestDir: "{app}\keyboard-payload"; Flags: ignoreversion
 Source: "{#PayloadDir}\keyboard\NepTypeEngine.dll"; DestDir: "{app}\keyboard-payload"; Flags: ignoreversion
 Source: "{#PayloadDir}\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PayloadDir}\THIRD_PARTY_NOTICES.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PayloadDir}\README.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#PayloadDir}\dictionaries\*"; DestDir: "{app}\dictionaries"; Flags: ignoreversion recursesubdirs createallsubdirs
+; Run registration inside file installation so an exception rolls back app files.
+Source: "{#PayloadDir}\NepTypeKeyboardSetup.exe"; DestDir: "{app}"; Flags: ignoreversion uninsrestartdelete; AfterInstall: BeginKeyboard
 
 [Icons]
 Name: "{autoprograms}\NepType"; Filename: "{app}\NepType.exe"; WorkingDir: "{app}"
@@ -103,26 +104,30 @@ begin
   KeyboardWasRegistered := RegKeyExists(HKLM64, KeyboardRegistry);
 end;
 
-procedure CurStepChanged(CurStep: TSetupStep);
+procedure BeginKeyboard;
 var Code: Integer; Target: String;
 begin
-  if CurStep = ssPostInstall then begin
-    KeyboardToken := GetSHA256OfString(ExpandConstant('{tmp}') + GetDateTimeString('yyyymmddhhnnsszzz', '', ''));
-    KeyboardPending := True;
-    if not RunHelper(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'),
-      'begin ' + AddQuotes(ExpandConstant('{app}\keyboard-payload')) + ' "{#AppVersion}" ' + KeyboardToken, Code) or (Code <> 0) then begin
-      SetupFailed := True;
-      RaiseException('Keyboard setup failed. The previous registration will be restored where possible; existing keyboard DLL folders are retained.');
-    end;
-    Target := GetIniString('setup', 'Target', '', ExpandConstant('{autopf}\NepType Keyboard\setup.ini'));
-    RollbackHelper := AddBackslash(ExtractFileDir(Target)) + 'NepTypeKeyboardSetup.exe';
-  end;
+  SetupFailed := True;
+  KeyboardToken := GetSHA256OfUnicodeString(ExpandConstant('{tmp}') + GetDateTimeString('yyyymmddhhnnsszzz', '-', ':'));
+  KeyboardPending := True;
+  if not RunHelper(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'),
+    'begin ' + AddQuotes(ExpandConstant('{app}\keyboard-payload')) + ' "{#AppVersion}" ' + KeyboardToken, Code) or (Code <> 0) then
+    RaiseException('Keyboard setup failed. The previous registration will be restored where possible; existing keyboard DLL folders are retained.');
+  Target := GetIniString('setup', 'Target', '', ExpandConstant('{autopf}\NepType Keyboard\setup.ini'));
+  RollbackHelper := AddBackslash(ExtractFileDir(Target)) + 'NepTypeKeyboardSetup.exe';
+#ifdef TestRollback
+  RaiseException('CI fixture: fail after keyboard registration to verify app and keyboard rollback.');
+#endif
+end;
+
+procedure CurStepChanged(CurStep: TSetupStep);
+var Code: Integer;
+begin
   if (CurStep = ssDone) and KeyboardPending then begin
-    if not RunHelper(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'), 'commit ' + KeyboardToken, Code) or (Code <> 0) then begin
-      SetupFailed := True;
+    if not RunHelper(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'), 'commit ' + KeyboardToken, Code) or (Code <> 0) then
       RaiseException('Keyboard setup could not commit. The previous registration will be restored where possible.');
-    end;
     KeyboardPending := False;
+    SetupFailed := False;
     if not KeyboardWasRegistered and WizardIsTaskSelected('enableaccount') then begin
       if not ExecAsOriginalUser(ExpandConstant('{app}\NepTypeKeyboardSetup.exe'), 'enable-user', '', SW_HIDE, ewWaitUntilTerminated, Code) or (Code <> 0) then
         Log('The keyboard is installed. This account must add/enable it in Windows language settings.');

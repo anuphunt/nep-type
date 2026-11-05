@@ -17,6 +17,8 @@ $keyboardRegistry = 'HKLM:/Software/Classes/CLSID/{B6A68F96-5819-4B7F-8569-A1159
 $buildHelper = Join-Path $root 'build/windows/Release/NepTypeKeyboardSetup.exe'
 $fixture = Get-Content (Join-Path $output 'upgrade-fixture/package.json') -Raw | ConvertFrom-Json
 $fixtureInstaller = Join-Path $output "upgrade-fixture/$($fixture.filename)"
+$rollbackFixture = Get-Content (Join-Path $output 'rollback-fixture/package.json') -Raw | ConvertFrom-Json
+$rollbackInstaller = Join-Path $output "rollback-fixture/$($rollbackFixture.filename)"
 $hold = $null
 $holdReady = Join-Path $output 'held-old-dlls.json'
 $holdStop = Join-Path $output 'release-held-dlls'
@@ -131,7 +133,10 @@ function Run-KeyboardHelper([string]$helper, [string[]]$arguments, [bool]$expect
 function Install-Package([string]$path, [string]$label, [bool]$expectFailure = $false) {
     $process = Start-Process $path -ArgumentList @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-',"/DIR=`"$installed`"", "/LOG=`"$output/$label.log`"") -Wait -PassThru
     if ($expectFailure) { Check ($process.ExitCode -ne 0) "$label is blocked before installation" }
-    else { Check ($process.ExitCode -eq 0) "$label succeeds" }
+    else {
+        Check ($process.ExitCode -eq 0) "$label succeeds"
+        Check ((Get-Content "$output/$label.log" -Raw) -notmatch '(?i)(raised an exception|Runtime error)') "$label has no ignored installer exceptions"
+    }
 }
 function Verify-InstalledKeyboard {
     $path = Read-RegisteredKeyboard
@@ -197,6 +202,10 @@ try {
     $null = Run-KeyboardHelper $buildHelper @('rollback', $freshTransaction)
     Check (!(Test-Path $keyboardRegistry)) 'Fresh rollback removes its registration'
     $null = Run-KeyboardHelper $buildHelper @('cleanup')
+    Check ($rollbackFixture.testFixture -and $rollbackFixture.rollbackInjection -and !$package.rollbackInjection) 'Rollback injection is isolated from the distributable installer'
+    Install-Package $rollbackInstaller 'injected-fresh-install-failure' $true
+    Check (!(Test-Path $installed) -and !(Test-Path $keyboardRegistry) -and !(Test-Path $uninstallKey)) 'Failed fresh installer rolls back app files, COM registration and uninstall entry'
+    $null = Run-KeyboardHelper $buildHelper @('cleanup')
     $tampered = Join-Path $output 'tampered-payload'
     Copy-Item (Join-Path $package.payloadDirectory 'keyboard') $tampered -Recurse
     $data = [IO.File]::ReadAllBytes((Join-Path $tampered 'NepTypeTsf.dll')); $data[0] = $data[0] -bxor 1
@@ -209,6 +218,9 @@ try {
     $oldKeyboard = Read-RegisteredKeyboard
     Check (Test-Path -LiteralPath $oldKeyboard) 'Older keyboard fixture is registered'
     $oldHash = (Get-FileHash -LiteralPath $oldKeyboard).Hash
+    Install-Package $rollbackInstaller 'injected-upgrade-failure' $true
+    Check ((Read-RegisteredKeyboard) -eq $oldKeyboard -and (Test-Path $installed)) 'Failed upgrade restores the previous registered keyboard and installed app'
+    Verify-InstalledKeyboard
     $python = (Get-Command python).Source
     $hold = Start-Process $python -ArgumentList @('-u', "`"$PSScriptRoot/hold_dlls.py`"", "`"$oldKeyboard`"", "`"$(Join-Path (Split-Path $oldKeyboard) 'NepTypeEngine.dll')`"", "`"$holdReady`"", "`"$holdStop`"") -PassThru
     Wait-For { Test-Path $holdReady } 'Old keyboard DLL and engine are held by another process'

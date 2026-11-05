@@ -58,6 +58,7 @@ jobs:
         run: |
           ./platforms/windows/installer/package.ps1
           ./platforms/windows/installer/package.ps1 -Version '0.1.2-preview.0' -OutputDirectory "$pwd/build/windows-installer/upgrade-fixture" -TestFixture
+          ./platforms/windows/installer/package.ps1 -Version '0.1.2-preview.2' -OutputDirectory "$pwd/build/windows-installer/rollback-fixture" -TestFixture -TestRollback
       - name: Verify keyboard registration, rollback, locked upgrade, pad and removal
         shell: pwsh
         run: ./platforms/windows/installer/verify.ps1

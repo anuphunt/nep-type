@@ -1,9 +1,11 @@
 param(
     [string]$Version = '0.1.2-preview.1',
     [string]$OutputDirectory = '',
-    [switch]$TestFixture
+    [switch]$TestFixture,
+    [switch]$TestRollback
 )
 $ErrorActionPreference = 'Stop'
+if ($TestRollback -and !$TestFixture) { throw 'Rollback injection is only allowed in a separately marked CI test fixture.' }
 $root = (Resolve-Path "$PSScriptRoot/../../..").Path
 if ($Version -notmatch '^(\d+)\.(\d+)\.(\d+)-preview\.(\d+)$') { throw 'Use an immutable x.y.z-preview.n version.' }
 $numericVersion = "$($Matches[1]).$($Matches[2]).$($Matches[3]).$($Matches[4])"
@@ -31,7 +33,8 @@ foreach ($item in Get-ChildItem "$payload/keyboard") {
 }
 $iscc = "${env:ProgramFiles(x86)}/Inno Setup 6/ISCC.exe"
 if (!(Test-Path $iscc)) { throw 'Inno Setup 6 is required. No dependency will be installed automatically.' }
-& $iscc "/DAppVersion=$Version" "/DAppNumericVersion=$numericVersion" "/DPayloadDir=$payload" "/DOutputDir=$output" "$PSScriptRoot/neptype.iss"
+$fixtureDefines = if ($TestRollback) { @('/DTestRollback') } else { @() }
+& $iscc @fixtureDefines "/DAppVersion=$Version" "/DAppNumericVersion=$numericVersion" "/DPayloadDir=$payload" "/DOutputDir=$output" "$PSScriptRoot/neptype.iss"
 if ($LASTEXITCODE) { throw "Inno Setup failed: $LASTEXITCODE" }
 $installer = Get-Item "$output/NepType-$Version-windows-x64-setup.exe"
 $hash = (Get-FileHash $installer.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -50,6 +53,7 @@ $manifest = [ordered]@{
     requiresAdministrator = $true
     payloadDirectory = $payload
     testFixture = [bool]$TestFixture
+    rollbackInjection = [bool]$TestRollback
     keyboardPayload = [ordered]@{
         tsfSha256 = (Get-FileHash "$payload/keyboard/NepTypeTsf.dll" -Algorithm SHA256).Hash.ToLowerInvariant()
         engineSha256 = (Get-FileHash "$payload/keyboard/NepTypeEngine.dll" -Algorithm SHA256).Hash.ToLowerInvariant()
