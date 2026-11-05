@@ -204,7 +204,8 @@ public:
         for(const auto* name:{L"NepTypeTsf.dll",L"NepTypeEngine.dll",L"NepTypeKeyboardSetup.exe",L"payload.ini"}) protected_directory(folder/name);
         require(owned(setup_path(folder/L"NepTypeTsf.dll")),"Keyboard payload ownership is missing");
         const auto tsf=ini(folder/L"payload.ini",L"payload",L"TsfSHA256"), engine=ini(folder/L"payload.ini",L"payload",L"EngineSHA256");
-        require(tsf.size()==64 && engine.size()==64 && digest(folder/L"NepTypeTsf.dll")==tsf && digest(folder/L"NepTypeEngine.dll")==engine,"Installed keyboard payload is damaged");
+        const auto helper=ini(folder/L"payload.ini",L"payload",L"HelperSHA256");
+        require(tsf.size()==64 && engine.size()==64 && helper.size()==64 && digest(folder/L"NepTypeTsf.dll")==tsf && digest(folder/L"NepTypeEngine.dll")==engine && digest(folder/L"NepTypeKeyboardSetup.exe")==helper,"Installed keyboard payload is damaged");
         if(bound) require(tsf==expected_tsf && engine==expected_engine,"Keyboard payload does not match this installer");
     }
     std::wstring stage(const std::wstring& source,const std::wstring& version,const State& state) override {
@@ -216,7 +217,10 @@ public:
         protected_directory(root); fs::create_directories(versions); protected_directory(root); protected_directory(versions);
         if(!state.active.empty() && below(state.active,setup_path(versions))) {
             const auto active=fs::path(state.active).parent_path();
-            if(ini(active/L"payload.ini",L"payload",L"Version")==version && ini(active/L"payload.ini",L"payload",L"TsfSHA256")==expected_tsf && ini(active/L"payload.ini",L"payload",L"EngineSHA256")==expected_engine) { validate(active,true); return setup_path(active/L"NepTypeTsf.dll"); }
+            if(ini(active/L"payload.ini",L"payload",L"Version")==version && ini(active/L"payload.ini",L"payload",L"TsfSHA256")==expected_tsf && ini(active/L"payload.ini",L"payload",L"EngineSHA256")==expected_engine) {
+                try { validate(active,true); return setup_path(active/L"NepTypeTsf.dll"); }
+                catch(const std::exception&) { /* Repair a damaged generation by staging a new one. */ }
+            }
         }
         // A new generation is never reused after uninstall. Delayed Windows
         // delete requests therefore cannot remove a later reinstallation.

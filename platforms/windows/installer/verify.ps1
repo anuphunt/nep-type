@@ -341,6 +341,12 @@ try {
     $app = $null
     Install-Package $installer 'same-version-reinstall'
     Check ((Read-RegisteredKeyboard) -eq $activeKeyboard) 'Same-version reinstall reuses the intact active payload'
+    Remove-Item -LiteralPath (Join-Path (Split-Path $activeKeyboard) 'NepTypeKeyboardSetup.exe') -Force
+    Install-Package $installer 'repair-damaged-keyboard-generation'
+    $repairedKeyboard = Read-RegisteredKeyboard
+    Check ($repairedKeyboard -ne $activeKeyboard) 'Repair stages a new complete generation when the active recovery helper is missing'
+    $activeKeyboard = $repairedKeyboard
+    Verify-InstalledKeyboard
     $app = Launch-Pad
     Wait-For { [PadUI]::Text([PadUI]::GetDlgItem($app.MainWindowHandle,110)) -eq 'Local · Shared offline engine' } 'Reinstalled pad loads engine'
     [void]$app.CloseMainWindow(); Check ($app.WaitForExit(30000)) 'Reinstalled pad exits'; $app = $null
