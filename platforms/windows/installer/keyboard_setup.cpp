@@ -105,7 +105,9 @@ void atomic_ini(const fs::path& file,const std::vector<std::pair<std::wstring,st
     const fs::path temporary=file.wstring()+L"."+guid()+L".tmp";
     try {
         for(const auto& value:values) set_ini(temporary,L"setup",value.first.c_str(),value.second);
-        require(WritePrivateProfileStringW(nullptr,nullptr,nullptr,temporary.c_str())!=FALSE,"Keyboard setup state could not be flushed");
+        // Windows returns zero after flushing this cache, including success.
+        // Individual writes and FlushFileBuffers below are checked separately.
+        WritePrivateProfileStringW(nullptr,nullptr,nullptr,temporary.c_str());
         flush_file(temporary);
         require(MoveFileExW(temporary.c_str(),file.c_str(),MOVEFILE_REPLACE_EXISTING|MOVEFILE_WRITE_THROUGH)!=FALSE,"Keyboard setup state could not be committed");
     } catch(...) { DeleteFileW(temporary.c_str()); throw; }
@@ -206,7 +208,7 @@ public:
             set_ini(manifest,L"payload",L"Product",L"NepTypeKeyboard"); set_ini(manifest,L"payload",L"Version",version);
             set_ini(manifest,L"payload",L"TsfSHA256",expected_tsf); set_ini(manifest,L"payload",L"EngineSHA256",expected_engine);
             set_ini(manifest,L"payload",L"HelperSHA256",digest(folder/L"NepTypeKeyboardSetup.exe"));
-            require(WritePrivateProfileStringW(nullptr,nullptr,nullptr,manifest.c_str())!=FALSE,"Keyboard payload metadata could not be flushed");
+            WritePrivateProfileStringW(nullptr,nullptr,nullptr,manifest.c_str()); // successful cache flush also returns zero
             for(const auto* name:{L"NepTypeTsf.dll",L"NepTypeEngine.dll",L"NepTypeKeyboardSetup.exe",L"payload.ini"}) flush_file(folder/name);
             validate(folder,true); return setup_path(folder/L"NepTypeTsf.dll");
         } catch(...) {
