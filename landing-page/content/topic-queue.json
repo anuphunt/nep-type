@@ -166,7 +166,7 @@
     },
     {
       "id": "offline-typing-choice",
-      "status": "eligible",
+      "status": "published",
       "query": "offline Nepali typing browser vs Mac app",
       "intent": "Choose a reliable local typing workflow",
       "angle": "Test actual first-load, reload, cache and offline behavior. Distinguish the website, cached engine and native Mac pad; avoid duplicating setup instructions.",
@@ -181,7 +181,8 @@
           "period": "2025-10-01/2026-09-30",
           "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
         }
-      ]
+      ],
+      "articleSlug": "nepali-typing-browser-offline-check"
     },
     {
       "id": "nepali-message-links",
