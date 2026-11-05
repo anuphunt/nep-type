@@ -8,6 +8,7 @@
 #include <textstor.h>
 #include <cstdlib>
 #include <cstring>
+#include <cwchar>
 #include <sstream>
 #include <algorithm>
 #include <iostream>
@@ -28,7 +29,7 @@ struct ComRuntime {
 };
 struct Library {
     HMODULE value=nullptr;
-    explicit Library(const char* path):value(LoadLibraryA(path)) { CHECK(value); }
+    explicit Library(const wchar_t* path):value(LoadLibraryW(path)) { CHECK(value); }
     ~Library() { if(value) FreeLibrary(value); }
 };
 #ifndef TF_IPPMF_FORPROCESS
@@ -43,26 +44,35 @@ struct RegisteredProfile {
     ComPtr<ITfInputProcessorProfileMgr> manager;
     TF_INPUTPROCESSORPROFILE previous{};
     LANGID test_language=0;
-    bool registered=false,active=false,restore=false;
-    void begin(HMODULE library) {
+    bool registered=false,active=false,restore=false,added_test=false;
+    void begin(HMODULE library,bool use_existing) {
         // Refuse to overwrite a real user installation, even with explicit opt-in.
         HKEY existing=nullptr;
         auto error=RegOpenKeyExW(HKEY_LOCAL_MACHINE,L"SOFTWARE\\Classes\\CLSID\\{B6A68F96-5819-4B7F-8569-A11590D12001}",0,KEY_READ,&existing);
-        if(error==ERROR_SUCCESS) { RegCloseKey(existing); throw std::runtime_error("A NepType keyboard is already registered; use a clean test machine."); }
-        CHECK(error==ERROR_FILE_NOT_FOUND);
+        if(error==ERROR_SUCCESS) { RegCloseKey(existing); CHECK(use_existing); }
+        else { CHECK(error==ERROR_FILE_NOT_FOUND); CHECK(!use_existing); }
         auto registration=reinterpret_cast<Entry>(GetProcAddress(library,"DllRegisterServer"));
         unregister=reinterpret_cast<Entry>(GetProcAddress(library,"DllUnregisterServer")); CHECK(registration && unregister);
-        require_hr("DllRegisterServer",registration()); registered=true;
+        if(use_existing) {
+            wchar_t actual[32768]{},expected[32768]{}; DWORD size=sizeof(actual);
+            CHECK(RegGetValueW(HKEY_LOCAL_MACHINE,L"SOFTWARE\\Classes\\CLSID\\{B6A68F96-5819-4B7F-8569-A11590D12001}\\InprocServer32",nullptr,RRF_RT_REG_SZ|RRF_SUBKEY_WOW6464KEY,nullptr,actual,&size)==ERROR_SUCCESS);
+            CHECK(GetModuleFileNameW(library,expected,32768)>0); CHECK(_wcsicmp(actual,expected)==0);
+        } else { require_hr("DllRegisterServer",registration()); registered=true; }
         require_hr("Create profiles",CoCreateInstance(CLSID_TF_InputProcessorProfiles,nullptr,CLSCTX_INPROC_SERVER,IID_ITfInputProcessorProfiles,reinterpret_cast<void**>(profiles.put())));
         require_hr("Query profile manager",profiles->QueryInterface(IID_ITfInputProcessorProfileMgr,reinterpret_cast<void**>(manager.put())));
         restore=manager->GetActiveProfile(GUID_TFCAT_TIP_KEYBOARD,&previous)==S_OK;
         require_hr("Get current language",profiles->GetCurrentLanguage(&test_language));
+        BSTR prior_test=nullptr;
+        const auto prior_result=profiles->GetLanguageProfileDescription(service_id,test_language,test_profile,&prior_test);
+        const bool test_exists=prior_result==S_OK && prior_test; SysFreeString(prior_test);
+        CHECK(!test_exists);
         // Exercise real profile activation in the current input language. The
         // production Nepali profile is also registered, without installing a
         // language pack or changing the runner's default input language.
         constexpr wchar_t name[]=L"NepType CI native input test";
         wchar_t path[32768]{}; const auto length=GetModuleFileNameW(library,path,32768); CHECK(length && length<32768);
         require_hr("Add test profile",profiles->AddLanguageProfile(service_id,test_language,test_profile,name,static_cast<ULONG>(std::size(name)-1),path,length,0));
+        added_test=true;
         require_hr("Enable test profile",profiles->EnableLanguageProfile(service_id,test_language,test_profile,TRUE));
         const auto result=manager->ActivateProfile(TF_PROFILETYPE_INPUTPROCESSOR,test_language,service_id,test_profile,nullptr,TF_IPPMF_FORPROCESS|TF_IPPMF_ENABLEPROFILE);
         require_hr("Activate test profile",result); CHECK(result==S_OK); active=true;
@@ -79,6 +89,7 @@ struct RegisteredProfile {
             if(FAILED(hr)) result=hr;
             restore=false;
         }
+        if(added_test && profiles) { const auto hr=profiles->RemoveLanguageProfile(service_id,test_language,test_profile); if(FAILED(hr)) result=hr; added_test=false; }
         manager.reset(); profiles.reset();
         if(registered && unregister) { const auto hr=unregister(); if(FAILED(hr)) result=hr; registered=false; }
         return result;
@@ -225,11 +236,16 @@ struct Probe final : ITfEditSession {
         return S_OK;
     }
 };
-static int run(int argc,char** argv) {
-    CHECK(argc==2 || argc==3);
+static int run(int argc,wchar_t** argv) {
+    CHECK(argc>=2 && argc<=4);
     const auto actions=std::getenv("GITHUB_ACTIONS"), environment=std::getenv("RUNNER_ENVIRONMENT");
     const bool hosted=actions && std::strcmp(actions,"true")==0 && environment && std::strcmp(environment,"github-hosted")==0;
-    const bool opted_in=argc==3 && std::strcmp(argv[2],"--register-profile")==0;
+    bool opted_in=false,use_existing=false;
+    for(int i=2;i<argc;++i) {
+        if(std::wcscmp(argv[i],L"--register-profile")==0) opted_in=true;
+        else if(std::wcscmp(argv[i],L"--existing-registration")==0) use_existing=true;
+        else CHECK(false);
+    }
     if(!hosted && !opted_in) {
         std::cerr<<"Native profile test requires a clean elevated test desktop and explicit --register-profile, or an ephemeral GitHub-hosted runner."<<std::endl;
         return actions ? 1 : 77;
@@ -250,7 +266,7 @@ static int run(int argc,char** argv) {
     ShowWindow(store.window,SW_SHOW); SetForegroundWindow(store.window); SetFocus(store.window); pump();
     Library library(argv[1]);
     RegisteredProfile profile;
-    profile.begin(library.value); pump();
+    profile.begin(library.value,use_existing); pump();
     require_hr("Focus test document",thread->SetFocus(document.get()));
     ComPtr<ITfKeystrokeMgr> keys;
     CHECK(SUCCEEDED(thread->QueryInterface(IID_ITfKeystrokeMgr,reinterpret_cast<void**>(keys.put()))));
@@ -321,7 +337,7 @@ static int run(int argc,char** argv) {
     std::cout << "PASS: registered production DLL/shared engine through native TSF key routing: typing, commit, escape, backspace, selected text, moved caret, read-only, denied locks, profile cleanup and teardown\n";
     return 0;
 }
-int main(int argc,char** argv) {
+int wmain(int argc,wchar_t** argv) {
     try { return run(argc,argv); }
     catch(const std::exception& error) { std::cerr<<error.what()<<std::endl; return 1; }
 }

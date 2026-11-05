@@ -1,4 +1,12 @@
-# Windows typing-pad preview release
+# Windows keyboard and typing-pad releases
+
+## Version 0.1.2-preview.1 preparation — not published
+
+The combined machine-wide installer now packages the system keyboard, shared offline engine and typing pad. The native setup helper is bound to the exact build DLL hashes. It stages immutable generations under protected Program Files, journals registration changes, restores the previous registration after interruption, and unregisters before cleanup. Existing enabled/default account state is preserved on upgrade. Locked old DLLs are retained until Windows restarts; fresh generation paths prevent delayed deletion from affecting a reinstallation. The older per-user pad must be removed through Windows Settings before installing this machine-wide version. Local drafts and spelling preferences remain in the user account.
+
+The Windows installer workflow builds an older same-code fixture separately and verifies fresh/upgrade/rollback/recovery/removal paths, including a process holding the old DLLs. It also tests the actual installed registered profile with native TSF key routing. Test results and exact-source CI will be recorded after execution. No new release asset or public download is published by this workflow. Consumer Windows 10/11 host-app acceptance, actual restart cleanup and signing remain separate release checks.
+
+The published pad-only releases below are historical records; they do not describe the combined installer under preparation.
 
 ## Version 0.1.1-preview.1 release
 

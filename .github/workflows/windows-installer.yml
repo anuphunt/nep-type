@@ -2,7 +2,13 @@ name: Windows installer
 on:
   workflow_dispatch:
   push:
-    branches: [codex/windows-installer]
+    branches: [main, codex/windows-installer]
+    paths:
+      - '.github/workflows/windows-installer.yml'
+      - 'platforms/windows/**'
+      - 'engine/**'
+      - 'shared/**'
+      - 'scripts/engine-data.py'
   pull_request:
     paths:
       - '.github/workflows/windows-installer.yml'
@@ -36,7 +42,7 @@ jobs:
           NEPTYPE_DICTIONARY_DIR: ${{ github.workspace }}/engine/data
       - run: python portable-core/tests/conformance.py engine/target/x86_64-pc-windows-msvc/release/neptype-conformance.exe
       - run: python portable-core/tests/safety_corpus.py engine/target/x86_64-pc-windows-msvc/release/neptype-conformance.exe
-      - name: Build native pad and test fixtures
+      - name: Build pad, system keyboard, native setup helper and test fixtures
         shell: pwsh
         run: |
           New-Item -ItemType Directory build/rust-windows -Force | Out-Null
@@ -47,10 +53,12 @@ jobs:
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           ctest --test-dir build/windows -C Release --output-on-failure
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-      - name: Package unsigned preview
+      - name: Package unsigned keyboard preview and older upgrade fixture
         shell: pwsh
-        run: ./platforms/windows/installer/package.ps1
-      - name: Install, launch, type, copy, and uninstall
+        run: |
+          ./platforms/windows/installer/package.ps1
+          ./platforms/windows/installer/package.ps1 -Version '0.1.2-preview.0' -OutputDirectory "$pwd/build/windows-installer/upgrade-fixture" -TestFixture
+      - name: Verify keyboard registration, rollback, locked upgrade, pad and removal
         shell: pwsh
         run: ./platforms/windows/installer/verify.ps1
       - uses: actions/upload-artifact@v4

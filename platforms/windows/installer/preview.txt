@@ -1,13 +1,19 @@
-NepType for Windows — typing-pad preview
+NepType for Windows — keyboard and typing pad preview
 
-Windows 10/11, Intel or AMD 64-bit (x64).
+Windows 10/11, native Intel or AMD 64-bit (x64).
 
-Write Roman letters in NepType, choose a spelling, and copy the Nepali output into another app. The engine works offline. This installer does not install, register, or enable a system keyboard, background service, or keyboard hook.
+This installer includes the system-wide NepType Nepali Keyboard and the offline typing pad. It installs into protected Program Files locations and asks for administrator approval. It does not change your default input language or keyboard.
 
-This preview is unsigned. Windows or your browser may show an unknown-publisher or SmartScreen warning. No code-signing or SmartScreen reputation is claimed.
+After setup, add Nepali in Windows Settings > Time & language > Language & region. Add NepType Nepali Keyboard in its keyboard options, then choose it with Windows+Space. A sign-out may be needed. Space accepts a conversion, Esc keeps the Roman spelling, Ctrl+1–4 chooses a candidate, and Ctrl+Shift+Space cycles Mixed, Nepali and English.
 
-The pad saves your current Roman draft and output mode locally. Clear removes the saved draft text. Choosing a non-default spelling remembers it locally and puts it first in future suggestions. Ctrl+1–3 chooses a visible suggestion. Use Copy or Save output to keep a separate document.
+An older per-user NepType pad must be removed from that user's Windows Apps settings before this machine-wide installation. Drafts, spelling preferences and pad mode stay in the user's LocalAppData/NepType folder; this installer and uninstaller do not remove them.
 
-Installs for your user account without administrator access. Remove it through Windows Settings > Apps > Installed apps > NepType > Uninstall.
+Keyboard upgrades use new protected DLL folders. Apps already using an older keyboard DLL are not forcibly closed. Removal unregisters the keyboard first; locked keyboard files are removed at restart. Reinstallation uses a fresh folder so pending cleanup cannot delete the new keyboard. Keep another Windows keyboard available while switching or removing it.
 
-Source, license notices, and support: https://github.com/anuphunt/nep-type
+The pad still supports Roman input, suggestions, local draft and spelling memory, Unicode copy and saved output. Its Ctrl+1–3 shortcuts choose visible pad suggestions.
+
+This preview is unsigned. No verified publisher or SmartScreen reputation is claimed. Automated Windows Server checks do not replace consumer Windows 10/11, Office/browser, accessibility, high-DPI or ARM64 testing.
+
+Remove through Windows Settings > Apps > Installed apps > NepType > Uninstall. Windows may ask for administrator approval and a restart to complete removal. A keyboard manually installed outside this installer may leave its older files behind; unrelated files are not deleted.
+
+Source, license notices and support: https://github.com/anuphunt/nep-type

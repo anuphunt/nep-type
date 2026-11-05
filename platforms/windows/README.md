@@ -25,9 +25,15 @@ ctest --test-dir build/windows -C Release --output-on-failure
 cmake --install build/windows --config Release --prefix build/windows-package
 ```
 
-The package contains the pad, `NepTypeTsf.dll`, `NepTypeEngine.dll`, the install script and this guide. Build native ARM64 separately with a matching Rust DLL and `-A ARM64`; ARM64 and 32-bit applications are not yet validated. Do not mix architectures or promise x86 coverage from an x64 build.
+The package contains the pad, `NepTypeTsf.dll`, `NepTypeEngine.dll`, `NepTypeKeyboardSetup.exe`, the developer install script and this guide. The setup helper accepts native x64 only; ARM64 and 32-bit applications are not validated. Do not mix architectures or promise x86 coverage from an x64 build.
 
-## Install and remove on a Windows test desktop
+## Combined installer
+
+`installer/package.ps1` builds the unsigned `0.1.2-preview.1` Inno installer with both the system keyboard and pad. It requires administrator rights and a protected Program Files destination. It stages the exact build-bound DLL pair in a new `Program Files/NepType Keyboard/versions/<version>-<generation>` directory before registration. A durable journal supports rollback and next-process recovery. Upgrades preserve user enablement and the default keyboard, and retain old loaded DLLs. Removal unregisters first; locked files are deferred until restart without closing host apps. Reinstallation uses a new generation so pending removal cannot delete the new active DLL.
+
+The earlier per-user pad must be removed through Windows Settings first; the elevated installer never launches its user-writable uninstaller. User drafts and spelling preferences remain in LocalAppData. Fresh installation offers account enablement, run as the original user, without selecting a new default input method. Other accounts can add the keyboard using Windows language settings.
+
+## Install and remove a developer build on a Windows test desktop
 
 From a **native PowerShell as Administrator**, explicitly install the development build:
 
@@ -35,7 +41,7 @@ From a **native PowerShell as Administrator**, explicitly install the developmen
 ./build/windows-package/install-keyboard.ps1 -Action Install
 ```
 
-The script copies only the two DLLs into `Program Files/NepType Keyboard`, then runs native regsvr32. The DLL registers its COM class, Nepali language profile and keyboard category. It does not change the default language or input method. Sign out/back in, add Nepali in Settings → Time & language → Language & region, and add **NepType Nepali Keyboard** in its keyboard options. Select it with Win+Space. The pad's Keyboard setup button also offers this explicit installation when its packaged script is present.
+The script calls the same native transactional setup helper as the combined installer. The helper registers the COM class, Nepali language profile and keyboard category using protected, versioned DLL files. It does not change the default language or input method. Sign out/back in, add Nepali in Settings → Time & language → Language & region, and add **NepType Nepali Keyboard** in its keyboard options. Select it with Win+Space. The pad's Keyboard setup button also offers this explicit installation when its packaged script is present.
 
 Switch to another keyboard before removal:
 
@@ -43,13 +49,13 @@ Switch to another keyboard before removal:
 ./build/windows-package/install-keyboard.ps1 -Action Uninstall
 ```
 
-This unregisters the service. Sign out before deleting the two DLLs from `Program Files/NepType Keyboard`; open apps may still hold them. The installer refuses to overwrite an existing install. Keep builds unsigned/development-only until signing and clean-install, upgrade and uninstall checks are complete. UAC approval is a normal part of machine-wide TSF registration.
+This unregisters the service before removing managed payloads. If open apps hold DLLs, Windows removes those files on restart. No host app is forcibly closed. Prior manual flat-folder installations can be migrated, but their unowned files are retained. UAC approval is a normal part of machine-wide TSF registration.
 
 ## Verification and limitations
 
-`tests/run.sh` runs the existing portable composition, candidate, mocked lifecycle/edit and owned-range tests, plus the production keyboard transaction policy. Set `NEPTYPE_TEST_ENGINE=/absolute/path/to/libneptype_engine.dylib` (or `.so`) to test the same production candidate conversion bridge with the real engine. This covers default/explicit/original choice, repeated identical words, stale generations, conversion failure and literal URLs/email/numbers. These portable tests do not prove Windows host behavior.
+`tests/run.sh` runs the existing portable composition, candidate, mocked lifecycle/edit and owned-range tests, plus the production keyboard transaction policy. Set `NEPTYPE_TEST_ENGINE=/absolute/path/to/libneptype_engine.dylib` (or `.so`) to test the same production candidate conversion bridge with the real engine. This covers default/explicit/original choice, repeated identical words, stale generations, conversion failure and literal URLs/email/numbers. The CMake suite also tests installer transaction ordering, fresh/upgrade rollback, crash recovery, journal write failures, foreign registrations and unregister-before-delete. These portable tests do not prove Windows host behavior.
 
-On Windows, CTest also builds `NepTypeNativeTsfTests` using a real Microsoft TSF thread manager, document, context and application-owned `ITextStoreACP`. On an ephemeral GitHub-hosted runner it registers the production DLL and a temporary profile in the current input language, activates it for the test process, and routes keys through `ITfKeystrokeMgr`. It restores the previous profile and unregisters afterward. This validates COM registration, SDK ABI, actual profile activation, key routing and composition semantics. It does not prove product-installer behavior, Notepad/Office/browser integration, Nepali language setup or host undo.
+On Windows, CTest also builds `NepTypeNativeTsfTests` using a real Microsoft TSF thread manager, document, context and application-owned `ITextStoreACP`. On an ephemeral GitHub-hosted runner it registers the production DLL and a temporary profile in the current input language, activates it for the test process, and routes keys through `ITfKeystrokeMgr`. It restores the previous profile and unregisters afterward. This validates COM registration, SDK ABI, actual profile activation, key routing and composition semantics. The installer workflow separately exercises fresh installation, legacy-pad blocking, changed-payload rejection, locked-DLL upgrade, rollback/recovery, same-version repair, installed-profile native key routing, removal and reinstallation before restart. Neither fixture proves Notepad/Office/browser integration, Nepali language setup or host undo.
 
 On a local Windows machine this registration test is skipped unless explicitly opted in. To run it, use a **clean, elevated test desktop** and execute `build/windows/Release/NepTypeNativeTsfTests.exe build/windows/Release/NepTypeTsf.dll --register-profile`. It refuses to overwrite an existing NepType registration. Self-hosted CI must opt in separately; unapproved CI does not silently count the test as passed. Exception-based checks run profile cleanup on failure.
 
