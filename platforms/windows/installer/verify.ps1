@@ -132,7 +132,15 @@ function Run-KeyboardHelper([string]$helper, [string[]]$arguments, [bool]$expect
 }
 function Install-Package([string]$path, [string]$label, [bool]$expectFailure = $false) {
     $process = Start-Process $path -ArgumentList @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-',"/DIR=`"$installed`"", "/LOG=`"$output/$label.log`"") -Wait -PassThru
-    if ($expectFailure) { Check ($process.ExitCode -ne 0) "$label is blocked before installation" }
+    if ($expectFailure) {
+        Check ($process.ExitCode -ne 0) "$label returns failure"
+        if ($label.StartsWith('injected-')) {
+            $failureLog = Get-Content "$output/$label.log" -Raw
+            Check ($failureLog -match 'CI fixture: fail after keyboard registration') "$label reaches the intended post-registration failure"
+            Check ($failureLog -match 'Keyboard helper: begin .*; exit 0') "$label registered its staged payload before failing"
+            Check ($failureLog -match 'Keyboard helper: rollback .*; exit 0') "$label completes native rollback during installer cleanup"
+        }
+    }
     else {
         Check ($process.ExitCode -eq 0) "$label succeeds"
         Check ((Get-Content "$output/$label.log" -Raw) -notmatch '(?i)(raised an exception|Runtime error)') "$label has no ignored installer exceptions"
