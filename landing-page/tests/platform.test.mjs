@@ -49,14 +49,16 @@ test('all-platform cards expose only available installers; pending Windows remai
   for (const locale of ['en','ne']) {
     for (const windows of [undefined,'https://example.com/verified.exe']) {
       const html = renderDownloadPage(locale, {mac:'https://example.com/app.dmg',windows,macVersion:'1.0',windowsVersion:'1.0-preview.1'}, escape);
-      assert.equal([...html.matchAll(/data-platform-card=/g)].length, 4);
+      assert.equal([...html.matchAll(/data-platform-card=/g)].length, 5);
       assert.equal([...html.matchAll(/class="button platform-download"/g)].length, windows ? 2 : 1);
       assert.ok(!html.includes('href="undefined"'));
       assert.ok(!html.includes('<button'));
-      for (const platform of ['iOS','Linux']) {
+      for (const platform of ['iOS','Android','Linux']) {
         const card = html.match(new RegExp(`<article[^>]*data-platform-card="${platform}"[\\s\\S]*?</article>`))[0];
         assert.ok(!card.includes('neptype_download_clicked'));
         assert.match(card, /class="coming-soon"/);
+        assert.ok(card.includes(locale === 'ne' ? 'छिट्टै आउँदैछ' : 'Coming soon'));
+        assert.ok(card.includes(`href="${locale === 'ne' ? '/ne' : ''}/#try"`));
       }
     }
   }
