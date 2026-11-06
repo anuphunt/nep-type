@@ -1,0 +1,288 @@
+{
+  "slug": "unicode-vs-preeti-copy-paste",
+  "topicId": "unicode-versus-preeti",
+  "status": "published",
+  "published": "2026-11-06",
+  "primaryQuery": "Nepali Unicode vs Preeti copy paste difference",
+  "searchIntent": "Identify whether a copied Nepali word is Unicode text or legacy font-encoded text before choosing a font repair, conversion or retyping workflow.",
+  "originalValue": "A controlled Preeti-versus-Unicode specimen using a government-hosted font: both look like नेपाल, but native Chrome copy/paste yields different stored characters. A font change preserves those characters. Adds a bounded plain-text diagnostic, exact character-code comparison, separate missing-glyph path and a fresh engine-checked national-identity sentence. No converter provided or promised.",
+  "overlapReview": "The guide briefly states that Unicode and Preeti differ. Google Docs covers a named font menu, paste formatting, line breaks and reopening. This article starts before choosing that workflow: it shows a verified legacy-font specimen with an identical-looking Unicode word, copied underlying characters and a font-change test, then distinguishes legacy encoding, Unicode display failure and new Roman composition. Published mixed-language/layout/practice/offline answers solve other tasks. No repeat Docs instructions or Mac setup. The remaining generic copy-troubleshooting candidate must add diagnosis beyond this encoding check or be consolidated; phone and Word evidence holds remain unchanged.",
+  "keywordEvidence": {
+    "provider": "Google Ads Keyword Planner",
+    "researchFile": "research/2026-11-01-keywords.json",
+    "keyword": "preeti unicode",
+    "averageMonthlySearches": "10K–100K",
+    "location": "Nepal",
+    "language": "English",
+    "network": "Google",
+    "period": "2025-10-01/2026-09-30",
+    "note": "Related measured term includes converter intent; the exact diagnostic long tail has no measured volume. No exact count, summed variants, organic difficulty or ranking prediction. Five-day-old report needs no refresh. November 6 GSC has only three daily rows through November 4, 14 impressions and zero clicks; insufficient history to establish this topic demand or article performance."
+  },
+  "research": [
+    {
+      "url": "https://ltk.org.np/download2.php",
+      "checked": "2026-11-06",
+      "note": "Language Technology Kendra explicitly classifies Preeti and other legacy fonts separately from Unicode-compatible fonts and documents separate conversion software. Supports the workflow distinction, not a current compatibility or converter-recommendation claim."
+    },
+    {
+      "url": "https://www.unicode.org/faq/font_keyboard.html",
+      "checked": "2026-11-06",
+      "note": "Unicode Consortium explains characters/numbers versus font glyph mapping. Supports character identity remaining distinct from appearance."
+    },
+    {
+      "url": "https://www.unicode.org/help/display_problems.html",
+      "checked": "2026-11-06",
+      "note": "Unicode Consortium distinguishes missing font coverage and shaping/encoding/software problems. Boxes alone do not prove Preeti encoding."
+    },
+    {
+      "url": "https://etc.lumbini.gov.np/en/downloads/4",
+      "checked": "2026-11-06",
+      "note": "Official Education Training Center page links the PREETI.TTF used only in a private local specimen. Download SHA-256 1ae9cb725956cc84c08e53b7880eda51258812338525405ae93c054a7c3c6b3b. Chrome screenshot confirms stored g]kfn renders नेपाल with this font. Native copy and paste preserve g]kfn; the Unicode specimen preserves नेपाल. No system installation or published font asset."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-06",
+      "note": "Current shared Rust/Wasm verifies nepal and the fresh sentence. Disposable legacy-string render gives g]क्फ्न, not नेपाल; confirms this is not a Preeti conversion workflow. Live typing/copy checks use synthetic text and analytics opt-out."
+    }
+  ],
+  "exampleContexts": [
+    "country name",
+    "national identity sentence",
+    "legacy document diagnosis"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "nepal",
+        "mode": 0
+      },
+      "expectedText": "नेपाल"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "mero desh nepal ho.",
+        "mode": 0
+      },
+      "expectedText": "मेरो देश नेपाल हो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "g]kfn",
+        "mode": 0
+      },
+      "expectedText": "g]क्फ्न"
+    }
+  ],
+  "workflowVerification": {
+    "checkedOn": "2026-11-06",
+    "environment": "Installed Chrome on Mac, isolated local specimen, embedded research-only font",
+    "evidence": "reports/articles/2026-11-06/encoding-fixture-results.json",
+    "scope": "Legacy specimen is a font-rendering/copy test, not a claim that the shared engine maps g]kfn to नेपाल. Native Command+C/Command+V verified both strings. Font switch changed display while preserving textContent. Screenshots visually inspected."
+  },
+  "en": {
+    "title": "Unicode vs Preeti: why copied Nepali text changes | NepType",
+    "heading": "Unicode or Preeti? Check the text before changing its font",
+    "description": "See why a Preeti word can copy as Latin letters while Unicode keeps Nepali characters. Check a short sample and choose font repair, conversion or new typing.",
+    "sections": [
+      [
+        "Check the stored text first",
+        "If a Nepali word becomes Latin letters and symbols after pasting, the source may use a legacy font such as Preeti. Applying a Unicode Devanagari font will not convert those stored characters. If the text is already Unicode but shows boxes or badly placed marks, investigate font coverage or rendering instead. Keep the original document and test a small copy.",
+        {
+          "links": [
+            [
+              "Language Technology Kendra on legacy font conversion",
+              "https://ltk.org.np/download2.php"
+            ]
+          ]
+        }
+      ],
+      [
+        "Two words can look the same and copy differently",
+        "In a controlled specimen, the stored string g]kfn appeared as नेपाल when displayed with the Preeti font. Copying it into a plain-text field produced g]kfn. A second specimen contained the Unicode word नेपाल and copied as नेपाल. Switching the first specimen to a normal Latin font exposed g]kfn without changing its characters. This is a font-display comparison, not a NepType conversion example. The font came from the Education Training Center’s public download.",
+        {
+          "links": [
+            [
+              "Preeti specimen font source",
+              "https://etc.lumbini.gov.np/en/downloads/4"
+            ],
+            [
+              "Unicode Consortium: characters and fonts",
+              "https://www.unicode.org/faq/font_keyboard.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "Try a short copy before choosing a repair",
+        "Use a separate scratch document in plain-text mode with a standard Unicode font. Copy a short readable word from the original, paste it and compare. Also check the source document’s font label. Latin letters alone are a clue, not proof: the passage may contain real English, mixed encodings or damaged extraction.",
+        {
+          "steps": [
+            "Preserve the original file and select one short word you can read.",
+            "Paste it into the scratch document without retaining the source font.",
+            "If Nepali becomes a Latin-and-symbol string, check whether the source uses Preeti or another legacy font.",
+            "If the pasted characters stay Nepali, treat a display problem separately from legacy conversion."
+          ]
+        }
+      ],
+      [
+        "What the small character difference tells you",
+        "The Unicode word नेपाल starts with न, character U+0928. The legacy specimen starts with Latin g, U+0067. A font can draw different shapes for stored characters; choosing a different font does not rewrite the text into the other sequence. The exact sample is useful for comparison, but it is not an automatic detector for every old Nepali font or document."
+      ],
+      [
+        "Use a separate workflow for old Preeti documents",
+        "Ask the document’s author for a Unicode version, or work on a copy with a conversion tool that explicitly supports the source font. Compare the result with the original, especially names and numbers. A matching font can help you read the old document. NepType’s typing pad does not convert Preeti documents."
+      ],
+      [
+        "Create fresh Unicode text when you can retype the phrase",
+        "For a short phrase you can read, type its Nepali pronunciation in Roman letters and proofread the result. These examples use Nepali + EN mode. Copy text produces Unicode characters; save the result in your destination document. The Preeti specimen’s stored string is not the word’s Roman spelling.",
+        {
+          "examples": [
+            [
+              "nepal",
+              "नेपाल"
+            ],
+            [
+              "mero desh nepal ho.",
+              "मेरो देश नेपाल हो।"
+            ]
+          ],
+          "links": [
+            [
+              "Type a new Unicode phrase",
+              "/#try"
+            ],
+            [
+              "Spelling choices and typing controls",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "If Unicode still shows boxes or broken marks",
+        "A receiving app needs a font that covers the characters and software that shapes them correctly. Boxes do not by themselves identify Preeti text. If a known Unicode sample displays correctly but your copied word does not, inspect the source text too. For the already-Unicode Google Docs workflow, use the existing font instructions.",
+        {
+          "links": [
+            [
+              "Unicode Consortium display troubleshooting",
+              "https://www.unicode.org/help/display_problems.html"
+            ],
+            [
+              "Nepali Unicode and fonts in Google Docs",
+              "/articles/nepali-font-google-docs-unicode/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "युनिकोड र प्रीतिको फरक: नेपाली पाठ कपी गर्दा के हुन्छ? | NepType",
+    "heading": "युनिकोड कि प्रीति? फन्ट फेर्नुअघि पाठ चिन्नुहोस्",
+    "description": "प्रीतिमा नेपाली देखिएको शब्द कपी गर्दा किन अंग्रेजी अक्षर आउँछ? छोटो नमुना जाँचेर फन्ट सच्याउने, रूपान्तरण गर्ने वा नयाँ पाठ लेख्ने तरिका रोज्नुहोस्।",
+    "sections": [
+      [
+        "पहिले पाठमा कुन अक्षर छन् हेर्नुहोस्",
+        "नेपाली शब्द कपी गरेर पेस्ट गर्दा अंग्रेजी अक्षर र चिह्न आए भने मूल कागजातमा प्रीतिजस्तो पुरानो फन्ट प्रयोग भएको हुन सक्छ। युनिकोड देवनागरी फन्ट छान्दैमा ती अक्षर रूपान्तरण हुँदैनन्। पाठ पहिले नै युनिकोडमा छ तर बाकस वा बिग्रिएका मात्रा देखिन्छन् भने फन्ट वा अक्षर देखाउने सफ्टवेयर जाँच्नुहोस्। मूल कागजात जोगाएर छोटो प्रतिमा परीक्षण गर्नुहोस्।",
+        {
+          "links": [
+            [
+              "पुराना फन्टको रूपान्तरणबारे भाषा प्रविधि केन्द्र",
+              "https://ltk.org.np/download2.php"
+            ]
+          ]
+        }
+      ],
+      [
+        "उस्तै देखिने शब्द कपी गर्दा फरक पाठ आउन सक्छ",
+        "परीक्षणका लागि बनाइएको नमुनामा g]kfn राखेर प्रीति फन्ट लगाउँदा नेपाल देखियो। त्यही नमुना सादा पाठको बाकसमा कपी गर्दा g]kfn आयो। अर्को नमुनामा युनिकोड शब्द नेपाल राखिएको थियो र कपी गर्दा नेपाल नै आयो। पहिलो नमुनाको फन्ट सामान्य ल्याटिन फन्टमा बदल्दा अक्षर नफेरिई g]kfn देखियो। यो फन्टले पाठ कसरी देखाउँछ भन्ने तुलना हो, NepType ले गरेको रूपान्तरणको उदाहरण होइन। नमुनाको फन्ट शिक्षा तालिम केन्द्रको सार्वजनिक डाउनलोडबाट लिइएको हो।",
+        {
+          "links": [
+            [
+              "प्रीति नमुनाको फन्ट स्रोत",
+              "https://etc.lumbini.gov.np/en/downloads/4"
+            ],
+            [
+              "अक्षर र फन्टबारे Unicode Consortium",
+              "https://www.unicode.org/faq/font_keyboard.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "सच्याउने तरिका रोज्नुअघि छोटो शब्द कपी गर्नुहोस्",
+        "छुट्टै परीक्षण कागजातमा सादा पाठको मोड र सामान्य युनिकोड फन्ट प्रयोग गर्नुहोस्। मूल कागजातबाट पढ्न सकिने छोटो शब्द कपी गरेर पेस्ट गर्नुहोस् र दाँज्नुहोस्। मूल पाठमा कुन फन्ट लागेको छ त्यो पनि हेर्नुहोस्। अंग्रेजी अक्षर देखिनु एउटा सङ्केत मात्र हो। त्यहाँ साँच्चिकै अंग्रेजी शब्द, मिसिएको एन्कोडिङ वा निकाल्दा बिग्रिएको पाठ पनि हुन सक्छ।",
+        {
+          "steps": [
+            "मूल फाइल जोगाएर आफूले पढ्न सक्ने एउटा छोटो शब्द छान्नुहोस्।",
+            "मूल फन्ट नल्याई परीक्षण कागजातमा पेस्ट गर्नुहोस्।",
+            "नेपालीको सट्टा अंग्रेजी अक्षर र चिह्न आए मूल पाठमा प्रीति वा अर्को पुरानो फन्ट छ कि जाँच्नुहोस्।",
+            "पेस्ट भएको पाठमा नेपाली अक्षर नै रहे भने देखाइको समस्या र पुरानो एन्कोडिङको रूपान्तरण छुट्टाछुट्टै जाँच्नुहोस्।"
+          ]
+        }
+      ],
+      [
+        "सानो अक्षरको फरकले के बताउँछ?",
+        "युनिकोड शब्द नेपालको सुरुमा न हुन्छ, जसको कोड U+0928 हो। पुरानो फन्टको नमुना भने ल्याटिन g अर्थात् U+0067 बाट सुरु हुन्छ। फन्टले राखिएका अक्षरका फरक रूप देखाउन सक्छ। अर्को फन्ट छान्दा फाइलमा राखिएका अक्षर उस्तै रहन्छन्। यो नमुना दाँज्न उपयोगी छ, तर सबै पुराना नेपाली फन्ट वा कागजात आफैँ चिन्ने उपाय होइन।"
+      ],
+      [
+        "पुरानो प्रीति कागजातको काम छुट्टै गर्नुहोस्",
+        "कागजात बनाउने व्यक्तिसँग युनिकोड प्रति माग्नुहोस्। वा मूल फन्टलाई स्पष्ट रूपमा समर्थन गर्ने रूपान्तरण उपकरणमा प्रतिलिपि प्रयोग गर्नुहोस्। नतिजा मूल कागजातसँग दाँजेर नाम र सङ्ख्या जाँच्नुहोस्। मिल्ने फन्टले पुरानो पाठ पढ्न सजिलो बनाउन सक्छ। NepType को टाइपिङ प्याडले प्रीति कागजात रूपान्तरण गर्दैन।"
+      ],
+      [
+        "छोटो वाक्य फेरि लेखेर नयाँ युनिकोड पाठ बनाउनुहोस्",
+        "पढ्न सकिने छोटो वाक्य भए नेपाली उच्चारणअनुसार रोमनमा लेखेर तयार हिज्जे जाँच्न सक्नुहुन्छ। यी उदाहरण Nepali + EN मोडका हुन्। पाठ कपी गर्नुहोस् बटनले युनिकोड अक्षर कपी गर्छ। तयार पाठ आफ्नो कागजातमा सेभ गर्नुहोस्। प्रीति नमुनामा राखिएका अक्षर त्यो शब्दको रोमन हिज्जे होइनन्।",
+        {
+          "examples": [
+            [
+              "nepal",
+              "नेपाल"
+            ],
+            [
+              "mero desh nepal ho.",
+              "मेरो देश नेपाल हो।"
+            ]
+          ],
+          "links": [
+            [
+              "नयाँ युनिकोड पाठ लेख्नुहोस्",
+              "/#try"
+            ],
+            [
+              "हिज्जे रोज्ने र टाइप गर्ने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "युनिकोडमा पनि बाकस वा बिग्रिएका मात्रा देखिए",
+        "पेस्ट गर्ने एपमा ती अक्षर भएको फन्ट र अक्षर सही रूपमा जोडेर देखाउने सफ्टवेयर चाहिन्छ। बाकस देखिएकै भरमा पाठ प्रीतिमा छ भन्न मिल्दैन। युनिकोडको चिनेको नमुना ठीक देखिन्छ तर कपी गरेको शब्द बिग्रिन्छ भने मूल पाठ पनि जाँच्नुहोस्। पहिले नै युनिकोडमा भएको पाठ Google Docs मा राख्न फन्टसम्बन्धी निर्देशन हेर्नुहोस्।",
+        {
+          "links": [
+            [
+              "अक्षर नदेखिने समस्याबारे Unicode Consortium",
+              "https://www.unicode.org/help/display_problems.html"
+            ],
+            [
+              "Google Docs मा नेपाली युनिकोड र फन्ट",
+              "/articles/nepali-font-google-docs-unicode/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-06",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both complete drafts including titles, headings, descriptions, steps and links. Removed a repeated readable-appearance-versus-Unicode warning already demonstrated by the specimen. Rewrote the indirect retyping-shortcut warning as the specific stored-string/Roman-spelling distinction in both languages. Replaced awkward Nepali sequence-to-sequence wording with the actual unchanged-file-characters result. Reread for equivalent meaning, natural Nepali, unnecessary contrasts, repetitive closers, inflated claims and unsupported converter/detection promises. Preserved examples, requests/expected results, literal legacy strings and code points, dates, URLs, evidence and metadata. Automated editorial review; no claim of human authorship or expert review."
+  }
+}

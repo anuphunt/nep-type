@@ -119,7 +119,7 @@
     },
     {
       "id": "unicode-versus-preeti",
-      "status": "eligible",
+      "status": "published",
       "query": "Nepali Unicode vs Preeti copy paste difference",
       "intent": "Choose the right text workflow",
       "angle": "A clear text-encoding and font explanation with original examples and authoritative references. This is an explanatory article, not a Preeti converter landing page. Reject conversion promises.",
@@ -143,7 +143,8 @@
           "period": "2025-10-01/2026-09-30",
           "note": "Range for the reported keyword, not a guarantee of volume for the article title or all related queries."
         }
-      ]
+      ],
+      "articleSlug": "unicode-vs-preeti-copy-paste"
     },
     {
       "id": "unicode-copy-troubleshooting",
