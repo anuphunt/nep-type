@@ -22,12 +22,15 @@ const output = path.join(root, 'dist');
 const {origin, production} = siteConfig();
 const posthogKey = process.env.PUBLIC_POSTHOG_KEY || '';
 const posthogHost = process.env.PUBLIC_POSTHOG_HOST || '';
+const gaMeasurementId = process.env.PUBLIC_GA_MEASUREMENT_ID || '';
+if (gaMeasurementId && !/^G-[A-Z0-9]{4,20}$/.test(gaMeasurementId)) throw Error('PUBLIC_GA_MEASUREMENT_ID must be a GA4 web measurement ID.');
 if (Boolean(posthogKey) !== Boolean(posthogHost)) throw Error('Set PUBLIC_POSTHOG_KEY and PUBLIC_POSTHOG_HOST together.');
 if (posthogHost && new URL(posthogHost).protocol !== 'https:') throw Error('PUBLIC_POSTHOG_HOST must use HTTPS.');
 const macRelease = JSON.parse(await readFile(path.join(root, 'mac-release.json'), 'utf8'));
 const windowsRelease = windowsDownload(JSON.parse(await readFile(path.join(root, 'windows-release.json'), 'utf8')));
 pages.windows = {en: windowsPage(windowsRelease, 'en'), ne: windowsPage(windowsRelease, 'ne')};
 pages.download = downloadPage;
+const publicPaths = ['/', '/ne/', ...Object.keys(pages).flatMap(slug => ['/'+slug+'/', '/ne/'+slug+'/'])];
 const downloadUrl = process.env.APP_DOWNLOAD_URL || macRelease.url;
 if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -177,7 +180,7 @@ await writeFile(path.join(output, 'engine-config.json'), JSON.stringify({module:
 await writeFile(path.join(output, 'assets/neptype-dictionaries.json'), JSON.stringify(dictionary));
 await copyFile(path.join(root, '../engine/data/RUST-LICENSES.txt'), path.join(output, 'assets/RUST-LICENSES.txt'));
 for (const license of ['CMUDICT-LICENSE.txt','GOOGLE-NE-ATTRIBUTION.txt','AKSHARANTAR-ATTRIBUTION.txt']) await copyFile(path.join(root, '../data/sources', license), path.join(output, 'assets', license));
-await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production)}});
+await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production), __GA_MEASUREMENT_ID__:JSON.stringify(gaMeasurementId), __PUBLIC_PATHS__:JSON.stringify(publicPaths)}});
 let styles = await readFile(path.join(root, 'styles.css'), 'utf8');
 // Self-host licensed fonts to avoid the external stylesheet and connection chain.
 styles = await readFile(path.join(root, 'fonts.css'), 'utf8') + '\n' + styles.replace(/^@import url\([^\n]+\);\n/, '');
@@ -200,7 +203,7 @@ for (const locale of ['en', 'ne']) {
     const linkUrl = nativeDownload || repository;
     const linkText = nativeDownload ? (slug === 'windows' ? (locale === 'ne' ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows') : (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस् (.dmg)' : 'Download for Mac (.dmg)')) : content.link;
     const linkEvent = nativeDownload ? 'neptype_download_clicked' : 'neptype_source_opened';
-    const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
+    const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle" type="button" hidden>${locale === 'ne' ? 'एनालिटिक्स सेटिङ' : 'Analytics settings'}</button></p>` : '';
     const pageAction = (linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'windows' ? ' data-platform="Windows"' : ''}${nativeDownload ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '');
     const nativePage = slug === 'mac' || slug === 'windows';
     const body = slug === 'download' ? renderDownloadPage(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${nativePage ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${nativePage ? '' : pageAction}${privacyControl}</main>`;

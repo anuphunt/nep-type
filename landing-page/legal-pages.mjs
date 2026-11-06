@@ -7,7 +7,7 @@ export const legalPages = {
       "sections": [
         [
           "",
-          "Updated November 3, 2026. This policy covers neptype.com and the NepType apps, developed by Anup Dhakal and contributors."
+          "Updated November 6, 2026. This policy covers neptype.com and the NepType apps, developed by Anup Dhakal and contributors."
         ],
         [
           "Your typing",
@@ -43,13 +43,17 @@ export const legalPages = {
         ],
         [
           "Website analytics",
-          "We use PostHog to count page visits, download clicks and use of the browser pad. A browser identifier is stored in local storage. Analytics can include the page path and browser or device information. URL query strings and fragments are excluded. Session recording and automatic input capture are off. We respect Do Not Track and Global Privacy Control. The button below turns off analytics in this browser."
+          "Website analytics starts only after you choose Allow analytics. You can decline, or later turn it off through Analytics settings in the footer or on this page. Your choice is saved in this browser. Typing and copying work without analytics. We also respect Do Not Track and Global Privacy Control. Google Analytics uses cookies to count consenting browsers, page visits and engagement. PostHog counts page visits and coarse feature-use events with a random identifier for the current page. Its identifier and metadata are not retained between page loads. We send only known public page paths and reviewed search-engine origins. URL queries, fragments, other referring URLs, typed text, output, selected words, clipboard contents, form values and site-search terms are excluded. Automatic enhanced measurement, advertising personalization, Google Signals and session recording are disabled. Revoking consent stops new measurement and removes this site’s Google Analytics cookies; a request already in progress may finish."
         ],
         [
           "Service providers and storage",
-          "Netlify serves this website and its fonts. PostHog processes the analytics described above. Network requests expose connection information, such as an IP address, to the receiving service. These providers may process data outside your country under their own privacy terms.",
+          "Netlify serves this website and its fonts. After your analytics consent, Google and PostHog process the website measurement described above, including browser/device and connection information. Requests expose an IP address to the receiving service; reports may include approximate country. Providers may process data outside your country under their own privacy terms. We do not set a user ID or use website analytics for advertising.",
           {
             "links": [
+              [
+                "Google privacy policy",
+                "https://policies.google.com/privacy"
+              ],
               [
                 "PostHog privacy policy",
                 "https://posthog.com/privacy"
@@ -94,7 +98,7 @@ export const legalPages = {
       "sections": [
         [
           "",
-          "अद्यावधिक: ३ नोभेम्बर २०२६। यो नीति अनुप ढकाल र योगदानकर्ताहरूले बनाएको neptype.com र NepType एपहरूमा लागू हुन्छ।"
+          "अद्यावधिक: ६ नोभेम्बर २०२६। यो नीति अनुप ढकाल र योगदानकर्ताहरूले बनाएको neptype.com र NepType एपहरूमा लागू हुन्छ।"
         ],
         [
           "तपाईंको लेखाइ",
@@ -130,13 +134,17 @@ export const legalPages = {
         ],
         [
           "वेबसाइट एनालिटिक्स",
-          "पृष्ठ भ्रमण, डाउनलोड क्लिक र ब्राउजर प्याडको प्रयोग गन्न PostHog प्रयोग गर्छौँ। ब्राउजर परिचायक स्थानीय भण्डारणमा राखिन्छ। एनालिटिक्समा पृष्ठको पथ र ब्राउजर वा उपकरणसम्बन्धी जानकारी हुन सक्छ। URL का query string र fragment हटाइन्छन्। सेसन रेकर्डिङ र स्वचालित इनपुट सङ्कलन बन्द छन्। Do Not Track र Global Privacy Control संकेत पालना गर्छौँ। तलको बटनले यस ब्राउजरमा एनालिटिक्स बन्द गर्छ।"
+          "वेबसाइट एनालिटिक्स अनुमति दिएपछि मात्र सुरु हुन्छ। अस्वीकार गर्न वा पछि फुटरमा अथवा यही पृष्ठमा रहेको एनालिटिक्स सेटिङबाट बन्द गर्न सक्नुहुन्छ। तपाईंको रोजाइ यस ब्राउजरमा राखिन्छ। एनालिटिक्सबिना पनि टाइप र कपी गर्न मिल्छ। Do Not Track र Global Privacy Control संकेत पालना गर्छौँ। Google Analytics ले अनुमति दिएका ब्राउजर, पृष्ठ भ्रमण र सहभागिता गन्न कुकी प्रयोग गर्छ। PostHog ले पृष्ठ भ्रमण र सुविधाको मोटामोटी प्रयोग गन्न हालको पृष्ठका लागि अनियमित परिचायक प्रयोग गर्छ। यसको परिचायक र मेटाडेटा अर्को पृष्ठ खोल्दासम्म राखिँदैन। प्रकाशित पृष्ठका पथ र जाँचिएका खोज सेवाका मूल डोमेन मात्र पठाउँछौँ। URL का query र fragment, अन्य स्रोत URL, लेखेको वा तयार पाठ, रोजेका शब्द, क्लिपबोर्ड, फाराममा भरेका विवरण र खोजीका शब्द पठाउँदैनौँ। स्वचालित enhanced measurement, विज्ञापन व्यक्तिगतकरण, Google Signals र सेसन रेकर्डिङ बन्द छन्। अनुमति फिर्ता लिँदा नयाँ मापन रोकिन्छ र यस साइटका Google Analytics कुकी हट्छन्। पठाउन थालिसकेको अनुरोध भने पूरा हुन सक्छ।"
         ],
         [
           "सेवा प्रदायक र भण्डारण",
-          "यो वेबसाइट र फन्टहरू Netlify बाट उपलब्ध हुन्छन्। माथि वर्णन गरिएको एनालिटिक्स PostHog ले प्रशोधन गर्छ। नेटवर्क अनुरोध गर्दा प्राप्त गर्ने सेवाले IP ठेगानाजस्ता जडानसम्बन्धी जानकारी पाउँछ। यी प्रदायकले आफ्ना गोपनीयता सर्तअनुसार तपाईंको देशबाहिर डेटा प्रशोधन गर्न सक्छन्।",
+          "यो वेबसाइट र फन्टहरू Netlify बाट उपलब्ध हुन्छन्। एनालिटिक्स अनुमति दिएपछि Google र PostHog ले माथि वर्णन गरिएको वेबसाइट मापन तथा ब्राउजर, उपकरण र जडानसम्बन्धी जानकारी प्रशोधन गर्छन्। अनुरोध प्राप्त गर्ने सेवाले IP ठेगाना पाउँछ। रिपोर्टमा देशको अनुमानित जानकारी हुन सक्छ। प्रदायकले आफ्ना गोपनीयता सर्तअनुसार तपाईंको देशबाहिर डेटा प्रशोधन गर्न सक्छन्। हामी user ID राख्दैनौँ र वेबसाइट एनालिटिक्स विज्ञापनका लागि प्रयोग गर्दैनौँ।",
           {
             "links": [
+              [
+                "Google को गोपनीयता नीति",
+                "https://policies.google.com/privacy"
+              ],
               [
                 "PostHog को गोपनीयता नीति",
                 "https://posthog.com/privacy"
