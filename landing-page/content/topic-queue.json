@@ -292,14 +292,15 @@
     },
     {
       "id": "nepali-html-utf8",
-      "status": "research_needed",
+      "status": "published",
       "query": "display Nepali text HTML UTF-8",
       "title": "Display Nepali text on a website with UTF-8 and suitable fonts",
       "intent": "Render existing Nepali Unicode correctly in a web page",
       "angle": "Build a minimal tested HTML example with encoding, lang and a documented font fallback; cite official web standards.",
       "overlapBoundary": "Developer rendering task with working code; not instructions for typing or a full accessibility article.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Validated November 8 with a genuine historical 2011 reader question about publishing Nepali poems in HTML, current W3C/MDN guidance and a six-route current Chrome encoding/font experiment plus four live typing/copy workflows. Qualitative task evidence only: exact long-tail volume and current demand trend are unmeasured. Distinct HTML byte/header diagnosis and copyable code beyond the guide, Docs and Unicode/Preeti. Phone, Word and PDF evidence holds are unchanged.",
+      "articleSlug": "nepali-text-html-utf8"
     },
     {
       "id": "nepali-markdown-code",

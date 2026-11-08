@@ -1,0 +1,289 @@
+{
+  "slug": "nepali-text-html-utf8",
+  "topicId": "nepali-html-utf8",
+  "status": "published",
+  "published": "2026-11-08",
+  "primaryQuery": "display Nepali text HTML UTF-8",
+  "searchIntent": "Put existing Nepali Unicode text in an HTML page and diagnose file-encoding, HTTP-charset and font problems after upload.",
+  "originalValue": "A copyable minimal UTF-8 HTML page plus a controlled six-route browser experiment using identical no-BOM UTF-8 bytes: correct HTTP charset, meta-only, conflicting Windows-1252 header, language-tag negative control, repaired header and a locally served Devanagari webfont. Four live typing/native clipboard workflows supply two fresh flower-note examples. Distinguishes actual byte decoding from language annotation and font coverage without changing site infrastructure.",
+  "overlapReview": "The guide owns basic Roman typing; Google Docs owns named editor menus and saved documents; Unicode/Preeti diagnoses underlying legacy characters. This article assumes Unicode and addresses HTML authors saving bytes and serving an HTTP charset, with runnable code and a demonstrated header conflict. It does not repeat legacy conversion or editor instructions. Phone, Word and PDF candidates remain held; no Preview access attempted.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact HTML long tail has no measured volume. November 1 Keyword Planner report is seven days old: Nepal, English, Google, October 2025–September 2026. Broad related typing ranges are not attributed to this developer task. A historical 2011 reader question establishes a real task, not present demand or trend; current standards and November 8 controlled behavior validate the answer. November 8 GSC snapshot has 53 impressions and zero clicks through November 6 across five rows, insufficient for this topic demand. New GA baseline supplies no demand claim."
+  },
+  "research": [
+    {
+      "url": "https://sajha.com/mobile/info.cfm?threadid=91326",
+      "checked": "2026-11-08",
+      "note": "Historical 2011 reader asks how to publish their Nepali poems in HTML without requiring visitors to install Preeti. Qualitative task evidence only; outdated font-tag advice is not reused. No current demand or volume inference."
+    },
+    {
+      "url": "https://www.w3.org/International/questions/qa-html-encoding-declarations",
+      "checked": "2026-11-08",
+      "note": "UTF-8 declarations, early meta within first 1024 bytes and HTTP-header precedence. Experiment uses UTF-8 without BOM; BOM precedence is outside the conflicting-header claim."
+    },
+    {
+      "url": "https://www.w3.org/International/questions/qa-choosing-encodings",
+      "checked": "2026-11-08",
+      "note": "Save actual bytes in UTF-8; declarations do not transcode existing bytes. Consistent server declaration and font/shaping are separate concerns."
+    },
+    {
+      "url": "https://www.w3.org/International/questions/qa-html-language-declarations",
+      "checked": "2026-11-08",
+      "note": "HTML lang identifies document language. It is not a character-encoding declaration."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang",
+      "checked": "2026-11-08",
+      "note": "Language annotation supports language-aware processing; no screen-reader or multilingual accessibility audit claimed."
+    },
+    {
+      "url": "https://neptype.com/?analytics_test=1",
+      "checked": "2026-11-08",
+      "note": "Both live locales typed each fresh flower example, copied and natively pasted into an isolated local HTML textarea. Four exact workflows; analytics opt-out and interception; zero vendor requests."
+    }
+  ],
+  "exampleContexts": [
+    "flower note",
+    "garden website paragraph",
+    "HTML encoding diagnosis"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "phool phulyo.",
+        "mode": 0
+      },
+      "expectedText": "फूल फुल्यो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yo phool raato cha.",
+        "mode": 0
+      },
+      "expectedText": "यो फूल रातो छ।"
+    }
+  ],
+  "workflowVerification": {
+    "checkedOn": "2026-11-08",
+    "environment": "Installed Chrome on Mac; isolated local HTTP fixture; UTF-8 file without BOM; desktop 1440 and mobile-width 390 screenshots",
+    "evidence": "reports/articles/2026-11-08/html-fixture-results.json",
+    "scope": "Six routes verify decoding and a local licensed Noto Sans Devanagari webfont; wrong-lang negative control preserves the decoding error. Both locale homepages supply two exact native clipboard/paste examples each. Mobile-width browser emulation is not an actual phone test. No Preview/PDF, Word, server hosting configuration or assistive-technology claims."
+  },
+  "en": {
+    "title": "Nepali text in HTML: UTF-8, lang and fonts | NepType",
+    "heading": "Display Nepali text in HTML with UTF-8",
+    "description": "Use a small Nepali HTML example, save it as UTF-8 and check the server charset. See why lang and fonts cannot repair incorrectly decoded text.",
+    "sections": [
+      [
+        "Start with Unicode text and a UTF-8 file",
+        "To put Nepali text on a web page, paste Unicode characters into your HTML, save the file as UTF-8 and declare that encoding near the start of the head. If you upload the file, check that the server also sends the correct charset. Set lang=\"ne\" for a Nepali page, then check that a suitable font displays its letters and marks.",
+        {
+          "links": [
+            [
+              "W3C: choosing and applying a character encoding",
+              "https://www.w3.org/International/questions/qa-choosing-encodings"
+            ]
+          ]
+        }
+      ],
+      [
+        "Create a short Nepali sample",
+        "In NepType, use Nepali + EN mode, type a short phrase and proofread the output before copying it. These two flower notes produce the Unicode paragraphs used in the HTML example.",
+        {
+          "examples": [
+            [
+              "phool phulyo.",
+              "फूल फुल्यो।"
+            ],
+            [
+              "yo phool raato cha.",
+              "यो फूल रातो छ।"
+            ]
+          ],
+          "links": [
+            [
+              "Type and copy a Nepali phrase",
+              "/#try"
+            ],
+            [
+              "Spelling choices and typing controls",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Save this as a UTF-8 HTML file",
+        "Copy the complete example into a plain-text code editor. Choose UTF-8 when saving it as sample.html, then open it in a browser. The two paragraphs should read फूल फुल्यो। and यो फूल रातो छ।. The charset declaration is early in the head; W3C requires it to fit completely within the first 1024 bytes. Writing that declaration does not convert a file saved in a different encoding.",
+        {
+          "code": "<!doctype html>\n<html lang=\"ne\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>फूलको टिपोट</title>\n</head>\n<body>\n<p>फूल फुल्यो।</p>\n<p>यो फूल रातो छ।</p>\n</body>\n</html>",
+          "links": [
+            [
+              "W3C: declaring an encoding in HTML",
+              "https://www.w3.org/International/questions/qa-html-encoding-declarations"
+            ]
+          ]
+        }
+      ],
+      [
+        "If the local file works but the uploaded page breaks",
+        "Open the browser’s developer tools, reload the page and inspect the main HTML document in Network. Check its response Content-Type header. For this example, the matching value is text/html; charset=utf-8. Change a conflicting charset in your hosting or server configuration, reload and check the response again. The setting depends on your host; changing only the HTML meta line may leave the conflicting header in place.",
+        {
+          "steps": [
+            "Save the HTML file itself as UTF-8.",
+            "Inspect the uploaded HTML document’s response header, not an image or stylesheet.",
+            "Make the HTTP charset agree with the saved bytes and the meta declaration.",
+            "Reload the uploaded page and compare both Nepali paragraphs with the source."
+          ]
+        }
+      ],
+      [
+        "What the conflicting-header test showed",
+        "Our test served the same UTF-8 file without a byte-order mark in several ways. With a UTF-8 header, both paragraphs displayed correctly. With no header charset, the meta declaration also worked. With charset=windows-1252 in the header, Chrome decoded the file as Windows-1252 and showed garbled Latin characters despite the UTF-8 meta declaration. Correcting that response header restored both paragraphs without changing the file. This comparison concerns a file without a BOM; a BOM has its own higher-priority encoding rule."
+      ],
+      [
+        "Use lang for the language and a font for the letters",
+        "The lang=\"ne\" attribute identifies the page’s language as Nepali. It helps software apply language-aware behavior; it does not choose the file encoding. In the conflicting-header test, changing lang from ne to en left the same decoding error. After encoding is correct, check the font if letters appear as boxes or marks look wrong. The minimal example relies on the reader’s available fonts. In our local test, Noto Sans Devanagari rendered both paragraphs at desktop and narrow widths. Other devices may have different fonts. If you supply a webfont, check its Devanagari coverage and licence.",
+        {
+          "links": [
+            [
+              "W3C: declaring the language of a page",
+              "https://www.w3.org/International/questions/qa-html-language-declarations"
+            ],
+            [
+              "MDN: the lang attribute",
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang"
+            ]
+          ]
+        }
+      ],
+      [
+        "Check the source text before changing more settings",
+        "These steps assume the source already contains Unicode Nepali. If it stores Latin letters that only look Nepali under Preeti, saving as UTF-8 preserves those Latin letters. Follow the separate Unicode/Preeti check before choosing a conversion workflow.",
+        {
+          "links": [
+            [
+              "Check Unicode versus Preeti text",
+              "/articles/unicode-vs-preeti-copy-paste/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "HTML मा नेपाली पाठ: UTF-8, lang र फन्ट | NepType",
+    "heading": "UTF-8 प्रयोग गरेर HTML मा नेपाली पाठ देखाउनुहोस्",
+    "description": "नेपाली HTML को छोटो नमुना UTF-8 मा सेभ गर्नुहोस् र सर्भरको charset जाँच्नुहोस्। lang र फन्टले गलत एन्कोडिङ किन सच्याउँदैनन् भन्ने हेर्नुहोस्।",
+    "sections": [
+      [
+        "युनिकोड पाठ र UTF-8 फाइलबाट सुरु गर्नुहोस्",
+        "वेब पेजमा नेपाली राख्न HTML मा युनिकोड अक्षर पेस्ट गर्नुहोस्। फाइल UTF-8 मा सेभ गरेर head को सुरुतिर त्यसको घोषणा राख्नुहोस्। फाइल अपलोड गरेपछि सर्भरले पनि मिल्दो charset पठाएको छ कि जाँच्नुहोस्। नेपाली पेजमा lang=\"ne\" राख्नुहोस् र फन्टले अक्षर तथा मात्रा ठीक देखाएको छ कि हेर्नुहोस्।",
+        {
+          "links": [
+            [
+              "क्यारेक्टर एन्कोडिङ छान्ने र प्रयोग गर्नेबारे W3C",
+              "https://www.w3.org/International/questions/qa-choosing-encodings"
+            ]
+          ]
+        }
+      ],
+      [
+        "नेपालीको छोटो नमुना तयार गर्नुहोस्",
+        "NepType को Nepali + EN मोडमा छोटो वाक्य लेख्नुहोस् र कपी गर्नुअघि हिज्जे जाँच्नुहोस्। फूलबारे यी दुई वाक्यबाट तयार भएको युनिकोड पाठ तलको HTML नमुनामा प्रयोग गरिएको छ।",
+        {
+          "examples": [
+            [
+              "phool phulyo.",
+              "फूल फुल्यो।"
+            ],
+            [
+              "yo phool raato cha.",
+              "यो फूल रातो छ।"
+            ]
+          ],
+          "links": [
+            [
+              "नेपाली वाक्य लेखेर कपी गर्नुहोस्",
+              "/#try"
+            ],
+            [
+              "हिज्जे रोज्ने र टाइप गर्ने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "यो नमुना UTF-8 मा सेभ गर्नुहोस्",
+        "पूरै नमुना सादा पाठ लेख्ने कोड एडिटरमा कपी गर्नुहोस्। sample.html नाममा सेभ गर्दा UTF-8 छान्नुहोस् र ब्राउजरमा खोल्नुहोस्। अनुच्छेदमा फूल फुल्यो। र यो फूल रातो छ। देखिनुपर्छ। charset को घोषणा head को सुरुतिर छ। W3C अनुसार यो घोषणा पहिलो 1024 बाइटभित्र पूरै अटाउनुपर्छ। अर्कै एन्कोडिङमा सेभ गरिएको फाइलमा यो लाइन थप्दैमा फाइलका बाइट रूपान्तरण हुँदैनन्।",
+        {
+          "code": "<!doctype html>\n<html lang=\"ne\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>फूलको टिपोट</title>\n</head>\n<body>\n<p>फूल फुल्यो।</p>\n<p>यो फूल रातो छ।</p>\n</body>\n</html>",
+          "links": [
+            [
+              "HTML मा एन्कोडिङ घोषणा गर्नेबारे W3C",
+              "https://www.w3.org/International/questions/qa-html-encoding-declarations"
+            ]
+          ]
+        }
+      ],
+      [
+        "कम्प्युटरमा ठीक तर अपलोड गरेपछि बिग्रिए",
+        "ब्राउजरको developer tools खोल्नुहोस्, पेज फेरि लोड गर्नुहोस् र Network मा मुख्य HTML कागजात हेर्नुहोस्। त्यसको response मा आएको Content-Type header जाँच्नुहोस्। यो नमुनासँग मिल्ने मान text/html; charset=utf-8 हो। फरक charset आए होस्टिङ वा सर्भरको सेटिङ सच्याएर फेरि response जाँच्नुहोस्। कहाँ सेट गर्ने भन्ने कुरा होस्टमा भर पर्छ। HTML को meta लाइन मात्र बदल्दा सर्भरले पठाएको गलत header उस्तै रहन सक्छ।",
+        {
+          "steps": [
+            "HTML फाइल नै UTF-8 मा सेभ गर्नुहोस्।",
+            "अपलोड भएको मुख्य HTML को response header हेर्नुहोस्; तस्बिर वा stylesheet को होइन।",
+            "HTTP charset, सेभ गरिएका बाइट र meta को घोषणा मिलाउनुहोस्।",
+            "अपलोड भएको पेज फेरि लोड गरेर दुवै नेपाली अनुच्छेद मूल पाठसँग दाँज्नुहोस्।"
+          ]
+        }
+      ],
+      [
+        "गलत header राखेर जाँच्दा के भयो?",
+        "हामीले byte-order mark अर्थात् BOM नभएको एउटै UTF-8 फाइल फरक header सहित चलायौँ। UTF-8 header हुँदा दुवै अनुच्छेद ठीक देखिए। header मा charset नहुँदा पनि meta को घोषणाबाट पाठ ठीक आयो। तर header मा charset=windows-1252 राख्दा UTF-8 meta हुँदाहुँदै Chrome ले फाइल Windows-1252 अनुसार पढ्यो र बिग्रिएका ल्याटिन अक्षर देखायो। फाइल नफेरी response header सच्याउँदा दुवै अनुच्छेद ठीक भए। यो तुलना BOM नभएको फाइलको हो। BOM भएको अवस्थामा त्यसको एन्कोडिङ नियमले अझ बढी प्राथमिकता पाउँछ।"
+      ],
+      [
+        "lang ले भाषा जनाउँछ, फन्टले अक्षर देखाउँछ",
+        "lang=\"ne\" ले पेजको भाषा नेपाली हो भन्ने जनाउँछ। सफ्टवेयरले भाषाअनुसार व्यवहार गर्न यो सूचना प्रयोग गर्न सक्छ, तर यसले फाइलको एन्कोडिङ छान्दैन। गलत header भएको परीक्षणमा lang लाई ne बाट en बनाउँदा पनि उही बिग्रिएको पाठ आयो। एन्कोडिङ मिलेपछि पनि बाकस वा बिग्रिएका मात्रा देखिए फन्ट जाँच्नुहोस्। माथिको छोटो नमुना पाठकको उपकरणमा उपलब्ध फन्टमा भर पर्छ। हाम्रो स्थानीय परीक्षणमा Noto Sans Devanagari वेबफन्टले दुवै अनुच्छेद फराकिलो र साँघुरो ब्राउजरमा ठीक देखायो। अरू उपकरणमा उपलब्ध फन्ट फरक हुन सक्छ। आफ्नै वेबफन्ट राख्दा देवनागरी अक्षर छन् कि र प्रयोगको अनुमति छ कि जाँच्नुहोस्।",
+        {
+          "links": [
+            [
+              "पेजको भाषा घोषणा गर्नेबारे W3C",
+              "https://www.w3.org/International/questions/qa-html-language-declarations"
+            ],
+            [
+              "lang विशेषताबारे MDN",
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang"
+            ]
+          ]
+        }
+      ],
+      [
+        "अर्को सेटिङ फेर्नुअघि मूल पाठ जाँच्नुहोस्",
+        "यी चरणका लागि मूल पाठमा पहिले नै नेपाली युनिकोड अक्षर हुनुपर्छ। फाइलमा ल्याटिन अक्षर छन् र प्रीति फन्ट लगाउँदा मात्र नेपाली देखिन्छ भने UTF-8 मा सेभ गर्दा ती ल्याटिन अक्षर नै रहन्छन्। रूपान्तरणको तरिका रोज्नुअघि युनिकोड र प्रीतिको छुट्टै जाँच हेर्नुहोस्।",
+        {
+          "links": [
+            [
+              "युनिकोड र प्रीतिको पाठ छुट्याउनुहोस्",
+              "/articles/unicode-vs-preeti-copy-paste/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-08",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both complete drafts: titles, descriptions, headings, paragraphs and instructions. Removed public drafting/test-process narration around the flower examples; the actual engine and clipboard evidence remains in private verification. Rewrote a stiff font-availability caveat into specific tested behavior and device scope in both languages. Removed the repeated final compare-settings closer. Reread equivalent Nepali and English instructions, encoding/header/BOM distinctions, font limitations and source links. Preserved sample HTML verbatim, exact Roman/Devanagari examples, executable checks, URLs, dates and research facts. No claim of human authorship or expert review."
+  }
+}
