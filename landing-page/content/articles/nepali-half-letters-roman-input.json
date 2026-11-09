@@ -1,0 +1,411 @@
+{
+  "slug": "nepali-half-letters-roman-input",
+  "topicId": "nepali-conjunct-letters",
+  "status": "published",
+  "published": "2026-11-09",
+  "primaryQuery": "Nepali typing half letters conjuncts",
+  "searchIntent": "Type whole Nepali words containing joined consonants with Roman input, identify the stored halant and distinguish a source-spelling problem from a display problem.",
+  "originalValue": "Nine current shared-engine examples, including four fresh education/word-study words, an extra-cluster error/repair and a failed slash shortcut. Native copy/paste verified all nine in both locale pads. Local licensed-font specimen and code-point assertion distinguish क्ष (three code points including halant) from कष (two), without inventing a fixed-layout shortcut or promising a particular conjunct shape on every app.",
+  "overlapReview": "The beginner guide lists controls and ambiguity but has no conjunct workflow or halant sequence. Practice covers everyday sentences and a missed vowel, not how joined consonants are represented or why a layout shortcut is not portable. Romanized-layout comparison explains tool choice; this article answers the half-letter task inside the actual pad. Unicode/Preeti concerns legacy storage, Docs concerns a named editor and HTML concerns file/header decoding. Font diagnosis here is bounded and linked rather than repeated. No universal keyboard chart, Preeti shortcut list, orthography reform claim or complete spelling course. Markdown and CSV research found no better currently validated distinct workflow; phone/Word/PDF holds remain.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact conjunct/half-letter query unmeasured. Genuine historical reader question supports this task, not current volume or trend. November 1 report is eight days old, Nepal/English/Google, October 2025–September 2026; broad typing ranges are not assigned to this long tail. November 9 GSC snapshot reports 72 impressions and zero clicks through November 7 across six daily rows, insufficient topic demand evidence. Deliberate November 9 analytics QA visits and unreconciled GA/PostHog counts are not audience or SEO growth."
+  },
+  "research": [
+    {
+      "url": "https://www.reddit.com/r/Nepal/comments/d3pif4/good_nepali_unicode_for_desktop/",
+      "checked": "2026-11-09",
+      "note": "Historical reader explicitly asks how to type a half letter in a desktop Unicode discussion. Layout-specific slash advice is not a NepType instruction; tested independently here. Qualitative task evidence only."
+    },
+    {
+      "url": "https://www.unicode.org/faq/indic.html",
+      "checked": "2026-11-09",
+      "note": "Primary Unicode explanation: consonant/virama/consonant sequences and distinction between encoded characters and font/display-engine glyphs. Public explanation stays within 200 derived words across both languages; no invisible-control tutorial or universal glyph promise."
+    },
+    {
+      "url": "https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-12/",
+      "checked": "2026-11-09",
+      "note": "Primary Devanagari encoding and rendering model. Conjunct shapes are not separately encoded characters; fonts and rendering map character sequences to glyphs."
+    },
+    {
+      "url": "https://cehrd.gov.np/",
+      "checked": "2026-11-09",
+      "note": "Official education text visibly uses विद्यालय and विद्यार्थी, and compounds including पाठ्यपुस्तक. Used as written-language context for the fresh education vocabulary, not as a comprehensive dictionary or endorsement of NepType."
+    },
+    {
+      "url": "https://neptype.com/?analytics_test=1",
+      "checked": "2026-11-09",
+      "note": "Current source/shared Rust-Wasm and both live locales verify all nine exact outputs, Copy text and native paste into isolated local scratch field. Eighteen workflows with opt-out/interception and zero vendor requests."
+    }
+  ],
+  "exampleContexts": [
+    "school vocabulary",
+    "joined-consonant word study",
+    "question in a learning exercise",
+    "conjunct spelling repair"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "pustak",
+        "mode": 0
+      },
+      "expectedText": "पुस्तक"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "prashna",
+        "mode": 0
+      },
+      "expectedText": "प्रश्न"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "vidyaalaya",
+        "mode": 0
+      },
+      "expectedText": "विद्यालय"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kshetra",
+        "mode": 0
+      },
+      "expectedText": "क्षेत्र"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ksha",
+        "mode": 0
+      },
+      "expectedText": "क्ष"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kshtra",
+        "mode": 0
+      },
+      "expectedText": "क्ष्त्र"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "shak/ti",
+        "mode": 0
+      },
+      "expectedText": "shak/ti"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "shakti",
+        "mode": 0
+      },
+      "expectedText": "शक्ति"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "prashna sodhnu.",
+        "mode": 0
+      },
+      "expectedText": "प्रश्न सोध्नु।"
+    }
+  ],
+  "workflowVerification": {
+    "checkedOn": "2026-11-09",
+    "environment": "Installed Chrome on Mac, isolated native clipboard and local licensed Noto Sans Devanagari specimen, 1440/390 widths",
+    "evidence": "reports/articles/2026-11-09/conjunct-results.json",
+    "scope": "All nine outputs copied/pasted exactly from each locale pad (18 workflows). क्ष code points asserted [U+0915,U+094D,U+0937], contrasting कष [U+0915,U+0937]. Specimen fonts/screenshots checked. Browser-width emulation is not a phone test. No Preview/PDF/Word, fixed-layout keys, assistive tools or universal font compatibility claim."
+  },
+  "en": {
+    "title": "Type Nepali half letters with Roman input | NepType",
+    "heading": "Type Nepali half letters and joined consonants",
+    "description": "Type Nepali words with half letters using Roman input. Try checked examples, inspect the halant and correct a joined-consonant spelling before copying.",
+    "sections": [
+      [
+        "Write the whole word first",
+        "In NepType, type the complete Nepali word in Roman letters and inspect the result. For example, pustak produces पुस्तक, including the joined स् and त. You do not need to insert a separate half-letter symbol into the Roman input. A shortcut from a fixed keyboard layout may behave differently in this word-based pad.",
+        {
+          "links": [
+            [
+              "Try the words in the typing pad",
+              "/#try"
+            ],
+            [
+              "Compare fixed layouts and Roman-word typing",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Try words containing different joins",
+        "Use Nepali + EN mode for these examples. In पुस्तक, look at स्त; in प्रश्न, look at प्र and श्न. विद्यालय contains द्य, and क्षेत्र contains क्ष and त्र. Read the whole word too: a correct-looking join can still sit beside a wrong vowel. The Roman spellings below are checked examples for the current engine, not a complete key-mapping rule.",
+        {
+          "examples": [
+            [
+              "pustak",
+              "पुस्तक"
+            ],
+            [
+              "prashna",
+              "प्रश्न"
+            ],
+            [
+              "vidyaalaya",
+              "विद्यालय"
+            ],
+            [
+              "kshetra",
+              "क्षेत्र"
+            ]
+          ],
+          "links": [
+            [
+              "Education vocabulary in official Nepali text",
+              "https://cehrd.gov.np/"
+            ]
+          ]
+        }
+      ],
+      [
+        "A joined shape can contain several characters",
+        "Unicode stores क्ष as क (U+0915), the halant ् (U+094D), and ष (U+0937). The font and rendering software draw the joined shape. In our local specimen, copying क्ष preserved all three characters; कष had only the two consonants. The joined form is not a separate half-letter character to find in a symbol menu.",
+        {
+          "examples": [
+            [
+              "ksha",
+              "क्ष"
+            ]
+          ],
+          "links": [
+            [
+              "Unicode FAQ: half forms and consonant clusters",
+              "https://www.unicode.org/faq/indic.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "Correct the Roman spelling when the cluster is wrong",
+        "Compare these two inputs. In क्ष्त्र, ष is joined onward to त. In the intended word क्षेत्र, the vowel mark े follows क्ष before त्र. Use kshetra to include that vowel. Edit the Roman input and read the new output before copying. Changing a font will not supply the missing vowel mark.",
+        {
+          "examples": [
+            [
+              "kshtra",
+              "क्ष्त्र"
+            ],
+            [
+              "kshetra",
+              "क्षेत्र"
+            ]
+          ],
+          "links": [
+            [
+              "More proofreading exercises",
+              "/articles/nepali-typing-practice-everyday-sentences/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Do not carry a slash shortcut into the word",
+        "The tested input shak/ti stayed as the literal text shak/ti. Replacing it with shakti produced शक्ति, including क्त. The slash did not act as a halant shortcut in this test.",
+        {
+          "examples": [
+            [
+              "shak/ti",
+              "shak/ti"
+            ],
+            [
+              "shakti",
+              "शक्ति"
+            ]
+          ],
+          "links": [
+            [
+              "Typing controls and spelling choices",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Check the copied word in its destination",
+        "Try the short instruction below, use Copy text and paste it into a scratch document. Compare प्रश्न, especially प्र and श्न, with the pad. If the same characters look different after pasting, check the receiving app’s Devanagari font and rendering. Unicode allows font-dependent conjunct shapes, so appearance alone is not a spelling check. Keep a saved copy in your destination before closing the pad.",
+        {
+          "examples": [
+            [
+              "prashna sodhnu.",
+              "प्रश्न सोध्नु।"
+            ]
+          ],
+          "links": [
+            [
+              "Unicode Standard: Devanagari rendering",
+              "https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-12/"
+            ],
+            [
+              "If the source may be Preeti text",
+              "/articles/unicode-vs-preeti-copy-paste/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "रोमनबाट नेपाली आधा अक्षर र संयुक्त अक्षर लेख्नुहोस् | NepType",
+    "heading": "रोमनबाट नेपाली आधा अक्षर र संयुक्त अक्षर लेख्नुहोस्",
+    "description": "रोमन लेखाइबाट आधा अक्षर भएका नेपाली शब्द लेख्नुहोस्। जाँचिएका उदाहरण हेरेर हलन्त चिन्नुहोस् र कपी गर्नुअघि जोडिएको अक्षरको हिज्जे सच्याउनुहोस्।",
+    "sections": [
+      [
+        "पहिले पूरा शब्द लेख्नुहोस्",
+        "NepType मा नेपाली शब्दको पूरा रोमन हिज्जे लेखेर नतिजा हेर्नुहोस्। जस्तै, pustak लेख्दा पुस्तक आउँछ, जसमा स् र त जोडिएका छन्। रोमन बाकसमा छुट्टै आधा अक्षरको चिह्न हाल्नुपर्दैन। निश्चित किबोर्ड लेआउटको सर्टकटले शब्दका आधारमा चल्ने यो प्याडमा फरक काम गर्न सक्छ।",
+        {
+          "links": [
+            [
+              "टाइपिङ प्याडमा शब्द लेखेर हेर्नुहोस्",
+              "/#try"
+            ],
+            [
+              "निश्चित लेआउट र रोमनबाट टाइप गर्ने तरिका दाँज्नुहोस्",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ]
+          ]
+        }
+      ],
+      [
+        "फरक जोड भएका शब्द लेखेर हेर्नुहोस्",
+        "यी उदाहरणका लागि Nepali + EN मोड प्रयोग गर्नुहोस्। पुस्तकमा स्त, प्रश्नमा प्र र श्न हेर्नुहोस्। विद्यालयमा द्य छ भने क्षेत्रमा क्ष र त्र छन्। पूरा शब्द पनि पढ्नुहोस्। जोडिएको अक्षर ठीक देखिए पनि त्यससँगैको मात्रा गलत हुन सक्छ। तलका रोमन हिज्जे हालको इन्जिनमा जाँचिएका उदाहरण हुन्। यी सबै अक्षरका लागि लागू हुने कुञ्जीको नियम होइनन्।",
+        {
+          "examples": [
+            [
+              "pustak",
+              "पुस्तक"
+            ],
+            [
+              "prashna",
+              "प्रश्न"
+            ],
+            [
+              "vidyaalaya",
+              "विद्यालय"
+            ],
+            [
+              "kshetra",
+              "क्षेत्र"
+            ]
+          ],
+          "links": [
+            [
+              "सरकारी नेपाली पाठमा शिक्षासम्बन्धी शब्द",
+              "https://cehrd.gov.np/"
+            ]
+          ]
+        }
+      ],
+      [
+        "जोडिएको एउटै आकारमा धेरै अक्षर हुन सक्छन्",
+        "युनिकोडमा क्ष लेख्दा क (U+0915), हलन्त ् (U+094D) र ष (U+0937) राखिन्छन्। फन्ट र अक्षर देखाउने सफ्टवेयरले तिनलाई जोडेर देखाउँछन्। हाम्रो स्थानीय नमुनाबाट क्ष कपी गर्दा तीनै चिह्न सुरक्षित रहे। कष मा भने दुई व्यञ्जन मात्र थिए। त्यसैले क्ष लेख्न चिह्नको सूचीमा छुट्टै आधा अक्षर खोज्नु पर्दैन।",
+        {
+          "examples": [
+            [
+              "ksha",
+              "क्ष"
+            ]
+          ],
+          "links": [
+            [
+              "आधा अक्षर र संयुक्त अक्षरबारे Unicode FAQ",
+              "https://www.unicode.org/faq/indic.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "जोडिएको अक्षर गलत भए रोमन हिज्जे सच्याउनुहोस्",
+        "यी दुई लेखाइ दाँज्नुहोस्। क्ष्त्र मा ष र त पनि हलन्तले जोडिएका छन्। क्षेत्र शब्दमा क्ष पछि े को मात्रा आउँछ र त्यसपछि त्र हुन्छ। त्यो मात्रा राख्न kshetra लेख्नुहोस्। रोमन लेखाइ सच्याएर कपी गर्नुअघि नयाँ नतिजा पढ्नुहोस्। फन्ट बदल्दा छुटेको मात्रा थपिँदैन।",
+        {
+          "examples": [
+            [
+              "kshtra",
+              "क्ष्त्र"
+            ],
+            [
+              "kshetra",
+              "क्षेत्र"
+            ]
+          ],
+          "links": [
+            [
+              "हिज्जे जाँच्ने थप अभ्यास",
+              "/articles/nepali-typing-practice-everyday-sentences/"
+            ]
+          ]
+        }
+      ],
+      [
+        "शब्दको बीचमा स्ल्यास सर्टकट नहाल्नुहोस्",
+        "परीक्षणमा shak/ti लेख्दा shak/ti नै रह्यो। यसलाई shakti ले बदल्दा क्त सहित शक्ति आयो। यो परीक्षणमा स्ल्यासले हलन्तको सर्टकटको काम गरेन।",
+        {
+          "examples": [
+            [
+              "shak/ti",
+              "shak/ti"
+            ],
+            [
+              "shakti",
+              "शक्ति"
+            ]
+          ],
+          "links": [
+            [
+              "टाइप गर्ने र हिज्जे रोज्ने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "पेस्ट गरेको ठाउँमा पनि शब्द जाँच्नुहोस्",
+        "तलको छोटो निर्देशन लेखेर पाठ कपी गर्नुहोस् बटन थिच्नुहोस् र परीक्षण कागजातमा पेस्ट गर्नुहोस्। प्रश्नमा रहेका प्र र श्न प्याडसँग दाँज्नुहोस्। उही अक्षर पेस्ट गरेपछि फरक देखिए पेस्ट गर्ने एपको देवनागरी फन्ट र अक्षर देखाउने सुविधा जाँच्नुहोस्। युनिकोडमा फन्टअनुसार संयुक्त अक्षरको आकार फरक हुन सक्छ। त्यसैले आकार मात्र हेरेर हिज्जे सही छ भन्न मिल्दैन। प्याड बन्द गर्नुअघि आफ्नो कागजातमा प्रति सेभ गर्नुहोस्।",
+        {
+          "examples": [
+            [
+              "prashna sodhnu.",
+              "प्रश्न सोध्नु।"
+            ]
+          ],
+          "links": [
+            [
+              "देवनागरी देखाउने नियमबारे Unicode Standard",
+              "https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-12/"
+            ],
+            [
+              "मूल पाठ प्रीतिमा भएको शङ्का लागे",
+              "/articles/unicode-vs-preeti-copy-paste/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-09",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both full drafts including metadata-facing title/description, headings, paragraphs, steps, tables and link labels. Removed repeated layout-scope defense in the slash section and stated the actual bounded result directly. Removed public test-method narration from the destination check; full evidence remains private. Replaced stiff receiving-app wording in Nepali. Reread both final versions for equivalent meaning, natural word order, unnecessary contrasts, repetitive closers and unsupported font/key promises. A factual review before this pass corrected the longer-cluster explanation: both error and intended word contain त; the difference is the missing े and intervening halant, not an extra त. Protected all Roman/Devanagari literals, checks, URLs, identifiers, dates, evidence and structured data. Automated prose review, no human-authorship or expert-review claim."
+  }
+}

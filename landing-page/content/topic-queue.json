@@ -337,14 +337,15 @@
     },
     {
       "id": "nepali-conjunct-letters",
-      "status": "research_needed",
+      "status": "published",
       "query": "Nepali typing half letters conjuncts",
       "title": "Type Nepali half letters and conjuncts using Roman input",
       "intent": "Find and correct words containing joined consonants",
       "angle": "Use sourced spelling examples and actual engine candidates. Explain Unicode shaping only where needed; no invented fixed-layout shortcut chart.",
       "overlapBoundary": "Consonant clusters and their verification, not a second beginner keyboard guide.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Validated November 9 with a genuine historical reader half-letter question, current primary Unicode encoding/rendering documentation, official Nepali education vocabulary and nine shared-engine cases with eighteen live native clipboard workflows. Exact query volume/current trend unmeasured; no broad typing range attributed. Distinct whole-word conjunct/halant diagnosis, longer-cluster repair and failed slash shortcut beyond the guide/practice/layout/legacy/HTML pages. Phone, Word and PDF holds unchanged.",
+      "articleSlug": "nepali-half-letters-roman-input"
     },
     {
       "id": "nepali-vowel-matras",
