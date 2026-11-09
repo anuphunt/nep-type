@@ -118,7 +118,7 @@ try {
       assert.equal(await primary.getAttribute('data-analytics-event'),expected.event);
       assert.equal(await primary.getAttribute('data-platform'),expected.platform);
       if (['iOS','Android','Linux'].includes(platform)) {
-        assert.equal(await devicePage.locator('[data-online-alternative]').isVisible(),false);
+        assert.equal(await devicePage.locator('#web-input').count(),1);
         await primary.click();
         await devicePage.waitForFunction(()=>{const box=document.querySelector('#web-input').getBoundingClientRect();return box.bottom>0 && box.top<innerHeight;});
       }

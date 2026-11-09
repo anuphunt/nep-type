@@ -1,7 +1,7 @@
 import {legalPages} from './legal-pages.mjs';
 
 export const repository = 'https://github.com/anuphunt/nep-type';
-export const homeDescription = 'Free Nepali typing online: turn Roman letters into Nepali Unicode, choose spellings, and copy your text. No account needed. Offline Mac and Windows apps available.';
+export const homeDescription = 'Free Nepali typing online: turn Roman letters into Nepali Unicode, choose spellings, and copy your text. Type on your phone, tablet or computer. No account needed.';
 export const homeTitle = {en: 'Nepali Typing Online — Roman to Nepali | NepType', ne: 'अनलाइन नेपाली टाइपिङ — रोमनबाट नेपाली | NepType'};
 export const homeDescriptions = {en: homeDescription, ne: 'NepType मा रोमन अक्षरबाट नेपाली युनिकोड लेख्नुहोस्। हिज्जे रोज्नुहोस् र तयार पाठ कपी गर्नुहोस्। निःशुल्क अनलाइन टाइपिङ, खाता खोल्नु पर्दैन।'};
 
@@ -9,7 +9,7 @@ export const nepaliCopy = {
   badge: 'नेपाली लेखौँ',
   headline: 'अनलाइन नेपाली लेख्नुहोस्।',
   headlineAccent: 'रोमन अक्षरबाट।',
-  description: 'अंग्रेजी अक्षरमा नेपाली शब्द लेख्नुहोस्। हिज्जे रोजेर पाठ कपी गर्नुहोस्। ब्राउजरमा निःशुल्क चल्छ। अफलाइन लेख्न Mac वा Windows एप रोज्नुहोस्।',
+  description: 'रोमन अक्षरमा नेपाली शब्द लेख्नुहोस्। हिज्जे रोजेर पाठ कपी गर्नुहोस्। ब्राउजरमा निःशुल्क चल्छ।',
   cta: 'Mac का लागि डाउनलोड गर्नुहोस्',
   getApp: 'NepType लिनुहोस्',
   otherPlatforms: 'अन्य प्लेटफर्मका लागि डाउनलोड →',
@@ -21,15 +21,16 @@ export const nepaliCopy = {
   mixedTitle: 'English पनि राख्नुहोस्।',
   mixedDescription: 'दुवै भाषामा लेख्न Nepali + EN रोज्नुहोस्।',
   platformTitle: 'कम्प्युटरका लागि टाइपिङ प्याड।',
-  platformDescription: 'Mac र Windows एप उपलब्ध छन्।',
-  privacyTitle: 'अफलाइन चल्छ।',
-  privacyDescription: 'तपाईंले लेखेका कुरा उपकरणमै रहन्छन्।',
+  platformDescription: 'Mac एप र Windows प्रिभ्यु उपलब्ध छन्।',
+  privacyTitle: 'लेखाइ उपकरणमै रहन्छ।',
+  privacyDescription: 'प्याड खोल्न इन्टरनेट चाहिन्छ। लोड भएपछि लेखाइ उपकरणमै प्रशोधन हुन्छ।',
   choiceTitle: 'सही शब्द रोज्नुहोस्।',
   choiceDescription: 'हिज्जे रोज्नुहोस् वा मूल शब्द राख्नुहोस्।',
   flowTitle: 'जहाँ चाहिन्छ, पेस्ट गर्नुहोस्।',
   flowDescription: 'नेपाली पाठ कपी गरेर आफ्नो एपमा लैजानुहोस्।',
   footerTagline: 'नेपाली लेख्ने प्याड।',
   tryLink: 'नेपाली टाइप गर्नुहोस्', tryTitle: 'रोमनबाट नेपाली टाइपिङ प्याड।', tryDescription: 'namaste लेख्दा नमस्ते आउँछ। पाठ यही उपकरणमा प्रशोधन हुन्छ। खाता चाहिँदैन।',
+  webShortcutHelp: 'शब्द छानेर चाहिएको सुझाव थिच्नुहोस्। कम्प्युटरमा Option/Alt र सुझावको नम्बर थिच्न सक्नुहुन्छ।',
   webModeLabel: 'लेखाइको मोड', webExample: 'उदाहरण हेर्नुहोस्', webInputLabel: 'रोमन लेखाइ', webOutputLabel: 'नेपाली लेखाइ', webClear: 'खाली गर्नुहोस्', webCopy: 'पाठ कपी गर्नुहोस्', webSuggestions: 'अर्को हिज्जे हेर्न शब्द छान्नुहोस्।', webLocal: 'उपकरणमै प्रशोधन', webReady: 'तपाईंको लेखाइ यही ब्राउजरमा रहन्छ।'
 };
 
@@ -38,6 +39,7 @@ export const labels = {
   'Get NepType': 'NepType लिनुहोस्', Home: 'गृहपृष्ठ', Platforms: 'प्लेटफर्महरू',
   Support: 'सहयोग', Feedback: 'प्रतिक्रिया', 'Privacy Policy': 'गोपनीयता नीति', 'Terms of Service': 'सेवाका सर्तहरू', Project: 'परियोजना',
   'About NepType': 'NepType बारे', 'Open source': 'खुला स्रोत', 'In progress': 'काम हुँदैछ',
+  'Local processing': 'उपकरणमै प्रशोधन', 'Coming soon': 'छिट्टै आउँदैछ', 'Available now': 'उपलब्ध छ',
   'Try it': 'प्रयोग गर्नुहोस्',
   'Works offline': 'अफलाइन चल्छ', 'YOU TYPE': 'तपाईंको लेखाइ', NEPTYPE: 'NEPTYPE',
   'ON YOUR DEVICE': 'तपाईंकै उपकरणमा', 'No connection needed': 'इन्टरनेट चाहिँदैन',
@@ -49,11 +51,11 @@ export const pages = {
   faq: {
     en: {
       title: 'Nepali Typing FAQ | NepType', heading: 'Nepali typing questions, answered.',
-      description: 'Answers about online Nepali typing, Roman-to-Nepali conversion, spelling suggestions, browser privacy, and the offline NepType Mac app.',
+      description: 'Answers about online Nepali typing, Roman-to-Nepali conversion, spelling suggestions, browser privacy, and the offline Mac app and Windows preview.',
       sections: [
         ['How does NepType work?', 'Type Roman letters in the pad. NepType suggests Nepali spellings, then you copy the result.'],
         ['Can I keep English words?', 'Yes. Nepali + EN keeps recognized English words. You can also choose the original spelling.'],
-        ['Does it work offline?', 'The Mac app works offline. The browser tool needs a connection to open and load its dictionary; typing then runs locally. Reloading needs a connection. Neither typing pad needs an account.'],
+        ['Does it work offline?', 'The Mac app and Windows preview work offline. The browser tool needs a connection to open and load its dictionary; typing then runs locally. Reloading needs a connection. The typing pads do not need an account.'],
         ['Is English to Nepali typing the same as translation?', 'No. NepType changes Romanized Nepali into Devanagari: namaste becomes नमस्ते. It does not translate the meaning of English sentences.'],
         ['Is the output Nepali Unicode?', 'Yes. Copy the Unicode Nepali text into a message or document. NepType does not convert legacy Preeti documents.'],
         ['Can I use the tool on a phone?', 'Use the browser typing pad on a phone or computer. Native iPhone and Android keyboards are still in development.'],
@@ -68,7 +70,7 @@ export const pages = {
       sections: [
         ['NepType कसरी चल्छ?', 'प्याडमा रोमन अक्षर टाइप गर्नुहोस्। NepType ले नेपाली हिज्जे सुझाउँछ। तयार भएको पाठ कपी गर्नुहोस्।'],
         ['अंग्रेजी शब्द राख्न मिल्छ?', 'मिल्छ। Nepali + EN ले चिनेका अंग्रेजी शब्द राख्छ। तपाईं मूल हिज्जे पनि रोज्न सक्नुहुन्छ।'],
-        ['अफलाइन चल्छ?', 'Mac एप अफलाइन चल्छ। ब्राउजरको प्याड खोल्न र शब्दकोश लोड गर्न इन्टरनेट चाहिन्छ। त्यसपछि टाइपिङ उपकरणमै हुन्छ। पृष्ठ फेरि खोल्दा इन्टरनेट चाहिन्छ। खाता चाहिँदैन।'],
+        ['अफलाइन चल्छ?', 'Mac एप र Windows प्रिभ्यु अफलाइन चल्छन्। ब्राउजरको प्याड खोल्न र शब्दकोश लोड गर्न इन्टरनेट चाहिन्छ। त्यसपछि टाइपिङ उपकरणमै हुन्छ। पृष्ठ फेरि खोल्दा इन्टरनेट चाहिन्छ। खाता चाहिँदैन।'],
         ['अंग्रेजीबाट नेपाली टाइपिङ भनेको अनुवाद हो?', 'होइन। NepType ले रोमनमा लेखेका नेपाली शब्दलाई देवनागरीमा बदल्छ। जस्तै, namaste बाट नमस्ते बन्छ। अंग्रेजी वाक्यको अर्थ अनुवाद गर्दैन।'],
         ['तयार पाठ नेपाली युनिकोड हो?', 'हो। तयार युनिकोड पाठ सन्देश वा कागजातमा कपी गर्न सकिन्छ। NepType ले पुराना प्रीति कागजात रूपान्तरण गर्दैन।'],
         ['फोनमा प्रयोग गर्न मिल्छ?', 'फोन वा कम्प्युटरको ब्राउजरमा टाइपिङ प्याड प्रयोग गर्न मिल्छ। छुट्टै iPhone र Android किबोर्डको काम हुँदैछ।'],
@@ -103,8 +105,8 @@ export const pages = {
     }
   },
   about: {
-    en: {title: 'About NepType | Open-Source Nepali Typing', heading: 'About NepType.', description: 'NepType is an open-source Roman-to-Nepali browser tool and offline Mac typing pad, built by Anup Dhakal and contributors.', sections: [['', 'NepType is an open-source browser typing tool and offline Mac typing pad, built by Anup Dhakal and contributors. It uses local dictionaries and phonetic rules to turn Roman letters into Nepali.'], ['', 'The project’s original code is available under the MIT license. Third-party data has separate terms documented in the repository.']], link: 'View the project'},
-    ne: {title: 'NepType बारे | खुला स्रोत नेपाली टाइपिङ', heading: 'NepType बारे।', description: 'अनुप ढकाल र योगदानकर्ताहरूले बनाएको खुला स्रोत नेपाली टाइपिङ उपकरण। ब्राउजर र अफलाइन Mac प्याड उपलब्ध छन्।', sections: [['', 'NepType अनुप ढकाल र योगदानकर्ताहरूले बनाएको खुला स्रोत नेपाली टाइपिङ उपकरण हो। ब्राउजर प्याड र अफलाइन Mac प्याड उपलब्ध छन्। यसले स्थानीय शब्दकोश र ध्वनिसम्बन्धी नियमबाट रोमन अक्षरलाई नेपालीमा बदल्छ।'], ['', 'परियोजनाको मूल कोड MIT लाइसेन्समा उपलब्ध छ। बाह्य डेटाका छुट्टै सर्तहरू रिपोजिटरीमा छन्।']], link: 'परियोजना हेर्नुहोस्'}
+    en: {title: 'About NepType | Open-Source Nepali Typing', heading: 'About NepType.', description: 'NepType is an open-source Nepali typing project by Anup Dhakal and contributors, with a browser pad, Mac app and Windows preview.', sections: [['', 'NepType is an open-source Nepali typing project built by Anup Dhakal and contributors. It offers a browser pad, an offline Mac app and an offline Windows preview. It uses local dictionaries and phonetic rules to turn Roman letters into Nepali.'], ['', 'The project’s original code is available under the MIT license. Third-party data has separate terms documented in the repository.']], link: 'View the project'},
+    ne: {title: 'NepType बारे | खुला स्रोत नेपाली टाइपिङ', heading: 'NepType बारे।', description: 'अनुप ढकाल र योगदानकर्ताहरूले बनाएको खुला स्रोत नेपाली टाइपिङ उपकरण। ब्राउजर प्याड, अफलाइन Mac एप र Windows प्रिभ्यु उपलब्ध छन्।', sections: [['', 'NepType अनुप ढकाल र योगदानकर्ताहरूले बनाएको खुला स्रोत नेपाली टाइपिङ उपकरण हो। ब्राउजर प्याड, अफलाइन Mac एप र Windows प्रिभ्यु उपलब्ध छन्। यसले स्थानीय शब्दकोश र ध्वनिसम्बन्धी नियमबाट रोमन अक्षरलाई नेपालीमा बदल्छ।'], ['', 'परियोजनाको मूल कोड MIT लाइसेन्समा उपलब्ध छ। बाह्य डेटाका छुट्टै सर्तहरू रिपोजिटरीमा छन्।']], link: 'परियोजना हेर्नुहोस्'}
   },
   changelog: {
     en: {title: 'What’s New | NepType', heading: 'What’s new.', description: 'Current NepType features and development updates for the open-source Nepali typing app.', sections: [['Mac typing pad and optional keyboard', 'Mac version 0.1.2 is available with Nepali + EN and All Nepali modes, spelling suggestions, and copy controls. It also bundles an optional system keyboard that you install through Keyboard setup and add in macOS Keyboard settings. Compatibility across apps is still being tested.', {links: [['Mac download and setup', '/mac/']]}], ['Windows preview', 'The Windows typing pad is available as version 0.1.1-preview.1. It works offline and lets you copy or save your text. This preview does not install a system keyboard; Windows keyboard integration is still in development.', {links: [['Windows preview and setup', '/windows/']]}], ['Other platforms', 'Native iPhone, Android, and Linux apps are coming soon. You can use the browser typing pad on these devices.', {links: [['All platforms', '/download/']]}]], link: 'Follow development on GitHub'},

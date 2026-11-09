@@ -49,7 +49,8 @@ function localize(html, locale, slug = '') {
   for (const [english, nepali] of Object.entries(labels)) {
     html = html.replaceAll(`>${english}<`, `>${nepali}<`);
   }
-  html = html.replaceAll('Works offline</span>', 'अफलाइन चल्छ</span>')
+  html = html.replaceAll('Local processing</span>', 'उपकरणमै प्रशोधन</span>')
+    .replaceAll('Works offline</span>', 'अफलाइन चल्छ</span>')
     .replaceAll('No connection needed</span>', 'इन्टरनेट चाहिँदैन</span>')
     .replaceAll('Copy example <span>', 'उदाहरण कपी गर्नुहोस् <span>')
     .replaceAll('Try another spelling</div>', 'अर्को हिज्जे रोज्नुहोस्</div>')
@@ -65,6 +66,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('href="/changelog/"', 'href="/ne/changelog/"')
     .replaceAll('href="/"', 'href="/ne/"')
     .replaceAll('alt="NepType Mac app showing Roman input, Nepali spelling suggestions, and mixed Nepali and English output."', 'alt="NepType Mac एपमा रोमन इनपुट, नेपाली हिज्जे सुझाव र नेपाली तथा अंग्रेजी मिसिएको पाठ।"')
+    .replaceAll('aria-label="Download NepType"', 'aria-label="NepType डाउनलोड"')
     .replaceAll('aria-label="Toggle navigation"', 'aria-label="नेभिगेसन खोल्नुहोस्"')
     .replaceAll('aria-label="Close dialog"', 'aria-label="बन्द गर्नुहोस्"')
     .replaceAll('Skip to content', 'मुख्य सामग्रीमा जानुहोस्')
@@ -83,6 +85,8 @@ function metadata(locale, slug, title, description) {
   const content = pages[slug]?.[locale];
   const webappId = origin + '/#browser-tool';
   const appId = origin + '/#mac-app';
+  const socialImage = slug === 'mac' ? {file:'neptype-mac.png',width:720,height:540,alt:locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}
+    : {file:`neptype-web-${locale}.png`,width:1200,height:630,alt:locale === 'ne' ? 'NepType अनलाइन प्याडमा रोमन लेखाइ र नेपाली युनिकोड नतिजा' : 'NepType online typing pad with Roman input and Nepali Unicode output'};
   const graph = [
     {'@type': 'WebSite', '@id': origin + '/#website', name: 'NepType', url: origin + '/', inLanguage: ['en', 'ne']},
     {'@type': content?.kind === 'article' ? 'TechArticle' : content?.kind === 'collection' ? 'CollectionPage' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
@@ -112,15 +116,15 @@ function metadata(locale, slug, title, description) {
   <meta property="og:url" content="${url}">
   <meta property="og:locale" content="${locale === 'ne' ? 'ne_NP' : 'en_US'}">
   <meta property="og:locale:alternate" content="${locale === 'ne' ? 'en_US' : 'ne_NP'}">
-  <meta property="og:image" content="${origin}/assets/neptype-mac.png">
-  <meta property="og:image:width" content="720">
-  <meta property="og:image:height" content="540">
-  <meta property="og:image:alt" content="${locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}">
+  <meta property="og:image" content="${origin}/assets/${socialImage.file}">
+  <meta property="og:image:width" content="${socialImage.width}">
+  <meta property="og:image:height" content="${socialImage.height}">
+  <meta property="og:image:alt" content="${socialImage.alt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escape(title)}">
   <meta name="twitter:description" content="${escape(description)}">
-  <meta name="twitter:image" content="${origin}/assets/neptype-mac.png">
-  <meta name="twitter:image:alt" content="${locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}">
+  <meta name="twitter:image" content="${origin}/assets/${socialImage.file}">
+  <meta name="twitter:image:alt" content="${socialImage.alt}">
   <link rel="preload" href="/assets/fonts/${locale === 'ne' ? 'noto-sans-devanagari' : 'dm-sans-latin'}.woff2" as="font" type="font/woff2" crossorigin>
   <script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': graph}).replaceAll('<', '\\u003c')}</script>`;
 }
@@ -159,12 +163,12 @@ function finish(html, locale, slug, title, description) {
 
 await rm(output, {recursive: true, force: true});
 await mkdir(path.join(output, 'assets'), {recursive: true});
-for (const asset of ['neptype-icon.png', 'neptype-mac.png']) {
+for (const asset of ['neptype-icon.png', 'neptype-mac.png', 'neptype-web-en.png', 'neptype-web-ne.png']) {
   await copyFile(path.join(root, 'assets', asset), path.join(output, 'assets', asset));
 }
 await cp(path.join(root, 'assets/fonts'), path.join(output, 'assets/fonts'), {recursive: true});
 // Only production assets are published; design variations and evidence stay in the repo.
-for (const asset of ['site.js', 'platform.mjs', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
+for (const asset of ['site.js', 'platform.mjs', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'suggestion-shortcuts.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
 // Build the same Rust engine and embedded dictionary used by native adapters.
 execFileSync('bash', [path.join(root, '../scripts/build-web-engine.sh')], {stdio:'inherit'});
 const wasm = await readFile(path.join(root, 'engine-build/neptype_engine_bg.wasm'));

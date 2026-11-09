@@ -187,3 +187,28 @@ html[lang=ne] .document-page h2{line-height:1.8}
 .analytics-dialog::backdrop{background:#0009}.analytics-settings-link{display:block;margin-top:16px;padding:0;min-height:44px;font:inherit;color:inherit;background:none;border:0;text-decoration:underline;cursor:pointer;text-align:left}
 .analytics-actions button:focus-visible,.analytics-settings-link:focus-visible{outline:2px solid #eee;outline-offset:4px}
 @media(max-width:480px){.analytics-consent{padding:16px;bottom:8px;left:8px;right:8px}.analytics-consent p{font-size:.88rem}.analytics-actions .button{padding:12px 16px}}
+
+/* The homepage opens directly on the tool; downloads remain secondary. */
+.final-site .editor-hero{background:none;padding:30px 0 18px}
+.final-site .editor-hero h1{font-size:clamp(28px,3.2vw,40px);line-height:1.35;letter-spacing:-1px;margin:0 0 10px}
+.final-site .editor-hero .hero-description{max-width:720px;margin:0;font-size:14px;line-height:1.75}
+.final-site .editor-hero + .try-section{padding-top:0}
+.desktop-downloads{padding-top:14px;padding-bottom:0}
+.desktop-downloads .button{font-size:12px;min-height:40px;background:transparent;color:var(--muted)}
+.desktop-downloads .device-download-note{max-width:none;min-height:0;margin-top:8px}
+.desktop-downloads .other-platforms-link{padding:8px 0}
+.web-shortcut-help{font-size:12px;line-height:1.7;color:var(--muted);margin:12px 0 0}
+.web-suggestions button{min-height:40px}
+.web-suggestions .suggestion-number{margin:0 8px 0 0;font:12px var(--font);font-variant-numeric:tabular-nums}
+#web-input:focus::placeholder{color:transparent}
+@media(max-width:600px){.final-site .editor-hero{padding:18px 0 12px}.web-toolbar{flex-wrap:wrap}.web-tools{flex:1;justify-content:flex-end}.web-tools button,.web-tools select{min-height:40px}.web-panel-heading button{min-height:32px}.web-panel textarea{min-height:115px}.web-suggestions button{min-height:44px}.desktop-downloads .hero-actions{gap:10px 20px}}
+
+/* Keep suggestions beside the active input on phones, above the output. */
+.web-editors{grid-template-areas:"input output" "suggestions suggestions";row-gap:0}
+.web-editors>.web-panel:first-child{grid-area:input}
+.web-editors>.web-panel:last-child{grid-area:output}
+.web-editors>.web-suggestions{grid-area:suggestions}
+@media(max-width:600px){.web-editors{grid-template-areas:"input" "suggestions" "output"}.web-toolbar{margin-bottom:12px}.web-toolbar .pad-brand{display:none}.web-toolbar .web-tools{justify-content:space-between}.web-panel textarea{height:130px}.web-pad-footer{margin-top:12px}}
+
+@media(max-width:600px){html[lang=ne] .editor-hero h1{font-size:28px}}
+@media(max-width:360px){html[lang=ne] .editor-hero h1{font-size:26px}}
