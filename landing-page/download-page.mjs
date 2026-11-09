@@ -13,9 +13,19 @@ const icons = {
 const icon = platform => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[platform]}</svg>`;
 const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-export function renderDownloadPage(locale, {mac, windows}, escape) {
+export function renderDownloadPage(locale, releases, escape) {
+  return renderDownloads(locale, releases, escape);
+}
+
+export function renderHomeDownloads(locale, releases, escape) {
+  return renderDownloads(locale, releases, escape, true);
+}
+
+function renderDownloads(locale, {mac, windows}, escape, embedded = false) {
   const ne = locale === 'ne';
   const prefix = ne ? '/ne' : '';
+  const titleTag = embedded ? 'h2' : 'h1';
+  const cardTitleTag = embedded ? 'h3' : 'h2';
   const platforms = [
     {id:'macOS', name:'Mac', requirement:ne ? 'macOS 13 वा पछिल्लो' : 'macOS 13 or later', architecture:'Apple silicon · Intel', url:mac, slug:'mac', label:ne ? 'Mac का लागि डाउनलोड' : 'Download for Mac', file:'.dmg'},
     {id:'Windows', name:'Windows', requirement:'Windows 10 / 11', architecture:ne ? 'Intel वा AMD · x64' : 'Intel or AMD · x64', url:windows, slug:'windows', label:ne ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows', file:'.exe'},
@@ -26,13 +36,14 @@ export function renderDownloadPage(locale, {mac, windows}, escape) {
   const cards = platforms.map(p => `<article class="download-card${p.url ? '' : ' download-card-pending'}" data-platform-card="${p.id}" aria-labelledby="platform-${p.id}">
     <div class="download-card-top"><div class="platform-logo logo-${p.id}">${icon(p.id)}</div><span class="device-badge" data-current-device hidden>${ne ? 'तपाईंको उपकरण' : 'Your device'}</span></div>
     <span class="release-status">${p.url ? (ne ? 'उपलब्ध छ' : 'Available now') : (ne ? 'छिट्टै आउँदैछ' : 'Coming soon')}</span>
-    <h2 id="platform-${p.id}">${p.name}</h2>
+    <${cardTitleTag} id="platform-${p.id}">${p.name}</${cardTitleTag}>
     <div class="platform-requirements"><p>${p.requirement}</p><p>${p.architecture}</p>${p.url ? `<p class="installer-format">${p.file}</p>` : ''}</div>
     <div class="download-card-action">${p.url ? `<a class="button platform-download" href="${escape(p.url)}" data-platform="${p.id}" data-analytics-event="neptype_download_clicked" data-placement="download-card">${arrow}<span>${p.label}</span></a><a class="setup-link" href="${prefix}/${p.slug}/">${ne ? 'इन्स्टल गर्ने तरिका र विवरण' : 'Setup guide & details'} <span aria-hidden="true">↗</span></a>` : `<span class="coming-soon">${ne ? 'छिट्टै आउँदैछ' : 'Coming soon'}</span><a class="setup-link" href="${prefix}/#try">${ne ? 'अहिले ब्राउजरमा लेख्नुहोस्' : 'Use the browser pad'} <span aria-hidden="true">↗</span></a>`}</div>
   </article>`).join('');
-  return `<main id="main" class="downloads-page container">
-    <div class="download-intro"><h1>${downloadPage[locale].heading}</h1></div>
+  const opening = embedded ? '<section id="downloads" class="downloads-page homepage-downloads container" aria-labelledby="downloads-title">' : '<main id="main" class="downloads-page container">';
+  return `${opening}
+    <div class="download-intro"><${titleTag} id="downloads-title">${downloadPage[locale].heading}</${titleTag}></div>
     <section class="download-grid" aria-label="${ne ? 'प्लेटफर्मअनुसार डाउनलोड' : 'Downloads by platform'}">${cards}</section>
     <a class="download-browser-link" href="${prefix}/#try" data-analytics-event="neptype_tool_cta_clicked" data-placement="download-browser" data-platform="web">${ne ? 'अनलाइन नेपाली लेख्नुहोस्' : 'Type Nepali online'} <span aria-hidden="true">→</span></a>
-  </main>`;
+  </${embedded ? 'section' : 'main'}>`;
 }

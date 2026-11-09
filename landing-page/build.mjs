@@ -9,7 +9,7 @@ import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
 import {windowsDownload, windowsPage} from './windows-release.mjs';
-import {downloadPage, renderDownloadPage} from './download-page.mjs';
+import {downloadPage, renderDownloadPage, renderHomeDownloads} from './download-page.mjs';
 import {homeHelp, typingGuide} from './typing-guide.mjs';
 import {loadArticles, articlePages} from './article-content.mjs';
 const articles = await loadArticles();
@@ -193,7 +193,7 @@ await writeFile(path.join(output, 'styles.css'), styles);
 const urls = [];
 for (const locale of ['en', 'ne']) {
   const description = homeDescriptions[locale];
-  const home = finish(localize(template, locale).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
+  const home = finish(localize(template, locale).replace('<!-- HOME_DOWNLOADS -->', renderHomeDownloads(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape)).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
   const directory = path.join(output, route(locale));
   await mkdir(directory, {recursive: true});
   await writeFile(path.join(directory, 'index.html'), home);

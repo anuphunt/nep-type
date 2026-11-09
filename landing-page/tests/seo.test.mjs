@@ -83,8 +83,13 @@ test('production pages expose unique crawlable content, correct locales and vali
   for (const pathname of ['/','/ne/']) {
     const html = documents.get(pathname), locale = pathname === '/' ? 'en' : 'ne';
     assert.equal(matches(html, /id="web-input"/g).length,1);
-    assert.ok(html.indexOf('id="web-pad"') < html.indexOf('class="desktop-downloads'));
+    assert.ok(html.indexOf('id="web-pad"') < html.indexOf('id="downloads"'));
     assert.ok(!html.includes('class="hero-visual"'));
+    assert.ok(!html.includes('<!-- HOME_DOWNLOADS -->'));
+    assert.equal(matches(html, /data-platform-card=/g).length,5);
+    assert.match(html, /<section id="downloads"[^>]*>[\s\S]*<h2 id="downloads-title">/);
+    assert.ok(!html.includes('class="desktop-downloads'));
+    assert.equal(matches(html, /<main\b/g).length,1);
     assert.ok(!html.includes('No connection needed') && !html.includes('Works offline'));
     assert.ok(html.includes(`property="og:image" content="https://neptype.com/assets/neptype-web-${locale}.png"`));
     assert.ok(html.includes('property="og:image:width" content="1200"'));

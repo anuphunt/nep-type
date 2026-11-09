@@ -58,6 +58,22 @@ try {
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://neptype.com'+prefix);
       assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'index,follow,max-image-preview:large');
       assert.equal(await page.locator('.hero-visual').count(),0);
+      const downloads = page.locator('#downloads');
+      assert.equal(await downloads.locator('[data-platform-card]').count(),5);
+      assert.equal(await downloads.locator('h2').count(),1);
+      assert.equal(await downloads.locator('h3').count(),5);
+      assert.equal(await downloads.locator('.platform-download').count(),2);
+      assert.equal(await downloads.locator('[data-current-device]:visible').count(),1);
+      const columns = await downloads.locator('.download-grid').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
+      assert.equal(columns,device.width>1100?5:device.width>600?2:1);
+      const editorBox = await page.locator('#try').boundingBox(), downloadBox = await downloads.boundingBox();
+      assert.ok(downloadBox.y >= editorBox.y + editorBox.height);
+      assert.ok(downloadBox.y < (await page.locator('.typing-help').boundingBox()).y);
+      for (const platform of ['iOS','Android','Linux']) {
+        assert.equal(await downloads.locator(`[data-platform-card="${platform}"] .platform-download`).count(),0);
+        assert.equal(await downloads.locator(`[data-platform-card="${platform}"] .setup-link`).getAttribute('href'),prefix+'#try');
+      }
+      for (const slug of ['mac','windows']) assert.equal(await downloads.locator(`.setup-link[href="${prefix}${slug}/"]`).count(),1);
       assert.ok((await input.boundingBox()).y<360,`${device.name} ${prefix}: editor above fold`);
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
       await type('pani');await waitOutput('पनि');
@@ -121,7 +137,7 @@ try {
         await page.waitForLoadState('networkidle');
         await page.goBack({waitUntil:'networkidle'});assert.equal(await page.locator('.mobile-menu').getAttribute('aria-expanded'),'false');
       }
-      checks.push(`${device.name} ${prefix}: layout, metadata, typing, shortcut labels/selection, undo/redo, copy, modes, clear, example, tap${device.mobile?', soft-keyboard input, literal digits, composition/paste safeguards':''}`);
+      checks.push(`${device.name} ${prefix}: layout, full download component, metadata, typing, shortcut labels/selection, undo/redo, copy, modes, clear, example, tap${device.mobile?', soft-keyboard input, literal digits, composition/paste safeguards':''}`);
     }
     await context.close();
   }
@@ -130,7 +146,9 @@ try {
     await page.goto(base+prefix+'?analytics_test=1');
     assert.equal(await page.locator('#web-input').count(),1);
     assert.ok(await page.locator('noscript').isVisible());
-    await page.locator('.other-platforms-link').click();assert.equal(new URL(page.url()).pathname,prefix+'download/');
+    assert.equal(await page.locator('#downloads [data-platform-card]').count(),5);
+    assert.equal(await page.locator('#downloads .platform-download').count(),2);
+    await page.locator('.site-footer a[href$="/download/"]').click();assert.equal(new URL(page.url()).pathname,prefix+'download/');
     checks.push(`${prefix}: no-JavaScript editor explanation and crawlable downloads`);
   }
   assert.deepEqual(errors,[]);assert.deepEqual(telemetry,[]);
