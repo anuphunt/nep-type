@@ -1,4 +1,5 @@
 import {WebEngine} from './web-engine.mjs';
+import {usesNumberSuggestions, candidateIndex} from './suggestion-shortcuts.mjs';
 
 const pad = document.getElementById('web-pad');
 if (pad) {
@@ -7,7 +8,12 @@ if (pad) {
   const copy = pad.querySelector('#web-copy'), mode = pad.querySelector('#web-mode');
   const ne = document.documentElement.lang === 'ne';
   const mac = /Mac|iPhone|iPad/i.test(navigator.userAgentData?.platform || navigator.platform);
-  const shortcut = number => mac ? `⌥${number}` : `Alt+${number}`;
+  const numberSuggestions = usesNumberSuggestions(navigator, window.matchMedia('(pointer: coarse)').matches);
+  const shortcut = number => numberSuggestions ? String(number) : mac ? `⌥${number}` : `Alt+${number}`;
+  const shortcutHelp = document.getElementById('web-shortcut-help');
+  if (numberSuggestions && shortcutHelp) shortcutHelp.textContent = ne
+    ? 'शब्द छानेर सुझाव थिच्नुहोस् वा त्यसको नम्बर टाइप गर्नुहोस्। अङ्क नै लेख्न पहिले स्पेस थिच्नुहोस्।'
+    : 'Tap a suggestion or type its number for the active word. To enter a number as text, type a space first.';
   const words = {
     ready: ne ? 'तपाईंको लेखाइ यही ब्राउजरमा रहन्छ।' : 'Your text stays in this browser.',
     loading: ne ? 'टाइपिङ तयार हुँदैछ…' : 'Getting the pad ready…',
@@ -43,9 +49,10 @@ if (pad) {
     const selected = current.rendered.words.find(value=>value.start===word.start)?.value;
     for (const [index,value] of visibleCandidates().entries()) {
       const button = document.createElement('button'); button.type = 'button'; button.textContent = value;
-      const hint = document.createElement('kbd'); hint.textContent = shortcut(index+1); hint.setAttribute('aria-hidden','true'); button.append(hint);
-      button.setAttribute('aria-pressed',String(value===selected)); button.setAttribute('aria-keyshortcuts',`Alt+${index+1}`);
-      button.title = `${value} · ${mac?'Option':'Alt'} + ${index+1}`; button.setAttribute('aria-label',button.title);
+      const hint = document.createElement('kbd'); hint.textContent = shortcut(index+1); hint.setAttribute('aria-hidden','true');
+      if (numberSuggestions) { hint.className = 'suggestion-number'; button.prepend(hint); } else button.append(hint);
+      button.setAttribute('aria-pressed',String(value===selected)); button.setAttribute('aria-keyshortcuts',numberSuggestions ? String(index+1) : `Alt+${index+1}`);
+      button.title = numberSuggestions ? `${index+1} · ${value}` : `${value} · ${mac?'Option':'Alt'} + ${index+1}`; button.setAttribute('aria-label',button.title);
       if (/[\u0900-\u097f]/u.test(value)) button.lang = 'ne';
       button.addEventListener('mousedown',event=>event.preventDefault()); button.addEventListener('click',()=>choose(value)); suggestions.append(button);
     }
@@ -63,7 +70,7 @@ if (pad) {
     const word = current.rendered.words.find(w=>output.selectionStart>=w.outputStart&&output.selectionStart<=w.outputEnd);
     return word ? word.start : input.value.length+1;
   }
-  async function update(entry = 'typing', extra = {}) {
+  async function update(entry = 'typing', extra = {}, beforeApply = () => {}) {
     const source = input.value, caret = extra.caret ?? sourceCaret();
     const key = JSON.stringify([source,mode.value,caret]);
     if (key===lastKey&&!extra.choice&&!extra.operation) return;
@@ -74,18 +81,40 @@ if (pad) {
       if (generation!==revision || input.value!==source) return;
       current=value;
       if (extra.operation) { input.value=value.source; mode.value=value.mode===2?'all':'mixed'; input.setSelectionRange(Math.min(caret,input.value.length),Math.min(caret,input.value.length)); lastKey=JSON.stringify([input.value,mode.value,input.selectionStart]); }
+      beforeApply();
       output.value=value.rendered.text; copy.disabled=!output.value; status.textContent=words.ready; drawSuggestions();
       if (!used&&input.value.trim()) { used=true;track('neptype_tool_used',{entry_method:entry}); }
+      return true;
     } catch { if (generation===revision) {lastKey='';status.textContent=words.error;} }
   }
   async function choose(value) {
     if (!current.active || current.source!==input.value || !current.candidates.includes(value)) return;
     const editor=document.activeElement===output?output:input, start=editor.selectionStart, end=editor.selectionEnd;
-    const selected=current.active;
-    await update('typing',{choice:value,token:selected,caret:selected.start});
-    if (current.source===input.value) { editor.focus({preventScroll:true});editor.setSelectionRange(start,end); }
-    track('neptype_tool_word_selected');
+    const selected=current.active, focused=document.activeElement;
+    let restoreSelection = false;
+    const applied = await update('typing',{choice:value,token:selected,caret:selected.start},()=>{
+      restoreSelection = document.activeElement === focused && editor.selectionStart === start && editor.selectionEnd === end;
+    });
+    if (applied && restoreSelection) { editor.focus({preventScroll:true});editor.setSelectionRange(start,end); }
+    if (applied) track('neptype_tool_word_selected');
   }
+  function chooseNumber(digit, editor) {
+    const index = candidateIndex(digit);
+    if (index < 0 || !numberSuggestions || !current.active || current.source !== input.value ||
+        editor.selectionStart !== editor.selectionEnd) return false;
+    const caret = sourceCaret(editor), word = current.active;
+    // Never eat a digit after whitespace, during pending composition, or on a stale word.
+    if (word.literal || caret < word.start || caret > word.end) return false;
+    const value = visibleCandidates()[index];
+    if (value === undefined) return false;
+    choose(value);
+    return true;
+  }
+  input.addEventListener('beforeinput', event => {
+    // Soft keyboards often provide no useful keydown.code. Paste, replacement text,
+    // IME composition and non-cancelable input must keep their normal behavior.
+    if (event.cancelable && !event.isComposing && event.inputType === 'insertText' && chooseNumber(event.data, input)) event.preventDefault();
+  });
   input.addEventListener('focus',()=>load().catch(()=>{}));
   input.addEventListener('input',event=>{if(!event.isComposing)update();}); input.addEventListener('compositionend',()=>update());
   for (const editor of [input,output]) {
@@ -97,6 +126,9 @@ if (pad) {
       }
       if ((event.metaKey||event.ctrlKey)&&event.altKey&&!event.shiftKey&&['BracketLeft','BracketRight'].includes(event.code)) {
         event.preventDefault();const pages=Math.max(1,Math.ceil(current.candidates.filter(v=>v!==current.active?.text).length/4));page=Math.max(0,Math.min(pages-1,page+(event.code==='BracketLeft'?-1:1)));drawSuggestions();return;
+      }
+      if (!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey && chooseNumber(event.key, editor)) {
+        event.preventDefault(); return;
       }
       if (!event.altKey||event.ctrlKey||event.metaKey||event.shiftKey) return;
       const match=/^Digit([1-9])$/.exec(event.code), value=match&&visibleCandidates()[Number(match[1])-1];

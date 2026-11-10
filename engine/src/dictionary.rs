@@ -7,6 +7,10 @@ use std::{
 pub static PACK: &[u8] = include_bytes!("../data/neptype.pack");
 pub const MANIFEST: &str = include_str!("../data/manifest.json");
 #[derive(Deserialize)]
+struct CommonPreferences {
+    spellings: HashMap<String, Vec<String>>,
+}
+#[derive(Deserialize)]
 struct Meta {
     lexicon: HashMap<String, Vec<String>>,
     common: HashSet<String>,
@@ -46,7 +50,14 @@ impl Dictionaries {
                 at += len;
                 bytes
             };
-            let meta: Meta = serde_json::from_slice(part()).expect("Canonical dictionary metadata");
+            let mut meta: Meta = serde_json::from_slice(part()).expect("Canonical dictionary metadata");
+            // Keep the product's established common spellings without loading
+            // either retired bulk index. This small, versioned preference set
+            // is independent of the unchanged source pack and its audit IDs.
+            let preferences: CommonPreferences = serde_json::from_str(include_str!(
+                "../data/common-spelling-preferences.json"
+            )).expect("Common spelling preferences");
+            meta.lexicon.extend(preferences.spellings);
             Self {
                 lexicon: meta.lexicon,
                 common: meta.common,

@@ -21,18 +21,14 @@ fn vehicle_candidates_retain_existing_spellings_and_original_input() {
     for source in ["gaadi", "Gaadi", "gadi", "Gadi"] {
         let values = candidates(source);
         assert_eq!(values.first().unwrap(), "गाडी");
-        // Keep the phonetic result, external alternatives, and case-exact Roman input.
-        assert_eq!(
-            &values[1..],
-            &[
-                phonetic(source),
-                "अगाडि".into(),
-                "अगाडी".into(),
-                source.into()
-            ]
-        );
-        assert_eq!(d.aliases(&source.to_lowercase()), ["अगाडि", "अगाडी"]);
-        assert!(d.aksh(&source.to_lowercase()).is_empty());
+        // Keep the phonetic result, dictionary alternatives, and case-exact Roman input.
+        assert!(values.contains(&phonetic(source)));
+        assert!(values.contains(&source.to_string()));
+        assert_eq!(values.iter().collect::<std::collections::HashSet<_>>().len(), values.len());
+        // The retired Google/Aksharantar alternatives are no longer required.
+        for intentional in d.intentional(&source.to_lowercase()) {
+            assert!(values.contains(&intentional));
+        }
     }
     // An authored word must not alter the generic d/i character rules.
     assert_eq!(phonetic("gaadi"), "गादि");
@@ -76,12 +72,12 @@ fn vehicle_session_and_explicit_alternatives_remain_usable() {
         let mut composer = Composer::default();
         composer.set_source(source.into());
         let token = tokens(source).remove(0);
-        composer.choose(&token, "अगाडि".into());
-        assert_eq!(render(source, 0, &composer.current.overrides).text, "अगाडि");
+        composer.choose(&token, phonetic(source));
+        assert_eq!(render(source, 0, &composer.current.overrides).text, phonetic(source));
         composer.undo();
         assert_eq!(render(source, 0, &composer.current.overrides).text, "गाडी");
         composer.redo();
-        assert_eq!(render(source, 0, &composer.current.overrides).text, "अगाडि");
+        assert_eq!(render(source, 0, &composer.current.overrides).text, phonetic(source));
         composer.choose(&token, source.into());
         assert_eq!(render(source, 0, &composer.current.overrides).text, source);
     }

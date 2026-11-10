@@ -109,5 +109,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: python3 -m unittest discover -s scripts/tests -v
       - run: npm --prefix landing-page ci
       - run: npm --prefix landing-page test

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {detectPlatform, downloadAction} from '../platform.mjs';
-import {renderDownloadPage} from '../download-page.mjs';
+import {renderDownloadPage, renderHomeDownloads} from '../download-page.mjs';
 
 test('device detection handles desktop, mobile, reduced UA and iPad desktop mode', () => {
   const fixtures = [
@@ -49,15 +49,36 @@ test('all-platform cards expose only available installers; pending Windows remai
   for (const locale of ['en','ne']) {
     for (const windows of [undefined,'https://example.com/verified.exe']) {
       const html = renderDownloadPage(locale, {mac:'https://example.com/app.dmg',windows,macVersion:'1.0',windowsVersion:'1.0-preview.1'}, escape);
-      assert.equal([...html.matchAll(/data-platform-card=/g)].length, 4);
+      assert.equal([...html.matchAll(/data-platform-card=/g)].length, 5);
       assert.equal([...html.matchAll(/class="button platform-download"/g)].length, windows ? 2 : 1);
       assert.ok(!html.includes('href="undefined"'));
       assert.ok(!html.includes('<button'));
-      for (const platform of ['iOS','Linux']) {
+      for (const platform of ['iOS','Android','Linux']) {
         const card = html.match(new RegExp(`<article[^>]*data-platform-card="${platform}"[\\s\\S]*?</article>`))[0];
         assert.ok(!card.includes('neptype_download_clicked'));
         assert.match(card, /class="coming-soon"/);
+        assert.ok(card.includes(locale === 'ne' ? 'छिट्टै आउँदैछ' : 'Coming soon'));
+        assert.ok(card.includes(`href="${locale === 'ne' ? '/ne' : ''}/#try"`));
       }
     }
+  }
+});
+
+test('homepage embeds the complete download component with a valid heading hierarchy', () => {
+  const escape = text => String(text).replaceAll('&','&amp;').replaceAll('"','&quot;');
+  for (const locale of ['en','ne']) {
+    const releases = {mac:'https://example.com/app.dmg', windows:'https://example.com/app.exe'};
+    const page = renderDownloadPage(locale,releases,escape);
+    const home = renderHomeDownloads(locale,releases,escape);
+    assert.equal([...home.matchAll(/data-platform-card=/g)].length,5);
+    assert.equal([...home.matchAll(/class="button platform-download"/g)].length,2);
+    assert.match(home, /<section id="downloads"/);
+    assert.match(home, /<h2 id="downloads-title">/);
+    assert.equal([...home.matchAll(/<h3 id="platform-/g)].length,5);
+    assert.ok(!home.includes('<main') && !home.includes('<h1'));
+    assert.match(page, /<main id="main"/);
+    assert.match(page, /<h1 id="downloads-title">/);
+    const links = html => [...html.matchAll(/href="([^"]+)"/g)].map(match=>match[1]);
+    assert.deepEqual(links(home),links(page),'homepage and downloads page use the same verified destinations');
   }
 });

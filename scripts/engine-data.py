@@ -18,12 +18,22 @@ def main():
   manifest=json.loads(MANIFEST.read_text())
  if manifest.get('schema')!=3 or manifest.get('dictionary')!='roman-nepali-v2-pilot-v1':
   raise SystemExit('The app requires the standalone Roman Nepali dictionary; run engine-data.py refresh')
+ # A clean source checkout intentionally excludes the private alias exports.
+ # Fetch the independently hashed compiled runtime in that case; local data
+ # authoring still validates every available source and refresh needs exports.
+ raw_sources = ('data/compiled/roman-nepali-intentional.tsv.gz', 'data/compiled/roman-nepali-typos.tsv.gz', 'data/compiled/roman-nepali-reviewed.json')
+ missing = [name for name in raw_sources if not (ROOT/name).exists()]
+ pack_only = os.environ.get('NEPTYPE_PACK_ONLY') == '1' or len(missing) == len(raw_sources)
+ if missing and not pack_only:
+  raise SystemExit('Incomplete dictionary exports; restore all source files or explicitly use NEPTYPE_PACK_ONLY=1')
+ if pack_only and not PACK.exists():
+  subprocess.run([sys.executable,str(ROOT/'scripts/fetch-runtime-dictionary.py')],check=True)
  for name,expected in manifest['sources'].items():
-  if os.environ.get('NEPTYPE_PACK_ONLY') == '1' and not (ROOT/name).exists() and name in ('data/compiled/roman-nepali-intentional.tsv.gz','data/compiled/roman-nepali-typos.tsv.gz','data/compiled/roman-nepali-reviewed.json'):
+  if pack_only and not (ROOT/name).exists() and name in raw_sources:
    continue
   if digest(ROOT/name)!=expected: raise SystemExit('Dictionary source changed; review and run scripts/engine-data.py refresh: '+name)
  if not PACK.exists():
-  if os.environ.get('NEPTYPE_PACK_ONLY') == '1': raise SystemExit('Run scripts/fetch-runtime-dictionary.py before building')
+  if pack_only: raise SystemExit('Verified runtime download did not produce the dictionary pack')
   subprocess.run([sys.executable,str(ROOT/'scripts/build-dictionary-pack.py')],check=True,stdout=subprocess.DEVNULL)
   if json.loads(MANIFEST.read_text())!=manifest: raise SystemExit('Regenerated dictionary does not match the pinned manifest')
  if digest(PACK)!=manifest['sha256']: raise SystemExit('Dictionary pack does not match its pinned fingerprint')

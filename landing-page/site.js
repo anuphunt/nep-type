@@ -7,7 +7,6 @@ const dialogBody = document.getElementById('dialog-body');
 const isNepali = document.documentElement.lang === 'ne';
 const projectLink = `<a href="https://github.com/anuphunt/nep-type" target="_blank" rel="noopener noreferrer">${isNepali ? 'GitHub मा हेर्नुहोस्' : 'View on GitHub'}</a>`;
 const platforms = {
-  macOS: ['NepType for Mac', 'Build NepType for Mac from source. A public installer isn’t available yet.', 'Open source'],
   iOS: ['NepType for iPhone', 'The iPhone pad and keyboard are experimental. An App Store release isn’t available yet.', 'In progress'],
   Android: ['NepType for Android', 'The Android keyboard is in development. A download isn’t available yet.', 'In progress'],
   Linux: ['NepType for Linux', 'Linux support is experimental. A public package isn’t available yet.', 'In progress']

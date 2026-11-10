@@ -9,7 +9,7 @@ import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
 import {windowsDownload, windowsPage} from './windows-release.mjs';
-import {downloadPage, renderDownloadPage} from './download-page.mjs';
+import {downloadPage, renderDownloadPage, renderHomeDownloads} from './download-page.mjs';
 import {homeHelp, typingGuide} from './typing-guide.mjs';
 import {loadArticles, articlePages} from './article-content.mjs';
 const articles = await loadArticles();
@@ -22,12 +22,15 @@ const output = path.join(root, 'dist');
 const {origin, production} = siteConfig();
 const posthogKey = process.env.PUBLIC_POSTHOG_KEY || '';
 const posthogHost = process.env.PUBLIC_POSTHOG_HOST || '';
+const gaMeasurementId = process.env.PUBLIC_GA_MEASUREMENT_ID || '';
+if (gaMeasurementId && !/^G-[A-Z0-9]{4,20}$/.test(gaMeasurementId)) throw Error('PUBLIC_GA_MEASUREMENT_ID must be a GA4 web measurement ID.');
 if (Boolean(posthogKey) !== Boolean(posthogHost)) throw Error('Set PUBLIC_POSTHOG_KEY and PUBLIC_POSTHOG_HOST together.');
 if (posthogHost && new URL(posthogHost).protocol !== 'https:') throw Error('PUBLIC_POSTHOG_HOST must use HTTPS.');
 const macRelease = JSON.parse(await readFile(path.join(root, 'mac-release.json'), 'utf8'));
 const windowsRelease = windowsDownload(JSON.parse(await readFile(path.join(root, 'windows-release.json'), 'utf8')));
 pages.windows = {en: windowsPage(windowsRelease, 'en'), ne: windowsPage(windowsRelease, 'ne')};
 pages.download = downloadPage;
+const publicPaths = ['/', '/ne/', ...Object.keys(pages).flatMap(slug => ['/'+slug+'/', '/ne/'+slug+'/'])];
 const downloadUrl = process.env.APP_DOWNLOAD_URL || macRelease.url;
 if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -46,7 +49,8 @@ function localize(html, locale, slug = '') {
   for (const [english, nepali] of Object.entries(labels)) {
     html = html.replaceAll(`>${english}<`, `>${nepali}<`);
   }
-  html = html.replaceAll('Works offline</span>', 'अफलाइन चल्छ</span>')
+  html = html.replaceAll('Local processing</span>', 'उपकरणमै प्रशोधन</span>')
+    .replaceAll('Works offline</span>', 'अफलाइन चल्छ</span>')
     .replaceAll('No connection needed</span>', 'इन्टरनेट चाहिँदैन</span>')
     .replaceAll('Copy example <span>', 'उदाहरण कपी गर्नुहोस् <span>')
     .replaceAll('Try another spelling</div>', 'अर्को हिज्जे रोज्नुहोस्</div>')
@@ -62,6 +66,7 @@ function localize(html, locale, slug = '') {
     .replaceAll('href="/changelog/"', 'href="/ne/changelog/"')
     .replaceAll('href="/"', 'href="/ne/"')
     .replaceAll('alt="NepType Mac app showing Roman input, Nepali spelling suggestions, and mixed Nepali and English output."', 'alt="NepType Mac एपमा रोमन इनपुट, नेपाली हिज्जे सुझाव र नेपाली तथा अंग्रेजी मिसिएको पाठ।"')
+    .replaceAll('aria-label="Download NepType"', 'aria-label="NepType डाउनलोड"')
     .replaceAll('aria-label="Toggle navigation"', 'aria-label="नेभिगेसन खोल्नुहोस्"')
     .replaceAll('aria-label="Close dialog"', 'aria-label="बन्द गर्नुहोस्"')
     .replaceAll('Skip to content', 'मुख्य सामग्रीमा जानुहोस्')
@@ -80,6 +85,8 @@ function metadata(locale, slug, title, description) {
   const content = pages[slug]?.[locale];
   const webappId = origin + '/#browser-tool';
   const appId = origin + '/#mac-app';
+  const socialImage = slug === 'mac' ? {file:'neptype-mac.png',width:720,height:540,alt:locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}
+    : {file:`neptype-web-${locale}.png`,width:1200,height:630,alt:locale === 'ne' ? 'NepType अनलाइन प्याडमा रोमन लेखाइ र नेपाली युनिकोड नतिजा' : 'NepType online typing pad with Roman input and Nepali Unicode output'};
   const graph = [
     {'@type': 'WebSite', '@id': origin + '/#website', name: 'NepType', url: origin + '/', inLanguage: ['en', 'ne']},
     {'@type': content?.kind === 'article' ? 'TechArticle' : content?.kind === 'collection' ? 'CollectionPage' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
@@ -109,15 +116,15 @@ function metadata(locale, slug, title, description) {
   <meta property="og:url" content="${url}">
   <meta property="og:locale" content="${locale === 'ne' ? 'ne_NP' : 'en_US'}">
   <meta property="og:locale:alternate" content="${locale === 'ne' ? 'en_US' : 'ne_NP'}">
-  <meta property="og:image" content="${origin}/assets/neptype-mac.png">
-  <meta property="og:image:width" content="720">
-  <meta property="og:image:height" content="540">
-  <meta property="og:image:alt" content="${locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}">
+  <meta property="og:image" content="${origin}/assets/${socialImage.file}">
+  <meta property="og:image:width" content="${socialImage.width}">
+  <meta property="og:image:height" content="${socialImage.height}">
+  <meta property="og:image:alt" content="${socialImage.alt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escape(title)}">
   <meta name="twitter:description" content="${escape(description)}">
-  <meta name="twitter:image" content="${origin}/assets/neptype-mac.png">
-  <meta name="twitter:image:alt" content="${locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}">
+  <meta name="twitter:image" content="${origin}/assets/${socialImage.file}">
+  <meta name="twitter:image:alt" content="${socialImage.alt}">
   <link rel="preload" href="/assets/fonts/${locale === 'ne' ? 'noto-sans-devanagari' : 'dm-sans-latin'}.woff2" as="font" type="font/woff2" crossorigin>
   <script type="application/ld+json">${JSON.stringify({'@context': 'https://schema.org', '@graph': graph}).replaceAll('<', '\\u003c')}</script>`;
 }
@@ -156,12 +163,12 @@ function finish(html, locale, slug, title, description) {
 
 await rm(output, {recursive: true, force: true});
 await mkdir(path.join(output, 'assets'), {recursive: true});
-for (const asset of ['neptype-icon.png', 'neptype-mac.png']) {
+for (const asset of ['neptype-icon.png', 'neptype-mac.png', 'neptype-web-en.png', 'neptype-web-ne.png']) {
   await copyFile(path.join(root, 'assets', asset), path.join(output, 'assets', asset));
 }
 await cp(path.join(root, 'assets/fonts'), path.join(output, 'assets/fonts'), {recursive: true});
 // Only production assets are published; design variations and evidence stay in the repo.
-for (const asset of ['site.js', 'platform.mjs', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
+for (const asset of ['site.js', 'platform.mjs', 'final.css', 'web-engine.mjs', 'web-tool.mjs', 'suggestion-shortcuts.mjs', 'engine-worker.mjs']) await copyFile(path.join(root, asset), path.join(output, asset));
 // Build the same Rust engine and embedded dictionary used by native adapters.
 execFileSync('bash', [path.join(root, '../scripts/build-web-engine.sh')], {stdio:'inherit'});
 const wasm = await readFile(path.join(root, 'engine-build/neptype_engine_bg.wasm'));
@@ -177,7 +184,7 @@ await writeFile(path.join(output, 'engine-config.json'), JSON.stringify({module:
 await writeFile(path.join(output, 'assets/neptype-dictionaries.json'), JSON.stringify(dictionary));
 await copyFile(path.join(root, '../engine/data/RUST-LICENSES.txt'), path.join(output, 'assets/RUST-LICENSES.txt'));
 for (const license of ['CMUDICT-LICENSE.txt','GOOGLE-NE-ATTRIBUTION.txt','AKSHARANTAR-ATTRIBUTION.txt']) await copyFile(path.join(root, '../data/sources', license), path.join(output, 'assets', license));
-await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production)}});
+await bundle({entryPoints:[path.join(root, 'analytics.mjs')], outfile:path.join(output, 'analytics.js'), bundle:true, minify:true, target:['es2020'], format:'iife', define:{__POSTHOG_KEY__:JSON.stringify(posthogKey), __POSTHOG_HOST__:JSON.stringify(posthogHost), __PRODUCTION__:JSON.stringify(production), __GA_MEASUREMENT_ID__:JSON.stringify(gaMeasurementId), __PUBLIC_PATHS__:JSON.stringify(publicPaths)}});
 let styles = await readFile(path.join(root, 'styles.css'), 'utf8');
 // Self-host licensed fonts to avoid the external stylesheet and connection chain.
 styles = await readFile(path.join(root, 'fonts.css'), 'utf8') + '\n' + styles.replace(/^@import url\([^\n]+\);\n/, '');
@@ -186,7 +193,7 @@ await writeFile(path.join(output, 'styles.css'), styles);
 const urls = [];
 for (const locale of ['en', 'ne']) {
   const description = homeDescriptions[locale];
-  const home = finish(localize(template, locale).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
+  const home = finish(localize(template, locale).replace('<!-- HOME_DOWNLOADS -->', renderHomeDownloads(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape)).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
   const directory = path.join(output, route(locale));
   await mkdir(directory, {recursive: true});
   await writeFile(path.join(directory, 'index.html'), home);
@@ -200,7 +207,7 @@ for (const locale of ['en', 'ne']) {
     const linkUrl = nativeDownload || repository;
     const linkText = nativeDownload ? (slug === 'windows' ? (locale === 'ne' ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows') : (locale === 'ne' ? 'Mac का लागि डाउनलोड गर्नुहोस् (.dmg)' : 'Download for Mac (.dmg)')) : content.link;
     const linkEvent = nativeDownload ? 'neptype_download_clicked' : 'neptype_source_opened';
-    const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle">${locale === 'ne' ? 'यो ब्राउजरमा एनालिटिक्स बन्द गर्नुहोस्' : 'Turn off analytics in this browser'}</button></p>` : '';
+    const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle" type="button" hidden>${locale === 'ne' ? 'एनालिटिक्स सेटिङ' : 'Analytics settings'}</button></p>` : '';
     const pageAction = (linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'windows' ? ' data-platform="Windows"' : ''}${nativeDownload ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '');
     const nativePage = slug === 'mac' || slug === 'windows';
     const body = slug === 'download' ? renderDownloadPage(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${nativePage ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${nativePage ? '' : pageAction}${privacyControl}</main>`;

@@ -5,8 +5,8 @@ import init, {query, dictionaryId, PadEngine} from '../engine-build/neptype_engi
 await init({module_or_path:await readFile(new URL('../engine-build/neptype_engine_bg.wasm',import.meta.url))});
 const run = request => JSON.parse(query(JSON.stringify(request)));
 
-test('WebAssembly matches all frozen Swift candidate, rendering and session cases',async()=>{
-  const cases=(await readFile(new URL('../../shared/fixtures/swift-baseline.jsonl',import.meta.url),'utf8')).trim().split('\n');
+test('WebAssembly matches all standalone dictionary candidate, rendering and session cases',async()=>{
+  const cases=(await readFile(new URL('../../shared/fixtures/standalone-baseline.jsonl',import.meta.url),'utf8')).trim().split('\n');
   for (const line of cases) { const {request,expected}=JSON.parse(line); const value=run(request); assert.deepEqual(request.op==='session'?{trace:value.trace}:value,expected,JSON.stringify(request)); }
   assert.ok(cases.length>2000);
 });

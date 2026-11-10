@@ -163,9 +163,10 @@ pub fn base(input: &str) -> Vec<String> {
     }
     let d = Dictionaries::shared();
     let key = input.to_lowercase();
-    // The new standalone dictionary is the only source of Nepali aliases.
-    // Its intentional spellings precede phonetic fallbacks and typo suggestions.
-    let mut choices = d.intentional(&key);
+    // Established common spellings and individually reviewed aliases precede
+    // generated intentional spellings. Typo suggestions remain separate.
+    let mut choices = d.lexicon.get(&key).cloned().unwrap_or_default();
+    choices.extend(d.intentional(&key));
     if d.common.contains(&key)
         || (input.graphemes(true).count() > 1 && input == input.to_uppercase())
         || (choices.is_empty() && d.known(&key))
@@ -305,7 +306,7 @@ pub fn context(source: &str, mode: u8) -> Vec<Choice> {
                     preferred: w.text.clone(),
                     uncertain: false,
                 }
-            } else if d.common.contains(&key) && d.lexicon.contains_key(&key) {
+            } else if d.common.contains(&key) {
                 Choice {
                     token: w.clone(),
                     preferred: w.text.clone(),

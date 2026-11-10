@@ -1215,10 +1215,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         input.setSelectedRange(NSRange(location: 4, length: 0))
         textDidChange(Notification(name: NSText.didChangeNotification, object: input))
         let originalPreview = output.string
-        if let index = choices.firstIndex(of: "बाटो"), let button = candidateRow.arrangedSubviews[index] as? NSButton {
+        if let index = choices.firstIndex(of: "बटी"), let button = candidateRow.arrangedSubviews[index] as? NSButton {
             check("generated_candidate_marked", button.title.contains("·"))
             button.performClick(nil)
-            check("generated_candidate_selection", output.string == "बाटो")
+            check("generated_candidate_selection", output.string == "बटी")
             undoAction(nil)
             check("generated_candidate_undo", output.string == originalPreview)
         } else {
@@ -1229,7 +1229,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         input.string = "bhaisakeko"
         input.setSelectedRange(NSRange(location: 10, length: 0))
         textDidChange(Notification(name: NSText.didChangeNotification, object: input))
-        check("uncertainty_explained", candidateTitle.stringValue.contains("UNSURE") && output.string == "भैसकेको")
+        check("intentional_dictionary_default", output.string == "भइसकेको")
         let oldPreview = output.string
         if let index = choices.firstIndex(of: "भइसकेको"), let button = candidateRow.arrangedSubviews[index] as? NSButton {
             check("aksharantar_candidate_marked", button.title.contains("†"))
@@ -1242,8 +1242,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
             check("aksharantar_candidate_selection", false)
             check("aksharantar_candidate_undo", false)
         }
-        input.string = "man"
-        input.setSelectedRange(NSRange(location: 3, length: 0))
+        input.string = "paani"
+        input.setSelectedRange(NSRange(location: 5, length: 0))
         textDidChange(Notification(name: NSText.didChangeNotification, object: input))
         let stale = candidateRow.arrangedSubviews.first as? CandidateChoiceButton
         let firstPage = choices
@@ -1251,7 +1251,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         if candidateNext.isEnabled, let stale {
             nextCandidates(nil)
             check("candidate_page_advances", candidatePage == 1 && choices != firstPage)
-            check("candidate_original_on_later_page", choices.last == "man")
+            check("candidate_original_on_later_page", choices.last == "paani")
             candidateAction(stale)
             check("stale_candidate_action_ignored", output.string == beforeStale)
             previousCandidates(nil)

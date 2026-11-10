@@ -61,7 +61,7 @@ def main():
     parts=[json.dumps(meta,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode(),('\n'.join(english)+'\n').encode(),u32(len(identifiers))+u32(len(pool_blocks))+b''.join(map(u32,pool_blocks))+pool,typos,intentional]
     payload=b''.join(u32(len(p))+p for p in parts);identity=hashlib.sha256(payload).digest();pack=b'NEPTYPE3'+identity+payload
     target=OUT/'neptype.pack';temporary=target.with_name(target.name+f'.{os.getpid()}.staging');temporary.write_bytes(pack);temporary.replace(target)
-    sources=SOURCES+['data/compiled/roman-nepali-reviewed.json','data/compiled/roman-nepali.manifest.json','data/sources/english-common-v1.json','data/sources/cmudict.dict']
+    sources=SOURCES+['data/compiled/roman-nepali-reviewed.json','data/compiled/roman-nepali.manifest.json','data/sources/english-common-v1.json','data/sources/cmudict.dict','engine/data/common-spelling-preferences.json']
     manifest={'schema':3,'dictionary':'roman-nepali-v2-pilot-v1','id':identity.hex(),'sha256':hashlib.sha256(pack).hexdigest(),'bytes':len(pack),'english_words':len(english),'reviewed_keys':len(meta['lexicon']),'intentional_rows':intentional_count,'intentional_pairs':intentional_pairs,'typo_rows':typo_count,'typo_pairs':typo_pairs,'unique_spellings':len(identifiers),'source_database_sha256':provenance['source_database_sha256'],'pilot_approved':provenance['pilot_approved'],'pilot_held_suppressed':provenance['pilot_held_suppressed'],'sources':{s:digest(ROOT/s) for s in sources}}
     (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n');print(json.dumps(manifest))
 if __name__=='__main__':main()

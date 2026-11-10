@@ -17,7 +17,8 @@
     "data/compiled/roman-nepali-typos.tsv.gz": "6417e2dda9e8de038cc2828de1e7b0667cf8693949b6b976972d95cd6dcdb5dc",
     "data/compiled/roman-nepali.manifest.json": "23483cb68c39e14a0486c37fc982813b919f9620ed5c3e0790ef5eb22ac29bb7",
     "data/sources/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-    "data/sources/english-common-v1.json": "d09e37e5141de0973b6b6ad99481102cfeedb3ba6bb96957a2aa53a752f65c1d"
+    "data/sources/english-common-v1.json": "d09e37e5141de0973b6b6ad99481102cfeedb3ba6bb96957a2aa53a752f65c1d",
+    "engine/data/common-spelling-preferences.json": "34e30b1f7dd745ae3e85c158e0fbedc9ddf6758bf5488786d9327ee4f5e47d5a"
   },
   "typo_pairs": 21566450,
   "typo_rows": 19664004,

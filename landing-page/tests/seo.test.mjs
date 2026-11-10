@@ -78,6 +78,24 @@ test('production pages expose unique crawlable content, correct locales and vali
     }
     assert.ok(html.includes(`href="${pathname === '/' || pathname === '/ne/' ? '' : ne ? '/ne/' : '/'}#try"`), `${pathname}: tool is reachable`);
   }
+  assert.ok(!urls.some(url => /\/(?:ne\/)?app\//.test(url)), 'no duplicate editor route');
+  for (const file of ['app/index.html','ne/app/index.html']) await assert.rejects(access(new URL(file,dist)));
+  for (const pathname of ['/','/ne/']) {
+    const html = documents.get(pathname), locale = pathname === '/' ? 'en' : 'ne';
+    assert.equal(matches(html, /id="web-input"/g).length,1);
+    assert.ok(html.indexOf('id="web-pad"') < html.indexOf('id="downloads"'));
+    assert.ok(!html.includes('class="hero-visual"'));
+    assert.ok(!html.includes('<!-- HOME_DOWNLOADS -->'));
+    assert.equal(matches(html, /data-platform-card=/g).length,5);
+    assert.match(html, /<section id="downloads"[^>]*>[\s\S]*<h2 id="downloads-title">/);
+    assert.ok(!html.includes('class="desktop-downloads'));
+    assert.equal(matches(html, /<main\b/g).length,1);
+    assert.ok(!html.includes('No connection needed') && !html.includes('Works offline'));
+    assert.ok(html.includes(`property="og:image" content="https://neptype.com/assets/neptype-web-${locale}.png"`));
+    assert.ok(html.includes('property="og:image:width" content="1200"'));
+    assert.ok(!html.includes('href="/app/') && !html.includes('href="/ne/app/'));
+  }
+  assert.match(documents.get('/mac/'), /property="og:image" content="https:\/\/neptype.com\/assets\/neptype-mac.png"/);
   const home = documents.get('/');
   assert.match(home, /Type Nepali online/);
   assert.match(home, /How to type Nepali with English letters/);

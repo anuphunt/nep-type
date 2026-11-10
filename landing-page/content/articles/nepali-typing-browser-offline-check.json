@@ -1,0 +1,275 @@
+{
+  "slug": "nepali-typing-browser-offline-check",
+  "topicId": "offline-typing-choice",
+  "status": "published",
+  "published": "2026-11-05",
+  "primaryQuery": "offline Nepali typing browser vs Mac app",
+  "searchIntent": "Find out whether an already loaded NepType browser pad keeps working after disconnection, and prepare text without relying on an offline page restart.",
+  "originalValue": "A reproducible connection-loss check with fresh weather and pet sentences: initialized tab edits and exact clipboard copy succeed offline, while a fresh offline visit and offline reload fail in the tested Chrome profile. Reopening online loses the in-memory draft. Separates engine caching from page availability and provides a before-disconnecting checklist.",
+  "overlapReview": "The homepage owns online typing; the guide and FAQ state local processing and connection requirements briefly. This article adds an observed four-state connectivity experiment, exact offline copy, cache-versus-restart diagnosis and a rehearsal with disposable text. Mixed-language, layout, practice and Google Docs articles do not test connectivity states. Mac setup stays on /mac/; no installation walkthrough or new native-app test is claimed. Phone-browser candidate remains eligible pending actual phone/app-switching evidence; Unicode/Preeti and copy troubleshooting need distinct diagnosis beyond Docs.",
+  "keywordEvidence": {
+    "provider": "Google Ads Keyword Planner",
+    "researchFile": "research/2026-11-01-keywords.json",
+    "keyword": "nepali typing offline",
+    "averageMonthlySearches": "10–100",
+    "location": "Nepal",
+    "language": "English",
+    "network": "Google",
+    "period": "2025-10-01/2026-09-30",
+    "note": "Related measured term only. The exact browser-versus-app long tail has no measured volume. Four-day-old report does not require refresh; no summed ranges, exact-volume, organic-difficulty or ranking claim. Current signed-in Search Console is inaccessible because the Mac is locked, as recorded in the November 5 SEO review; November 4 zero/no-data values are historical."
+  },
+  "research": [
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-05",
+      "note": "Actual production Chrome test in isolated profiles, both languages: initialized tab converts and copies a fresh two-line note after browser offline emulation, with zero new requests. Offline reload and fresh offline navigation fail; online reopen has an empty draft. Engine CacheStorage exists, no service-worker registrations. Network emulation is not a guarantee for other browsers or suspended tabs."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/blob/605755690ffeade20e62fc2fa0fcc0646405523c/landing-page/engine-worker.mjs",
+      "checked": "2026-11-05",
+      "note": "Worker fetches configuration and imports its JavaScript module before consulting the versioned Wasm cache. Caching the engine resource does not by itself provide an offline website startup. Current Rust/Wasm render checks verified both displayed sentences and their combined newline."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Cache",
+      "checked": "2026-11-05",
+      "note": "Cache storage lifetime depends on the browser; storage may be deleted. Cache use does not require a service worker. Supports the narrow warning that a cached resource is not an offline-availability guarantee."
+    },
+    {
+      "url": "https://developer.chrome.com/docs/devtools/network/reference#offline",
+      "checked": "2026-11-05",
+      "note": "Official Chrome documentation describes offline network emulation. Used that type of isolated-browser connectivity test; no system network setting changed."
+    }
+  ],
+  "exampleContexts": [
+    "weather observation",
+    "sleeping cat",
+    "disposable connectivity rehearsal"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "aaja ghaam laageko cha.",
+        "mode": 0
+      },
+      "expectedText": "आज घाम लागेको छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "biraalo suteko cha.",
+        "mode": 0
+      },
+      "expectedText": "बिरालो सुतेको छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aaja ghaam laageko cha.\nbiraalo suteko cha.",
+        "mode": 0
+      },
+      "expectedText": "आज घाम लागेको छ।\nबिरालो सुतेको छ।"
+    }
+  ],
+  "workflowVerification": {
+    "checkedOn": "2026-11-05",
+    "environment": "Headless installed Chrome on Mac, isolated profiles, browser offline emulation, English and Nepali production homepages",
+    "evidence": "reports/articles/2026-11-05/offline-workflow-results.json",
+    "scope": "Public website only; no existing signed-in browser session, user draft, system connectivity setting or native app modified."
+  },
+  "en": {
+    "title": "Offline Nepali typing: check the browser before disconnecting | NepType",
+    "heading": "Can you keep typing Nepali when the connection drops?",
+    "description": "Test an already loaded NepType pad before going offline. Check typing and copying, understand reload limits, and save your text outside the browser tab.",
+    "sections": [
+      [
+        "A loaded pad can keep working",
+        "Once NepType has loaded its typing engine and produced an output, an open tab can continue converting Roman Nepali after the connection drops. You need a connection to open the website or reload the page. Keep important text in another saved file because the browser pad does not save drafts.",
+        {
+          "links": [
+            [
+              "Open the typing pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Rehearse with a disposable note",
+        "While online, choose Nepali + EN and type the first sentence below. Wait for the Nepali result to appear. Disconnect only after you have that result, then add a new line and the cat sentence. Both lines should appear in the output. Read the spelling before copying.",
+        {
+          "examples": [
+            [
+              "aaja ghaam laageko cha.",
+              "आज घाम लागेको छ।"
+            ],
+            [
+              "biraalo suteko cha.",
+              "बिरालो सुतेको छ।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Check what works in your open tab",
+        "Use Copy text while disconnected, then paste into a local document and save it. Confirm both sentences and the line break. An app that needs the internet to send or save may still be unavailable even when the text has copied. Reconnect when you finish the rehearsal.",
+        {
+          "steps": [
+            "Open the pad online and wait for a correct result.",
+            "With the same tab open, disconnect and add the second sentence.",
+            "Copy, paste into a local file and save. Compare the pasted text with the output.",
+            "Restore the connection before opening another NepType page."
+          ],
+          "links": [
+            [
+              "Spelling choices and editing controls",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "What happened in our Chrome check",
+        "In an isolated Chrome profile on November 5, 2026, the initialized English and Nepali pads both converted the added sentence and copied the exact two-line result with the browser network set offline. No new network request was needed for those edits. An offline reload failed, as did a first visit in a fresh offline profile. When reopened online, the input was empty. This check used browser network emulation; another browser, tab suspension or memory pressure can change what remains available.",
+        {
+          "links": [
+            [
+              "Chrome offline network emulation",
+              "https://developer.chrome.com/docs/devtools/network/reference#offline"
+            ]
+          ]
+        }
+      ],
+      [
+        "A cached engine does not save the page or your draft",
+        "NepType caches its engine resource when browser storage is available. Starting a new typing session still needs the page, engine configuration and JavaScript to load. The engine cache contains reusable program data, not your unfinished note. Browser storage can also be cleared or evicted. A previous successful visit is therefore insufficient evidence that a new offline visit will work.",
+        {
+          "links": [
+            [
+              "How browser Cache storage behaves",
+              "https://developer.mozilla.org/en-US/docs/Web/API/Cache"
+            ]
+          ]
+        }
+      ],
+      [
+        "Prepare for a long period without internet",
+        "Before leaving a connection, save your current output elsewhere and test the workflow you intend to use. Keep the working tab open, and avoid reloading it. If you need to start the typing tool repeatedly without internet on a Mac, review the native app option and test it before travelling. Its installation instructions are on the Mac page.",
+        {
+          "links": [
+            [
+              "Mac app and setup instructions",
+              "/mac/"
+            ],
+            [
+              "Try the connection-loss rehearsal",
+              "/#try"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "अफलाइन नेपाली टाइपिङ: इन्टरनेट बन्द गर्नुअघि जाँच्नुहोस् | NepType",
+    "heading": "इन्टरनेट छुटेपछि पनि नेपाली लेख्न मिल्छ?",
+    "description": "NepType प्याड लोड गरेपछि इन्टरनेट बन्द गरेर लेखाइ र कपी जाँच्नुहोस्। पृष्ठ फेरि खोल्ने सीमा बुझ्नुहोस् र आफ्नो पाठ अर्को फाइलमा राख्नुहोस्।",
+    "sections": [
+      [
+        "लोड भइसकेको प्याडमा लेख्न सकिन्छ",
+        "NepType को टाइपिङ इन्जिन लोड भएर नेपाली नतिजा आइसकेपछि खुलै रहेको ट्याबमा इन्टरनेट छुट्दा पनि रोमनबाट नेपाली लेख्न सकिन्छ। वेबसाइट खोल्न वा पृष्ठ फेरि लोड गर्न भने इन्टरनेट चाहिन्छ। ब्राउजर प्याडले मस्यौदा राख्दैन, त्यसैले आवश्यक पाठ अर्को फाइलमा सुरक्षित गर्नुहोस्।",
+        {
+          "links": [
+            [
+              "टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "परीक्षणका लागि छोटो टिपोट लेख्नुहोस्",
+        "इन्टरनेट चलिरहँदा Nepali + EN रोजेर तलको पहिलो वाक्य लेख्नुहोस्। नेपाली नतिजा नआएसम्म पर्खनुहोस्। त्यसपछि इन्टरनेट बन्द गरेर नयाँ हरफमा बिरालोबारेको वाक्य थप्नुहोस्। नतिजामा दुवै हरफ देखिनुपर्छ। कपी गर्नुअघि हिज्जे पढ्नुहोस्।",
+        {
+          "examples": [
+            [
+              "aaja ghaam laageko cha.",
+              "आज घाम लागेको छ।"
+            ],
+            [
+              "biraalo suteko cha.",
+              "बिरालो सुतेको छ।"
+            ]
+          ]
+        }
+      ],
+      [
+        "खुलै रहेको ट्याबमा कपी गरेर हेर्नुहोस्",
+        "इन्टरनेट बन्द भएकै बेला पाठ कपी गर्नुहोस् थिच्नुहोस्। उपकरणमै सुरक्षित हुने कागजातमा पेस्ट गरेर सेभ गर्नुहोस्। दुवै वाक्य र बीचको हरफ छुट्टिएको ठाउँ जाँच्नुहोस्। पाठ कपी भए पनि पठाउन वा सेभ गर्न इन्टरनेट चाहिने एप चल्न नसक्न सक्छ। परीक्षण सकिएपछि इन्टरनेट फेरि जोड्नुहोस्।",
+        {
+          "steps": [
+            "इन्टरनेट चलिरहँदा प्याड खोलेर सही नेपाली नतिजा आउन दिनुहोस्।",
+            "त्यही ट्याब खुलै राखेर इन्टरनेट बन्द गर्नुहोस् र दोस्रो वाक्य थप्नुहोस्।",
+            "कपी गरेर स्थानीय फाइलमा पेस्ट र सेभ गर्नुहोस्। पेस्ट भएको पाठ नतिजासँग दाँज्नुहोस्।",
+            "NepType को अर्को पृष्ठ खोल्नुअघि इन्टरनेट फेरि जोड्नुहोस्।"
+          ],
+          "links": [
+            [
+              "हिज्जे रोज्ने र लेखाइ सच्याउने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Chrome मा जाँच्दा के भयो?",
+        "नोभेम्बर ५, २०२६ मा छुट्टै Chrome प्रोफाइलमा ब्राउजरको नेटवर्क अफलाइन राखेर जाँचियो। इन्जिन तयार भइसकेका अंग्रेजी र नेपाली दुवै प्याडले थपिएको वाक्य नेपालीमा बनाए र दुई हरफको पाठ जस्ताको तस्तै कपी गरे। त्यस लेखाइका लागि नयाँ नेटवर्क अनुरोध भएन। अफलाइनमै पृष्ठ फेरि लोड गर्दा खुलेन। पहिले नखोलिएको अर्को प्रोफाइलबाट अफलाइन खोल्दा पनि चलेन। इन्टरनेट जोडेपछि फेरि खोल्दा लेख्ने बाकस खाली थियो। यो ब्राउजरको नेटवर्क अफलाइन बनाएर गरिएको परीक्षण हो। अर्को ब्राउजर वा ट्याब निष्क्रिय हुँदा नतिजा फरक हुन सक्छ; उपकरणको मेमोरी कम हुँदा पनि खुला पृष्ठ हराउन सक्छ।",
+        {
+          "links": [
+            [
+              "Chrome मा अफलाइन नेटवर्क परीक्षण",
+              "https://developer.chrome.com/docs/devtools/network/reference#offline"
+            ]
+          ]
+        }
+      ],
+      [
+        "इन्जिनको क्यास र मस्यौदा फरक हुन्",
+        "ब्राउजरमा भण्डारण उपलब्ध हुँदा NepType ले इन्जिनको फाइल क्यासमा राख्छ। प्याड फेरि खोल्दा पृष्ठ, इन्जिनको कन्फिगरेसन र JavaScript लोड हुनुपर्छ। इन्जिनको क्यासमा फेरि प्रयोग हुने इन्जिनको डेटा हुन्छ, तपाईंको अधुरो टिपोट हुँदैन। ब्राउजरले भण्डारण हटाउन पनि सक्छ। पहिले चलेको थियो भन्दैमा अर्को पटक अफलाइन खुल्छ भन्ने भर पर्नु हुँदैन।",
+        {
+          "links": [
+            [
+              "ब्राउजरको Cache भण्डारणबारे",
+              "https://developer.mozilla.org/en-US/docs/Web/API/Cache"
+            ]
+          ]
+        }
+      ],
+      [
+        "लामो समय इन्टरनेट नहुँदा तयारी गर्नुहोस्",
+        "इन्टरनेट छुट्नुअघि तयार पाठ अर्को ठाउँमा सेभ गर्नुहोस् र प्रयोग गर्ने तरिका जाँच्नुहोस्। चलिरहेको ट्याब खुलै राख्नुहोस् र फेरि लोड नगर्नुहोस्। Mac मा इन्टरनेटबिनै टाइपिङ उपकरण पटकपटक खोल्नुपर्छ भने नेटिभ एपको विकल्प हेर्नुहोस्। यात्राअघि चलाएर जाँच्नुहोस्। इन्स्टल गर्ने निर्देशन Mac पृष्ठमा छ।",
+        {
+          "links": [
+            [
+              "Mac एप र चलाउने निर्देशन",
+              "/mac/"
+            ],
+            [
+              "इन्टरनेट छुट्ने अवस्थाको परीक्षण गर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-05",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Read both complete versions, titles, descriptions, headings, steps and link labels. Replaced indirect English separate-step framing with the direct connection requirement. Removed the repeated save-your-text closer in both languages because the opening and checklist already give the action. Replaced stiff Nepali new-session/program wording with the pad-opening and engine actions. Rechecked equivalent instructions, natural Nepali, browser-emulation qualifications, unsupported guarantees, repeated rhythm, contrasts and filler. Protected examples, checks, URLs, dates, evidence and identifiers unchanged. Automated editorial pass; no human-authorship or expert-review claim."
+  }
+}
