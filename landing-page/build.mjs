@@ -85,17 +85,27 @@ function metadata(locale, slug, title, description) {
   const content = pages[slug]?.[locale];
   const webappId = origin + '/#browser-tool';
   const appId = origin + '/#mac-app';
+  const windowsAppId = origin + '/#windows-app';
+  const publisherId = origin + '/#organization';
+  const mainEntityId = content?.kind === 'article' ? url + '#article' : !slug ? webappId : slug === 'mac' ? appId : slug === 'windows' && windowsRelease ? windowsAppId : null;
   const socialImage = slug === 'mac' ? {file:'neptype-mac.png',width:720,height:540,alt:locale === 'ne' ? 'Mac मा NepType नेपाली टाइपिङ एप' : 'NepType Nepali typing app on Mac'}
     : {file:`neptype-web-${locale}.png`,width:1200,height:630,alt:locale === 'ne' ? 'NepType अनलाइन प्याडमा रोमन लेखाइ र नेपाली युनिकोड नतिजा' : 'NepType online typing pad with Roman input and Nepali Unicode output'};
   const graph = [
-    {'@type': 'WebSite', '@id': origin + '/#website', name: 'NepType', url: origin + '/', inLanguage: ['en', 'ne']},
-    {'@type': content?.kind === 'article' ? 'TechArticle' : content?.kind === 'collection' ? 'CollectionPage' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
-      ...(!slug || slug === 'mac' ? {mainEntity: {'@id': slug === 'mac' ? appId : webappId}} : {}),
-      ...(content?.kind === 'article' ? {headline: content.heading, datePublished: content.published, ...(content.modified ? {dateModified:content.modified} : {}), author: {'@type': 'Organization', name: 'NepType', url: origin + '/about/'}} : {})}
+    {'@type': 'Organization', '@id': publisherId, name: 'NepType', url: origin + '/about/', logo: origin + '/assets/neptype-icon.png'},
+    {'@type': 'WebSite', '@id': origin + '/#website', name: 'NepType', url: origin + '/', inLanguage: ['en', 'ne'], publisher: {'@id': publisherId}},
+    {'@type': content?.kind === 'collection' ? 'CollectionPage' : 'WebPage', '@id': url + '#page', url, name: title, description, inLanguage: locale, isPartOf: {'@id': origin + '/#website'},
+      ...(mainEntityId ? {mainEntity: {'@id': mainEntityId}} : {}),
+      ...(slug ? {breadcrumb: {'@id': url + '#breadcrumb'}} : {})}
   ];
-  if (!slug) graph.push({'@type': 'WebApplication', '@id': webappId, name: 'NepType Online Typing Pad', url: canonical(locale, '') + '#try', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript and an initial network connection', isAccessibleForFree: true, description: homeDescriptions[locale], inLanguage: ['en', 'ne'], sameAs: repository});
-  if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository, ...(downloadUrl ? {downloadUrl, softwareVersion:macRelease.version, softwareRequirements:'macOS 13 or later; Apple silicon or Intel'} : {})});
-  if (slug === 'windows' && windowsRelease) graph.push({'@type':'SoftwareApplication', '@id':origin+'/#windows-app', name:'NepType for Windows', url, applicationCategory:'UtilitiesApplication', operatingSystem:'Windows 10 or 11 (x64)', description, downloadUrl:windowsRelease.url, softwareVersion:windowsRelease.version, sameAs:repository});
+  if (content?.kind === 'article') graph.push({
+    '@type': 'Article', '@id': url + '#article', url, headline: content.heading, description, inLanguage: locale,
+    mainEntityOfPage: {'@id': url + '#page'}, datePublished: content.published,
+    ...(content.modified ? {dateModified: content.modified} : {}),
+    author: {'@id': publisherId}, publisher: {'@id': publisherId}
+  });
+  if (!slug) graph.push({'@type': 'WebApplication', '@id': webappId, name: 'NepType Online Typing Pad', url: canonical(locale, '') + '#try', applicationCategory: 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript and an initial network connection', isAccessibleForFree: true, offers: {'@type': 'Offer', price: 0, url: url + '#try'}, description: homeDescriptions[locale], inLanguage: ['en', 'ne'], sameAs: repository});
+  if (slug === 'mac') graph.push({'@type': 'SoftwareApplication', '@id': appId, name: 'NepType for Mac', url, applicationCategory: 'UtilitiesApplication', operatingSystem: 'macOS', description, isAccessibleForFree: true, ...(downloadUrl ? {offers: {'@type': 'Offer', price: 0, url}} : {}), image: origin + '/assets/neptype-icon.png', screenshot: origin + '/assets/neptype-mac.png', sameAs: repository, ...(downloadUrl ? {downloadUrl, softwareVersion:macRelease.version, softwareRequirements:'macOS 13 or later; Apple silicon or Intel'} : {})});
+  if (slug === 'windows' && windowsRelease) graph.push({'@type':'SoftwareApplication', '@id':windowsAppId, name:'NepType for Windows', url, applicationCategory:'UtilitiesApplication', operatingSystem:'Windows 10 or 11 (x64)', description, isAccessibleForFree:true, offers:{'@type':'Offer',price:0,url}, downloadUrl:windowsRelease.url, softwareVersion:windowsRelease.version, sameAs:repository});
   if (slug) graph.push({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: [
     {'@type': 'ListItem', position: 1, name: 'NepType', item: canonical(locale, '')},
     ...(slug.startsWith('articles/') ? [{'@type':'ListItem',position:2,name:locale === 'ne' ? 'लेखहरू' : 'Articles',item:canonical(locale,'articles')}] : []),
@@ -210,7 +220,7 @@ for (const locale of ['en', 'ne']) {
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle" type="button" hidden>${locale === 'ne' ? 'एनालिटिक्स सेटिङ' : 'Analytics settings'}</button></p>` : '';
     const pageAction = (linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'windows' ? ' data-platform="Windows"' : ''}${nativeDownload ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '');
     const nativePage = slug === 'mac' || slug === 'windows';
-    const body = slug === 'download' ? renderDownloadPage(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${nativePage ? pageAction : ''}${sections}${renderArticleList(content,locale)}${related}${nativePage ? '' : pageAction}${privacyControl}</main>`;
+    const body = slug === 'download' ? renderDownloadPage(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${nativePage ? pageAction + (nativeDownload ? `<p>${locale === 'ne' ? 'निःशुल्क डाउनलोड।' : 'Free download.'}</p>` : '') : ''}${sections}${renderArticleList(content,locale)}${related}${nativePage ? '' : pageAction}${privacyControl}</main>`;
     let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script type="module" src="/site.js"></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);

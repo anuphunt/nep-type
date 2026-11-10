@@ -58,6 +58,39 @@ test('production pages expose unique crawlable content, correct locales and vali
     }
     assert.equal(graph(html).filter(entity => entity['@type'] === 'WebSite').length, 1);
     assert.ok(graph(html).some(entity => entity.inLanguage === (ne ? 'ne' : 'en')));
+    const entities = graph(html), byId = new Map(entities.map(entity => [entity['@id'], entity]));
+    assert.equal(byId.size, entities.length, `${pathname}: duplicate entity ID`);
+    const checkReferences = value => {
+      if (!value || typeof value !== 'object') return;
+      if (Object.keys(value).length === 1 && value['@id']) assert.ok(byId.has(value['@id']), `${pathname}: dangling reference ${value['@id']}`);
+      for (const child of Object.values(value)) checkReferences(child);
+    };
+    checkReferences(entities);
+    const page = byId.get(`https://neptype.com${pathname}#page`);
+    assert.ok(['WebPage', 'CollectionPage'].includes(page['@type']));
+    const breadcrumbs = entities.find(entity => entity['@type'] === 'BreadcrumbList');
+    if (breadcrumbs) {
+      assert.equal(page.breadcrumb['@id'], breadcrumbs['@id']);
+      assert.deepEqual(breadcrumbs.itemListElement.map(item => item.position), breadcrumbs.itemListElement.map((_, index) => index + 1));
+      assert.equal(breadcrumbs.itemListElement.at(-1).item, page.url);
+    }
+    for (const app of entities.filter(entity => /Application$/.test(entity['@type']))) {
+      assert.equal(page.mainEntity['@id'], app['@id']);
+      assert.equal(app.offers.price, 0);
+      assert.equal(app.isAccessibleForFree, true);
+      assert.match(html, /free|निःशुल्क|नि:शुल्क|निशुल्क/i);
+      if (app.downloadUrl) assert.ok(html.includes(`href="${app.downloadUrl}"`));
+      assert.equal(app.aggregateRating, undefined);
+      assert.equal(app.review, undefined);
+    }
+    const articleEntity = entities.find(entity => entity['@type'] === 'Article');
+    if (articleEntity) {
+      assert.equal(page.mainEntity['@id'], articleEntity['@id']);
+      assert.equal(articleEntity.mainEntityOfPage['@id'], page['@id']);
+      assert.ok(html.includes(`datetime="${articleEntity.datePublished}"`));
+      assert.equal(byId.get(articleEntity.author['@id']).name, 'NepType');
+    }
+
     assert.ok(!html.includes('<!-- HOME_HELP -->'));
     assert.ok(html.includes(`href="${ne ? '/ne' : ''}/privacy/"`), `${pathname}: privacy footer link`);
     assert.ok(html.includes(`href="${ne ? '/ne' : ''}/terms/"`), `${pathname}: terms footer link`);
@@ -103,7 +136,7 @@ test('production pages expose unique crawlable content, correct locales and vali
   assert.ok(!graph(documents.get('/privacy/')).some(entity => /Application$/.test(entity['@type'])));
   assert.ok(graph(documents.get('/mac/')).some(entity => entity['@type'] === 'SoftwareApplication' && entity.operatingSystem === 'macOS'));
   for (const path of ['/typing-guide/', '/ne/typing-guide/']) {
-    const article = graph(documents.get(path)).find(entity => entity['@type'] === 'TechArticle');
+    const article = graph(documents.get(path)).find(entity => entity['@type'] === 'Article');
     assert.equal(article.datePublished, '2026-11-01');
     assert.ok(documents.get(path).includes('datetime="2026-11-01"'));
     assert.ok(!JSON.stringify(article).includes('aggregateRating'));
@@ -112,7 +145,7 @@ test('production pages expose unique crawlable content, correct locales and vali
   assert.match(await read('404.html'), /name="robots" content="noindex"/);
   assert.ok(!(await read('styles.css')).includes('@import'));
   for (const path of ['/articles/','/ne/articles/','/articles/type-nepali-and-english-together/','/ne/articles/type-nepali-and-english-together/']) assert.ok(documents.has(path), path);
-  const article = graph(documents.get('/articles/type-nepali-and-english-together/')).find(entity => entity['@type'] === 'TechArticle');
+  const article = graph(documents.get('/articles/type-nepali-and-english-together/')).find(entity => entity['@type'] === 'Article');
   assert.equal(article.datePublished, '2026-11-01');
   assert.equal(graph(documents.get('/articles/type-nepali-and-english-together/')).find(entity => entity['@type'] === 'BreadcrumbList').itemListElement.length, 3);
   assert.match(await read('articles/feed.xml'), /type-nepali-and-english-together/);
