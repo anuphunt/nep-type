@@ -1,6 +1,6 @@
 export const downloadPage = {
-  en: {title:'Download NepType for Mac & Windows | All Platforms', heading:'Download NepType.', description:'Download NepType for Mac or Windows. Find system requirements and setup instructions, with iPhone, Android, and Linux apps coming soon.', sections:[]},
-  ne: {title:'Mac र Windows का लागि NepType डाउनलोड | सबै प्लेटफर्म', heading:'NepType डाउनलोड गर्नुहोस्।', description:'Mac वा Windows का लागि NepType डाउनलोड गर्नुहोस्। आवश्यक संस्करण र इन्स्टल गर्ने तरिका हेर्नुहोस्। iPhone, Android र Linux एप आउँदैछन्।', sections:[]}
+  en: {title:'Download NepType for Mac & Windows | All Platforms', heading:'Download NepType.', description:'Download NepType for Mac or Windows. The iPhone app is currently under review by Apple. Android and Linux apps are coming soon.', sections:[]},
+  ne: {title:'Mac र Windows का लागि NepType डाउनलोड | सबै प्लेटफर्म', heading:'NepType डाउनलोड गर्नुहोस्।', description:'Mac वा Windows का लागि NepType डाउनलोड गर्नुहोस्। iPhone एप हाल Apple को समीक्षामा छ। Android र Linux एप आउँदैछन्।', sections:[]}
 };
 
 const icons = {
@@ -29,16 +29,16 @@ function renderDownloads(locale, {mac, windows}, escape, embedded = false) {
   const platforms = [
     {id:'macOS', name:'Mac', requirement:ne ? 'macOS 13 वा पछिल्लो' : 'macOS 13 or later', architecture:'Apple silicon · Intel', url:mac, slug:'mac', label:ne ? 'Mac का लागि डाउनलोड' : 'Download for Mac', file:'.dmg'},
     {id:'Windows', name:'Windows', requirement:'Windows 10 / 11', architecture:ne ? 'Intel वा AMD · x64' : 'Intel or AMD · x64', url:windows, slug:'windows', label:ne ? 'Windows का लागि डाउनलोड गर्नुहोस्' : 'Download for Windows', file:'.exe'},
-    {id:'iOS', name:'iPhone', requirement:ne ? 'iPhone का लागि' : 'For iPhone', architecture:ne ? 'सार्वजनिक डाउनलोड आउन बाँकी छ' : 'Public release on the way'},
+    {id:'iOS', name:'iPhone', requirement:ne ? 'iPhone का लागि' : 'For iPhone', architecture:ne ? 'हाल Apple को समीक्षामा छ' : 'Currently under review by Apple', status:ne ? 'Apple को समीक्षामा' : 'Under Apple review'},
     {id:'Android', name:'Android', requirement:ne ? 'Android का लागि' : 'For Android', architecture:ne ? 'सार्वजनिक डाउनलोड आउन बाँकी छ' : 'Public release on the way'},
     {id:'Linux', name:'Linux', requirement:ne ? 'Linux का लागि' : 'For Linux', architecture:ne ? 'प्याकेजको विवरण आउन बाँकी छ' : 'Package details to come'}
   ];
   const cards = platforms.map(p => `<article class="download-card${p.url ? '' : ' download-card-pending'}" data-platform-card="${p.id}" aria-labelledby="platform-${p.id}">
     <div class="download-card-top"><div class="platform-logo logo-${p.id}">${icon(p.id)}</div><span class="device-badge" data-current-device hidden>${ne ? 'तपाईंको उपकरण' : 'Your device'}</span></div>
-    <span class="release-status">${p.url ? (ne ? 'उपलब्ध छ' : 'Available now') : (ne ? 'छिट्टै आउँदैछ' : 'Coming soon')}</span>
+    <span class="release-status">${p.url ? (ne ? 'उपलब्ध छ' : 'Available now') : (p.status || (ne ? 'छिट्टै आउँदैछ' : 'Coming soon'))}</span>
     <${cardTitleTag} id="platform-${p.id}">${p.name}</${cardTitleTag}>
     <div class="platform-requirements"><p>${p.requirement}</p><p>${p.architecture}</p>${p.url ? `<p class="installer-format">${p.file}</p>` : ''}</div>
-    <div class="download-card-action">${p.url ? `<a class="button platform-download" href="${escape(p.url)}" data-platform="${p.id}" data-analytics-event="neptype_download_clicked" data-placement="download-card">${arrow}<span>${p.label}</span></a><a class="setup-link" href="${prefix}/${p.slug}/">${ne ? 'इन्स्टल गर्ने तरिका र विवरण' : 'Setup guide & details'} <span aria-hidden="true">↗</span></a>` : `<span class="coming-soon">${ne ? 'छिट्टै आउँदैछ' : 'Coming soon'}</span><a class="setup-link" href="${prefix}/#try">${ne ? 'अहिले ब्राउजरमा लेख्नुहोस्' : 'Use the browser pad'} <span aria-hidden="true">↗</span></a>`}</div>
+    <div class="download-card-action">${p.url ? `<a class="button platform-download" href="${escape(p.url)}" data-platform="${p.id}" data-analytics-event="neptype_download_clicked" data-placement="download-card">${arrow}<span>${p.label}</span></a><a class="setup-link" href="${prefix}/${p.slug}/">${ne ? 'इन्स्टल गर्ने तरिका र विवरण' : 'Setup guide & details'} <span aria-hidden="true">↗</span></a>` : `<span class="coming-soon">${p.status || (ne ? 'छिट्टै आउँदैछ' : 'Coming soon')}</span><a class="setup-link" href="${prefix}/#try">${ne ? 'अहिले ब्राउजरमा लेख्नुहोस्' : 'Use the browser pad'} <span aria-hidden="true">↗</span></a>`}</div>
   </article>`).join('');
   const opening = embedded ? '<section id="downloads" class="downloads-page homepage-downloads container" aria-labelledby="downloads-title">' : '<main id="main" class="downloads-page container">';
   return `${opening}

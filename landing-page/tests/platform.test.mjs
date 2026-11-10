@@ -57,7 +57,9 @@ test('all-platform cards expose only available installers; pending Windows remai
         const card = html.match(new RegExp(`<article[^>]*data-platform-card="${platform}"[\\s\\S]*?</article>`))[0];
         assert.ok(!card.includes('neptype_download_clicked'));
         assert.match(card, /class="coming-soon"/);
-        assert.ok(card.includes(locale === 'ne' ? 'छिट्टै आउँदैछ' : 'Coming soon'));
+        assert.ok(card.includes(platform === 'iOS'
+          ? (locale === 'ne' ? 'Apple को समीक्षामा' : 'Under Apple review')
+          : (locale === 'ne' ? 'छिट्टै आउँदैछ' : 'Coming soon')));
         assert.ok(card.includes(`href="${locale === 'ne' ? '/ne' : ''}/#try"`));
       }
     }

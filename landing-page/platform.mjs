@@ -26,7 +26,9 @@ export function downloadAction(platform, locale, releases) {
   if (['iOS', 'Android', 'Linux'].includes(platform)) return {
     href: prefix + '/#try', label: ne ? 'अनलाइन नेपाली लेख्नुहोस्' : 'Type Nepali online',
     event: 'neptype_tool_cta_clicked', platform,
-    note: ne ? 'यो उपकरणको एप आउँदैछ। अहिले ब्राउजरमा लेख्नुहोस्।' : 'The app for your device is coming soon. Try it in your browser.'
+    note: platform === 'iOS'
+      ? (ne ? 'iPhone एप हाल Apple को समीक्षामा छ। अहिले ब्राउजरमा लेख्नुहोस्।' : 'The iPhone app is currently under review by Apple. Try it in your browser.')
+      : (ne ? 'यो उपकरणको एप आउँदैछ। अहिले ब्राउजरमा लेख्नुहोस्।' : 'The app for your device is coming soon. Try it in your browser.')
   };
   return {href: prefix + '/download/', label: ne ? 'NepType लिनुहोस्' : 'Get NepType', event: 'neptype_app_cta_clicked', platform: 'unknown', note: ne ? 'Mac र Windows एप उपलब्ध छन्।' : 'Available for Mac and Windows.'};
 }

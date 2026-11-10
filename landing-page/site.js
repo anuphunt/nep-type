@@ -7,12 +7,12 @@ const dialogBody = document.getElementById('dialog-body');
 const isNepali = document.documentElement.lang === 'ne';
 const projectLink = `<a href="https://github.com/anuphunt/nep-type" target="_blank" rel="noopener noreferrer">${isNepali ? 'GitHub मा हेर्नुहोस्' : 'View on GitHub'}</a>`;
 const platforms = {
-  iOS: ['NepType for iPhone', 'The iPhone pad and keyboard are experimental. An App Store release isn’t available yet.', 'In progress'],
+  iOS: ['NepType for iPhone', 'The iPhone app is currently under review by Apple. Use the browser pad while you wait.', 'Under Apple review'],
   Android: ['NepType for Android', 'The Android keyboard is in development. A download isn’t available yet.', 'In progress'],
   Linux: ['NepType for Linux', 'Linux support is experimental. A public package isn’t available yet.', 'In progress']
 };
 const nepaliPlatforms = {
-  iOS: ['iPhone का लागि NepType', 'iPhone प्याड र किबोर्ड परीक्षणको चरणमा छन्। App Store संस्करण उपलब्ध भइसकेको छैन।', 'काम हुँदैछ'],
+  iOS: ['iPhone का लागि NepType', 'iPhone एप हाल Apple को समीक्षामा छ। प्रतीक्षा गर्दा ब्राउजर प्याड प्रयोग गर्न सक्नुहुन्छ।', 'Apple को समीक्षामा'],
   Android: ['Android का लागि NepType', 'Android किबोर्डको काम हुँदैछ। डाउनलोड उपलब्ध भइसकेको छैन।', 'काम हुँदैछ'],
   Linux: ['Linux का लागि NepType', 'Linux संस्करण परीक्षणको चरणमा छ। सार्वजनिक प्याकेज उपलब्ध भइसकेको छैन।', 'काम हुँदैछ']
 };
