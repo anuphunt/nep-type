@@ -1,18 +1,25 @@
 {
-  "aksharantar_rows": 2171523,
-  "alias_rows": 278253,
-  "authored_words": 263,
-  "bytes": 37245039,
+  "bytes": 287286998,
+  "dictionary": "roman-nepali-v2-pilot-v1",
   "english_words": 117493,
-  "id": "0bbc9d1e4c176e0f7f7a3c4ff4b2a3489733f640dc1b4dbb69afd4dbd87fd8ac",
-  "schema": 2,
-  "sha256": "655184cbdb90d1c1c811aff55f5de5fc637657a3a225021ddcf0a887447fb39a",
+  "id": "77fb2c90cd99ef6687f508c965af49d794a2dfe415281249f3bbf58e7aec32d7",
+  "intentional_pairs": 10311986,
+  "intentional_rows": 9498358,
+  "pilot_approved": 800,
+  "pilot_held_suppressed": 200,
+  "reviewed_keys": 61964,
+  "schema": 3,
+  "sha256": "a792dc815622029aa716c12fb18534d37cfed9e2eda61b13253d27b745cc2ced",
+  "source_database_sha256": "3cefa5a80899ec97c7a67e252675c176169203b3aba2d613d8723cf32644efca",
   "sources": {
-    "data/compiled/aksharantar-indiccorp-v1.tsv": "a62c90b709c425f78e9b0ffcbb263823e38a3cb3c2f2286d64ecdaaa9b52970d",
-    "data/compiled/google-ne-aliases.tsv": "87a19947eb60a7ac495b675aae980c94b977598cd11874c7b9b23e5d4b42f159",
+    "data/compiled/roman-nepali-intentional.tsv.gz": "82cb93c81be5ff8544aedcb30a14a8c6f11ab288397bc2033f268102f47574c2",
+    "data/compiled/roman-nepali-reviewed.json": "d031efd420677f920d8ecf357efc14630eda999025f03090c8ef1785fe3ad18b",
+    "data/compiled/roman-nepali-typos.tsv.gz": "6417e2dda9e8de038cc2828de1e7b0667cf8693949b6b976972d95cd6dcdb5dc",
+    "data/compiled/roman-nepali.manifest.json": "23483cb68c39e14a0486c37fc982813b919f9620ed5c3e0790ef5eb22ac29bb7",
     "data/sources/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
-    "data/sources/english-common-v1.json": "d09e37e5141de0973b6b6ad99481102cfeedb3ba6bb96957a2aa53a752f65c1d",
-    "data/sources/nepali-authored-v1.json": "93c2196569ddc6fb832c57b660d7462886e10b82e2d2ccfa47022761222671ab"
+    "data/sources/english-common-v1.json": "d09e37e5141de0973b6b6ad99481102cfeedb3ba6bb96957a2aa53a752f65c1d"
   },
-  "unique_spellings": 2408836
+  "typo_pairs": 21566450,
+  "typo_rows": 19664004,
+  "unique_spellings": 2398677
 }

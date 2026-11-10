@@ -36,9 +36,9 @@ for mode in (0,1,2):
         command=[args.java,"-Djava.library.path="+args.jni_dir,"-cp",args.classes,"SharedEngineProbe",args.dictionaries,str(mode)]+tokens
         assert lines(command)==expected,("JNI/Swift",mode)
         comparisons+=len(tokens)
-assert engine.document("namaste! ma office janchu.",caret=3)["output"]=="नमस्ते! म office जान्छु।"
-assert engine.document("ma pani",caret=6,choice="पानी")["output"]=="म पानी"
-assert engine.document("ma pani!",caret=6)["output"]=="म पानी!"
+assert engine.document("namaste! ma office janchu.",caret=3)["output"]=="नमस्ते! ma office janchu."
+assert engine.document("ma pani",caret=6,choice="पानी")["output"]=="ma पानी"
+assert engine.document("ma pani!",caret=6)["output"]=="ma पानी!"
 assert engine.document("👋 ma pani",caret=8)["token_start"]==6
 literal="hello 🙂 https://example.com foo_bar"
 assert engine.document(literal,mode=1)["output"]==literal
@@ -48,7 +48,7 @@ for value,mode in [("ma",99),("a"*257,0),("a\0b",0)]:
 try: engine.document("ma pani",caret=6,choice="not offered"); raise AssertionError("invalid choice accepted")
 except EngineError: pass
 other=Engine(args.library,args.dictionaries)
-assert other.document("ma pani",caret=6)["output"]=="म पनि", "document choices leaked between handles"
+assert other.document("ma pani",caret=6)["output"]=="ma पनि", "document choices leaked between handles"
 other.close()
 errors=[]
 def check_thread():

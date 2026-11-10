@@ -12,7 +12,7 @@
 AppId={{5E4BC5AE-0272-4601-9D59-3018815A456C}
 AppName=NepType
 AppVersion={#AppVersion}
-VersionInfoVersion=0.1.1.1
+VersionInfoVersion=0.1.3.1
 AppPublisher=NepType
 AppPublisherURL=https://neptype.com
 AppSupportURL=https://github.com/anuphunt/nep-type/issues

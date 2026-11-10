@@ -920,8 +920,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
         candidateNext.isHidden = pageCount == 1
         candidatePageLabel.isHidden = pageCount == 1
         let selected = composer.state.overrides[word.range.location] ?? context?.preferred ?? all.first
-        let experimental = Set(composer.engine.experimentalCandidates(for: word.text))
-        let aksharantar = Set(composer.engine.aksharantarCandidates(for: word.text))
+        let experimental = Set(composer.engine.typoCandidates(for: word.text))
+        let aksharantar = Set(composer.engine.dictionaryCandidates(for: word.text))
         let automaticAksharantar = composer.engine.usesAksharantarAsDefault(for: word.text) && context?.preferred == composer.engine.candidates(for: word.text).first
         for (index, choice) in choices.enumerated() {
             let marker = aksharantar.contains(choice) || (candidatePage == 0 && index == 0 && automaticAksharantar) ? " †" : (experimental.contains(choice) && choice != word.text ? " ·" : "")
@@ -942,7 +942,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, NS
             item.attributedTitle = NSAttributedString(string: item.title, attributes: [.font: item.font!, .foregroundColor: choice == selected ? onAccent : ink])
             item.tag = index
             item.contentTintColor = choice == selected ? accent : ink
-            let source = marker == " †" ? " · Aksharantar suggestion" : (marker == " ·" ? " · Google suggestion" : "")
+            let source = marker == " †" ? " · Dictionary suggestion" : (marker == " ·" ? " · Typo suggestion" : "")
             item.toolTip = (choice == word.text ? "Keep original · Command \(index + 1)" : "Choose \(choice) · Command \(index + 1)") + source
             item.setAccessibilityLabel(choice == word.text ? "Keep original word \(choice)" : "Choose suggestion \(choice)")
             item.setAccessibilityValue(choice == selected ? "Selected" : "Not selected")

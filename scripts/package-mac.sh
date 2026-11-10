@@ -4,8 +4,8 @@ cd "$(dirname "$0")/.."
 
 : "${NEPTYPE_MAC_SIGNING_IDENTITY:?Set an existing Developer ID Application signing identity}"
 : "${NEPTYPE_MAC_NOTARY_PROFILE:?Set an existing notarytool Keychain profile}"
-neptype_version="${NEPTYPE_MAC_VERSION:-0.1.2}"
-neptype_build="${NEPTYPE_MAC_BUILD:-3}"
+neptype_version="${NEPTYPE_MAC_VERSION:-0.1.3}"
+neptype_build="${NEPTYPE_MAC_BUILD:-4}"
 [[ "$neptype_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Use a numeric major.minor.patch version.' >&2; exit 1; }
 [[ "$neptype_build" =~ ^[0-9]+$ ]] || { echo 'Use a numeric build number.' >&2; exit 1; }
 neptype_root="$PWD"

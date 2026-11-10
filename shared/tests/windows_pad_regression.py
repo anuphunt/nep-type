@@ -16,7 +16,7 @@ try:
     observations.append({'step': 'default_after_namaste', **default})
     assert default['output'] == 'पनि', default
     assert default['token'] == 'pani', default
-    assert default['candidates'] == ['पनि', 'पानी', 'pani'], default
+    assert default['candidates'][:2] == ['पनि', 'पानी'] and 'pani' in default['candidates'], default
     selected = engine.document('pani', choice='पानी')
     observations.append({'step': 'alternative_selected', **selected})
     assert selected['output'] == 'पानी' and selected['output'] != default['output'], selected

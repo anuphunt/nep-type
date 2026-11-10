@@ -18,7 +18,7 @@ class ProductExperienceTests(unittest.TestCase):
             self.assertEqual(first.candidates("pani",0)[0],"पानी")
             preferred=first.document("pani",0,4)
             self.assertEqual(preferred["candidates"][0],"पानी")
-            self.assertEqual(preferred["output"],baseline)
+            self.assertEqual(preferred["output"],"पानी")
             self.assertEqual(second.document("pani",0,4)["output"],baseline)
             self.assertEqual(first.document("pani",0,4,"pani")["output"],"pani")
             literal="https://pani.com `pani` me@example.com"

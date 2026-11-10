@@ -37,3 +37,6 @@ landing-page/engine-build/
 
 # Generated article browser verification artifacts.
 landing-page/reports/
+
+# Standalone dictionary build inputs are local; runtime pack distributed with installers.
+data/compiled/roman-nepali-*

@@ -17,6 +17,8 @@ public struct Transliterator: Sendable {
     public func activeToken(in source: String, caret: Int) -> WordToken? { tokens(in:source).first { !$0.isLiteral && caret >= $0.range.location && caret <= NSMaxRange($0.range) } }
     public func candidates(for input: String) -> [String] { call("candidates",input) as! [String] }
     public func experimentalCandidates(for input: String) -> [String] { call("experimental",input) as! [String] }
+    public func dictionaryCandidates(for input: String) -> [String] { call("dictionaryCandidates",input) as! [String] }
+    public func typoCandidates(for input: String) -> [String] { call("typoCandidates",input) as! [String] }
     public func aksharantarCandidates(for input: String) -> [String] { call("aksharantar",input) as! [String] }
     public func usesAksharantarAsDefault(for input: String) -> Bool { call("usesAksharantar",input) as! Bool }
     public func phonetic(_ input: String) -> String { call("phonetic",input) as! String }

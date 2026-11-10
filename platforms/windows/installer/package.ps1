@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path "$PSScriptRoot/../../..").Path
-$version = '0.1.1-preview.1'
+$version = '0.1.3-preview.1'
 $output = Join-Path $root 'build/windows-installer'
 $payload = Join-Path $root 'build/windows-payload'
 if (Test-Path $payload) { Remove-Item $payload -Recurse -Force }
@@ -32,6 +32,8 @@ $manifest = [ordered]@{
     architecture = 'x64'
     minimumWindows = '10'
     signing = (Get-AuthenticodeSignature $installer.FullName).Status.ToString()
+    dictionaryId = (Get-Content "$root/engine/data/manifest.json" -Raw | ConvertFrom-Json).id
+    linguisticApproval = $false
     systemKeyboard = $false
     tested = $false
 }

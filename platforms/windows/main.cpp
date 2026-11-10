@@ -322,7 +322,7 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
         shownToken=reply->document.token;
         candidateView={reply->generation,requestedSource,requestedStart,requestedEnd,
             reply->document.start,reply->document.length,reply->success};
-        shownCandidates=reply->document.candidates;
+        shownCandidates=neptype::visible_pad_candidates(reply->document.candidates, reply->document.token);
         for(int i=0;i<3;++i) {
             bool present=reply->success && i<static_cast<int>(shownCandidates.size());
             const auto title=present ? wide(shownCandidates[i])+L"  Ctrl+"+std::to_wstring(i+1) : L"";

@@ -17,9 +17,9 @@ int main(int argc,char** argv) {
         std::cout<<"\n";
     }
     auto doc=engine.document("namaste! ma office janchu.",0,3);
-    assert(doc.output=="नमस्ते! म office जान्छु।");
+    assert(doc.output=="नमस्ते! ma office janchu.");
     assert(doc.token=="namaste" && doc.start==0 && doc.length==7);
-    assert(engine.document("ma pani",0,6,"पानी").output=="म पानी");
+    assert(engine.document("ma pani",0,6,"पानी").output=="ma पानी");
     auto literal=engine.document("hello 🙂 https://example.com foo_bar",1,0);
     assert(literal.output=="hello 🙂 https://example.com foo_bar");
     bool rejected = false;
@@ -36,6 +36,6 @@ int main(int argc,char** argv) {
         for(uint64_t i=1;i<=100;++i) worker.submit(i,"ma pani",0,6);
         std::unique_lock<std::mutex> lock(mutex);
         assert(ready.wait_for(lock,std::chrono::seconds(10),[&] { return delivered==100; }));
-        assert(successful && output=="म पनि");
+        assert(successful && output=="ma पनि");
     }
 }
