@@ -12,7 +12,15 @@ The website tests check every sitemap page for unique entity IDs, resolved graph
 
 ## Remaining search appearance limitations
 
-Google requires a genuine rating or review for software app rich results. NepType currently has neither, so its valid software schema is not eligible for that feature. Article images are optional; no generic logo is substituted for a relevant editorial image. Rich results and indexing are not guaranteed.
+Google's documentation lists a rating or review as required, but the live Rich Results Test on 2026-11-10 reported the homepage software app as valid and classified its missing aggregateRating as optional. No real rating data is available, so the warning is retained. A missing optional currency warning was resolved by explicitly specifying USD for the zero-price offers.
+
+The live article test reported a valid Article and BreadcrumbList. Optional article warnings remain for missing editorial images and date-only publication/revision values (datetime/timezone recommendations). Content records store calendar days, not verified publication times; these dates remain accurate rather than fabricating precision. No generic logo is substituted for an editorial image. Rich results and indexing are not guaranteed.
+
+## Verification
+
+All 29 website tests passed. A fresh crawl confirmed all 38 live pages matched the tested schema and allowed indexing. Schema.org validation of the deployed homepage and Windows page returned zero errors and warnings. Google tests:
+- Article and breadcrumb: https://search.google.com/test/rich-results/result?id=oscXty5hQKF2bZZW2fr0tg
+- Browser app: https://search.google.com/test/rich-results/result?id=bZzYKfn-quJC0Iauq1xGbA
 
 References:
 - https://developers.google.com/search/docs/appearance/structured-data/software-app

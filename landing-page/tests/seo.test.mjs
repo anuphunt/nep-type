@@ -77,6 +77,7 @@ test('production pages expose unique crawlable content, correct locales and vali
     for (const app of entities.filter(entity => /Application$/.test(entity['@type']))) {
       assert.equal(page.mainEntity['@id'], app['@id']);
       assert.equal(app.offers.price, 0);
+      assert.equal(app.offers.priceCurrency, 'USD');
       assert.equal(app.isAccessibleForFree, true);
       assert.match(html, /free|निःशुल्क|नि:शुल्क|निशुल्क/i);
       if (app.downloadUrl) assert.ok(html.includes(`href="${app.downloadUrl}"`));
