@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readConsent,consentKey,legacyOptOutKey,analyticsPage,analyticsReferrer,coarseProperties} from '../analytics-policy.mjs';
 import {googleAnalytics} from '../google-analytics.mjs';
-test('unknown consent and inaccessible storage fail closed; old opt-outs stay denied',()=>{
+test('saved preferences distinguish unset from explicit opt-outs, including legacy choices',()=>{
   const storage=values=>({getItem:key=>values[key]??null});
   assert.equal(readConsent(storage({})),'unset');
   assert.equal(readConsent(storage({[consentKey]:'granted'})),'granted');

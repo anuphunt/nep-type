@@ -1,4 +1,4 @@
-// Basic consent mode. The stream must have all enhanced measurement disabled.
+// Measurement is gated by website preferences. Keep all enhanced measurement disabled.
 export function googleAnalytics({id, page, referrer, allowed, win = window, doc = document}) {
   let loading, generation = 0;
   const disableKey = 'ga-disable-' + id;

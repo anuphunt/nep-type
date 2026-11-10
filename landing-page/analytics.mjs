@@ -8,7 +8,7 @@ const configured=__PRODUCTION__&&Boolean((key&&host)||gaId);
 let storage;
 try{storage=window.localStorage;}catch{storage={getItem:()=>null,setItem(){},removeItem(){}};}
 let consent=readConsent(storage),ready=false,initialized=false;
-const allowed=()=>configured&&!test&&!privacySignal&&consent==='granted';
+const allowed=()=>configured&&!test&&!privacySignal&&consent!=='denied';
 const page=analyticsPage(location.href,__PUBLIC_PATHS__),referrer=analyticsReferrer(document.referrer);
 const google=googleAnalytics({id:gaId,page,referrer,allowed});
 function capture(event,input={}) {
@@ -49,32 +49,26 @@ function choose(value){
 }
 const ne=document.documentElement.lang==='ne';
 const copy=ne?{
-  heading:'वेबसाइट एनालिटिक्स',
-  text:'अनुमति दिनुभयो भने Google Analytics र PostHog ले पृष्ठ भ्रमण र सुविधाको प्रयोग गन्छन्। तपाईंले लेखेको पाठ वा क्लिपबोर्ड पठाउँदैनौँ। अस्वीकार गरे पनि टाइपिङ चल्छ।',
-  allow:'एनालिटिक्स अनुमति दिनुहोस्',decline:'अस्वीकार गर्नुहोस्',settings:'एनालिटिक्स सेटिङ',revoke:'एनालिटिक्स बन्द गर्नुहोस्',close:'बन्द गर्नुहोस्',privacy:'गोपनीयता नीति',
-  on:'यस ब्राउजरमा वेबसाइट एनालिटिक्स सक्रिय छ।',off:'यस ब्राउजरमा वेबसाइट एनालिटिक्स बन्द छ।',unset:'तपाईंले अनुमति नदिएकाले वेबसाइट एनालिटिक्स बन्द छ।',signal:'तपाईंको ब्राउजरको गोपनीयता संकेतका कारण एनालिटिक्स बन्द छ।'
+  text:'Google Analytics र PostHog ले पृष्ठ भ्रमण र सुविधाको प्रयोग गन्छन्। तपाईंले लेखेको पाठ वा क्लिपबोर्ड पठाउँदैनौँ। एनालिटिक्स बन्द गरे पनि टाइपिङ चल्छ।',
+  allow:'एनालिटिक्स सक्रिय गर्नुहोस्',settings:'एनालिटिक्स सेटिङ',revoke:'एनालिटिक्स बन्द गर्नुहोस्',close:'बन्द गर्नुहोस्',privacy:'गोपनीयता नीति',
+  on:'यस ब्राउजरमा वेबसाइट एनालिटिक्स सक्रिय छ।',off:'यस ब्राउजरमा वेबसाइट एनालिटिक्स बन्द छ।',signal:'तपाईंको ब्राउजरको गोपनीयता संकेतका कारण एनालिटिक्स बन्द छ।'
 }:{
-  heading:'Website analytics',
-  text:'If you allow analytics, Google Analytics and PostHog count page visits and feature use. We do not send your typed text or clipboard contents. Typing works if you decline.',
-  allow:'Allow analytics',decline:'Decline',settings:'Analytics settings',revoke:'Turn off analytics',close:'Close',privacy:'Privacy policy',on:'Website analytics is on in this browser.',off:'Website analytics is off in this browser.',unset:'Website analytics is off until you allow it.',signal:'Analytics is off because of your browser privacy signal.'
+  text:'Google Analytics and PostHog count page visits and feature use. We do not send your typed text or clipboard contents. Typing works with analytics turned off.',
+  allow:'Turn on analytics',settings:'Analytics settings',revoke:'Turn off analytics',close:'Close',privacy:'Privacy policy',on:'Website analytics is on in this browser.',off:'Website analytics is off in this browser.',signal:'Analytics is off because of your browser privacy signal.'
 };
-let banner,dialog,state;
+let dialog,state;
 function update(){
-  if(!banner)return;
-  banner.hidden=consent!=='unset'||privacySignal||test;
-  state.textContent=privacySignal?copy.signal:consent==='granted'?copy.on:consent==='denied'?copy.off:copy.unset;
+  if(!dialog)return;
+  state.textContent=privacySignal?copy.signal:allowed()?copy.on:copy.off;
   dialog.querySelector('[data-choice="granted"]').disabled=privacySignal;
-  dialog.querySelector('[data-choice="granted"]').hidden=consent==='granted';
-  dialog.querySelector('[data-choice="denied"]').hidden=consent==='granted';
-  dialog.querySelector('[data-revoke]').hidden=consent!=='granted';
+  dialog.querySelector('[data-choice="granted"]').hidden=allowed();
+  dialog.querySelector('[data-revoke]').hidden=!allowed();
 }
 if(configured&&!test){
-  banner=document.createElement('section');banner.className='analytics-consent';banner.setAttribute('aria-labelledby','analytics-consent-title');
   const privacy=(ne?'/ne':'')+'/privacy/#analytics';
-  banner.innerHTML=`<h2 id="analytics-consent-title">${copy.heading}</h2><p>${copy.text} <a href="${privacy}">${copy.privacy}</a></p><div class="analytics-actions"><button type="button" class="button" data-choice="granted">${copy.allow}</button><button type="button" class="button" data-choice="denied">${copy.decline}</button></div>`;
   dialog=document.createElement('dialog');dialog.className='analytics-dialog';dialog.setAttribute('aria-labelledby','analytics-settings-title');
-  dialog.innerHTML=`<h2 id="analytics-settings-title">${copy.settings}</h2><p data-state role="status"></p><p>${copy.text} <a href="${privacy}">${copy.privacy}</a></p><div class="analytics-actions"><button type="button" class="button" data-choice="granted">${copy.allow}</button><button type="button" class="button" data-choice="denied">${copy.decline}</button><button type="button" class="button" data-revoke>${copy.revoke}</button><button type="button" class="button" data-close>${copy.close}</button></div>`;
-  document.body.append(banner,dialog);state=dialog.querySelector('[data-state]');
+  dialog.innerHTML=`<h2 id="analytics-settings-title">${copy.settings}</h2><p data-state role="status"></p><p>${copy.text} <a href="${privacy}">${copy.privacy}</a></p><div class="analytics-actions"><button type="button" class="button" data-choice="granted">${copy.allow}</button><button type="button" class="button" data-revoke>${copy.revoke}</button><button type="button" class="button" data-close>${copy.close}</button></div>`;
+  document.body.append(dialog);state=dialog.querySelector('[data-state]');
   dialog.addEventListener('keydown',event=>{
     if(event.key!=='Tab')return;
     const controls=[...dialog.querySelectorAll('a[href],button:not([disabled])')].filter(el=>!el.hidden&&el.getClientRects().length);
@@ -84,11 +78,10 @@ if(configured&&!test){
       event.preventDefault();(event.shiftKey?last:first).focus();
     }
   });
-  for(const element of [banner,dialog])element.addEventListener('click',event=>{
+  dialog.addEventListener('click',event=>{
     const choice=event.target.closest('[data-choice]');
     if(choice){
-      const fromBanner=element===banner;choose(choice.dataset.choice);dialog.close();
-      if(fromBanner){const main=document.getElementById('main');main?.setAttribute('tabindex','-1');main?.focus({preventScroll:true});}
+      choose(choice.dataset.choice);dialog.close();
     }
     if(event.target.closest('[data-revoke]')){choose('denied');dialog.close();}
     if(event.target.closest('[data-close]'))dialog.close();
@@ -105,8 +98,8 @@ document.addEventListener('click',event=>{
 });
 window.addEventListener('storage',event=>{
   if([consentKey,legacyOptOutKey,null].includes(event.key)){
-    const previous=consent;consent=readConsent(storage);
-    if(!allowed())stop();else if(previous!=='granted')start();update();
+    const wasAllowed=allowed();consent=readConsent(storage);
+    if(!allowed())stop();else if(!wasAllowed)start();update();
   }
 });
 start();
