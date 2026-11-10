@@ -33,7 +33,9 @@ pub fn dispatch(request: &Value) -> Result<Value, String> {
         "known" => json!(d.known(&s.to_lowercase())),
         "candidates" => json!(candidates(s)),
         "experimental" => json!(experimental(s)),
-        "aksharantar" => json!(aksharantar(s)),
+        "aksharantar" => json!(aksharantar(s)), // legacy protocol name
+        "dictionaryCandidates" => json!(Dictionaries::shared().intentional(&s.to_lowercase())),
+        "typoCandidates" => json!(Dictionaries::shared().typos(&s.to_lowercase())),
         "usesAksharantar" => json!(uses_aksh(s)),
         "context" => json!(context(s, m)),
         "contextualCandidates" => json!(contextual_candidates(

@@ -22,7 +22,11 @@ final class LocalExperienceTests: XCTestCase {
         XCTAssertTrue(store.saveDraft(composer.state))
         var restored = Composer()
         XCTAssertTrue(LocalExperience(defaults: defaults, directory: directory).restore(into: &restored))
-        XCTAssertEqual(restored.output, composer.output)
+        // Loading preferences must not rewrite an already-entered draft.
+        // On relaunch, preferences apply to the newly restored source.
+        XCTAssertTrue(composer.output.hasPrefix("पनि"))
+        XCTAssertTrue(restored.output.hasPrefix(alternative))
+        XCTAssertEqual(restored.state.source, composer.state.source)
         store.remember("pani", value: offered.first!, candidates: offered)
         XCTAssertTrue(store.spellings.isEmpty)
         XCTAssertTrue(store.clearDraft())

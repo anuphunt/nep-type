@@ -20,6 +20,7 @@ permissions:
   contents: read
 env:
   PYTHONUTF8: '1'
+  NEPTYPE_PACK_ONLY: '1'
   RUSTFLAGS: '-C target-feature=+crt-static'
   CARGO_BUILD_TARGET: x86_64-pc-windows-msvc
 jobs:
@@ -31,10 +32,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: python scripts/fetch-runtime-dictionary.py
       - run: python scripts/engine-data.py check
       - run: cargo test --locked --release --manifest-path engine/Cargo.toml
       - run: cargo build --locked --release --manifest-path engine/Cargo.toml
-      - run: python shared/tests/abi_smoke.py engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll
+      - run: python shared/tests/native_release_dictionary.py engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll
       - run: python shared/tests/windows_pad_regression.py engine/target/x86_64-pc-windows-msvc/release/neptype_engine.dll
       - run: python shared/tests/product_experience.py
         env:
@@ -57,8 +59,8 @@ jobs:
         shell: pwsh
         run: |
           ./platforms/windows/installer/package.ps1
-          ./platforms/windows/installer/package.ps1 -Version '0.1.2-preview.0' -OutputDirectory "$pwd/build/windows-installer/upgrade-fixture" -TestFixture
-          ./platforms/windows/installer/package.ps1 -Version '0.1.2-preview.2' -OutputDirectory "$pwd/build/windows-installer/rollback-fixture" -TestFixture -TestRollback
+          ./platforms/windows/installer/package.ps1 -Version '0.1.4-preview.0' -OutputDirectory "$pwd/build/windows-installer/upgrade-fixture" -TestFixture
+          ./platforms/windows/installer/package.ps1 -Version '0.1.4-preview.2' -OutputDirectory "$pwd/build/windows-installer/rollback-fixture" -TestFixture -TestRollback
       - name: Verify keyboard registration, rollback, locked upgrade, pad and removal
         shell: pwsh
         run: ./platforms/windows/installer/verify.ps1

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "roman-nepali-intentional.tsv.gz": {
+      "bytes": 52049633,
+      "sha256": "82cb93c81be5ff8544aedcb30a14a8c6f11ab288397bc2033f268102f47574c2"
+    },
+    "roman-nepali-reviewed.json": {
+      "bytes": 3260821,
+      "sha256": "d031efd420677f920d8ecf357efc14630eda999025f03090c8ef1785fe3ad18b"
+    },
+    "roman-nepali-typos.tsv.gz": {
+      "bytes": 98722146,
+      "sha256": "6417e2dda9e8de038cc2828de1e7b0667cf8693949b6b976972d95cd6dcdb5dc"
+    }
+  },
+  "intentional_keys": 9498358,
+  "intentional_pairs": 10311986,
+  "inventory_words": 2398979,
+  "ordering": "Within each category: preserved/individually reviewed first; draft second; source exceptions last; natural before shorthand, variant_rank, Nepali codepoint order, word_id. Typo suggestions remain separate from intentional spellings.",
+  "pilot_aliases_sha256": "e47cbc7c4d0f691ffb16a258d09cd754fa393883928b26dea39fa9955e9ef81f",
+  "pilot_approved": 800,
+  "pilot_audit_sha256": "d9ef46a29a266dcc95289877e54eb223b5a03db18764a6d6ed4c168d6a1a3e92",
+  "pilot_held_suppressed": 200,
+  "reviewed_roman_keys": 61964,
+  "source_alias_rows": 31878436,
+  "source_database_sha256": "3cefa5a80899ec97c7a67e252675c176169203b3aba2d613d8723cf32644efca",
+  "status": "Full rule-generated draft plus native pilot; not all entries are individually approved.",
+  "typo_keys": 19664004,
+  "typo_pairs": 21566450,
+  "version": "roman-nepali-v2-pilot-v1"
+}

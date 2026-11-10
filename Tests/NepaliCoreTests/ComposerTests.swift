@@ -156,17 +156,17 @@ final class ComposerTests: XCTestCase {
     func testContextDistinguishesAmbiguousWordAndOffersCorrection() {
         XCTAssertEqual(engine.render("the man is here"), "the man is here")
         XCTAssertEqual(engine.render("mero man ramro cha"), "मेरो मन राम्रो छ")
-        let source = "aaja bhaisakeko"
+        let source = "aaja pani"
         let choice = engine.contextChoices(in: source).last!
         XCTAssertTrue(choice.uncertain)
-        XCTAssertEqual(choice.preferred, engine.phonetic("bhaisakeko"))
-        XCTAssertTrue(engine.contextualCandidates(for: choice).contains("भइसकेको"))
+        XCTAssertEqual(choice.preferred, "पनि")
+        XCTAssertTrue(engine.contextualCandidates(for: choice).contains("पानी"))
         var composer = Composer()
         composer.setSource(source)
-        composer.choose("भइसकेको", for: choice.token)
-        XCTAssertEqual(composer.output, "आज भइसकेको")
+        composer.choose("पानी", for: choice.token)
+        XCTAssertEqual(composer.output, "आज पानी")
         composer.undo()
-        XCTAssertEqual(composer.output, "आज भैसकेको")
+        XCTAssertEqual(composer.output, "आज पनि")
     }
 
     func testAuthoredAmbiguityIsVisibleEvenWhenNepaliIsLikely() {
@@ -209,34 +209,36 @@ final class ComposerTests: XCTestCase {
         XCTAssertEqual(engine.render("Namaste mero"), "नमस्ते मेरो")
     }
 
-    func testAksharantarIndexPreservesFirstChoice() throws {
+    func testIntentionalDictionarySpellingPrecedesPhoneticFallback() {
         let choices = engine.candidates(for: "bhaisakeko")
-        XCTAssertEqual(choices.first, engine.phonetic("bhaisakeko"))
-        XCTAssertTrue(engine.aksharantarCandidates(for: "bhaisakeko").contains("भइसकेको"))
+        XCTAssertEqual(choices.first, "भइसकेको")
+        XCTAssertTrue(engine.dictionaryCandidates(for: "bhaisakeko").contains("भइसकेको"))
+        XCTAssertTrue(choices.contains(engine.phonetic("bhaisakeko")))
         XCTAssertTrue(choices.contains("bhaisakeko"))
-        XCTAssertEqual(engine.render("aaja bhaisakeko"), "आज भैसकेको")
+        XCTAssertEqual(engine.render("aaja bhaisakeko"), "आज भइसकेको")
         var composer = Composer()
         composer.setSource("bhaisakeko")
-        composer.choose("भइसकेको", for: engine.tokens(in: "bhaisakeko")[0])
-        XCTAssertEqual(composer.output, "भइसकेको")
+        composer.choose(engine.phonetic("bhaisakeko"), for: engine.tokens(in: "bhaisakeko")[0])
+        XCTAssertEqual(composer.output, "भैसकेको")
         composer.undo()
-        XCTAssertEqual(composer.output, engine.phonetic("bhaisakeko"))
+        XCTAssertEqual(composer.output, "भइसकेको")
     }
 
-    func testGeneratedAliasesAreSuggestionsAndNeverChangeTopChoice() {
-        XCTAssertTrue(engine.experimentalCandidates(for: "bato").contains("बाटो"))
-        XCTAssertEqual(engine.candidates(for: "bato").first, engine.phonetic("bato"))
-        XCTAssertTrue(engine.candidates(for: "bato").contains("बाटो"))
+    func testTypoSuggestionsStaySeparateFromIntentionalDefaults() {
+        XCTAssertTrue(engine.dictionaryCandidates(for: "bato").contains("बाटो"))
+        XCTAssertEqual(engine.candidates(for: "bato").first, "बाटो")
+        XCTAssertTrue(engine.typoCandidates(for: "bato").contains("बटी"))
+        XCTAssertFalse(engine.dictionaryCandidates(for: "bato").contains("बटी"))
         XCTAssertTrue(engine.candidates(for: "bato").contains("bato"))
-        XCTAssertEqual(engine.render("bato"), engine.phonetic("bato"))
+        XCTAssertEqual(engine.render("bato"), "बाटो")
         XCTAssertFalse(engine.experimentalCandidates(for: "pani").contains("पानी"))
         XCTAssertEqual(Array(engine.candidates(for: "pani").prefix(2)), ["पनि", "पानी"])
         var composer = Composer()
         composer.setSource("bato")
-        composer.choose("बाटो", for: engine.tokens(in: "bato")[0])
-        XCTAssertEqual(composer.output, "बाटो")
+        composer.choose("बटी", for: engine.tokens(in: "bato")[0])
+        XCTAssertEqual(composer.output, "बटी")
         composer.undo()
-        XCTAssertEqual(composer.output, engine.phonetic("bato"))
+        XCTAssertEqual(composer.output, "बाटो")
     }
 
     func testGeneralOfflineEnglishMembershipAndSafeAmbiguity() {

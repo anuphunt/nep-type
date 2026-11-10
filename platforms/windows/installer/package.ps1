@@ -1,5 +1,5 @@
 param(
-    [string]$Version = '0.1.2-preview.1',
+    [string]$Version = '0.1.4-preview.1',
     [string]$OutputDirectory = '',
     [switch]$TestFixture,
     [switch]$TestRollback
@@ -50,6 +50,8 @@ $manifest = [ordered]@{
     architecture = 'x64'
     minimumWindows = '10'
     signing = (Get-AuthenticodeSignature $installer.FullName).Status.ToString()
+    dictionaryId = (Get-Content "$root/engine/data/manifest.json" -Raw | ConvertFrom-Json).id
+    linguisticApproval = $false
     systemKeyboard = $true
     installationScope = 'machine'
     requiresAdministrator = $true

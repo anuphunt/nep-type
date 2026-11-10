@@ -1,0 +1,12 @@
+{
+  "purpose": "Cross-platform parity snapshot for the standalone dictionary and common-word compatibility layer; not linguistic approval. Explicit spelling, safety and article tests remain independent correctness checks.",
+  "cases": 2286,
+  "request_source": "swift-baseline.jsonl",
+  "request_source_sha256": "d10a45638d8de3d14de969c5ffd7ea8b406ed8fd3cffb2f1bc8cd9bd5d0b156d",
+  "dictionary_id": "77fb2c90cd99ef6687f508c965af49d794a2dfe415281249f3bbf58e7aec32d7",
+  "preferences_sha256": "34e30b1f7dd745ae3e85c158e0fbedc9ddf6758bf5488786d9327ee4f5e47d5a",
+  "changed_cases_vs_historical": {
+    "analyze": 1347,
+    "session": 12
+  }
+}

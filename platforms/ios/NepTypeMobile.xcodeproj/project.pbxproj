@@ -45,7 +45,7 @@
   A00000000000000000000017 = {isa = PBXBuildFile; fileRef = B00000000000000000000017; };
   B00000000000000000000018 = {isa = PBXFileReference; lastKnownFileType = text; path = ../../data/sources/AKSHARANTAR-ATTRIBUTION.txt; sourceTree = SOURCE_ROOT; };
   A00000000000000000000018 = {isa = PBXBuildFile; fileRef = B00000000000000000000018; };
-  B00000000000000000000019 = {isa = PBXFileReference; lastKnownFileType = text; path = ../../data/compiled/aksharantar-indiccorp-v1.manifest.json; sourceTree = SOURCE_ROOT; };
+  B00000000000000000000019 = {isa = PBXFileReference; lastKnownFileType = text; path = ../../engine/data/roman-nepali-provenance.json; sourceTree = SOURCE_ROOT; };
   A00000000000000000000019 = {isa = PBXBuildFile; fileRef = B00000000000000000000019; };
   B00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
   B00000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };

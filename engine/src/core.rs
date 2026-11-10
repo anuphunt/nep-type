@@ -163,17 +163,15 @@ pub fn base(input: &str) -> Vec<String> {
     }
     let d = Dictionaries::shared();
     let key = input.to_lowercase();
+    // Established common spellings and individually reviewed aliases precede
+    // generated intentional spellings. Typo suggestions remain separate.
     let mut choices = d.lexicon.get(&key).cloned().unwrap_or_default();
+    choices.extend(d.intentional(&key));
     if d.common.contains(&key)
         || (input.graphemes(true).count() > 1 && input == input.to_uppercase())
-        || (choices.is_empty() && d.known(&key) && d.aliases(&key).is_empty())
+        || (choices.is_empty() && d.known(&key))
     {
         choices.insert(0, input.into());
-    } else if choices.is_empty() {
-        let matches = d.aksh(&key);
-        if key.graphemes(true).count() >= 3 && matches.len() == 1 {
-            choices.push(matches[0].clone());
-        }
     }
     choices.push(phonetic(&key));
     choices.push(input.into());
@@ -182,7 +180,7 @@ pub fn base(input: &str) -> Vec<String> {
 pub fn experimental(input: &str) -> Vec<String> {
     let b = base(input);
     Dictionaries::shared()
-        .aliases(&input.to_lowercase())
+        .typos(&input.to_lowercase())
         .into_iter()
         .filter(|s| !b.contains(s))
         .collect()
@@ -190,7 +188,7 @@ pub fn experimental(input: &str) -> Vec<String> {
 pub fn aksharantar(input: &str) -> Vec<String> {
     let b = base(input);
     Dictionaries::shared()
-        .aksh(&input.to_lowercase())
+        .intentional(&input.to_lowercase())
         .into_iter()
         .filter(|s| !b.contains(s))
         .collect()
@@ -198,7 +196,7 @@ pub fn aksharantar(input: &str) -> Vec<String> {
 pub fn uses_aksh(input: &str) -> bool {
     let key = input.to_lowercase();
     let d = Dictionaries::shared();
-    let a = d.aksh(&key);
+    let a = d.intentional(&key);
     key.graphemes(true).count() >= 3
         && !d.lexicon.contains_key(&key)
         && a.len() == 1
@@ -243,7 +241,7 @@ pub fn context(source: &str, mode: u8) -> Vec<Choice> {
             let curated = d.lexicon.get(&key);
             let common = d.common.contains(&key);
             let known = common || d.known(&key);
-            let a = d.aksh(&key);
+            let a = d.intentional(&key);
             if w.literal {
                 return Evidence {
                     e: 0,
@@ -269,13 +267,15 @@ pub fn context(source: &str, mode: u8) -> Vec<Choice> {
                     5
                 } else if a.len() == 1 && key.len() >= 3 {
                     4
+                } else if !a.is_empty() && key.len() >= 3 {
+                    3
                 } else {
                     0
                 },
                 ea: common && curated.is_none(),
                 na: curated.is_some() && !common,
                 preferred: curated.and_then(|v| v.first().cloned()).or_else(|| {
-                    if a.len() == 1 && key.len() >= 3 {
+                    if !a.is_empty() && key.len() >= 3 {
                         a.first().cloned()
                     } else {
                         None
@@ -306,7 +306,7 @@ pub fn context(source: &str, mode: u8) -> Vec<Choice> {
                     preferred: w.text.clone(),
                     uncertain: false,
                 }
-            } else if d.common.contains(&key) && d.lexicon.contains_key(&key) {
+            } else if d.common.contains(&key) {
                 Choice {
                     token: w.clone(),
                     preferred: w.text.clone(),
@@ -392,7 +392,22 @@ const ABBREVIATIONS: [&str; 10] = [
     "mr", "mrs", "ms", "dr", "prof", "sr", "jr", "st", "vs", "etc",
 ];
 pub fn render(source: &str, mode: u8, overrides: &HashMap<usize, String>) -> Rendered {
-    let choices = context(source, mode);
+    render_with_spellings(source, mode, overrides, &HashMap::new())
+}
+fn render_with_spellings(
+    source: &str,
+    mode: u8,
+    overrides: &HashMap<usize, String>,
+    spellings: &HashMap<usize, String>,
+) -> Rendered {
+    let mut choices = context(source, mode);
+    if mode != 1 && !spellings.is_empty() {
+        for choice in choices.iter_mut().filter(|choice| !choice.token.literal) {
+            if let Some(value) = spellings.get(&choice.token.start) {
+                choice.preferred.clone_from(value);
+            }
+        }
+    }
     let mut text: Vec<u16> = source.encode_utf16().collect();
     let mut stops = HashSet::new();
     if mode != 1 {
@@ -479,6 +494,14 @@ pub struct Snapshot {
     pub source: String,
     pub mode: u8,
     pub overrides: HashMap<usize, String>,
+    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
+    applied_spellings: HashMap<usize, String>,
+}
+fn saved_spelling<'a>(spellings: &'a HashMap<String, String>, roman: &'a str) -> Option<&'a str> {
+    let key = roman.to_ascii_lowercase();
+    spellings
+        .get(&key)
+        .map(|value| if value == &key { roman } else { value.as_str() })
 }
 #[derive(Clone, Default, Serialize, Deserialize)]
 pub struct Composer {
@@ -497,21 +520,30 @@ impl Composer {
                     && roman.len() <= 64
                     && roman.bytes().all(|c| c.is_ascii_alphabetic())
                     && value.len() <= 1024
-                    && candidates(roman).contains(value)
+                    && (roman.eq_ignore_ascii_case(value) || candidates(roman).contains(value))
             })
             .take(256)
-            .map(|(key, value)| (key.to_ascii_lowercase(), value))
+            .map(|(roman, value)| {
+                let key = roman.to_ascii_lowercase();
+                let value = if roman.eq_ignore_ascii_case(&value) {
+                    key.clone()
+                } else {
+                    value
+                };
+                (key, value)
+            })
             .collect();
     }
     pub fn rendered(&self) -> Rendered {
-        render(
+        render_with_spellings(
             &self.current.source,
             self.current.mode,
             &self.current.overrides,
+            &self.current.applied_spellings,
         )
     }
     pub fn order_preferences(&self, roman: &str, values: &mut Vec<String>) {
-        if let Some(preferred) = self.preferred_spellings.get(&roman.to_ascii_lowercase()) {
+        if let Some(preferred) = saved_spelling(&self.preferred_spellings, roman) {
             if let Some(index) = values.iter().position(|value| value == preferred) {
                 let saved = values.remove(index);
                 values.insert(0, saved);
@@ -530,9 +562,55 @@ impl Composer {
             return;
         }
         self.checkpoint();
+        self.current.applied_spellings = self.spellings_after_edit(&value);
         self.current.overrides =
             retain_choices(&self.current.source, &value, &self.current.overrides);
         self.current.source = value;
+    }
+    fn spellings_after_edit(&self, source: &str) -> HashMap<usize, String> {
+        if self.preferred_spellings.is_empty() && self.current.applied_spellings.is_empty() {
+            return HashMap::new();
+        }
+        let old = &self.current.source;
+        let (prefix, old_suffix, new_suffix) = edit_boundaries(old, source);
+        let previous: HashMap<_, _> = tokens(old)
+            .into_iter()
+            .filter(|token| !token.literal)
+            .map(|token| (token.start, token.text))
+            .collect();
+        tokens(source)
+            .into_iter()
+            .filter(|token| !token.literal)
+            .filter_map(|token| {
+                let old_start = if token.end <= prefix {
+                    Some(token.start)
+                } else if token.start >= new_suffix {
+                    Some(old_suffix + (token.start - new_suffix))
+                } else {
+                    None
+                };
+                let learned = saved_spelling(&self.preferred_spellings, &token.text);
+                let value = match old_start.filter(|start| previous.get(start) == Some(&token.text))
+                {
+                    // Keep a learned correction if adding a duplicate invalidates its override.
+                    Some(start) => learned
+                        .filter(|value| {
+                            self.current
+                                .overrides
+                                .get(&start)
+                                .is_some_and(|old| old == value)
+                        })
+                        .or_else(|| {
+                            self.current
+                                .applied_spellings
+                                .get(&start)
+                                .map(String::as_str)
+                        }),
+                    None => learned,
+                };
+                value.map(|value| (token.start, value.into()))
+            })
+            .collect()
     }
     pub fn set_mode(&mut self, mode: u8) {
         if self.current.mode != mode {
@@ -565,14 +643,7 @@ impl Composer {
         }
     }
 }
-pub fn retain_choices(
-    old: &str,
-    new: &str,
-    choices: &HashMap<usize, String>,
-) -> HashMap<usize, String> {
-    if choices.is_empty() {
-        return HashMap::new();
-    }
+fn edit_boundaries(old: &str, new: &str) -> (usize, usize, usize) {
     let a: Vec<u16> = old.encode_utf16().collect();
     let b: Vec<u16> = new.encode_utf16().collect();
     let prefix = a.iter().zip(&b).take_while(|(a, b)| a == b).count();
@@ -583,6 +654,17 @@ pub fn retain_choices(
     {
         suffix += 1;
     }
+    (prefix, a.len() - suffix, b.len() - suffix)
+}
+pub fn retain_choices(
+    old: &str,
+    new: &str,
+    choices: &HashMap<usize, String>,
+) -> HashMap<usize, String> {
+    if choices.is_empty() {
+        return HashMap::new();
+    }
+    let (prefix, old_suffix, new_suffix) = edit_boundaries(old, new);
     let aw = tokens(old);
     let bw = tokens(new);
     let counts = |words: &[Token]| {
@@ -602,8 +684,8 @@ pub fn retain_choices(
             }
             let new_pos = if w.end <= prefix {
                 Some(*pos)
-            } else if w.start >= a.len() - suffix {
-                pos.checked_add_signed(b.len() as isize - a.len() as isize)
+            } else if w.start >= old_suffix {
+                Some(new_suffix + (w.start - old_suffix))
             } else {
                 None
             };

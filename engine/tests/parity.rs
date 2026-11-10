@@ -1,7 +1,7 @@
 use serde_json::Value;
 #[test]
-fn frozen_swift_behavior() {
-    let corpus = include_str!("../../shared/fixtures/swift-baseline.jsonl");
+fn standalone_dictionary_behavior() {
+    let corpus = include_str!("../../shared/fixtures/standalone-baseline.jsonl");
     let mut count = 0;
     for line in corpus.lines() {
         let case: Value = serde_json::from_str(line).unwrap();
@@ -17,7 +17,7 @@ fn frozen_swift_behavior() {
         count += 1;
     }
     assert!(count > 2000);
-    eprintln!("Verified {count} frozen Swift behavior cases");
+    eprintln!("Verified {count} standalone dictionary behavior cases");
 }
 #[test]
 fn dictionary_integrity() {

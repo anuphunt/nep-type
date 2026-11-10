@@ -2,6 +2,10 @@
 #include <cassert>
 
 int main() {
+    assert((neptype::visible_pad_candidates({"पनि","पानी","अप्नी","पाइन","pani"},"pani") == std::vector<std::string>{"पनि","पानी","pani"}));
+    assert((neptype::visible_pad_candidates({"पानी","pani"},"pani") == std::vector<std::string>{"पानी","pani"}));
+    assert((neptype::visible_pad_candidates({"pani","पानी","पनि","पाइन"},"pani") == std::vector<std::string>{"pani","पानी","पनि"}));
+
     neptype::PadCandidateView row{42,L"ma pani",3,7,3,4,true};
     assert(row.matches(42,L"ma pani",3,7));
     assert(!row.matches(43,L"ma pani",3,7)); // a newer lookup is pending

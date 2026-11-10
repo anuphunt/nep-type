@@ -130,26 +130,26 @@ extension AppDelegate {
         check("shortcut_command_2_selected_word", input.string == "pani" && output.string == "पानी")
 
         for number in 1...5 {
-            prepare("man")
+            prepare("paani")
             let expected = choices.indices.contains(number - 1) ? choices[number - 1] : nil
             command(number)
-            check("shortcut_visible_slot_\(number)", expected != nil && input.string == "man" && output.string == expected)
+            check("shortcut_visible_slot_\(number)", expected != nil && input.string == "paani" && output.string == expected)
         }
-        prepare("man")
+        prepare("paani")
         nextCandidates(nil)
         let pageChoice = choices.first
         command(1)
-        check("shortcut_current_page", candidatePage > 0 && pageChoice != nil && output.string == pageChoice && input.string == "man")
+        check("shortcut_current_page", candidatePage > 0 && pageChoice != nil && output.string == pageChoice && input.string == "paani")
 
         prepare("pani")
         if let word = output.mappedWords.first { selectOutputWord(word) }
         command(2)
         check("shortcut_output_editor", input.string == "pani" && output.string == "पानी")
 
-        prepare("pani")
+        prepare("namaste")
         command(5)
         command(2, repeated: true)
-        check("shortcut_unavailable_and_repeat_do_not_edit", input.string == "pani" && output.string == "पनि")
+        check("shortcut_unavailable_and_repeat_do_not_edit", input.string == "namaste" && output.string == "नमस्ते")
         prepare("pani ")
         command(2)
         check("shortcut_no_active_word_does_not_edit", input.string == "pani " && output.string == "पनि ")

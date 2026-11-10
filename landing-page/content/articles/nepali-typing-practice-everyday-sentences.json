@@ -10,8 +10,8 @@
     "नेपाली वाक्य लेख्ने अभ्यास"
   ],
   "searchIntent": "Practise composing short Nepali messages with Roman input, check an answer key and correct a spelling before copying.",
-  "originalValue": "Four fresh everyday writing prompts with executable answer examples, an observed missed-vowel error and verified repair, and a repeat-and-record routine for proofreading. No speed-test, exam or learning-outcome claim.",
-  "overlapReview": "The homepage owns general tool intent; the typing guide explains controls. The mixed-language article covers preserving English words and the Romanized comparison explains input-method choice. This article supplies a task sequence: compose requests, a question, a greeting and a reminder without copying the Roman answer; compare an answer key; diagnose a real missing-vowel output; retry and record corrections. It does not duplicate the controls walkthrough or promise a scored typing test. None of the six example sentences occurs in the existing articles or example bank.",
+  "originalValue": "Four fresh everyday writing prompts with executable answer examples, a vowel check documenting a corrected earlier engine error, and a repeat-and-record routine for proofreading. No speed-test, exam or learning-outcome claim.",
+  "overlapReview": "The homepage owns general tool intent; the typing guide explains controls. The mixed-language article covers preserving English words and the Romanized comparison explains input-method choice. This article supplies a task sequence: compose requests, a question, a greeting and a reminder without copying the Roman answer; compare an answer key; check the vowel that earlier versions omitted; retry and record corrections. It does not duplicate the controls walkthrough or promise a scored typing test. None of the six example sentences occurs in the existing articles or example bank.",
   "keywordEvidence": {
     "provider": "Google Ads Keyword Planner",
     "researchFile": "research/2026-11-01-keywords.json",
@@ -43,6 +43,11 @@
       "url": "https://neptype.com/typing-guide/",
       "checked": "2026-11-03",
       "note": "Inspected current local source and production browser guide for overlap and product limits. This article adds original practice tasks and a documented proofreading error instead of repeating setup. Browser checks opt out of analytics."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/pull/5",
+      "checked": "2026-11-10",
+      "note": "Executed the revised Rust/Wasm engine: bihan and bihana both produce बिहान. Updated the bilingual vowel-check exercise and expected output while retaining the original dated observation."
     }
   ],
   "exampleContexts": [
@@ -91,7 +96,7 @@
         "source": "bholi bihan bhetau.",
         "mode": 0
       },
-      "expectedText": "भोलि बिहन भेटौँ।"
+      "expectedText": "भोलि बिहान भेटौँ।"
     },
     {
       "request": {
@@ -144,13 +149,13 @@
         }
       ],
       [
-        "Find and repair a missed vowel",
-        "For a morning arrangement, you want to write “भोलि बिहान भेटौँ।” With bihan, the current engine produces बिहन, missing the ा in बिहान. The first row deliberately shows that incorrect spelling. Change the Roman input to bihana, as in the second row, then read the entire output again. A readable suggestion can still contain a mistake.",
+        "Check the vowel in बिहान",
+        "For a morning arrangement, write “भोलि बिहान भेटौँ।” The current dictionary produces बिहान from both bihan and bihana. Compare the two inputs below and check that the ा appears after ह. Earlier versions omitted that vowel for bihan. Read the whole sentence before copying, even when a familiar input gives the expected result.",
         {
           "examples": [
             [
               "bholi bihan bhetau.",
-              "भोलि बिहन भेटौँ।"
+              "भोलि बिहान भेटौँ।"
             ],
             [
               "bholi bihana bhetau.",
@@ -184,7 +189,7 @@
       ],
       [
         "Keep a note of your corrections",
-        "Save the Roman input, final Nepali sentence and the word you corrected in your own notes. For the morning example, record bihan as the input that needed repair and bihana as the tested replacement. Revisit the correction in your next practice session. Copy anything you want to keep before closing or reloading the browser; the pad does not save drafts."
+        "Save the Roman input, final Nepali sentence and any corrected word in your own notes. For the morning example, record that both bihan and bihana now produce बिहान. Revisit words that needed correction in your next practice session. Copy anything you want to keep before closing or reloading the browser; the pad does not save drafts."
       ],
       [
         "Match this practice to your goal",
@@ -246,13 +251,13 @@
         }
       ],
       [
-        "छुटेको मात्रा भेटेर सच्याउनुहोस्",
-        "बिहान भेट्ने कुरा भन्न खोज्दा “भोलि बिहान भेटौँ।” लेख्नुपर्छ। हालको इन्जिनमा bihan लेख्दा बिहानको ा छुटेर बिहन आउँछ। तलको पहिलो पङ्क्तिमा यही गलत हिज्जे देखाइएको छ। दोस्रो पङ्क्तिमा जस्तै रोमन बाकसमा bihana लेख्नुहोस् र पूरै नतिजा फेरि पढ्नुहोस्। सजिलै पढ्न मिल्ने नतिजामा पनि हिज्जे बिग्रिएको हुन सक्छ।",
+        "बिहानको मात्रा जाँच्नुहोस्",
+        "बिहान भेट्ने कुरा भन्न “भोलि बिहान भेटौँ।” लेख्नुहोस्। हालको शब्दकोशमा bihan र bihana दुवैले बिहान लेख्छन्। तलका दुई रोमन लेखाइ तुलना गरेर ह पछि ा आएको छ कि छैन जाँच्नुहोस्। पुरानो संस्करणमा bihan लेख्दा त्यो मात्रा छुट्थ्यो। परिचित रोमन लेखाइबाट चाहिएको नतिजा आए पनि कपी गर्नुअघि पूरै वाक्य पढ्नुहोस्।",
         {
           "examples": [
             [
               "bholi bihan bhetau.",
-              "भोलि बिहन भेटौँ।"
+              "भोलि बिहान भेटौँ।"
             ],
             [
               "bholi bihana bhetau.",
@@ -286,7 +291,7 @@
       ],
       [
         "सच्याएका हिज्जेको टिपोट राख्नुहोस्",
-        "रोमन लेखाइ, अन्तिम नेपाली वाक्य र सच्याएको शब्द आफ्नो नोटमा राख्नुहोस्। बिहानको उदाहरणमा bihan बाट सच्याउनुपरेको र bihana लेख्दा चाहिएको नतिजा आएको टिप्नुहोस्। अर्को पटक अभ्यास गर्दा त्यो शब्द फेरि लेख्नुहोस्। राख्नुपर्ने पाठ ब्राउजर बन्द गर्नुअघि वा फेरि लोड गर्नुअघि कपी गर्नुहोस्। प्याडले मस्यौदा सुरक्षित राख्दैन।"
+        "रोमन लेखाइ, अन्तिम नेपाली वाक्य र सच्याएको शब्द आफ्नो नोटमा राख्नुहोस्। बिहानको उदाहरणमा अहिले bihan र bihana दुवैले बिहान लेख्छन् भन्ने टिप्नुहोस्। अर्को अभ्यासमा सच्याउनुपरेका शब्द फेरि लेख्नुहोस्। राख्नुपर्ने पाठ ब्राउजर बन्द गर्नुअघि वा फेरि लोड गर्नुअघि कपी गर्नुहोस्। प्याडले मस्यौदा सुरक्षित राख्दैन।"
       ],
       [
         "आफ्नो उद्देश्यअनुसार अभ्यास रोज्नुहोस्",
@@ -313,6 +318,15 @@
       "en",
       "ne"
     ],
-    "pass": "Read both complete drafts, including titles, descriptions, headings, instructions and link labels. Replaced the not-just/but goal sentence and its Nepali equivalent with direct attention to corrected spellings. Removed a repetitive defensive sentence about the scope of the examples, keeping the practical instruction to check meaning and spelling. Repaired awkward full-stop adjacency around the quoted morning target in both versions. Reread for natural Nepali, equivalent instructions, repetition, staged openers, inflation, dashes and unsupported learning claims. Executable examples/checks, source URLs, structured evidence, dates and identifiers were compared unchanged. Automated editorial review, not a claim of human authorship or expert review."
-  }
+    "pass": "Read both complete drafts, including titles, descriptions, headings, instructions and link labels. Replaced the not-just/but goal sentence and its Nepali equivalent with direct attention to corrected spellings. Removed a repetitive defensive sentence about the scope of the examples, keeping the practical instruction to check meaning and spelling. Repaired awkward full-stop adjacency around the quoted morning target in both versions. Reread for natural Nepali, equivalent instructions, repetition, staged openers, inflation, dashes and unsupported learning claims. Executable examples/checks, source URLs, structured evidence, dates and identifiers were compared unchanged. Automated editorial review, not a claim of human authorship or expert review.",
+    "revision": {
+      "reviewedOn": "2026-11-10",
+      "languages": [
+        "en",
+        "ne"
+      ],
+      "pass": "Updated the two affected paragraphs in both languages to describe the observed dictionary change. Reviewed for equivalent practical instructions, natural Nepali and direct prose. Preserved publication date, research evidence and unrelated text. Automated editorial pass; no expert-review claim."
+    }
+  },
+  "modified": "2026-11-10"
 }

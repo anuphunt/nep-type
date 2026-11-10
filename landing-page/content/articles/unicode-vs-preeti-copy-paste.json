@@ -43,6 +43,11 @@
       "url": "https://neptype.com/",
       "checked": "2026-11-06",
       "note": "Current shared Rust/Wasm verifies nepal and the fresh sentence. Disposable legacy-string render gives g]क्फ्न, not नेपाल; confirms this is not a Preeti conversion workflow. Live typing/copy checks use synthetic text and analytics opt-out."
+    },
+    {
+      "url": "https://github.com/anuphunt/nep-type/pull/5",
+      "checked": "2026-11-10",
+      "note": "Dictionary-migration recheck: the legacy g]kfn string renders जी॰]क्फ्न, still not नेपाल. The controlled font/copy specimen and its stored characters are unchanged."
     }
   ],
   "exampleContexts": [
@@ -73,7 +78,7 @@
         "source": "g]kfn",
         "mode": 0
       },
-      "expectedText": "g]क्फ्न"
+      "expectedText": "जी॰]क्फ्न"
     }
   ],
   "workflowVerification": {

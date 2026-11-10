@@ -7,6 +7,10 @@ use std::{
 pub static PACK: &[u8] = include_bytes!("../data/neptype.pack");
 pub const MANIFEST: &str = include_str!("../data/manifest.json");
 #[derive(Deserialize)]
+struct CommonPreferences {
+    spellings: HashMap<String, Vec<String>>,
+}
+#[derive(Deserialize)]
 struct Meta {
     lexicon: HashMap<String, Vec<String>>,
     common: HashSet<String>,
@@ -22,11 +26,22 @@ pub struct Dictionaries {
 fn u32at(data: &[u8], at: usize) -> usize {
     u32::from_le_bytes(data[at..at + 4].try_into().unwrap()) as usize
 }
+fn varint(data: &[u8], at: &mut usize) -> usize {
+    let (mut value, mut shift) = (0, 0);
+    loop {
+        let b = data[*at];
+        *at += 1;
+        value |= ((b & 127) as usize) << shift;
+        if b < 128 { return value; }
+        shift += 7;
+        assert!(shift < usize::BITS as usize, "Oversized dictionary integer");
+    }
+}
 impl Dictionaries {
     pub fn shared() -> &'static Self {
         static DATA: OnceLock<Dictionaries> = OnceLock::new();
         DATA.get_or_init(|| {
-            assert_eq!(&PACK[..8], b"NEPTYPE2");
+            assert_eq!(&PACK[..8], b"NEPTYPE3");
             let mut at = 40;
             let mut part = || {
                 let len = u32at(PACK, at);
@@ -35,7 +50,14 @@ impl Dictionaries {
                 at += len;
                 bytes
             };
-            let meta: Meta = serde_json::from_slice(part()).expect("Canonical dictionary metadata");
+            let mut meta: Meta = serde_json::from_slice(part()).expect("Canonical dictionary metadata");
+            // Keep the product's established common spellings without loading
+            // either retired bulk index. This small, versioned preference set
+            // is independent of the unchanged source pack and its audit IDs.
+            let preferences: CommonPreferences = serde_json::from_str(include_str!(
+                "../data/common-spelling-preferences.json"
+            )).expect("Common spelling preferences");
+            meta.lexicon.extend(preferences.spellings);
             Self {
                 lexicon: meta.lexicon,
                 common: meta.common,
@@ -79,24 +101,13 @@ impl Dictionaries {
         let mut at = base + u32at(self.pool, 8 + (id / 32) * 4);
         let mut value = Vec::new();
         for _ in 0..=id % 32 {
-            let prefix = self.pool[at] as usize;
-            let len = self.pool[at + 1] as usize;
-            at += 2;
+            let prefix = varint(self.pool, &mut at);
+            let len = varint(self.pool, &mut at);
             value.truncate(prefix);
             value.extend_from_slice(&self.pool[at..at + len]);
             at += len;
         }
-        value
-            .into_iter()
-            .map(|b| {
-                char::from_u32(if b < 128 {
-                    0x900 + b as u32
-                } else {
-                    0x200c + (b - 128) as u32
-                })
-                .unwrap()
-            })
-            .collect()
+        String::from_utf8(value).expect("UTF-8 dictionary spelling")
     }
     fn lookup(&self, key: &str, data: &[u8]) -> Vec<String> {
         if key.is_empty() || !key.bytes().all(|b| b.is_ascii_lowercase()) {
@@ -105,8 +116,10 @@ impl Dictionaries {
         let count = u32at(data, 0);
         let base = 4 + count * 4;
         let block_key = |i: usize| {
-            let p = base + u32at(data, 4 + i * 4);
-            &data[p + 2..p + 2 + data[p + 1] as usize]
+            let mut p = base + u32at(data, 4 + i * 4);
+            assert_eq!(varint(data, &mut p), 0);
+            let len = varint(data, &mut p);
+            &data[p..p + len]
         };
         let mut low = 0;
         let mut high = count;
@@ -130,28 +143,15 @@ impl Dictionaries {
         };
         let mut word = Vec::new();
         while at < end {
-            let prefix = data[at] as usize;
-            let len = data[at + 1] as usize;
-            at += 2;
+            let prefix = varint(data, &mut at);
+            let len = varint(data, &mut at);
             word.truncate(prefix);
             word.extend_from_slice(&data[at..at + len]);
             at += len;
-            let n = data[at] as usize;
-            at += 1;
+            let n = varint(data, &mut at);
             let mut ids = Vec::with_capacity(n);
             for _ in 0..n {
-                let mut id = 0;
-                let mut shift = 0;
-                loop {
-                    let b = data[at];
-                    at += 1;
-                    id |= ((b & 127) as usize) << shift;
-                    if b < 128 {
-                        break;
-                    }
-                    shift += 7;
-                }
-                ids.push(id);
+                ids.push(varint(data, &mut at));
             }
             match word.as_slice().cmp(key.as_bytes()) {
                 std::cmp::Ordering::Equal => {
@@ -164,9 +164,37 @@ impl Dictionaries {
         vec![]
     }
     pub fn aliases(&self, key: &str) -> Vec<String> {
+        // Compatibility method for the former external-alias API.
+        self.typos(key)
+    }
+    pub fn typos(&self, key: &str) -> Vec<String> {
         self.lookup(key, self.aliases)
     }
     pub fn aksh(&self, key: &str) -> Vec<String> {
+        // Compatibility method; no Aksharantar dictionary remains in the pack.
+        self.intentional(key)
+    }
+    pub fn intentional(&self, key: &str) -> Vec<String> {
         self.lookup(key, self.aksh)
+    }
+    /// Stream the embedded rows for exhaustive source verification without
+    /// materializing the 29 million Roman keys in memory.
+    pub fn visit_rows(&self, typos: bool, mut visit: impl FnMut(&str, &[String])) {
+        let data = if typos { self.aliases } else { self.aksh };
+        let blocks = u32at(data, 0);
+        let mut at = 4 + blocks * 4;
+        let mut key = Vec::new();
+        while at < data.len() {
+            let prefix = varint(data, &mut at);
+            let len = varint(data, &mut at);
+            key.truncate(prefix);
+            key.extend_from_slice(&data[at..at + len]);
+            at += len;
+            let count = varint(data, &mut at);
+            let values: Vec<String> = (0..count)
+                .map(|_| self.spelling(varint(data, &mut at)))
+                .collect();
+            visit(std::str::from_utf8(&key).unwrap(), &values);
+        }
     }
 }

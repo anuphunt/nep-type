@@ -1,8 +1,20 @@
 #pragma once
+#include <algorithm>
+#include <string>
+#include <vector>
 #include <cstdint>
 #include <string>
 
 namespace neptype {
+inline std::vector<std::string> visible_pad_candidates(std::vector<std::string> values, const std::string& original) {
+    if (values.size() > 3) {
+        const bool keepOriginal = std::find(values.begin(), values.end(), original) != values.end();
+        values.resize(3);
+        if (keepOriginal && std::find(values.begin(), values.end(), original) == values.end()) values.back() = original;
+    }
+    return values;
+}
+
 // The displayed row belongs to one completed document request and selection.
 // Text equality alone cannot detect a caret move within an unchanged document.
 struct PadCandidateView {

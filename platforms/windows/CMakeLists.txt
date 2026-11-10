@@ -80,6 +80,7 @@ if(WIN32)
         add_custom_command(TARGET NepTypeWindows POST_BUILD COMMAND "${CMAKE_COMMAND}" -E copy_if_different "${ENGINE_DLL}" "$<TARGET_FILE_DIR:NepTypeWindows>")
     endforeach()
     add_custom_command(TARGET NepTypeWindows POST_BUILD
+        COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/verify-engine-library.py" "$<TARGET_FILE_DIR:NepTypeWindows>/NepTypeEngine.dll"
         COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/engine-data.py"
             stage "$<TARGET_FILE_DIR:NepTypeWindows>/dictionaries")
 

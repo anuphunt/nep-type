@@ -13,7 +13,7 @@ mkdir -p "$APP/Contents/Resources/Licenses"
 cp branding/assets/NepType.icns "$APP/Contents/Resources/NepType.icns"
 python3 scripts/engine-data.py stage "$APP/Contents/Resources"
 cp data/sources/CMUDICT-LICENSE.txt "$APP/Contents/Resources/Licenses/CMUDICT-LICENSE.txt"
-cp data/compiled/aksharantar-indiccorp-v1.manifest.json "$APP/Contents/Resources/Licenses/AKSHARANTAR-PROVENANCE.json"
+cp data/compiled/roman-nepali.manifest.json "$APP/Contents/Resources/Licenses/ROMAN-NEPALI-PROVENANCE.json"
 cp data/sources/AKSHARANTAR-ATTRIBUTION.txt "$APP/Contents/Resources/Licenses/AKSHARANTAR-ATTRIBUTION.txt"
 cp data/sources/GOOGLE-NE-ATTRIBUTION.txt "$APP/Contents/Resources/Licenses/GOOGLE-NE-ATTRIBUTION.txt"
 NEPTYPE_INPUT_BIN_PATH=$(swift build -c release --product NepTypeInput --scratch-path "$SCRATCH" --cache-path "$SCRATCH/cache" --config-path "$SCRATCH/config" --security-path "$SCRATCH/security" "$@" --show-bin-path)
