@@ -15,8 +15,9 @@ if (pad) {
     ? 'शब्द छानेर सुझाव थिच्नुहोस् वा त्यसको नम्बर टाइप गर्नुहोस्। अङ्क नै लेख्न पहिले स्पेस थिच्नुहोस्।'
     : 'Tap a suggestion or type its number for the active word. To enter a number as text, type a space first.';
   const words = {
-    ready: ne ? 'तपाईंको लेखाइ यही ब्राउजरमा रहन्छ।' : 'Your text stays in this browser.',
-    loading: ne ? 'टाइपिङ तयार हुँदैछ…' : 'Getting the pad ready…',
+    ready: ne ? 'तयार छ — नेपाली लेख्न सुरु गर्नुहोस्।' : 'Ready to type — start writing in Nepali.',
+    loading: ne ? 'टाइपिङ तयार हुँदैछ…' : 'Getting the editor ready…',
+    loadingHint: ne ? 'अहिले लेख्न सक्नुहुन्छ; तयार भएपछि नेपाली पाठ देखिनेछ।' : 'You can type now; Nepali output will appear when it’s ready.',
     error: ne ? 'प्याड लोड भएन। फेरि प्रयास गर्न यहाँ क्लिक गर्नुहोस्।' : 'The pad couldn’t load. Click here to retry.',
     copied: ne ? 'कपी भयो।' : 'Copied.',
     copyFailed: ne ? 'पाठ छानेर कपी गर्नुहोस्।' : 'Select the output and copy it.',
@@ -25,13 +26,20 @@ if (pad) {
   let engine, loading, used = false, revision = 0, page = 0, pageWord = '', lastKey = '';
   let current = {source:'', rendered:{text:'',words:[]}, active:null, candidates:[]};
   const track = (name, properties = {}) => window.NepTypeAnalytics?.capture(name, {mode:mode.value,...properties});
+  function setStatus(state, text) {
+    status.dataset.state = state;
+    status.textContent = text;
+  }
+  function showLoading(percent) {
+    setStatus('loading', `${words.loading}${Number.isFinite(percent) ? ` ${percent}%` : ''} ${words.loadingHint}`);
+  }
   async function load() {
     if (engine) return engine;
     if (loading) return loading;
-    status.textContent = words.loading;
-    loading = WebEngine.load(percent => { status.textContent = `${words.loading} ${percent}%`; }).then(value => {
-      engine = value; pad.dataset.dictionaryId = value.dictionaryId; status.textContent = words.ready; return value;
-    }).catch(error => { loading = null; status.textContent = words.error; throw error; });
+    showLoading();
+    loading = WebEngine.load(showLoading).then(value => {
+      engine = value; pad.dataset.dictionaryId = value.dictionaryId; setStatus('ready', words.ready); return value;
+    }).catch(error => { loading = null; setStatus('error', words.error); throw error; });
     return loading;
   }
   function visibleCandidates() {
@@ -82,10 +90,10 @@ if (pad) {
       current=value;
       if (extra.operation) { input.value=value.source; mode.value=value.mode===2?'all':'mixed'; input.setSelectionRange(Math.min(caret,input.value.length),Math.min(caret,input.value.length)); lastKey=JSON.stringify([input.value,mode.value,input.selectionStart]); }
       beforeApply();
-      output.value=value.rendered.text; copy.disabled=!output.value; status.textContent=words.ready; drawSuggestions();
+      output.value=value.rendered.text; copy.disabled=!output.value; setStatus('ready', words.ready); drawSuggestions();
       if (!used&&input.value.trim()) { used=true;track('neptype_tool_used',{entry_method:entry}); }
       return true;
-    } catch { if (generation===revision) {lastKey='';status.textContent=words.error;} }
+    } catch { if (generation===revision) {lastKey='';setStatus('error', words.error);} }
   }
   async function choose(value) {
     if (!current.active || current.source!==input.value || !current.candidates.includes(value)) return;
@@ -139,8 +147,8 @@ if (pad) {
   pad.querySelector('#web-example').addEventListener('click',()=>{input.value=input.placeholder;input.setSelectionRange(input.value.length-1,input.value.length-1);update('example');});
   pad.querySelector('#web-clear').addEventListener('click',()=>{input.value='';output.value='';copy.disabled=true;page=0;pageWord='';suggestions.replaceChildren();lastKey='';input.focus();update();});
   copy.addEventListener('click',async()=>{
-    try {await navigator.clipboard.writeText(output.value);status.textContent=words.copied;track('neptype_tool_output_copied');}
-    catch {output.focus();output.select();status.textContent=words.copyFailed;}
+    try {await navigator.clipboard.writeText(output.value);setStatus('ready', words.copied);track('neptype_tool_output_copied');}
+    catch {output.focus();output.select();setStatus('error', words.copyFailed);}
   });
   status.addEventListener('click',()=>{if(!engine){lastKey='';update();}});
   if ('IntersectionObserver' in window) {const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){load().catch(()=>{});observer.disconnect();}},{rootMargin:'150px'});observer.observe(pad);}

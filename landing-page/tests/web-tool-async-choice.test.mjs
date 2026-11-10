@@ -5,7 +5,7 @@ import test from 'node:test';
 
 const moduleSource=fs.readFileSync(new URL('../web-tool.mjs',import.meta.url),'utf8').replace(/^import .*\n/gm,'');
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
-async function setup(){
+async function setup({deferLoad=false}={}){
   let document;
   class Element{
     constructor(){this.value='';this.selectionStart=0;this.selectionEnd=0;this.handlers={};this.dataset={};}
@@ -23,13 +23,15 @@ async function setup(){
   document={getElementById:id=>elements[id],documentElement:{lang:'en'},createElement:()=>new Element(),activeElement:input};
   const pending=[];
   const engine={compose:request=>new Promise(resolve=>pending.push({request,resolve}))};
-  vm.runInNewContext(moduleSource,{document,navigator:{platform:'iPhone'},window:{matchMedia:()=>({matches:true})},WebEngine:{load:async()=>engine},usesNumberSuggestions:()=>true,candidateIndex:value=>/^[1-5]$/.test(value||'')?Number(value)-1:-1});
+  let resolveLoad,rejectLoad,progress;
+  const load=onProgress=>{progress=onProgress;return deferLoad?new Promise((resolve,reject)=>{resolveLoad=resolve;rejectLoad=reject;}):Promise.resolve(engine);};
+  vm.runInNewContext(moduleSource,{document,navigator:{platform:'iPhone'},window:{matchMedia:()=>({matches:true})},WebEngine:{load},usesNumberSuggestions:()=>true,candidateIndex:value=>/^[1-5]$/.test(value||'')?Number(value)-1:-1});
   const response=request=>({source:request.source,active:{start:0,end:4,text:'pani',literal:false},candidates:['पानी','पनि','pani'],rendered:{text:request.choice||'पानी',words:[{start:0,value:request.choice||'पानी',outputStart:0,outputEnd:4}]}});
   input.value='pani';input.setSelectionRange(4,4);input.fire('input');await flush();
-  const initial=pending.shift();initial.resolve(response(initial.request));await flush();
+  if(!deferLoad){const initial=pending.shift();initial.resolve(response(initial.request));await flush();}
   async function choose(){let prevented=false;input.fire('beforeinput',{cancelable:true,inputType:'insertText',data:'2',preventDefault(){prevented=true;}});assert.equal(prevented,true);await flush();return pending.shift();}
   async function resolve(item){item.resolve(response(item.request));await flush();}
-  return {input,document,elements,pending,choose,resolve};
+  return {input,document,elements,pending,choose,resolve,progress:percent=>progress(percent),finishLoading:async()=>{resolveLoad(engine);await flush();},failLoading:async()=>{rejectLoad(Error("offline"));await flush();}};
 }
 test('superseded number choice does not restore stale caret or focus',async()=>{
   const h=await setup(),choice=await h.choose();h.input.setSelectionRange(1,1);h.input.fire('select');h.elements['web-mode'].focus();await flush();await h.resolve(choice);
@@ -44,4 +46,19 @@ test('applied number choice preserves independently changed selection',async()=>
 });
 test('undisturbed number choice applies and preserves caret',async()=>{
   const h=await setup(),choice=await h.choose();await h.resolve(choice);assert.equal(h.elements['web-output'].value,'पनि');assert.equal(h.input.selectionStart,4);assert.equal(h.document.activeElement,h.input);
+});
+
+test('loading is visible until the engine is ready and queued text is rendered',async()=>{
+  const h=await setup({deferLoad:true}),status=h.elements['web-status'];
+  assert.equal(status.dataset.state,'loading');assert.match(status.textContent,/You can type now/);
+  h.progress(37);assert.match(status.textContent,/37%/);
+  assert.equal(h.elements['web-output'].value,'');assert.equal(h.input.value,'pani');
+  await h.finishLoading();await h.resolve(h.pending.shift());
+  assert.equal(status.dataset.state,'ready');assert.match(status.textContent,/Ready to type/);
+  assert.equal(h.elements['web-output'].value,'पानी');
+});
+test('loading failure shows the error state and preserves input for retry',async()=>{
+  const h=await setup({deferLoad:true});await h.failLoading();
+  assert.equal(h.elements['web-status'].dataset.state,'error');
+  assert.match(h.elements['web-status'].textContent,/retry/);assert.equal(h.input.value,'pani');
 });

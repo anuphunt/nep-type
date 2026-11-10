@@ -6,6 +6,7 @@ export const homeTitle = {en: 'Nepali Typing Online — Roman to Nepali | NepTyp
 export const homeDescriptions = {en: homeDescription, ne: 'NepType मा रोमन अक्षरबाट नेपाली युनिकोड लेख्नुहोस्। हिज्जे रोज्नुहोस् र तयार पाठ कपी गर्नुहोस्। निःशुल्क अनलाइन टाइपिङ, खाता खोल्नु पर्दैन।'};
 
 export const nepaliCopy = {
+  webLoading: 'टाइपिङ तयार हुँदैछ… अहिले लेख्न सक्नुहुन्छ; तयार भएपछि नेपाली पाठ देखिनेछ।',
   badge: 'नेपाली लेखौँ',
   headline: 'अनलाइन नेपाली लेख्नुहोस्।',
   headlineAccent: 'रोमन अक्षरबाट।',
