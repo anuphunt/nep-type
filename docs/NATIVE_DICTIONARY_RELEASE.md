@@ -1,4 +1,4 @@
-# Native dictionary release preparation
+# Native dictionary installer release
 
 Mac 0.1.3 (build 4) and Windows 0.1.3-preview.1 update the existing released desktop installers with dictionary `roman-nepali-v2-pilot-v1`, ID `77fb2c90cd99ef6687f508c965af49d794a2dfe415281249f3bbf58e7aec32d7`. The base is the published Mac 0.1.2 source, including the previously released Windows typing pad. This branch does not introduce the separately unfinished Windows system-keyboard installer.
 
@@ -9,3 +9,10 @@ The Windows three-button layout keeps the original Roman token accessible after 
 This is a dictionary draft release, not corpus-wide linguistic approval. The full corpus contains generated aliases; only the 1,000-entry pilot has its completed review overlay (800 approved, 200 held aliases suppressed). Known historical spelling/ranking differences remain. Historical language-quality tests are retained and recorded separately in CI; they are not represented as passing. The installed vehicle phrase is recorded as a quality observation, while the restart fixture uses `namaste gayera` to test persistence independently of that known lexical regression. Mac UI and runtime checks must distinguish these known language changes from actual control or installation failures.
 
 Mac artifacts must retain Developer ID signing, notarization and stapled tickets for both app/input source and DMG. Windows remains an unsigned x64 typing-pad preview, with the experimental TSF service excluded. Source and installer publication, public hash checks and website download updates occur only after platform build/packaging checks. Existing published release assets are retained. No user-installed apps or keyboards are overwritten by verification.
+
+## Published artifacts and validation
+
+- [Mac 0.1.3](https://github.com/anuphunt/nep-type/releases/tag/mac-v0.1.3): source `f3d4359d15c8af9c82fe9acfc8459fc9136dfe3b`; DMG 546,494,752 bytes, SHA-256 `9dcf00cddf3ad67d93d089ea7a3f09da6f79a74c14534e4359949e7fedeb19f2`. Signed/notarized/stapled; final read-only DMG copy and private-folder keyboard installer verified. Both slices of both binaries embed the exact new pack. Interactive current-candidate control checks passed. Historical fixed-vocabulary UI suite remains 94/123; shortcut suite 19/22. Intel hardware and real input-source host-app compatibility remain unverified.
+- [Windows 0.1.3-preview.1](https://github.com/anuphunt/nep-type/releases/tag/windows-v0.1.3-preview.1): source `4bb86b3617fb3623794bad5feee1fc06c776674e`; installer 93,288,298 bytes, SHA-256 `1afff015ae84b7bdfe2fb289f9f4a287246f43f85dcdda6ea90a071db27de82c`. [Build and installed-app verification](https://github.com/anuphunt/nep-type/actions/runs/42864181754) completed with 62 recorded checks. The inherited development-keyboard prompt was restored to the published pad-only guidance. Historical vocabulary and protocol test failures are retained in the logs as non-gating quality observations. Automated Windows Server 2022 testing does not establish consumer Windows 10/11, ARM64, high-DPI, accessibility or SmartScreen acceptance.
+
+The release tags reference the tested artifact source revisions. Later metadata commits do not change installer bytes. Raw alias exports remain local; no merge to main is part of this release.
