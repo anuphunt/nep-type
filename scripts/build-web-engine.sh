@@ -12,6 +12,10 @@ if ! command -v wasm-bindgen >/dev/null || [ "$(wasm-bindgen --version)" != "was
   cargo install wasm-bindgen-cli --version 0.2.130 --locked
 fi
 python3 "$root/scripts/engine-data.py" check
-cargo build --lib --locked --release --target wasm32-unknown-unknown
+# The web target needs only a cdylib. Producing native archives as well and
+# running LTO copies the large embedded pack through extra compiler passes,
+# exceeding small hosted builders' memory limits.
+CARGO_PROFILE_RELEASE_LTO=false CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+  cargo rustc --lib --crate-type cdylib --locked --release --jobs 1 --target wasm32-unknown-unknown
 mkdir -p "$root/landing-page/engine-build"
 wasm-bindgen --target web --out-dir "$root/landing-page/engine-build" --out-name neptype_engine target/wasm32-unknown-unknown/release/neptype_engine.wasm
