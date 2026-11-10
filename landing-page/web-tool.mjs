@@ -136,7 +136,7 @@ if (pad) {
     });
   }
   mode.addEventListener('change',async()=>{await update();track('neptype_tool_mode_changed');});
-  pad.querySelector('#web-example').addEventListener('click',()=>{input.value='namaste! malai momo man parcha.\nmero phone naya cha.';input.setSelectionRange(input.value.length-1,input.value.length-1);update('example');});
+  pad.querySelector('#web-example').addEventListener('click',()=>{input.value=input.placeholder;input.setSelectionRange(input.value.length-1,input.value.length-1);update('example');});
   pad.querySelector('#web-clear').addEventListener('click',()=>{input.value='';output.value='';copy.disabled=true;page=0;pageWord='';suggestions.replaceChildren();lastKey='';input.focus();update();});
   copy.addEventListener('click',async()=>{
     try {await navigator.clipboard.writeText(output.value);status.textContent=words.copied;track('neptype_tool_output_copied');}
