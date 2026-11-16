@@ -66,10 +66,15 @@ final class KeyboardViewController: UIInputViewController {
     }()
     private var candidateGeneration = 0
     private var presentedCandidates: [String] = []
+    private var defaultCandidate: String?
     private var candidatePage = 0
     private var candidatePresentationID = 0
     // Preview stays marked until a boundary so it can be reverted without editing committed host text.
     private var selectedPreview: String?
+    private var savedSpellings: [String:String] {
+        get { UserDefaults.standard.dictionary(forKey: "neptype.keyboard.spellings") as? [String:String] ?? [:] }
+        set { UserDefaults.standard.set(newValue, forKey: "neptype.keyboard.spellings") }
+    }
     // Coarse document binding; not proof that a marked range is still owned.
     private var compositionDocumentID: UUID?
     private var compositionEditor: NepTypeDocumentEditing?
@@ -441,7 +446,7 @@ final class KeyboardViewController: UIInputViewController {
         candidateGeneration += 1
         let generation = candidateGeneration
         candidateQueue.cancelAllOperations()
-        guard session.isComposing else { presentedCandidates = []; return }
+        guard session.isComposing else { presentedCandidates = []; defaultCandidate = nil; return }
         let snapshot = session
         let original = snapshot.roman
         let delay = testCandidateDelay
@@ -462,7 +467,12 @@ final class KeyboardViewController: UIInputViewController {
                     if self.isViewLoaded { self.render() }
                     return
                 }
-                self.presentedCandidates = choices
+                var ordered = choices
+                self.defaultCandidate = choices.first
+                if let saved = self.savedSpellings[original.lowercased()], let index = ordered.firstIndex(of: saved) {
+                    ordered.remove(at: index); ordered.insert(saved, at: 0)
+                }
+                self.presentedCandidates = ordered
                 if self.isViewLoaded { self.render() }
             }
         }
@@ -625,6 +635,7 @@ final class KeyboardViewController: UIInputViewController {
         ensureSameDocument()
         if literalField { commitOriginal(); return }
         guard let preview = selectedPreview, session.isComposing else { commitOriginal(); return }
+        rememberChoice(session.roman, value: preview)
         _ = session.cancel()
         compositionDocumentID = nil
         compositionEditor = nil
@@ -634,6 +645,18 @@ final class KeyboardViewController: UIInputViewController {
             editor.setMarkedText(preview, selectedRange: NSRange(location: (preview as NSString).length, length: 0))
             editor.unmarkText()
         }
+    }
+    private func rememberChoice(_ roman: String, value: String) {
+        guard roman.range(of: "^[A-Za-z]{1,64}$", options: .regularExpression) != nil,
+              presentedCandidates.contains(value), let first = defaultCandidate else { return }
+        var saved = savedSpellings
+        let key = roman.lowercased()
+        if value == first { saved.removeValue(forKey: key) }
+        else {
+            if saved.count >= 256, saved[key] == nil { saved.removeValue(forKey: saved.keys.sorted().first!) }
+            saved[key] = value
+        }
+        savedSpellings = saved
     }
     @objc private func spaceKey(_ sender: UIButton) { guard !ownershipPaused, sender.tag == candidatePresentationID else { return }; commitPreviewOrOriginal(); edit { editor.insertText(" ") }; render() }
     @objc private func returnKey(_ sender: UIButton) { guard !ownershipPaused, sender.tag == candidatePresentationID else { return }; commitPreviewOrOriginal(); edit { editor.insertText("\n") }; render() }

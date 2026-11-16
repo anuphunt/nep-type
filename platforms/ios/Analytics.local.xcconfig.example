@@ -1,0 +1,2 @@
+NEPTYPE_POSTHOG_KEY = phc_your_public_project_token
+NEPTYPE_POSTHOG_HOST = https:/$()/us.i.posthog.com

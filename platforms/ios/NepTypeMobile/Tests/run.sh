@@ -14,7 +14,7 @@ mkdir -p "$app" "$work/cache"
 cleanup() { xcrun simctl uninstall "$udid" "$app_id" >/dev/null 2>&1 || true; rm -rf "$work"; }
 trap cleanup EXIT HUP INT TERM
 bash "$project/../../scripts/build-apple-engine.sh" iphonesimulator
-xcrun --sdk iphonesimulator swiftc -I "$project/../../shared/include" "$project/../../build/rust-apple/iphonesimulator/libneptype_engine.a" -D NEPTYPE_CONTAINER_TEST -sdk "$(xcrun --sdk iphonesimulator --show-sdk-path)" -target arm64-apple-ios17.0-simulator -module-cache-path "$work/cache" -parse-as-library "$project/NepTypeMobile/AppDelegate.swift" "$project/../../Sources/NepaliCore/Composer.swift" "$project/../../Sources/NepaliCore/Transliterator.swift" "$project/../../Sources/NepaliCore/GeneratedIndexes.swift" "$project/../../Sources/NepaliCore/GeneratedAliasIndex.swift" "$project/NepTypeMobile/Tests/ContainerHost.swift" -o "$app/ContainerHost"
+xcrun --sdk iphonesimulator swiftc -I "$project/../../shared/include" "$project/../../build/rust-apple/iphonesimulator/libneptype_engine.a" -D NEPTYPE_CONTAINER_TEST -sdk "$(xcrun --sdk iphonesimulator --show-sdk-path)" -target arm64-apple-ios17.0-simulator -module-cache-path "$work/cache" -parse-as-library "$project/NepTypeMobile/AppDelegate.swift" "$project/NepTypeMobile/Analytics.swift" "$project/../../Sources/NepaliCore/Composer.swift" "$project/../../Sources/NepaliCore/LocalExperience.swift" "$project/../../Sources/NepaliCore/Transliterator.swift" "$project/../../Sources/NepaliCore/GeneratedIndexes.swift" "$project/../../Sources/NepaliCore/GeneratedAliasIndex.swift" "$project/NepTypeMobile/Tests/ContainerHost.swift" -o "$app/ContainerHost"
 python3 "$project/../../scripts/engine-data.py" stage "$app/"
 cat > "$app/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>CFBundleIdentifier</key><string>app.neptype.containerhost</string><key>CFBundleName</key><string>NepType Container Test</string><key>CFBundleExecutable</key><string>ContainerHost</string><key>CFBundlePackageType</key><string>APPL</string><key>CFBundleVersion</key><string>1</string><key>CFBundleShortVersionString</key><string>1.0</string><key>MinimumOSVersion</key><string>17.0</string><key>UILaunchScreen</key><dict/></dict></plist>
@@ -42,4 +42,5 @@ test -f "$result" || { echo "Host produced no result" >&2; exit 1; }
 cp "$result" "$project/NepTypeMobile/Tests/last-results.json"
 mkdir -p "$project/../../evidence/platforms"
 cp "$container/tmp/neptype-iphone-graphite.png" "$project/../../evidence/platforms/iphone.png"
+cp "$container/tmp/neptype-keyboard-setup.png" "$project/../../evidence/platforms/iphone-keyboard-setup.png"
 python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); sys.exit(0 if r["passed"] else 1)' "$result"

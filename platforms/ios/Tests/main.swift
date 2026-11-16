@@ -15,4 +15,4 @@ require(session.cancel() == "mero", "preserve original on cancel")
 session.toggleLanguage()
 require(!session.append("hello"), "English is passthrough")
 let ms = Double(DispatchTime.now().uptimeNanoseconds - start) / 1_000_000
-print(String(format: "PASS: core snapshot composition/candidate/original; cold first sequence %.2f ms (macOS process, not iOS)", ms))
+print(String(format: "PASS: canonical core composition/candidate/original; cold first sequence %.2f ms (macOS process, not iOS)", ms))

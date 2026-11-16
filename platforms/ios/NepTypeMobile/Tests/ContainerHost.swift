@@ -6,16 +6,70 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
     private var checks: [String: Bool] = [:]
     private var controller: WelcomeViewController!
     private var savedClipboard: [[String: Any]] = []
+    private let setupSuite = "app.neptype.containerhost.setup"
+    private lazy var setupDefaults = UserDefaults(suiteName: setupSuite)!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        controller = WelcomeViewController()
+        setupDefaults.removePersistentDomain(forName: setupSuite)
+        controller = WelcomeViewController(setupDefaults: setupDefaults)
         window.rootViewController = controller
         window.makeKeyAndVisible()
         self.window = window
         savedClipboard = UIPasteboard.general.items
-        waitFor("initial_local_conversion", { self.field("nepali-output")?.text == "नमस्ते! म office जान्छु।" }) { self.checkTyping() }
+        waitFor("first_launch_setup_guide", { self.controller.presentedViewController is KeyboardSetupViewController && self.controller.presentedViewController?.viewIfLoaded?.window != nil }) { self.checkSetupGuide() }
         return true
+    }
+    func checkSetupGuide() {
+        let guide = controller.presentedViewController!
+        let root = guide.view!
+        root.layoutIfNeeded()
+        let all = descendants(root)
+        let labels = all.compactMap { ($0 as? UILabel)?.text }
+        checks["setup_has_settings_path"] = labels.contains { $0.contains("Settings → General → Keyboard → Keyboards") }
+        checks["setup_has_add_neptype_step"] = labels.contains { $0.contains("Add New Keyboard") && $0.contains("choose NepType") }
+        checks["setup_has_globe_step"] = labels.contains { $0.contains("globe key") && $0.contains("choose NepType") }
+        checks["setup_does_not_require_full_access"] = labels.contains { $0.contains("No Full Access needed") }
+        checks["setup_explains_settings_destination"] = labels.contains { $0.contains("opens NepType’s settings") && $0.contains("path above") }
+        let originalFrame = root.frame
+        for (width, height) in [(320, 568), (393, 812), (700, 430), (768, 1024)] {
+            root.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            root.setNeedsLayout(); root.layoutIfNeeded()
+            let scroll = all.first { $0.accessibilityIdentifier == "keyboard-setup-scroll" } as! UIScrollView
+            let open = all.first { $0.accessibilityIdentifier == "keyboard-setup-settings" } as! UIButton
+            let tag = "\(width)x\(height)"
+            checks["setup_no_horizontal_overflow_" + tag] = scroll.contentSize.width <= scroll.bounds.width + 1
+            checks["setup_cta_reachable_" + tag] = open.frame.minY >= scroll.frame.maxY && open.frame.maxY <= root.bounds.height && open.bounds.height >= 44
+        }
+        root.frame = originalFrame; root.setNeedsLayout(); root.layoutIfNeeded()
+        let renderer = UIGraphicsImageRenderer(size: root.bounds.size)
+        let snapshot = renderer.image { _ in root.drawHierarchy(in: root.bounds, afterScreenUpdates: true) }
+        try? snapshot.pngData()?.write(to: URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("neptype-keyboard-setup.png"))
+        var settingsRequests = 0
+        let isolatedGuide = KeyboardSetupViewController(openSettings: { settingsRequests += 1 })
+        isolatedGuide.loadViewIfNeeded()
+        let open = descendants(isolatedGuide.view).first { $0.accessibilityIdentifier == "keyboard-setup-settings" } as! UIButton
+        checks["setup_does_not_automatically_open_settings"] = settingsRequests == 0
+        open.sendActions(for: .touchUpInside)
+        checks["setup_settings_requires_explicit_tap"] = settingsRequests == 1
+        let done = all.first { $0.accessibilityIdentifier == "keyboard-setup-done" } as! UIButton
+        done.sendActions(for: .touchUpInside)
+        waitFor("setup_can_be_dismissed", { self.controller.presentedViewController == nil }) {
+            self.controller = WelcomeViewController(setupDefaults: self.setupDefaults)
+            self.window?.rootViewController = self.controller
+            self.waitFor("initial_local_conversion", { self.field("nepali-output")?.text == "" && (self.button("keyboard-setup-link")?.bounds.height ?? 0) >= 44 }) {
+                self.controller.viewDidAppear(false)
+                self.checks["setup_only_once_across_controllers"] = self.controller.presentedViewController == nil
+                let link = self.button("keyboard-setup-link")
+                self.checks["setup_link_visible"] = link?.configuration?.title == "Add NepType to your iPhone keyboard" && (link?.bounds.height ?? 0) >= 44
+                let info = self.button("keyboard-setup-info")
+                self.checks["setup_info_accessible"] = info?.accessibilityLabel == "How to add NepType to your iPhone keyboard" && (info?.bounds.width ?? 0) >= 44 && (info?.bounds.height ?? 0) >= 44
+                info?.sendActions(for: .touchUpInside)
+                self.waitFor("setup_link_reopens_guide", { self.controller.presentedViewController is KeyboardSetupViewController }) {
+                    self.controller.presentedViewController?.dismiss(animated: false) { self.checkTyping() }
+                }
+            }
+        }
     }
     func descendants(_ view: UIView) -> [UIView] { [view] + view.subviews.flatMap(descendants) }
     func field(_ id: String) -> UITextView? { descendants(controller.view).first { $0.accessibilityIdentifier == id } as? UITextView }
@@ -37,6 +91,10 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
     }
     func checkTyping() {
         let root = controller.view!
+        checks["initial_input_is_empty"] = field("roman-input")?.text.isEmpty == true
+        field("roman-input")?.becomeFirstResponder()
+        checks["focus_does_not_insert_sample"] = field("roman-input")?.text.isEmpty == true
+        field("roman-input")?.resignFirstResponder()
         checks["graphite_dark_appearance"] = controller.overrideUserInterfaceStyle == .dark && root.backgroundColor == UIColor(white: 30/255, alpha: 1)
         checks["separate_source_and_result"] = field("roman-input")?.isEditable == true && field("nepali-output")?.isEditable == false
         checks["copy_is_accessible_icon"] = button("copy-output")?.accessibilityLabel == "Copy text" && button("copy-output")?.currentImage != nil && button("copy-output")?.currentTitle == nil
@@ -98,7 +156,7 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
                 checks["entire_document_reachable_" + tag] = documentFrame.minY >= -1 && documentFrame.maxY <= outer.contentSize.height + 1
                 let copy = button("copy-output")!, clear = button("clear")!
                 let copyHeader = copy.superview!, clearHeader = clear.superview!
-                checks["copy_aligned_" + tag] = abs(copy.center.y - copyHeader.bounds.midY) <= 1 && abs(copy.frame.maxX - clear.frame.maxX) <= 1 && abs(clear.center.y - clearHeader.bounds.midY) <= 1
+                checks["copy_aligned_" + tag] = abs(copy.superview!.convert(copy.center, to: copyHeader).y - copyHeader.bounds.midY) <= 1 && abs(copy.superview!.convert(copy.frame, to: copyHeader).maxX - clear.frame.maxX) <= 1 && abs(clear.center.y - clearHeader.bounds.midY) <= 1
             }
         }
         controller.additionalSafeAreaInsets = .zero
@@ -110,7 +168,17 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
             let all = self.descendants(help.view)
             let labels = all.compactMap { ($0 as? UILabel)?.text }
             self.checks["setup_guidance_retained"] = labels.contains { $0.contains("Add New Keyboard") && $0.contains("choose NepType") }
-            self.checks["privacy_and_limits_retained"] = labels.contains { $0.contains("experimental") && $0.contains("does not request Full Access") }
+            self.checks["privacy_and_limits_retained"] = labels.contains { $0.contains("works offline") && $0.contains("does not need Full Access") }
+            let analytics = all.compactMap { $0 as? UISwitch }.first { $0.accessibilityIdentifier == "usage-analytics" }
+            self.checks["analytics_control_available"] = analytics?.accessibilityLabel == "Share anonymous usage analytics"
+            self.checks["analytics_text_privacy"] = labels.contains { $0.contains("typed text, suggestions, and clipboard contents are never sent") }
+            if let analytics {
+                let original = analytics.isOn
+                analytics.isOn = false; analytics.sendActions(for: .valueChanged)
+                self.checks["analytics_opt_out_works"] = !AppAnalytics.shared.isEnabled
+                analytics.isOn = original; analytics.sendActions(for: .valueChanged)
+                self.checks["analytics_preference_restored"] = AppAnalytics.shared.isEnabled == original
+            }
             let settings = all.compactMap { $0 as? UIButton }.first { $0.currentTitle == "Open NepType settings" }
             self.checks["settings_only_on_tap"] = settings?.actions(forTarget: self.controller, forControlEvent: .touchUpInside)?.isEmpty == false
             let slider = all.compactMap { $0 as? UISlider }.first
@@ -154,6 +222,7 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
         }
     }
     func finish() {
+        setupDefaults.removePersistentDomain(forName: setupSuite)
         UIPasteboard.general.items = savedClipboard
         let root = controller.view!
         root.layoutIfNeeded()

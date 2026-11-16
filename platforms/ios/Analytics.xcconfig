@@ -1,0 +1,4 @@
+// Public ingestion configuration is supplied locally or by CI, never a personal API key.
+NEPTYPE_POSTHOG_KEY =
+NEPTYPE_POSTHOG_HOST =
+#include? "Analytics.local.xcconfig"

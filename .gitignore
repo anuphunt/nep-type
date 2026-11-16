@@ -40,3 +40,6 @@ landing-page/reports/
 
 # Standalone dictionary build inputs are local; runtime pack distributed with installers.
 data/compiled/roman-nepali-*
+
+# iOS public project configuration supplied per build machine.
+platforms/ios/Analytics.local.xcconfig

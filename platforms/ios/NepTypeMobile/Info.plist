@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
+<key>NepTypePostHogKey</key><string>$(NEPTYPE_POSTHOG_KEY)</string>
+<key>NepTypePostHogHost</key><string>$(NEPTYPE_POSTHOG_HOST)</string>
+<key>CFBundleDisplayName</key><string>NepType</string>
 <key>UILaunchScreen</key><dict>
 <key>UIColorName</key><string>LaunchBackground</string>
 </dict>

@@ -1,5 +1,7 @@
 # NepType iOS experimental keyboard
 
+All current builds use the standalone Roman Nepali v2 + pilot dictionary through the shared Rust engine. The old per-source Nepali dictionaries are removed. See [migration details](../../docs/DICTIONARY_MIGRATION.md) for the pack size and known vocabulary regressions. Historical test results below predate this data replacement.
+
 **Current behavior:** The security-review section at the end supersedes earlier dated experiment descriptions. The production proxy now pauses when ownership is uncertain; earlier descriptions of committing on callbacks are historical.
 
 This project builds a container and an iOS custom-keyboard extension with the same shared Rust engine and embedded dictionary as the Mac prototype. Roman text is displayed as marked text; tap a candidate to select it, then use Space or Return to commit it. The selected candidate is highlighted while the text remains Roman until acceptance. Delete restores the exact Roman token while a preview is active; without a preview, Space commits the original. The language toggle switches to literal English. It does not request Full Access. No keyboard has been installed or enabled, and its behavior in a real host has not been verified; it is not production-ready.
