@@ -33,6 +33,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 #endif
 
+/// The device being set up, so iPad users are not told to open iPhone settings.
+enum DeviceCopy {
+    static var name: String { UIDevice.current.userInterfaceIdiom == .pad ? "iPad" : "iPhone" }
+}
+
 private enum Graphite {
     static let background = UIColor(white: 30/255, alpha: 1)
     static let surface = UIColor(white: 39/255, alpha: 1)
@@ -133,7 +138,7 @@ final class WelcomeViewController: UIViewController, UITextViewDelegate {
         view.addSubview(toolbar)
         let setup = UIButton(type: .system)
         var setupStyle = UIButton.Configuration.plain()
-        setupStyle.title = "Add NepType to your iPhone keyboard"
+        setupStyle.title = "Add NepType to your \(DeviceCopy.name) keyboard"
         setupStyle.titleLineBreakMode = .byWordWrapping
         setupStyle.image = UIImage(systemName: "keyboard")
         setupStyle.imagePadding = 7
@@ -152,7 +157,7 @@ final class WelcomeViewController: UIViewController, UITextViewDelegate {
         setup.accessibilityIdentifier = "keyboard-setup-link"
         setup.accessibilityHint = "Shows instructions for adding and choosing the NepType keyboard."
         setup.addTarget(self, action: #selector(showKeyboardSetup), for: .touchUpInside)
-        let setupInfo = icon("info.circle", label: "How to add NepType to your iPhone keyboard", action: #selector(showKeyboardSetup))
+        let setupInfo = icon("info.circle", label: "How to add NepType to your \(DeviceCopy.name) keyboard", action: #selector(showKeyboardSetup))
         setupInfo.accessibilityIdentifier = "keyboard-setup-info"
         setupInfo.accessibilityHint = "Opens the step-by-step keyboard setup guide."
         let setupBanner = row([setup, setupInfo], spacing: 4)
@@ -542,7 +547,7 @@ final class WelcomeViewController: UIViewController, UITextViewDelegate {
         let help = UIViewController()
         help.overrideUserInterfaceStyle = .dark
         help.view.backgroundColor = Graphite.background
-        let guidance = label("Use NepType in other apps\n\n1. Open iPhone Settings → General → Keyboard → Keyboards.\n2. Tap Add New Keyboard and choose NepType.\n3. Hold the globe key to choose NepType.\n\nIn the keyboard, tap a suggestion to preview it. Space or Return accepts; Delete restores the Roman word before commit.\n\nThe keyboard works offline and does not need Full Access.", size: 14, color: Graphite.ink)
+        let guidance = label("Use NepType in other apps\n\n1. Open \(DeviceCopy.name) Settings → General → Keyboard → Keyboards.\n2. Tap Add New Keyboard and choose NepType.\n3. Hold the globe key to choose NepType.\n\nIn the keyboard, tap a suggestion to preview it. Space or Return accepts; Delete restores the Roman word before commit.\n\nThe keyboard works offline and does not need Full Access.", size: 14, color: Graphite.ink)
         let slider = UISlider()
         slider.minimumValue = 16; slider.maximumValue = 28; slider.value = Float(points)
         slider.tintColor = Graphite.accent
@@ -645,12 +650,12 @@ final class KeyboardSetupViewController: UIViewController {
         done.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(done)
 
-        let title = text("Add NepType to your iPhone keyboard", style: .largeTitle, color: Graphite.ink)
+        let title = text("Add NepType to your \(DeviceCopy.name) keyboard", style: .largeTitle, color: Graphite.ink)
         title.font = UIFontMetrics(forTextStyle: .largeTitle).scaledFont(for: .systemFont(ofSize: 28, weight: .bold))
         title.accessibilityTraits.insert(.header)
         let subtitle = text("Type Nepali in Messages and your other apps.", style: .body)
         let steps = UIStackView(arrangedSubviews: [
-            step(1, title: "Open keyboard settings", detail: "On your iPhone, go to Settings → General → Keyboard → Keyboards."),
+            step(1, title: "Open keyboard settings", detail: "On your \(DeviceCopy.name), go to Settings → General → Keyboard → Keyboards."),
             step(2, title: "Add NepType", detail: "Tap Add New Keyboard… and choose NepType under Third-Party Keyboards."),
             step(3, title: "Switch to NepType", detail: "In any text field, touch and hold the globe key, then choose NepType.")
         ])

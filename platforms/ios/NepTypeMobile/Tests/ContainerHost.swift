@@ -9,8 +9,14 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
     private let setupSuite = "app.neptype.containerhost.setup"
     private lazy var setupDefaults = UserDefaults(suiteName: setupSuite)!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let window = UIWindow(frame: UIScreen.main.bounds)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let configuration = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        configuration.delegateClass = ContainerSceneDelegate.self
+        return configuration
+    }
+    /// Called from the scene delegate: iOS 27 terminates apps without UIScene lifecycle.
+    func start(in scene: UIWindowScene) {
+        let window = UIWindow(windowScene: scene)
         setupDefaults.removePersistentDomain(forName: setupSuite)
         controller = WelcomeViewController(setupDefaults: setupDefaults)
         window.rootViewController = controller
@@ -18,7 +24,6 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
         self.window = window
         savedClipboard = UIPasteboard.general.items
         waitFor("first_launch_setup_guide", { self.controller.presentedViewController is KeyboardSetupViewController && self.controller.presentedViewController?.viewIfLoaded?.window != nil }) { self.checkSetupGuide() }
-        return true
     }
     func checkSetupGuide() {
         let guide = controller.presentedViewController!
@@ -61,9 +66,9 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
                 self.controller.viewDidAppear(false)
                 self.checks["setup_only_once_across_controllers"] = self.controller.presentedViewController == nil
                 let link = self.button("keyboard-setup-link")
-                self.checks["setup_link_visible"] = link?.configuration?.title == "Add NepType to your iPhone keyboard" && (link?.bounds.height ?? 0) >= 44
+                self.checks["setup_link_visible"] = link?.configuration?.title == "Add NepType to your \(DeviceCopy.name) keyboard" && (link?.bounds.height ?? 0) >= 44
                 let info = self.button("keyboard-setup-info")
-                self.checks["setup_info_accessible"] = info?.accessibilityLabel == "How to add NepType to your iPhone keyboard" && (info?.bounds.width ?? 0) >= 44 && (info?.bounds.height ?? 0) >= 44
+                self.checks["setup_info_accessible"] = info?.accessibilityLabel == "How to add NepType to your \(DeviceCopy.name) keyboard" && (info?.bounds.width ?? 0) >= 44 && (info?.bounds.height ?? 0) >= 44
                 info?.sendActions(for: .touchUpInside)
                 self.waitFor("setup_link_reopens_guide", { self.controller.presentedViewController is KeyboardSetupViewController }) {
                     self.controller.presentedViewController?.dismiss(animated: false) { self.checkTyping() }
@@ -240,5 +245,12 @@ final class ContainerHost: UIResponder, UIApplicationDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             exit(self.checks.values.allSatisfy { $0 } ? 0 : 1)
         }
+    }
+}
+
+final class ContainerSceneDelegate: UIResponder, UIWindowSceneDelegate {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        (UIApplication.shared.delegate as? ContainerHost)?.start(in: windowScene)
     }
 }
