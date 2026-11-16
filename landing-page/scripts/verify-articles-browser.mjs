@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {loadArticles} from '../article-content.mjs';
 import {siteConfig} from '../site-config.mjs';
+import {assertArticleSchema} from './assert-article-schema.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('../dist/',import.meta.url)));
 const reportDirectory = new URL('../reports/articles/',import.meta.url);
@@ -56,7 +57,7 @@ try {
         assert.ok(await page.locator('main a[href$="#try"]').first().isVisible());
         assert.ok(await page.locator('main table').count()>0,'Article should include a worked example.');
         const entities = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent())['@graph'];
-        assert.equal(entities.find(entity=>entity['@type']==='TechArticle').datePublished,latest.published);
+        assertArticleSchema(entities, latest, pathname.startsWith('/ne/') ? 'ne' : 'en', origin+pathname);
       }
       if(width!==320) await page.screenshot({path:fileURLToPath(new URL(width+'-'+pathname.replaceAll('/','_')+'.png',reportDirectory)),fullPage:true});
       checks.push(`${width}px ${pathname}`);
