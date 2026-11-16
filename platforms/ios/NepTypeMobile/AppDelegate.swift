@@ -3,17 +3,30 @@ import UIKit
 #if !NEPTYPE_CONTAINER_TEST
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppAnalytics.shared.start()
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        return true
+    }
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        configuration.delegateClass = SceneDelegate.self
+        return configuration
+    }
+}
+
+/// iOS 27 requires UIScene lifecycle adoption; apps that create their window
+/// in the app delegate are terminated at launch.
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        let window = UIWindow(windowScene: windowScene)
         window.rootViewController = WelcomeViewController()
         window.makeKeyAndVisible()
         self.window = window
-        return true
     }
-    func applicationDidBecomeActive(_ application: UIApplication) { AppAnalytics.shared.becameActive() }
-    func applicationDidEnterBackground(_ application: UIApplication) {
+    func sceneDidBecomeActive(_ scene: UIScene) { AppAnalytics.shared.becameActive() }
+    func sceneDidEnterBackground(_ scene: UIScene) {
         (window?.rootViewController as? WelcomeViewController)?.flushDraft()
         AppAnalytics.shared.backgrounded()
     }
