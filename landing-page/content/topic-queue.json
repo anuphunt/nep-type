@@ -360,14 +360,15 @@
     },
     {
       "id": "nepali-nasal-marks",
-      "status": "research_needed",
+      "status": "published",
       "query": "Nepali typing chandrabindu anusvara",
       "title": "Type चन्द्रबिन्दु and अनुस्वार in Nepali words",
       "intent": "Check nasal marks in specific Nepali words",
       "angle": "Research authoritative spellings, verify engine choices and give a small sourced practice set; do not invent an accent picker.",
       "overlapBoundary": "Nasal-mark spelling question with evidence; consolidate if the guide already answers it fully.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Validated November 11 after searching beyond blocked phone/Word/PDF topics: historical reader chandrabindu question, primary Unicode mark identities and six exact current-engine checks. Distinct nasal-mark/code-point and copied-text check; no exact volume, universal Roman key mapping, legacy Word repair or comprehensive orthographic claim. All existing holds retained.",
+      "articleSlug": "type-nepali-chandrabindu-roman-input"
     },
     {
       "id": "nepali-dental-retroflex",

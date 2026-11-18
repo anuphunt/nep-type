@@ -1,0 +1,301 @@
+{
+  "slug": "type-nepali-chandrabindu-roman-input",
+  "topicId": "nepali-nasal-marks",
+  "status": "published",
+  "published": "2026-11-18",
+  "primaryQuery": "type Nepali chandrabindu with Roman letters",
+  "searchIntent": "Write words containing chandrabindu in a Roman-input pad, distinguish the stored mark from anusvara, and check that the mark survives copying.",
+  "originalValue": "Six current-engine checks, an explicit failed borrowed-symbol shortcut, and a copy/readback check that detects U+0901 rather than relying on a tiny glyph. Four word examples span village, animal, body and question vocabulary; no fixed-layout or universal Roman mapping is invented.",
+  "overlapReview": "Existing conjunct article concerns consonant/halant joins, not nasal marks. Layout comparison distinguishes input methods but does not identify U+0901 versus U+0902 or test borrowed asterisks. Practice and mixed-language articles do not provide a nasal-mark-focused copy check. Unicode/Preeti addresses legacy encoding; this article concerns the precise combining mark in newly composed Unicode. No general orthography lesson or duplicate beginner guide.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact query has no measured volume. Historical 2023 reader question about chandrabindu in Preeti/Word supports the recurring mark-entry problem, not current demand or a claim NepType repairs Word. November 1 Keyword Planner ranges remain Nepal/English/Google, October 2025–September 2026; none assigned to this long tail. Fresh GSC through November 9 is sparse and offers no topic-specific demand proof."
+  },
+  "research": [
+    {
+      "url": "https://www.reddit.com/r/technepal/comments/1727hh2/nepali_typing_issue_chandrabindu_sign/",
+      "checked": "2026-11-11",
+      "note": "Actual archived reader question about entering chandrabindu in Word/Preeti. Qualitative historical question, no demand metric. This article offers a scoped Unicode-pad workflow, not a fix for that legacy-font shortcut. Rechecked 2026-11-18: the URL refuses automated fetches (HTTP 403), so content is not re-confirmed today."
+    },
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-18",
+      "note": "Primary character names: U+0901 Devanagari sign candrabindu and U+0902 anusvara. No chart/font reproduced and no universal shape or orthographic interchangeability claim. 2026-11-18: UnicodeData.txt confirms 0901 DEVANAGARI SIGN CANDRABINDU and 0902 DEVANAGARI SIGN ANUSVARA."
+    },
+    {
+      "url": "https://www.unicode.org/faq/char_combmark.html",
+      "checked": "2026-11-18",
+      "note": "Primary combining-character explanation supports distinguishing stored code points from perceived text units. Public derived explanation under 200 words across languages."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-18",
+      "note": "Current source/shared Rust-Wasm verifies six displayed examples; exact copied strings and mark code points checked in isolated browser workflows. No engine change or fixed keyboard shortcut promised."
+    }
+  ],
+  "exampleContexts": [
+    "village travel",
+    "animal vocabulary",
+    "body vocabulary",
+    "location question",
+    "nasal-mark proofreading"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "gaun",
+        "mode": 0
+      },
+      "expectedText": "गाउँ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "haans",
+        "mode": 0
+      },
+      "expectedText": "हाँस"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aankha",
+        "mode": 0
+      },
+      "expectedText": "आँखा"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kaha",
+        "mode": 0
+      },
+      "expectedText": "कहाँ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "gaun**",
+        "mode": 0
+      },
+      "expectedText": "गाउँ**"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma gaun janchu.",
+        "mode": 0
+      },
+      "expectedText": "म गाउँ जान्छु।"
+    }
+  ],
+  "en": {
+    "title": "Type chandrabindu in Nepali words with Roman input | NepType",
+    "heading": "Type chandrabindu in Nepali words with Roman input",
+    "description": "Write गाउँ, हाँस and आँखा with Roman letters in NepType, then check that the chandrabindu mark is still there after you copy the text.",
+    "sections": [
+      [
+        "Type the whole word",
+        "In NepType, enter gaun in Nepali + EN mode to get गाउँ, including its chandrabindu. Type the whole Roman word; in these examples the pad writes the mark as part of the word. The spellings were checked in this pad, and another keyboard may use different keys.",
+        {
+          "links": [
+            [
+              "Try the words in NepType",
+              "/#try"
+            ],
+            [
+              "Compare fixed layouts and Roman-word typing",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Check the mark in each word",
+        "Each of these four inputs gives a word with chandrabindu in the current engine. Look for the mark above each word. A spelling that works for one word is not a rule for every word with n or a doubled vowel.",
+        {
+          "examples": [
+            [
+              "gaun",
+              "गाउँ"
+            ],
+            [
+              "haans",
+              "हाँस"
+            ],
+            [
+              "aankha",
+              "आँखा"
+            ],
+            [
+              "kaha",
+              "कहाँ"
+            ]
+          ]
+        }
+      ],
+      [
+        "Chandrabindu and anusvara are different characters",
+        "The crescent-and-dot mark ँ is chandrabindu, U+0901. The dot ं is anusvara, U+0902. Use the one the word needs, even if the other is easier to find. Which mark a given Nepali word takes is a spelling question this page does not settle; here you only check that the typed word carries the mark you meant.",
+        {
+          "links": [
+            [
+              "Unicode Devanagari character chart",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "Do not borrow a symbol shortcut from another tool",
+        "Adding two asterisks did not insert a mark in our test: gaun** produced गाउँ**. The word already contained chandrabindu, and both asterisks remained in the output. Remove them from the Roman input before copying. For a different word, look through the suggestions and read the whole result. If the needed spelling is absent, correct it in your destination editor with an appropriate Nepali input method.",
+        {
+          "examples": [
+            [
+              "gaun**",
+              "गाउँ**"
+            ]
+          ],
+          "links": [
+            [
+              "Spelling choices and controls",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Copy a sentence and inspect the small mark",
+        "Type this short travel sentence, choose Copy text and paste it into a scratch document. Before saving, compare गाउँ with the pad. In the checked output, गाउँ contains ग (U+0917), ा (U+093E), उ (U+0909) and ँ (U+0901). Our clipboard check retained that sequence. A font can change how a mark looks; if it appears missing, inspect the copied text as well as the font. Save the sentence in your document before reloading or closing the pad.",
+        {
+          "examples": [
+            [
+              "ma gaun janchu.",
+              "म गाउँ जान्छु।"
+            ]
+          ],
+          "links": [
+            [
+              "Unicode on combining characters",
+              "https://www.unicode.org/faq/char_combmark.html"
+            ],
+            [
+              "If the source is an old Preeti document",
+              "/articles/unicode-vs-preeti-copy-paste/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "रोमनबाट चन्द्रबिन्दु भएका नेपाली शब्द लेख्नुहोस् | NepType",
+    "heading": "रोमनबाट चन्द्रबिन्दु भएका नेपाली शब्द लेख्नुहोस्",
+    "description": "रोमन अक्षरले गाउँ, हाँस र आँखा लेख्नुहोस्। चन्द्रबिन्दु जाँच्नुहोस् र कपी गरेको पाठमा चिह्न सुरक्षित छ कि हेर्नुहोस्।",
+    "sections": [
+      [
+        "पहिले पूरा शब्द लेख्नुहोस्",
+        "NepType को Nepali + EN मोडमा gaun लेख्दा चन्द्रबिन्दुसहित गाउँ आउँछ। पूरा रोमन शब्द लेख्नुहोस्। यी उदाहरणमा प्याडले शब्दसँगै चिह्न पनि लेख्छ। यी हिज्जे यही प्याडमा जाँचिएका हुन्, अर्को किबोर्डमा फरक कुञ्जी लाग्न सक्छ।",
+        {
+          "links": [
+            [
+              "NepType मा शब्द लेखेर हेर्नुहोस्",
+              "/#try"
+            ],
+            [
+              "निश्चित लेआउट र रोमनबाट लेख्ने तरिका दाँज्नुहोस्",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ]
+          ]
+        }
+      ],
+      [
+        "हरेक शब्दको चिह्न हेर्नुहोस्",
+        "हालको इन्जिनमा यी चार रोमन हिज्जेबाट चन्द्रबिन्दु भएको शब्द आउँछ। हरेक शब्दमाथिको चिह्न हेर्नुहोस्। एउटा शब्दमा मिलेको हिज्जे n वा दोहोरिएको स्वर भएका सबै शब्दमा लागू हुने नियम होइन।",
+        {
+          "examples": [
+            [
+              "gaun",
+              "गाउँ"
+            ],
+            [
+              "haans",
+              "हाँस"
+            ],
+            [
+              "aankha",
+              "आँखा"
+            ],
+            [
+              "kaha",
+              "कहाँ"
+            ]
+          ]
+        }
+      ],
+      [
+        "चन्द्रबिन्दु र अनुस्वार फरक अक्षर हुन्",
+        "चन्द्राकार र थोप्ला भएको ँ चन्द्रबिन्दु हो, जसको कोड U+0901 हो। थोप्ला मात्र भएको ं अनुस्वार हो, जसको कोड U+0902 हो। शब्दलाई जुन चाहिन्छ त्यही राख्नुहोस्, अर्को खोज्न सजिलो भए पनि। कुन शब्दमा कुन नासिक्य चिह्न लाग्छ भन्ने हिज्जेको प्रश्न यहाँ टुङ्गो लगाइएको छैन। यहाँ टाइप गरेको शब्दमा तपाईंले चाहेकै चिह्न छ कि छैन भनेर मात्र जाँचिन्छ।",
+        {
+          "links": [
+            [
+              "देवनागरी अक्षरको Unicode सूची",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "अर्को उपकरणको चिह्न सर्टकट यहाँ नहाल्नुहोस्",
+        "हाम्रो परीक्षणमा दुई तारा थप्दा चिह्न थपिएन: gaun** लेख्दा गाउँ** आयो। शब्दमा चन्द्रबिन्दु पहिल्यै थियो र दुवै तारा नतिजामा रहे। कपी गर्नुअघि रोमन लेखाइबाट तिनलाई हटाउनुहोस्। अर्को शब्द लेख्दा सुझावहरू हेरेर पूरा नतिजा पढ्नुहोस्। चाहिएको हिज्जे सुझावमा छैन भने पेस्ट गर्ने सम्पादकमा उपयुक्त नेपाली इनपुट विधिबाट सच्याउनुहोस्।",
+        {
+          "examples": [
+            [
+              "gaun**",
+              "गाउँ**"
+            ]
+          ],
+          "links": [
+            [
+              "हिज्जे रोज्ने र टाइप गर्ने तरिका",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "वाक्य कपी गरेर सानो चिह्न पनि जाँच्नुहोस्",
+        "यो छोटो यात्रासम्बन्धी वाक्य लेख्नुहोस्। पाठ कपी गर्नुहोस् थिचेर परीक्षण कागजातमा पेस्ट गर्नुहोस् र सेभ गर्नुअघि गाउँ शब्द प्याडसँग दाँज्नुहोस्। जाँचिएको नतिजामा गाउँभित्र ग (U+0917), ा (U+093E), उ (U+0909) र ँ (U+0901) छन्। हाम्रो क्लिपबोर्ड परीक्षणमा यही क्रम सुरक्षित रह्यो। फन्टले चिह्नको रूप फरक देखाउन सक्छ। चिह्न हराएजस्तो लागे फन्टसँगै कपी भएको पाठ पनि जाँच्नुहोस्। प्याड बन्द गर्नुअघि वा फेरि लोड गर्नुअघि वाक्य आफ्नो कागजातमा सेभ गर्नुहोस्।",
+        {
+          "examples": [
+            [
+              "ma gaun janchu.",
+              "म गाउँ जान्छु।"
+            ]
+          ],
+          "links": [
+            [
+              "संयोजक चिह्नबारे Unicode को जानकारी",
+              "https://www.unicode.org/faq/char_combmark.html"
+            ],
+            [
+              "मूल पाठ पुरानो प्रीतिमा छ भने",
+              "/articles/unicode-vs-preeti-copy-paste/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-18",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Fresh pass on 2026-11-18 over the November 11 draft, both languages. Marked tells: triad description (check/avoid/inspect), heading restated in section body (different characters), not-X-but-Y scope line, vague 'type the whole word first'. Rewrote the English description, opening instruction, example lead-in, the anusvara section and two step sentences; matching Nepali edits to opening, anusvara section and suggestion sentence. Rechecked for dashes, contrasts and closers; preserved every input/output string, code point, URL and metadata. AI editorial pass, not human authorship or expert review."
+  }
+}
