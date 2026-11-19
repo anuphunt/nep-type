@@ -349,14 +349,15 @@
     },
     {
       "id": "nepali-vowel-matras",
-      "status": "research_needed",
+      "status": "published",
       "query": "Nepali typing short long vowel matra",
       "title": "Check short and long vowels when typing Nepali in Roman letters",
       "intent": "Choose the intended vowel spelling in a Nepali word",
       "angle": "Use authoritative Nepali spelling references and engine-tested contrasting examples. Do not infer one universal Roman spelling rule.",
       "overlapBoundary": "Vowel distinctions and proofreading, separate from consonant clusters and general ambiguity.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Validated 2026-11-19 after phone (device-gated) and copy-troubleshooting (overlap) were skipped: historical NLRC spell-checker reader question on ठीक/ठिक, primary Unicode vowel-sign names and eleven current-engine checks showing first-result vowel length, suggestion alternatives and ee spellings. No exact volume, spelling rule or spell-checker claim.",
+      "articleSlug": "nepali-short-long-vowels-roman-input"
     },
     {
       "id": "nepali-nasal-marks",

@@ -1,0 +1,361 @@
+{
+  "slug": "nepali-short-long-vowels-roman-input",
+  "topicId": "nepali-vowel-matras",
+  "status": "published",
+  "published": "2026-11-19",
+  "primaryQuery": "Nepali typing short long vowel matra",
+  "searchIntent": "Get the intended short or long vowel sign (ि or ी, ु or ू) in a Nepali word typed with Roman letters, and check it before copying.",
+  "originalValue": "Ten current-engine checks show where the first result uses the short sign, which suggestions offer the long one, and which alternative Roman spellings (ee, double ii) produced the long form for these words. One sentence typed two ways shows the difference in context. A cited dictionary-edition change (ठीक to ठिक) explains why the page names no single correct form. No spelling rule, spell checker or universal Roman mapping is claimed.",
+  "overlapReview": "The practice article checks one missing ा in बिहान; it does not address ि/ी or ु/ू length. The chandrabindu article covers nasal marks; the conjunct article covers halant joins; the Romanized comparison and mixed-language articles cover word ambiguity such as पानी/पनि and keeping English words. The typing guide explains suggestion controls without vowel-length examples. This page adds a vowel-length check with fresh food, family, travel and taste examples and a dictionary-edition caveat. No beginner guide or broad tool intent repeated.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact query has no measured volume. The November 1 Keyword Planner report (Google, Nepal, English, October 2025–September 2026, 395 ideas) has no vowel-length keyword; no range from it is assigned to this long tail. A historical 2013 reader question on the Nepali Language Resource Center spell-checker FAQ about ठीक versus ठिक is qualitative evidence that readers meet vowel-length questions, not current demand."
+  },
+  "research": [
+    {
+      "url": "https://nepalilanguage.org/spellcheck/help.php",
+      "checked": "2026-11-19",
+      "note": "Nepali Language Resource Center spell-checker FAQ (HTTP 200). A reader asked why ठीक became flagged; the answer says earlier editions of the official dictionary listed the dirgha form ठीक and later editions list only the hrasva form ठिक, and guesses this follows a Nepal Academy change. Supports the caveat that the accepted vowel length can depend on the reference edition. The page does not name the edition; no edition number claimed."
+    },
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-19",
+      "note": "Primary character names for the Devanagari vowel signs: U+093F I, U+0940 II, U+0941 U, U+0942 UU. Confirmed locally against Python unicodedata names on 2026-11-19."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-19",
+      "note": "Current source shared Rust/Wasm engine built from origin/main f286a16 verifies every displayed pair and the two candidate claims (मीठो offered for mitho; ठिक offered for thik). Results describe this pad only, not a spelling authority. Probe on 2026-11-19 also observed that suggestion lists for chini and nadi did not include चिनी or नदी (absence is not an executable check type, so it is recorded here only)."
+    }
+  ],
+  "exampleContexts": [
+    "family",
+    "milk and sugar",
+    "festival sweet dish",
+    "river travel",
+    "taste",
+    "vowel-length proofreading"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "didi",
+        "mode": 0
+      },
+      "expectedText": "दिदी"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "dudh",
+        "mode": 0
+      },
+      "expectedText": "दूध"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "mitho",
+        "mode": 0
+      },
+      "expectedText": "मिठो"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "mitho"
+      },
+      "includes": [
+        "मिठो",
+        "मीठो"
+      ]
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "meetho",
+        "mode": 0
+      },
+      "expectedText": "मीठो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "chinee",
+        "mode": 0
+      },
+      "expectedText": "चिनी"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "nadee",
+        "mode": 0
+      },
+      "expectedText": "नदी"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "thik",
+        "mode": 0
+      },
+      "expectedText": "ठीक"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "thik"
+      },
+      "includes": [
+        "ठीक",
+        "ठिक"
+      ]
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yo khir mitho chha.",
+        "mode": 0
+      },
+      "expectedText": "यो खिर मिठो छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yo kheer meetho chha.",
+        "mode": 0
+      },
+      "expectedText": "यो खीर मीठो छ।"
+    }
+  ],
+  "en": {
+    "title": "Check short and long vowels (ि ी ु ू) in Roman Nepali typing | NepType",
+    "heading": "Check short and long vowels when you type Nepali in Roman letters",
+    "description": "Roman i and u do not say whether a Nepali vowel is short or long. See which NepType spellings gave ि or ी in खीर, मीठो and चिनी, and how to fix the vowel before copying.",
+    "sections": [
+      [
+        "Read the vowel sign after each word",
+        "A Roman i can become ि or ी, and u can become ु or ू. NepType picks one from its dictionary, and the first result is not always the spelling you want. In Nepali + EN mode, didi gave दिदी with a short vowel and then a long one, and dudh gave दूध with a long ू. Look at the sign on each word before you move on. These results come from the current pad; another keyboard may give something else.",
+        {
+          "examples": [
+            [
+              "didi",
+              "दिदी"
+            ],
+            [
+              "dudh",
+              "दूध"
+            ]
+          ],
+          "links": [
+            [
+              "Type the words in NepType",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Pick the other form from the suggestions",
+        "If the first result has the wrong length, look at the suggestion list for that word before typing the next one. For mitho the pad wrote मिठो with a short ि, and मीठो with the long ी was among the suggestions. Click or tap it, or use the number shortcut shown in the typing guide.",
+        {
+          "examples": [
+            [
+              "mitho",
+              "मिठो"
+            ]
+          ],
+          "links": [
+            [
+              "How to choose a suggestion",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Try ee when the long ी is missing",
+        "For some words the suggestions did not show the long form you need. In our checks, writing ee gave the long vowel: meetho gave मीठो, chinee gave चिनी and nadee gave नदी. Other words may behave differently, so read each result.",
+        {
+          "examples": [
+            [
+              "meetho",
+              "मीठो"
+            ],
+            [
+              "chinee",
+              "चिनी"
+            ],
+            [
+              "nadee",
+              "नदी"
+            ]
+          ]
+        }
+      ],
+      [
+        "Compare one sentence typed two ways",
+        "The difference is easy to miss in a full sentence. Typed with i, the sentence about kheer came out with two short vowels. Typed with ee, both words got the long ी. Before you copy, check every word that has an i or u in it.",
+        {
+          "examples": [
+            [
+              "yo khir mitho chha.",
+              "यो खिर मिठो छ।"
+            ],
+            [
+              "yo kheer meetho chha.",
+              "यो खीर मीठो छ।"
+            ]
+          ]
+        }
+      ],
+      [
+        "Check your reference when the spelling changed",
+        "The accepted length of some words has changed between dictionary editions. The Nepali Language Resource Center spell-checker FAQ says earlier editions of the official dictionary listed ठीक, and later ones list only ठिक. NepType wrote ठीक for thik and offered ठिक as a suggestion. Use the form your school, office or dictionary edition expects. NepType does not check spelling against any dictionary edition.",
+        {
+          "examples": [
+            [
+              "thik",
+              "ठीक"
+            ]
+          ],
+          "links": [
+            [
+              "Nepali Language Resource Center FAQ",
+              "https://nepalilanguage.org/spellcheck/help.php"
+            ],
+            [
+              "Unicode Devanagari chart",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ],
+            [
+              "Check chandrabindu in the same way",
+              "/articles/type-nepali-chandrabindu-roman-input/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "ह्रस्व कि दीर्घ? रोमनबाट नेपाली लेख्दा ि, ी, ु र ू जाँच्नुहोस् | NepType",
+    "heading": "रोमन अक्षरबाट नेपाली लेख्दा ह्रस्व र दीर्घ मात्रा जाँच्नुहोस्",
+    "description": "रोमनको i र u ले नेपाली स्वर ह्रस्व हो कि दीर्घ भन्दैन। खीर, मीठो र चिनीमा NepType ले कुन हिज्जेबाट ि वा ी दियो र कपी गर्नुअघि मात्रा कसरी सच्याउने, हेर्नुहोस्।",
+    "sections": [
+      [
+        "हरेक शब्दपछि मात्रा पढ्नुहोस्",
+        "रोमनको i बाट ि वा ी, र u बाट ु वा ू बन्न सक्छ। NepType ले आफ्नो शब्दकोशबाट एउटा रोज्छ, र पहिलो नतिजा सधैँ तपाईंले चाहेको हिज्जे हुँदैन। Nepali + EN मोडमा didi लेख्दा पहिले ह्रस्व र पछि दीर्घ मात्रासहित दिदी आयो, र dudh लेख्दा दीर्घ ू सहित दूध आयो। अर्को शब्द लेख्नुअघि हरेक शब्दको मात्रा हेर्नुहोस्। यी नतिजा हालको प्याडका हुन्, अर्को किबोर्डमा फरक आउन सक्छ।",
+        {
+          "examples": [
+            [
+              "didi",
+              "दिदी"
+            ],
+            [
+              "dudh",
+              "दूध"
+            ]
+          ],
+          "links": [
+            [
+              "NepType मा शब्द लेखेर हेर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "सुझावबाट अर्को रूप छान्नुहोस्",
+        "पहिलो नतिजाको मात्रा मिलेन भने अर्को शब्द लेख्नुअघि त्यही शब्दका सुझाव हेर्नुहोस्। mitho लेख्दा प्याडले ह्रस्व ि भएको मिठो लेख्यो, र दीर्घ ी भएको मीठो सुझावमा थियो। त्यसलाई थिचेर वा टाइपिङ गाइडमा भनिएको सर्टकटले छान्नुहोस्।",
+        {
+          "examples": [
+            [
+              "mitho",
+              "मिठो"
+            ]
+          ],
+          "links": [
+            [
+              "सुझाव कसरी छान्ने",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "दीर्घ ी सुझावमा नभए ee लेखेर हेर्नुहोस्",
+        "केही शब्दमा चाहिएको दीर्घ रूप सुझावमा देखिएन। हाम्रो जाँचमा ee लेख्दा दीर्घ स्वर आयो: meetho बाट मीठो, chinee बाट चिनी र nadee बाट नदी। अरू शब्दमा यसरी नमिल्न सक्छ, त्यसैले हरेक नतिजा पढ्नुहोस्।",
+        {
+          "examples": [
+            [
+              "meetho",
+              "मीठो"
+            ],
+            [
+              "chinee",
+              "चिनी"
+            ],
+            [
+              "nadee",
+              "नदी"
+            ]
+          ]
+        }
+      ],
+      [
+        "एउटै वाक्य दुई तरिकाले लेखेर दाँज्नुहोस्",
+        "पूरा वाक्यमा यो फरक सजिलै छुट्छ। खीरबारेको वाक्य i राखेर लेख्दा दुवै शब्दमा ह्रस्व मात्रा आयो। ee राखेर लेख्दा दुवैमा दीर्घ ी आयो। कपी गर्नुअघि i वा u भएका हरेक शब्द जाँच्नुहोस्।",
+        {
+          "examples": [
+            [
+              "yo khir mitho chha.",
+              "यो खिर मिठो छ।"
+            ],
+            [
+              "yo kheer meetho chha.",
+              "यो खीर मीठो छ।"
+            ]
+          ]
+        }
+      ],
+      [
+        "हिज्जे फेरिएको शब्दमा आफ्नो सन्दर्भ हेर्नुहोस्",
+        "केही शब्दको मान्य मात्रा शब्दकोशका संस्करणअनुसार फेरिएको छ। नेपाली भाषा स्रोत केन्द्रको स्पेल चेकर FAQ अनुसार आधिकारिक शब्दकोशका पुराना संस्करणमा ठीक थियो, पछिका संस्करणमा ठिक मात्र छ। NepType ले thik बाट ठीक लेख्यो र ठिक सुझावमा दियो। तपाईंको विद्यालय, कार्यालय वा शब्दकोशको संस्करणले जुन रूप मान्छ त्यही प्रयोग गर्नुहोस्। NepType ले कुनै पनि शब्दकोश संस्करणअनुसार हिज्जे जाँच्दैन।",
+        {
+          "examples": [
+            [
+              "thik",
+              "ठीक"
+            ]
+          ],
+          "links": [
+            [
+              "नेपाली भाषा स्रोत केन्द्रको FAQ",
+              "https://nepalilanguage.org/spellcheck/help.php"
+            ],
+            [
+              "देवनागरी अक्षरको Unicode सूची",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ],
+            [
+              "चन्द्रबिन्दु पनि यसरी नै जाँच्नुहोस्",
+              "/articles/type-nepali-chandrabindu-roman-input/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-19",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Humanizer pass on 2026-11-19 over the first draft, both languages. Marked tells: staged question title, not-X-but-Y closer (typing pad, not a spell checker), clipped contrast (not only the first one), restated hedge after the ee examples, and in Nepali the matching पहिलो शब्द मात्र होइन and प्याड हो, ... होइन contrasts plus a hedged तर ... नहुन सक्छ. Rewrote the English title, the ee caveat, the sentence-check instruction and the spell-checker scope line; matching Nepali edits. Rechecked for dashes, triads and closers. Every input/output string, code point, URL and metadata preserved. AI editorial pass, not human authorship or expert review."
+  }
+}
