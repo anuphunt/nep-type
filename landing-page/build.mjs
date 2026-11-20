@@ -9,7 +9,7 @@ import {build as bundle} from 'esbuild';
 import {homeTitle, homeDescriptions, labels, nepaliCopy, pages, repository} from './page-content.mjs';
 import {siteConfig} from './site-config.mjs';
 import {windowsDownload, windowsPage} from './windows-release.mjs';
-import {downloadPage, renderDownloadPage, renderHomeDownloads} from './download-page.mjs';
+import {downloadPage, releaseFacts, renderDownloadPage, renderHomeDownloads} from './download-page.mjs';
 import {homeHelp, typingGuide} from './typing-guide.mjs';
 import {loadArticles, articlePages} from './article-content.mjs';
 const articles = await loadArticles();
@@ -32,6 +32,8 @@ pages.windows = {en: windowsPage(windowsRelease, 'en'), ne: windowsPage(windowsR
 pages.download = downloadPage;
 const publicPaths = ['/', '/ne/', ...Object.keys(pages).flatMap(slug => ['/'+slug+'/', '/ne/'+slug+'/'])];
 const downloadUrl = process.env.APP_DOWNLOAD_URL || macRelease.url;
+// Only describe the Mac file when the link is the release recorded in mac-release.json.
+const releases = {mac:downloadUrl, windows:windowsRelease?.url, macInfo:downloadUrl === macRelease.url ? macRelease : null, windowsInfo:windowsRelease};
 if (downloadUrl && new URL(downloadUrl).protocol !== 'https:') throw Error('APP_DOWNLOAD_URL must use HTTPS.');
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const route = (locale, slug = '') => `${locale === 'ne' ? '/ne' : ''}/${slug ? slug + '/' : ''}`;
@@ -203,7 +205,7 @@ await writeFile(path.join(output, 'styles.css'), styles);
 const urls = [];
 for (const locale of ['en', 'ne']) {
   const description = homeDescriptions[locale];
-  const home = finish(localize(template, locale).replace('<!-- HOME_DOWNLOADS -->', renderHomeDownloads(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape)).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
+  const home = finish(localize(template, locale).replace('<!-- HOME_DOWNLOADS -->', renderHomeDownloads(locale, releases, escape)).replace('<!-- HOME_HELP -->', renderHomeHelp(locale)), locale, '', homeTitle[locale], description);
   const directory = path.join(output, route(locale));
   await mkdir(directory, {recursive: true});
   await writeFile(path.join(directory, 'index.html'), home);
@@ -220,7 +222,7 @@ for (const locale of ['en', 'ne']) {
     const privacyControl = slug === 'privacy' ? `<p id="analytics"><button class="button" id="analytics-toggle" type="button" hidden>${locale === 'ne' ? 'एनालिटिक्स सेटिङ' : 'Analytics settings'}</button></p>` : '';
     const pageAction = (linkText ? `<p><a class="button" href="${escape(linkUrl)}" data-analytics-event="${linkEvent}" data-placement="${slug}"${slug === 'windows' ? ' data-platform="Windows"' : ''}${nativeDownload ? '' : ' target="_blank" rel="noopener noreferrer"'}>${escape(linkText)}</a></p>` : '');
     const nativePage = slug === 'mac' || slug === 'windows';
-    const body = slug === 'download' ? renderDownloadPage(locale, {mac:downloadUrl, windows:windowsRelease?.url}, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${nativePage ? pageAction + (nativeDownload ? `<p>${locale === 'ne' ? 'निःशुल्क डाउनलोड।' : 'Free download.'}</p>` : '') : ''}${sections}${renderArticleList(content,locale)}${related}${nativePage ? '' : pageAction}${privacyControl}</main>`;
+    const body = slug === 'download' ? renderDownloadPage(locale, releases, escape) : `<main id="main" class="document-page container"><a class="back-link" href="${route(locale)}">${locale === 'ne' ? 'NepType गृहपृष्ठ' : 'NepType home'}</a><h1>${escape(content.heading)}</h1>${byline}${nativePage ? pageAction + (nativeDownload ? `<p>${locale === 'ne' ? 'निःशुल्क डाउनलोड' : 'Free download'}${(facts => facts ? ' · ' + escape(facts) : '')(releaseFacts(locale, slug === 'mac' ? releases.macInfo : releases.windowsInfo))}${locale === 'ne' ? '।' : '.'}</p>` : '') : ''}${sections}${renderArticleList(content,locale)}${related}${nativePage ? '' : pageAction}${privacyControl}</main>`;
     let html = `<!doctype html><html lang="en" data-design="graphite" class="final-site"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="icon" href="/assets/neptype-icon.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/final.css"><script src="/analytics.js" defer></script><script type="module" src="/site.js"></script></head><body><a class="skip-link" href="#main">Skip to content</a>${header}${body}${footer}</body></html>`;
     html = localize(html, locale, slug).replaceAll('href="#features"', `href="${route(locale)}#features"`).replaceAll('href="#platforms"', `href="${route(locale)}#platforms"`).replaceAll('href="#try"', `href="${route(locale)}#try"`);
     html = finish(html, locale, slug, content.title, content.description);

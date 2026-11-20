@@ -56,7 +56,7 @@ export const pages = {
       sections: [
         ['How does NepType work?', 'Type Roman letters in the pad. NepType suggests Nepali spellings, then you copy the result.'],
         ['Can I keep English words?', 'Yes. Nepali + EN keeps recognized English words. You can also choose the original spelling.'],
-        ['Does it work offline?', 'The Mac app and Windows preview work offline. The browser tool needs a connection to open and load its dictionary; typing then runs locally. Reloading needs a connection. The typing pads do not need an account.'],
+        ['Does it work offline?', 'The Mac app and Windows preview work offline. The browser tool needs a connection to open and load its dictionary; typing then runs locally. Reloading needs a connection. The typing pads do not need an account.', {links: [['Check what the browser pad does when the connection drops', '/articles/nepali-typing-browser-offline-check/']]}],
         ['Is English to Nepali typing the same as translation?', 'No. NepType changes Romanized Nepali into Devanagari: namaste becomes नमस्ते. It does not translate the meaning of English sentences.'],
         ['Is the output Nepali Unicode?', 'Yes. Copy the Unicode Nepali text into a message or document. NepType does not convert legacy Preeti documents.'],
         ['Can I use the tool on a phone?', 'Use the browser typing pad on a phone or computer. The iPhone app is currently under review by Apple. The Android keyboard is still in development.'],
@@ -71,7 +71,7 @@ export const pages = {
       sections: [
         ['NepType कसरी चल्छ?', 'प्याडमा रोमन अक्षर टाइप गर्नुहोस्। NepType ले नेपाली हिज्जे सुझाउँछ। तयार भएको पाठ कपी गर्नुहोस्।'],
         ['अंग्रेजी शब्द राख्न मिल्छ?', 'मिल्छ। Nepali + EN ले चिनेका अंग्रेजी शब्द राख्छ। तपाईं मूल हिज्जे पनि रोज्न सक्नुहुन्छ।'],
-        ['अफलाइन चल्छ?', 'Mac एप र Windows प्रिभ्यु अफलाइन चल्छन्। ब्राउजरको प्याड खोल्न र शब्दकोश लोड गर्न इन्टरनेट चाहिन्छ। त्यसपछि टाइपिङ उपकरणमै हुन्छ। पृष्ठ फेरि खोल्दा इन्टरनेट चाहिन्छ। खाता चाहिँदैन।'],
+        ['अफलाइन चल्छ?', 'Mac एप र Windows प्रिभ्यु अफलाइन चल्छन्। ब्राउजरको प्याड खोल्न र शब्दकोश लोड गर्न इन्टरनेट चाहिन्छ। त्यसपछि टाइपिङ उपकरणमै हुन्छ। पृष्ठ फेरि खोल्दा इन्टरनेट चाहिन्छ। खाता चाहिँदैन।', {links: [['इन्टरनेट छुट्दा ब्राउजर प्याडमा के हुन्छ, जाँच्नुहोस्', '/articles/nepali-typing-browser-offline-check/']]}],
         ['अंग्रेजीबाट नेपाली टाइपिङ भनेको अनुवाद हो?', 'होइन। NepType ले रोमनमा लेखेका नेपाली शब्दलाई देवनागरीमा बदल्छ। जस्तै, namaste बाट नमस्ते बन्छ। अंग्रेजी वाक्यको अर्थ अनुवाद गर्दैन।'],
         ['तयार पाठ नेपाली युनिकोड हो?', 'हो। तयार युनिकोड पाठ सन्देश वा कागजातमा कपी गर्न सकिन्छ। NepType ले पुराना प्रीति कागजात रूपान्तरण गर्दैन।'],
         ['फोनमा प्रयोग गर्न मिल्छ?', 'फोन वा कम्प्युटरको ब्राउजरमा टाइपिङ प्याड प्रयोग गर्न मिल्छ। iPhone एप हाल Apple को समीक्षामा छ। Android किबोर्डको काम हुँदैछ।'],
