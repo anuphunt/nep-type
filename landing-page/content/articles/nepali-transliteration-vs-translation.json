@@ -1,0 +1,328 @@
+{
+  "slug": "nepali-transliteration-vs-translation",
+  "topicId": "nepali-transliteration-translation",
+  "status": "published",
+  "published": "2026-11-20",
+  "primaryQuery": "Nepali transliteration vs translation",
+  "searchIntent": "Find out whether a Roman-to-Nepali typing pad can turn an English sentence into Nepali, and what to type instead when you want a Nepali message.",
+  "originalValue": "Current-engine checks show the same English greeting kept in English letters (Nepali + EN), respelled as Devanagari sounds (All Nepali: हप्प्य बिर्थ्दय), and written properly only when the Nepali words are typed (जन्मदिनको शुभकामना). Three everyday sentences (birthday wish to a sister, arriving home, a Pokhara photo caption) are shown both ways, plus a two-question test for choosing between typing and a translation service and a vowel check after typing. No translation feature, translation quality or spelling authority is claimed.",
+  "overlapReview": "The homepage FAQ and the typing guide section \"English to Nepali typing versus translation\" state in one or two sentences that NepType transliterates and does not translate; neither shows what an English sentence actually turns into or what to do next. The mixed-language article covers keeping English words in Latin letters inside Nepali sentences, not getting Nepali meaning from English. The Romanized-keyboard comparison covers key layouts versus phonetic typing. The vowel article covers ि/ी length; this page only links to it for the लग्यो/लाग्यो check. The new page adds worked before/after sentences in both modes and a decision test. The guide line stays as the short answer and links here for detail.",
+  "keywordEvidence": {
+    "provider": "Google Ads Keyword Planner",
+    "researchFile": "research/2026-11-01-keywords.json",
+    "keyword": "english to nepali translation keyboard",
+    "averageMonthlySearches": "1K–10K",
+    "location": "Nepal",
+    "language": "English",
+    "network": "Google",
+    "period": "2025-10-01/2026-09-30",
+    "note": "Related measured term from the November 1 report (395 ideas), read from the full export keyword-planner-nepal-2026-11-01.csv on 2026-11-20. The export stores representative value 5000 for this term; the curated report pairs 5000 with the displayed 1K–10K range, so that range is recorded here, not an exact count. Other related terms in the same export: english to nepali typing translation (500, 100–1K), english to nepali type translation (500, 100–1K), english to nepali translation unicode (500, 100–1K), nepali unicode translator (5000, 1K–10K). These ranges overlap and are not summed. They show that people mix translation words into typing searches; they do not measure the exact primary query, which remains unmeasured. Ads competition is not organic difficulty. No Search Console data is available."
+  },
+  "research": [
+    {
+      "url": "https://www.loc.gov/catdir/cpso/roman.html",
+      "checked": "2026-11-20",
+      "note": "Library of Congress ALA-LC Romanization Tables index (HTTP 200, last updated 07/24/2026), subtitled as transliteration schemes for non-Roman scripts. Supports using \"transliteration\" for moving a word between scripts; the page does not discuss translation and is cited only for the term."
+    },
+    {
+      "url": "https://neptype.com/typing-guide/",
+      "checked": "2026-11-20",
+      "note": "Existing guide section \"English to Nepali typing versus translation\" and the homepage FAQ already state that NepType transliterates and does not translate. Overlap reference; this article adds worked sentences and a decision test."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-20",
+      "note": "Shared Rust/Wasm engine built from origin/main 39baa83 verifies every displayed pair (mode 0, Nepali + EN), the All Nepali (mode 2) respellings quoted in prose (हप्प्य बिर्थ्दय, बहिनी!; इ रेअचेद होमे।; थिस फोतो इस फ्रोम पोखरा।; इ अम हुङ्र्य) and the लाग्यो suggestion for lagyo. Results describe this pad only. Probe also saw weak dental/retroflex results (tika→तिक, tamatar→टमटर), recorded for the held dental-retroflex candidate."
+    }
+  ],
+  "exampleContexts": [
+    "birthday wish to a younger sister",
+    "telling mother you arrived home",
+    "travel photo caption from Pokhara",
+    "hunger message",
+    "choosing typing or translation"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "happy birthday, bahini!",
+        "mode": 0
+      },
+      "expectedText": "happy birthday, बहिनी!"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "happy birthday, bahini!",
+        "mode": 2
+      },
+      "expectedText": "हप्प्य बिर्थ्दय, बहिनी!"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "janmadinko shubhakamana, bahini!",
+        "mode": 0
+      },
+      "expectedText": "जन्मदिनको शुभकामना, बहिनी!"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "I reached home.",
+        "mode": 2
+      },
+      "expectedText": "इ रेअचेद होमे।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aama, ma ghar aaipugen.",
+        "mode": 0
+      },
+      "expectedText": "आमा, म घर आइपुगेँ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "This photo is from Pokhara.",
+        "mode": 2
+      },
+      "expectedText": "थिस फोतो इस फ्रोम पोखरा।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yo tasbir pokharako ho.",
+        "mode": 0
+      },
+      "expectedText": "यो तस्बिर पोखराको हो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "I am hungry",
+        "mode": 2
+      },
+      "expectedText": "इ अम हुङ्र्य"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "malai bhok lagyo",
+        "mode": 0
+      },
+      "expectedText": "मलाई भोक लग्यो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "malai bhok laagyo",
+        "mode": 0
+      },
+      "expectedText": "मलाई भोक लाग्यो"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "lagyo"
+      },
+      "includes": [
+        "लग्यो",
+        "लाग्यो"
+      ]
+    }
+  ],
+  "en": {
+    "title": "Nepali transliteration vs translation: what a typing pad does with English | NepType",
+    "heading": "What happens when you type English into a Nepali typing pad",
+    "description": "A Roman-to-Nepali pad changes letters, not meaning. In All Nepali mode, happy birthday came out as हप्प्य बिर्थ्दय. See what to type to get जन्मदिनको शुभकामना, and when you need a translation service.",
+    "sections": [
+      [
+        "What the pad does with an English sentence",
+        "NepType writes the sound of each Roman word in Devanagari. It does not know what an English sentence means, so it cannot give you the Nepali sentence with the same meaning. In Nepali + EN mode, a greeting typed in English stays in English letters and only the Nepali word changes. In All Nepali mode the same line became हप्प्य बिर्थ्दय, बहिनी!, which is the English sound spelled in Nepali letters. A Nepali reader would see an English phrase written oddly. This is what transliteration means: the word moves to another script and stays in the same language.",
+        {
+          "examples": [
+            [
+              "happy birthday, bahini!",
+              "happy birthday, बहिनी!"
+            ]
+          ],
+          "links": [
+            [
+              "Library of Congress transliteration tables",
+              "https://www.loc.gov/catdir/cpso/roman.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "Type the Nepali words you would say",
+        "To get a Nepali message, type the Nepali words in Roman letters, the way you would say them. For the birthday wish, write janmadinko shubhakamana. For a message to your mother after a bus trip, I reached home. became इ रेअचेद होमे। in All Nepali mode, while the Nepali sentence typed in Roman letters came out as you would write it.",
+        {
+          "examples": [
+            [
+              "janmadinko shubhakamana, bahini!",
+              "जन्मदिनको शुभकामना, बहिनी!"
+            ],
+            [
+              "aama, ma ghar aaipugen.",
+              "आमा, म घर आइपुगेँ।"
+            ]
+          ],
+          "links": [
+            [
+              "Try these sentences in NepType",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Two questions to choose the right tool",
+        "First, can you say the sentence in Nepali? If yes, type it in Roman letters in NepType and check the result. Second, do you only have the English text, or do you need someone else's words in Nepali? Then you need translation, from a translation service or a person who writes Nepali, and you should check the result before sending it. NepType does not translate. For a Pokhara photo caption, This photo is from Pokhara. became थिस फोतो इस फ्रोम पोखरा। in All Nepali mode, and the caption typed in Nepali came out correctly.",
+        {
+          "examples": [
+            [
+              "yo tasbir pokharako ho.",
+              "यो तस्बिर पोखराको हो।"
+            ]
+          ],
+          "links": [
+            [
+              "Typing guide: modes and suggestions",
+              "/typing-guide/"
+            ],
+            [
+              "Keep some English words in a Nepali sentence",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Check the spelling after you type",
+        "Even when you type Nepali words, the pad can pick a spelling you did not mean. For a message saying you are hungry, I am hungry became इ अम हुङ्र्य in All Nepali mode. Typed in Nepali, malai bhok lagyo gave लग्यो with a short vowel. लाग्यो was in the suggestions, and typing laagyo gave it directly. Read each word before you copy the message.",
+        {
+          "examples": [
+            [
+              "malai bhok lagyo",
+              "मलाई भोक लग्यो"
+            ],
+            [
+              "malai bhok laagyo",
+              "मलाई भोक लाग्यो"
+            ]
+          ],
+          "links": [
+            [
+              "Check short and long vowels",
+              "/articles/nepali-short-long-vowels-roman-input/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "लिप्यन्तरण कि अनुवाद? अङ्ग्रेजी वाक्य टाइप गर्दा के हुन्छ | NepType",
+    "heading": "नेपाली टाइपिङ प्याडमा अङ्ग्रेजी लेख्दा के हुन्छ",
+    "description": "रोमनबाट नेपाली लेख्ने प्याडले अर्थ होइन, अक्षर फेर्छ। All Nepali मोडमा happy birthday लेख्दा हप्प्य बिर्थ्दय आयो। जन्मदिनको शुभकामना पाउन के लेख्ने र कहिले अनुवाद सेवा चाहिन्छ, हेर्नुहोस्।",
+    "sections": [
+      [
+        "अङ्ग्रेजी वाक्य लेख्दा प्याडले के गर्छ",
+        "NepType ले हरेक रोमन शब्दको उच्चारण देवनागरीमा लेख्छ। अङ्ग्रेजी वाक्यको अर्थ यसलाई थाहा हुँदैन, त्यसैले उही अर्थको नेपाली वाक्य दिन सक्दैन। Nepali + EN मोडमा अङ्ग्रेजीमा लेखेको शुभकामना अङ्ग्रेजी अक्षरमै रहन्छ, नेपाली शब्द मात्र फेरिन्छ। All Nepali मोडमा त्यही लाइन हप्प्य बिर्थ्दय, बहिनी! बन्यो, अर्थात् अङ्ग्रेजी उच्चारण नेपाली अक्षरमा। नेपाली पाठकले अनौठो तरिकाले लेखिएको अङ्ग्रेजी वाक्यांश देख्छन्। यसैलाई लिप्यन्तरण भनिन्छ: शब्द अर्को लिपिमा जान्छ, भाषा उही रहन्छ।",
+        {
+          "examples": [
+            [
+              "happy birthday, bahini!",
+              "happy birthday, बहिनी!"
+            ]
+          ],
+          "links": [
+            [
+              "लाइब्रेरी अफ कङ्ग्रेसका लिप्यन्तरण तालिका",
+              "https://www.loc.gov/catdir/cpso/roman.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "आफूले बोल्ने नेपाली शब्द लेख्नुहोस्",
+        "नेपाली सन्देश चाहिन्छ भने नेपाली शब्दलाई बोलेजस्तै रोमन अक्षरमा लेख्नुहोस्। जन्मदिनको शुभकामनाका लागि janmadinko shubhakamana लेख्नुहोस्। बस यात्रापछि आमालाई सन्देश पठाउँदा I reached home. लेख्दा All Nepali मोडमा इ रेअचेद होमे। आयो, तर रोमनमा लेखेको नेपाली वाक्य ठीकसँग आयो।",
+        {
+          "examples": [
+            [
+              "janmadinko shubhakamana, bahini!",
+              "जन्मदिनको शुभकामना, बहिनी!"
+            ],
+            [
+              "aama, ma ghar aaipugen.",
+              "आमा, म घर आइपुगेँ।"
+            ]
+          ],
+          "links": [
+            [
+              "यी वाक्य NepType मा लेखेर हेर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "कुन उपकरण चाहिन्छ, दुई प्रश्नले छुट्याउनुहोस्",
+        "पहिलो, के तपाईं त्यो वाक्य नेपालीमा भन्न सक्नुहुन्छ? सक्नुहुन्छ भने NepType मा रोमन अक्षरमा लेख्नुहोस् र नतिजा जाँच्नुहोस्। दोस्रो, तपाईंसँग अङ्ग्रेजी पाठ मात्र छ, वा अरू कसैको कुरा नेपालीमा चाहिएको छ? त्यसो भए अनुवाद चाहिन्छ: अनुवाद सेवा वा नेपाली लेख्न जान्ने मान्छेबाट। पठाउनुअघि नतिजा जाँच्नुहोस्। NepType ले अनुवाद गर्दैन। पोखराको फोटोमा This photo is from Pokhara. लेख्दा All Nepali मोडमा थिस फोतो इस फ्रोम पोखरा। बन्यो, तर नेपालीमा लेखेको क्याप्सन ठीक आयो।",
+        {
+          "examples": [
+            [
+              "yo tasbir pokharako ho.",
+              "यो तस्बिर पोखराको हो।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ गाइड: मोड र सुझाव",
+              "/typing-guide/"
+            ],
+            [
+              "नेपाली वाक्यमा केही अङ्ग्रेजी शब्द राख्नुहोस्",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "लेखिसकेपछि हिज्जे जाँच्नुहोस्",
+        "नेपाली शब्द लेख्दा पनि प्याडले तपाईंले नचाहेको हिज्जे रोज्न सक्छ। भोक लागेको सन्देशमा I am hungry लेख्दा All Nepali मोडमा इ अम हुङ्र्य बन्यो। नेपालीमा malai bhok lagyo लेख्दा ह्रस्व स्वरसहित लग्यो आयो। सुझावमा लाग्यो थियो, र laagyo लेख्दा सिधै त्यही आयो। सन्देश कपी गर्नुअघि हरेक शब्द पढ्नुहोस्।",
+        {
+          "examples": [
+            [
+              "malai bhok lagyo",
+              "मलाई भोक लग्यो"
+            ],
+            [
+              "malai bhok laagyo",
+              "मलाई भोक लाग्यो"
+            ]
+          ],
+          "links": [
+            [
+              "ह्रस्व र दीर्घ मात्रा जाँच्नुहोस्",
+              "/articles/nepali-short-long-vowels-roman-input/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-20",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Humanizer pass on 2026-11-20 over the first draft, both languages. Marked tells: staged question heading (Transliteration or translation? ...), staged lead-in before the Pokhara example (A photo caption shows the difference:), restating opener in the last section (Typing the Nepali words is the right step, but ...), a disconnected example sentence, and an overbroad description implying every mode respells English. Nepali equivalents: question heading, फोटोको क्याप्सनमा फरक देखिन्छ lead-in, नेपाली शब्द लेख्नु सही बाटो हो, तर opener and चाहिए phrasing. Rewrote both headings as statements, scoped both descriptions to All Nepali mode, folded the Pokhara and hunger examples into their sentences, and replaced NepType cannot do that step with NepType does not translate. Kept one contrast in the descriptions (letters, not meaning) because it corrects the belief the page answers. Rechecked for dashes, triads and closers. Every input/output string, URL, check and metadata field preserved. AI editorial pass, not human authorship or expert review."
+  }
+}

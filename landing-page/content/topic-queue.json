@@ -380,7 +380,7 @@
       "angle": "Use sourced minimal examples and verified candidate behavior; distinguish spelling from pronunciation without a fabricated keyboard mapping.",
       "overlapBoundary": "Specific consonant contrasts, separate from vowels, conjuncts and homonymous words.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail. Engine probe 2026-11-20 (origin/main 39baa83): tika→तिक (टीका absent from top candidates), tamatar→टमटर, tarkari→तर्करि, ghanta→घन्त, dhoka→ढोक; few clean dental/retroflex examples, so an article would mostly document engine misses. Keep held."
     },
     {
       "id": "nepali-long-paragraph-editing",
@@ -428,14 +428,25 @@
     },
     {
       "id": "nepali-transliteration-translation",
-      "status": "research_needed",
+      "status": "published",
       "query": "Nepali transliteration vs translation",
       "title": "Nepali transliteration or translation: choose the right tool",
       "intent": "Understand why changing letters does not translate meaning",
       "angle": "Test the same Roman Nepali phrase and English sentence, cite linguistic/tool documentation and explain the correct next step. NepType does not translate.",
       "overlapBoundary": "A meaning-versus-script decision with diagnostic examples; consolidate into the guide if that fully answers the question.",
-      "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "english to nepali translation keyboard",
+          "averageMonthlySearches": "1K–10K",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Related term read from the full November 1 export (representative value 5000, paired with 1K–10K in the curated report). Not a volume for the exact primary query, which is unmeasured."
+        }
+      ],
+      "evidenceNote": "Validated 2026-11-20 after phone (device-gated) and copy-troubleshooting (overlap) were skipped again: the November 1 export contains several typing searches that use translation words (english to nepali translation keyboard, english to nepali typing translation, nepali unicode translator), and the guide/FAQ answer the distinction in one line without worked examples. Eleven current-engine checks show mixed-mode, All Nepali respelling and Nepali-word results. No translation feature claimed.",
+      "articleSlug": "nepali-transliteration-vs-translation"
     },
     {
       "id": "nepali-accessible-text",
