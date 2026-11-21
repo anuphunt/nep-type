@@ -1,0 +1,516 @@
+{
+  "slug": "type-single-nepali-letters-roman-input",
+  "topicId": "nepali-alphabet-letters",
+  "status": "published",
+  "published": "2026-11-21",
+  "primaryQuery": "type single Nepali alphabet letters ka kha ga",
+  "searchIntent": "Type the Nepali alphabet one letter at a time (क ख ग and the other rows) in a Roman-input pad, for example for a child's alphabet chart, and fix the letters that come out in Roman or as the wrong letter.",
+  "originalValue": "Current-engine and real-pad checks of whole alphabet rows in both output modes: Nepali + EN leaves ka, ga, ja, jha, da, na, pa, ba, ya, wa, sha, sa and ha in Roman letters, while All Nepali converts every syllable. Six rows needed no correction, three letters (च, झ, उ) were the second suggestion, and six letters (ट, ठ, ड, ढ, ण, ष) plus अं and ऋ were not produced by the row spellings and are shown inside whole words instead. Suggestion picks and copy were verified in the pad in both locales. No fixed keyboard layout, complete alphabet guarantee or universal Roman mapping is claimed.",
+  "overlapReview": "The typing guide and the mixed-language article explain the two output modes for English words inside sentences; neither shows what the mode does to single syllables such as ka. The Romanized-keyboard comparison explains fixed key layouts versus word typing without testing letter rows in this pad. The half-letter article covers conjuncts inside words (it is linked for क्ष, त्र, ज्ञ), the vowel article covers ि/ी and ु/ू length inside words, and the chandrabindu article covers nasal marks. The practice article uses full sentences. This page covers bare letters and alphabet-chart lines only. Broad tool and beginner intent stay on the homepage and guide.",
+  "keywordEvidence": {
+    "measured": true,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Related terms read from the full November 1 Keyword Planner export (Google, Nepal, English, October 2025–September 2026, 395 ideas): nepali alphabet in keyboard, nepali letter in keyboard, nepali alphabet keyboard and all nepali alphabet each have export representative value 50, which the curated report pairs with the displayed 10–100 range. Ranges were inferred from that pairing, not re-read in the UI, and are not summed. These searches may also want a picture of a fixed keyboard layout, so the match with this page is partial. The exact primary query is unmeasured. Ads competition is not organic difficulty."
+  },
+  "research": [
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-21",
+      "note": "Primary Devanagari code chart (HTTP 200 after redirect). Identifies the letters discussed: U+091F TTA ट, U+0920 TTHA ठ, U+0921 DDA ड, U+0922 DDHA ढ, U+0923 NNA ण, U+0937 SSA ष, U+091A CA च, U+091D JHA झ, U+0909 U उ. Names confirmed locally against Python unicodedata on 2026-11-21."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-21",
+      "note": "Shared Rust/Wasm engine built from origin/main 0b29d2a (dictionary 77fb2c90...) verifies every displayed pair, the All Nepali rows and the three suggestion claims. The built pad was driven in Chrome in both locales: nine rows in both modes, then च, झ and उ picked from the suggestion bar (each listed second) and the corrected rows copied and read back from the clipboard. Probe notes not shown as examples: capital Ta gave त; kakhaga without spaces gave कखग; gai, topi, jahaj and machha gave poor whole-word results, so a full word-per-letter chart was not attempted."
+    }
+  ],
+  "exampleContexts": [
+    "child's alphabet chart",
+    "alphabet rows",
+    "rabbit, house and maize chart words",
+    "road, big, drum, slow, Ganesh and language words for retroflex letters"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "ka kha ga gha nga",
+        "mode": 0
+      },
+      "expectedText": "ka ख ga घ ङ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ka kha ga gha nga",
+        "mode": 2
+      },
+      "expectedText": "क ख ग घ ङ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "cha chha ja jha nya",
+        "mode": 2
+      },
+      "expectedText": "छ छ ज झा ञ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ta tha da dha na",
+        "mode": 2
+      },
+      "expectedText": "त थ द ध न"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "pa pha ba bha ma",
+        "mode": 2
+      },
+      "expectedText": "प फ ब भ म"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ya ra la wa",
+        "mode": 2
+      },
+      "expectedText": "य र ल व"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "sha sa ha",
+        "mode": 2
+      },
+      "expectedText": "श स ह"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ksha tra gya",
+        "mode": 2
+      },
+      "expectedText": "क्ष त्र ज्ञ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ksha tra gya",
+        "mode": 0
+      },
+      "expectedText": "क्ष त्र ज्ञ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "a aa i ii u uu e ai o au",
+        "mode": 2
+      },
+      "expectedText": "अ आ इ ई ऊ ऊ ए ऐ ओ औ"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "cha"
+      },
+      "includes": [
+        "छ",
+        "च"
+      ]
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "jha"
+      },
+      "includes": [
+        "झा",
+        "झ"
+      ]
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "u"
+      },
+      "includes": [
+        "ऊ",
+        "उ"
+      ]
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "Ta",
+        "mode": 2
+      },
+      "expectedText": "त"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "am",
+        "mode": 2
+      },
+      "expectedText": "अम"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ri",
+        "mode": 2
+      },
+      "expectedText": "रि"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bato",
+        "mode": 0
+      },
+      "expectedText": "बाटो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "thulo",
+        "mode": 0
+      },
+      "expectedText": "ठूलो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "damaru",
+        "mode": 0
+      },
+      "expectedText": "डमरू"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "dhilo",
+        "mode": 0
+      },
+      "expectedText": "ढिलो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ganesh",
+        "mode": 0
+      },
+      "expectedText": "गणेश"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bhasha",
+        "mode": 0
+      },
+      "expectedText": "भाषा"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kha bata kharayo",
+        "mode": 0
+      },
+      "expectedText": "ख बाट खरायो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "gha bata ghar",
+        "mode": 0
+      },
+      "expectedText": "घ बाट घर"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma bata makai",
+        "mode": 0
+      },
+      "expectedText": "म बाट मकै"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ka bata kalam",
+        "mode": 0
+      },
+      "expectedText": "ka बाट कलम"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ka bata kalam",
+        "mode": 2
+      },
+      "expectedText": "क बाट कलम"
+    }
+  ],
+  "en": {
+    "title": "How to type single Nepali letters (क ख ग) with Roman input | NepType",
+    "heading": "Type single Nepali letters like क, ख and ग with Roman input",
+    "description": "In NepType's default mode, ka kha ga gha nga comes out as ka ख ga घ ङ. All Nepali mode gives the full rows. See which letters need a suggestion and which only appear inside a word.",
+    "sections": [
+      [
+        "Switch to All Nepali before typing letter rows",
+        "If you type the first row for a child's chart or a worksheet, the default Nepali + EN mode leaves some syllables in Roman letters: ka kha ga gha nga came out as ka ख ga घ ङ. Change the mode menu above the pad to All Nepali and the same input gives क ख ग घ ङ. Put a space between the syllables. Without spaces, kakhaga is read as one word.",
+        {
+          "examples": [
+            [
+              "ka kha ga gha nga",
+              "ka ख ga घ ङ"
+            ]
+          ],
+          "links": [
+            [
+              "Open the typing pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Rows that came out right in All Nepali",
+        "Type each row with spaces and read the output before starting the next. The last row, ksha tra gya, also works in Nepali + EN.",
+        {
+          "steps": [
+            "ka kha ga gha nga gives क ख ग घ ङ",
+            "ta tha da dha na gives त थ द ध न",
+            "pa pha ba bha ma gives प फ ब भ म",
+            "ya ra la wa gives य र ल व",
+            "sha sa ha gives श स ह",
+            "ksha tra gya gives क्ष त्र ज्ञ"
+          ],
+          "examples": [
+            [
+              "ksha tra gya",
+              "क्ष त्र ज्ञ"
+            ]
+          ],
+          "links": [
+            [
+              "How क्ष and other joined letters are typed",
+              "/articles/nepali-half-letters-roman-input/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Pick च, झ and उ from the suggestions",
+        "Three letters came out wrong on the first try. cha gave छ, jha gave झा and u gave ऊ, so the row cha chha ja jha nya read छ छ ज झा ञ. Click the syllable in the Roman input and choose च, झ or उ from the suggestions. Each was the second suggestion in our check. With च and झ picked, the row read च छ ज झ ञ. The vowel row a aa i ii u uu e ai o au gave अ आ इ ई ऊ ऊ ए ऐ ओ औ until उ was picked for u.",
+        {
+          "links": [
+            [
+              "How to choose a suggestion",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Type a whole word for ट, ठ, ड, ढ, ण and ष",
+        "The row spellings did not reach ट, ठ, ड, ढ, ण or ष. ta and tha gave त and थ, and a capital T made no difference. am gave अम and ri gave रि, so अं and ऋ did not come from those spellings either. These letters do appear when you type a word that contains them. If you need one of them alone, enter it with a Devanagari keyboard layout instead.",
+        {
+          "examples": [
+            [
+              "bato",
+              "बाटो"
+            ],
+            [
+              "thulo",
+              "ठूलो"
+            ],
+            [
+              "damaru",
+              "डमरू"
+            ],
+            [
+              "dhilo",
+              "ढिलो"
+            ],
+            [
+              "ganesh",
+              "गणेश"
+            ],
+            [
+              "bhasha",
+              "भाषा"
+            ]
+          ],
+          "links": [
+            [
+              "Fixed Nepali keyboard layouts and word typing compared",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ],
+            [
+              "Unicode Devanagari chart",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "Add a word to each letter",
+        "A chart line such as ख बाट खरायो can be typed in either mode, because kha, gha and ma are converted in both. A line that starts with ka needs All Nepali: ka bata kalam gave ka बाट कलम in Nepali + EN and क बाट कलम in All Nepali. Read the finished chart once against a printed alphabet before you copy it. The pad does not check that a row is complete.",
+        {
+          "examples": [
+            [
+              "kha bata kharayo",
+              "ख बाट खरायो"
+            ],
+            [
+              "gha bata ghar",
+              "घ बाट घर"
+            ],
+            [
+              "ma bata makai",
+              "म बाट मकै"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "क, ख, ग जस्ता एक्ला नेपाली अक्षर रोमनबाट कसरी लेख्ने | NepType",
+    "heading": "रोमन लेखाइबाट क, ख, ग जस्ता एक्ला अक्षर लेख्नुहोस्",
+    "description": "NepType को सुरुको मोडमा ka kha ga gha nga लेख्दा ka ख ga घ ङ आउँछ। All Nepali मोडमा पूरा पङ्क्ति आउँछ। कुन अक्षर सुझावबाट छान्नुपर्छ र कुन अक्षर शब्दभित्र मात्र आउँछ, हेर्नुहोस्।",
+    "sections": [
+      [
+        "अक्षरका पङ्क्ति लेख्नुअघि All Nepali रोज्नुहोस्",
+        "बच्चाको चार्ट वा अभ्यास पानाका लागि पहिलो पङ्क्ति लेख्दा सुरुको Nepali + EN मोडले केही अक्षर रोमनमै छोड्छ: ka kha ga gha nga लेख्दा ka ख ga घ ङ आयो। प्याडमाथिको मोड मेनुमा All Nepali रोज्नुभयो भने त्यही लेखाइबाट क ख ग घ ङ आउँछ। अक्षरहरूको बीचमा स्पेस राख्नुहोस्। स्पेस नराखी kakhaga लेख्दा प्याडले त्यसलाई एउटै शब्द ठान्छ।",
+        {
+          "examples": [
+            [
+              "ka kha ga gha nga",
+              "ka ख ga घ ङ"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "All Nepali मा सच्याउनु नपरेका पङ्क्ति",
+        "हरेक पङ्क्ति स्पेस राखेर लेख्नुहोस् र अर्को सुरु गर्नुअघि नतिजा पढ्नुहोस्। अन्तिम पङ्क्ति ksha tra gya चाहिँ Nepali + EN मा पनि मिल्छ।",
+        {
+          "steps": [
+            "ka kha ga gha nga लेख्दा क ख ग घ ङ",
+            "ta tha da dha na लेख्दा त थ द ध न",
+            "pa pha ba bha ma लेख्दा प फ ब भ म",
+            "ya ra la wa लेख्दा य र ल व",
+            "sha sa ha लेख्दा श स ह",
+            "ksha tra gya लेख्दा क्ष त्र ज्ञ"
+          ],
+          "examples": [
+            [
+              "ksha tra gya",
+              "क्ष त्र ज्ञ"
+            ]
+          ],
+          "links": [
+            [
+              "क्ष जस्ता संयुक्त अक्षर कसरी लेख्ने",
+              "/articles/nepali-half-letters-roman-input/"
+            ]
+          ]
+        }
+      ],
+      [
+        "च, झ र उ सुझावबाट छान्नुहोस्",
+        "तीन अक्षर पहिलो पटकमा मिलेनन्। cha बाट छ, jha बाट झा र u बाट ऊ आयो, त्यसैले cha chha ja jha nya लेख्दा छ छ ज झा ञ देखियो। रोमन लेखाइमा त्यो अक्षरमा थिचेर सुझावबाट च, झ वा उ छान्नुहोस्। हाम्रो जाँचमा तीनवटै दोस्रो सुझावमा थिए। च र झ छानेपछि पङ्क्ति च छ ज झ ञ भयो। स्वरको पङ्क्ति a aa i ii u uu e ai o au बाट अ आ इ ई ऊ ऊ ए ऐ ओ औ आयो, र u का लागि उ छानेपछि मिल्यो।",
+        {
+          "links": [
+            [
+              "सुझाव कसरी छान्ने",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "ट, ठ, ड, ढ, ण र ष का लागि पूरा शब्द लेख्नुहोस्",
+        "पङ्क्तिका यी लेखाइबाट ट, ठ, ड, ढ, ण र ष आएनन्। ta र tha बाट त र थ आयो, ठूलो T लेख्दा पनि उही आयो। am बाट अम र ri बाट रि आएकाले अं र ऋ पनि यसरी बनेनन्। यी अक्षर भएका शब्द लेख्दा भने ती अक्षर आउँछन्। एक्लै अक्षर चाहिएमा देवनागरी किबोर्ड लेआउटबाट लेख्नुहोस्।",
+        {
+          "examples": [
+            [
+              "bato",
+              "बाटो"
+            ],
+            [
+              "thulo",
+              "ठूलो"
+            ],
+            [
+              "damaru",
+              "डमरू"
+            ],
+            [
+              "dhilo",
+              "ढिलो"
+            ],
+            [
+              "ganesh",
+              "गणेश"
+            ],
+            [
+              "bhasha",
+              "भाषा"
+            ]
+          ],
+          "links": [
+            [
+              "नेपाली किबोर्ड लेआउट र शब्द लेखाइको तुलना",
+              "/articles/nepali-romanized-keyboard-vs-phonetic-typing/"
+            ],
+            [
+              "देवनागरी अक्षरको Unicode सूची",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "अक्षरसँग शब्द जोड्नुहोस्",
+        "ख बाट खरायो जस्तो चार्टको लाइन दुवै मोडमा लेख्न मिल्छ, किनभने kha, gha र ma दुवैमा नेपालीमा बदलिन्छन्। ka बाट सुरु हुने लाइनलाई All Nepali चाहिन्छ: ka bata kalam लेख्दा Nepali + EN मा ka बाट कलम र All Nepali मा क बाट कलम आयो। कपी गर्नुअघि तयार चार्टलाई छापिएको वर्णमालासँग एक पटक दाँज्नुहोस्। पङ्क्ति पूरा छ कि छैन भनेर प्याडले जाँच्दैन।",
+        {
+          "examples": [
+            [
+              "kha bata kharayo",
+              "ख बाट खरायो"
+            ],
+            [
+              "gha bata ghar",
+              "घ बाट घर"
+            ],
+            [
+              "ma bata makai",
+              "म बाट मकै"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-21",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Humanizer pass on 2026-11-21 over the first draft, both languages (draft kept in the run report). Marked tells: a staged opening contrast (typing the alphabet is not the same as typing words), a three-imperative description, a section body that restated its heading, the filler lead-in 'It is worth noting that', a not-X-but-Y closer (a typing tool, not an alphabet checker) and an unclear 'both fixes'; in Nepali the matching एउटै कुरा होइन opener, three-command description, restated heading, ध्यान दिनुपर्ने कुरा के छ भने lead-in and साधन हो ... होइन contrast. Cut the openers and lead-ins, rewrote the descriptions as plain statements, replaced the restating body with an instruction, named च and झ instead of 'both', and stated the pad's limit directly. Rechecked for dashes, triads and closers. Every input/output string, check, code point, URL and metadata field preserved. AI editorial pass, not human authorship or expert review."
+  }
+}

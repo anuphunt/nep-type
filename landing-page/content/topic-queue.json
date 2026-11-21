@@ -458,6 +458,28 @@
       "overlapBoundary": "User-facing accessibility and sharing checks, distinct from HTML encoding implementation and PDF export.",
       "keywordEvidence": [],
       "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+    },
+    {
+      "id": "nepali-alphabet-letters",
+      "status": "published",
+      "query": "type single Nepali alphabet letters ka kha ga",
+      "title": "Type single Nepali letters like क, ख and ग with Roman input",
+      "intent": "Type alphabet rows and single letters for a chart, and fix letters that stay Roman or come out wrong",
+      "angle": "Test whole letter rows in both output modes in the real pad; show which letters need a suggestion and which only appear inside whole words. No fixed-layout chart or complete-alphabet promise.",
+      "overlapBoundary": "Bare letters and alphabet-chart lines only; words, conjuncts, vowel length and nasal marks stay on their own pages.",
+      "keywordEvidence": [
+        {
+          "provider": "Google Ads Keyword Planner",
+          "keyword": "nepali alphabet in keyboard",
+          "averageMonthlySearches": "10–100",
+          "location": "Nepal",
+          "language": "English",
+          "period": "2025-10-01/2026-09-30",
+          "note": "Related term read from the full November 1 export (representative value 50, paired with 10–100 in the curated report). May also reflect fixed-layout intent. Not a volume for the exact primary query, which is unmeasured."
+        }
+      ],
+      "evidenceNote": "Added and validated 2026-11-21 after phone (device-gated) and copy-troubleshooting (overlap) were skipped again: the November 1 export has several alphabet/letter keyboard searches (nepali alphabet in keyboard, nepali letter in keyboard, nepali alphabet keyboard, all nepali alphabet; not summed), and no existing page shows what the output mode does to single syllables. Twenty-seven current-engine checks plus real-pad suggestion picks in both locales. A word-per-letter chart was rejected because several whole-word results were poor (gai, topi, jahaj, machha).",
+      "articleSlug": "type-single-nepali-letters-roman-input"
     }
   ],
   "researchFile": "research/2026-11-01-keywords.json",
