@@ -1,0 +1,444 @@
+{
+  "slug": "nepali-full-stop-numbers-roman-input",
+  "topicId": "nepali-punctuation",
+  "status": "published",
+  "published": "2026-11-22",
+  "primaryQuery": "type Nepali full stop purna viram and numbers with Roman input",
+  "searchIntent": "Get the Nepali full stop (।), question marks and commas right in a Roman-input pad, keep times, dates and reference numbers unchanged, and fix a । that lands after an abbreviation or a list number.",
+  "originalValue": "Nineteen current-engine checks, repeated key by key in the real pad in both locales with Copy and clipboard readback: a sentence-final period becomes ।; ?, ! and , are kept; 7.30, a six-digit ticket number, a slash date and a web address are unchanged; digits are not converted to Nepali digits, and pasted Nepali digits and । pass through. Four failure cases found by testing are shown with their repairs: no. 12 gives no। 12 (write nambar), a numbered list loses the second period (1. आलु 2। दूध; use a bracket), a missing space after a period leaves both words Roman, and the | and / keys used for । in some other tools stay as typed. No Nepali-digit conversion, calendar conversion or punctuation rule is claimed.",
+  "overlapReview": "The typing guide says in one sentence that a sentence-ending period becomes । and that digits need a space first; it shows no numbers, times, dates, abbreviations or lists. The mixed-language article covers English words, names and an email address inside a sentence, and is linked here for web addresses. The practice article uses full stops in its answers without discussing them. The single-letters, vowel, chandrabindu and half-letter articles cover letters and marks inside words. None documents the abbreviation, numbered-list, missing-space or pipe-key results. This page also takes in the digit-preservation part of the queued numbers-and-dates candidate, so that candidate should not become a second page unless it adds calendar or numeral evidence beyond this. Broad tool and beginner intent stay on the homepage and guide.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact query has no measured volume, and no reader thread asking this question was found on 2026-11-22. The November 1 Keyword Planner report (Google, Nepal, English, October 2025–September 2026, 395 ideas) has no punctuation or numeral keyword; no range from it is assigned to this page. Qualitative evidence only: two other Roman typing tools document their own purna viram keys (/ or | on Lexilogos; pipe or period, with Ctrl+period for a literal period, on Easy Nepali Typing), which shows the key differs between tools, and the engine probe found four concrete failure cases. Search Console rows through 2026-11-20 contain no punctuation query. Ads competition is not organic difficulty."
+  },
+  "research": [
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-22",
+      "note": "Primary Devanagari code chart (HTTP 200 after redirect). Identifies U+0964 DEVANAGARI DANDA (।, the purna viram) and U+0966 to U+096F DEVANAGARI DIGIT ZERO to NINE. Names confirmed locally against Python unicodedata on 2026-11-22."
+    },
+    {
+      "url": "https://www.lexilogos.com/keyboard/nepali.htm",
+      "checked": "2026-11-22",
+      "note": "HTTP 200. Another Roman-to-Devanagari tool whose help text reads 'Type / or | for । (danda)'. Supports the statement that some other tools use the | or / key; not linked from the article."
+    },
+    {
+      "url": "https://www.easynepalityping.com/",
+      "checked": "2026-11-22",
+      "note": "HTTP 200. Help text: press the pipe key or enter a period to insert the purna viram, and Ctrl + period for a literal period. Supports the statement that the pipe key is used elsewhere; NepType has no equivalent literal-period shortcut, so the article gives rewording repairs instead. Not linked from the article."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-22",
+      "note": "Shared Rust/Wasm engine built from origin/main 98964ae (dictionary 77fb2c90...) verifies every displayed pair and every result quoted in prose. The built pad was driven in Chrome in both locales: each sentence typed key by key in Nepali + EN, output read, Copy pressed and the clipboard read back. Also checked in the pad: pasal followed by 2 with no space stays pasal2 on a desktop browser, and pasted Nepali digits and । pass through. Probe notes not used as examples because the words came out wrong: rupaiya, litar, pariksha, natija, tarkari, khulcha, aaucha. Also seen and not explained in the article: 2083/08/06. at the end of a line kept its period, and a.m. and dr. were unchanged."
+    }
+  ],
+  "exampleContexts": [
+    "asking whether someone has eaten",
+    "thanks",
+    "shop opening time",
+    "vehicle departure time",
+    "ticket number",
+    "date written with slashes",
+    "house number",
+    "two-item shopping list"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "khana khanubhayo?",
+        "mode": 0
+      },
+      "expectedText": "खाना खानुभयो?"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "dhanyabad!",
+        "mode": 0
+      },
+      "expectedText": "धन्यवाद!"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma thik chu, timi ni?",
+        "mode": 0
+      },
+      "expectedText": "म ठीक छु, तिमी नि?"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "pasal 9 baje khulchha.",
+        "mode": 0
+      },
+      "expectedText": "पसल 9 बजे खुल्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma aaen|",
+        "mode": 0
+      },
+      "expectedText": "म आएँ|"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "gadi 7.30 baje chhutchha.",
+        "mode": 0
+      },
+      "expectedText": "गाडी 7.30 बजे छुट्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "mero ticket nambar 204518 ho.",
+        "mode": 0
+      },
+      "expectedText": "मेरो ticket नम्बर 204518 हो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aaja 2083/08/06 ho.",
+        "mode": 0
+      },
+      "expectedText": "आज 2083/08/06 हो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "pasal2",
+        "mode": 0
+      },
+      "expectedText": "pasal2"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "pasal ९ baje khulchha।",
+        "mode": 0
+      },
+      "expectedText": "पसल ९ बजे खुल्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "www.example.com hernu.",
+        "mode": 0
+      },
+      "expectedText": "www.example.com हेर्नु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ghar no. 12",
+        "mode": 0
+      },
+      "expectedText": "घर no। 12"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ghar nambar 12",
+        "mode": 0
+      },
+      "expectedText": "घर नम्बर 12"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "Rs. 500",
+        "mode": 0
+      },
+      "expectedText": "र्स। 500"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "1. aalu 2. dudh",
+        "mode": 0
+      },
+      "expectedText": "1. आलु 2। दूध"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "1) aalu 2) dudh",
+        "mode": 0
+      },
+      "expectedText": "1) आलु 2) दूध"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma aaen.timi gayau.",
+        "mode": 0
+      },
+      "expectedText": "म aaen.timi गयौ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma aaen. timi gayau.",
+        "mode": 0
+      },
+      "expectedText": "म आएँ। तिमी गयौ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ke bhayo...",
+        "mode": 0
+      },
+      "expectedText": "के भयो..."
+    }
+  ],
+  "en": {
+    "title": "Nepali full stop (।) and numbers with Roman typing | NepType",
+    "heading": "Type the Nepali full stop (।), question marks and numbers with Roman input",
+    "description": "In NepType a period at the end of a sentence becomes ।, while 7.30, a ticket number and a date stay as typed. See where no. 12 and a numbered list go wrong, and how to fix them.",
+    "sections": [
+      [
+        "A period becomes ।, and other marks stay the same",
+        "Type a period at the end of a sentence and the pad writes ।, the Nepali full stop (purna viram). A question mark, an exclamation mark and a comma come out as typed. Some other Roman typing tools use the | or / key for ।. NepType does not convert those keys: ma aaen| gave म आएँ|. Use the period.",
+        {
+          "examples": [
+            [
+              "khana khanubhayo?",
+              "खाना खानुभयो?"
+            ],
+            [
+              "dhanyabad!",
+              "धन्यवाद!"
+            ],
+            [
+              "ma thik chu, timi ni?",
+              "म ठीक छु, तिमी नि?"
+            ],
+            [
+              "pasal 9 baje khulchha.",
+              "पसल 9 बजे खुल्छ।"
+            ]
+          ],
+          "links": [
+            [
+              "Open the typing pad",
+              "/#try"
+            ],
+            [
+              "Unicode Devanagari chart (। is U+0964)",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "Numbers, times and dates are kept as typed",
+        "Digits come out as the Western digits you typed, so 9 stays 9. A point between two digits stays a point, and 7.30 is still 7.30. A ticket number and a date written with slashes also came out unchanged. Put a space before a number: typed without one, pasal2 stayed pasal2. For Nepali digits, type them with a Nepali keyboard layout or paste them into the Roman box. pasal ९ baje khulchha। came out as पसल ९ बजे खुल्छ।. A web address is kept as well: www.example.com hernu. gave www.example.com हेर्नु।",
+        {
+          "examples": [
+            [
+              "gadi 7.30 baje chhutchha.",
+              "गाडी 7.30 बजे छुट्छ।"
+            ],
+            [
+              "mero ticket nambar 204518 ho.",
+              "मेरो ticket नम्बर 204518 हो।"
+            ],
+            [
+              "aaja 2083/08/06 ho.",
+              "आज 2083/08/06 हो।"
+            ]
+          ],
+          "links": [
+            [
+              "Digits and suggestion shortcuts in the typing guide",
+              "/typing-guide/"
+            ],
+            [
+              "Keep English words and email addresses in a Nepali sentence",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Short forms and numbered lists get a । by mistake",
+        "After a short form or a list number, the pad can read the period as the end of a sentence. ghar no. 12 gave घर no। 12, and Rs. 500 gave र्स। 500. In the list 1. aalu 2. dudh the first number kept its period and the second lost it: 1. आलु 2। दूध. Write the whole word in place of the short form, such as nambar for no., and put a bracket after list numbers. Then look through the output for any । that follows a number or a Roman short form.",
+        {
+          "examples": [
+            [
+              "ghar no. 12",
+              "घर no। 12"
+            ],
+            [
+              "ghar nambar 12",
+              "घर नम्बर 12"
+            ],
+            [
+              "1. aalu 2. dudh",
+              "1. आलु 2। दूध"
+            ],
+            [
+              "1) aalu 2) dudh",
+              "1) आलु 2) दूध"
+            ]
+          ]
+        }
+      ],
+      [
+        "Leave a space after each full stop",
+        "Without a space after the period, the pad treats the words on both sides as one piece and leaves them in Roman letters: ma aaen.timi gayau. gave म aaen.timi गयौ।. With the space it gave म आएँ। तिमी गयौ।. Three periods in a row are left alone: ke bhayo... gave के भयो... with the dots unchanged.",
+        {
+          "examples": [
+            [
+              "ma aaen.timi gayau.",
+              "म aaen.timi गयौ।"
+            ],
+            [
+              "ma aaen. timi gayau.",
+              "म आएँ। तिमी गयौ।"
+            ]
+          ],
+          "links": [
+            [
+              "Practise with everyday sentences",
+              "/articles/nepali-typing-practice-everyday-sentences/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "रोमनबाट नेपाली पूर्णविराम (।) र अङ्क कसरी लेख्ने | NepType",
+    "heading": "रोमन लेखाइबाट पूर्णविराम (।), प्रश्नचिह्न र अङ्क लेख्नुहोस्",
+    "description": "NepType मा वाक्यको अन्त्यमा बिन्दु (.) लेख्दा । बन्छ। 7.30, टिकट नम्बर र मिति भने लेखेजस्तै रहन्छन्। no. 12 र नम्बर राखेको सूचीमा के बिग्रन्छ र कसरी सच्याउने, हेर्नुहोस्।",
+    "sections": [
+      [
+        "बिन्दु (.) लेख्दा । बन्छ, अरू चिह्न उस्तै रहन्छन्",
+        "वाक्यको अन्त्यमा बिन्दु (.) लेख्नुहोस्, प्याडले नेपाली पूर्णविराम (।) लेख्छ। प्रश्नचिह्न (?), उद्गार चिह्न (!) र अल्पविराम (,) जस्ताको तस्तै आउँछन्। रोमनबाट नेपाली लेख्ने अरू केही साधनमा । का लागि | वा / कुञ्जी चल्छ। NepType ले ती कुञ्जी बदल्दैन: ma aaen| लेख्दा म आएँ| आयो। पूर्णविरामका लागि बिन्दु नै लेख्नुहोस्।",
+        {
+          "examples": [
+            [
+              "khana khanubhayo?",
+              "खाना खानुभयो?"
+            ],
+            [
+              "dhanyabad!",
+              "धन्यवाद!"
+            ],
+            [
+              "ma thik chu, timi ni?",
+              "म ठीक छु, तिमी नि?"
+            ],
+            [
+              "pasal 9 baje khulchha.",
+              "पसल 9 बजे खुल्छ।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ],
+            [
+              "देवनागरीको Unicode सूची (। को कोड U+0964)",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "अङ्क, समय र मिति जस्ताको तस्तै रहन्छन्",
+        "अङ्क लेखेजस्तै आउँछन्: 9 लेख्दा 9 नै रहन्छ। दुई अङ्कको बीचको बिन्दु पनि बिन्दु नै रहन्छ, त्यसैले 7.30 लेख्दा 7.30 नै आउँछ। टिकट नम्बर र स्ल्यास (/) राखेर लेखेको मिति पनि उस्तै आए। अङ्कअघि स्पेस राख्नुहोस्: स्पेस नराखी pasal2 लेख्दा pasal2 नै रह्यो। नेपाली अङ्क चाहिएमा नेपाली किबोर्ड लेआउटबाट लेख्नुहोस् वा रोमन बाकसमा पेस्ट गर्नुहोस्। pasal ९ baje khulchha। लेख्दा पसल ९ बजे खुल्छ। आयो। वेब ठेगाना पनि उस्तै रहन्छ: www.example.com hernu. लेख्दा www.example.com हेर्नु। आयो।",
+        {
+          "examples": [
+            [
+              "gadi 7.30 baje chhutchha.",
+              "गाडी 7.30 बजे छुट्छ।"
+            ],
+            [
+              "mero ticket nambar 204518 ho.",
+              "मेरो ticket नम्बर 204518 हो।"
+            ],
+            [
+              "aaja 2083/08/06 ho.",
+              "आज 2083/08/06 हो।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ गाइडमा अङ्क र सुझावका सर्टकट",
+              "/typing-guide/"
+            ],
+            [
+              "नेपाली वाक्यमा अंग्रेजी शब्द र इमेल ठेगाना जोगाउने",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "छोटकरी र नम्बर राखेको सूचीमा । गलत ठाउँमा आउँछ",
+        "छोटकरी वा सूचीको नम्बरपछिको बिन्दुलाई प्याडले वाक्यको अन्त्य ठान्न सक्छ। ghar no. 12 लेख्दा घर no। 12 आयो, र Rs. 500 लेख्दा र्स। 500 आयो। 1. aalu 2. dudh सूचीमा पहिलो नम्बरको बिन्दु रह्यो तर दोस्रोको हरायो: 1. आलु 2। दूध। छोटकरीको सट्टा पूरा शब्द लेख्नुहोस्, जस्तै no. को सट्टा nambar। सूचीमा नम्बरपछि कोष्ठक राख्नुहोस्। त्यसपछि नतिजामा अङ्क वा रोमन छोटकरीको ठीक पछाडि । परेको छ कि हेर्नुहोस्।",
+        {
+          "examples": [
+            [
+              "ghar no. 12",
+              "घर no। 12"
+            ],
+            [
+              "ghar nambar 12",
+              "घर नम्बर 12"
+            ],
+            [
+              "1. aalu 2. dudh",
+              "1. आलु 2। दूध"
+            ],
+            [
+              "1) aalu 2) dudh",
+              "1) आलु 2) दूध"
+            ]
+          ]
+        }
+      ],
+      [
+        "हरेक पूर्णविरामपछि स्पेस राख्नुहोस्",
+        "बिन्दुपछि स्पेस नराख्दा प्याडले दुवैतिरका शब्दलाई एउटै टुक्रा ठान्छ र रोमनमै छोड्छ: ma aaen.timi gayau. लेख्दा म aaen.timi गयौ। आयो। स्पेस राख्दा म आएँ। तिमी गयौ। आयो। लगातार तीन बिन्दु भने बदलिँदैनन्: ke bhayo... लेख्दा के भयो... नै आयो।",
+        {
+          "examples": [
+            [
+              "ma aaen.timi gayau.",
+              "म aaen.timi गयौ।"
+            ],
+            [
+              "ma aaen. timi gayau.",
+              "म आएँ। तिमी गयौ।"
+            ]
+          ],
+          "links": [
+            [
+              "दैनिक वाक्य लेखेर अभ्यास गर्नुहोस्",
+              "/articles/nepali-typing-practice-everyday-sentences/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-22",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Humanizer pass on 2026-11-22 over the first draft, both languages (draft kept in the run report). Marked tells in English: 'You do not need a special key for it', a denial placed before the instruction; the doubled statement 'leaves digits alone, and it does not turn 9 into ९'; the negative framing 'is not broken by a ।'; a two-sentence split ('...end of a sentence. That is wrong after...') that delayed the point and overstated how often the period is misread (now 'can read', since 1. and dr. kept their periods); and the closer 'Before you copy, read each number and each । once. The pad does not check them', the same closing shape as earlier articles. In Nepali the matching छुट्टै कुञ्जी चाहिँदैन opener, the pair प्याडले अङ्क बदल्दैन। 9 लेख्दा ९ बन्दैन।, the 7.30 को बीचमा । आउँदैन framing and the प्याडले यी कुरा जाँच्दैन closer. Rewrote the first paragraph to open with the instruction, stated the digit result once, joined the split sentence, cut the generic closer and replaced it with a specific check in the section about wrong । marks. Rechecked for dashes, triads, bold labels and closers. Every input/output string, check, code point, URL and metadata field is the same in the draft and the final. AI editorial pass, not human authorship or expert review."
+  }
+}

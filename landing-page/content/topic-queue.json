@@ -227,13 +227,14 @@
     },
     {
       "id": "nepali-punctuation",
-      "status": "research_needed",
+      "status": "published",
       "query": "Nepali typing full stop purna viram Unicode",
       "intent": "Use sentence punctuation while preserving decimals and URLs",
       "angle": "Verified contextual punctuation examples, decimal numbers, URLs and manual corrections, with clear engine limits.",
       "title": "Nepali full stops, numbers and links: a practical typing walkthrough",
       "keywordEvidence": [],
-      "evidenceNote": "No measured volume for this exact question. Verify actual punctuation behavior and prioritize only when it answers a real support need. Improve the existing typing guide or mixed-language article first unless a distinct reader need is established."
+      "evidenceNote": "Validated 2026-11-22 after phone (device-gated) and copy-troubleshooting (overlap) were skipped again. No measured volume and no reader thread found; qualitative evidence only: two other Roman typing tools document different purna viram keys (/ or |, pipe or period), and nineteen current-engine checks repeated in the real pad in both locales found four concrete failure cases (no. 12, numbered lists, missing space after a period, pipe key) with repairs. Decimal times, a ticket number, a slash date and a web address are shown unchanged. No digit or calendar conversion claimed.",
+      "articleSlug": "nepali-full-stop-numbers-roman-input"
     },
     {
       "id": "nepali-gmail-email",
@@ -333,7 +334,7 @@
       "angle": "Verify ASCII and Devanagari digit examples, leading zeros and date ambiguity. No calendar conversion or automatic numeral-conversion claim.",
       "overlapBoundary": "Digit preservation and date clarity; punctuation is a separate decision task.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail. 2026-11-22: digit preservation, decimal times, a slash date and a reference number are now covered by the published punctuation article (nepali-full-stop-numbers-roman-input). Keep held; promote only with distinct calendar or Nepali-numeral evidence beyond that page, otherwise reject as consolidated."
     },
     {
       "id": "nepali-conjunct-letters",
