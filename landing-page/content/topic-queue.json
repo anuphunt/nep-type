@@ -217,13 +217,14 @@
     },
     {
       "id": "ambiguous-pani-spelling",
-      "status": "research_needed",
+      "status": "published",
       "query": "pani पानी पनि Roman Nepali typing",
       "intent": "Choose between ambiguous Nepali spellings",
       "angle": "A complete example with two occurrences, candidate selection, original spelling, and current undo behavior. Publish only if it adds depth beyond the existing guide.",
       "title": "Choose पानी or पनि without rewriting your sentence",
       "keywordEvidence": [],
-      "evidenceNote": "No measured volume for the exact phrase. Publish only with a distinct worked problem beyond the existing guide and mixed-language article. Improve the existing typing guide or mixed-language article first unless a distinct reader need is established."
+      "evidenceNote": "Validated 2026-11-23 after phone (device-gated) and copy-troubleshooting (overlap) were skipped again. Broadened from the single pani pair to the a/aa question, because the guide and the mixed-language article already cover pani itself. No measured volume and no reader thread found; qualitative evidence only: other Roman-to-Nepali tools state the same a/aa convention, and thirty current-engine checks repeated in the real pad in both locales show a dropped final a in unknown words, half-doubled spellings that give other real words (tara/taara/taaraa), doubled spellings that go wrong (bhaat, haami) and the कम pick from the suggestion bar. pani/paani is one line with a link, not a second walkthrough.",
+      "articleSlug": "nepali-aa-long-vowel-roman-input"
     },
     {
       "id": "nepali-punctuation",

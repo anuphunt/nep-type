@@ -1,0 +1,542 @@
+{
+  "slug": "nepali-aa-long-vowel-roman-input",
+  "topicId": "ambiguous-pani-spelling",
+  "status": "published",
+  "published": "2026-11-23",
+  "primaryQuery": "when to type aa for आ in Roman Nepali typing",
+  "searchIntent": "Get the long vowel आ right when typing Nepali in Roman letters: know when a single a is enough, when aa is needed, and what to do when one spelling can be two words.",
+  "originalValue": "Thirty current-engine checks, with every sentence and single word also typed key by key in the real pad in both locales with Copy and clipboard readback. Findings shown: aa writes आ and a final single a is dropped in words the pad does not know (jhola झोल, jholaa झोला); casual one-a spellings work only for known words (khana, nam, kam) while bajar and kera lose their आ and sag and mama stay Roman in Nepali + EN; doubling only one a gives another real word (tara तर, taara तार, taaraa तारा; khaana खान; chhaata छात); two common words go wrong when doubled (bhaat भाट, haami हामि); and kam gives काम first, with कम picked from the suggestion bar (clicked in the pad: पैसा कम छ।). No spelling rule, dictionary coverage or spell-check feature is claimed.",
+  "overlapReview": "The typing guide and the mixed-language article each explain in a short passage that pani offers पानी and पनि and that a suggestion applies to one occurrence; the Romanized-keyboard article mentions the same pair once. None explains the a/aa rule, the dropped final a, half-doubled spellings or doubled spellings that go wrong. The short and long vowels article covers only ि/ी and ु/ू and is linked here. The practice article has one missing-ा repair (bihan) without a rule. This page takes over the queued pani candidate: pani/paani appears as one line with a link to the mixed-language article rather than a second walkthrough. The dental-retroflex candidate (त/ट) stays separate and held. Broad tool and beginner intent stay on the homepage and guide.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact query has no measured volume. The November 1 Keyword Planner report (Google, Nepal, English, October 2025–September 2026, 395 ideas) has no a/aa or long-vowel keyword, and no range from it is assigned to this page. Two web searches on 2026-11-23 found no reader thread asking this question; they did find other Roman-to-Nepali tools and guides that state the same convention (a for अ, aa for आ) and use kaam/kam as their example, which shows the convention is common but is not demand evidence. Search Console (Oct 25–Nov 21, 324 impressions, 4 clicks) has only broad 'roman to nepali' typing queries plus the bare vowel-sign queries ी (3 impressions) and ू (1); no आ or ा query. Qualitative evidence only. Ads competition is not organic difficulty."
+  },
+  "research": [
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-23",
+      "note": "Primary Devanagari code chart (HTTP 200 after redirect to the Unicode 18.0 chart). Identifies U+0905 DEVANAGARI LETTER A, U+0906 DEVANAGARI LETTER AA and U+093E DEVANAGARI VOWEL SIGN AA. Names confirmed locally against Python unicodedata on 2026-11-23."
+    },
+    {
+      "url": "https://assets.publishing.service.gov.uk/media/5ab4e364e5274a1aa5933450/ROMANIZATION_OF_NEPALI.pdf",
+      "checked": "2026-11-23",
+      "note": "BGN/PCGN romanization of Nepali, HTTP 200 (application/pdf). Found by search as a reference that romanizes अ and आ differently; the PDF could not be opened in this run (no PDF reader installed), so no claim in the article depends on it and it is not linked."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-23",
+      "note": "Shared Rust/Wasm engine built from origin/main f9d16e3 (dictionary 77fb2c90...) verifies every displayed pair and every result quoted in prose. The built pad was driven in Chrome in both locales: each item typed key by key in Nepali + EN, output read, Copy pressed and the clipboard read back. Suggestion pick tested in the pad: after typing paisa kam the bar under the Roman box showed काम, कम, kam; clicking कम and finishing the sentence gave पैसा कम छ।. Probe notes not used as examples: kera alone stays Roman in Nepali + EN but gives केर inside the sentence; sita gives सित; khanchhau gives खन्छौ; bajaarbata gives बजार्बत; tapaai gives तपाई while tapai gives तपाईं; more words that need aa throughout: raajaa, maachhaa, mulaa, gaajar, kapaal, chaamal, naak, haat, kaan, saasu."
+    }
+  ],
+  "exampleContexts": [
+    "maternal uncle visiting",
+    "cloth bag",
+    "buying greens and bananas",
+    "dinner is ready",
+    "stars at night",
+    "umbrella",
+    "eating rice",
+    "being short of money"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "maamaa",
+        "mode": 0
+      },
+      "expectedText": "मामा"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "jhola",
+        "mode": 0
+      },
+      "expectedText": "झोल"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "jholaa",
+        "mode": 0
+      },
+      "expectedText": "झोला"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aaja maamaa aaunuhunchha.",
+        "mode": 0
+      },
+      "expectedText": "आज मामा आउनुहुन्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "khana pakyo.",
+        "mode": 0
+      },
+      "expectedText": "खाना पक्यो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "nam",
+        "mode": 0
+      },
+      "expectedText": "नाम"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kam",
+        "mode": 0
+      },
+      "expectedText": "काम"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bajar",
+        "mode": 0
+      },
+      "expectedText": "बजर"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bajaar",
+        "mode": 0
+      },
+      "expectedText": "बजार"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "sag ra kera kinnu.",
+        "mode": 0
+      },
+      "expectedText": "sag र केर किन्नु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "saag ra keraa kinnu.",
+        "mode": 0
+      },
+      "expectedText": "साग र केरा किन्नु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aaja mama aaunuhunchha.",
+        "mode": 0
+      },
+      "expectedText": "आज mama आउनुहुन्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "tara",
+        "mode": 0
+      },
+      "expectedText": "तर"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "taara",
+        "mode": 0
+      },
+      "expectedText": "तार"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "taaraa",
+        "mode": 0
+      },
+      "expectedText": "तारा"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "raati taaraa dekhinchha.",
+        "mode": 0
+      },
+      "expectedText": "राति तारा देखिन्छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "khaana",
+        "mode": 0
+      },
+      "expectedText": "खान"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "khaanaa",
+        "mode": 0
+      },
+      "expectedText": "खाना"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "chhaata",
+        "mode": 0
+      },
+      "expectedText": "छात"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "chhaataa",
+        "mode": 0
+      },
+      "expectedText": "छाता"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bhaat",
+        "mode": 0
+      },
+      "expectedText": "भाट"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bhat",
+        "mode": 0
+      },
+      "expectedText": "भात"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "haami",
+        "mode": 0
+      },
+      "expectedText": "हामि"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "hami",
+        "mode": 0
+      },
+      "expectedText": "हामी"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma bhaat khaanchhu.",
+        "mode": 0
+      },
+      "expectedText": "म भाट खान्छु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ma bhat khaanchhu.",
+        "mode": 0
+      },
+      "expectedText": "म भात खान्छु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "paisa kam chha.",
+        "mode": 0
+      },
+      "expectedText": "पैसा काम छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "pani",
+        "mode": 0
+      },
+      "expectedText": "पनि"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "paani",
+        "mode": 0
+      },
+      "expectedText": "पानी"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "kam"
+      },
+      "includes": [
+        "काम",
+        "कम",
+        "kam"
+      ]
+    }
+  ],
+  "en": {
+    "title": "When to type aa for आ in Roman Nepali typing | NepType",
+    "heading": "When to type aa for आ: खाना, मामा and तारा with Roman input",
+    "description": "In NepType, aa writes आ and a single a writes अ. See why bajar and khaana come out short, how tara, taara and taaraa differ, and how to pick कम when kam gives काम.",
+    "sections": [
+      [
+        "aa writes आ and a single a writes अ",
+        "In the Roman box, aa stands for the long vowel आ (written ा after a consonant) and a single a stands for the short अ. Every consonant already carries अ, so a single a adds no mark. In a word the pad does not know, a single a at the end is dropped: jhola gave झोल and jholaa gave झोला. In the same way maamaa gives मामा. For a word the pad may not know, write aa wherever you say आ.",
+        {
+          "examples": [
+            [
+              "maamaa",
+              "मामा"
+            ],
+            [
+              "jhola",
+              "झोल"
+            ],
+            [
+              "jholaa",
+              "झोला"
+            ],
+            [
+              "aaja maamaa aaunuhunchha.",
+              "आज मामा आउनुहुन्छ।"
+            ]
+          ],
+          "links": [
+            [
+              "Open the typing pad",
+              "/#try"
+            ],
+            [
+              "Unicode Devanagari chart (आ is U+0906, ा is U+093E)",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "Common words work with one a; less common words lose their आ",
+        "Words the pad knows come out right with one a: khana pakyo. gives खाना पक्यो।, nam gives नाम and kam gives काम. Less common words lose their आ. bajar gave बजर, and sag ra kera kinnu. gave sag र केर किन्नु।. In Nepali + EN mode a spelling the pad does not recognise as Nepali can stay in Roman letters, as sag did here and mama did in aaja mama aaunuhunchha. With aa in each place, saag ra keraa kinnu. gives साग र केरा किन्नु।. When a word comes out short or stays in Roman letters, add the missing a.",
+        {
+          "examples": [
+            [
+              "khana pakyo.",
+              "खाना पक्यो।"
+            ],
+            [
+              "sag ra kera kinnu.",
+              "sag र केर किन्नु।"
+            ],
+            [
+              "saag ra keraa kinnu.",
+              "साग र केरा किन्नु।"
+            ]
+          ],
+          "links": [
+            [
+              "Suggestions and modes in the typing guide",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Double every आ, including the last one",
+        "Doubling one a and leaving another gives a different word. tara, taara and taaraa came out as तर (but), तार (wire) and तारा (star). khaana gave खान, and chhaata gave छात. Double the a at the end as well: khaanaa and chhaataa gave खाना and छाता.",
+        {
+          "examples": [
+            [
+              "tara",
+              "तर"
+            ],
+            [
+              "taara",
+              "तार"
+            ],
+            [
+              "taaraa",
+              "तारा"
+            ],
+            [
+              "raati taaraa dekhinchha.",
+              "राति तारा देखिन्छ।"
+            ]
+          ],
+          "links": [
+            [
+              "Short and long i and u in Roman input",
+              "/articles/nepali-short-long-vowels-roman-input/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Where aa gives the wrong word, and how to choose कम",
+        "A few common words go wrong when doubled. bhaat gave भाट and haami gave हामि, while bhat and hami gave भात and हामी. ma bhaat khaanchhu. came out as म भाट खान्छु।, and ma bhat khaanchhu. as म भात खान्छु।. If aa gives the wrong word, go back to the usual spelling. Where one spelling has two real readings, choose from the suggestions. kam gives काम (work) first, so paisa kam chha. came out as पैसा काम छ।. For कम (less), type kam and click कम in the suggestions under the Roman box; the sentence then reads पैसा कम छ।. pani gives पनि, and paani gives पानी. After typing, look for words that are missing an ा, such as खान where you meant खाना.",
+        {
+          "examples": [
+            [
+              "ma bhaat khaanchhu.",
+              "म भाट खान्छु।"
+            ],
+            [
+              "ma bhat khaanchhu.",
+              "म भात खान्छु।"
+            ],
+            [
+              "paisa kam chha.",
+              "पैसा काम छ।"
+            ]
+          ],
+          "links": [
+            [
+              "Choose पानी or पनि inside a sentence",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "रोमनबाट नेपाली लेख्दा आ का लागि aa कहिले लेख्ने | NepType",
+    "heading": "आ का लागि aa कहिले लेख्ने: रोमनबाट खाना, मामा र तारा",
+    "description": "NepType मा aa ले आ र एउटा a ले अ लेख्छ। bajar र khaana किन छोटो आउँछन्, tara, taara र taaraa मा के फरक छ, र kam लेख्दा काम आए कम कसरी रोज्ने, हेर्नुहोस्।",
+    "sections": [
+      [
+        "aa लेख्दा आ, एउटा a लेख्दा अ",
+        "रोमन बाकसमा aa ले आ (व्यञ्जनपछि ा) जनाउँछ, एउटा a ले अ। अ हरेक व्यञ्जनमा पहिल्यै हुन्छ, त्यसैले एउटा a ले कुनै मात्रा थप्दैन। प्याडले नचिनेको शब्दको अन्त्यमा आएको एउटा a हराउँछ: jhola लेख्दा झोल आयो, jholaa लेख्दा झोला। त्यसैगरी maamaa लेख्दा मामा आउँछ। प्याडले नचिन्न सक्ने शब्दमा जहाँ आ उच्चारण हुन्छ, त्यहाँ aa लेख्नुहोस्।",
+        {
+          "examples": [
+            [
+              "maamaa",
+              "मामा"
+            ],
+            [
+              "jhola",
+              "झोल"
+            ],
+            [
+              "jholaa",
+              "झोला"
+            ],
+            [
+              "aaja maamaa aaunuhunchha.",
+              "आज मामा आउनुहुन्छ।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ],
+            [
+              "देवनागरीको Unicode सूची (आ को कोड U+0906, ा को U+093E)",
+              "https://www.unicode.org/charts/PDF/U0900.pdf"
+            ]
+          ]
+        }
+      ],
+      [
+        "चलनचल्तीका शब्द एउटा a ले आउँछन्, अरूमा आ हराउँछ",
+        "प्याडले चिनेका शब्द एउटा a लेख्दा पनि ठीक आउँछन्: khana pakyo. लेख्दा खाना पक्यो। आउँछ, nam लेख्दा नाम र kam लेख्दा काम। कम चल्ने शब्दमा भने आ हराउँछ। bajar लेख्दा बजर आयो, र sag ra kera kinnu. लेख्दा sag र केर किन्नु। आयो। Nepali + EN मोडमा प्याडले नेपाली भनेर नचिनेको हिज्जे रोमनमै रहन सक्छ; यहाँ sag रह्यो, र aaja mama aaunuhunchha. मा mama। हरेक आ मा aa राखेर saag ra keraa kinnu. लेख्दा साग र केरा किन्नु। आउँछ। शब्द छोटो आयो वा रोमनमै रह्यो भने छुटेको a थप्नुहोस्।",
+        {
+          "examples": [
+            [
+              "khana pakyo.",
+              "खाना पक्यो।"
+            ],
+            [
+              "sag ra kera kinnu.",
+              "sag र केर किन्नु।"
+            ],
+            [
+              "saag ra keraa kinnu.",
+              "साग र केरा किन्नु।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ गाइडमा सुझाव र मोड",
+              "/typing-guide/"
+            ]
+          ]
+        }
+      ],
+      [
+        "अन्तिमको सहित हरेक आ मा aa लेख्नुहोस्",
+        "एउटा a मात्र दोहोर्‍याएर अर्को छोड्दा अर्कै शब्द बन्छ। tara, taara र taaraa लेख्दा क्रमशः तर, तार र तारा आए। khaana लेख्दा खान र chhaata लेख्दा छात आयो। शब्दको अन्त्यको a पनि दोहोर्‍याउनुहोस्: khaanaa र chhaataa लेख्दा खाना र छाता आए।",
+        {
+          "examples": [
+            [
+              "tara",
+              "तर"
+            ],
+            [
+              "taara",
+              "तार"
+            ],
+            [
+              "taaraa",
+              "तारा"
+            ],
+            [
+              "raati taaraa dekhinchha.",
+              "राति तारा देखिन्छ।"
+            ]
+          ],
+          "links": [
+            [
+              "रोमनबाट छोटो र लामो इ, उ",
+              "/articles/nepali-short-long-vowels-roman-input/"
+            ]
+          ]
+        }
+      ],
+      [
+        "aa ले गलत शब्द दिँदा, र कम रोज्ने तरिका",
+        "केही धेरै चल्ने शब्द aa लेख्दा बिग्रन्छन्। bhaat लेख्दा भाट र haami लेख्दा हामि आयो, bhat र hami लेख्दा भने भात र हामी। ma bhaat khaanchhu. लेख्दा म भाट खान्छु। आयो, ma bhat khaanchhu. लेख्दा चाहिँ म भात खान्छु। आयो। aa लेख्दा गलत शब्द आए चलनको हिज्जेमा फर्कनुहोस्। एउटै हिज्जेका दुई सही शब्द भए सुझावबाट रोज्नुहोस्। kam लेख्दा पहिले काम आउँछ, त्यसैले paisa kam chha. लेख्दा पैसा काम छ। आयो। कम चाहिएको हो भने kam लेखेर रोमन बाकसमुनिको सुझावमा कम मा क्लिक गर्नुहोस्; त्यसपछि वाक्य पैसा कम छ। हुन्छ। pani लेख्दा पनि आउँछ, paani लेख्दा पानी। लेखिसकेपछि ा छुटेका शब्द खोज्नुहोस्, जस्तै खाना हुनुपर्ने ठाउँमा खान।",
+        {
+          "examples": [
+            [
+              "ma bhaat khaanchhu.",
+              "म भाट खान्छु।"
+            ],
+            [
+              "ma bhat khaanchhu.",
+              "म भात खान्छु।"
+            ],
+            [
+              "paisa kam chha.",
+              "पैसा काम छ।"
+            ]
+          ],
+          "links": [
+            [
+              "वाक्यभित्र पानी वा पनि रोज्ने",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-23",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Humanizer pass on 2026-11-23 over the first draft, both languages (draft kept in the run report). Marked tells in English: the staged heading opener 'The simple rule:'; the not-X-but-Y line 'It is not enough to remember this for one letter; it applies to every आ'; the unsupported 'Many people write'; the staging sentence 'Less common words are a different story'; the short emphatic 'The a at the end of the word matters too.' followed by a bare instruction; 'actually'; the filler contrast 'and aa cannot help there'; 'works the other way round'; and the generic closer 'The pad does not check your spelling, so read the output once before you copy', the same closing shape as earlier articles. In Nepali the matching सजिलो नियम opener, the मात्र होइन contrast, धेरै जनाले, कुरा भने अर्कै छ, महत्त्वपूर्ण छ, वास्तवमा, उल्टो हुन्छ and the प्याडले हिज्जे जाँच्दैन closer. Rewrites: each staged line replaced by the result it introduced; the dropped final a is now scoped to words the pad does not know; the Roman-letters sentence now says what was observed (a spelling not recognised as Nepali) instead of 'a short spelling'; an explicit instruction to return to the usual spelling was added from the bhaat/bhat result already in the draft; the closer became a specific check for a missing ा. Reread both versions for equal instructions. Examples, links, checks and research are identical between draft and final. This is an AI editing pass, not human or expert review."
+  }
+}
