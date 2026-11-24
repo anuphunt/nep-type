@@ -1,0 +1,345 @@
+{
+  "slug": "edit-nepali-paragraph-keep-spelling-choices",
+  "topicId": "nepali-long-paragraph-editing",
+  "status": "published",
+  "published": "2026-11-24",
+  "primaryQuery": "edit Roman Nepali paragraph without losing spelling choices",
+  "searchIntent": "Revise a multi-sentence Roman Nepali draft in the browser pad: fix one word without retyping, keep the spellings already picked from suggestions, and know what Undo, Clear and a reload do.",
+  "originalValue": "A 58-step editing run in the real browser pad, in both locales, on the local build and on production, using a fresh two-line travel note. Observed and shown: a suggestion pick (पानी for pani) survives typing earlier or later in the paragraph, deleting an earlier sentence, a comma straight after the word, a line break before its sentence and a mode switch; it is reset by changing the word's own letters (and is not restored by deleting the letter by hand), by cutting and pasting its sentence and by pasting the Roman paragraph fresh. Undo steps are one typed letter, one paste, one deleted selection or one pick; undo restores a reset pick and the text removed by Clear; a reload empties both boxes. Copy text copies both lines with the line break. Ten current-engine render checks and one candidate check cover every displayed pair. Undo was run with a hardware keyboard in Chrome on a Mac; the Ctrl+Z and Ctrl+Y bindings are read from the pad's source (web-tool.mjs), not run on Windows. No phone behaviour, draft saving or spell checking is claimed.",
+  "overlapReview": "The typing guide says a choice applies to one occurrence, the output box is read-only and the draft is lost on reload, each in one sentence; the mixed-language article repeats the one-occurrence point for pani. The a/aa article (Nov 23) shows one कम pick while typing forward and explains why yatra needs aa; it is linked for that. The practice article covers Clear-and-retry and reload loss for single sentences. The offline article covers reload loss under connection loss and is linked. None tests what happens to an existing pick when the paragraph is edited afterwards, and none covers undo granularity, undo after Clear, cut-and-paste or paste as one step. This page uses the queued nepali-long-paragraph-editing candidate as planned; no new queue entry. Broad tool and beginner intent stay on the homepage and guide; Mac app behaviour (which restores drafts) stays on /mac/.",
+  "keywordEvidence": {
+    "measured": false,
+    "researchFile": "research/2026-11-01-keywords.json",
+    "note": "Exact query has no measured volume. The November 1 Keyword Planner report (Google, Nepal, English, October 2025–September 2026, 395 ideas) and its full export contain no editing, paragraph, undo or correction keyword, and no range from it is assigned to this page. Search Console (Oct 26–Nov 22, 356 impressions, 7 clicks, 51 query rows) has no editing query. Two web searches on 2026-11-24 found no reader thread asking this question; they did find that other transliteration tools document how to choose a candidate but not what happens to a chosen word when the surrounding text is edited later. Qualitative evidence only; this is a product-workflow page justified by original observed behaviour, not by demand data. Ads competition is not organic difficulty."
+  },
+  "research": [
+    {
+      "url": "https://www.google.com/intl/en/inputtools/services/features/transliteration.html",
+      "checked": "2026-11-24",
+      "note": "Google Input Tools transliteration feature page (HTTP 200). Documents choosing a candidate by Space or Enter, click or number and paging through candidates. It does not describe what happens to a chosen word when surrounding text is edited later. Used only to establish that candidate selection is a documented step in comparable tools; not linked, and no comparison is made in the article."
+    },
+    {
+      "url": "https://www.easynepalityping.com/",
+      "checked": "2026-11-24",
+      "note": "Another Roman-to-Nepali typing page (HTTP 200) found by search; a search summary reports that it tells users to press Backspace or click a word for more options. The page text was not verified line by line in this run, so no claim in the article depends on it and it is not linked."
+    },
+    {
+      "url": "https://neptype.com/",
+      "checked": "2026-11-24",
+      "note": "Shared Rust/Wasm engine built from origin/main d8540ed (dictionary 77fb2c90...) verifies every displayed pair. The built pad and then production were driven in Chrome in both locales with real key presses and mouse clicks: 58 recorded steps covering the pick, edits elsewhere, edits to the picked word, undo and redo, cut and paste, Clear, paste, typing in the output box, Copy text with clipboard readback and reload. Source read for key bindings: landing-page/web-tool.mjs handles metaKey or ctrlKey with KeyZ (undo) and Shift or KeyY (redo). Probe notes not used as examples: gaen gives गाएँ (not गएँ), pugen gives पुगें, hami ... gayau gives गयौ without चन्द्रबिन्दु, yatra gives यत्र, talko gives तल्को, tato gives टाटो, dunga gives दुङ, mausam gives मौशम, gadima gives गडीमा, tyaha gives त्यहा, and dui and tal stay Roman in Nepali + EN."
+    }
+  ],
+  "exampleContexts": [
+    "road trip to the mountains",
+    "morning mountain view",
+    "cold water",
+    "older sister joining the trip",
+    "travel note revision"
+  ],
+  "checks": [
+    {
+      "request": {
+        "op": "render",
+        "source": "bato lamo thiyo.",
+        "mode": 0
+      },
+      "expectedText": "बाटो लामो थियो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bihana himal ramro dekhiyo.",
+        "mode": 0
+      },
+      "expectedText": "बिहान हिमाल राम्रो देखियो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "pani chiso thiyo.",
+        "mode": 0
+      },
+      "expectedText": "पनि चिसो थियो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "didi pani aaunubhayo.",
+        "mode": 0
+      },
+      "expectedText": "दिदी पनि आउनुभयो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yatra ramailo bhayo.",
+        "mode": 0
+      },
+      "expectedText": "यत्र रमाइलो भयो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bato dherai lamo thiyo.",
+        "mode": 0
+      },
+      "expectedText": "बाटो धेरै लामो थियो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yaatraa ramailo bhayo.",
+        "mode": 0
+      },
+      "expectedText": "यात्रा रमाइलो भयो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "panii chiso thiyo.",
+        "mode": 0
+      },
+      "expectedText": "पनि चिसो थियो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bato lamo thiyo. bihana himal ramro dekhiyo.\npani chiso thiyo. didi pani aaunubhayo. yatra ramailo bhayo.",
+        "mode": 0
+      },
+      "expectedText": "बाटो लामो थियो। बिहान हिमाल राम्रो देखियो।\nपनि चिसो थियो। दिदी पनि आउनुभयो। यत्र रमाइलो भयो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bato dherai lamo thiyo. bihana himal ramro dekhiyo.\npani chiso thiyo. didi pani aaunubhayo. yaatraa ramailo bhayo.",
+        "mode": 0
+      },
+      "expectedText": "बाटो धेरै लामो थियो। बिहान हिमाल राम्रो देखियो।\nपनि चिसो थियो। दिदी पनि आउनुभयो। यात्रा रमाइलो भयो।"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "pani"
+      },
+      "includes": [
+        "पनि",
+        "पानी",
+        "pani"
+      ]
+    }
+  ],
+  "workflowVerification": {
+    "checkedOn": "2026-11-24",
+    "environment": "Google Chrome on a Mac (headless, Playwright), hardware-keyboard events and real mouse clicks; English and Nepali pages; local production build and https://neptype.com",
+    "evidence": "Ignored reports/articles/2026-11-24/pad-workflow.mjs with pad-workflow-local.json and pad-workflow-live.json",
+    "result": "58 of 58 recorded steps matched on the local build and on production, 29 per locale."
+  },
+  "en": {
+    "title": "Edit a Nepali paragraph without losing your spelling choices | NepType",
+    "heading": "Edit a Nepali paragraph without losing the spellings you picked",
+    "description": "Fix one word in a long Roman Nepali draft without retyping it. See which edits keep a spelling you picked in NepType, which reset it, and what Undo brings back.",
+    "sections": [
+      [
+        "Correct the Roman letters where the mistake is",
+        "To fix one word in a long draft, click in the Roman box where the mistake is and correct the letters. The Nepali box follows each change. A spelling you picked from the suggestions stays in place while you edit other words, and is reset only when you change the letters of that word itself. Take a two-line travel note with three problems: the first sentence is missing dherai, pani chiso thiyo. came out with पनि where पानी was meant, and yatra gave यत्र.",
+        {
+          "examples": [
+            [
+              "bato lamo thiyo.",
+              "बाटो लामो थियो।"
+            ],
+            [
+              "pani chiso thiyo.",
+              "पनि चिसो थियो।"
+            ],
+            [
+              "yatra ramailo bhayo.",
+              "यत्र रमाइलो भयो।"
+            ]
+          ],
+          "links": [
+            [
+              "Open the typing pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Repair a two-line travel note",
+        "Type the note as two lines. First line: bato lamo thiyo. bihana himal ramro dekhiyo. Second line: pani chiso thiyo. didi pani aaunubhayo. yatra ramailo bhayo. Then make these edits.",
+        {
+          "steps": [
+            "Click just before lamo in the Roman box and type dherai and a space. The sentence becomes बाटो धेरै लामो थियो।.",
+            "Click the पनि that begins the second line, in either box. The suggestions under the Roman box show पनि, पानी and other spellings. Click पानी. Only that word changes; didi pani aaunubhayo. keeps its पनि.",
+            "Select yatra in the Roman box and type yaatraa. यत्र becomes यात्रा, and पानी is still in place.",
+            "Press Copy text. Both lines are copied with the line break between them."
+          ],
+          "examples": [
+            [
+              "bato dherai lamo thiyo.",
+              "बाटो धेरै लामो थियो।"
+            ],
+            [
+              "didi pani aaunubhayo.",
+              "दिदी पनि आउनुभयो।"
+            ],
+            [
+              "yaatraa ramailo bhayo.",
+              "यात्रा रमाइलो भयो।"
+            ]
+          ],
+          "links": [
+            [
+              "Suggestions and shortcuts in the typing guide",
+              "/typing-guide/"
+            ],
+            [
+              "Why yatra needs aa: the long आ in Roman input",
+              "/articles/nepali-aa-long-vowel-roman-input/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Edits that keep a picked spelling, and edits that reset it",
+        "These edits kept पानी in the browser pad: typing earlier or later in the paragraph, deleting the whole first sentence, adding a comma straight after the word, pressing Return before its sentence, and switching between Nepali + EN and All Nepali. Three edits reset it to पनि. Adding a letter to the word did (panii chiso thiyo.), and deleting that letter by hand did not bring पानी back. Cutting the sentence and pasting it back reset it, and so did pasting the whole Roman paragraph into an empty pad. Correct the letters first and pick spellings last. If you move sentences afterwards, check the words you had picked.",
+        {
+          "examples": [
+            [
+              "panii chiso thiyo.",
+              "पनि चिसो थियो।"
+            ]
+          ],
+          "links": [
+            [
+              "पानी and पनि in the same paragraph",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "What Undo brings back, and what a reload loses",
+        "Undo goes back one step at a time: Command+Z on a Mac, Ctrl+Z on Windows or Linux. A step is one typed letter, a whole paste, a deleted selection or a suggestion pick. Shift+Command+Z or Ctrl+Y redoes it. Undo also brings back a pick you reset by accident: after panii was typed and corrected by hand, two undos returned पानी. Undo straight after Clear returned the whole note, पानी included. A reload empties both boxes and leaves Undo nothing to restore, so paste the copied text into your document or message before you close the tab. The Nepali box only shows the result; typing in it changes nothing. Undo was tested in Chrome on a Mac with a hardware keyboard.",
+        {
+          "links": [
+            [
+              "What the browser pad keeps when the connection drops",
+              "/articles/nepali-typing-browser-offline-check/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "ne": {
+    "title": "रोजेको हिज्जे नगुमाई नेपाली अनुच्छेद सच्याउने तरिका | NepType",
+    "heading": "रोजेको हिज्जे नगुमाई नेपाली अनुच्छेद सच्याउनुहोस्",
+    "description": "रोमनमा लेखेको लामो मस्यौदाको एउटा शब्द पूरै फेरि नलेखी सच्याउनुहोस्। NepType मा कुन सम्पादनले रोजेको हिज्जे राख्छ, कुनले हटाउँछ र Undo ले के फर्काउँछ, हेर्नुहोस्।",
+    "sections": [
+      [
+        "गल्ती भएकै ठाउँमा रोमन अक्षर सच्याउनुहोस्",
+        "लामो मस्यौदाको एउटा शब्द सच्याउन रोमन बाकसमा गल्ती भएकै ठाउँमा क्लिक गरेर अक्षर सच्याउनुहोस्। नेपाली बाकस हरेक परिवर्तनसँगै बदलिन्छ। सुझावबाट रोजेको हिज्जे अरू शब्द सम्पादन गर्दा जस्ताको तस्तै रहन्छ; त्यही शब्दका अक्षर फेर्दा मात्र हट्छ। दुई लाइनको एउटा यात्रा टिपोट लिऔँ, जसमा तीन समस्या छन्: पहिलो वाक्यमा dherai छुटेको छ, pani chiso thiyo. मा पानी हुनुपर्नेमा पनि आयो, र yatra लेख्दा यत्र आयो।",
+        {
+          "examples": [
+            [
+              "bato lamo thiyo.",
+              "बाटो लामो थियो।"
+            ],
+            [
+              "pani chiso thiyo.",
+              "पनि चिसो थियो।"
+            ],
+            [
+              "yatra ramailo bhayo.",
+              "यत्र रमाइलो भयो।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ प्याड खोल्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "दुई लाइनको यात्रा टिपोट सच्याऔँ",
+        "टिपोट दुई लाइनमा लेख्नुहोस्। पहिलो लाइन: bato lamo thiyo. bihana himal ramro dekhiyo. दोस्रो लाइन: pani chiso thiyo. didi pani aaunubhayo. yatra ramailo bhayo. त्यसपछि यी सम्पादन गर्नुहोस्।",
+        {
+          "steps": [
+            "रोमन बाकसमा lamo को ठीक अगाडि क्लिक गरेर dherai र एउटा स्पेस लेख्नुहोस्। वाक्य बाटो धेरै लामो थियो। बन्छ।",
+            "दोस्रो लाइनको सुरुमा रहेको पनि शब्दमा क्लिक गर्नुहोस्; दुईमध्ये जुन बाकसमा गरे पनि हुन्छ। रोमन बाकसमुनिका सुझावमा पनि, पानी र अरू हिज्जे देखिन्छन्। पानी मा क्लिक गर्नुहोस्। त्यही शब्द मात्र बदलिन्छ; didi pani aaunubhayo. को पनि जस्ताको तस्तै रहन्छ।",
+            "रोमन बाकसमा yatra छानेर yaatraa लेख्नुहोस्। यत्र को ठाउँमा यात्रा आउँछ, र पानी यथावत् रहन्छ।",
+            "पाठ कपी गर्नुहोस् थिच्नुहोस्। दुवै लाइन बीचको लाइन ब्रेकसहित कपी हुन्छन्।"
+          ],
+          "examples": [
+            [
+              "bato dherai lamo thiyo.",
+              "बाटो धेरै लामो थियो।"
+            ],
+            [
+              "didi pani aaunubhayo.",
+              "दिदी पनि आउनुभयो।"
+            ],
+            [
+              "yaatraa ramailo bhayo.",
+              "यात्रा रमाइलो भयो।"
+            ]
+          ],
+          "links": [
+            [
+              "टाइपिङ गाइडमा सुझाव र सर्टकट",
+              "/typing-guide/"
+            ],
+            [
+              "yatra मा aa किन चाहिन्छ: रोमनबाट लामो आ",
+              "/articles/nepali-aa-long-vowel-roman-input/"
+            ]
+          ]
+        }
+      ],
+      [
+        "रोजेको हिज्जे राख्ने र हटाउने सम्पादन",
+        "ब्राउजर प्याडमा यी सम्पादन गर्दा पानी जस्ताको तस्तै रह्यो: अनुच्छेदमा त्यसभन्दा अगाडि वा पछाडि लेख्दा, पहिलो वाक्य पूरै मेट्दा, शब्दको ठीक पछाडि अल्पविराम थप्दा, त्यसको वाक्यअघि Return थिच्दा, र Nepali + EN र All Nepali बीच मोड बदल्दा। तीन सम्पादनपछि भने त्यो शब्द पहिलेकै हिज्जेमा फर्क्यो। शब्दमा एउटा अक्षर थप्दा (panii chiso thiyo.) त्यस्तो भयो, र त्यो अक्षर हातैले मेट्दा पानी फर्केन। वाक्य कट गरेर त्यहीँ पेस्ट गर्दा र पूरै रोमन अनुच्छेद खाली प्याडमा पेस्ट गर्दा पनि रोजेको हिज्जे हट्यो। पहिले अक्षर सच्याउनुहोस्, हिज्जे अन्तिममा रोज्नुहोस्। पछि वाक्य यताउता सार्नुभयो भने रोजेका शब्द फेरि जाँच्नुहोस्।",
+        {
+          "examples": [
+            [
+              "panii chiso thiyo.",
+              "पनि चिसो थियो।"
+            ]
+          ],
+          "links": [
+            [
+              "एउटै अनुच्छेदमा पानी र पनि",
+              "/articles/type-nepali-and-english-together/"
+            ]
+          ]
+        }
+      ],
+      [
+        "Undo ले के फर्काउँछ, रिलोडले के गुमाउँछ",
+        "Undo ले एक पटकमा एउटा कदम फर्काउँछ: Mac मा Command+Z, Windows वा Linux मा Ctrl+Z। एउटा कदम भनेको टाइप गरेको एउटा अक्षर, एक पटकको पूरै पेस्ट, छानेर मेटेको एउटा खण्ड वा रोजेको एउटा सुझाव हो। Shift+Command+Z वा Ctrl+Y ले त्यो कदम फेरि लागू गर्छ। झुक्किएर हटेको हिज्जे पनि Undo ले फर्काउँछ: panii लेखेर हातैले सच्याएपछि दुई पटक Undo गर्दा पानी फर्क्यो। खाली गर्नुहोस् थिचेलगत्तै Undo गर्दा पूरै टिपोट फर्क्यो, पानी सहित। पृष्ठ रिलोड गर्दा भने दुवै बाकस खाली हुन्छन् र Undo ले फर्काउने केही बाँकी रहँदैन, त्यसैले ट्याब बन्द गर्नुअघि कपी गरेको पाठ आफ्नो कागजात वा सन्देशमा पेस्ट गर्नुहोस्। नेपाली बाकसले नतिजा मात्र देखाउँछ; त्यसमा टाइप गर्दा केही बदलिँदैन। Undo को परीक्षण Mac को Chrome मा भौतिक किबोर्डबाट गरिएको हो।",
+        {
+          "links": [
+            [
+              "इन्टरनेट छुट्दा ब्राउजर प्याडले के राख्छ",
+              "/articles/nepali-typing-browser-offline-check/"
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "editorialReview": {
+    "skill": "humanizer",
+    "reviewedOn": "2026-11-24",
+    "languages": [
+      "en",
+      "ne"
+    ],
+    "pass": "Humanizer pass on 2026-11-24 over the first draft, both languages (draft kept in the run report). Marked tells in English: the staged heading 'The short answer: fix the Roman letters, not the whole paragraph' (staged opener plus a not-X contrast); 'step by step' and 'quietly' in headings; the denial opener 'You do not need to retype a whole paragraph'; 'The example below is' (writing about the page); the run-up 'It is important to know which edits are safe'; the signpost 'So the order of work matters:'; the short staged line 'Clear is not final either.'; the cleft 'What the pad cannot do is keep your draft'; 'Undo is also the way to'; and method narration 'These steps were run in' ahead of the closing instruction. Also corrected for accuracy during the pass: 'in any order' was removed because one order was tested; 'anywhere else in the paragraph' became 'earlier or later in the paragraph'; 'after panii, two undos' now says the letter was typed and corrected by hand, which is what was run; 'the first पनि on the second line' became 'the पनि that begins the second line'; the pad is named as the browser pad because the Mac app keeps drafts. In Nepali the matching छोटो उत्तर heading with होइन contrast, चरणबद्ध and चुपचाप, the पर्दैन opener, तलको उदाहरण, महत्त्वपूर्ण छ twice, अन्तिम होइन, गर्न नसक्ने कुरा भनेको, and the ambiguous 'फेरि पनि बनाए' (पनि read as the particle) and 'मेटिएको एउटा छनोट' (छनोट read as a suggestion choice), both reworded. Rewrites state the result each staged line introduced; the closing instruction now follows the reload sentence that motivates it and the test note is one sentence at the end. Reread both versions for equal instructions. Examples, links, checks and research are identical between draft and final; step 2 wording changed in both languages. This is an AI editing pass, not human or expert review."
+  }
+}

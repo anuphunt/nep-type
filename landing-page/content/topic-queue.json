@@ -386,14 +386,15 @@
     },
     {
       "id": "nepali-long-paragraph-editing",
-      "status": "research_needed",
+      "status": "published",
       "query": "edit Roman Nepali paragraph spelling corrections",
       "title": "Edit a long Nepali paragraph without losing your spelling choices",
       "intent": "Revise a multi-sentence draft and review affected choices",
       "angle": "Test selections, edits, undo and copying on a fresh travel-story paragraph. Record actual behavior and save drafts outside the pad.",
       "overlapBoundary": "A complete editing task with localized changes, beyond the guide control list or first mixed sentence.",
       "keywordEvidence": [],
-      "evidenceNote": "Candidate topic, not a measured keyword. Validate demand, current platform behavior and distinct value before promotion; consolidate or reject if those checks fail."
+      "evidenceNote": "Validated 2026-11-24 after phone (device-gated) and copy-troubleshooting (overlap) were skipped again. No measured volume and no reader thread found; qualitative evidence only. Promoted on original observed behaviour: a 58-step editing run in the real pad in both locales, local and live, shows which edits keep a suggestion pick (edits elsewhere, a deleted earlier sentence, a comma after the word, a line break, a mode switch), which reset it (changing the word's own letters, cut and paste, a fresh paste), that undo works per letter, paste, deleted selection or pick and restores a reset pick and a cleared draft, and that a reload empties the pad.",
+      "articleSlug": "edit-nepali-paragraph-keep-spelling-choices"
     },
     {
       "id": "nepali-local-typing-privacy",
