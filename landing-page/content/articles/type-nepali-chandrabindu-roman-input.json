@@ -5,12 +5,12 @@
   "published": "2026-11-18",
   "primaryQuery": "type Nepali chandrabindu with Roman letters",
   "searchIntent": "Write words containing chandrabindu in a Roman-input pad, distinguish the stored mark from anusvara, and check that the mark survives copying.",
-  "originalValue": "Six current-engine checks, an explicit failed borrowed-symbol shortcut, and a copy/readback check that detects U+0901 rather than relying on a tiny glyph. Four word examples span village, animal, body and question vocabulary; no fixed-layout or universal Roman mapping is invented.",
+  "originalValue": "Six current-engine checks, an explicit failed borrowed-symbol shortcut, and a copy/readback check that detects U+0901 rather than relying on a tiny glyph. Four word examples span village, animal, body and question vocabulary; no fixed-layout or universal Roman mapping is invented. 2026-11-25 revision adds a dictionary-checked list of eight more chandrabindu words that the pad writes correctly, four common words where the current engine drops the mark (दाँत, पाँच, साँप, यहाँ) with no correct suggestion, and an in-pad repair: Devanagari pasted into the Roman box passes through unchanged.",
   "overlapReview": "Existing conjunct article concerns consonant/halant joins, not nasal marks. Layout comparison distinguishes input methods but does not identify U+0901 versus U+0902 or test borrowed asterisks. Practice and mixed-language articles do not provide a nasal-mark-focused copy check. Unicode/Preeti addresses legacy encoding; this article concerns the precise combining mark in newly composed Unicode. No general orthography lesson or duplicate beginner guide.",
   "keywordEvidence": {
     "measured": false,
     "researchFile": "research/2026-11-01-keywords.json",
-    "note": "Exact query has no measured volume. Historical 2023 reader question about chandrabindu in Preeti/Word supports the recurring mark-entry problem, not current demand or a claim NepType repairs Word. November 1 Keyword Planner ranges remain Nepal/English/Google, October 2025–September 2026; none assigned to this long tail. Fresh GSC through November 9 is sparse and offers no topic-specific demand proof."
+    "note": "Exact query has no measured volume. Historical 2023 reader question about chandrabindu in Preeti/Word supports the recurring mark-entry problem, not current demand or a claim NepType repairs Word. November 1 Keyword Planner ranges remain Nepal/English/Google, October 2025–September 2026; none assigned to this long tail. Fresh GSC through November 9 is sparse and offers no topic-specific demand proof. 2026-11-25 revision: Search Console (Oct 27–Nov 23) shows three small word-list queries for this page (see research); sparse, not a volume measure."
   },
   "research": [
     {
@@ -32,6 +32,16 @@
       "url": "https://neptype.com/",
       "checked": "2026-11-18",
       "note": "Current source/shared Rust-Wasm verifies six displayed examples; exact copied strings and mark code points checked in isolated browser workflows. No engine change or fixed keyboard shortcut promised."
+    },
+    {
+      "url": "https://dsal.uchicago.edu/dictionaries/schmidt/",
+      "checked": "2026-11-25",
+      "note": "Schmidt, A Practical Dictionary of Modern Nepali (Digital Dictionaries of South Asia, University of Chicago; landing page HTTP 200). Exact headword queries via dsal.uchicago.edu/cgi-bin/app/schmidt_query.py on 2026-11-25 returned chandrabindu headwords for आँखा (p.30), आँसु (31), काँध (94), काँचो (93), सुँगुर (638), भाँडा (486), चाँदी (186), गाउँ (159), कहाँ (92), त्यहाँ (293), हाँस्नु (657), दाँत (306), पाँच (376), साँप (624), यहाँ (537), plus माझ्नु (514) and दुख्नु (319). Supports only that these listed words take chandrabindu in this dictionary; no claim about other words or other references. धुवाँ/धुआँ not found as headwords, so not used."
+    },
+    {
+      "url": "https://search.google.com/search-console",
+      "checked": "2026-11-25",
+      "note": "Authorized Search Console read recorded in the Nov 25 SEO review (evidence/seo/2026-11-25/search-console.json), Oct 27–Nov 23: queries 'chandrabindu words in nepali' (1 impression, avg position 6), 'chandra bindu words in nepali' (1 at 11), 'chandrabindi' (1 at 8); this page 9 impressions, 1 click, avg position 7.1. Tiny sample; supports adding a word list to the existing page, not a new article or any ranking claim."
     }
   ],
   "exampleContexts": [
@@ -39,7 +49,12 @@
     "animal vocabulary",
     "body vocabulary",
     "location question",
-    "nasal-mark proofreading"
+    "nasal-mark proofreading",
+    "body (tears, shoulder, toothache)",
+    "animals",
+    "kitchen and dishes",
+    "jewellery",
+    "dictionary word list"
   ],
   "checks": [
     {
@@ -89,12 +104,149 @@
         "mode": 0
       },
       "expectedText": "म गाउँ जान्छु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "aansu",
+        "mode": 0
+      },
+      "expectedText": "आँसु"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kaandh",
+        "mode": 0
+      },
+      "expectedText": "काँध"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "sungur",
+        "mode": 0
+      },
+      "expectedText": "सुँगुर"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bhaanda majhnu",
+        "mode": 0
+      },
+      "expectedText": "भाँडा माझ्नु"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kaancho",
+        "mode": 0
+      },
+      "expectedText": "काँचो"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "chaandi",
+        "mode": 0
+      },
+      "expectedText": "चाँदी"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "tyahan",
+        "mode": 0
+      },
+      "expectedText": "त्यहाँ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "haansnu",
+        "mode": 0
+      },
+      "expectedText": "हाँस्नु"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "mero daant dukhyo.",
+        "mode": 0
+      },
+      "expectedText": "मेरो दान्त दुख्यो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "mero दाँत dukhyo.",
+        "mode": 0
+      },
+      "expectedText": "मेरो दाँत दुख्यो।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "tyaha",
+        "mode": 0
+      },
+      "expectedText": "त्यहा"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "paanch",
+        "mode": 0
+      },
+      "expectedText": "पान्च"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "saanp",
+        "mode": 0
+      },
+      "expectedText": "सान्प"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yaha",
+        "mode": 0
+      },
+      "expectedText": "यह"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yahan",
+        "mode": 0
+      },
+      "expectedText": "यहन"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "yahaan",
+        "mode": 0
+      },
+      "expectedText": "यहान"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "chandi"
+      },
+      "includes": [
+        "चाँदी"
+      ]
     }
   ],
   "en": {
     "title": "Type chandrabindu in Nepali words with Roman input | NepType",
     "heading": "Type chandrabindu in Nepali words with Roman input",
-    "description": "Write गाउँ, हाँस and आँखा with Roman letters in NepType, then check that the chandrabindu mark is still there after you copy the text.",
+    "description": "Roman spellings that give आँसु, काँध, चाँदी and other chandrabindu words in NepType, and how to keep the mark in words like दाँत where the pad drops it.",
     "sections": [
       [
         "Type the whole word",
@@ -137,8 +289,76 @@
         }
       ],
       [
+        "More chandrabindu words you can type",
+        "Schmidt's A Practical Dictionary of Modern Nepali spells each word below with chandrabindu, and the pad writes the mark when you type the Roman spelling shown. Keep to that spelling: tyahan gives त्यहाँ, but tyaha gives त्यहा without the mark.",
+        {
+          "examples": [
+            [
+              "aansu",
+              "आँसु"
+            ],
+            [
+              "kaandh",
+              "काँध"
+            ],
+            [
+              "sungur",
+              "सुँगुर"
+            ],
+            [
+              "bhaanda majhnu",
+              "भाँडा माझ्नु"
+            ],
+            [
+              "kaancho",
+              "काँचो"
+            ],
+            [
+              "chaandi",
+              "चाँदी"
+            ],
+            [
+              "tyahan",
+              "त्यहाँ"
+            ],
+            [
+              "haansnu",
+              "हाँस्नु"
+            ]
+          ],
+          "links": [
+            [
+              "Schmidt's Nepali dictionary (DSAL)",
+              "https://dsal.uchicago.edu/dictionaries/schmidt/"
+            ]
+          ]
+        }
+      ],
+      [
+        "What to do when the mark is missing",
+        "Some common words come out without chandrabindu. In the current pad daant gives दान्त instead of दाँत, paanch gives पान्च instead of पाँच, saanp gives सान्प instead of साँप and yaha gives यह instead of यहाँ. In our check their suggestion lists did not offer the correct form, and yahan or yahaan gives यहन or यहान. To keep the right spelling, copy the Devanagari word from a dictionary or from this page and paste it into the Roman box. The pad leaves Devanagari unchanged and still converts the Roman words around it.",
+        {
+          "examples": [
+            [
+              "mero daant dukhyo.",
+              "मेरो दान्त दुख्यो।"
+            ],
+            [
+              "mero दाँत dukhyo.",
+              "मेरो दाँत दुख्यो।"
+            ]
+          ],
+          "links": [
+            [
+              "Paste the word into the pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
         "Chandrabindu and anusvara are different characters",
-        "The crescent-and-dot mark ँ is chandrabindu, U+0901. The dot ं is anusvara, U+0902. Use the one the word needs, even if the other is easier to find. Which mark a given Nepali word takes is a spelling question this page does not settle; here you only check that the typed word carries the mark you meant.",
+        "The crescent-and-dot mark ँ is chandrabindu, U+0901. The dot ं is anusvara, U+0902. Use the one the word needs, even if the other is easier to find. The words on this page use chandrabindu in Schmidt's dictionary. For any word not listed here, check a dictionary before you decide which mark it takes.",
         {
           "links": [
             [
@@ -193,7 +413,7 @@
   "ne": {
     "title": "रोमनबाट चन्द्रबिन्दु भएका नेपाली शब्द लेख्नुहोस् | NepType",
     "heading": "रोमनबाट चन्द्रबिन्दु भएका नेपाली शब्द लेख्नुहोस्",
-    "description": "रोमन अक्षरले गाउँ, हाँस र आँखा लेख्नुहोस्। चन्द्रबिन्दु जाँच्नुहोस् र कपी गरेको पाठमा चिह्न सुरक्षित छ कि हेर्नुहोस्।",
+    "description": "रोमन अक्षरले आँसु, काँध, चाँदी जस्ता चन्द्रबिन्दु भएका शब्द लेख्ने हिज्जे, र प्याडले चिह्न छुटाउने दाँत जस्ता शब्दमा चिह्न राख्ने तरिका।",
     "sections": [
       [
         "पहिले पूरा शब्द लेख्नुहोस्",
@@ -236,8 +456,76 @@
         }
       ],
       [
+        "टाइप गर्न सकिने थप चन्द्रबिन्दु शब्द",
+        "Schmidt को A Practical Dictionary of Modern Nepali मा तलका सबै शब्द चन्द्रबिन्दुसहित लेखिएका छन्। देखाइएको रोमन हिज्जे लेख्दा प्याडले चिह्नसहित शब्द लेख्छ। हिज्जे त्यही राख्नुहोस्: tyahan लेख्दा त्यहाँ आउँछ, तर tyaha लेख्दा चिह्नबिनाको त्यहा आउँछ।",
+        {
+          "examples": [
+            [
+              "aansu",
+              "आँसु"
+            ],
+            [
+              "kaandh",
+              "काँध"
+            ],
+            [
+              "sungur",
+              "सुँगुर"
+            ],
+            [
+              "bhaanda majhnu",
+              "भाँडा माझ्नु"
+            ],
+            [
+              "kaancho",
+              "काँचो"
+            ],
+            [
+              "chaandi",
+              "चाँदी"
+            ],
+            [
+              "tyahan",
+              "त्यहाँ"
+            ],
+            [
+              "haansnu",
+              "हाँस्नु"
+            ]
+          ],
+          "links": [
+            [
+              "Schmidt को नेपाली शब्दकोश (DSAL)",
+              "https://dsal.uchicago.edu/dictionaries/schmidt/"
+            ]
+          ]
+        }
+      ],
+      [
+        "चिह्न छुटेमा के गर्ने",
+        "केही चलनचल्तीका शब्दमा चन्द्रबिन्दु आउँदैन। हालको प्याडमा daant लेख्दा दाँतको सट्टा दान्त, paanch लेख्दा पाँचको सट्टा पान्च, saanp लेख्दा साँपको सट्टा सान्प र yaha लेख्दा यहाँको सट्टा यह आउँछ। हाम्रो जाँचमा यिनका सुझावमा पनि सही रूप थिएन, र yahan वा yahaan लेख्दा यहन वा यहान आयो। सही हिज्जे राख्न शब्दकोश वा यही पेजबाट देवनागरी शब्द कपी गरेर रोमन बाकसमा पेस्ट गर्नुहोस्। प्याडले देवनागरी शब्द जस्ताको तस्तै राख्छ र वरपरका रोमन शब्द नेपालीमा बदल्छ।",
+        {
+          "examples": [
+            [
+              "mero daant dukhyo.",
+              "मेरो दान्त दुख्यो।"
+            ],
+            [
+              "mero दाँत dukhyo.",
+              "मेरो दाँत दुख्यो।"
+            ]
+          ],
+          "links": [
+            [
+              "शब्द प्याडमा पेस्ट गर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
         "चन्द्रबिन्दु र अनुस्वार फरक अक्षर हुन्",
-        "चन्द्राकार र थोप्ला भएको ँ चन्द्रबिन्दु हो, जसको कोड U+0901 हो। थोप्ला मात्र भएको ं अनुस्वार हो, जसको कोड U+0902 हो। शब्दलाई जुन चाहिन्छ त्यही राख्नुहोस्, अर्को खोज्न सजिलो भए पनि। कुन शब्दमा कुन नासिक्य चिह्न लाग्छ भन्ने हिज्जेको प्रश्न यहाँ टुङ्गो लगाइएको छैन। यहाँ टाइप गरेको शब्दमा तपाईंले चाहेकै चिह्न छ कि छैन भनेर मात्र जाँचिन्छ।",
+        "चन्द्राकार र थोप्ला भएको ँ चन्द्रबिन्दु हो, जसको कोड U+0901 हो। थोप्ला मात्र भएको ं अनुस्वार हो, जसको कोड U+0902 हो। शब्दलाई जुन चाहिन्छ त्यही राख्नुहोस्, अर्को खोज्न सजिलो भए पनि। यस पेजका शब्दहरू Schmidt को शब्दकोशमा चन्द्रबिन्दुसहित छन्। यहाँ नभएको शब्दमा कुन चिह्न लाग्छ भनेर शब्दकोशमा हेर्नुहोस्।",
         {
           "links": [
             [
@@ -291,11 +579,12 @@
   },
   "editorialReview": {
     "skill": "humanizer",
-    "reviewedOn": "2026-11-18",
+    "reviewedOn": "2026-11-25",
     "languages": [
       "en",
       "ne"
     ],
-    "pass": "Fresh pass on 2026-11-18 over the November 11 draft, both languages. Marked tells: triad description (check/avoid/inspect), heading restated in section body (different characters), not-X-but-Y scope line, vague 'type the whole word first'. Rewrote the English description, opening instruction, example lead-in, the anusvara section and two step sentences; matching Nepali edits to opening, anusvara section and suggestion sentence. Rechecked for dashes, contrasts and closers; preserved every input/output string, code point, URL and metadata. AI editorial pass, not human authorship or expert review."
-  }
+    "pass": "2026-11-18 pass retained for unchanged sections. 2026-11-25 pass on the revised prose in both languages: cut a 'Here is a list of' run-up, the staged 'It is important to note that' lead-in (it also overstated 'only when'), a sentence describing what the list contains, 'The solution is simple:' and the closer 'That way, your spelling stays correct.'; rewrote the description to drop 'easily' and the three-verb sequence. Matching Nepali cuts (ध्यान दिनुपर्ने कुरा के हो भने, सूचीमा ... छन्, उपाय सजिलो छ, यसरी ... सही रहन्छ, सजिलै). Rechecked dashes, contrasts and closers; the 'X instead of Y' lines state expected versus actual output and stay. Examples, checks, URLs and metadata unchanged by the pass. AI editorial pass, not human authorship or expert review."
+  },
+  "modified": "2026-11-25"
 }
