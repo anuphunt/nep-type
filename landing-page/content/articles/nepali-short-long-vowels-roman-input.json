@@ -5,12 +5,12 @@
   "published": "2026-11-19",
   "primaryQuery": "Nepali typing short long vowel matra",
   "searchIntent": "Get the intended short or long vowel sign (ि or ी, ु or ू) in a Nepali word typed with Roman letters, and check it before copying.",
-  "originalValue": "Ten current-engine checks show where the first result uses the short sign, which suggestions offer the long one, and which alternative Roman spellings (ee, double ii) produced the long form for these words. One sentence typed two ways shows the difference in context. A cited dictionary-edition change (ठीक to ठिक) explains why the page names no single correct form. No spelling rule, spell checker or universal Roman mapping is claimed.",
+  "originalValue": "Ten current-engine checks show where the first result uses the short sign, which suggestions offer the long one, and which alternative Roman spellings (ee, double ii) produced the long form for these words. One sentence typed two ways shows the difference in context. A cited dictionary-edition change (ठीक to ठिक) explains why the page names no single correct form. No spelling rule, spell checker or universal Roman mapping is claimed. 2026-11-26 revision adds where to copy each sign on its own (no Roman spelling gave a bare sign; pasted Devanagari passes through) and a syllable-row check: gha and bha rows came out right, ti and khii did not and are fixed from the suggestions; the ka row needs All Nepali.",
   "overlapReview": "The practice article checks one missing ा in बिहान; it does not address ि/ी or ु/ू length. The chandrabindu article covers nasal marks; the conjunct article covers halant joins; the Romanized comparison and mixed-language articles cover word ambiguity such as पानी/पनि and keeping English words. The typing guide explains suggestion controls without vowel-length examples. This page adds a vowel-length check with fresh food, family, travel and taste examples and a dictionary-edition caveat. No beginner guide or broad tool intent repeated.",
   "keywordEvidence": {
     "measured": false,
     "researchFile": "research/2026-11-01-keywords.json",
-    "note": "Exact query has no measured volume. The November 1 Keyword Planner report (Google, Nepal, English, October 2025–September 2026, 395 ideas) has no vowel-length keyword; no range from it is assigned to this long tail. A historical 2013 reader question on the Nepali Language Resource Center spell-checker FAQ about ठीक versus ठिक is qualitative evidence that readers meet vowel-length questions, not current demand."
+    "note": "Exact query has no measured volume. The November 1 Keyword Planner report (Google, Nepal, English, October 2025–September 2026, 395 ideas) has no vowel-length keyword; no range from it is assigned to this long tail. A historical 2013 reader question on the Nepali Language Resource Center spell-checker FAQ about ठीक versus ठिक is qualitative evidence that readers meet vowel-length questions, not current demand. 2026-11-26 revision: Search Console (Oct 28–Nov 24) shows 15 impressions over three bare vowel-sign queries (ी, ु, ू) at average positions 8–10 (see research); sparse, not a volume measure."
   },
   "research": [
     {
@@ -27,6 +27,16 @@
       "url": "https://neptype.com/",
       "checked": "2026-11-19",
       "note": "Current source shared Rust/Wasm engine built from origin/main f286a16 verifies every displayed pair and the two candidate claims (मीठो offered for mitho; ठिक offered for thik). Results describe this pad only, not a spelling authority. Probe on 2026-11-19 also observed that suggestion lists for chini and nadi did not include चिनी or नदी (absence is not an executable check type, so it is recorded here only)."
+    },
+    {
+      "url": "https://search.google.com/search-console",
+      "checked": "2026-11-26",
+      "note": "Authorized Search Console read recorded in the Nov 26 SEO review (evidence/seo/2026-11-26/search-console.json, sc-domain:neptype.com, Web, Oct 28–Nov 24): bare vowel-sign queries 'ी' (8 impressions, avg position 8.1), 'ु' (4 at 8.8), 'ू' (3 at 10.0), no clicks; this page 12 impressions at 8.2 (en) and 8 at 8.5 (ne), no clicks. Query and page rows were read separately, so attribution of these queries to this page is likely but not read. Small sample; supports adding sign-copy and syllable-row help to the existing page, not a new article or any ranking claim."
+    },
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-26",
+      "note": "Code points and names for the listed signs rechecked with Python unicodedata on 2026-11-26: U+093F VOWEL SIGN I, U+0940 VOWEL SIGN II, U+0941 VOWEL SIGN U, U+0942 VOWEL SIGN UU; ई U+0908 LETTER II, ऊ U+090A LETTER UU."
     }
   ],
   "exampleContexts": [
@@ -35,7 +45,9 @@
     "festival sweet dish",
     "river travel",
     "taste",
-    "vowel-length proofreading"
+    "vowel-length proofreading",
+    "school syllable chart (barakhari row)",
+    "spelling note"
   ],
   "checks": [
     {
@@ -129,12 +141,102 @@
         "mode": 0
       },
       "expectedText": "यो खीर मीठो छ।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ii",
+        "mode": 0
+      },
+      "expectedText": "ई"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "u",
+        "mode": 0
+      },
+      "expectedText": "ऊ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ि ी ु ू",
+        "mode": 0
+      },
+      "expectedText": "ि ी ु ू"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "gha ghaa ghi ghii ghu ghuu",
+        "mode": 0
+      },
+      "expectedText": "घ घा घि घी घु घू"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "bha bhaa bhi bhii bhu bhuu",
+        "mode": 0
+      },
+      "expectedText": "भ भा भि भी भु भू"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ti",
+        "mode": 0
+      },
+      "expectedText": "ती"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "khii",
+        "mode": 0
+      },
+      "expectedText": "खिइ"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "i",
+        "mode": 0
+      },
+      "expectedText": "i"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "ka kaa ki kii ku kuu",
+        "mode": 2
+      },
+      "expectedText": "क का कि की कु कू"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "ti"
+      },
+      "includes": [
+        "ति"
+      ]
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "khii"
+      },
+      "includes": [
+        "खी"
+      ]
     }
   ],
   "en": {
     "title": "Check short and long vowels (ि ी ु ू) in Roman Nepali typing | NepType",
     "heading": "Check short and long vowels when you type Nepali in Roman letters",
-    "description": "Roman i and u do not say whether a Nepali vowel is short or long. See which NepType spellings gave ि or ी in खीर, मीठो and चिनी, and how to fix the vowel before copying.",
+    "description": "Roman i and u do not say whether a Nepali vowel is short or long. See which NepType spellings gave ि or ी in खीर, मीठो and चिनी and how to fix them before copying. The signs ि ी ु ू are listed to copy on their own.",
     "sections": [
       [
         "Read the vowel sign after each word",
@@ -154,6 +256,58 @@
             [
               "Type the words in NepType",
               "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Copy a vowel sign like ी on its own",
+        "No Roman spelling in the pad gave a vowel sign by itself. In Nepali + EN mode, ii gave ई and u gave ऊ, the full vowel letters that stand without a consonant, and a single i stayed in Roman letters. To show a sign alone, in a spelling note for example, copy it from this list and paste it into the Roman box. The pad keeps pasted Devanagari unchanged: ि (U+093F, short i), ी (U+0940, long i), ु (U+0941, short u) and ू (U+0942, long u).",
+        {
+          "examples": [
+            [
+              "ii",
+              "ई"
+            ],
+            [
+              "u",
+              "ऊ"
+            ]
+          ],
+          "links": [
+            [
+              "Paste the sign into the pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Type a syllable row such as घ घा घि घी घु घू",
+        "For a school chart that puts one letter with each vowel sign, type the syllables with a space between them. gha ghaa ghi ghii ghu ghuu gave घ घा घि घी घु घू, and bha bhaa bhi bhii bhu bhuu gave भ भा भि भी भु भू. Other letters went wrong: ti gave the long ती, and khii gave खिइ, two letters where you wanted one. Click the wrong syllable in the Roman box and pick the right form from the suggestions, ति for ti and खी for khii. A row that starts with ka needs All Nepali mode, where ka kaa ki kii ku kuu gave क का कि की कु कू.",
+        {
+          "examples": [
+            [
+              "gha ghaa ghi ghii ghu ghuu",
+              "घ घा घि घी घु घू"
+            ],
+            [
+              "bha bhaa bhi bhii bhu bhuu",
+              "भ भा भि भी भु भू"
+            ],
+            [
+              "ti",
+              "ती"
+            ],
+            [
+              "khii",
+              "खिइ"
+            ]
+          ],
+          "links": [
+            [
+              "Letter rows and the All Nepali mode",
+              "/articles/type-single-nepali-letters-roman-input/"
             ]
           ]
         }
@@ -243,7 +397,7 @@
   "ne": {
     "title": "ह्रस्व कि दीर्घ? रोमनबाट नेपाली लेख्दा ि, ी, ु र ू जाँच्नुहोस् | NepType",
     "heading": "रोमन अक्षरबाट नेपाली लेख्दा ह्रस्व र दीर्घ मात्रा जाँच्नुहोस्",
-    "description": "रोमनको i र u ले नेपाली स्वर ह्रस्व हो कि दीर्घ भन्दैन। खीर, मीठो र चिनीमा NepType ले कुन हिज्जेबाट ि वा ी दियो र कपी गर्नुअघि मात्रा कसरी सच्याउने, हेर्नुहोस्।",
+    "description": "रोमनको i र u ले नेपाली स्वर ह्रस्व हो कि दीर्घ भन्दैन। खीर, मीठो र चिनीमा NepType ले कुन हिज्जेबाट ि वा ी दियो र कपी गर्नुअघि कसरी सच्याउने, हेर्नुहोस्। ि ी ु ू मात्रा एक्लै कपी गर्न पनि राखिएको छ।",
     "sections": [
       [
         "हरेक शब्दपछि मात्रा पढ्नुहोस्",
@@ -263,6 +417,58 @@
             [
               "NepType मा शब्द लेखेर हेर्नुहोस्",
               "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "ी जस्तो मात्रा एक्लै कपी गर्नुहोस्",
+        "प्याडमा कुनै रोमन हिज्जेले मात्रा एक्लै दिएन। Nepali + EN मोडमा ii बाट ई र u बाट ऊ आयो, जुन व्यञ्जनबिना आफैँ लेखिने स्वरवर्ण हुन्, र एउटा i रोमनमै रह्यो। हिज्जेबारे नोट लेख्दा जस्तै मात्रा मात्र देखाउनु परे यो सूचीबाट कपी गरेर रोमन बक्समा पेस्ट गर्नुहोस्। प्याडले पेस्ट गरिएको देवनागरी नबदली राख्छ: ि (U+093F, ह्रस्व इ), ी (U+0940, दीर्घ ई), ु (U+0941, ह्रस्व उ) र ू (U+0942, दीर्घ ऊ)।",
+        {
+          "examples": [
+            [
+              "ii",
+              "ई"
+            ],
+            [
+              "u",
+              "ऊ"
+            ]
+          ],
+          "links": [
+            [
+              "मात्रा प्याडमा पेस्ट गर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "घ घा घि घी घु घू जस्तो पङ्क्ति लेख्नुहोस्",
+        "एउटै अक्षरमा हरेक मात्रा लगाएको विद्यालयको चार्टका लागि अक्षरहरूबीच स्पेस राखेर लेख्नुहोस्। gha ghaa ghi ghii ghu ghuu बाट घ घा घि घी घु घू, र bha bhaa bhi bhii bhu bhuu बाट भ भा भि भी भु भू आयो। अरू अक्षरमा मिलेन: ti बाट दीर्घ ती आयो, र khii बाट एउटा अक्षरको सट्टा दुई अक्षर खिइ आयो। रोमन बक्समा गलत अक्षरमा थिचेर सुझावबाट सही रूप छान्नुहोस्, ti का लागि ति र khii का लागि खी। ka बाट सुरु हुने पङ्क्तिका लागि All Nepali मोड चाहिन्छ, जहाँ ka kaa ki kii ku kuu बाट क का कि की कु कू आयो।",
+        {
+          "examples": [
+            [
+              "gha ghaa ghi ghii ghu ghuu",
+              "घ घा घि घी घु घू"
+            ],
+            [
+              "bha bhaa bhi bhii bhu bhuu",
+              "भ भा भि भी भु भू"
+            ],
+            [
+              "ti",
+              "ती"
+            ],
+            [
+              "khii",
+              "खिइ"
+            ]
+          ],
+          "links": [
+            [
+              "अक्षरका पङ्क्ति र All Nepali मोड",
+              "/articles/type-single-nepali-letters-roman-input/"
             ]
           ]
         }
@@ -351,11 +557,12 @@
   },
   "editorialReview": {
     "skill": "humanizer",
-    "reviewedOn": "2026-11-19",
+    "reviewedOn": "2026-11-26",
     "languages": [
       "en",
       "ne"
     ],
-    "pass": "Humanizer pass on 2026-11-19 over the first draft, both languages. Marked tells: staged question title, not-X-but-Y closer (typing pad, not a spell checker), clipped contrast (not only the first one), restated hedge after the ee examples, and in Nepali the matching पहिलो शब्द मात्र होइन and प्याड हो, ... होइन contrasts plus a hedged तर ... नहुन सक्छ. Rewrote the English title, the ee caveat, the sentence-check instruction and the spell-checker scope line; matching Nepali edits. Rechecked for dashes, triads and closers. Every input/output string, code point, URL and metadata preserved. AI editorial pass, not human authorship or expert review."
-  }
+    "pass": "Original sections: humanizer pass on 2026-11-19 over the first draft (staged question title, not-X-but-Y spell-checker closer, clipped contrast, restated ee hedge; matching Nepali edits). 2026-11-26 revision: humanizer pass over the two new sections and the new description, both languages. Marked tells: staged run-ups (It is worth knowing that / यो थाहा पाउनु राम्रो हुन्छ कि; However, it is important to note / तर ध्यान दिनुपर्ने कुरा के हो भने), a staged question opener (के तपाईं ... बनाउँदै हुनुहुन्छ?), a not-X-but-Y line (These are full letters, not signs / यी मात्रा होइनन्, पूरा अक्षर हुन्), filler adverbs (simply, exactly / सजिलै), an unsupported closer promising a correct chart (That way ... / यसरी ... सही हुन्छ) and a three-clause description. Rewrote both new paragraphs and the description; stated the tested All Nepali row instead of an unshown instruction; changed present-tense gives to the tested gave. Every input/output string, code point, URL and metadata preserved. AI editorial pass, not human authorship or expert review."
+  },
+  "modified": "2026-11-26"
 }
