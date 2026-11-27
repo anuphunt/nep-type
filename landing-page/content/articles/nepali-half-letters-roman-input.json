@@ -5,12 +5,12 @@
   "published": "2026-11-09",
   "primaryQuery": "Nepali typing half letters conjuncts",
   "searchIntent": "Type whole Nepali words containing joined consonants with Roman input, identify the stored halant and distinguish a source-spelling problem from a display problem.",
-  "originalValue": "Nine current shared-engine examples, including four fresh education/word-study words, an extra-cluster error/repair and a failed slash shortcut. Native copy/paste verified all nine in both locale pads. Local licensed-font specimen and code-point assertion distinguish क्ष (three code points including halant) from कष (two), without inventing a fixed-layout shortcut or promising a particular conjunct shape on every app.",
+  "originalValue": "Nine current shared-engine examples, including four fresh education/word-study words, an extra-cluster error/repair and a failed slash shortcut. Native copy/paste verified all nine in both locale pads. Local licensed-font specimen and code-point assertion distinguish क्ष (three code points including halant) from कष (two), without inventing a fixed-layout shortcut or promising a particular conjunct shape on every app. 2026-11-27 revision adds how to write a bare half letter such as क् (no Roman spelling gave one; Devanagari typed or pasted into the Roman box passes through) and how the pad handles a word-final ्: some dictionary words get it, the form without it is suggestion 2 for jagat and vidyut, and arthaat drops it.",
   "overlapReview": "The beginner guide lists controls and ambiguity but has no conjunct workflow or halant sequence. Practice covers everyday sentences and a missed vowel, not how joined consonants are represented or why a layout shortcut is not portable. Romanized-layout comparison explains tool choice; this article answers the half-letter task inside the actual pad. Unicode/Preeti concerns legacy storage, Docs concerns a named editor and HTML concerns file/header decoding. Font diagnosis here is bounded and linked rather than repeated. No universal keyboard chart, Preeti shortcut list, orthography reform claim or complete spelling course. Markdown and CSV research found no better currently validated distinct workflow; phone/Word/PDF holds remain.",
   "keywordEvidence": {
     "measured": false,
     "researchFile": "research/2026-11-01-keywords.json",
-    "note": "Exact conjunct/half-letter query unmeasured. Genuine historical reader question supports this task, not current volume or trend. November 1 report is eight days old, Nepal/English/Google, October 2025–September 2026; broad typing ranges are not assigned to this long tail. November 9 GSC snapshot reports 72 impressions and zero clicks through November 7 across six daily rows, insufficient topic demand evidence. Deliberate November 9 analytics QA visits and unreconciled GA/PostHog counts are not audience or SEO growth."
+    "note": "Exact conjunct/half-letter query unmeasured. Genuine historical reader question supports this task, not current volume or trend. November 1 report is eight days old, Nepal/English/Google, October 2025–September 2026; broad typing ranges are not assigned to this long tail. November 9 GSC snapshot reports 72 impressions and zero clicks through November 7 across six daily rows, insufficient topic demand evidence. Deliberate November 9 analytics QA visits and unreconciled GA/PostHog counts are not audience or SEO growth. 2026-11-27 revision: Search Console (Oct 29–Nov 25) shows one impression for 'how to type half letter in nepali' at position 9 (see research); sparse, not a volume measure."
   },
   "research": [
     {
@@ -37,13 +37,30 @@
       "url": "https://neptype.com/?analytics_test=1",
       "checked": "2026-11-09",
       "note": "Current source/shared Rust-Wasm and both live locales verify all nine exact outputs, Copy text and native paste into isolated local scratch field. Eighteen workflows with opt-out/interception and zero vendor requests."
+    },
+    {
+      "url": "https://search.google.com/search-console",
+      "checked": "2026-11-27",
+      "note": "Authorized Search Console read recorded in the Nov 27 SEO review (evidence/seo/2026-11-27/search-console.json, sc-domain:neptype.com, Web, Oct 29–Nov 25): new query row 'how to type half letter in nepali' (1 impression, avg position 9, no click); this page en 2 impressions at 35.5, ne 1 at 9. Query and page rows read separately. Tiny sample, not a volume measure."
+    },
+    {
+      "url": "https://dsal.uchicago.edu/dictionaries/schmidt/",
+      "checked": "2026-11-27",
+      "note": "Schmidt, A Practical Dictionary of Modern Nepali (DSAL, University of Chicago). Exact headword queries via dsal.uchicago.edu/cgi-bin/app/schmidt_query.py on 2026-11-27: विद्वान् (p.587, var. of बिद्वान्, p.452) has the final halant; परिषद (p.370) has none; no result for जगत्/जगत, विद्युत्/विद्युत, पश्चात्/पश्चात, अर्थात्/अर्थात. Supports only the statement that references differ on the final mark; no spelling rule is claimed."
+    },
+    {
+      "url": "https://www.unicode.org/charts/PDF/U0900.pdf",
+      "checked": "2026-11-27",
+      "note": "U+094D DEVANAGARI SIGN VIRAMA (halant) confirmed with Python unicodedata on 2026-11-27."
     }
   ],
   "exampleContexts": [
     "school vocabulary",
     "joined-consonant word study",
     "question in a learning exercise",
-    "conjunct spelling repair"
+    "conjunct spelling repair",
+    "school letter chart (half-letter join)",
+    "science homework word (विद्युत्)"
   ],
   "checks": [
     {
@@ -117,6 +134,96 @@
         "mode": 0
       },
       "expectedText": "प्रश्न सोध्नु।"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kh",
+        "mode": 0
+      },
+      "expectedText": "ख"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "k",
+        "mode": 0
+      },
+      "expectedText": "के"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "kk",
+        "mode": 0
+      },
+      "expectedText": "क्क"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "क् + ष = क्ष",
+        "mode": 0
+      },
+      "expectedText": "क् + ष = क्ष"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "jagat",
+        "mode": 0
+      },
+      "expectedText": "जगत्"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "vidyut",
+        "mode": 0
+      },
+      "expectedText": "विद्युत्"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "vidvan",
+        "mode": 0
+      },
+      "expectedText": "विद्वान्"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "arthaat",
+        "mode": 0
+      },
+      "expectedText": "अर्थात"
+    },
+    {
+      "request": {
+        "op": "render",
+        "source": "अर्थात्",
+        "mode": 0
+      },
+      "expectedText": "अर्थात्"
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "jagat"
+      },
+      "includes": [
+        "जगत"
+      ]
+    },
+    {
+      "request": {
+        "op": "candidates",
+        "source": "vidyut"
+      },
+      "includes": [
+        "विद्युत"
+      ]
     }
   ],
   "workflowVerification": {
@@ -128,7 +235,7 @@
   "en": {
     "title": "Type Nepali half letters with Roman input | NepType",
     "heading": "Type Nepali half letters and joined consonants",
-    "description": "Type Nepali words with half letters using Roman input. Try checked examples, inspect the halant and correct a joined-consonant spelling before copying.",
+    "description": "Type Nepali half letters and joined consonants with Roman input. Checked examples show how to write क् on its own, handle a final ् and fix a wrong join before copying.",
     "sections": [
       [
         "Write the whole word first",
@@ -190,6 +297,70 @@
             [
               "Unicode FAQ: half forms and consonant clusters",
               "https://www.unicode.org/faq/indic.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "Write a half letter like क् on its own",
+        "No Roman spelling we tried gives a bare half letter. A lone consonant gets no halant ् (U+094D): kh gives ख and k gives के. A doubled letter gives a joined pair, so kk gives क्क. To show क् by itself, as in the school chart line क् + ष = क्ष, type or paste the Devanagari into the Roman box. The pad leaves Devanagari there unchanged, and Copy text copies it as typed.",
+        {
+          "examples": [
+            [
+              "kh",
+              "ख"
+            ],
+            [
+              "k",
+              "के"
+            ],
+            [
+              "kk",
+              "क्क"
+            ],
+            [
+              "क् + ष = क्ष",
+              "क् + ष = क्ष"
+            ]
+          ],
+          "links": [
+            [
+              "Try the chart line in the typing pad",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "Words that end in ्",
+        "The pad writes some dictionary words with a final halant: jagat gives जगत्, vidyut gives विद्युत् and vidvan gives विद्वान्. Nepali references differ on this mark. Schmidt's A Practical Dictionary of Modern Nepali lists विद्वान् with it and परिषद without it. If your school or publication leaves the mark off, pick जगत or विद्युत from the suggestions; each is the second choice. If you want the mark and the pad drops it, as arthaat gives अर्थात, type अर्थात् in Devanagari in the Roman box.",
+        {
+          "examples": [
+            [
+              "jagat",
+              "जगत्"
+            ],
+            [
+              "vidyut",
+              "विद्युत्"
+            ],
+            [
+              "vidvan",
+              "विद्वान्"
+            ],
+            [
+              "arthaat",
+              "अर्थात"
+            ],
+            [
+              "अर्थात्",
+              "अर्थात्"
+            ]
+          ],
+          "links": [
+            [
+              "Schmidt, A Practical Dictionary of Modern Nepali (DSAL)",
+              "https://dsal.uchicago.edu/dictionaries/schmidt/"
             ]
           ]
         }
@@ -265,7 +436,7 @@
   "ne": {
     "title": "रोमनबाट नेपाली आधा अक्षर र संयुक्त अक्षर लेख्नुहोस् | NepType",
     "heading": "रोमनबाट नेपाली आधा अक्षर र संयुक्त अक्षर लेख्नुहोस्",
-    "description": "रोमन लेखाइबाट आधा अक्षर भएका नेपाली शब्द लेख्नुहोस्। जाँचिएका उदाहरण हेरेर हलन्त चिन्नुहोस् र कपी गर्नुअघि जोडिएको अक्षरको हिज्जे सच्याउनुहोस्।",
+    "description": "रोमन लेखाइबाट नेपाली आधा अक्षर र संयुक्त अक्षर लेख्नुहोस्। जाँचिएका उदाहरणले क् मात्र लेख्ने, अन्त्यको ् मिलाउने र कपी गर्नुअघि गलत जोड सच्याउने तरिका देखाउँछन्।",
     "sections": [
       [
         "पहिले पूरा शब्द लेख्नुहोस्",
@@ -327,6 +498,70 @@
             [
               "आधा अक्षर र संयुक्त अक्षरबारे Unicode FAQ",
               "https://www.unicode.org/faq/indic.html"
+            ]
+          ]
+        }
+      ],
+      [
+        "क् जस्तो आधा अक्षर मात्र लेख्नुहोस्",
+        "हामीले प्रयोग गरेका कुनै पनि रोमन हिज्जेबाट आधा अक्षर मात्र आएन। एक्लो व्यञ्जनमा हलन्त ् (U+094D) लाग्दैन: kh लेख्दा ख र k लेख्दा के आउँछ। एउटै अक्षर दोहोर्‍याउँदा जोडिएको जोडी बन्छ, जस्तै kk लेख्दा क्क। विद्यालयको चार्टमा क् + ष = क्ष जस्तो क् मात्र देखाउनुपरे देवनागरी नै रोमन बाकसमा टाइप वा पेस्ट गर्नुहोस्। प्याडले त्यहाँको देवनागरी नबदली राख्छ र पाठ कपी गर्नुहोस् थिच्दा लेखेजस्तै कपी हुन्छ।",
+        {
+          "examples": [
+            [
+              "kh",
+              "ख"
+            ],
+            [
+              "k",
+              "के"
+            ],
+            [
+              "kk",
+              "क्क"
+            ],
+            [
+              "क् + ष = क्ष",
+              "क् + ष = क्ष"
+            ]
+          ],
+          "links": [
+            [
+              "चार्टको हरफ टाइपिङ प्याडमा लेखेर हेर्नुहोस्",
+              "/#try"
+            ]
+          ]
+        }
+      ],
+      [
+        "अन्त्यमा ् भएका शब्द",
+        "प्याडले शब्दकोशका केही शब्द अन्त्यमा हलन्तसहित लेख्छ: jagat लेख्दा जगत्, vidyut लेख्दा विद्युत् र vidvan लेख्दा विद्वान् आउँछ। यो चिह्नबारे नेपाली स्रोत एकमत छैनन्। Schmidt को A Practical Dictionary of Modern Nepali मा विद्वान् हलन्तसहित र परिषद हलन्तबिना छ। तपाईंको विद्यालय वा प्रकाशनले यो चिह्न नराख्ने भए सुझावबाट जगत वा विद्युत रोज्नुहोस्; दुवै दोस्रो विकल्पमा छन्। चिह्न चाहिँदा प्याडले छोडिदियो भने, जस्तै arthaat लेख्दा अर्थात आयो भने, रोमन बाकसमा अर्थात् देवनागरीमै लेख्नुहोस्।",
+        {
+          "examples": [
+            [
+              "jagat",
+              "जगत्"
+            ],
+            [
+              "vidyut",
+              "विद्युत्"
+            ],
+            [
+              "vidvan",
+              "विद्वान्"
+            ],
+            [
+              "arthaat",
+              "अर्थात"
+            ],
+            [
+              "अर्थात्",
+              "अर्थात्"
+            ]
+          ],
+          "links": [
+            [
+              "Schmidt, A Practical Dictionary of Modern Nepali (DSAL)",
+              "https://dsal.uchicago.edu/dictionaries/schmidt/"
             ]
           ]
         }
@@ -401,11 +636,12 @@
   },
   "editorialReview": {
     "skill": "humanizer",
-    "reviewedOn": "2026-11-09",
+    "reviewedOn": "2026-11-27",
     "languages": [
       "en",
       "ne"
     ],
-    "pass": "Read both full drafts including metadata-facing title/description, headings, paragraphs, steps, tables and link labels. Removed repeated layout-scope defense in the slash section and stated the actual bounded result directly. Removed public test-method narration from the destination check; full evidence remains private. Replaced stiff receiving-app wording in Nepali. Reread both final versions for equivalent meaning, natural word order, unnecessary contrasts, repetitive closers and unsupported font/key promises. A factual review before this pass corrected the longer-cluster explanation: both error and intended word contain त; the difference is the missing े and intervening halant, not an extra त. Protected all Roman/Devanagari literals, checks, URLs, identifiers, dates, evidence and structured data. Automated prose review, no human-authorship or expert-review claim."
-  }
+    "pass": "2026-11-27 revision: real humanizer pass on the two new sections and the changed description in both languages (earlier 2026-11-09 pass on the unchanged sections kept on file). Cut the staged opener 'It is important to note that' / 'ध्यान दिनुपर्ने कुरा के हो भने', 'simply'/'easily'/सजिलै, the unsupported closer 'That way, your chart will be correct.' / 'यसरी तपाईंको चार्ट सही हुन्छ।', the repeated 'exactly as you wrote it', 'However' and 'instead', the question-form headings ('How to write…', 'What about words that end in ्?'), the 'which are the second suggestion' rider and a triad-shaped description. Narrowed 'click the word in the Nepali box' to 'pick from the suggestions' to match the tested flow. Rechecked meaning, equivalent Nepali instructions and that every example, code point, link and the Schmidt citation are identical between draft and final. Not human or expert review."
+  },
+  "modified": "2026-11-27"
 }
